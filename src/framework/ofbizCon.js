@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 
 
-const BASE_URL = "http://localhost:8080/eCommerce/api/"
+const BASE_URL = "http://192.168.49.59:8080/eCommerce/api/"
 
 
 function getCookie(req){
@@ -31,7 +31,7 @@ function postToUrl(relativeURL, body, req){
   console.log('post to URL: ' + relativeURL);
   return fetch(`${BASE_URL}${relativeURL}`, {method: 'POST', body: JSON.stringify(body), headers: {'Cookie': getCookie(req), 'Content-Type': 'application/JSON'}})
         .then(res => {
-          console.log(res);
+          console.log(res.headers);
           return res.json();})
         .catch((err) => {return err;})
         .then(res => {
