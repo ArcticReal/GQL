@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 
 
-const BASE_URL = "http://192.168.49.59:8080/eCommerce/api/"
+const BASE_URL = "http://192.168.49.59:8080/eCommerce/api/";
 
 
 function getCookie(req){
@@ -31,12 +31,12 @@ function postToUrl(relativeURL, body, req){
   console.log('post to URL: ' + relativeURL);
   return fetch(`${BASE_URL}${relativeURL}`, {method: 'POST', body: JSON.stringify(body), headers: {'Cookie': getCookie(req), 'Content-Type': 'application/JSON'}})
         .then(res => {
-          console.log(res.headers);
+          if (res.headers.get('content-type').split(';')[0]==='text/plain') {
+            throw new Error(res.text());
+          }
+          console.log(res.headers.get('content-type'));
           return res.json();})
-        .catch((err) => {return err;})
-        .then(res => {
-          console.log(res);
-          return res.text();});
+        .catch((err) => {return err;});
 }
 
 function putToUrl(relativeURL, body, cookie){
@@ -59,5 +59,5 @@ function login(relativeURL, username, password){
 
 }
 
-export {fetchFromUrl}
-export {postToUrl, login}
+export {fetchFromUrl};
+export {postToUrl, login};
