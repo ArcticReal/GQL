@@ -7,9 +7,7 @@ import{
     GraphQLBoolean,
 } from 'graphql';
 
-import {postToUrl} from '../framework/ofbizCon.js'
-
-
+import {postToUrl} from '../framework/ofbizCon.js';
 
 const ProductListItemType = new GraphQLObjectType({
   name: 'ProductListItem',
@@ -24,7 +22,7 @@ const ProductListItemType = new GraphQLObjectType({
     mediumImageUrl: {type: GraphQLString},
 
   })
-})
+});
 
 const ProductType = new GraphQLObjectType({
   name: 'Product',
@@ -38,10 +36,6 @@ const ProductType = new GraphQLObjectType({
     publisher: {
         type: ProductAttributeType,
         resolve: (product, args, {loaders}) => loaders.ofbiz.load(`productAttributes/find?productId=${product.productId}&attrName=publisher`)
-    },
-    publishingDate: {
-        type: ProductAttributeType,
-        resolve: (product, args, {loaders}) => loaders.ofbiz.load(`productAttributes/find?productId=${product.productId}&attrName=publishingDate`)
     },
     isbn: {
         type: ProductAttributeType,
@@ -129,7 +123,7 @@ const ProductType = new GraphQLObjectType({
     defaultShipmentBoxTypeId: {type: GraphQLString},
     lotIdFilledIn: {type: GraphQLString},
   })
-})
+});
 
 const ProductAttributeType = new GraphQLObjectType({
   name: 'ProductAttribute',
@@ -146,9 +140,7 @@ const ProductAttributeType = new GraphQLObjectType({
       type: GraphQLString
     },
   })
-
-
-})
+});
 
 const ProductPriceType = new GraphQLObjectType({
   name: 'ProductPrice',
@@ -171,7 +163,7 @@ const ProductPriceType = new GraphQLObjectType({
     fromDate: {type: GraphQLString},
 
   })
-})
+});
 
 const ProductPricePurposeType = new GraphQLObjectType({
   name: 'ProductPricePurpose',
@@ -183,7 +175,7 @@ const ProductPricePurposeType = new GraphQLObjectType({
 
   })
 
-})
+});
 
 const ProductPriceTypeType = new GraphQLObjectType({
   name: 'ProductPriceType',
@@ -194,7 +186,7 @@ const ProductPriceTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
   })
 
-})
+});
 
 const ProductCategoryType = new GraphQLObjectType({
   name: 'ProductCategory',
@@ -212,7 +204,7 @@ const ProductCategoryType = new GraphQLObjectType({
     },
   })
 
-})
+});
 
 const ProductCategoryMemberType = new GraphQLObjectType({
   name:  'CategoryMembers',
@@ -235,7 +227,7 @@ const ProductCategoryMemberType = new GraphQLObjectType({
     quantity: {type: GraphQLString},
 
   })
-})
+});
 
 const createProduct = {
 
@@ -247,7 +239,7 @@ const createProduct = {
   },
   resolve: (root, args, {req}) => postToUrl(`products/add`, args, req)
 
-}
+};
 
 export {
   ProductListItemType,
@@ -257,5 +249,5 @@ export {
   ProductPricePurposeType,
   ProductPriceTypeType,
   ProductCategoryType,
-  createProduct,
-}
+  createProduct
+};
