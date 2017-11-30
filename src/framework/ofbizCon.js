@@ -38,7 +38,7 @@ function fetchOneFromUrl(relativeURL, req){
 
           return json;
         })
-        .catch(err => {});
+        .catch(err => {throw err;});
 
 }
 
