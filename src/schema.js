@@ -114,6 +114,7 @@ const RootQueryType = new GraphQLObjectType({
 
       },
       resolve: (root, args, {loaders}) => loaders.ofbiz.load(`cart/show`)
+<<<<<<< Updated upstream
     },
     orders: {
       type: new GraphQLList(OrderType),
@@ -155,6 +156,8 @@ const RootQueryType = new GraphQLObjectType({
         }
       },
 resolve: (root, args, {loaders}) => loaders.ofbiz.load(`resendVerificationMail/${args.hash}`)
+=======
+>>>>>>> Stashed changes
     }
   })
 });
@@ -163,6 +166,7 @@ const MutationType = new GraphQLObjectType({
   name: 'Mutation',
   description: '',
 
+<<<<<<< Updated upstream
   fields: () => ({
     addPost: createPost,
     deletePost: deletePost,
@@ -191,6 +195,11 @@ const MutationType = new GraphQLObjectType({
       }
     },
   })
+=======
+  fields: () => (
+    mutationFields
+  )
+>>>>>>> Stashed changes
 });
 
 export default new GraphQLSchema({

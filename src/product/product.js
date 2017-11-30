@@ -241,6 +241,7 @@ const createProduct = {
 
 };
 
+<<<<<<< Updated upstream
 const createProductCategory = {
   type: ProductCategoryType,
   description: 'adds a ProductCategory to the ofbiz db',
@@ -277,6 +278,8 @@ const deleteProductCategory = {
   resolve: (root, args, {req}) => deleteToUrl(`productCategorys/${args.productCategoryId}`, args, req)
 };
 
+=======
+>>>>>>> Stashed changes
 const deleteProduct = {
   type: ProductType,
   description: 'adds a product to ofbiz db',
@@ -291,10 +294,13 @@ const deleteProduct = {
 const productMutations = ({
   createProduct: createProduct,
   deleteProduct: deleteProduct,
+<<<<<<< Updated upstream
   createProductCategory: createProductCategory,
   editProductCategory: editProductCategory,
   deleteProductCategory: deleteProductCategory,
 
+=======
+>>>>>>> Stashed changes
 });
 
 export {
