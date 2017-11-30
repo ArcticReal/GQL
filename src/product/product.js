@@ -7,7 +7,7 @@ import{
     GraphQLBoolean,
 } from 'graphql';
 
-import {postToUrl} from '../framework/ofbizCon.js';
+import {postToUrl, deleteToUrl} from '../framework/ofbizCon.js';
 
 const ProductListItemType = new GraphQLObjectType({
   name: 'ProductListItem',
@@ -277,6 +277,26 @@ const deleteProductCategory = {
   resolve: (root, args, {req}) => deleteToUrl(`productCategorys/${args.productCategoryId}`, args, req)
 };
 
+const deleteProduct = {
+  type: ProductType,
+  description: 'adds a product to ofbiz db',
+
+  args: {
+    productId: {type: GraphQLString},
+  },
+  resolve: (root, args, {req}) => deleteToUrl(`products/${args.productId}`, null, req)
+
+};
+
+const productMutations = ({
+  createProduct: createProduct,
+  deleteProduct: deleteProduct,
+  createProductCategory: createProductCategory,
+  editProductCategory: editProductCategory,
+  deleteProductCategory: deleteProductCategory,
+
+});
+
 export {
   ProductListItemType,
   ProductType,
@@ -285,8 +305,5 @@ export {
   ProductPricePurposeType,
   ProductPriceTypeType,
   ProductCategoryType,
-  createProduct,
-  createProductCategory,
-  editProductCategory,
-  deleteProductCategory
+  productMutations
 };

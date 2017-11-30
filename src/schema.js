@@ -18,6 +18,9 @@ import { OrderType } from './order/order.js';
 import { ProductCategoryType, ProductType, ProductListItemType, createProduct, createProductCategory, editProductCategory, deleteProductCategory } from './product/product.js';
 import { ProductPromoType } from './product/productPromo.js';
 
+//Mutations
+import {mutationFields} from './framework/mutationBuilder.js';
+
 //Etc.
 import { deletePost, createPost, PostType, AuthorType } from './someFile.js';
 import { posts, authors } from './entityDef.js';
@@ -153,21 +156,6 @@ const RootQueryType = new GraphQLObjectType({
       },
 resolve: (root, args, {loaders}) => loaders.ofbiz.load(`resendVerificationMail/${args.hash}`)
     }
-  })
-});
-
-const LoginResponse = new GraphQLObjectType({
-  name: 'LoginResponse',
-  description: ' indictes what happened to your login',
-
-  fields: () => ({
-    message: {
-      type: GraphQLString
-    },
-    status: {
-      type: GraphQLString
-    },
-
   })
 });
 

@@ -7,7 +7,14 @@ const BASE_URL = "http://192.168.49.59:8080/eCommerce/api/";
 
 
 function getCookie(req){
-  return req.headers.cookie.replace('Path=/' , 'Path=/eCommerce; Secure; ');
+  if(req!==undefined&&req.headers.cookie!==undefined)
+    return req.headers.cookie.replace('Path=/' , 'Path=/eCommerce; Secure; ');
+
+  return null;
+}
+
+function fetchText(relativeURL){
+  return fetch(`${BASE_URL}${relativeURL}`);
 }
 
 function fetchArrayFromUrl(relativeURL, req){
@@ -46,18 +53,12 @@ function postToUrl(relativeURL, body, req){
   console.log('post to URL: ' + relativeURL);
   return fetch(`${BASE_URL}${relativeURL}`, {method: 'POST', body: JSON.stringify(body), headers: {'Cookie': getCookie(req), 'Content-Type': 'application/JSON'}})
         .then(res => {
-          if (res.headers.get('content-type').split(';')[0]==='text/plain') {
-            return res.text();
+          if (res.status===401) {
+            throw new GraphQLError('unauthorized');
           }else {
-            return res;
+            return res.json();
           }
         })
-        .then(res => {
-          if (res instanceof Promise) {
-            return res;
-          }
-          console.log(res);
-          throw new GraphQLError(res);})
         .catch((err) => {throw err;});
 }
 
@@ -68,20 +69,36 @@ function putToUrl(relativeURL, body, cookie){
         .catch(err => {});
 }
 
+function deleteToUrl(relativeURL, body, cookie){
+  console.log('put to URL: ' + relativeURL);
+  return fetch(`${BASE_URL}${relativeURL}`, {method: 'DELETE', body: body, headers: {'Cookie': getCookie(req)}})
+        .then(res => {return res.json();})
+        .catch(err => {});
+}
+
+
 function login(relativeURL, username, password){
   console.log('login request:');
   console.log('username:', username);
   console.log('password:', password);
+
   return fetch(`${BASE_URL}${relativeURL}?username=${username}&password=${password}`,
-                {method: 'POST', redirect: 'follow'})
-        .then(res => {console.log('\nLogin response:');
-                      console.log('status:     ', res.statusText);
-                      const setCookie = res.headers.get('set-cookie').replace('/eCommerce; Secure; ', '/; ');
-                      console.log('Set-Cookie: ', setCookie, '\n');
-                      return {message: res.text(), status: res.status, setCookie: setCookie};})
+                {method: 'POST', redirect: 'manual'})
+        .then(res => {
+          console.log('\nLogin response:');
+          console.log('Location:   ', res.headers.get('Location'));
+          const setCookie = res.headers.get('set-cookie').replace('/eCommerce; Secure; ', '/; ');
+          console.log('Set-Cookie: ', setCookie, '\n');
+
+          return {promise: fetch(res.headers.get('Location')), setCookie: setCookie};
+        })
+        .then(result => {
+          const response = result.promise;
+          return {message: response.then(r => {return r.text();}), status: response.then(r => {return r.status;}), setCookie: result.setCookie};
+        })
         .catch(err => {console.log(err);});
 
 }
 
 export {fetchOneFromUrl, fetchArrayFromUrl};
-export {postToUrl, login};
+export {fetchText, postToUrl, login};
