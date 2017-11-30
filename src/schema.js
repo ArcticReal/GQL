@@ -11,6 +11,9 @@ import { fetchFromUrl, postToUrl, login } from './framework/ofbizCon.js';
 //Geo
 import { GeoType } from './geo/geo.js';
 
+//Order
+import { OrderType } from './order/order.js';
+
 //Product
 import { ProductCategoryType, ProductType, ProductListItemType, createProduct } from './product/product.js';
 import { ProductPromoType } from './product/productPromo.js';
@@ -18,6 +21,7 @@ import { ProductPromoType } from './product/productPromo.js';
 //Etc.
 import { deletePost, createPost, PostType, AuthorType } from './someFile.js';
 import { posts, authors } from './entityDef.js';
+import { LoggedInPersonType } from './loggedInPerson.js';
 
 const RootQueryType = new GraphQLObjectType({
   name: 'rootQueries',
@@ -44,7 +48,7 @@ const RootQueryType = new GraphQLObjectType({
       args: {
 
       },
-      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`products/productList`)
+      resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`products/productList`)
     },
     product: {
       type: ProductType,
@@ -57,7 +61,7 @@ const RootQueryType = new GraphQLObjectType({
     },
     productCategories: {
       type: new GraphQLList(ProductCategoryType),
-      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find`)
+      resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`productCategorys/find`)
     },
     productCategory: {
       type: ProductCategoryType,
@@ -73,7 +77,7 @@ const RootQueryType = new GraphQLObjectType({
       args: {
 
       },
-      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`productPromos/find`)
+      resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`productPromos/find`)
     },
     promo: {
       type: ProductPromoType,
@@ -89,7 +93,7 @@ const RootQueryType = new GraphQLObjectType({
       args: {
 
       },
-      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`geo/country`)
+      resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`geo/country`)
     },
     country: {
       type: GeoType,
@@ -106,6 +110,22 @@ const RootQueryType = new GraphQLObjectType({
 
       },
       resolve: (root, args, {loaders}) => loaders.ofbiz.load(`cart/show`)
+    },
+    order: {
+      type: OrderType,
+      args: {
+        orderId: {
+          type: GraphQLString
+        }
+      },
+      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`order/${args.orderId}/details`)
+    },
+    loggedInPerson: {
+      type: LoggedInPersonType,
+      args: {
+
+      },
+      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`loggedInPerson`)
     }
   })
 });
