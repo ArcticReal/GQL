@@ -163,34 +163,9 @@ const MutationType = new GraphQLObjectType({
   name: 'Mutation',
   description: '',
 
-  fields: () => ({
-    addPost: createPost,
-    deletePost: deletePost,
-    createProduct: createProduct,
-    createProductCategory: createProductCategory,
-    editProductCategory: editProductCategory,
-    deleteProductCategory: deleteProductCategory,
-    login: {
-      type: LoginResponse,
-      description: 'Login to the ofbiz service',
-      args: {
-        username: {
-          type: GraphQLString
-        },
-        password: {
-          type: GraphQLString
-        },
-
-      },
-      resolve: (root, args, {res}) => {
-        return login(`login`, args.username, args.password).then(loginRes => {
-          res.set('Set-Cookie', loginRes.setCookie);
-          return loginRes;
-        });
-
-      }
-    },
-  })
+  fields: () => (
+    mutationFields
+  )
 });
 
 export default new GraphQLSchema({
