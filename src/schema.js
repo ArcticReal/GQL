@@ -160,8 +160,8 @@ resolve: (root, args, {loaders}) => loaders.ofbiz.load(`resendVerificationMail/$
 });
 
 const MutationType = new GraphQLObjectType({
-  name: 'Mutation',
-  description: '',
+  name: 'Mutations',
+  description: 'root for mutations',
 
   fields: () => (
     mutationFields
