@@ -232,13 +232,49 @@ const ProductCategoryMemberType = new GraphQLObjectType({
 const createProduct = {
 
   type: ProductType,
-  description: 'adds a product to ofbiz db',
+  description: 'adds a Product to ofbiz db',
 
   args: {
     productName: {type: GraphQLString},
   },
   resolve: (root, args, {req}) => postToUrl(`products/add`, args, req)
 
+};
+
+const createProductCategory = {
+  type: ProductCategoryType,
+  description: 'adds a ProductCategory to the ofbiz db',
+  args: {
+    categoryName: {
+      type: GraphQLString
+    }
+  },
+  resolve: (root, args, {req}) => postToUrl(`productCategorys/add`, args, req)
+};
+
+const editProductCategory = {
+  type: ProductCategoryType,
+  description: 'edits a ProductCategory in the ofbiz db',
+  args: {
+    productCategoryId: {
+      type: GraphQLString
+    },
+    categoryName: {
+      type: GraphQLString
+    }
+  },
+resolve: (root, args, {req}) => putToUrl(`productCategorys/${args.productCategoryId}`, args, req)
+};
+
+const deleteProductCategory = {
+  type: ProductCategoryType,
+  description: 'removes a ProductCategory from the ofbiz db',
+  args: {
+    productCategoryId: {
+      type: GraphQLString
+    },
+  },
+  resolve: (root, args, {req}) => deleteToUrl(`productCategorys/${args.productCategoryId}`, args, req)
 };
 
 export {
@@ -249,5 +285,8 @@ export {
   ProductPricePurposeType,
   ProductPriceTypeType,
   ProductCategoryType,
-  createProduct
+  createProduct,
+  createProductCategory,
+  editProductCategory,
+  deleteProductCategory
 };

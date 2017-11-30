@@ -15,13 +15,14 @@ import { GeoType } from './geo/geo.js';
 import { OrderType } from './order/order.js';
 
 //Product
-import { ProductCategoryType, ProductType, ProductListItemType, createProduct } from './product/product.js';
+import { ProductCategoryType, ProductType, ProductListItemType, createProduct, createProductCategory, editProductCategory, deleteProductCategory } from './product/product.js';
 import { ProductPromoType } from './product/productPromo.js';
 
 //Etc.
 import { deletePost, createPost, PostType, AuthorType } from './someFile.js';
 import { posts, authors } from './entityDef.js';
 import { LoggedInPersonType } from './loggedInPerson.js';
+import { VerifyType, ResendVerificationType } from './verification.js';
 
 const RootQueryType = new GraphQLObjectType({
   name: 'rootQueries',
@@ -111,6 +112,13 @@ const RootQueryType = new GraphQLObjectType({
       },
       resolve: (root, args, {loaders}) => loaders.ofbiz.load(`cart/show`)
     },
+    orders: {
+      type: new GraphQLList(OrderType),
+      args: {
+
+      },
+      resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`order/listAll`)
+    },
     order: {
       type: OrderType,
       args: {
@@ -126,6 +134,24 @@ const RootQueryType = new GraphQLObjectType({
 
       },
       resolve: (root, args, {loaders}) => loaders.ofbiz.load(`loggedInPerson`)
+    },
+    verify: {
+      type: VerifyType,
+      args: {
+        hash: {
+          type: GraphQLString
+        }
+      },
+      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`account/verify/${args.hash}`)
+    },
+    resendVerification: {
+      type: ResendVerificationType,
+      args: {
+        hash: {
+          type: GraphQLString
+        }
+      },
+resolve: (root, args, {loaders}) => loaders.ofbiz.load(`resendVerificationMail/${args.hash}`)
     }
   })
 });
@@ -153,6 +179,9 @@ const MutationType = new GraphQLObjectType({
     addPost: createPost,
     deletePost: deletePost,
     createProduct: createProduct,
+    createProductCategory: createProductCategory,
+    editProductCategory: editProductCategory,
+    deleteProductCategory: deleteProductCategory,
     login: {
       type: LoginResponse,
       description: 'Login to the ofbiz service',
