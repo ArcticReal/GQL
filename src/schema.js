@@ -1,20 +1,23 @@
-import { GraphQLSchema, GraphQLObjectType, GraphQLList, GraphQLString, GraphQLInt, GraphQLBoolean,
-} from 'graphql';
+//External Imports
+import { GraphQLSchema, GraphQLObjectType, GraphQLList, GraphQLString, GraphQLInt, GraphQLBoolean } from 'graphql';
 import { find, filter } from 'lodash';
 
+//Cart
+import { CartType } from './cart/cart.js';
+
+//Framework
 import { fetchFromUrl, postToUrl, login } from './framework/ofbizCon.js';
 
-import { ProductCategoryType, ProductType, ProductListItemType, createProduct,
-} from './product/product.js';
+//Geo
+import { GeoType } from './geo/geo.js';
 
-import { GeoType,
-} from './geo/geo.js';
+//Product
+import { ProductCategoryType, ProductType, ProductListItemType, createProduct } from './product/product.js';
+import { ProductPromoType } from './product/productPromo.js';
 
-import { deletePost, createPost, PostType, AuthorType,
-} from './someFile.js';
-
-import { posts, authors,
-} from './entityDef.js';
+//Etc.
+import { deletePost, createPost, PostType, AuthorType } from './someFile.js';
+import { posts, authors } from './entityDef.js';
 
 const RootQueryType = new GraphQLObjectType({
   name: 'rootQueries',
@@ -65,6 +68,22 @@ const RootQueryType = new GraphQLObjectType({
       },
       resolve: (root, args, {loaders}) => loaders.ofbiz.load(`productCategorys/${args.productCategoryId}`)
     },
+    promos: {
+      type: new GraphQLList(ProductPromoType),
+      args: {
+
+      },
+      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`productPromos/find`)
+    },
+    promo: {
+      type: ProductPromoType,
+      args: {
+        productPromoId: {
+          type: GraphQLString
+        },
+      },
+      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`productPromos/${args.productPromoId}`)
+    },
     countries: {
       type: new GraphQLList(GeoType),
       args: {
@@ -81,6 +100,13 @@ const RootQueryType = new GraphQLObjectType({
       },
       resolve: (root, args, {loaders}) => loaders.ofbiz.load(`geo/${args.geoId}/`) //TODO
     },
+    cart: {
+      type: CartType,
+      args: {
+
+      },
+      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`cart/show`)
+    }
   })
 });
 
