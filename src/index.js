@@ -5,7 +5,7 @@ import DataLoader from 'dataloader';
 import cors from 'cors';
 
 import schema from './schema.js';
-import {fetchFromUrl, postToUrl} from './framework/ofbizCon.js';
+import {fetchOneFromUrl, fetchArrayFromUrl, postToUrl} from './framework/ofbizCon.js';
 
 const alexServerURI = "http://192.168.49.60:3000";
 
@@ -19,18 +19,25 @@ const app = express();
 app.use(loggingMiddleWare);
 app.use(cors({credentials: true, origin: alexServerURI, methods: "POST, OPTIONS"}), graphQLHTTP((req, res) => {
   const ofbizLoader = new DataLoader(
-    keys => Promise.all(keys.map(path => fetchFromUrl(path, req)))
+    keys => Promise.all(keys.map(path => fetchOneFromUrl(path, req)))
+  );
+  const ofbizArrayLoader = new DataLoader(
+    keys => Promise.all(keys.map(path => fetchArrayFromUrl(path, req)))
   );
   const loaders = {
     ofbiz: ofbizLoader,
+    ofbizArray: ofbizArrayLoader,
   };
   return {
     context: {req, res, loaders},
     schema,
     graphiql: true,
+    formatError: error => ({
+      message: error.message,
+    }),
   };
 }));
 
 app.listen(5000);
-console.log("\nserver running at http://localhost:5000\n" +
+console.log("\nserver running at http://localhost:5000\n"+
               "———————————————————————————————————————");
