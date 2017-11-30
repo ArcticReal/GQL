@@ -106,14 +106,11 @@ const RootQueryType = new GraphQLObjectType({
           type: GraphQLString
         },
       },
-      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`geo/country/${args.geoId}`) //TODO
+      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`geo/country/${args.geoId}`)
     },
     cart: {
       type: CartType,
-      args: {
-
-      },
-      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`cart/show`)
+      resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`cart/show`)
     },
     orders: {
       type: new GraphQLList(OrderType),
