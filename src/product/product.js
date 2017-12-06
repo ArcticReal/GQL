@@ -43,7 +43,7 @@ const ProductType = new GraphQLObjectType({
     },
     categoryMembers: {
       type: new GraphQLList(ProductCategoryMemberType),
-      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`productCategoryMembers/find?productId=${product.productId}`)
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productCategoryMembers/find?productId=${product.productId}`)
     },
     price: {
       type: ProductPriceType,
@@ -200,7 +200,7 @@ const ProductCategoryType = new GraphQLObjectType({
     description: {type: GraphQLString},
     categoryMembers: {
       type: new GraphQLList(ProductCategoryMemberType),
-      resolve: (productCategory, args, {loaders}) => loaders.ofbiz.load(`productCategoryMembers/find?productCategoryId=${productCategory.productCategoryId}`)
+      resolve: (productCategory, args, {loaders}) => loaders.ofbizArray.load(`productCategoryMembers/find?productCategoryId=${productCategory.productCategoryId}`)
     },
   })
 

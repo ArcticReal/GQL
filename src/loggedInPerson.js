@@ -6,7 +6,14 @@ const LoggedInPersonType = new GraphQLObjectType({
   description: '...',
 
   fields: () => ({
-    firstName: { type: GraphQLString }
+    personalTitle: { type: GraphQLString },
+    firstName: { type: GraphQLString },
+    middleName: { type: GraphQLString },
+    lastName: { type: GraphQLString },
+    nickname: { type: GraphQLString },
+    gender: { type: GraphQLString },
+    birthDate: { type: GraphQLString },
+    authorities: { type: new GraphQLList(GraphQLString) }
   })
 });
 
