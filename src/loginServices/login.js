@@ -52,7 +52,7 @@ const logoutMutation = {
 
   },
   resolve: (root, args, {req}) => {
-    return fetchText(`logout`);
+    return fetchText(`logout`, req);
 
   }
 };

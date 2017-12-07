@@ -13,8 +13,8 @@ function getCookie(req){
   return null;
 }
 
-function fetchText(relativeURL){
-  return fetch(`${BASE_URL}${relativeURL}`);
+function fetchText(relativeURL, req){
+  return fetch(`${BASE_URL}${relativeURL}`, {headers: {'Cookie': getCookie(req)}});
 }
 
 function fetchArrayFromUrl(relativeURL, req){
