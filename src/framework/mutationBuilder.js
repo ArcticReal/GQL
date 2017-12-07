@@ -1,8 +1,6 @@
-import {productMutations} from '../product/product.js';
-import {loginMutations} from '../login/login.js';
+import {loginMutations} from '../loginServices/login.js';
 
 const mutationFields = Object.assign( {},
-  productMutations,
   loginMutations
 );
 

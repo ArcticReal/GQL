@@ -11,19 +11,22 @@ import { fetchFromUrl, postToUrl, login } from './framework/ofbizCon.js';
 //Geo
 import { GeoType } from './geo/geo.js';
 
-//Order
-import { OrderType } from './order/order.js';
+//order
+import {OrderHeaderType} from './domain/order/OrderHeaderType.js';
 
 //Product
-import { ProductCategoryType, ProductType, ProductListItemType, createProduct, createProductCategory, editProductCategory, deleteProductCategory } from './product/product.js';
-import { ProductPromoType } from './product/productPromo.js';
+import {ProductCategoryType} from './domain/product/ProductCategoryType.js';
+import {ProductType} from './domain/product/ProductType.js';
+
+
+
+
+import { ProductPromoType } from './domain/product/ProductPromoType.js';
 
 //Mutations
 import {mutationFields} from './framework/mutationBuilder.js';
 
 //Etc.
-import { deletePost, createPost, PostType, AuthorType } from './someFile.js';
-import { posts, authors } from './entityDef.js';
 import { LoggedInPersonType } from './loggedInPerson.js';
 import { VerifyType, ResendVerificationType } from './verification.js';
 
@@ -32,21 +35,6 @@ const RootQueryType = new GraphQLObjectType({
   description: '...',
 
   fields: () => ({
-    author: {
-      type: AuthorType,
-      args: {
-        id: {
-          type: GraphQLString
-        }
-      },
-      resolve: (root, args) => find(authors, {
-        id: args.id
-      })
-    },
-    posts: {
-      type: new GraphQLList(PostType),
-      resolve: () => posts
-    },
     products: {
       type: new GraphQLList(ProductType),
       args: {
@@ -113,20 +101,20 @@ const RootQueryType = new GraphQLObjectType({
       resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`cart/show`)
     },
     orders: {
-      type: new GraphQLList(OrderType),
+      type: new GraphQLList(OrderHeaderType),
       args: {
 
       },
-      resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`order/listAll`)
+      resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`orderHeaders/find`)
     },
     order: {
-      type: OrderType,
+      type: OrderHeaderType,
       args: {
         orderId: {
           type: GraphQLString
         }
       },
-      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`order/${args.orderId}/details`)
+      resolve: (root, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/${args.orderId}`)
     },
     loggedInPerson: {
       type: LoggedInPersonType,
