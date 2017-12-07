@@ -47,11 +47,6 @@ const ContainerType = new GraphQLObjectType({
       type: new GraphQLList(ContainerGeoPointType),
       args : {containerId: {type: GraphQLString}},
       resolve: (container, args, {loaders}) => loaders.ofbizArray.load(`containerGeoPoints/find?containerId=${container.containerId}`)
-    },
-    inventoryTransfer: {
-      type: new GraphQLList(InventoryTransferType),
-      args : {containerId: {type: GraphQLString}},
-      resolve: (container, args, {loaders}) => loaders.ofbizArray.load(`inventoryTransfers/find?containerId=${container.containerId}`)
     }
   })
 });

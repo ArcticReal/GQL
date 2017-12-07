@@ -25,8 +25,8 @@ const PaymentGatewayEwayType = new GraphQLObjectType({
     },
     testMode: {type: GraphQLString},
     enableBeagle: {type: GraphQLString},
-    customerId: {type: GraphQLInt},
-    refundPwd: {type: GraphQLInt}
+    customerId: {type: GraphQLString},
+    refundPwd: {type: GraphQLString}
   })
 });
 

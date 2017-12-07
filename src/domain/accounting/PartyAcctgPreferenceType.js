@@ -20,7 +20,7 @@ const PartyAcctgPreferenceType = new GraphQLObjectType({
 
   fields: () => ({
     cogsMethodId: {type: GraphQLString},
-    oldInvoiceSequenceEnumId: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldInvoiceSequenceEnumId: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     baseCurrencyUomId: {type: GraphQLString},
     lastInvoiceRestartDate: {type: GraphQLString},
     quoteSeqCustMethId: {type: GraphQLString},
@@ -32,7 +32,7 @@ const PartyAcctgPreferenceType = new GraphQLObjectType({
     },
     orderIdPrefix: {type: GraphQLString},
     fiscalYearStartDay: {type: GraphQLInt},
-    oldQuoteSequenceEnumId: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldQuoteSequenceEnumId: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     lastInvoiceNumber: {type: GraphQLInt},
     taxFormId: {type: GraphQLString},
     refundPaymentMethod: {
@@ -51,7 +51,7 @@ const PartyAcctgPreferenceType = new GraphQLObjectType({
       resolve: (partyAcctgPreference, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyAcctgPreference.partyId}`)
     },
     quoteIdPrefix: {type: GraphQLString},
-    oldOrderSequenceEnumId: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldOrderSequenceEnumId: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     invoiceSeqCustMethId: {type: GraphQLString}
   })
 });

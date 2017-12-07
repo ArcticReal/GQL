@@ -17,8 +17,8 @@ const PaymentGatewayOrbitalType = new GraphQLObjectType({
   description: 'Type for PaymentGatewayOrbital in accounting',
 
   fields: () => ({
-    engineClass: {type: GraphQLInt},
-    hostName: {type: GraphQLInt},
+    engineClass: {type: GraphQLString},
+    hostName: {type: GraphQLString},
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},
@@ -26,15 +26,15 @@ const PaymentGatewayOrbitalType = new GraphQLObjectType({
     },
     portFailover: {type: GraphQLInt},
     readTimeoutSeconds: {type: GraphQLInt},
-    hostNameFailover: {type: GraphQLInt},
-    authorizationURI: {type: GraphQLInt},
+    hostNameFailover: {type: GraphQLString},
+    authorizationURI: {type: GraphQLString},
     sslSocketFactory: {type: GraphQLString},
     responseType: {type: GraphQLString},
-    merchantId: {type: GraphQLInt},
+    merchantId: {type: GraphQLString},
     port: {type: GraphQLInt},
     connectionTimeoutSeconds: {type: GraphQLInt},
     sdkVersion: {type: GraphQLString},
-    connectionPassword: {type: GraphQLInt},
+    connectionPassword: {type: GraphQLString},
     username: {type: GraphQLString}
   })
 });

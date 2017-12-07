@@ -89,20 +89,10 @@ const PostalAddressType = new GraphQLObjectType({
       args : {contactMechId: {type: GraphQLString}},
       resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`payPalPaymentMethods/find?contactMechId=${postalAddress.contactMechId}`)
     },
-    shipment: {
-      type: new GraphQLList(ShipmentType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?contactMechId=${postalAddress.contactMechId}`)
-    },
     billingAccount: {
       type: new GraphQLList(BillingAccountType),
       args : {contactMechId: {type: GraphQLString}},
       resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`billingAccounts/find?contactMechId=${postalAddress.contactMechId}`)
-    },
-    shipmentRouteSegment: {
-      type: new GraphQLList(ShipmentRouteSegmentType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`shipmentRouteSegments/find?contactMechId=${postalAddress.contactMechId}`)
     },
     postalAddressBoundary: {
       type: new GraphQLList(PostalAddressBoundaryType),

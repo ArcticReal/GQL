@@ -17,21 +17,21 @@ const ShipmentGatewayDhlType = new GraphQLObjectType({
   description: 'Type for ShipmentGatewayDhl in shipment',
 
   fields: () => ({
-    connectUrl: {type: GraphQLInt},
-    accessUserId: {type: GraphQLInt},
-    accessShippingKey: {type: GraphQLInt},
+    connectUrl: {type: GraphQLString},
+    accessUserId: {type: GraphQLString},
+    accessShippingKey: {type: GraphQLString},
     shipmentGatewayConfig: {
       type: ShipmentGatewayConfigType,
       args : {shipmentGatewayConfigId: {type: GraphQLString}},
       resolve: (shipmentGatewayDhl, args, {loaders}) => loaders.ofbiz.load(`shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayDhl.shipmentGatewayConfigId}`)
     },
-    rateEstimateTemplate: {type: GraphQLInt},
+    rateEstimateTemplate: {type: GraphQLString},
     connectTimeout: {type: GraphQLInt},
-    accessAccountNbr: {type: GraphQLInt},
+    accessAccountNbr: {type: GraphQLString},
     labelImageFormat: {type: GraphQLString},
     headVersion: {type: GraphQLString},
-    headAction: {type: GraphQLInt},
-    accessPassword: {type: GraphQLInt}
+    headAction: {type: GraphQLString},
+    accessPassword: {type: GraphQLString}
   })
 });
 

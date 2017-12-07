@@ -24,8 +24,8 @@ const ProductStorePaymentSettingType = new GraphQLObjectType({
       args : {paymentGatewayConfigId: {type: GraphQLString}},
       resolve: (productStorePaymentSetting, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${productStorePaymentSetting.paymentGatewayConfigId}`)
     },
-    paymentService: {type: GraphQLInt},
-    paymentPropertiesPath: {type: GraphQLInt},
+    paymentService: {type: GraphQLString},
+    paymentPropertiesPath: {type: GraphQLString},
     paymentServiceTypeEnumId: {type: GraphQLString},
     applyToAllProducts: {type: GraphQLBoolean},
     productStore: {

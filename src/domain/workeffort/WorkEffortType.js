@@ -279,11 +279,6 @@ const WorkEffortType = new GraphQLObjectType({
       args : {workEffortId: {type: GraphQLString}},
       resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`quoteWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
     },
-    workEffortAssoc: {
-      type: new GraphQLList(WorkEffortAssocType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortAssocs/find?workEffortId=${workEffort.workEffortId}`)
-    },
     shipment: {
       type: new GraphQLList(ShipmentType),
       args : {workEffortId: {type: GraphQLString}},
@@ -323,11 +318,6 @@ const WorkEffortType = new GraphQLObjectType({
       type: new GraphQLList(WorkEffortStatusType),
       args : {workEffortId: {type: GraphQLString}},
       resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortStatuss/find?workEffortId=${workEffort.workEffortId}`)
-    },
-    shipment: {
-      type: new GraphQLList(ShipmentType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortCostCalc: {
       type: new GraphQLList(WorkEffortCostCalcType),

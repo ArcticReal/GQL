@@ -18,7 +18,7 @@ const PartyAttributeType = new GraphQLObjectType({
 
   fields: () => ({
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},

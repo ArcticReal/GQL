@@ -18,7 +18,7 @@ const AgreementTermAttributeType = new GraphQLObjectType({
 
   fields: () => ({
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     agreementTerm: {
       type: AgreementTermType,
       args : {agreementTermId: {type: GraphQLString}},

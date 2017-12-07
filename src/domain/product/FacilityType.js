@@ -230,11 +230,6 @@ const FacilityType = new GraphQLObjectType({
       args : {facilityId: {type: GraphQLString}},
       resolve: (facility, args, {loaders}) => loaders.ofbizArray.load(`facilitys/find?facilityId=${facility.facilityId}`)
     },
-    delivery: {
-      type: new GraphQLList(DeliveryType),
-      args : {facilityId: {type: GraphQLString}},
-      resolve: (facility, args, {loaders}) => loaders.ofbizArray.load(`deliverys/find?facilityId=${facility.facilityId}`)
-    },
     facilityParty: {
       type: new GraphQLList(FacilityPartyType),
       args : {facilityId: {type: GraphQLString}},
@@ -245,25 +240,10 @@ const FacilityType = new GraphQLObjectType({
       args : {facilityId: {type: GraphQLString}},
       resolve: (facility, args, {loaders}) => loaders.ofbizArray.load(`inventoryTransfers/find?facilityId=${facility.facilityId}`)
     },
-    shipmentRouteSegment: {
-      type: new GraphQLList(ShipmentRouteSegmentType),
-      args : {facilityId: {type: GraphQLString}},
-      resolve: (facility, args, {loaders}) => loaders.ofbizArray.load(`shipmentRouteSegments/find?facilityId=${facility.facilityId}`)
-    },
     productFacility: {
       type: new GraphQLList(ProductFacilityType),
       args : {facilityId: {type: GraphQLString}},
       resolve: (facility, args, {loaders}) => loaders.ofbizArray.load(`productFacilitys/find?facilityId=${facility.facilityId}`)
-    },
-    inventoryTransfer: {
-      type: new GraphQLList(InventoryTransferType),
-      args : {facilityId: {type: GraphQLString}},
-      resolve: (facility, args, {loaders}) => loaders.ofbizArray.load(`inventoryTransfers/find?facilityId=${facility.facilityId}`)
-    },
-    shipment: {
-      type: new GraphQLList(ShipmentType),
-      args : {facilityId: {type: GraphQLString}},
-      resolve: (facility, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?facilityId=${facility.facilityId}`)
     },
     facilityAttribute: {
       type: new GraphQLList(FacilityAttributeType),

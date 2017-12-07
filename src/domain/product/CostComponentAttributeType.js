@@ -18,7 +18,7 @@ const CostComponentAttributeType = new GraphQLObjectType({
 
   fields: () => ({
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString},
     costComponent: {
       type: CostComponentType,

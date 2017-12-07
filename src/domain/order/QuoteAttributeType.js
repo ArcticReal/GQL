@@ -18,7 +18,7 @@ const QuoteAttributeType = new GraphQLObjectType({
 
   fields: () => ({
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     quote: {
       type: QuoteType,
       args : {quoteId: {type: GraphQLString}},

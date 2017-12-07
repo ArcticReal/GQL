@@ -81,7 +81,7 @@ const ContentType = new GraphQLObjectType({
       args : {characterSetId: {type: GraphQLString}},
       resolve: (content, args, {loaders}) => loaders.ofbiz.load(`characterSets/find?characterSetId=${content.characterSetId}`)
     },
-    contentName: {type: GraphQLInt},
+    contentName: {type: GraphQLString},
     privilegeEnumId: {type: GraphQLString},
     dataSourceId: {type: GraphQLString},
     lastModifiedByUserLogin: {
@@ -203,11 +203,6 @@ const ContentType = new GraphQLObjectType({
       args : {contentId: {type: GraphQLString}},
       resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contentKeywords/find?contentId=${content.contentId}`)
     },
-    vendor: {
-      type: new GraphQLList(VendorType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`vendors/find?contentId=${content.contentId}`)
-    },
     content: {
       type: new GraphQLList(ContentType),
       args : {contentId: {type: GraphQLString}},
@@ -238,25 +233,10 @@ const ContentType = new GraphQLObjectType({
       args : {contentId: {type: GraphQLString}},
       resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`orderContents/find?contentId=${content.contentId}`)
     },
-    contentAssoc: {
-      type: new GraphQLList(ContentAssocType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contentAssocs/find?contentId=${content.contentId}`)
-    },
-    content: {
-      type: new GraphQLList(ContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contents/find?contentId=${content.contentId}`)
-    },
     productPromoContent: {
       type: new GraphQLList(ProductPromoContentType),
       args : {contentId: {type: GraphQLString}},
       resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`productPromoContents/find?contentId=${content.contentId}`)
-    },
-    content: {
-      type: new GraphQLList(ContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contents/find?contentId=${content.contentId}`)
     },
     contentApproval: {
       type: new GraphQLList(ContentApprovalType),

@@ -62,11 +62,6 @@ const EmplPositionType = new GraphQLObjectType({
       type: new GraphQLList(EmplPositionResponsibilityType),
       args : {emplPositionId: {type: GraphQLString}},
       resolve: (emplPosition, args, {loaders}) => loaders.ofbizArray.load(`emplPositionResponsibilitys/find?emplPositionId=${emplPosition.emplPositionId}`)
-    },
-    emplPositionReportingStruct: {
-      type: new GraphQLList(EmplPositionReportingStructType),
-      args : {emplPositionId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbizArray.load(`emplPositionReportingStructs/find?emplPositionId=${emplPosition.emplPositionId}`)
     }
   })
 });

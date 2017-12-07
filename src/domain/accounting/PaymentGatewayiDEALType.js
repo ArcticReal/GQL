@@ -17,22 +17,22 @@ const PaymentGatewayiDEALType = new GraphQLObjectType({
   description: 'Type for PaymentGatewayiDEAL in accounting',
 
   fields: () => ({
-    expirationPeriod: {type: GraphQLInt},
-    merchantReturnURL: {type: GraphQLInt},
+    expirationPeriod: {type: GraphQLString},
+    merchantReturnURL: {type: GraphQLString},
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},
       resolve: (paymentGatewayiDEAL, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayiDEAL.paymentGatewayConfigId}`)
     },
-    merchantId: {type: GraphQLInt},
-    acquirerKeyStoreFilename: {type: GraphQLInt},
-    merchantSubId: {type: GraphQLInt},
-    merchantKeyStorePassword: {type: GraphQLInt},
-    acquirerURL: {type: GraphQLInt},
-    acquirerTimeout: {type: GraphQLInt},
-    privateCert: {type: GraphQLInt},
-    acquirerKeyStorePassword: {type: GraphQLInt},
-    merchantKeyStoreFilename: {type: GraphQLInt}
+    merchantId: {type: GraphQLString},
+    acquirerKeyStoreFilename: {type: GraphQLString},
+    merchantSubId: {type: GraphQLString},
+    merchantKeyStorePassword: {type: GraphQLString},
+    acquirerURL: {type: GraphQLString},
+    acquirerTimeout: {type: GraphQLString},
+    privateCert: {type: GraphQLString},
+    acquirerKeyStorePassword: {type: GraphQLString},
+    merchantKeyStoreFilename: {type: GraphQLString}
   })
 });
 

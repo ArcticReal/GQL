@@ -23,9 +23,9 @@ const ProductAttributeType = new GraphQLObjectType({
       resolve: (productAttribute, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productAttribute.productId}`)
     },
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString},
-    attrType: {type: GraphQLInt}
+    attrType: {type: GraphQLString}
   })
 });
 

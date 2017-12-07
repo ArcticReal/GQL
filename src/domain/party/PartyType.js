@@ -313,11 +313,6 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`employments/find?partyId=${party.partyId}`)
     },
-    inventoryItem: {
-      type: new GraphQLList(InventoryItemType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`inventoryItems/find?partyId=${party.partyId}`)
-    },
     facilityParty: {
       type: new GraphQLList(FacilityPartyType),
       args : {partyId: {type: GraphQLString}},
@@ -343,11 +338,6 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`invoices/find?partyId=${party.partyId}`)
     },
-    vendor: {
-      type: new GraphQLList(VendorType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`vendors/find?partyId=${party.partyId}`)
-    },
     subscription: {
       type: new GraphQLList(SubscriptionType),
       args : {partyId: {type: GraphQLString}},
@@ -368,20 +358,10 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`partyGeoPoints/find?partyId=${party.partyId}`)
     },
-    vendor: {
-      type: new GraphQLList(VendorType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`vendors/find?partyId=${party.partyId}`)
-    },
     glJournal: {
       type: new GraphQLList(GlJournalType),
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`glJournals/find?partyId=${party.partyId}`)
-    },
-    vendor: {
-      type: new GraphQLList(VendorType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`vendors/find?partyId=${party.partyId}`)
     },
     partyIdentification: {
       type: new GraphQLList(PartyIdentificationType),
@@ -412,11 +392,6 @@ const PartyType = new GraphQLObjectType({
       type: new GraphQLList(FixedAssetRegistrationType),
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetRegistrations/find?partyId=${party.partyId}`)
-    },
-    employment: {
-      type: new GraphQLList(EmploymentType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`employments/find?partyId=${party.partyId}`)
     },
     partyProfileDefault: {
       type: new GraphQLList(PartyProfileDefaultType),
@@ -488,11 +463,6 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`perfReviews/find?partyId=${party.partyId}`)
     },
-    partyGlAccount: {
-      type: new GraphQLList(PartyGlAccountType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`partyGlAccounts/find?partyId=${party.partyId}`)
-    },
     timeEntry: {
       type: new GraphQLList(TimeEntryType),
       args : {partyId: {type: GraphQLString}},
@@ -502,16 +472,6 @@ const PartyType = new GraphQLObjectType({
       type: new GraphQLList(PartyBenefitType),
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`partyBenefits/find?partyId=${party.partyId}`)
-    },
-    finAccountTrans: {
-      type: new GraphQLList(FinAccountTransType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`finAccountTranss/find?partyId=${party.partyId}`)
-    },
-    perfReview: {
-      type: new GraphQLList(PerfReviewType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`perfReviews/find?partyId=${party.partyId}`)
     },
     billingAccountRole: {
       type: new GraphQLList(BillingAccountRoleType),
@@ -553,11 +513,6 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`finAccounts/find?partyId=${party.partyId}`)
     },
-    orderItemShipGroup: {
-      type: new GraphQLList(OrderItemShipGroupType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`orderItemShipGroups/find?partyId=${party.partyId}`)
-    },
     partyClassification: {
       type: new GraphQLList(PartyClassificationType),
       args : {partyId: {type: GraphQLString}},
@@ -593,26 +548,6 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`jobInterviews/find?partyId=${party.partyId}`)
     },
-    communicationEvent: {
-      type: new GraphQLList(CommunicationEventType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`communicationEvents/find?partyId=${party.partyId}`)
-    },
-    emplLeave: {
-      type: new GraphQLList(EmplLeaveType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`emplLeaves/find?partyId=${party.partyId}`)
-    },
-    shipment: {
-      type: new GraphQLList(ShipmentType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?partyId=${party.partyId}`)
-    },
-    partyBenefit: {
-      type: new GraphQLList(PartyBenefitType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`partyBenefits/find?partyId=${party.partyId}`)
-    },
     partyContent: {
       type: new GraphQLList(PartyContentType),
       args : {partyId: {type: GraphQLString}},
@@ -622,11 +557,6 @@ const PartyType = new GraphQLObjectType({
       type: new GraphQLList(ProductPriceType),
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`productPrices/find?partyId=${party.partyId}`)
-    },
-    subscription: {
-      type: new GraphQLList(SubscriptionType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`subscriptions/find?partyId=${party.partyId}`)
     },
     partyContactMechPurpose: {
       type: new GraphQLList(PartyContactMechPurposeType),
@@ -663,11 +593,6 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`respondingPartys/find?partyId=${party.partyId}`)
     },
-    timesheet: {
-      type: new GraphQLList(TimesheetType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`timesheets/find?partyId=${party.partyId}`)
-    },
     custRequestType: {
       type: new GraphQLList(CustRequestTypeType),
       args : {partyId: {type: GraphQLString}},
@@ -703,11 +628,6 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`agreementPartyApplics/find?partyId=${party.partyId}`)
     },
-    returnHeader: {
-      type: new GraphQLList(ReturnHeaderType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`returnHeaders/find?partyId=${party.partyId}`)
-    },
     shipmentCostEstimate: {
       type: new GraphQLList(ShipmentCostEstimateType),
       args : {partyId: {type: GraphQLString}},
@@ -718,20 +638,10 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`partyIcsAvsOverrides/find?partyId=${party.partyId}`)
     },
-    invoiceItem: {
-      type: new GraphQLList(InvoiceItemType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`invoiceItems/find?partyId=${party.partyId}`)
-    },
     employmentApp: {
       type: new GraphQLList(EmploymentAppType),
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`employmentApps/find?partyId=${party.partyId}`)
-    },
-    vendor: {
-      type: new GraphQLList(VendorType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`vendors/find?partyId=${party.partyId}`)
     },
     productStoreVendorPayment: {
       type: new GraphQLList(ProductStoreVendorPaymentType),
@@ -742,11 +652,6 @@ const PartyType = new GraphQLObjectType({
       type: new GraphQLList(ProductType),
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`products/find?partyId=${party.partyId}`)
-    },
-    orderItemShipGroup: {
-      type: new GraphQLList(OrderItemShipGroupType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`orderItemShipGroups/find?partyId=${party.partyId}`)
     },
     payrollPreference: {
       type: new GraphQLList(PayrollPreferenceType),
@@ -788,21 +693,6 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`paymentMethods/find?partyId=${party.partyId}`)
     },
-    vendor: {
-      type: new GraphQLList(VendorType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`vendors/find?partyId=${party.partyId}`)
-    },
-    salesForecastHistory: {
-      type: new GraphQLList(SalesForecastHistoryType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`salesForecastHistorys/find?partyId=${party.partyId}`)
-    },
-    jobInterview: {
-      type: new GraphQLList(JobInterviewType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`jobInterviews/find?partyId=${party.partyId}`)
-    },
     productStoreVendorShipment: {
       type: new GraphQLList(ProductStoreVendorShipmentType),
       args : {partyId: {type: GraphQLString}},
@@ -828,11 +718,6 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetTypeGlAccounts/find?partyId=${party.partyId}`)
     },
-    productStoreVendorShipment: {
-      type: new GraphQLList(ProductStoreVendorShipmentType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`productStoreVendorShipments/find?partyId=${party.partyId}`)
-    },
     partyNameHistory: {
       type: new GraphQLList(PartyNameHistoryType),
       args : {partyId: {type: GraphQLString}},
@@ -842,11 +727,6 @@ const PartyType = new GraphQLObjectType({
       type: new GraphQLList(OldPartyTaxInfoType),
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`oldPartyTaxInfos/find?partyId=${party.partyId}`)
-    },
-    finAccount: {
-      type: new GraphQLList(FinAccountType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`finAccounts/find?partyId=${party.partyId}`)
     },
     partyAcctgPreference: {
       type: new GraphQLList(PartyAcctgPreferenceType),
@@ -868,11 +748,6 @@ const PartyType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`giftCardFulfillments/find?partyId=${party.partyId}`)
     },
-    payment: {
-      type: new GraphQLList(PaymentType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`payments/find?partyId=${party.partyId}`)
-    },
     taxAuthority: {
       type: new GraphQLList(TaxAuthorityType),
       args : {partyId: {type: GraphQLString}},
@@ -882,11 +757,6 @@ const PartyType = new GraphQLObjectType({
       type: new GraphQLList(ReorderGuidelineType),
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`reorderGuidelines/find?partyId=${party.partyId}`)
-    },
-    partyCarrierAccount: {
-      type: new GraphQLList(PartyCarrierAccountType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`partyCarrierAccounts/find?partyId=${party.partyId}`)
     },
     productGlAccount: {
       type: new GraphQLList(ProductGlAccountType),
@@ -912,16 +782,6 @@ const PartyType = new GraphQLObjectType({
       type: new GraphQLList(PartyRateType),
       args : {partyId: {type: GraphQLString}},
       resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`partyRates/find?partyId=${party.partyId}`)
-    },
-    invoice: {
-      type: new GraphQLList(InvoiceType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`invoices/find?partyId=${party.partyId}`)
-    },
-    salesForecast: {
-      type: new GraphQLList(SalesForecastType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`salesForecasts/find?partyId=${party.partyId}`)
     },
     orderRole: {
       type: new GraphQLList(OrderRoleType),

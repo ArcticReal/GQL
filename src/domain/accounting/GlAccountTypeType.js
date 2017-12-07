@@ -76,11 +76,6 @@ const GlAccountTypeType = new GraphQLObjectType({
       type: new GraphQLList(PaymentGlAccountTypeMapType),
       args : {glAccountTypeId: {type: GraphQLString}},
       resolve: (glAccountType, args, {loaders}) => loaders.ofbizArray.load(`paymentGlAccountTypeMaps/find?glAccountTypeId=${glAccountType.glAccountTypeId}`)
-    },
-    costComponentCalc: {
-      type: new GraphQLList(CostComponentCalcType),
-      args : {glAccountTypeId: {type: GraphQLString}},
-      resolve: (glAccountType, args, {loaders}) => loaders.ofbizArray.load(`costComponentCalcs/find?glAccountTypeId=${glAccountType.glAccountTypeId}`)
     }
   })
 });

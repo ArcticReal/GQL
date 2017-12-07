@@ -18,7 +18,7 @@ const RequirementAttributeType = new GraphQLObjectType({
 
   fields: () => ({
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     requirement: {
       type: RequirementType,
       args : {requirementId: {type: GraphQLString}},

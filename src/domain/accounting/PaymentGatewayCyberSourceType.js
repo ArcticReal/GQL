@@ -24,21 +24,21 @@ const PaymentGatewayCyberSourceType = new GraphQLObjectType({
       resolve: (paymentGatewayCyberSource, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayCyberSource.paymentGatewayConfigId}`)
     },
     production: {type: GraphQLString},
-    keysDir: {type: GraphQLInt},
-    merchantContact: {type: GraphQLInt},
+    keysDir: {type: GraphQLString},
+    merchantContact: {type: GraphQLString},
     autoBill: {type: GraphQLString},
     enableDav: {type: GraphQLBoolean},
     apiVersion: {type: GraphQLString},
-    keysFile: {type: GraphQLInt},
-    merchantDescr: {type: GraphQLInt},
+    keysFile: {type: GraphQLString},
+    merchantDescr: {type: GraphQLString},
     logEnabled: {type: GraphQLString},
-    merchantId: {type: GraphQLInt},
-    logFile: {type: GraphQLInt},
+    merchantId: {type: GraphQLString},
+    logFile: {type: GraphQLString},
     logSize: {type: GraphQLInt},
     ignoreAvs: {type: GraphQLString},
     disableBillAvs: {type: GraphQLBoolean},
-    logDir: {type: GraphQLInt},
-    avsDeclineCodes: {type: GraphQLInt}
+    logDir: {type: GraphQLString},
+    avsDeclineCodes: {type: GraphQLString}
   })
 });
 

@@ -27,7 +27,7 @@ const SurveyQuestionType = new GraphQLObjectType({
       resolve: (surveyQuestion, args, {loaders}) => loaders.ofbiz.load(`surveyQuestionTypes/find?surveyQuestionTypeId=${surveyQuestion.surveyQuestionTypeId}`)
     },
     enumTypeId: {type: GraphQLString},
-    formatString: {type: GraphQLInt},
+    formatString: {type: GraphQLString},
     surveyQuestionId: {type: GraphQLString},
     surveyQuestionCategory: {
       type: SurveyQuestionCategoryType,

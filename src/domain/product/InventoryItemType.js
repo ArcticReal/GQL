@@ -39,13 +39,13 @@ const InventoryItemType = new GraphQLObjectType({
   description: 'Type for InventoryItem in product',
 
   fields: () => ({
-    softIdentifier: {type: GraphQLInt},
+    softIdentifier: {type: GraphQLString},
     binNumber: {type: GraphQLString},
-    oldAvailableToPromise: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldAvailableToPromise: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     quantityOnHandTotal: {type: GraphQLFloat},
     datetimeManufactured: {type: GraphQLString},
     expireDate: {type: GraphQLString},
-    oldQuantityOnHand: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldQuantityOnHand: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
@@ -69,7 +69,7 @@ const InventoryItemType = new GraphQLObjectType({
       resolve: (inventoryItem, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${inventoryItem.facilityId}`)
     },
     comments: {type: GraphQLString},
-    serialNumber: {type: GraphQLInt},
+    serialNumber: {type: GraphQLString},
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
@@ -89,7 +89,7 @@ const InventoryItemType = new GraphQLObjectType({
       resolve: (inventoryItem, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${inventoryItem.ownerPartyId}`)
     },
     activationValidThru: {type: GraphQLString},
-    activationNumber: {type: GraphQLInt},
+    activationNumber: {type: GraphQLString},
     currencyUomId: {type: GraphQLString},
     statusId: {type: GraphQLString},
     unitCost: {type: GraphQLFloat},

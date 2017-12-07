@@ -17,13 +17,13 @@ const X509IssuerProvisionType = new GraphQLObjectType({
 
   fields: () => ({
     certProvisionId: {type: GraphQLString},
-    commonName: {type: GraphQLInt},
-    country: {type: GraphQLInt},
-    serialNumber: {type: GraphQLInt},
-    organizationName: {type: GraphQLInt},
-    cityLocality: {type: GraphQLInt},
-    stateProvince: {type: GraphQLInt},
-    organizationalUnit: {type: GraphQLInt}
+    commonName: {type: GraphQLString},
+    country: {type: GraphQLString},
+    serialNumber: {type: GraphQLString},
+    organizationName: {type: GraphQLString},
+    cityLocality: {type: GraphQLString},
+    stateProvince: {type: GraphQLString},
+    organizationalUnit: {type: GraphQLString}
   })
 });
 

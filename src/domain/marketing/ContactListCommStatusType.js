@@ -32,7 +32,7 @@ const ContactListCommStatusType = new GraphQLObjectType({
       args : {communicationEventId: {type: GraphQLString}},
       resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`communicationEvents/find?communicationEventId=${contactListCommStatus.communicationEventId}`)
     },
-    messageId: {type: GraphQLInt},
+    messageId: {type: GraphQLString},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},

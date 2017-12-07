@@ -23,7 +23,7 @@ const InvoiceTermAttributeType = new GraphQLObjectType({
       args : {invoiceTermId: {type: GraphQLString}},
       resolve: (invoiceTermAttribute, args, {loaders}) => loaders.ofbiz.load(`invoiceTerms/find?invoiceTermId=${invoiceTermAttribute.invoiceTermId}`)
     },
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}
   })
 });

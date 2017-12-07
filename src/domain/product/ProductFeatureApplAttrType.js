@@ -29,7 +29,7 @@ const ProductFeatureApplAttrType = new GraphQLObjectType({
       args : {productFeatureId: {type: GraphQLString}},
       resolve: (productFeatureApplAttr, args, {loaders}) => loaders.ofbiz.load(`productFeatures/find?productFeatureId=${productFeatureApplAttr.productFeatureId}`)
     },
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}
   })
 });

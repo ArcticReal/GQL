@@ -120,11 +120,6 @@ const GlAccountType = new GraphQLObjectType({
       args : {glAccountId: {type: GraphQLString}},
       resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`varianceReasonGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
-    fixedAssetTypeGlAccount: {
-      type: new GraphQLList(FixedAssetTypeGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
-    },
     orderItem: {
       type: new GraphQLList(OrderItemType),
       args : {glAccountId: {type: GraphQLString}},
@@ -205,11 +200,6 @@ const GlAccountType = new GraphQLObjectType({
       args : {glAccountId: {type: GraphQLString}},
       resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`productGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
-    fixedAssetTypeGlAccount: {
-      type: new GraphQLList(FixedAssetTypeGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
-    },
     paymentMethodType: {
       type: new GraphQLList(PaymentMethodTypeType),
       args : {glAccountId: {type: GraphQLString}},
@@ -224,16 +214,6 @@ const GlAccountType = new GraphQLObjectType({
       type: new GraphQLList(InvoiceItemTypeType),
       args : {glAccountId: {type: GraphQLString}},
       resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemTypes/find?glAccountId=${glAccount.glAccountId}`)
-    },
-    fixedAssetTypeGlAccount: {
-      type: new GraphQLList(FixedAssetTypeGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
-    },
-    fixedAssetTypeGlAccount: {
-      type: new GraphQLList(FixedAssetTypeGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
     acctgTransEntry: {
       type: new GraphQLList(AcctgTransEntryType),

@@ -18,8 +18,8 @@ const PaymentGatewayWorldPayType = new GraphQLObjectType({
 
   fields: () => ({
     authMode: {type: GraphQLBoolean},
-    instId: {type: GraphQLInt},
-    redirectUrl: {type: GraphQLInt},
+    instId: {type: GraphQLString},
+    redirectUrl: {type: GraphQLString},
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},

@@ -54,11 +54,6 @@ const FacilityGroupType = new GraphQLObjectType({
       args : {facilityGroupId: {type: GraphQLString}},
       resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`facilityGroups/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
     },
-    facilityGroupRollup: {
-      type: new GraphQLList(FacilityGroupRollupType),
-      args : {facilityGroupId: {type: GraphQLString}},
-      resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`facilityGroupRollups/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
-    },
     facility: {
       type: new GraphQLList(FacilityType),
       args : {facilityGroupId: {type: GraphQLString}},

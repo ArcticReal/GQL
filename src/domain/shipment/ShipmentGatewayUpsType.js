@@ -17,13 +17,13 @@ const ShipmentGatewayUpsType = new GraphQLObjectType({
   description: 'Type for ShipmentGatewayUps in shipment',
 
   fields: () => ({
-    connectUrl: {type: GraphQLInt},
-    accessUserId: {type: GraphQLInt},
-    saveCertPath: {type: GraphQLInt},
-    billShipperAccountNumber: {type: GraphQLInt},
-    defaultReturnLabelSubject: {type: GraphQLInt},
+    connectUrl: {type: GraphQLString},
+    accessUserId: {type: GraphQLString},
+    saveCertPath: {type: GraphQLString},
+    billShipperAccountNumber: {type: GraphQLString},
+    defaultReturnLabelSubject: {type: GraphQLString},
     customerClassification: {type: GraphQLString},
-    shipperNumber: {type: GraphQLInt},
+    shipperNumber: {type: GraphQLString},
     maxEstimateWeight: {type: GraphQLFloat},
     codSurchargeApplyToPackage: {type: GraphQLString},
     saveCertInfo: {type: GraphQLString},
@@ -36,12 +36,12 @@ const ShipmentGatewayUpsType = new GraphQLObjectType({
       resolve: (shipmentGatewayUps, args, {loaders}) => loaders.ofbiz.load(`shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayUps.shipmentGatewayConfigId}`)
     },
     minEstimateWeight: {type: GraphQLFloat},
-    codAllowCod: {type: GraphQLInt},
+    codAllowCod: {type: GraphQLString},
     connectTimeout: {type: GraphQLInt},
     codSurchargeAmount: {type: GraphQLFloat},
-    accessPassword: {type: GraphQLInt},
-    accessLicenseNumber: {type: GraphQLInt},
-    defaultReturnLabelMemo: {type: GraphQLInt}
+    accessPassword: {type: GraphQLString},
+    accessLicenseNumber: {type: GraphQLString},
+    defaultReturnLabelMemo: {type: GraphQLString}
   })
 });
 

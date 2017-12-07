@@ -157,20 +157,10 @@ const ContactMechType = new GraphQLObjectType({
       args : {contactMechId: {type: GraphQLString}},
       resolve: (contactMech, args, {loaders}) => loaders.ofbizArray.load(`facilityContactMechs/find?contactMechId=${contactMech.contactMechId}`)
     },
-    communicationEvent: {
-      type: new GraphQLList(CommunicationEventType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (contactMech, args, {loaders}) => loaders.ofbizArray.load(`communicationEvents/find?contactMechId=${contactMech.contactMechId}`)
-    },
     invoice: {
       type: new GraphQLList(InvoiceType),
       args : {contactMechId: {type: GraphQLString}},
       resolve: (contactMech, args, {loaders}) => loaders.ofbizArray.load(`invoices/find?contactMechId=${contactMech.contactMechId}`)
-    },
-    contactMechLink: {
-      type: new GraphQLList(ContactMechLinkType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (contactMech, args, {loaders}) => loaders.ofbizArray.load(`contactMechLinks/find?contactMechId=${contactMech.contactMechId}`)
     },
     shipmentContactMech: {
       type: new GraphQLList(ShipmentContactMechType),
@@ -212,11 +202,6 @@ const ContactMechType = new GraphQLObjectType({
       args : {contactMechId: {type: GraphQLString}},
       resolve: (contactMech, args, {loaders}) => loaders.ofbizArray.load(`contactListCommStatuss/find?contactMechId=${contactMech.contactMechId}`)
     },
-    vendor: {
-      type: new GraphQLList(VendorType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (contactMech, args, {loaders}) => loaders.ofbizArray.load(`vendors/find?contactMechId=${contactMech.contactMechId}`)
-    },
     eftAccount: {
       type: new GraphQLList(EftAccountType),
       args : {contactMechId: {type: GraphQLString}},
@@ -231,11 +216,6 @@ const ContactMechType = new GraphQLObjectType({
       type: new GraphQLList(WorkEffortContactMechType),
       args : {contactMechId: {type: GraphQLString}},
       resolve: (contactMech, args, {loaders}) => loaders.ofbizArray.load(`workEffortContactMechs/find?contactMechId=${contactMech.contactMechId}`)
-    },
-    orderItemShipGroup: {
-      type: new GraphQLList(OrderItemShipGroupType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (contactMech, args, {loaders}) => loaders.ofbizArray.load(`orderItemShipGroups/find?contactMechId=${contactMech.contactMechId}`)
     },
     orderContactMech: {
       type: new GraphQLList(OrderContactMechType),

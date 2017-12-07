@@ -208,11 +208,6 @@ const ProductType = new GraphQLObjectType({
       args : {productId: {type: GraphQLString}},
       resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productManufacturingRules/find?productId=${product.productId}`)
     },
-    productManufacturingRule: {
-      type: new GraphQLList(ProductManufacturingRuleType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productManufacturingRules/find?productId=${product.productId}`)
-    },
     costComponent: {
       type: new GraphQLList(CostComponentType),
       args : {productId: {type: GraphQLString}},
@@ -318,11 +313,6 @@ const ProductType = new GraphQLObjectType({
       args : {productId: {type: GraphQLString}},
       resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`fixedAssets/find?productId=${product.productId}`)
     },
-    productAssoc: {
-      type: new GraphQLList(ProductAssocType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productAssocs/find?productId=${product.productId}`)
-    },
     productCostComponentCalc: {
       type: new GraphQLList(ProductCostComponentCalcType),
       args : {productId: {type: GraphQLString}},
@@ -398,11 +388,6 @@ const ProductType = new GraphQLObjectType({
       args : {productId: {type: GraphQLString}},
       resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`orderItems/find?productId=${product.productId}`)
     },
-    productManufacturingRule: {
-      type: new GraphQLList(ProductManufacturingRuleType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productManufacturingRules/find?productId=${product.productId}`)
-    },
     shipmentItem: {
       type: new GraphQLList(ShipmentItemType),
       args : {productId: {type: GraphQLString}},
@@ -472,11 +457,6 @@ const ProductType = new GraphQLObjectType({
       type: new GraphQLList(ProductConfigStatsType),
       args : {productId: {type: GraphQLString}},
       resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productConfigStatss/find?productId=${product.productId}`)
-    },
-    productManufacturingRule: {
-      type: new GraphQLList(ProductManufacturingRuleType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productManufacturingRules/find?productId=${product.productId}`)
     },
     productMeter: {
       type: new GraphQLList(ProductMeterType),

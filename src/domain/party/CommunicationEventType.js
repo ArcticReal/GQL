@@ -78,7 +78,7 @@ const CommunicationEventType = new GraphQLObjectType({
     entryDate: {type: GraphQLString},
     datetimeEnded: {type: GraphQLString},
     origCommEventId: {type: GraphQLString},
-    messageId: {type: GraphQLInt},
+    messageId: {type: GraphQLString},
     roleTypeFrom: {
       type: RoleTypeType,
       args : {roleTypeIdFrom: {type: GraphQLString}},

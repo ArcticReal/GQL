@@ -27,8 +27,8 @@ const PaymentGatewayClearCommerceType = new GraphQLObjectType({
     },
     groupId: {type: GraphQLString},
     userAlias: {type: GraphQLString},
-    serverURL: {type: GraphQLInt},
-    pwd: {type: GraphQLInt},
+    serverURL: {type: GraphQLString},
+    pwd: {type: GraphQLString},
     processMode: {type: GraphQLBoolean},
     enableCVM: {type: GraphQLBoolean},
     username: {type: GraphQLString}

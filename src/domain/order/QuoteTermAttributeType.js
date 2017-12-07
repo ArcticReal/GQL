@@ -24,7 +24,7 @@ const QuoteTermAttributeType = new GraphQLObjectType({
       args : {termTypeId: {type: GraphQLString}},
       resolve: (quoteTermAttribute, args, {loaders}) => loaders.ofbiz.load(`quoteTerms/find?termTypeId=${quoteTermAttribute.termTypeId}`)
     },
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     quoteId: {type: GraphQLString},
     attrName: {type: GraphQLString}
   })

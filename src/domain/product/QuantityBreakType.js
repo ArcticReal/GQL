@@ -30,16 +30,6 @@ const QuantityBreakType = new GraphQLObjectType({
       type: new GraphQLList(ShipmentCostEstimateType),
       args : {quantityBreakId: {type: GraphQLString}},
       resolve: (quantityBreak, args, {loaders}) => loaders.ofbizArray.load(`shipmentCostEstimates/find?quantityBreakId=${quantityBreak.quantityBreakId}`)
-    },
-    shipmentCostEstimate: {
-      type: new GraphQLList(ShipmentCostEstimateType),
-      args : {quantityBreakId: {type: GraphQLString}},
-      resolve: (quantityBreak, args, {loaders}) => loaders.ofbizArray.load(`shipmentCostEstimates/find?quantityBreakId=${quantityBreak.quantityBreakId}`)
-    },
-    shipmentCostEstimate: {
-      type: new GraphQLList(ShipmentCostEstimateType),
-      args : {quantityBreakId: {type: GraphQLString}},
-      resolve: (quantityBreak, args, {loaders}) => loaders.ofbizArray.load(`shipmentCostEstimates/find?quantityBreakId=${quantityBreak.quantityBreakId}`)
     }
   })
 });

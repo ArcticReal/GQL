@@ -34,11 +34,6 @@ const ProductConfigOptionType = new GraphQLObjectType({
       args : {configItemId: {type: GraphQLString}},
       resolve: (productConfigOption, args, {loaders}) => loaders.ofbizArray.load(`productConfigOptionIactns/find?configItemId=${productConfigOption.configItemId}`)
     },
-    productConfigOptionIactn: {
-      type: new GraphQLList(ProductConfigOptionIactnType),
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigOption, args, {loaders}) => loaders.ofbizArray.load(`productConfigOptionIactns/find?configItemId=${productConfigOption.configItemId}`)
-    },
     productConfigProduct: {
       type: new GraphQLList(ProductConfigProductType),
       args : {configItemId: {type: GraphQLString}},

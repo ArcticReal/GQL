@@ -17,24 +17,24 @@ const ShipmentGatewayFedexType = new GraphQLObjectType({
   description: 'Type for ShipmentGatewayFedex in shipment',
 
   fields: () => ({
-    connectUrl: {type: GraphQLInt},
-    accessMeterNumber: {type: GraphQLInt},
-    rateEstimateTemplate: {type: GraphQLInt},
+    connectUrl: {type: GraphQLString},
+    accessMeterNumber: {type: GraphQLString},
+    rateEstimateTemplate: {type: GraphQLString},
     labelImageType: {type: GraphQLString},
-    defaultDropoffType: {type: GraphQLInt},
-    accessUserKey: {type: GraphQLInt},
-    templateShipment: {type: GraphQLInt},
-    templateSubscription: {type: GraphQLInt},
-    accessUserPwd: {type: GraphQLInt},
+    defaultDropoffType: {type: GraphQLString},
+    accessUserKey: {type: GraphQLString},
+    templateShipment: {type: GraphQLString},
+    templateSubscription: {type: GraphQLString},
+    accessUserPwd: {type: GraphQLString},
     shipmentGatewayConfig: {
       type: ShipmentGatewayConfigType,
       args : {shipmentGatewayConfigId: {type: GraphQLString}},
       resolve: (shipmentGatewayFedex, args, {loaders}) => loaders.ofbiz.load(`shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayFedex.shipmentGatewayConfigId}`)
     },
-    defaultPackagingType: {type: GraphQLInt},
+    defaultPackagingType: {type: GraphQLString},
     connectTimeout: {type: GraphQLInt},
-    accessAccountNbr: {type: GraphQLInt},
-    connectSoapUrl: {type: GraphQLInt}
+    accessAccountNbr: {type: GraphQLString},
+    connectSoapUrl: {type: GraphQLString}
   })
 });
 

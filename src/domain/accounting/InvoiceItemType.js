@@ -139,11 +139,6 @@ const InvoiceItemType = new GraphQLObjectType({
       type: new GraphQLList(InvoiceItemType),
       args : {invoiceId: {type: GraphQLString}},
       resolve: (invoiceItem, args, {loaders}) => loaders.ofbizArray.load(`invoiceItems/find?invoiceId=${invoiceItem.invoiceId}`)
-    },
-    invoiceItemAssoc: {
-      type: new GraphQLList(InvoiceItemAssocType),
-      args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoiceItem, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemAssocs/find?invoiceId=${invoiceItem.invoiceId}`)
     }
   })
 });

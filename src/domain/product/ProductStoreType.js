@@ -53,7 +53,7 @@ const ProductStoreType = new GraphQLObjectType({
     autoApproveOrder: {type: GraphQLBoolean},
     allowPassword: {type: GraphQLBoolean},
     showTaxIsExempt: {type: GraphQLBoolean},
-    oldHeaderLogo: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldHeaderLogo: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     autoSaveCart: {type: GraphQLBoolean},
     inventoryFacility: {
       type: FacilityType,
@@ -61,11 +61,11 @@ const ProductStoreType = new GraphQLObjectType({
       resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${productStore.inventoryFacilityId}`)
     },
     headerApprovedStatus: {type: GraphQLString},
-    oldHeaderMiddleBackground: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldHeaderMiddleBackground: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     defaultTimeZoneString: {type: GraphQLString},
     prorateTaxes: {type: GraphQLBoolean},
     showCheckoutGiftOptions: {type: GraphQLBoolean},
-    oldStyleSheet: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldStyleSheet: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     manualAuthIsCapture: {type: GraphQLBoolean},
     itemDeclinedStatus: {type: GraphQLString},
     visualThemeId: {type: GraphQLString},
@@ -97,7 +97,7 @@ const ProductStoreType = new GraphQLObjectType({
       args : {primaryStoreGroupId: {type: GraphQLString}},
       resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`productStoreGroups/find?productStoreGroupId=${productStore.primaryStoreGroupId}`)
     },
-    oldHeaderRightBackground: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldHeaderRightBackground: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     enableDigProdUpload: {type: GraphQLBoolean},
     autoOrderCcTryOtherCards: {type: GraphQLBoolean},
     autoOrderCcTryLaterMax: {type: GraphQLInt},
@@ -236,11 +236,6 @@ const ProductStoreType = new GraphQLObjectType({
       type: new GraphQLList(OrderHeaderType),
       args : {productStoreId: {type: GraphQLString}},
       resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`orderHeaders/find?productStoreId=${productStore.productStoreId}`)
-    },
-    productStoreVendorShipment: {
-      type: new GraphQLList(ProductStoreVendorShipmentType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStoreVendorShipments/find?productStoreId=${productStore.productStoreId}`)
     }
   })
 });

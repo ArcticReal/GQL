@@ -170,11 +170,6 @@ const OrderHeaderType = new GraphQLObjectType({
       args : {orderId: {type: GraphQLString}},
       resolve: (orderHeader, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetMaintOrders/find?orderId=${orderHeader.orderId}`)
     },
-    orderItemAssoc: {
-      type: new GraphQLList(OrderItemAssocType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderHeader, args, {loaders}) => loaders.ofbizArray.load(`orderItemAssocs/find?orderId=${orderHeader.orderId}`)
-    },
     orderProductPromoCode: {
       type: new GraphQLList(OrderProductPromoCodeType),
       args : {orderId: {type: GraphQLString}},
@@ -274,11 +269,6 @@ const OrderHeaderType = new GraphQLObjectType({
       type: new GraphQLList(OrderItemShipGroupAssocType),
       args : {orderId: {type: GraphQLString}},
       resolve: (orderHeader, args, {loaders}) => loaders.ofbizArray.load(`orderItemShipGroupAssocs/find?orderId=${orderHeader.orderId}`)
-    },
-    productOrderItem: {
-      type: new GraphQLList(ProductOrderItemType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderHeader, args, {loaders}) => loaders.ofbizArray.load(`productOrderItems/find?orderId=${orderHeader.orderId}`)
     },
     orderItem: {
       type: new GraphQLList(OrderItemType),

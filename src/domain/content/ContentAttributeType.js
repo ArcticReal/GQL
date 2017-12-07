@@ -23,7 +23,7 @@ const ContentAttributeType = new GraphQLObjectType({
       args : {contentId: {type: GraphQLString}},
       resolve: (contentAttribute, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentAttribute.contentId}`)
     },
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}
   })
 });

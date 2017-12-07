@@ -18,7 +18,7 @@ const SubscriptionAttributeType = new GraphQLObjectType({
 
   fields: () => ({
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     subscription: {
       type: SubscriptionType,
       args : {subscriptionId: {type: GraphQLString}},

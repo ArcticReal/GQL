@@ -16,7 +16,7 @@ const EmailAddressVerificationType = new GraphQLObjectType({
   description: 'Type for EmailAddressVerification in party',
 
   fields: () => ({
-    verifyHash: {type: GraphQLInt},
+    verifyHash: {type: GraphQLString},
     emailAddress: {type: GraphQLString},
     expireDate: {type: GraphQLString}
   })

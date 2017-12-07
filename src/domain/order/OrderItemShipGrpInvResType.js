@@ -29,7 +29,7 @@ const OrderItemShipGrpInvResType = new GraphQLObjectType({
     priority: {type: GraphQLBoolean},
     shipGroupSeqId: {type: GraphQLString},
     sequenceId: {type: GraphQLInt},
-    oldPickStartDate: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldPickStartDate: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     currentPromisedDate: {type: GraphQLString},
     inventoryItem: {
       type: InventoryItemType,

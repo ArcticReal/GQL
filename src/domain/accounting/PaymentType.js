@@ -128,11 +128,6 @@ const PaymentType = new GraphQLObjectType({
       args : {paymentId: {type: GraphQLString}},
       resolve: (payment, args, {loaders}) => loaders.ofbizArray.load(`returnItemResponses/find?paymentId=${payment.paymentId}`)
     },
-    paymentApplication: {
-      type: new GraphQLList(PaymentApplicationType),
-      args : {paymentId: {type: GraphQLString}},
-      resolve: (payment, args, {loaders}) => loaders.ofbizArray.load(`paymentApplications/find?paymentId=${payment.paymentId}`)
-    },
     paymentGroupMember: {
       type: new GraphQLList(PaymentGroupMemberType),
       args : {paymentId: {type: GraphQLString}},

@@ -18,7 +18,7 @@ const AcctgTransAttributeType = new GraphQLObjectType({
 
   fields: () => ({
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     acctgTrans: {
       type: AcctgTransType,
       args : {acctgTransId: {type: GraphQLString}},

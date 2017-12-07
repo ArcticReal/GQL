@@ -43,7 +43,7 @@ const OrderAdjustmentType = new GraphQLObjectType({
     },
     taxAuthPartyId: {type: GraphQLString},
     lastModifiedByUserLogin: {type: GraphQLString},
-    oldPercentage: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldPercentage: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     primaryGeoId: {type: GraphQLString},
     taxAuthGeo: {
       type: TaxAuthorityType,
@@ -87,7 +87,7 @@ const OrderAdjustmentType = new GraphQLObjectType({
       args : {overrideGlAccountId: {type: GraphQLString}},
       resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${orderAdjustment.overrideGlAccountId}`)
     },
-    oldAmountPerQuantity: {type: GraphQLString/*this was an Object TODO find a solution*/},
+    oldAmountPerQuantity: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     shipGroupSeqId: {type: GraphQLString},
     includeInTax: {type: GraphQLBoolean},
     createdDate: {type: GraphQLString},

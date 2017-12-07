@@ -19,7 +19,7 @@ const ContentMetaDataType = new GraphQLObjectType({
 
   fields: () => ({
     dataSourceId: {type: GraphQLString},
-    metaDataValue: {type: GraphQLInt},
+    metaDataValue: {type: GraphQLString},
     metaDataPredicate: {
       type: MetaDataPredicateType,
       args : {metaDataPredicateId: {type: GraphQLString}},

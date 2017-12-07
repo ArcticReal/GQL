@@ -18,7 +18,7 @@ const ContactMechAttributeType = new GraphQLObjectType({
 
   fields: () => ({
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},

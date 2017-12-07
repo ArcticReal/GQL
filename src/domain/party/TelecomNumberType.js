@@ -34,20 +34,10 @@ const TelecomNumberType = new GraphQLObjectType({
       args : {contactMechId: {type: GraphQLString}},
       resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?contactMechId=${telecomNumber.contactMechId}`)
     },
-    shipment: {
-      type: new GraphQLList(ShipmentType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?contactMechId=${telecomNumber.contactMechId}`)
-    },
     orderItemShipGroup: {
       type: new GraphQLList(OrderItemShipGroupType),
       args : {contactMechId: {type: GraphQLString}},
       resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`orderItemShipGroups/find?contactMechId=${telecomNumber.contactMechId}`)
-    },
-    shipmentRouteSegment: {
-      type: new GraphQLList(ShipmentRouteSegmentType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`shipmentRouteSegments/find?contactMechId=${telecomNumber.contactMechId}`)
     },
     shipmentRouteSegment: {
       type: new GraphQLList(ShipmentRouteSegmentType),

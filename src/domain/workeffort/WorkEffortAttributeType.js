@@ -23,7 +23,7 @@ const WorkEffortAttributeType = new GraphQLObjectType({
       resolve: (workEffortAttribute, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortAttribute.workEffortId}`)
     },
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}
   })
 });

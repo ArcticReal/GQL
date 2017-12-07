@@ -109,11 +109,6 @@ const ProductCategoryType = new GraphQLObjectType({
       args : {productCategoryId: {type: GraphQLString}},
       resolve: (productCategory, args, {loaders}) => loaders.ofbizArray.load(`taxAuthorityCategorys/find?productCategoryId=${productCategory.productCategoryId}`)
     },
-    productCategoryRollup: {
-      type: new GraphQLList(ProductCategoryRollupType),
-      args : {productCategoryId: {type: GraphQLString}},
-      resolve: (productCategory, args, {loaders}) => loaders.ofbizArray.load(`productCategoryRollups/find?productCategoryId=${productCategory.productCategoryId}`)
-    },
     productCategoryGlAccount: {
       type: new GraphQLList(ProductCategoryGlAccountType),
       args : {productCategoryId: {type: GraphQLString}},

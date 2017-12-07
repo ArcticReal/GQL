@@ -79,11 +79,6 @@ const TaxAuthorityType = new GraphQLObjectType({
       type: new GraphQLList(ReturnAdjustmentType),
       args : {taxAuthGeoId: {type: GraphQLString}},
       resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`returnAdjustments/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
-    },
-    taxAuthorityAssoc: {
-      type: new GraphQLList(TaxAuthorityAssocType),
-      args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`taxAuthorityAssocs/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
     }
   })
 });

@@ -23,7 +23,7 @@ const DataResourceAttributeType = new GraphQLObjectType({
       args : {dataResourceId: {type: GraphQLString}},
       resolve: (dataResourceAttribute, args, {loaders}) => loaders.ofbiz.load(`dataResources/find?dataResourceId=${dataResourceAttribute.dataResourceId}`)
     },
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}
   })
 });

@@ -23,7 +23,7 @@ const PaymentAttributeType = new GraphQLObjectType({
       resolve: (paymentAttribute, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${paymentAttribute.paymentId}`)
     },
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}
   })
 });

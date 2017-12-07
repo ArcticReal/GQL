@@ -176,11 +176,6 @@ const OrderItemType = new GraphQLObjectType({
       args : {orderId: {type: GraphQLString}},
       resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`itemIssuances/find?orderId=${orderItem.orderId}`)
     },
-    productOrderItem: {
-      type: new GraphQLList(ProductOrderItemType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`productOrderItems/find?orderId=${orderItem.orderId}`)
-    },
     giftCardFulfillment: {
       type: new GraphQLList(GiftCardFulfillmentType),
       args : {orderId: {type: GraphQLString}},

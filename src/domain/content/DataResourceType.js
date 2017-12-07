@@ -35,7 +35,7 @@ const DataResourceType = new GraphQLObjectType({
   description: 'Type for DataResource in content',
 
   fields: () => ({
-    dataResourceName: {type: GraphQLInt},
+    dataResourceName: {type: GraphQLString},
     survey: {
       type: SurveyType,
       args : {surveyId: {type: GraphQLString}},
@@ -111,11 +111,6 @@ const DataResourceType = new GraphQLObjectType({
       args : {dataResourceId: {type: GraphQLString}},
       resolve: (dataResource, args, {loaders}) => loaders.ofbizArray.load(`otherDataResources/find?dataResourceId=${dataResource.dataResourceId}`)
     },
-    content: {
-      type: new GraphQLList(ContentType),
-      args : {dataResourceId: {type: GraphQLString}},
-      resolve: (dataResource, args, {loaders}) => loaders.ofbizArray.load(`contents/find?dataResourceId=${dataResource.dataResourceId}`)
-    },
     electronicText: {
       type: new GraphQLList(ElectronicTextType),
       args : {dataResourceId: {type: GraphQLString}},
@@ -135,11 +130,6 @@ const DataResourceType = new GraphQLObjectType({
       type: new GraphQLList(DataResourcePurposeType),
       args : {dataResourceId: {type: GraphQLString}},
       resolve: (dataResource, args, {loaders}) => loaders.ofbizArray.load(`dataResourcePurposes/find?dataResourceId=${dataResource.dataResourceId}`)
-    },
-    contentRevisionItem: {
-      type: new GraphQLList(ContentRevisionItemType),
-      args : {dataResourceId: {type: GraphQLString}},
-      resolve: (dataResource, args, {loaders}) => loaders.ofbizArray.load(`contentRevisionItems/find?dataResourceId=${dataResource.dataResourceId}`)
     },
     dataResourceRole: {
       type: new GraphQLList(DataResourceRoleType),

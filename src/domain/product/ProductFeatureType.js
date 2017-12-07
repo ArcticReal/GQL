@@ -97,11 +97,6 @@ const ProductFeatureType = new GraphQLObjectType({
       args : {productFeatureId: {type: GraphQLString}},
       resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`desiredFeatures/find?productFeatureId=${productFeature.productFeatureId}`)
     },
-    productFeatureIactn: {
-      type: new GraphQLList(ProductFeatureIactnType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`productFeatureIactns/find?productFeatureId=${productFeature.productFeatureId}`)
-    },
     quoteItem: {
       type: new GraphQLList(QuoteItemType),
       args : {productFeatureId: {type: GraphQLString}},

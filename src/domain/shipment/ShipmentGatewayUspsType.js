@@ -17,8 +17,8 @@ const ShipmentGatewayUspsType = new GraphQLObjectType({
   description: 'Type for ShipmentGatewayUsps in shipment',
 
   fields: () => ({
-    connectUrl: {type: GraphQLInt},
-    accessUserId: {type: GraphQLInt},
+    connectUrl: {type: GraphQLString},
+    accessUserId: {type: GraphQLString},
     test: {type: GraphQLString},
     shipmentGatewayConfig: {
       type: ShipmentGatewayConfigType,
@@ -26,8 +26,8 @@ const ShipmentGatewayUspsType = new GraphQLObjectType({
       resolve: (shipmentGatewayUsps, args, {loaders}) => loaders.ofbiz.load(`shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayUsps.shipmentGatewayConfigId}`)
     },
     connectTimeout: {type: GraphQLInt},
-    connectUrlLabels: {type: GraphQLInt},
-    accessPassword: {type: GraphQLInt},
+    connectUrlLabels: {type: GraphQLString},
+    accessPassword: {type: GraphQLString},
     maxEstimateWeight: {type: GraphQLInt}
   })
 });

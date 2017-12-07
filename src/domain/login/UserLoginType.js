@@ -162,11 +162,6 @@ const UserLoginType = new GraphQLObjectType({
       args : {userLoginId: {type: GraphQLString}},
       resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemStatuss/find?userLoginId=${userLogin.userLoginId}`)
     },
-    product: {
-      type: new GraphQLList(ProductType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`products/find?userLoginId=${userLogin.userLoginId}`)
-    },
     budgetStatus: {
       type: new GraphQLList(BudgetStatusType),
       args : {userLoginId: {type: GraphQLString}},
@@ -227,11 +222,6 @@ const UserLoginType = new GraphQLObjectType({
       args : {userLoginId: {type: GraphQLString}},
       resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`dataResources/find?userLoginId=${userLogin.userLoginId}`)
     },
-    productFeaturePrice: {
-      type: new GraphQLList(ProductFeaturePriceType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`productFeaturePrices/find?userLoginId=${userLogin.userLoginId}`)
-    },
     productPriceChange: {
       type: new GraphQLList(ProductPriceChangeType),
       args : {userLoginId: {type: GraphQLString}},
@@ -246,11 +236,6 @@ const UserLoginType = new GraphQLObjectType({
       type: new GraphQLList(ContactListCommStatusType),
       args : {userLoginId: {type: GraphQLString}},
       resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`contactListCommStatuss/find?userLoginId=${userLogin.userLoginId}`)
-    },
-    picklistRole: {
-      type: new GraphQLList(PicklistRoleType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`picklistRoles/find?userLoginId=${userLogin.userLoginId}`)
     },
     salesForecastHistory: {
       type: new GraphQLList(SalesForecastHistoryType),
@@ -277,40 +262,15 @@ const UserLoginType = new GraphQLObjectType({
       args : {userLoginId: {type: GraphQLString}},
       resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`orderItemChanges/find?userLoginId=${userLogin.userLoginId}`)
     },
-    contentAssoc: {
-      type: new GraphQLList(ContentAssocType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`contentAssocs/find?userLoginId=${userLogin.userLoginId}`)
-    },
-    dataResource: {
-      type: new GraphQLList(DataResourceType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`dataResources/find?userLoginId=${userLogin.userLoginId}`)
-    },
     shipmentStatus: {
       type: new GraphQLList(ShipmentStatusType),
       args : {userLoginId: {type: GraphQLString}},
       resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`shipmentStatuss/find?userLoginId=${userLogin.userLoginId}`)
     },
-    orderItem: {
-      type: new GraphQLList(OrderItemType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`orderItems/find?userLoginId=${userLogin.userLoginId}`)
-    },
     userLoginPasswordHistory: {
       type: new GraphQLList(UserLoginPasswordHistoryType),
       args : {userLoginId: {type: GraphQLString}},
       resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`userLoginPasswordHistorys/find?userLoginId=${userLogin.userLoginId}`)
-    },
-    productPrice: {
-      type: new GraphQLList(ProductPriceType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`productPrices/find?userLoginId=${userLogin.userLoginId}`)
-    },
-    productPromo: {
-      type: new GraphQLList(ProductPromoType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`productPromos/find?userLoginId=${userLogin.userLoginId}`)
     },
     webUserPreference: {
       type: new GraphQLList(WebUserPreferenceType),
@@ -322,30 +282,10 @@ const UserLoginType = new GraphQLObjectType({
       args : {userLoginId: {type: GraphQLString}},
       resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`workEffortReviews/find?userLoginId=${userLogin.userLoginId}`)
     },
-    content: {
-      type: new GraphQLList(ContentType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`contents/find?userLoginId=${userLogin.userLoginId}`)
-    },
-    contactList: {
-      type: new GraphQLList(ContactListType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`contactLists/find?userLoginId=${userLogin.userLoginId}`)
-    },
-    productPromoCode: {
-      type: new GraphQLList(ProductPromoCodeType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`productPromoCodes/find?userLoginId=${userLogin.userLoginId}`)
-    },
     custRequestStatus: {
       type: new GraphQLList(CustRequestStatusType),
       args : {userLoginId: {type: GraphQLString}},
       resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`custRequestStatuss/find?userLoginId=${userLogin.userLoginId}`)
-    },
-    party: {
-      type: new GraphQLList(PartyType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`partys/find?userLoginId=${userLogin.userLoginId}`)
     },
     quoteAdjustment: {
       type: new GraphQLList(QuoteAdjustmentType),
@@ -361,11 +301,6 @@ const UserLoginType = new GraphQLObjectType({
       type: new GraphQLList(WorkEffortStatusType),
       args : {userLoginId: {type: GraphQLString}},
       resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`workEffortStatuss/find?userLoginId=${userLogin.userLoginId}`)
-    },
-    salesForecast: {
-      type: new GraphQLList(SalesForecastType),
-      args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`salesForecasts/find?userLoginId=${userLogin.userLoginId}`)
     }
   })
 });

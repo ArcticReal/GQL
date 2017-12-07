@@ -119,11 +119,6 @@ const RoleTypeType = new GraphQLObjectType({
       args : {roleTypeId: {type: GraphQLString}},
       resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`acctgTranss/find?roleTypeId=${roleType.roleTypeId}`)
     },
-    subscription: {
-      type: new GraphQLList(SubscriptionType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`subscriptions/find?roleTypeId=${roleType.roleTypeId}`)
-    },
     facilityParty: {
       type: new GraphQLList(FacilityPartyType),
       args : {roleTypeId: {type: GraphQLString}},
@@ -143,16 +138,6 @@ const RoleTypeType = new GraphQLObjectType({
       type: new GraphQLList(AcctgTransEntryType),
       args : {roleTypeId: {type: GraphQLString}},
       resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`acctgTransEntrys/find?roleTypeId=${roleType.roleTypeId}`)
-    },
-    communicationEvent: {
-      type: new GraphQLList(CommunicationEventType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`communicationEvents/find?roleTypeId=${roleType.roleTypeId}`)
-    },
-    partyRelationshipType: {
-      type: new GraphQLList(PartyRelationshipTypeType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`partyRelationshipTypes/find?roleTypeId=${roleType.roleTypeId}`)
     },
     roleType: {
       type: new GraphQLList(RoleTypeType),

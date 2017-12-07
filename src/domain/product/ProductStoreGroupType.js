@@ -51,11 +51,6 @@ const ProductStoreGroupType = new GraphQLObjectType({
       args : {productStoreGroupId: {type: GraphQLString}},
       resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`productStoreGroupRollups/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
     },
-    productStoreGroupRollup: {
-      type: new GraphQLList(ProductStoreGroupRollupType),
-      args : {productStoreGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`productStoreGroupRollups/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
-    },
     vendorProduct: {
       type: new GraphQLList(VendorProductType),
       args : {productStoreGroupId: {type: GraphQLString}},

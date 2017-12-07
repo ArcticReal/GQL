@@ -22,9 +22,9 @@ const PaymentGatewaySecurePayType = new GraphQLObjectType({
       args : {paymentGatewayConfigId: {type: GraphQLString}},
       resolve: (paymentGatewaySecurePay, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewaySecurePay.paymentGatewayConfigId}`)
     },
-    merchantId: {type: GraphQLInt},
-    serverURL: {type: GraphQLInt},
-    pwd: {type: GraphQLInt},
+    merchantId: {type: GraphQLString},
+    serverURL: {type: GraphQLString},
+    pwd: {type: GraphQLString},
     processTimeout: {type: GraphQLInt},
     enableAmountRound: {type: GraphQLBoolean}
   })

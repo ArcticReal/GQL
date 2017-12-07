@@ -17,24 +17,24 @@ const PaymentGatewayPayPalType = new GraphQLObjectType({
   description: 'Type for PaymentGatewayPayPal in accounting',
 
   fields: () => ({
-    businessEmail: {type: GraphQLInt},
+    businessEmail: {type: GraphQLString},
     apiUserName: {type: GraphQLString},
-    redirectUrl: {type: GraphQLInt},
+    redirectUrl: {type: GraphQLString},
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},
       resolve: (paymentGatewayPayPal, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayPayPal.paymentGatewayConfigId}`)
     },
-    confirmTemplate: {type: GraphQLInt},
-    cancelReturnUrl: {type: GraphQLInt},
+    confirmTemplate: {type: GraphQLString},
+    cancelReturnUrl: {type: GraphQLString},
     apiPassword: {type: GraphQLString},
     apiSignature: {type: GraphQLString},
-    imageUrl: {type: GraphQLInt},
+    imageUrl: {type: GraphQLString},
     requireConfirmedShipping: {type: GraphQLBoolean},
-    notifyUrl: {type: GraphQLInt},
+    notifyUrl: {type: GraphQLString},
     apiEnvironment: {type: GraphQLString},
-    confirmUrl: {type: GraphQLInt},
-    returnUrl: {type: GraphQLInt},
+    confirmUrl: {type: GraphQLString},
+    returnUrl: {type: GraphQLString},
     shippingCallbackUrl: {type: GraphQLString}
   })
 });

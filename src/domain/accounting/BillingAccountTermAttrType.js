@@ -22,7 +22,7 @@ const BillingAccountTermAttrType = new GraphQLObjectType({
       args : {billingAccountTermId: {type: GraphQLString}},
       resolve: (billingAccountTermAttr, args, {loaders}) => loaders.ofbiz.load(`billingAccountTerms/find?billingAccountTermId=${billingAccountTermAttr.billingAccountTermId}`)
     },
-    attrValue: {type: GraphQLInt},
+    attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}
   })
 });

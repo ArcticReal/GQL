@@ -185,16 +185,6 @@ const PartyRoleType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`budgetRoles/find?partyId=${partyRole.partyId}`)
     },
-    agreement: {
-      type: new GraphQLList(AgreementType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`agreements/find?partyId=${partyRole.partyId}`)
-    },
-    employment: {
-      type: new GraphQLList(EmploymentType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`employments/find?partyId=${partyRole.partyId}`)
-    },
     facilityParty: {
       type: new GraphQLList(FacilityPartyType),
       args : {partyId: {type: GraphQLString}},
@@ -255,11 +245,6 @@ const PartyRoleType = new GraphQLObjectType({
       args : {partyId: {type: GraphQLString}},
       resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`invoiceRoles/find?partyId=${partyRole.partyId}`)
     },
-    partyBenefit: {
-      type: new GraphQLList(PartyBenefitType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`partyBenefits/find?partyId=${partyRole.partyId}`)
-    },
     prodCatalogRole: {
       type: new GraphQLList(ProdCatalogRoleType),
       args : {partyId: {type: GraphQLString}},
@@ -284,11 +269,6 @@ const PartyRoleType = new GraphQLObjectType({
       type: new GraphQLList(QuoteRoleType),
       args : {partyId: {type: GraphQLString}},
       resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`quoteRoles/find?partyId=${partyRole.partyId}`)
-    },
-    partyRelationship: {
-      type: new GraphQLList(PartyRelationshipType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`partyRelationships/find?partyId=${partyRole.partyId}`)
     },
     timesheetRole: {
       type: new GraphQLList(TimesheetRoleType),
