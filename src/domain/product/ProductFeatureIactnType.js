@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,33 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ProductFeatureIactnTypeType} from '../product/ProductFeatureIactnTypeType.js';
-import {ProductFeatureType} from '../product/ProductFeatureType.js';
+import {ProductFeatureIactnType} from '../product/ProductFeatureIactn.js';
 
 
-const ProductFeatureIactnType = new GraphQLObjectType({
-  name: 'ProductFeatureIactnType',
-  description: 'Type for ProductFeatureIactn in product',
+const ProductFeatureIactnTypeType = new GraphQLObjectType({
+  name: 'ProductFeatureIactnTypeType',
+  description: 'Type for ProductFeatureIactnType in product',
 
   fields: () => ({
-    productId: {type: GraphQLString},
-    productFeatureIactnType: {
+    parentType: {
       type: ProductFeatureIactnTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (productFeatureIactnType, args, {loaders}) => loaders.ofbiz.load(`productFeatureIactnTypes/find?productFeatureIactnTypeId=${productFeatureIactnType.parentTypeId}`)
+    },
+    productFeatureIactnTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    productFeatureIactns: {
+      type: new GraphQLList(ProductFeatureIactnType),
       args : {productFeatureIactnTypeId: {type: GraphQLString}},
-      resolve: (productFeatureIactn, args, {loaders}) => loaders.ofbiz.load(`productFeatureIactnTypes/find?productFeatureIactnTypeId=${productFeatureIactn.productFeatureIactnTypeId}`)
+      resolve: (productFeatureIactnType, args, {loaders}) => loaders.ofbizArray.load(`productFeatureIactns/find?productFeatureIactnTypeId=${productFeatureIactnType.productFeatureIactnTypeId}`)
     },
-    productFeature: {
-      type: ProductFeatureType,
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeatureIactn, args, {loaders}) => loaders.ofbiz.load(`productFeatures/find?productFeatureId=${productFeatureIactn.productFeatureId}`)
-    },
-    productFeatureTo: {
-      type: ProductFeatureType,
-      args : {productFeatureIdTo: {type: GraphQLString}},
-      resolve: (productFeatureIactn, args, {loaders}) => loaders.ofbiz.load(`productFeatures/find?productFeatureId=${productFeatureIactn.productFeatureIdTo}`)
+    productFeatureIactnTypes: {
+      type: new GraphQLList(ProductFeatureIactnTypeType),
+      args : {productFeatureIactnTypeId: {type: GraphQLString}},
+      resolve: (productFeatureIactnType, args, {loaders}) => loaders.ofbizArray.load(`productFeatureIactnTypes/find?productFeatureIactnTypeId=${productFeatureIactnType.productFeatureIactnTypeId}`)
     }
   })
 });
 
-export {ProductFeatureIactnType};
+export {ProductFeatureIactnTypeType};
+    
+
+
+
+
+const ProductFeatureIactnTypeInputType = new GraphQLInputObjectType({
+  name: 'ProductFeatureIactnTypeInputType',
+  description: 'input type for ProductFeatureIactnType in product',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    productFeatureIactnTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString}
+  })
+});
+
+export {ProductFeatureIactnTypeInputType};
     

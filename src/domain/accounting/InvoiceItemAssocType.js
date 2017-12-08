@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,40 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {InvoiceItemType} from '../accounting/InvoiceItemType.js';
-import {InvoiceItemAssocTypeType} from '../accounting/InvoiceItemAssocTypeType.js';
+import {InvoiceItemAssocType} from '../accounting/InvoiceItemAssoc.js';
 
 
-const InvoiceItemAssocType = new GraphQLObjectType({
-  name: 'InvoiceItemAssocType',
-  description: 'Type for InvoiceItemAssoc in accounting',
+const InvoiceItemAssocTypeType = new GraphQLObjectType({
+  name: 'InvoiceItemAssocTypeType',
+  description: 'Type for InvoiceItemAssocType in accounting',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    partyIdFrom: {type: GraphQLString},
-    amount: {type: GraphQLFloat},
-    quantity: {type: GraphQLFloat},
-    invoiceItemSeqIdFrom: {type: GraphQLString},
-    invoiceFrom: {
-      type: InvoiceItemType,
-      args : {invoiceIdFrom: {type: GraphQLString}},
-      resolve: (invoiceItemAssoc, args, {loaders}) => loaders.ofbiz.load(`invoiceItems/find?invoiceId=${invoiceItemAssoc.invoiceIdFrom}`)
-    },
-    invoiceItemSeqIdTo: {type: GraphQLString},
-    invoiceItemAssocType: {
+    parentType: {
       type: InvoiceItemAssocTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (invoiceItemAssocType, args, {loaders}) => loaders.ofbiz.load(`invoiceItemAssocTypes/find?invoiceItemAssocTypeId=${invoiceItemAssocType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    invoiceItemAssocTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    invoiceItemAssocs: {
+      type: new GraphQLList(InvoiceItemAssocType),
       args : {invoiceItemAssocTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemAssoc, args, {loaders}) => loaders.ofbiz.load(`invoiceItemAssocTypes/find?invoiceItemAssocTypeId=${invoiceItemAssoc.invoiceItemAssocTypeId}`)
+      resolve: (invoiceItemAssocType, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemAssocs/find?invoiceItemAssocTypeId=${invoiceItemAssocType.invoiceItemAssocTypeId}`)
     },
-    invoiceTo: {
-      type: InvoiceItemType,
-      args : {invoiceIdTo: {type: GraphQLString}},
-      resolve: (invoiceItemAssoc, args, {loaders}) => loaders.ofbiz.load(`invoiceItems/find?invoiceId=${invoiceItemAssoc.invoiceIdTo}`)
-    },
-    partyIdTo: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    invoiceItemAssocTypes: {
+      type: new GraphQLList(InvoiceItemAssocTypeType),
+      args : {invoiceItemAssocTypeId: {type: GraphQLString}},
+      resolve: (invoiceItemAssocType, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemAssocTypes/find?invoiceItemAssocTypeId=${invoiceItemAssocType.invoiceItemAssocTypeId}`)
+    }
   })
 });
 
-export {InvoiceItemAssocType};
+export {InvoiceItemAssocTypeType};
+    
+
+
+
+
+const InvoiceItemAssocTypeInputType = new GraphQLInputObjectType({
+  name: 'InvoiceItemAssocTypeInputType',
+  description: 'input type for InvoiceItemAssocType in accounting',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    invoiceItemAssocTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {InvoiceItemAssocTypeInputType};
     

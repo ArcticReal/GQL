@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,62 +10,70 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PartyType} from '../party/PartyType.js';
-import {BudgetItemType} from '../accounting/BudgetItemType.js';
-import {EmplPositionTypeType} from '../humanres/EmplPositionTypeType.js';
-import {EmplPositionFulfillmentType} from '../humanres/EmplPositionFulfillmentType.js';
-import {EmplPositionReportingStructType} from '../humanres/EmplPositionReportingStructType.js';
-import {EmplPositionResponsibilityType} from '../humanres/EmplPositionResponsibilityType.js';
+import {ValidResponsibilityType} from '../humanres/ValidResponsibility.js';
+import {EmplPositionTypeClassType} from '../humanres/EmplPositionTypeClass.js';
+import {EmplPositionTypeRateType} from '../humanres/EmplPositionTypeRate.js';
+import {RateAmountType} from '../accounting/RateAmount.js';
 
 
-const EmplPositionType = new GraphQLObjectType({
-  name: 'EmplPositionType',
-  description: 'Type for EmplPosition in humanres',
+const EmplPositionTypeType = new GraphQLObjectType({
+  name: 'EmplPositionTypeType',
+  description: 'Type for EmplPositionType in humanres',
 
   fields: () => ({
-    estimatedThruDate: {type: GraphQLString},
-    actualThruDate: {type: GraphQLString},
-    exemptFlag: {type: GraphQLBoolean},
-    temporaryFlag: {type: GraphQLBoolean},
-    fulltimeFlag: {type: GraphQLBoolean},
-    emplPositionId: {type: GraphQLString},
-    actualFromDate: {type: GraphQLString},
-    budgetItemSeqId: {type: GraphQLString},
-    budget: {
-      type: BudgetItemType,
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbiz.load(`budgetItems/find?budgetId=${emplPosition.budgetId}`)
-    },
-    salaryFlag: {type: GraphQLBoolean},
-    statusId: {type: GraphQLString},
-    estimatedFromDate: {type: GraphQLString},
-    emplPositionType: {
+    parentType: {
       type: EmplPositionTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (emplPositionType, args, {loaders}) => loaders.ofbiz.load(`emplPositionTypes/find?emplPositionTypeId=${emplPositionType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    emplPositionTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    rateAmounts: {
+      type: new GraphQLList(RateAmountType),
       args : {emplPositionTypeId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbiz.load(`emplPositionTypes/find?emplPositionTypeId=${emplPosition.emplPositionTypeId}`)
+      resolve: (emplPositionType, args, {loaders}) => loaders.ofbizArray.load(`rateAmounts/find?emplPositionTypeId=${emplPositionType.emplPositionTypeId}`)
     },
-    party: {
-      type: PartyType,
-      args : {partyId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${emplPosition.partyId}`)
+    emplPositionTypeClasses: {
+      type: new GraphQLList(EmplPositionTypeClassType),
+      args : {emplPositionTypeId: {type: GraphQLString}},
+      resolve: (emplPositionType, args, {loaders}) => loaders.ofbizArray.load(`emplPositionTypeClasss/find?emplPositionTypeId=${emplPositionType.emplPositionTypeId}`)
     },
-    emplPositionFulfillment: {
-      type: new GraphQLList(EmplPositionFulfillmentType),
-      args : {emplPositionId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbizArray.load(`emplPositionFulfillments/find?emplPositionId=${emplPosition.emplPositionId}`)
+    emplPositionTypes: {
+      type: new GraphQLList(EmplPositionTypeType),
+      args : {emplPositionTypeId: {type: GraphQLString}},
+      resolve: (emplPositionType, args, {loaders}) => loaders.ofbizArray.load(`emplPositionTypes/find?emplPositionTypeId=${emplPositionType.emplPositionTypeId}`)
     },
-    emplPositionReportingStruct: {
-      type: new GraphQLList(EmplPositionReportingStructType),
-      args : {emplPositionId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbizArray.load(`emplPositionReportingStructs/find?emplPositionId=${emplPosition.emplPositionId}`)
+    validResponsibilities: {
+      type: new GraphQLList(ValidResponsibilityType),
+      args : {emplPositionTypeId: {type: GraphQLString}},
+      resolve: (emplPositionType, args, {loaders}) => loaders.ofbizArray.load(`validResponsibilitys/find?emplPositionTypeId=${emplPositionType.emplPositionTypeId}`)
     },
-    emplPositionResponsibility: {
-      type: new GraphQLList(EmplPositionResponsibilityType),
-      args : {emplPositionId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbizArray.load(`emplPositionResponsibilitys/find?emplPositionId=${emplPosition.emplPositionId}`)
+    emplPositionTypeRates: {
+      type: new GraphQLList(EmplPositionTypeRateType),
+      args : {emplPositionTypeId: {type: GraphQLString}},
+      resolve: (emplPositionType, args, {loaders}) => loaders.ofbizArray.load(`emplPositionTypeRates/find?emplPositionTypeId=${emplPositionType.emplPositionTypeId}`)
     }
   })
 });
 
-export {EmplPositionType};
+export {EmplPositionTypeType};
+    
+
+
+
+
+const EmplPositionTypeInputType = new GraphQLInputObjectType({
+  name: 'EmplPositionTypeInputType',
+  description: 'input type for EmplPositionType in humanres',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    emplPositionTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {EmplPositionTypeInputType};
     

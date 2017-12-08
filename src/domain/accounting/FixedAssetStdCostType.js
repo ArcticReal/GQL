@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,31 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {FixedAssetStdCostTypeType} from '../accounting/FixedAssetStdCostTypeType.js';
-import {FixedAssetType} from '../accounting/FixedAssetType.js';
+import {FixedAssetStdCostType} from '../accounting/FixedAssetStdCost.js';
 
 
-const FixedAssetStdCostType = new GraphQLObjectType({
-  name: 'FixedAssetStdCostType',
-  description: 'Type for FixedAssetStdCost in accounting',
+const FixedAssetStdCostTypeType = new GraphQLObjectType({
+  name: 'FixedAssetStdCostTypeType',
+  description: 'Type for FixedAssetStdCostType in accounting',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    amountUomId: {type: GraphQLString},
-    amount: {type: GraphQLFloat},
-    fixedAssetStdCostType: {
+    fixedAssetStdCostTypeId: {type: GraphQLString},
+    parentType: {
       type: FixedAssetStdCostTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (fixedAssetStdCostType, args, {loaders}) => loaders.ofbiz.load(`fixedAssetStdCostTypes/find?fixedAssetStdCostTypeId=${fixedAssetStdCostType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    fixedAssetStdCosts: {
+      type: new GraphQLList(FixedAssetStdCostType),
       args : {fixedAssetStdCostTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetStdCost, args, {loaders}) => loaders.ofbiz.load(`fixedAssetStdCostTypes/find?fixedAssetStdCostTypeId=${fixedAssetStdCost.fixedAssetStdCostTypeId}`)
+      resolve: (fixedAssetStdCostType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetStdCosts/find?fixedAssetStdCostTypeId=${fixedAssetStdCostType.fixedAssetStdCostTypeId}`)
     },
-    fixedAsset: {
-      type: FixedAssetType,
-      args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetStdCost, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${fixedAssetStdCost.fixedAssetId}`)
-    },
-    thruDate: {type: GraphQLString}
+    fixedAssetStdCostTypes: {
+      type: new GraphQLList(FixedAssetStdCostTypeType),
+      args : {fixedAssetStdCostTypeId: {type: GraphQLString}},
+      resolve: (fixedAssetStdCostType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetStdCostTypes/find?fixedAssetStdCostTypeId=${fixedAssetStdCostType.fixedAssetStdCostTypeId}`)
+    }
   })
 });
 
-export {FixedAssetStdCostType};
+export {FixedAssetStdCostTypeType};
+    
+
+
+
+
+const FixedAssetStdCostTypeInputType = new GraphQLInputObjectType({
+  name: 'FixedAssetStdCostTypeInputType',
+  description: 'input type for FixedAssetStdCostType in accounting',
+
+  fields: () => ({
+    fixedAssetStdCostTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString}
+  })
+});
+
+export {FixedAssetStdCostTypeInputType};
     

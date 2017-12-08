@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,36 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {AgreementType} from '../party/AgreementType.js';
-import {AgreementContentTypeType} from '../party/AgreementContentTypeType.js';
-import {ContentType} from '../content/ContentType.js';
+import {AgreementContentType} from '../party/AgreementContent.js';
 
 
-const AgreementContentType = new GraphQLObjectType({
-  name: 'AgreementContentType',
-  description: 'Type for AgreementContent in party',
+const AgreementContentTypeType = new GraphQLObjectType({
+  name: 'AgreementContentTypeType',
+  description: 'Type for AgreementContentType in party',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    agreement: {
-      type: AgreementType,
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementContent, args, {loaders}) => loaders.ofbiz.load(`agreements/find?agreementId=${agreementContent.agreementId}`)
-    },
-    content: {
-      type: ContentType,
-      args : {contentId: {type: GraphQLString}},
-      resolve: (agreementContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${agreementContent.contentId}`)
-    },
-    agreementItemSeqId: {type: GraphQLString},
-    agreementContentType: {
+    parentType: {
       type: AgreementContentTypeType,
-      args : {agreementContentTypeId: {type: GraphQLString}},
-      resolve: (agreementContent, args, {loaders}) => loaders.ofbiz.load(`agreementContentTypes/find?agreementContentTypeId=${agreementContent.agreementContentTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (agreementContentType, args, {loaders}) => loaders.ofbiz.load(`agreementContentTypes/find?agreementContentTypeId=${agreementContentType.parentTypeId}`)
     },
-    thruDate: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    agreementContentTypeId: {type: GraphQLString},
+    agreementContentTypes: {
+      type: new GraphQLList(AgreementContentTypeType),
+      args : {agreementContentTypeId: {type: GraphQLString}},
+      resolve: (agreementContentType, args, {loaders}) => loaders.ofbizArray.load(`agreementContentTypes/find?agreementContentTypeId=${agreementContentType.agreementContentTypeId}`)
+    },
+    agreementContents: {
+      type: new GraphQLList(AgreementContentType),
+      args : {agreementContentTypeId: {type: GraphQLString}},
+      resolve: (agreementContentType, args, {loaders}) => loaders.ofbizArray.load(`agreementContents/find?agreementContentTypeId=${agreementContentType.agreementContentTypeId}`)
+    }
   })
 });
 
-export {AgreementContentType};
+export {AgreementContentTypeType};
+    
+
+
+
+
+const AgreementContentTypeInputType = new GraphQLInputObjectType({
+  name: 'AgreementContentTypeInputType',
+  description: 'input type for AgreementContentType in party',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    agreementContentTypeId: {type: GraphQLString}
+  })
+});
+
+export {AgreementContentTypeInputType};
     

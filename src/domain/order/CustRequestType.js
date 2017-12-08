@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,123 +10,77 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {CustRequestAttributeType} from '../order/CustRequestAttributeType.js';
-import {CustRequestStatusType} from '../order/CustRequestStatusType.js';
-import {CustRequestContentType} from '../order/CustRequestContentType.js';
-import {CustRequestWorkEffortType} from '../order/CustRequestWorkEffortType.js';
-import {QuoteItemType} from '../order/QuoteItemType.js';
-import {RespondingPartyType} from '../order/RespondingPartyType.js';
-import {ProductStoreType} from '../product/ProductStoreType.js';
-import {ContactMechType} from '../party/ContactMechType.js';
-import {CustRequestCategoryType} from '../order/CustRequestCategoryType.js';
-import {CustRequestTypeType} from '../order/CustRequestTypeType.js';
-import {CustRequestCommEventType} from '../order/CustRequestCommEventType.js';
-import {PartyType} from '../party/PartyType.js';
-import {CustRequestNoteType} from '../order/CustRequestNoteType.js';
-import {CustRequestPartyType} from '../order/CustRequestPartyType.js';
-import {CustRequestItemType} from '../order/CustRequestItemType.js';
+import {CustRequestTypeAttrType} from '../order/CustRequestTypeAttr.js';
+import {PartyRelationshipType} from '../party/PartyRelationship.js';
+import {CustRequestType} from '../order/CustRequest.js';
+import {CustRequestResolutionType} from '../order/CustRequestResolution.js';
+import {CustRequestCategoryType} from '../order/CustRequestCategory.js';
 
 
-const CustRequestType = new GraphQLObjectType({
-  name: 'CustRequestType',
-  description: 'Type for CustRequest in order',
+const CustRequestTypeType = new GraphQLObjectType({
+  name: 'CustRequestTypeType',
+  description: 'Type for CustRequestType in order',
 
   fields: () => ({
-    reason: {type: GraphQLString},
-    fromParty: {
-      type: PartyType,
-      args : {fromPartyId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${custRequest.fromPartyId}`)
-    },
-    custRequestName: {type: GraphQLString},
-    responseRequiredDate: {type: GraphQLString},
-    salesChannelEnumId: {type: GraphQLString},
-    lastModifiedDate: {type: GraphQLString},
-    fulfillContactMech: {
-      type: ContactMechType,
-      args : {fulfillContactMechId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${custRequest.fulfillContactMechId}`)
-    },
-    description: {type: GraphQLString},
-    custRequestDate: {type: GraphQLString},
-    priority: {type: GraphQLInt},
-    maximumAmountUomId: {type: GraphQLString},
-    openDateTime: {type: GraphQLString},
-    internalComment: {type: GraphQLString},
-    lastModifiedByUserLogin: {type: GraphQLString},
-    currencyUomId: {type: GraphQLString},
-    createdDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    custRequestId: {type: GraphQLString},
-    custRequestType: {
+    parentType: {
       type: CustRequestTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (custRequestType, args, {loaders}) => loaders.ofbiz.load(`custRequestTypes/find?custRequestTypeId=${custRequestType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    custRequestTypeId: {type: GraphQLString},
+    party: {
+      type: new GraphQLList(PartyRelationshipType),
+      args : {partyId: {type: GraphQLString}},
+      resolve: (custRequestType, args, {loaders}) => loaders.ofbizArray.load(`partyRelationships/find?partyIdFrom=${custRequestType.partyId}`)
+    },
+    custRequestResolutions: {
+      type: new GraphQLList(CustRequestResolutionType),
       args : {custRequestTypeId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`custRequestTypes/find?custRequestTypeId=${custRequest.custRequestTypeId}`)
+      resolve: (custRequestType, args, {loaders}) => loaders.ofbizArray.load(`custRequestResolutions/find?custRequestTypeId=${custRequestType.custRequestTypeId}`)
     },
-    productStore: {
-      type: ProductStoreType,
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${custRequest.productStoreId}`)
+    custRequests: {
+      type: new GraphQLList(CustRequestType),
+      args : {custRequestTypeId: {type: GraphQLString}},
+      resolve: (custRequestType, args, {loaders}) => loaders.ofbizArray.load(`custRequests/find?custRequestTypeId=${custRequestType.custRequestTypeId}`)
     },
-    custRequestCategory: {
-      type: CustRequestCategoryType,
-      args : {custRequestCategoryId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`custRequestCategorys/find?custRequestCategoryId=${custRequest.custRequestCategoryId}`)
+    custRequestCategories: {
+      type: new GraphQLList(CustRequestCategoryType),
+      args : {custRequestTypeId: {type: GraphQLString}},
+      resolve: (custRequestType, args, {loaders}) => loaders.ofbizArray.load(`custRequestCategorys/find?custRequestTypeId=${custRequestType.custRequestTypeId}`)
     },
-    createdByUserLogin: {type: GraphQLString},
-    closedDateTime: {type: GraphQLString},
-    custRequestAttribute: {
-      type: new GraphQLList(CustRequestAttributeType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestAttributes/find?custRequestId=${custRequest.custRequestId}`)
+    custRequestTypes: {
+      type: new GraphQLList(CustRequestTypeType),
+      args : {custRequestTypeId: {type: GraphQLString}},
+      resolve: (custRequestType, args, {loaders}) => loaders.ofbizArray.load(`custRequestTypes/find?custRequestTypeId=${custRequestType.custRequestTypeId}`)
     },
-    custRequestStatus: {
-      type: new GraphQLList(CustRequestStatusType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestStatuss/find?custRequestId=${custRequest.custRequestId}`)
-    },
-    respondingParty: {
-      type: new GraphQLList(RespondingPartyType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`respondingPartys/find?custRequestId=${custRequest.custRequestId}`)
-    },
-    custRequestNote: {
-      type: new GraphQLList(CustRequestNoteType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestNotes/find?custRequestId=${custRequest.custRequestId}`)
-    },
-    custRequestWorkEffort: {
-      type: new GraphQLList(CustRequestWorkEffortType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestWorkEfforts/find?custRequestId=${custRequest.custRequestId}`)
-    },
-    custRequestItem: {
-      type: new GraphQLList(CustRequestItemType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestItems/find?custRequestId=${custRequest.custRequestId}`)
-    },
-    custRequestParty: {
-      type: new GraphQLList(CustRequestPartyType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestPartys/find?custRequestId=${custRequest.custRequestId}`)
-    },
-    custRequestContent: {
-      type: new GraphQLList(CustRequestContentType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestContents/find?custRequestId=${custRequest.custRequestId}`)
-    },
-    quoteItem: {
-      type: new GraphQLList(QuoteItemType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`quoteItems/find?custRequestId=${custRequest.custRequestId}`)
-    },
-    custRequestCommEvent: {
-      type: new GraphQLList(CustRequestCommEventType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestCommEvents/find?custRequestId=${custRequest.custRequestId}`)
+    custRequestTypeAttrs: {
+      type: new GraphQLList(CustRequestTypeAttrType),
+      args : {custRequestTypeId: {type: GraphQLString}},
+      resolve: (custRequestType, args, {loaders}) => loaders.ofbizArray.load(`custRequestTypeAttrs/find?custRequestTypeId=${custRequestType.custRequestTypeId}`)
     }
   })
 });
 
-export {CustRequestType};
+export {CustRequestTypeType};
+    
+
+
+
+
+const CustRequestTypeInputType = new GraphQLInputObjectType({
+  name: 'CustRequestTypeInputType',
+  description: 'input type for CustRequestType in order',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    custRequestTypeId: {type: GraphQLString},
+    partyId: {type: GraphQLString}
+  })
+});
+
+export {CustRequestTypeInputType};
     

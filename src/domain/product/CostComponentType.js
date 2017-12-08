@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,69 +10,70 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {CostComponentAttributeType} from '../product/CostComponentAttributeType.js';
-import {WorkEffortType} from '../workeffort/WorkEffortType.js';
-import {CostComponentTypeType} from '../product/CostComponentTypeType.js';
-import {PartyType} from '../party/PartyType.js';
-import {CostComponentCalcType} from '../product/CostComponentCalcType.js';
-import {ProductFeatureType} from '../product/ProductFeatureType.js';
-import {ProductType} from '../product/ProductType.js';
-import {FixedAssetType} from '../accounting/FixedAssetType.js';
+import {ProductCostComponentCalcType} from '../product/ProductCostComponentCalc.js';
+import {WorkEffortCostCalcType} from '../workeffort/WorkEffortCostCalc.js';
+import {CostComponentType} from '../product/CostComponent.js';
+import {CostComponentTypeAttrType} from '../product/CostComponentTypeAttr.js';
 
 
-const CostComponentType = new GraphQLObjectType({
-  name: 'CostComponentType',
-  description: 'Type for CostComponent in product',
+const CostComponentTypeType = new GraphQLObjectType({
+  name: 'CostComponentTypeType',
+  description: 'Type for CostComponentType in product',
 
   fields: () => ({
-    workEffort: {
-      type: WorkEffortType,
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (costComponent, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${costComponent.workEffortId}`)
-    },
-    costComponentType: {
+    costComponentTypeId: {type: GraphQLString},
+    parentType: {
       type: CostComponentTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbiz.load(`costComponentTypes/find?costComponentTypeId=${costComponentType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    costComponentTypes: {
+      type: new GraphQLList(CostComponentTypeType),
       args : {costComponentTypeId: {type: GraphQLString}},
-      resolve: (costComponent, args, {loaders}) => loaders.ofbiz.load(`costComponentTypes/find?costComponentTypeId=${costComponent.costComponentTypeId}`)
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`costComponentTypes/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
     },
-    cost: {type: GraphQLFloat},
-    product: {
-      type: ProductType,
-      args : {productId: {type: GraphQLString}},
-      resolve: (costComponent, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${costComponent.productId}`)
+    workEffortCostCalcs: {
+      type: new GraphQLList(WorkEffortCostCalcType),
+      args : {costComponentTypeId: {type: GraphQLString}},
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`workEffortCostCalcs/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
     },
-    productFeature: {
-      type: ProductFeatureType,
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (costComponent, args, {loaders}) => loaders.ofbiz.load(`productFeatures/find?productFeatureId=${costComponent.productFeatureId}`)
+    costComponentTypeAttrs: {
+      type: new GraphQLList(CostComponentTypeAttrType),
+      args : {costComponentTypeId: {type: GraphQLString}},
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`costComponentTypeAttrs/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
     },
-    costComponentId: {type: GraphQLString},
-    costComponentCalc: {
-      type: CostComponentCalcType,
-      args : {costComponentCalcId: {type: GraphQLString}},
-      resolve: (costComponent, args, {loaders}) => loaders.ofbiz.load(`costComponentCalcs/find?costComponentCalcId=${costComponent.costComponentCalcId}`)
+    costComponents: {
+      type: new GraphQLList(CostComponentType),
+      args : {costComponentTypeId: {type: GraphQLString}},
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`costComponents/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
     },
-    thruDate: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    geoId: {type: GraphQLString},
-    fixedAsset: {
-      type: FixedAssetType,
-      args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (costComponent, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${costComponent.fixedAssetId}`)
-    },
-    costUomId: {type: GraphQLString},
-    party: {
-      type: PartyType,
-      args : {partyId: {type: GraphQLString}},
-      resolve: (costComponent, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${costComponent.partyId}`)
-    },
-    costComponentAttribute: {
-      type: new GraphQLList(CostComponentAttributeType),
-      args : {costComponentId: {type: GraphQLString}},
-      resolve: (costComponent, args, {loaders}) => loaders.ofbizArray.load(`costComponentAttributes/find?costComponentId=${costComponent.costComponentId}`)
+    productCostComponentCalcs: {
+      type: new GraphQLList(ProductCostComponentCalcType),
+      args : {costComponentTypeId: {type: GraphQLString}},
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`productCostComponentCalcs/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
     }
   })
 });
 
-export {CostComponentType};
+export {CostComponentTypeType};
+    
+
+
+
+
+const CostComponentTypeInputType = new GraphQLInputObjectType({
+  name: 'CostComponentTypeInputType',
+  description: 'input type for CostComponentType in product',
+
+  fields: () => ({
+    costComponentTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString}
+  })
+});
+
+export {CostComponentTypeInputType};
     

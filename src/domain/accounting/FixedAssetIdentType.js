@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,28 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {FixedAssetIdentTypeType} from '../accounting/FixedAssetIdentTypeType.js';
-import {FixedAssetType} from '../accounting/FixedAssetType.js';
+import {FixedAssetIdentType} from '../accounting/FixedAssetIdent.js';
 
 
-const FixedAssetIdentType = new GraphQLObjectType({
-  name: 'FixedAssetIdentType',
-  description: 'Type for FixedAssetIdent in accounting',
+const FixedAssetIdentTypeType = new GraphQLObjectType({
+  name: 'FixedAssetIdentTypeType',
+  description: 'Type for FixedAssetIdentType in accounting',
 
   fields: () => ({
-    fixedAsset: {
-      type: FixedAssetType,
-      args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetIdent, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${fixedAssetIdent.fixedAssetId}`)
-    },
-    idValue: {type: GraphQLString},
-    fixedAssetentType: {
-      type: FixedAssetIdentTypeType,
+    description: {type: GraphQLString},
+    fixedAssetIdentTypeId: {type: GraphQLString},
+    fixedAssetIdents: {
+      type: new GraphQLList(FixedAssetIdentType),
       args : {fixedAssetIdentTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetIdent, args, {loaders}) => loaders.ofbiz.load(`fixedAssetIdentTypes/find?fixedAssetIdentTypeId=${fixedAssetIdent.fixedAssetIdentTypeId}`)
+      resolve: (fixedAssetIdentType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetIdents/find?fixedAssetIdentTypeId=${fixedAssetIdentType.fixedAssetIdentTypeId}`)
     }
   })
 });
 
-export {FixedAssetIdentType};
+export {FixedAssetIdentTypeType};
+    
+
+
+
+
+const FixedAssetIdentTypeInputType = new GraphQLInputObjectType({
+  name: 'FixedAssetIdentTypeInputType',
+  description: 'input type for FixedAssetIdentType in accounting',
+
+  fields: () => ({
+    description: {type: GraphQLString},
+    fixedAssetIdentTypeId: {type: GraphQLString}
+  })
+});
+
+export {FixedAssetIdentTypeInputType};
     

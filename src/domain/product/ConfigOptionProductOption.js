@@ -1,0 +1,62 @@
+
+import {
+  GraphQLSchema,
+  GraphQLObjectType,
+  GraphQLInputObjectType,
+  GraphQLInt,
+  GraphQLFloat,
+  GraphQLString,
+  GraphQLBoolean,
+  GraphQLList,
+} from 'graphql';
+
+import {ProductConfigProductType} from '../product/ProductConfigProduct.js';
+import {ProductConfigConfigType} from '../product/ProductConfigConfig.js';
+
+
+const ConfigOptionProductOptionType = new GraphQLObjectType({
+  name: 'ConfigOptionProductOptionType',
+  description: 'Type for ConfigOptionProductOption in product',
+
+  fields: () => ({
+    configItem: {
+      type: ProductConfigProductType,
+      args : {configItemId: {type: GraphQLString}},
+      resolve: (configOptionProductOption, args, {loaders}) => loaders.ofbiz.load(`productConfigProducts/find?configItemId=${configOptionProductOption.configItemId}`)
+    },
+    sequenceNum: {type: GraphQLInt},
+    productId: {type: GraphQLString},
+    productOptionId: {type: GraphQLString},
+    config: {
+      type: ProductConfigConfigType,
+      args : {configId: {type: GraphQLString}},
+      resolve: (configOptionProductOption, args, {loaders}) => loaders.ofbiz.load(`productConfigConfigs/find?configId=${configOptionProductOption.configId}`)
+    },
+    configOptionId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {ConfigOptionProductOptionType};
+    
+
+
+
+
+const ConfigOptionProductOptionInputType = new GraphQLInputObjectType({
+  name: 'ConfigOptionProductOptionInputType',
+  description: 'input type for ConfigOptionProductOption in product',
+
+  fields: () => ({
+    configItemId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
+    productId: {type: GraphQLString},
+    productOptionId: {type: GraphQLString},
+    configId: {type: GraphQLString},
+    configOptionId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {ConfigOptionProductOptionInputType};
+    

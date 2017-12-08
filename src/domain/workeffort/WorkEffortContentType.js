@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,35 +10,50 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {WorkEffortType} from '../workeffort/WorkEffortType.js';
-import {ContentType} from '../content/ContentType.js';
-import {WorkEffortContentTypeType} from '../workeffort/WorkEffortContentTypeType.js';
+import {WorkEffortContentType} from '../workeffort/WorkEffortContent.js';
 
 
-const WorkEffortContentType = new GraphQLObjectType({
-  name: 'WorkEffortContentType',
-  description: 'Type for WorkEffortContent in workeffort',
+const WorkEffortContentTypeType = new GraphQLObjectType({
+  name: 'WorkEffortContentTypeType',
+  description: 'Type for WorkEffortContentType in workeffort',
 
   fields: () => ({
-    workEffort: {
-      type: WorkEffortType,
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortContent, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortContent.workEffortId}`)
-    },
-    fromDate: {type: GraphQLString},
-    workEffortContentType: {
+    workEffortContentTypeId: {type: GraphQLString},
+    parentType: {
       type: WorkEffortContentTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (workEffortContentType, args, {loaders}) => loaders.ofbiz.load(`workEffortContentTypes/find?workEffortContentTypeId=${workEffortContentType.parentTypeId}`)
+    },
+    description: {type: GraphQLString},
+    workEffortContents: {
+      type: new GraphQLList(WorkEffortContentType),
       args : {workEffortContentTypeId: {type: GraphQLString}},
-      resolve: (workEffortContent, args, {loaders}) => loaders.ofbiz.load(`workEffortContentTypes/find?workEffortContentTypeId=${workEffortContent.workEffortContentTypeId}`)
+      resolve: (workEffortContentType, args, {loaders}) => loaders.ofbizArray.load(`workEffortContents/find?workEffortContentTypeId=${workEffortContentType.workEffortContentTypeId}`)
     },
-    content: {
-      type: ContentType,
-      args : {contentId: {type: GraphQLString}},
-      resolve: (workEffortContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${workEffortContent.contentId}`)
-    },
-    thruDate: {type: GraphQLString}
+    workEffortContentTypes: {
+      type: new GraphQLList(WorkEffortContentTypeType),
+      args : {workEffortContentTypeId: {type: GraphQLString}},
+      resolve: (workEffortContentType, args, {loaders}) => loaders.ofbizArray.load(`workEffortContentTypes/find?workEffortContentTypeId=${workEffortContentType.workEffortContentTypeId}`)
+    }
   })
 });
 
-export {WorkEffortContentType};
+export {WorkEffortContentTypeType};
+    
+
+
+
+
+const WorkEffortContentTypeInputType = new GraphQLInputObjectType({
+  name: 'WorkEffortContentTypeInputType',
+  description: 'input type for WorkEffortContentType in workeffort',
+
+  fields: () => ({
+    workEffortContentTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {WorkEffortContentTypeInputType};
     

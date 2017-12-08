@@ -1,0 +1,71 @@
+
+import {
+  GraphQLSchema,
+  GraphQLObjectType,
+  GraphQLInputObjectType,
+  GraphQLInt,
+  GraphQLFloat,
+  GraphQLString,
+  GraphQLBoolean,
+  GraphQLList,
+} from 'graphql';
+
+import {InventoryItemType} from '../product/InventoryItem.js';
+import {PhysicalInventoryType} from '../product/PhysicalInventory.js';
+import {AcctgTransType} from '../accounting/AcctgTrans.js';
+import {VarianceReasonType} from '../product/VarianceReason.js';
+
+
+const InventoryItemVarianceType = new GraphQLObjectType({
+  name: 'InventoryItemVarianceType',
+  description: 'Type for InventoryItemVariance in product',
+
+  fields: () => ({
+    inventoryItem: {
+      type: InventoryItemType,
+      args : {inventoryItemId: {type: GraphQLString}},
+      resolve: (inventoryItemVariance, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${inventoryItemVariance.inventoryItemId}`)
+    },
+    varianceReason: {
+      type: VarianceReasonType,
+      args : {varianceReasonId: {type: GraphQLString}},
+      resolve: (inventoryItemVariance, args, {loaders}) => loaders.ofbiz.load(`varianceReasons/find?varianceReasonId=${inventoryItemVariance.varianceReasonId}`)
+    },
+    physicalInventory: {
+      type: PhysicalInventoryType,
+      args : {physicalInventoryId: {type: GraphQLString}},
+      resolve: (inventoryItemVariance, args, {loaders}) => loaders.ofbiz.load(`physicalInventorys/find?physicalInventoryId=${inventoryItemVariance.physicalInventoryId}`)
+    },
+    comments: {type: GraphQLString},
+    quantityOnHandVar: {type: GraphQLFloat},
+    availableToPromiseVar: {type: GraphQLFloat},
+    acctgTranses: {
+      type: new GraphQLList(AcctgTransType),
+      args : {inventoryItemId: {type: GraphQLString}},
+      resolve: (inventoryItemVariance, args, {loaders}) => loaders.ofbizArray.load(`acctgTranss/find?inventoryItemId=${inventoryItemVariance.inventoryItemId}`)
+    }
+  })
+});
+
+export {InventoryItemVarianceType};
+    
+
+
+
+
+const InventoryItemVarianceInputType = new GraphQLInputObjectType({
+  name: 'InventoryItemVarianceInputType',
+  description: 'input type for InventoryItemVariance in product',
+
+  fields: () => ({
+    inventoryItemId: {type: GraphQLString},
+    varianceReasonId: {type: GraphQLString},
+    physicalInventoryId: {type: GraphQLString},
+    comments: {type: GraphQLString},
+    quantityOnHandVar: {type: GraphQLFloat},
+    availableToPromiseVar: {type: GraphQLFloat}
+  })
+});
+
+export {InventoryItemVarianceInputType};
+    

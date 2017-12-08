@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,30 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ContentType} from '../content/ContentType.js';
-import {WebSiteContentTypeType} from '../content/WebSiteContentTypeType.js';
+import {WebSiteContentType} from '../content/WebSiteContent.js';
 
 
-const WebSiteContentType = new GraphQLObjectType({
-  name: 'WebSiteContentType',
-  description: 'Type for WebSiteContent in content',
+const WebSiteContentTypeType = new GraphQLObjectType({
+  name: 'WebSiteContentTypeType',
+  description: 'Type for WebSiteContentType in content',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    webSiteContentType: {
+    parentType: {
       type: WebSiteContentTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (webSiteContentType, args, {loaders}) => loaders.ofbiz.load(`webSiteContentTypes/find?webSiteContentTypeId=${webSiteContentType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    webSiteContentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    webSiteContents: {
+      type: new GraphQLList(WebSiteContentType),
       args : {webSiteContentTypeId: {type: GraphQLString}},
-      resolve: (webSiteContent, args, {loaders}) => loaders.ofbiz.load(`webSiteContentTypes/find?webSiteContentTypeId=${webSiteContent.webSiteContentTypeId}`)
+      resolve: (webSiteContentType, args, {loaders}) => loaders.ofbizArray.load(`webSiteContents/find?webSiteContentTypeId=${webSiteContentType.webSiteContentTypeId}`)
     },
-    content: {
-      type: ContentType,
-      args : {contentId: {type: GraphQLString}},
-      resolve: (webSiteContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${webSiteContent.contentId}`)
-    },
-    webSiteId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    webSiteContentTypes: {
+      type: new GraphQLList(WebSiteContentTypeType),
+      args : {webSiteContentTypeId: {type: GraphQLString}},
+      resolve: (webSiteContentType, args, {loaders}) => loaders.ofbizArray.load(`webSiteContentTypes/find?webSiteContentTypeId=${webSiteContentType.webSiteContentTypeId}`)
+    }
   })
 });
 
-export {WebSiteContentType};
+export {WebSiteContentTypeType};
+    
+
+
+
+
+const WebSiteContentTypeInputType = new GraphQLInputObjectType({
+  name: 'WebSiteContentTypeInputType',
+  description: 'input type for WebSiteContentType in content',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    webSiteContentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {WebSiteContentTypeInputType};
     

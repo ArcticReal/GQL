@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,36 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {OrderHeaderType} from '../order/OrderHeaderType.js';
-import {OrderContentTypeType} from '../order/OrderContentTypeType.js';
-import {ContentType} from '../content/ContentType.js';
+import {OrderContentType} from '../order/OrderContent.js';
 
 
-const OrderContentType = new GraphQLObjectType({
-  name: 'OrderContentType',
-  description: 'Type for OrderContent in order',
+const OrderContentTypeType = new GraphQLObjectType({
+  name: 'OrderContentTypeType',
+  description: 'Type for OrderContentType in order',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    order: {
-      type: OrderHeaderType,
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderContent, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderContent.orderId}`)
-    },
-    content: {
-      type: ContentType,
-      args : {contentId: {type: GraphQLString}},
-      resolve: (orderContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${orderContent.contentId}`)
-    },
-    orderContentType: {
+    parentType: {
       type: OrderContentTypeType,
-      args : {orderContentTypeId: {type: GraphQLString}},
-      resolve: (orderContent, args, {loaders}) => loaders.ofbiz.load(`orderContentTypes/find?orderContentTypeId=${orderContent.orderContentTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (orderContentType, args, {loaders}) => loaders.ofbiz.load(`orderContentTypes/find?orderContentTypeId=${orderContentType.parentTypeId}`)
     },
-    thruDate: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    orderContentTypeId: {type: GraphQLString},
+    orderContents: {
+      type: new GraphQLList(OrderContentType),
+      args : {orderContentTypeId: {type: GraphQLString}},
+      resolve: (orderContentType, args, {loaders}) => loaders.ofbizArray.load(`orderContents/find?orderContentTypeId=${orderContentType.orderContentTypeId}`)
+    },
+    orderContentTypes: {
+      type: new GraphQLList(OrderContentTypeType),
+      args : {orderContentTypeId: {type: GraphQLString}},
+      resolve: (orderContentType, args, {loaders}) => loaders.ofbizArray.load(`orderContentTypes/find?orderContentTypeId=${orderContentType.orderContentTypeId}`)
+    }
   })
 });
 
-export {OrderContentType};
+export {OrderContentTypeType};
+    
+
+
+
+
+const OrderContentTypeInputType = new GraphQLInputObjectType({
+  name: 'OrderContentTypeInputType',
+  description: 'input type for OrderContentType in order',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    orderContentTypeId: {type: GraphQLString}
+  })
+});
+
+export {OrderContentTypeInputType};
     

@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,47 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {WorkEffortType} from '../workeffort/WorkEffortType.js';
-import {ProductAssocTypeType} from '../product/ProductAssocTypeType.js';
-import {ProductType} from '../product/ProductType.js';
+import {ProductAssocType} from '../product/ProductAssoc.js';
 
 
-const ProductAssocType = new GraphQLObjectType({
-  name: 'ProductAssocType',
-  description: 'Type for ProductAssoc in product',
+const ProductAssocTypeType = new GraphQLObjectType({
+  name: 'ProductAssocTypeType',
+  description: 'Type for ProductAssocType in product',
 
   fields: () => ({
-    reason: {type: GraphQLString},
-    scrapFactor: {type: GraphQLFloat},
-    quantity: {type: GraphQLFloat},
-    recurrenceInfoId: {type: GraphQLString},
-    product: {
-      type: ProductType,
-      args : {productId: {type: GraphQLString}},
-      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productAssoc.productId}`)
-    },
-    sequenceNum: {type: GraphQLInt},
-    estimateCalcMethod: {type: GraphQLString},
-    thruDate: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    instruction: {type: GraphQLString},
-    productTo: {
-      type: ProductType,
-      args : {productIdTo: {type: GraphQLString}},
-      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productAssoc.productIdTo}`)
-    },
-    productAssocType: {
+    parentType: {
       type: ProductAssocTypeType,
-      args : {productAssocTypeId: {type: GraphQLString}},
-      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`productAssocTypes/find?productAssocTypeId=${productAssoc.productAssocTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (productAssocType, args, {loaders}) => loaders.ofbiz.load(`productAssocTypes/find?productAssocTypeId=${productAssocType.parentTypeId}`)
     },
-    routingWorkEffort: {
-      type: WorkEffortType,
-      args : {routingWorkEffortId: {type: GraphQLString}},
-      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${productAssoc.routingWorkEffortId}`)
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    productAssocTypeId: {type: GraphQLString},
+    productAssocTypes: {
+      type: new GraphQLList(ProductAssocTypeType),
+      args : {productAssocTypeId: {type: GraphQLString}},
+      resolve: (productAssocType, args, {loaders}) => loaders.ofbizArray.load(`productAssocTypes/find?productAssocTypeId=${productAssocType.productAssocTypeId}`)
+    },
+    productAssocs: {
+      type: new GraphQLList(ProductAssocType),
+      args : {productAssocTypeId: {type: GraphQLString}},
+      resolve: (productAssocType, args, {loaders}) => loaders.ofbizArray.load(`productAssocs/find?productAssocTypeId=${productAssocType.productAssocTypeId}`)
     }
   })
 });
 
-export {ProductAssocType};
+export {ProductAssocTypeType};
+    
+
+
+
+
+const ProductAssocTypeInputType = new GraphQLInputObjectType({
+  name: 'ProductAssocTypeInputType',
+  description: 'input type for ProductAssocType in product',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    productAssocTypeId: {type: GraphQLString}
+  })
+});
+
+export {ProductAssocTypeInputType};
     

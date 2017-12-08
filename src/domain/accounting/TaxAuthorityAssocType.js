@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,36 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {TaxAuthorityType} from '../accounting/TaxAuthorityType.js';
-import {TaxAuthorityAssocTypeType} from '../accounting/TaxAuthorityAssocTypeType.js';
+import {TaxAuthorityAssocType} from '../accounting/TaxAuthorityAssoc.js';
 
 
-const TaxAuthorityAssocType = new GraphQLObjectType({
-  name: 'TaxAuthorityAssocType',
-  description: 'Type for TaxAuthorityAssoc in accounting',
+const TaxAuthorityAssocTypeType = new GraphQLObjectType({
+  name: 'TaxAuthorityAssocTypeType',
+  description: 'Type for TaxAuthorityAssocType in accounting',
 
   fields: () => ({
-    taxAuthPartyId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    taxAuthorityAssocType: {
-      type: TaxAuthorityAssocTypeType,
+    taxAuthorityAssocTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    taxAuthorityAssocs: {
+      type: new GraphQLList(TaxAuthorityAssocType),
       args : {taxAuthorityAssocTypeId: {type: GraphQLString}},
-      resolve: (taxAuthorityAssoc, args, {loaders}) => loaders.ofbiz.load(`taxAuthorityAssocTypes/find?taxAuthorityAssocTypeId=${taxAuthorityAssoc.taxAuthorityAssocTypeId}`)
-    },
-    taxAuthGeo: {
-      type: TaxAuthorityType,
-      args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthorityAssoc, args, {loaders}) => loaders.ofbiz.load(`taxAuthoritys/find?taxAuthGeoId=${taxAuthorityAssoc.taxAuthGeoId}`)
-    },
-    toTaxAuthPartyId: {type: GraphQLString},
-    toTaxAuthGeo: {
-      type: TaxAuthorityType,
-      args : {toTaxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthorityAssoc, args, {loaders}) => loaders.ofbiz.load(`taxAuthoritys/find?taxAuthGeoId=${taxAuthorityAssoc.toTaxAuthGeoId}`)
-    },
-    thruDate: {type: GraphQLString}
+      resolve: (taxAuthorityAssocType, args, {loaders}) => loaders.ofbizArray.load(`taxAuthorityAssocs/find?taxAuthorityAssocTypeId=${taxAuthorityAssocType.taxAuthorityAssocTypeId}`)
+    }
   })
 });
 
-export {TaxAuthorityAssocType};
+export {TaxAuthorityAssocTypeType};
+    
+
+
+
+
+const TaxAuthorityAssocTypeInputType = new GraphQLInputObjectType({
+  name: 'TaxAuthorityAssocTypeInputType',
+  description: 'input type for TaxAuthorityAssocType in accounting',
+
+  fields: () => ({
+    taxAuthorityAssocTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {TaxAuthorityAssocTypeInputType};
     

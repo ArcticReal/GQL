@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,30 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {QuantityBreakTypeType} from '../product/QuantityBreakTypeType.js';
-import {ShipmentCostEstimateType} from '../shipment/ShipmentCostEstimateType.js';
+import {QuantityBreakType} from '../product/QuantityBreak.js';
 
 
-const QuantityBreakType = new GraphQLObjectType({
-  name: 'QuantityBreakType',
-  description: 'Type for QuantityBreak in product',
+const QuantityBreakTypeType = new GraphQLObjectType({
+  name: 'QuantityBreakTypeType',
+  description: 'Type for QuantityBreakType in product',
 
   fields: () => ({
-    thruQuantity: {type: GraphQLFloat},
-    quantityBreakType: {
-      type: QuantityBreakTypeType,
+    quantityBreakTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    quantityBreaks: {
+      type: new GraphQLList(QuantityBreakType),
       args : {quantityBreakTypeId: {type: GraphQLString}},
-      resolve: (quantityBreak, args, {loaders}) => loaders.ofbiz.load(`quantityBreakTypes/find?quantityBreakTypeId=${quantityBreak.quantityBreakTypeId}`)
-    },
-    fromQuantity: {type: GraphQLFloat},
-    quantityBreakId: {type: GraphQLString},
-    shipmentCostEstimate: {
-      type: new GraphQLList(ShipmentCostEstimateType),
-      args : {quantityBreakId: {type: GraphQLString}},
-      resolve: (quantityBreak, args, {loaders}) => loaders.ofbizArray.load(`shipmentCostEstimates/find?quantityBreakId=${quantityBreak.quantityBreakId}`)
+      resolve: (quantityBreakType, args, {loaders}) => loaders.ofbizArray.load(`quantityBreaks/find?quantityBreakTypeId=${quantityBreakType.quantityBreakTypeId}`)
     }
   })
 });
 
-export {QuantityBreakType};
+export {QuantityBreakTypeType};
+    
+
+
+
+
+const QuantityBreakTypeInputType = new GraphQLInputObjectType({
+  name: 'QuantityBreakTypeInputType',
+  description: 'input type for QuantityBreakType in product',
+
+  fields: () => ({
+    quantityBreakTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {QuantityBreakTypeInputType};
     

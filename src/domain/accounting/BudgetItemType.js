@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,55 +10,70 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {BudgetRevisionImpactType} from '../accounting/BudgetRevisionImpactType.js';
-import {BudgetScenarioApplicationType} from '../accounting/BudgetScenarioApplicationType.js';
-import {RequirementBudgetAllocationType} from '../order/RequirementBudgetAllocationType.js';
-import {BudgetType} from '../accounting/BudgetType.js';
-import {BudgetItemTypeType} from '../accounting/BudgetItemTypeType.js';
-import {BudgetItemAttributeType} from '../accounting/BudgetItemAttributeType.js';
+import {BudgetItemType} from '../accounting/BudgetItem.js';
+import {BudgetScenarioRuleType} from '../accounting/BudgetScenarioRule.js';
+import {GlBudgetXrefType} from '../accounting/GlBudgetXref.js';
+import {BudgetItemTypeAttrType} from '../accounting/BudgetItemTypeAttr.js';
 
 
-const BudgetItemType = new GraphQLObjectType({
-  name: 'BudgetItemType',
-  description: 'Type for BudgetItem in accounting',
+const BudgetItemTypeType = new GraphQLObjectType({
+  name: 'BudgetItemTypeType',
+  description: 'Type for BudgetItemType in accounting',
 
   fields: () => ({
-    amount: {type: GraphQLFloat},
-    purpose: {type: GraphQLString},
-    budgetItemSeqId: {type: GraphQLString},
-    budget: {
-      type: BudgetType,
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetItem, args, {loaders}) => loaders.ofbiz.load(`budgets/find?budgetId=${budgetItem.budgetId}`)
-    },
-    budgetItemType: {
+    parentType: {
       type: BudgetItemTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbiz.load(`budgetItemTypes/find?budgetItemTypeId=${budgetItemType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    budgetItemTypeId: {type: GraphQLString},
+    budgetItems: {
+      type: new GraphQLList(BudgetItemType),
       args : {budgetItemTypeId: {type: GraphQLString}},
-      resolve: (budgetItem, args, {loaders}) => loaders.ofbiz.load(`budgetItemTypes/find?budgetItemTypeId=${budgetItem.budgetItemTypeId}`)
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`budgetItems/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
     },
-    justification: {type: GraphQLString},
-    budgetScenarioApplication: {
-      type: new GraphQLList(BudgetScenarioApplicationType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetItem, args, {loaders}) => loaders.ofbizArray.load(`budgetScenarioApplications/find?budgetId=${budgetItem.budgetId}`)
+    budgetItemTypeAttrs: {
+      type: new GraphQLList(BudgetItemTypeAttrType),
+      args : {budgetItemTypeId: {type: GraphQLString}},
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`budgetItemTypeAttrs/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
     },
-    requirementBudgetAllocation: {
-      type: new GraphQLList(RequirementBudgetAllocationType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetItem, args, {loaders}) => loaders.ofbizArray.load(`requirementBudgetAllocations/find?budgetId=${budgetItem.budgetId}`)
+    glBudgetXrefs: {
+      type: new GraphQLList(GlBudgetXrefType),
+      args : {budgetItemTypeId: {type: GraphQLString}},
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`glBudgetXrefs/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
     },
-    budgetItemAttribute: {
-      type: new GraphQLList(BudgetItemAttributeType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetItem, args, {loaders}) => loaders.ofbizArray.load(`budgetItemAttributes/find?budgetId=${budgetItem.budgetId}`)
+    budgetScenarioRules: {
+      type: new GraphQLList(BudgetScenarioRuleType),
+      args : {budgetItemTypeId: {type: GraphQLString}},
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`budgetScenarioRules/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
     },
-    budgetRevisionImpact: {
-      type: new GraphQLList(BudgetRevisionImpactType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetItem, args, {loaders}) => loaders.ofbizArray.load(`budgetRevisionImpacts/find?budgetId=${budgetItem.budgetId}`)
+    budgetItemTypes: {
+      type: new GraphQLList(BudgetItemTypeType),
+      args : {budgetItemTypeId: {type: GraphQLString}},
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`budgetItemTypes/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
     }
   })
 });
 
-export {BudgetItemType};
+export {BudgetItemTypeType};
+    
+
+
+
+
+const BudgetItemTypeInputType = new GraphQLInputObjectType({
+  name: 'BudgetItemTypeInputType',
+  description: 'input type for BudgetItemType in accounting',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    budgetItemTypeId: {type: GraphQLString}
+  })
+});
+
+export {BudgetItemTypeInputType};
     

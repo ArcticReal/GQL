@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,29 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PaymentGroupMemberType} from '../accounting/PaymentGroupMemberType.js';
-import {PaymentGroupTypeType} from '../accounting/PaymentGroupTypeType.js';
+import {PaymentGroupType} from '../accounting/PaymentGroup.js';
 
 
-const PaymentGroupType = new GraphQLObjectType({
-  name: 'PaymentGroupType',
-  description: 'Type for PaymentGroup in accounting',
+const PaymentGroupTypeType = new GraphQLObjectType({
+  name: 'PaymentGroupTypeType',
+  description: 'Type for PaymentGroupType in accounting',
 
   fields: () => ({
-    paymentGroupId: {type: GraphQLString},
-    paymentGroupName: {type: GraphQLString},
-    paymentGroupType: {
+    parentType: {
       type: PaymentGroupTypeType,
-      args : {paymentGroupTypeId: {type: GraphQLString}},
-      resolve: (paymentGroup, args, {loaders}) => loaders.ofbiz.load(`paymentGroupTypes/find?paymentGroupTypeId=${paymentGroup.paymentGroupTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (paymentGroupType, args, {loaders}) => loaders.ofbiz.load(`paymentGroupTypes/find?paymentGroupTypeId=${paymentGroupType.parentTypeId}`)
     },
-    paymentGroupMember: {
-      type: new GraphQLList(PaymentGroupMemberType),
-      args : {paymentGroupId: {type: GraphQLString}},
-      resolve: (paymentGroup, args, {loaders}) => loaders.ofbizArray.load(`paymentGroupMembers/find?paymentGroupId=${paymentGroup.paymentGroupId}`)
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    paymentGroupTypeId: {type: GraphQLString},
+    paymentGroupTypes: {
+      type: new GraphQLList(PaymentGroupTypeType),
+      args : {paymentGroupTypeId: {type: GraphQLString}},
+      resolve: (paymentGroupType, args, {loaders}) => loaders.ofbizArray.load(`paymentGroupTypes/find?paymentGroupTypeId=${paymentGroupType.paymentGroupTypeId}`)
+    },
+    paymentGroups: {
+      type: new GraphQLList(PaymentGroupType),
+      args : {paymentGroupTypeId: {type: GraphQLString}},
+      resolve: (paymentGroupType, args, {loaders}) => loaders.ofbizArray.load(`paymentGroups/find?paymentGroupTypeId=${paymentGroupType.paymentGroupTypeId}`)
     }
   })
 });
 
-export {PaymentGroupType};
+export {PaymentGroupTypeType};
+    
+
+
+
+
+const PaymentGroupTypeInputType = new GraphQLInputObjectType({
+  name: 'PaymentGroupTypeInputType',
+  description: 'input type for PaymentGroupType in accounting',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    paymentGroupTypeId: {type: GraphQLString}
+  })
+});
+
+export {PaymentGroupTypeInputType};
     

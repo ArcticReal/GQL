@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,29 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PartyType} from '../party/PartyType.js';
-import {PartyClassificationGroupType} from '../party/PartyClassificationGroupType.js';
+import {PartyClassificationGroupType} from '../party/PartyClassificationGroup.js';
 
 
-const PartyClassificationType = new GraphQLObjectType({
-  name: 'PartyClassificationType',
-  description: 'Type for PartyClassification in party',
+const PartyClassificationTypeType = new GraphQLObjectType({
+  name: 'PartyClassificationTypeType',
+  description: 'Type for PartyClassificationType in party',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    partyClassificationGroup: {
-      type: PartyClassificationGroupType,
-      args : {partyClassificationGroupId: {type: GraphQLString}},
-      resolve: (partyClassification, args, {loaders}) => loaders.ofbiz.load(`partyClassificationGroups/find?partyClassificationGroupId=${partyClassification.partyClassificationGroupId}`)
+    parentType: {
+      type: PartyClassificationTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (partyClassificationType, args, {loaders}) => loaders.ofbiz.load(`partyClassificationTypes/find?partyClassificationTypeId=${partyClassificationType.parentTypeId}`)
     },
-    party: {
-      type: PartyType,
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyClassification, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyClassification.partyId}`)
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    partyClassificationTypeId: {type: GraphQLString},
+    partyClassificationTypes: {
+      type: new GraphQLList(PartyClassificationTypeType),
+      args : {partyClassificationTypeId: {type: GraphQLString}},
+      resolve: (partyClassificationType, args, {loaders}) => loaders.ofbizArray.load(`partyClassificationTypes/find?partyClassificationTypeId=${partyClassificationType.partyClassificationTypeId}`)
     },
-    thruDate: {type: GraphQLString}
+    partyClassificationGroups: {
+      type: new GraphQLList(PartyClassificationGroupType),
+      args : {partyClassificationTypeId: {type: GraphQLString}},
+      resolve: (partyClassificationType, args, {loaders}) => loaders.ofbizArray.load(`partyClassificationGroups/find?partyClassificationTypeId=${partyClassificationType.partyClassificationTypeId}`)
+    }
   })
 });
 
-export {PartyClassificationType};
+export {PartyClassificationTypeType};
+    
+
+
+
+
+const PartyClassificationTypeInputType = new GraphQLInputObjectType({
+  name: 'PartyClassificationTypeInputType',
+  description: 'input type for PartyClassificationType in party',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    partyClassificationTypeId: {type: GraphQLString}
+  })
+});
+
+export {PartyClassificationTypeInputType};
     

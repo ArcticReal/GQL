@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,41 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {WorkEffortType} from '../workeffort/WorkEffortType.js';
-import {AccommodationMapTypeType} from '../accounting/AccommodationMapTypeType.js';
-import {FixedAssetType} from '../accounting/FixedAssetType.js';
-import {AccommodationClassType} from '../accounting/AccommodationClassType.js';
+import {AccommodationMapType} from '../accounting/AccommodationMap.js';
 
 
-const AccommodationMapType = new GraphQLObjectType({
-  name: 'AccommodationMapType',
-  description: 'Type for AccommodationMap in accounting',
+const AccommodationMapTypeType = new GraphQLObjectType({
+  name: 'AccommodationMapTypeType',
+  description: 'Type for AccommodationMapType in accounting',
 
   fields: () => ({
-    accommodationMapId: {type: GraphQLString},
-    fixedAsset: {
-      type: FixedAssetType,
-      args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (accommodationMap, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${accommodationMap.fixedAssetId}`)
-    },
-    numberOfSpaces: {type: GraphQLInt},
-    accommodationClass: {
-      type: AccommodationClassType,
-      args : {accommodationClassId: {type: GraphQLString}},
-      resolve: (accommodationMap, args, {loaders}) => loaders.ofbiz.load(`accommodationClasss/find?accommodationClassId=${accommodationMap.accommodationClassId}`)
-    },
-    accommodationMapType: {
-      type: AccommodationMapTypeType,
+    description: {type: GraphQLString},
+    accommodationMapTypeId: {type: GraphQLString},
+    accommodationMaps: {
+      type: new GraphQLList(AccommodationMapType),
       args : {accommodationMapTypeId: {type: GraphQLString}},
-      resolve: (accommodationMap, args, {loaders}) => loaders.ofbiz.load(`accommodationMapTypes/find?accommodationMapTypeId=${accommodationMap.accommodationMapTypeId}`)
-    },
-    workEffort: {
-      type: new GraphQLList(WorkEffortType),
-      args : {accommodationMapId: {type: GraphQLString}},
-      resolve: (accommodationMap, args, {loaders}) => loaders.ofbizArray.load(`workEfforts/find?accommodationMapId=${accommodationMap.accommodationMapId}`)
+      resolve: (accommodationMapType, args, {loaders}) => loaders.ofbizArray.load(`accommodationMaps/find?accommodationMapTypeId=${accommodationMapType.accommodationMapTypeId}`)
     }
   })
 });
 
-export {AccommodationMapType};
+export {AccommodationMapTypeType};
+    
+
+
+
+
+const AccommodationMapTypeInputType = new GraphQLInputObjectType({
+  name: 'AccommodationMapTypeInputType',
+  description: 'input type for AccommodationMapType in accounting',
+
+  fields: () => ({
+    description: {type: GraphQLString},
+    accommodationMapTypeId: {type: GraphQLString}
+  })
+});
+
+export {AccommodationMapTypeInputType};
     

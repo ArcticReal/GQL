@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,29 +10,58 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {InventoryItemLabelApplType} from '../product/InventoryItemLabelApplType.js';
-import {InventoryItemLabelTypeType} from '../product/InventoryItemLabelTypeType.js';
+import {InventoryItemLabelType} from '../product/InventoryItemLabel.js';
+import {InventoryItemLabelApplType} from '../product/InventoryItemLabelAppl.js';
 
 
-const InventoryItemLabelType = new GraphQLObjectType({
-  name: 'InventoryItemLabelType',
-  description: 'Type for InventoryItemLabel in product',
+const InventoryItemLabelTypeType = new GraphQLObjectType({
+  name: 'InventoryItemLabelTypeType',
+  description: 'Type for InventoryItemLabelType in product',
 
   fields: () => ({
-    inventoryItemLabelId: {type: GraphQLString},
-    inventoryItemLabelType: {
+    parentType: {
       type: InventoryItemLabelTypeType,
-      args : {inventoryItemLabelTypeId: {type: GraphQLString}},
-      resolve: (inventoryItemLabel, args, {loaders}) => loaders.ofbiz.load(`inventoryItemLabelTypes/find?inventoryItemLabelTypeId=${inventoryItemLabel.inventoryItemLabelTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbiz.load(`inventoryItemLabelTypes/find?inventoryItemLabelTypeId=${inventoryItemLabelType.parentTypeId}`)
     },
+    hasTable: {type: GraphQLBoolean},
+    inventoryItemLabelTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    inventoryItemLabelAppl: {
+    inventoryItemLabelTypes: {
+      type: new GraphQLList(InventoryItemLabelTypeType),
+      args : {inventoryItemLabelTypeId: {type: GraphQLString}},
+      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemLabelTypes/find?inventoryItemLabelTypeId=${inventoryItemLabelType.inventoryItemLabelTypeId}`)
+    },
+    inventoryItemLabelAppls: {
       type: new GraphQLList(InventoryItemLabelApplType),
-      args : {inventoryItemLabelId: {type: GraphQLString}},
-      resolve: (inventoryItemLabel, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemLabelAppls/find?inventoryItemLabelId=${inventoryItemLabel.inventoryItemLabelId}`)
+      args : {inventoryItemLabelTypeId: {type: GraphQLString}},
+      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemLabelAppls/find?inventoryItemLabelTypeId=${inventoryItemLabelType.inventoryItemLabelTypeId}`)
+    },
+    inventoryItemLabels: {
+      type: new GraphQLList(InventoryItemLabelType),
+      args : {inventoryItemLabelTypeId: {type: GraphQLString}},
+      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemLabels/find?inventoryItemLabelTypeId=${inventoryItemLabelType.inventoryItemLabelTypeId}`)
     }
   })
 });
 
-export {InventoryItemLabelType};
+export {InventoryItemLabelTypeType};
+    
+
+
+
+
+const InventoryItemLabelTypeInputType = new GraphQLInputObjectType({
+  name: 'InventoryItemLabelTypeInputType',
+  description: 'input type for InventoryItemLabelType in product',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    inventoryItemLabelTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {InventoryItemLabelTypeInputType};
     

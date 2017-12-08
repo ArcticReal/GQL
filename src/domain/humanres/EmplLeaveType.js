@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,42 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PartyType} from '../party/PartyType.js';
-import {EmplLeaveTypeType} from '../humanres/EmplLeaveTypeType.js';
-import {EmplLeaveReasonTypeType} from '../humanres/EmplLeaveReasonTypeType.js';
+import {EmplLeaveType} from '../humanres/EmplLeave.js';
 
 
-const EmplLeaveType = new GraphQLObjectType({
-  name: 'EmplLeaveType',
-  description: 'Type for EmplLeave in humanres',
+const EmplLeaveTypeType = new GraphQLObjectType({
+  name: 'EmplLeaveTypeType',
+  description: 'Type for EmplLeaveType in humanres',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    approverParty: {
-      type: PartyType,
-      args : {approverPartyId: {type: GraphQLString}},
-      resolve: (emplLeave, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${emplLeave.approverPartyId}`)
-    },
-    emplLeaveReasonType: {
-      type: EmplLeaveReasonTypeType,
-      args : {emplLeaveReasonTypeId: {type: GraphQLString}},
-      resolve: (emplLeave, args, {loaders}) => loaders.ofbiz.load(`emplLeaveReasonTypes/find?emplLeaveReasonTypeId=${emplLeave.emplLeaveReasonTypeId}`)
-    },
-    description: {type: GraphQLString},
-    leaveType: {
+    parentType: {
       type: EmplLeaveTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (emplLeaveType, args, {loaders}) => loaders.ofbiz.load(`emplLeaveTypes/find?leaveTypeId=${emplLeaveType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    leaveTypeId: {type: GraphQLString},
+    emplLeaveTypes: {
+      type: new GraphQLList(EmplLeaveTypeType),
       args : {leaveTypeId: {type: GraphQLString}},
-      resolve: (emplLeave, args, {loaders}) => loaders.ofbiz.load(`emplLeaveTypes/find?leaveTypeId=${emplLeave.leaveTypeId}`)
+      resolve: (emplLeaveType, args, {loaders}) => loaders.ofbizArray.load(`emplLeaveTypes/find?leaveTypeId=${emplLeaveType.leaveTypeId}`)
     },
-    party: {
-      type: PartyType,
-      args : {partyId: {type: GraphQLString}},
-      resolve: (emplLeave, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${emplLeave.partyId}`)
-    },
-    leaveStatus: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    emplLeaves: {
+      type: new GraphQLList(EmplLeaveType),
+      args : {leaveTypeId: {type: GraphQLString}},
+      resolve: (emplLeaveType, args, {loaders}) => loaders.ofbizArray.load(`emplLeaves/find?leaveTypeId=${emplLeaveType.leaveTypeId}`)
+    }
   })
 });
 
-export {EmplLeaveType};
+export {EmplLeaveTypeType};
+    
+
+
+
+
+const EmplLeaveTypeInputType = new GraphQLInputObjectType({
+  name: 'EmplLeaveTypeInputType',
+  description: 'input type for EmplLeaveType in humanres',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    leaveTypeId: {type: GraphQLString}
+  })
+});
+
+export {EmplLeaveTypeInputType};
     

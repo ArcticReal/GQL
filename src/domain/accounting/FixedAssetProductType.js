@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,39 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {FixedAssetProductTypeType} from '../accounting/FixedAssetProductTypeType.js';
-import {ProductType} from '../product/ProductType.js';
-import {FixedAssetType} from '../accounting/FixedAssetType.js';
+import {FixedAssetProductType} from '../accounting/FixedAssetProduct.js';
 
 
-const FixedAssetProductType = new GraphQLObjectType({
-  name: 'FixedAssetProductType',
-  description: 'Type for FixedAssetProduct in accounting',
+const FixedAssetProductTypeType = new GraphQLObjectType({
+  name: 'FixedAssetProductTypeType',
+  description: 'Type for FixedAssetProductType in accounting',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    comments: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
-    product: {
-      type: ProductType,
-      args : {productId: {type: GraphQLString}},
-      resolve: (fixedAssetProduct, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${fixedAssetProduct.productId}`)
-    },
-    sequenceNum: {type: GraphQLInt},
-    fixedAsset: {
-      type: FixedAssetType,
-      args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetProduct, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${fixedAssetProduct.fixedAssetId}`)
-    },
-    fixedAssetProductType: {
-      type: FixedAssetProductTypeType,
+    fixedAssetProductTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    fixedAssetProducts: {
+      type: new GraphQLList(FixedAssetProductType),
       args : {fixedAssetProductTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetProduct, args, {loaders}) => loaders.ofbiz.load(`fixedAssetProductTypes/find?fixedAssetProductTypeId=${fixedAssetProduct.fixedAssetProductTypeId}`)
-    },
-    quantityUomId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+      resolve: (fixedAssetProductType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetProducts/find?fixedAssetProductTypeId=${fixedAssetProductType.fixedAssetProductTypeId}`)
+    }
   })
 });
 
-export {FixedAssetProductType};
+export {FixedAssetProductTypeType};
+    
+
+
+
+
+const FixedAssetProductTypeInputType = new GraphQLInputObjectType({
+  name: 'FixedAssetProductTypeInputType',
+  description: 'input type for FixedAssetProductType in accounting',
+
+  fields: () => ({
+    fixedAssetProductTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {FixedAssetProductTypeInputType};
     

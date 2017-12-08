@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,38 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {WorkEffortType} from '../workeffort/WorkEffortType.js';
-import {ProductType} from '../product/ProductType.js';
-import {WorkEffortGoodStandardTypeType} from '../workeffort/WorkEffortGoodStandardTypeType.js';
+import {WorkEffortGoodStandardType} from '../workeffort/WorkEffortGoodStandard.js';
 
 
-const WorkEffortGoodStandardType = new GraphQLObjectType({
-  name: 'WorkEffortGoodStandardType',
-  description: 'Type for WorkEffortGoodStandard in workeffort',
+const WorkEffortGoodStandardTypeType = new GraphQLObjectType({
+  name: 'WorkEffortGoodStandardTypeType',
+  description: 'Type for WorkEffortGoodStandardType in workeffort',
 
   fields: () => ({
-    workEffort: {
-      type: WorkEffortType,
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortGoodStandard, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortGoodStandard.workEffortId}`)
-    },
-    workEffortGoodStdType: {
+    workEffortGoodStdTypeId: {type: GraphQLString},
+    parentType: {
       type: WorkEffortGoodStandardTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (workEffortGoodStandardType, args, {loaders}) => loaders.ofbiz.load(`workEffortGoodStandardTypes/find?workEffortGoodStdTypeId=${workEffortGoodStandardType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    workEffortGoodStandards: {
+      type: new GraphQLList(WorkEffortGoodStandardType),
       args : {workEffortGoodStdTypeId: {type: GraphQLString}},
-      resolve: (workEffortGoodStandard, args, {loaders}) => loaders.ofbiz.load(`workEffortGoodStandardTypes/find?workEffortGoodStdTypeId=${workEffortGoodStandard.workEffortGoodStdTypeId}`)
+      resolve: (workEffortGoodStandardType, args, {loaders}) => loaders.ofbizArray.load(`workEffortGoodStandards/find?workEffortGoodStdTypeId=${workEffortGoodStandardType.workEffortGoodStdTypeId}`)
     },
-    fromDate: {type: GraphQLString},
-    product: {
-      type: ProductType,
-      args : {productId: {type: GraphQLString}},
-      resolve: (workEffortGoodStandard, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${workEffortGoodStandard.productId}`)
-    },
-    statusId: {type: GraphQLString},
-    estimatedQuantity: {type: GraphQLFloat},
-    estimatedCost: {type: GraphQLFloat},
-    thruDate: {type: GraphQLString}
+    workEffortGoodStandardTypes: {
+      type: new GraphQLList(WorkEffortGoodStandardTypeType),
+      args : {workEffortGoodStdTypeId: {type: GraphQLString}},
+      resolve: (workEffortGoodStandardType, args, {loaders}) => loaders.ofbizArray.load(`workEffortGoodStandardTypes/find?workEffortGoodStdTypeId=${workEffortGoodStandardType.workEffortGoodStdTypeId}`)
+    }
   })
 });
 
-export {WorkEffortGoodStandardType};
+export {WorkEffortGoodStandardTypeType};
+    
+
+
+
+
+const WorkEffortGoodStandardTypeInputType = new GraphQLInputObjectType({
+  name: 'WorkEffortGoodStandardTypeInputType',
+  description: 'input type for WorkEffortGoodStandardType in workeffort',
+
+  fields: () => ({
+    workEffortGoodStdTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString}
+  })
+});
+
+export {WorkEffortGoodStandardTypeInputType};
     

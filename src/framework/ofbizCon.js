@@ -37,10 +37,14 @@ function fetchOneFromUrl(relativeURL, req){
         .then(json => {
           if(json!==undefined&&json!==null){
             if(json instanceof Array)
-              if(json.length===1)
+              if(json.length===1){
                 return json[0];
-              else
+              }else if (json.length===0) {
+                return null;
+              }else{
+                console.log("Error: Array with ", relativeURL);
                 throw new GraphQLError('didn\'t expect array');
+              }
           }
 
           return json;

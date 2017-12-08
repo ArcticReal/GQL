@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,62 +10,51 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {TrackingCodeTypeType} from '../marketing/TrackingCodeTypeType.js';
-import {TrackingCodeOrderType} from '../marketing/TrackingCodeOrderType.js';
-import {TrackingCodeVisitType} from '../marketing/TrackingCodeVisitType.js';
-import {MarketingCampaignType} from '../marketing/MarketingCampaignType.js';
-import {TrackingCodeOrderReturnType} from '../marketing/TrackingCodeOrderReturnType.js';
+import {TrackingCodeOrderType} from '../marketing/TrackingCodeOrder.js';
+import {TrackingCodeOrderReturnType} from '../marketing/TrackingCodeOrderReturn.js';
+import {TrackingCodeType} from '../marketing/TrackingCode.js';
 
 
-const TrackingCodeType = new GraphQLObjectType({
-  name: 'TrackingCodeType',
-  description: 'Type for TrackingCode in marketing',
+const TrackingCodeTypeType = new GraphQLObjectType({
+  name: 'TrackingCodeTypeType',
+  description: 'Type for TrackingCodeType in marketing',
 
   fields: () => ({
-    trackingCodeId: {type: GraphQLString},
-    trackableLifetime: {type: GraphQLInt},
-    redirectUrl: {type: GraphQLString},
-    comments: {type: GraphQLString},
-    marketingCampaign: {
-      type: MarketingCampaignType,
-      args : {marketingCampaignId: {type: GraphQLString}},
-      resolve: (trackingCode, args, {loaders}) => loaders.ofbiz.load(`marketingCampaigns/find?marketingCampaignId=${trackingCode.marketingCampaignId}`)
-    },
-    lastModifiedDate: {type: GraphQLString},
-    overrideLogo: {type: GraphQLString},
-    groupId: {type: GraphQLString},
+    trackingCodeTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    billableLifetime: {type: GraphQLInt},
-    thruDate: {type: GraphQLString},
-    subgroupId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    lastModifiedByUserLogin: {type: GraphQLString},
-    createdDate: {type: GraphQLString},
-    trackingCodeType: {
-      type: TrackingCodeTypeType,
-      args : {trackingCodeTypeId: {type: GraphQLString}},
-      resolve: (trackingCode, args, {loaders}) => loaders.ofbiz.load(`trackingCodeTypes/find?trackingCodeTypeId=${trackingCode.trackingCodeTypeId}`)
-    },
-    overrideCss: {type: GraphQLString},
-    createdByUserLogin: {type: GraphQLString},
-    prodCatalogId: {type: GraphQLString},
-    trackingCodeVisit: {
-      type: new GraphQLList(TrackingCodeVisitType),
-      args : {trackingCodeId: {type: GraphQLString}},
-      resolve: (trackingCode, args, {loaders}) => loaders.ofbizArray.load(`trackingCodeVisits/find?trackingCodeId=${trackingCode.trackingCodeId}`)
-    },
-    trackingCodeOrderReturn: {
+    trackingCodeOrderReturns: {
       type: new GraphQLList(TrackingCodeOrderReturnType),
-      args : {trackingCodeId: {type: GraphQLString}},
-      resolve: (trackingCode, args, {loaders}) => loaders.ofbizArray.load(`trackingCodeOrderReturns/find?trackingCodeId=${trackingCode.trackingCodeId}`)
+      args : {trackingCodeTypeId: {type: GraphQLString}},
+      resolve: (trackingCodeType, args, {loaders}) => loaders.ofbizArray.load(`trackingCodeOrderReturns/find?trackingCodeTypeId=${trackingCodeType.trackingCodeTypeId}`)
     },
-    trackingCodeOrder: {
+    trackingCodes: {
+      type: new GraphQLList(TrackingCodeType),
+      args : {trackingCodeTypeId: {type: GraphQLString}},
+      resolve: (trackingCodeType, args, {loaders}) => loaders.ofbizArray.load(`trackingCodes/find?trackingCodeTypeId=${trackingCodeType.trackingCodeTypeId}`)
+    },
+    trackingCodeOrders: {
       type: new GraphQLList(TrackingCodeOrderType),
-      args : {trackingCodeId: {type: GraphQLString}},
-      resolve: (trackingCode, args, {loaders}) => loaders.ofbizArray.load(`trackingCodeOrders/find?trackingCodeId=${trackingCode.trackingCodeId}`)
+      args : {trackingCodeTypeId: {type: GraphQLString}},
+      resolve: (trackingCodeType, args, {loaders}) => loaders.ofbizArray.load(`trackingCodeOrders/find?trackingCodeTypeId=${trackingCodeType.trackingCodeTypeId}`)
     }
   })
 });
 
-export {TrackingCodeType};
+export {TrackingCodeTypeType};
+    
+
+
+
+
+const TrackingCodeTypeInputType = new GraphQLInputObjectType({
+  name: 'TrackingCodeTypeInputType',
+  description: 'input type for TrackingCodeType in marketing',
+
+  fields: () => ({
+    trackingCodeTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {TrackingCodeTypeInputType};
     

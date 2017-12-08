@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,53 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ShipmentGatewayFedexType} from '../shipment/ShipmentGatewayFedexType.js';
-import {ProductStoreShipmentMethType} from '../product/ProductStoreShipmentMethType.js';
-import {ShipmentGatewayUspsType} from '../shipment/ShipmentGatewayUspsType.js';
-import {ShipmentGatewayConfigTypeType} from '../shipment/ShipmentGatewayConfigTypeType.js';
-import {ShipmentGatewayDhlType} from '../shipment/ShipmentGatewayDhlType.js';
-import {ShipmentGatewayUpsType} from '../shipment/ShipmentGatewayUpsType.js';
+import {ShipmentGatewayConfigType} from '../shipment/ShipmentGatewayConfig.js';
 
 
-const ShipmentGatewayConfigType = new GraphQLObjectType({
-  name: 'ShipmentGatewayConfigType',
-  description: 'Type for ShipmentGatewayConfig in shipment',
+const ShipmentGatewayConfigTypeType = new GraphQLObjectType({
+  name: 'ShipmentGatewayConfigTypeType',
+  description: 'Type for ShipmentGatewayConfigType in shipment',
 
   fields: () => ({
-    shipmentGatewayConfigId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    shipmentGatewayConfType: {
+    parentType: {
       type: ShipmentGatewayConfigTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (shipmentGatewayConfigType, args, {loaders}) => loaders.ofbiz.load(`shipmentGatewayConfigTypes/find?shipmentGatewayConfTypeId=${shipmentGatewayConfigType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    shipmentGatewayConfTypeId: {type: GraphQLString},
+    shipmentGatewayConfigTypes: {
+      type: new GraphQLList(ShipmentGatewayConfigTypeType),
       args : {shipmentGatewayConfTypeId: {type: GraphQLString}},
-      resolve: (shipmentGatewayConfig, args, {loaders}) => loaders.ofbiz.load(`shipmentGatewayConfigTypes/find?shipmentGatewayConfTypeId=${shipmentGatewayConfig.shipmentGatewayConfTypeId}`)
+      resolve: (shipmentGatewayConfigType, args, {loaders}) => loaders.ofbizArray.load(`shipmentGatewayConfigTypes/find?shipmentGatewayConfTypeId=${shipmentGatewayConfigType.shipmentGatewayConfTypeId}`)
     },
-    shipmentGatewayFedex: {
-      type: new GraphQLList(ShipmentGatewayFedexType),
-      args : {shipmentGatewayConfigId: {type: GraphQLString}},
-      resolve: (shipmentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`shipmentGatewayFedexs/find?shipmentGatewayConfigId=${shipmentGatewayConfig.shipmentGatewayConfigId}`)
-    },
-    shipmentGatewayDhl: {
-      type: new GraphQLList(ShipmentGatewayDhlType),
-      args : {shipmentGatewayConfigId: {type: GraphQLString}},
-      resolve: (shipmentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`shipmentGatewayDhls/find?shipmentGatewayConfigId=${shipmentGatewayConfig.shipmentGatewayConfigId}`)
-    },
-    shipmentGatewayUps: {
-      type: new GraphQLList(ShipmentGatewayUpsType),
-      args : {shipmentGatewayConfigId: {type: GraphQLString}},
-      resolve: (shipmentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`shipmentGatewayUpss/find?shipmentGatewayConfigId=${shipmentGatewayConfig.shipmentGatewayConfigId}`)
-    },
-    productStoreShipmentMeth: {
-      type: new GraphQLList(ProductStoreShipmentMethType),
-      args : {shipmentGatewayConfigId: {type: GraphQLString}},
-      resolve: (shipmentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`productStoreShipmentMeths/find?shipmentGatewayConfigId=${shipmentGatewayConfig.shipmentGatewayConfigId}`)
-    },
-    shipmentGatewayUsps: {
-      type: new GraphQLList(ShipmentGatewayUspsType),
-      args : {shipmentGatewayConfigId: {type: GraphQLString}},
-      resolve: (shipmentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`shipmentGatewayUspss/find?shipmentGatewayConfigId=${shipmentGatewayConfig.shipmentGatewayConfigId}`)
+    shipmentGatewayConfigs: {
+      type: new GraphQLList(ShipmentGatewayConfigType),
+      args : {shipmentGatewayConfTypeId: {type: GraphQLString}},
+      resolve: (shipmentGatewayConfigType, args, {loaders}) => loaders.ofbizArray.load(`shipmentGatewayConfigs/find?shipmentGatewayConfTypeId=${shipmentGatewayConfigType.shipmentGatewayConfTypeId}`)
     }
   })
 });
 
-export {ShipmentGatewayConfigType};
+export {ShipmentGatewayConfigTypeType};
+    
+
+
+
+
+const ShipmentGatewayConfigTypeInputType = new GraphQLInputObjectType({
+  name: 'ShipmentGatewayConfigTypeInputType',
+  description: 'input type for ShipmentGatewayConfigType in shipment',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    shipmentGatewayConfTypeId: {type: GraphQLString}
+  })
+});
+
+export {ShipmentGatewayConfigTypeInputType};
     

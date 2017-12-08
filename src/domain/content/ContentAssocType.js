@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,58 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ContentAssocTypeType} from '../content/ContentAssocTypeType.js';
-import {ContentType} from '../content/ContentType.js';
-import {ContentAssocPredicateType} from '../content/ContentAssocPredicateType.js';
-import {UserLoginType} from '../login/UserLoginType.js';
+import {ContentAssocType} from '../content/ContentAssoc.js';
 
 
-const ContentAssocType = new GraphQLObjectType({
-  name: 'ContentAssocType',
-  description: 'Type for ContentAssoc in content',
+const ContentAssocTypeType = new GraphQLObjectType({
+  name: 'ContentAssocTypeType',
+  description: 'Type for ContentAssocType in content',
 
   fields: () => ({
-    sequenceNum: {type: GraphQLInt},
-    lastModifiedDate: {type: GraphQLString},
-    contentTo: {
-      type: ContentType,
-      args : {contentIdTo: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentAssoc.contentIdTo}`)
-    },
-    upperCoordinate: {type: GraphQLInt},
-    leftCoordinate: {type: GraphQLInt},
-    content: {
-      type: ContentType,
-      args : {contentId: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentAssoc.contentId}`)
-    },
-    mapKey: {type: GraphQLString},
-    thruDate: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    contentAssocPredicate: {
-      type: ContentAssocPredicateType,
-      args : {contentAssocPredicateId: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`contentAssocPredicates/find?contentAssocPredicateId=${contentAssoc.contentAssocPredicateId}`)
-    },
-    dataSourceId: {type: GraphQLString},
-    lastModifiedByUserLogin: {
-      type: UserLoginType,
-      args : {lastModifiedByUserLogin: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${contentAssoc.lastModifiedByUserLogin}`)
-    },
-    createdDate: {type: GraphQLString},
-    contentAssocType: {
-      type: ContentAssocTypeType,
+    contentAssocTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    contentAssocs: {
+      type: new GraphQLList(ContentAssocType),
       args : {contentAssocTypeId: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`contentAssocTypes/find?contentAssocTypeId=${contentAssoc.contentAssocTypeId}`)
-    },
-    createdByUserLogin: {
-      type: UserLoginType,
-      args : {createdByUserLogin: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${contentAssoc.createdByUserLogin}`)
+      resolve: (contentAssocType, args, {loaders}) => loaders.ofbizArray.load(`contentAssocs/find?contentAssocTypeId=${contentAssocType.contentAssocTypeId}`)
     }
   })
 });
 
-export {ContentAssocType};
+export {ContentAssocTypeType};
+    
+
+
+
+
+const ContentAssocTypeInputType = new GraphQLInputObjectType({
+  name: 'ContentAssocTypeInputType',
+  description: 'input type for ContentAssocType in content',
+
+  fields: () => ({
+    contentAssocTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {ContentAssocTypeInputType};
     

@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,36 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ProductPriceActionTypeType} from '../product/ProductPriceActionTypeType.js';
-import {OrderItemPriceInfoType} from '../order/OrderItemPriceInfoType.js';
-import {ProductPriceRuleType} from '../product/ProductPriceRuleType.js';
+import {ProductPriceActionType} from '../product/ProductPriceAction.js';
 
 
-const ProductPriceActionType = new GraphQLObjectType({
-  name: 'ProductPriceActionType',
-  description: 'Type for ProductPriceAction in product',
+const ProductPriceActionTypeType = new GraphQLObjectType({
+  name: 'ProductPriceActionTypeType',
+  description: 'Type for ProductPriceActionType in product',
 
   fields: () => ({
-    amount: {type: GraphQLFloat},
-    productPriceActionSeqId: {type: GraphQLString},
-    productPriceActionType: {
-      type: ProductPriceActionTypeType,
+    description: {type: GraphQLString},
+    productPriceActionTypeId: {type: GraphQLString},
+    productPriceActions: {
+      type: new GraphQLList(ProductPriceActionType),
       args : {productPriceActionTypeId: {type: GraphQLString}},
-      resolve: (productPriceAction, args, {loaders}) => loaders.ofbiz.load(`productPriceActionTypes/find?productPriceActionTypeId=${productPriceAction.productPriceActionTypeId}`)
-    },
-    productPriceRule: {
-      type: ProductPriceRuleType,
-      args : {productPriceRuleId: {type: GraphQLString}},
-      resolve: (productPriceAction, args, {loaders}) => loaders.ofbiz.load(`productPriceRules/find?productPriceRuleId=${productPriceAction.productPriceRuleId}`)
-    },
-    rateCode: {type: GraphQLString},
-    orderItemPriceInfo: {
-      type: new GraphQLList(OrderItemPriceInfoType),
-      args : {productPriceRuleId: {type: GraphQLString}},
-      resolve: (productPriceAction, args, {loaders}) => loaders.ofbizArray.load(`orderItemPriceInfos/find?productPriceRuleId=${productPriceAction.productPriceRuleId}`)
+      resolve: (productPriceActionType, args, {loaders}) => loaders.ofbizArray.load(`productPriceActions/find?productPriceActionTypeId=${productPriceActionType.productPriceActionTypeId}`)
     }
   })
 });
 
-export {ProductPriceActionType};
+export {ProductPriceActionTypeType};
+    
+
+
+
+
+const ProductPriceActionTypeInputType = new GraphQLInputObjectType({
+  name: 'ProductPriceActionTypeInputType',
+  description: 'input type for ProductPriceActionType in product',
+
+  fields: () => ({
+    description: {type: GraphQLString},
+    productPriceActionTypeId: {type: GraphQLString}
+  })
+});
+
+export {ProductPriceActionTypeInputType};
     

@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,29 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {GlAccountCategoryTypeType} from '../accounting/GlAccountCategoryTypeType.js';
-import {GlAccountCategoryMemberType} from '../accounting/GlAccountCategoryMemberType.js';
+import {GlAccountCategoryType} from '../accounting/GlAccountCategory.js';
 
 
-const GlAccountCategoryType = new GraphQLObjectType({
-  name: 'GlAccountCategoryType',
-  description: 'Type for GlAccountCategory in accounting',
+const GlAccountCategoryTypeType = new GraphQLObjectType({
+  name: 'GlAccountCategoryTypeType',
+  description: 'Type for GlAccountCategoryType in accounting',
 
   fields: () => ({
-    glAccountCategoryType: {
-      type: GlAccountCategoryTypeType,
-      args : {glAccountCategoryTypeId: {type: GraphQLString}},
-      resolve: (glAccountCategory, args, {loaders}) => loaders.ofbiz.load(`glAccountCategoryTypes/find?glAccountCategoryTypeId=${glAccountCategory.glAccountCategoryTypeId}`)
-    },
-    glAccountCategoryId: {type: GraphQLString},
+    glAccountCategoryTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    glAccountCategoryMember: {
-      type: new GraphQLList(GlAccountCategoryMemberType),
-      args : {glAccountCategoryId: {type: GraphQLString}},
-      resolve: (glAccountCategory, args, {loaders}) => loaders.ofbizArray.load(`glAccountCategoryMembers/find?glAccountCategoryId=${glAccountCategory.glAccountCategoryId}`)
+    glAccountCategories: {
+      type: new GraphQLList(GlAccountCategoryType),
+      args : {glAccountCategoryTypeId: {type: GraphQLString}},
+      resolve: (glAccountCategoryType, args, {loaders}) => loaders.ofbizArray.load(`glAccountCategorys/find?glAccountCategoryTypeId=${glAccountCategoryType.glAccountCategoryTypeId}`)
     }
   })
 });
 
-export {GlAccountCategoryType};
+export {GlAccountCategoryTypeType};
+    
+
+
+
+
+const GlAccountCategoryTypeInputType = new GraphQLInputObjectType({
+  name: 'GlAccountCategoryTypeInputType',
+  description: 'input type for GlAccountCategoryType in accounting',
+
+  fields: () => ({
+    glAccountCategoryTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {GlAccountCategoryTypeInputType};
     

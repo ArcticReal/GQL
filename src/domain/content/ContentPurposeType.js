@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,28 +10,51 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ContentPurposeTypeType} from '../content/ContentPurposeTypeType.js';
-import {ContentType} from '../content/ContentType.js';
+import {ContentPurposeOperationType} from '../content/ContentPurposeOperation.js';
+import {ContentPurposeType} from '../content/ContentPurpose.js';
+import {DataResourcePurposeType} from '../content/DataResourcePurpose.js';
 
 
-const ContentPurposeType = new GraphQLObjectType({
-  name: 'ContentPurposeType',
-  description: 'Type for ContentPurpose in content',
+const ContentPurposeTypeType = new GraphQLObjectType({
+  name: 'ContentPurposeTypeType',
+  description: 'Type for ContentPurposeType in content',
 
   fields: () => ({
-    contentPurposeType: {
-      type: ContentPurposeTypeType,
+    contentPurposeTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    contentPurposes: {
+      type: new GraphQLList(ContentPurposeType),
       args : {contentPurposeTypeId: {type: GraphQLString}},
-      resolve: (contentPurpose, args, {loaders}) => loaders.ofbiz.load(`contentPurposeTypes/find?contentPurposeTypeId=${contentPurpose.contentPurposeTypeId}`)
+      resolve: (contentPurposeType, args, {loaders}) => loaders.ofbizArray.load(`contentPurposes/find?contentPurposeTypeId=${contentPurposeType.contentPurposeTypeId}`)
     },
-    sequenceNum: {type: GraphQLInt},
-    content: {
-      type: ContentType,
-      args : {contentId: {type: GraphQLString}},
-      resolve: (contentPurpose, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentPurpose.contentId}`)
+    contentPurposeOperations: {
+      type: new GraphQLList(ContentPurposeOperationType),
+      args : {contentPurposeTypeId: {type: GraphQLString}},
+      resolve: (contentPurposeType, args, {loaders}) => loaders.ofbizArray.load(`contentPurposeOperations/find?contentPurposeTypeId=${contentPurposeType.contentPurposeTypeId}`)
+    },
+    dataResourcePurposes: {
+      type: new GraphQLList(DataResourcePurposeType),
+      args : {contentPurposeTypeId: {type: GraphQLString}},
+      resolve: (contentPurposeType, args, {loaders}) => loaders.ofbizArray.load(`dataResourcePurposes/find?contentPurposeTypeId=${contentPurposeType.contentPurposeTypeId}`)
     }
   })
 });
 
-export {ContentPurposeType};
+export {ContentPurposeTypeType};
+    
+
+
+
+
+const ContentPurposeTypeInputType = new GraphQLInputObjectType({
+  name: 'ContentPurposeTypeInputType',
+  description: 'input type for ContentPurposeType in content',
+
+  fields: () => ({
+    contentPurposeTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {ContentPurposeTypeInputType};
     

@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,39 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ContentType} from '../content/ContentType.js';
-import {ProductCategoryContentTypeType} from '../product/ProductCategoryContentTypeType.js';
-import {ProductCategoryType} from '../product/ProductCategoryType.js';
+import {ProductCategoryContentType} from '../product/ProductCategoryContent.js';
 
 
-const ProductCategoryContentType = new GraphQLObjectType({
-  name: 'ProductCategoryContentType',
-  description: 'Type for ProductCategoryContent in product',
+const ProductCategoryContentTypeType = new GraphQLObjectType({
+  name: 'ProductCategoryContentTypeType',
+  description: 'Type for ProductCategoryContentType in product',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    prodCatContentType: {
+    prodCatContentTypeId: {type: GraphQLString},
+    parentType: {
       type: ProductCategoryContentTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (productCategoryContentType, args, {loaders}) => loaders.ofbiz.load(`productCategoryContentTypes/find?prodCatContentTypeId=${productCategoryContentType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    productCategoryContentTypes: {
+      type: new GraphQLList(ProductCategoryContentTypeType),
       args : {prodCatContentTypeId: {type: GraphQLString}},
-      resolve: (productCategoryContent, args, {loaders}) => loaders.ofbiz.load(`productCategoryContentTypes/find?prodCatContentTypeId=${productCategoryContent.prodCatContentTypeId}`)
+      resolve: (productCategoryContentType, args, {loaders}) => loaders.ofbizArray.load(`productCategoryContentTypes/find?prodCatContentTypeId=${productCategoryContentType.prodCatContentTypeId}`)
     },
-    purchaseFromDate: {type: GraphQLString},
-    productCategory: {
-      type: ProductCategoryType,
-      args : {productCategoryId: {type: GraphQLString}},
-      resolve: (productCategoryContent, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${productCategoryContent.productCategoryId}`)
-    },
-    content: {
-      type: ContentType,
-      args : {contentId: {type: GraphQLString}},
-      resolve: (productCategoryContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${productCategoryContent.contentId}`)
-    },
-    useDaysLimit: {type: GraphQLFloat},
-    purchaseThruDate: {type: GraphQLString},
-    useCountLimit: {type: GraphQLInt},
-    thruDate: {type: GraphQLString}
+    productCategoryContents: {
+      type: new GraphQLList(ProductCategoryContentType),
+      args : {prodCatContentTypeId: {type: GraphQLString}},
+      resolve: (productCategoryContentType, args, {loaders}) => loaders.ofbizArray.load(`productCategoryContents/find?prodCatContentTypeId=${productCategoryContentType.prodCatContentTypeId}`)
+    }
   })
 });
 
-export {ProductCategoryContentType};
+export {ProductCategoryContentTypeType};
+    
+
+
+
+
+const ProductCategoryContentTypeInputType = new GraphQLInputObjectType({
+  name: 'ProductCategoryContentTypeInputType',
+  description: 'input type for ProductCategoryContentType in product',
+
+  fields: () => ({
+    prodCatContentTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString}
+  })
+});
+
+export {ProductCategoryContentTypeInputType};
     

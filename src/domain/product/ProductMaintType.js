@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,44 +10,56 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {WorkEffortType} from '../workeffort/WorkEffortType.js';
-import {ProductMaintTypeType} from '../product/ProductMaintTypeType.js';
-import {ProductMeterTypeType} from '../product/ProductMeterTypeType.js';
-import {ProductType} from '../product/ProductType.js';
+import {ProductMaintType} from '../product/ProductMaint.js';
+import {FixedAssetMaintType} from '../accounting/FixedAssetMaint.js';
 
 
-const ProductMaintType = new GraphQLObjectType({
-  name: 'ProductMaintType',
-  description: 'Type for ProductMaint in product',
+const ProductMaintTypeType = new GraphQLObjectType({
+  name: 'ProductMaintTypeType',
+  description: 'Type for ProductMaintType in product',
 
   fields: () => ({
-    intervalUomId: {type: GraphQLString},
-    product: {
-      type: ProductType,
-      args : {productId: {type: GraphQLString}},
-      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productMaint.productId}`)
-    },
-    maintTemplateWorkEffort: {
-      type: WorkEffortType,
-      args : {maintTemplateWorkEffortId: {type: GraphQLString}},
-      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${productMaint.maintTemplateWorkEffortId}`)
-    },
-    maintName: {type: GraphQLString},
-    intervalQuantity: {type: GraphQLFloat},
-    productMaintType: {
+    parentType: {
       type: ProductMaintTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (productMaintType, args, {loaders}) => loaders.ofbiz.load(`productMaintTypes/find?productMaintTypeId=${productMaintType.parentTypeId}`)
+    },
+    description: {type: GraphQLString},
+    productMaintTypeId: {type: GraphQLString},
+    fixedAssetMaints: {
+      type: new GraphQLList(FixedAssetMaintType),
       args : {productMaintTypeId: {type: GraphQLString}},
-      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`productMaintTypes/find?productMaintTypeId=${productMaint.productMaintTypeId}`)
+      resolve: (productMaintType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetMaints/find?productMaintTypeId=${productMaintType.productMaintTypeId}`)
     },
-    intervalMeterType: {
-      type: ProductMeterTypeType,
-      args : {intervalMeterTypeId: {type: GraphQLString}},
-      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`productMeterTypes/find?productMeterTypeId=${productMaint.intervalMeterTypeId}`)
+    productMaints: {
+      type: new GraphQLList(ProductMaintType),
+      args : {productMaintTypeId: {type: GraphQLString}},
+      resolve: (productMaintType, args, {loaders}) => loaders.ofbizArray.load(`productMaints/find?productMaintTypeId=${productMaintType.productMaintTypeId}`)
     },
-    productMaintSeqId: {type: GraphQLString},
-    repeatCount: {type: GraphQLInt}
+    productMaintTypes: {
+      type: new GraphQLList(ProductMaintTypeType),
+      args : {productMaintTypeId: {type: GraphQLString}},
+      resolve: (productMaintType, args, {loaders}) => loaders.ofbizArray.load(`productMaintTypes/find?productMaintTypeId=${productMaintType.productMaintTypeId}`)
+    }
   })
 });
 
-export {ProductMaintType};
+export {ProductMaintTypeType};
+    
+
+
+
+
+const ProductMaintTypeInputType = new GraphQLInputObjectType({
+  name: 'ProductMaintTypeInputType',
+  description: 'input type for ProductMaintType in product',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    productMaintTypeId: {type: GraphQLString}
+  })
+});
+
+export {ProductMaintTypeInputType};
     

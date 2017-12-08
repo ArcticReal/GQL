@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,42 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PartyType} from '../party/PartyType.js';
-import {JobInterviewTypeType} from '../humanres/JobInterviewTypeType.js';
-import {JobRequisitionType} from '../humanres/JobRequisitionType.js';
+import {JobInterviewType} from '../humanres/JobInterview.js';
 
 
-const JobInterviewType = new GraphQLObjectType({
-  name: 'JobInterviewType',
-  description: 'Type for JobInterview in humanres',
+const JobInterviewTypeType = new GraphQLObjectType({
+  name: 'JobInterviewTypeType',
+  description: 'Type for JobInterviewType in humanres',
 
   fields: () => ({
-    jobInterviewId: {type: GraphQLString},
-    jobInterviewType: {
-      type: JobInterviewTypeType,
+    jobInterviewTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    jobInterviews: {
+      type: new GraphQLList(JobInterviewType),
       args : {jobInterviewTypeId: {type: GraphQLString}},
-      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`jobInterviewTypes/find?jobInterviewTypeId=${jobInterview.jobInterviewTypeId}`)
-    },
-    gradeSecuredEnumId: {type: GraphQLString},
-    jobIntervieweeParty: {
-      type: PartyType,
-      args : {jobIntervieweePartyId: {type: GraphQLString}},
-      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${jobInterview.jobIntervieweePartyId}`)
-    },
-    jobInterviewDate: {type: GraphQLString},
-    jobInterviewerParty: {
-      type: PartyType,
-      args : {jobInterviewerPartyId: {type: GraphQLString}},
-      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${jobInterview.jobInterviewerPartyId}`)
-    },
-    jobInterviewResult: {type: GraphQLString},
-    jobRequisition: {
-      type: JobRequisitionType,
-      args : {jobRequisitionId: {type: GraphQLString}},
-      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`jobRequisitions/find?jobRequisitionId=${jobInterview.jobRequisitionId}`)
+      resolve: (jobInterviewType, args, {loaders}) => loaders.ofbizArray.load(`jobInterviews/find?jobInterviewTypeId=${jobInterviewType.jobInterviewTypeId}`)
     }
   })
 });
 
-export {JobInterviewType};
+export {JobInterviewTypeType};
+    
+
+
+
+
+const JobInterviewTypeInputType = new GraphQLInputObjectType({
+  name: 'JobInterviewTypeInputType',
+  description: 'input type for JobInterviewType in humanres',
+
+  fields: () => ({
+    jobInterviewTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {JobInterviewTypeInputType};
     

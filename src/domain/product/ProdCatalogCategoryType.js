@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,36 +10,50 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ProdCatalogCategoryTypeType} from '../product/ProdCatalogCategoryTypeType.js';
-import {ProdCatalogType} from '../product/ProdCatalogType.js';
-import {ProductCategoryType} from '../product/ProductCategoryType.js';
+import {ProdCatalogCategoryType} from '../product/ProdCatalogCategory.js';
 
 
-const ProdCatalogCategoryType = new GraphQLObjectType({
-  name: 'ProdCatalogCategoryType',
-  description: 'Type for ProdCatalogCategory in product',
+const ProdCatalogCategoryTypeType = new GraphQLObjectType({
+  name: 'ProdCatalogCategoryTypeType',
+  description: 'Type for ProdCatalogCategoryType in product',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    prodCatalogCategoryType: {
+    prodCatalogCategoryTypeId: {type: GraphQLString},
+    parentType: {
       type: ProdCatalogCategoryTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (prodCatalogCategoryType, args, {loaders}) => loaders.ofbiz.load(`prodCatalogCategoryTypes/find?prodCatalogCategoryTypeId=${prodCatalogCategoryType.parentTypeId}`)
+    },
+    description: {type: GraphQLString},
+    prodCatalogCategories: {
+      type: new GraphQLList(ProdCatalogCategoryType),
       args : {prodCatalogCategoryTypeId: {type: GraphQLString}},
-      resolve: (prodCatalogCategory, args, {loaders}) => loaders.ofbiz.load(`prodCatalogCategoryTypes/find?prodCatalogCategoryTypeId=${prodCatalogCategory.prodCatalogCategoryTypeId}`)
+      resolve: (prodCatalogCategoryType, args, {loaders}) => loaders.ofbizArray.load(`prodCatalogCategorys/find?prodCatalogCategoryTypeId=${prodCatalogCategoryType.prodCatalogCategoryTypeId}`)
     },
-    productCategory: {
-      type: ProductCategoryType,
-      args : {productCategoryId: {type: GraphQLString}},
-      resolve: (prodCatalogCategory, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${prodCatalogCategory.productCategoryId}`)
-    },
-    sequenceNum: {type: GraphQLInt},
-    prodCatalog: {
-      type: ProdCatalogType,
-      args : {prodCatalogId: {type: GraphQLString}},
-      resolve: (prodCatalogCategory, args, {loaders}) => loaders.ofbiz.load(`prodCatalogs/find?prodCatalogId=${prodCatalogCategory.prodCatalogId}`)
-    },
-    thruDate: {type: GraphQLString}
+    prodCatalogCategoryTypes: {
+      type: new GraphQLList(ProdCatalogCategoryTypeType),
+      args : {prodCatalogCategoryTypeId: {type: GraphQLString}},
+      resolve: (prodCatalogCategoryType, args, {loaders}) => loaders.ofbizArray.load(`prodCatalogCategoryTypes/find?prodCatalogCategoryTypeId=${prodCatalogCategoryType.prodCatalogCategoryTypeId}`)
+    }
   })
 });
 
-export {ProdCatalogCategoryType};
+export {ProdCatalogCategoryTypeType};
+    
+
+
+
+
+const ProdCatalogCategoryTypeInputType = new GraphQLInputObjectType({
+  name: 'ProdCatalogCategoryTypeInputType',
+  description: 'input type for ProdCatalogCategoryType in product',
+
+  fields: () => ({
+    prodCatalogCategoryTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {ProdCatalogCategoryTypeInputType};
     

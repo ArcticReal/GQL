@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,41 +10,58 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {WorkEffortType} from '../workeffort/WorkEffortType.js';
-import {WorkEffortAssocAttributeType} from '../workeffort/WorkEffortAssocAttributeType.js';
-import {WorkEffortAssocTypeType} from '../workeffort/WorkEffortAssocTypeType.js';
+import {WorkEffortAssocTypeAttrType} from '../workeffort/WorkEffortAssocTypeAttr.js';
+import {WorkEffortAssocType} from '../workeffort/WorkEffortAssoc.js';
 
 
-const WorkEffortAssocType = new GraphQLObjectType({
-  name: 'WorkEffortAssocType',
-  description: 'Type for WorkEffortAssoc in workeffort',
+const WorkEffortAssocTypeType = new GraphQLObjectType({
+  name: 'WorkEffortAssocTypeType',
+  description: 'Type for WorkEffortAssocType in workeffort',
 
   fields: () => ({
-    workEffortTo: {
-      type: WorkEffortType,
-      args : {workEffortIdTo: {type: GraphQLString}},
-      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortAssoc.workEffortIdTo}`)
-    },
-    fromDate: {type: GraphQLString},
-    workEffortFrom: {
-      type: WorkEffortType,
-      args : {workEffortIdFrom: {type: GraphQLString}},
-      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortAssoc.workEffortIdFrom}`)
-    },
-    sequenceNum: {type: GraphQLInt},
-    workEffortAssocType: {
+    parentType: {
       type: WorkEffortAssocTypeType,
-      args : {workEffortAssocTypeId: {type: GraphQLString}},
-      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbiz.load(`workEffortAssocTypes/find?workEffortAssocTypeId=${workEffortAssoc.workEffortAssocTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbiz.load(`workEffortAssocTypes/find?workEffortAssocTypeId=${workEffortAssocType.parentTypeId}`)
     },
-    thruDate: {type: GraphQLString},
-    workEffortAssocAttribute: {
-      type: new GraphQLList(WorkEffortAssocAttributeType),
-      args : {workEffortIdFrom: {type: GraphQLString}},
-      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbizArray.load(`workEffortAssocAttributes/find?workEffortIdFrom=${workEffortAssoc.workEffortIdFrom}`)
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    workEffortAssocTypeId: {type: GraphQLString},
+    workEffortAssocs: {
+      type: new GraphQLList(WorkEffortAssocType),
+      args : {workEffortAssocTypeId: {type: GraphQLString}},
+      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbizArray.load(`workEffortAssocs/find?workEffortAssocTypeId=${workEffortAssocType.workEffortAssocTypeId}`)
+    },
+    workEffortAssocTypes: {
+      type: new GraphQLList(WorkEffortAssocTypeType),
+      args : {workEffortAssocTypeId: {type: GraphQLString}},
+      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbizArray.load(`workEffortAssocTypes/find?workEffortAssocTypeId=${workEffortAssocType.workEffortAssocTypeId}`)
+    },
+    workEffortAssocTypeAttrs: {
+      type: new GraphQLList(WorkEffortAssocTypeAttrType),
+      args : {workEffortAssocTypeId: {type: GraphQLString}},
+      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbizArray.load(`workEffortAssocTypeAttrs/find?workEffortAssocTypeId=${workEffortAssocType.workEffortAssocTypeId}`)
     }
   })
 });
 
-export {WorkEffortAssocType};
+export {WorkEffortAssocTypeType};
+    
+
+
+
+
+const WorkEffortAssocTypeInputType = new GraphQLInputObjectType({
+  name: 'WorkEffortAssocTypeInputType',
+  description: 'input type for WorkEffortAssocType in workeffort',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    workEffortAssocTypeId: {type: GraphQLString}
+  })
+});
+
+export {WorkEffortAssocTypeInputType};
     

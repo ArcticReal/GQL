@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,37 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {OrderHeaderType} from '../order/OrderHeaderType.js';
-import {OrderItemAssocTypeType} from '../order/OrderItemAssocTypeType.js';
+import {OrderItemAssocType} from '../order/OrderItemAssoc.js';
 
 
-const OrderItemAssocType = new GraphQLObjectType({
-  name: 'OrderItemAssocType',
-  description: 'Type for OrderItemAssoc in order',
+const OrderItemAssocTypeType = new GraphQLObjectType({
+  name: 'OrderItemAssocTypeType',
+  description: 'Type for OrderItemAssocType in order',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
-    toOrder: {
-      type: OrderHeaderType,
-      args : {toOrderId: {type: GraphQLString}},
-      resolve: (orderItemAssoc, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderItemAssoc.toOrderId}`)
-    },
-    order: {
-      type: OrderHeaderType,
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemAssoc, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderItemAssoc.orderId}`)
-    },
-    toOrderItemSeqId: {type: GraphQLString},
-    orderItemAssocType: {
+    parentType: {
       type: OrderItemAssocTypeType,
-      args : {orderItemAssocTypeId: {type: GraphQLString}},
-      resolve: (orderItemAssoc, args, {loaders}) => loaders.ofbiz.load(`orderItemAssocTypes/find?orderItemAssocTypeId=${orderItemAssoc.orderItemAssocTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (orderItemAssocType, args, {loaders}) => loaders.ofbiz.load(`orderItemAssocTypes/find?orderItemAssocTypeId=${orderItemAssocType.parentTypeId}`)
     },
-    shipGroupSeqId: {type: GraphQLString},
-    toShipGroupSeqId: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    orderItemAssocTypeId: {type: GraphQLString},
+    orderItemAssocs: {
+      type: new GraphQLList(OrderItemAssocType),
+      args : {orderItemAssocTypeId: {type: GraphQLString}},
+      resolve: (orderItemAssocType, args, {loaders}) => loaders.ofbizArray.load(`orderItemAssocs/find?orderItemAssocTypeId=${orderItemAssocType.orderItemAssocTypeId}`)
+    },
+    orderItemAssocTypes: {
+      type: new GraphQLList(OrderItemAssocTypeType),
+      args : {orderItemAssocTypeId: {type: GraphQLString}},
+      resolve: (orderItemAssocType, args, {loaders}) => loaders.ofbizArray.load(`orderItemAssocTypes/find?orderItemAssocTypeId=${orderItemAssocType.orderItemAssocTypeId}`)
+    }
   })
 });
 
-export {OrderItemAssocType};
+export {OrderItemAssocTypeType};
+    
+
+
+
+
+const OrderItemAssocTypeInputType = new GraphQLInputObjectType({
+  name: 'OrderItemAssocTypeInputType',
+  description: 'input type for OrderItemAssocType in order',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    orderItemAssocTypeId: {type: GraphQLString}
+  })
+});
+
+export {OrderItemAssocTypeInputType};
     

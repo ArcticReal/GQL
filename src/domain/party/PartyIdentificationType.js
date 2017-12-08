@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,28 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PartyIdentificationTypeType} from '../party/PartyIdentificationTypeType.js';
-import {PartyType} from '../party/PartyType.js';
+import {PartyIdentificationType} from '../party/PartyIdentification.js';
 
 
-const PartyIdentificationType = new GraphQLObjectType({
-  name: 'PartyIdentificationType',
-  description: 'Type for PartyIdentification in party',
+const PartyIdentificationTypeType = new GraphQLObjectType({
+  name: 'PartyIdentificationTypeType',
+  description: 'Type for PartyIdentificationType in party',
 
   fields: () => ({
-    partyentificationType: {
+    parentType: {
       type: PartyIdentificationTypeType,
-      args : {partyIdentificationTypeId: {type: GraphQLString}},
-      resolve: (partyIdentification, args, {loaders}) => loaders.ofbiz.load(`partyIdentificationTypes/find?partyIdentificationTypeId=${partyIdentification.partyIdentificationTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (partyIdentificationType, args, {loaders}) => loaders.ofbiz.load(`partyIdentificationTypes/find?partyIdentificationTypeId=${partyIdentificationType.parentTypeId}`)
     },
-    idValue: {type: GraphQLString},
-    party: {
-      type: PartyType,
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyIdentification, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyIdentification.partyId}`)
+    hasTable: {type: GraphQLBoolean},
+    partyIdentificationTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    partyIdentificationTypes: {
+      type: new GraphQLList(PartyIdentificationTypeType),
+      args : {partyIdentificationTypeId: {type: GraphQLString}},
+      resolve: (partyIdentificationType, args, {loaders}) => loaders.ofbizArray.load(`partyIdentificationTypes/find?partyIdentificationTypeId=${partyIdentificationType.partyIdentificationTypeId}`)
+    },
+    partyIdentifications: {
+      type: new GraphQLList(PartyIdentificationType),
+      args : {partyIdentificationTypeId: {type: GraphQLString}},
+      resolve: (partyIdentificationType, args, {loaders}) => loaders.ofbizArray.load(`partyIdentifications/find?partyIdentificationTypeId=${partyIdentificationType.partyIdentificationTypeId}`)
     }
   })
 });
 
-export {PartyIdentificationType};
+export {PartyIdentificationTypeType};
+    
+
+
+
+
+const PartyIdentificationTypeInputType = new GraphQLInputObjectType({
+  name: 'PartyIdentificationTypeInputType',
+  description: 'input type for PartyIdentificationType in party',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    partyIdentificationTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {PartyIdentificationTypeInputType};
     

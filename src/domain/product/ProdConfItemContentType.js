@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,35 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ProductConfigItemType} from '../product/ProductConfigItemType.js';
-import {ContentType} from '../content/ContentType.js';
-import {ProdConfItemContentTypeType} from '../product/ProdConfItemContentTypeType.js';
+import {ProdConfItemContentType} from '../product/ProdConfItemContent.js';
 
 
-const ProdConfItemContentType = new GraphQLObjectType({
-  name: 'ProdConfItemContentType',
-  description: 'Type for ProdConfItemContent in product',
+const ProdConfItemContentTypeType = new GraphQLObjectType({
+  name: 'ProdConfItemContentTypeType',
+  description: 'Type for ProdConfItemContentType in product',
 
   fields: () => ({
-    configItem: {
-      type: ProductConfigItemType,
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (prodConfItemContent, args, {loaders}) => loaders.ofbiz.load(`productConfigItems/find?configItemId=${prodConfItemContent.configItemId}`)
-    },
-    confItemContentType: {
+    confItemContentTypeId: {type: GraphQLString},
+    parentType: {
       type: ProdConfItemContentTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (prodConfItemContentType, args, {loaders}) => loaders.ofbiz.load(`prodConfItemContentTypes/find?confItemContentTypeId=${prodConfItemContentType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    prodConfItemContents: {
+      type: new GraphQLList(ProdConfItemContentType),
       args : {confItemContentTypeId: {type: GraphQLString}},
-      resolve: (prodConfItemContent, args, {loaders}) => loaders.ofbiz.load(`prodConfItemContentTypes/find?confItemContentTypeId=${prodConfItemContent.confItemContentTypeId}`)
+      resolve: (prodConfItemContentType, args, {loaders}) => loaders.ofbizArray.load(`prodConfItemContents/find?confItemContentTypeId=${prodConfItemContentType.confItemContentTypeId}`)
     },
-    fromDate: {type: GraphQLString},
-    content: {
-      type: ContentType,
-      args : {contentId: {type: GraphQLString}},
-      resolve: (prodConfItemContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${prodConfItemContent.contentId}`)
-    },
-    thruDate: {type: GraphQLString}
+    prodConfItemContentTypes: {
+      type: new GraphQLList(ProdConfItemContentTypeType),
+      args : {confItemContentTypeId: {type: GraphQLString}},
+      resolve: (prodConfItemContentType, args, {loaders}) => loaders.ofbizArray.load(`prodConfItemContentTypes/find?confItemContentTypeId=${prodConfItemContentType.confItemContentTypeId}`)
+    }
   })
 });
 
-export {ProdConfItemContentType};
+export {ProdConfItemContentTypeType};
+    
+
+
+
+
+const ProdConfItemContentTypeInputType = new GraphQLInputObjectType({
+  name: 'ProdConfItemContentTypeInputType',
+  description: 'input type for ProdConfItemContentType in product',
+
+  fields: () => ({
+    confItemContentTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString}
+  })
+});
+
+export {ProdConfItemContentTypeInputType};
     

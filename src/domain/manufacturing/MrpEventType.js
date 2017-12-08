@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,38 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {MrpEventTypeType} from '../manufacturing/MrpEventTypeType.js';
-import {ProductType} from '../product/ProductType.js';
-import {FacilityType} from '../product/FacilityType.js';
+import {MrpEventType} from '../manufacturing/MrpEvent.js';
 
 
-const MrpEventType = new GraphQLObjectType({
-  name: 'MrpEventType',
-  description: 'Type for MrpEvent in manufacturing',
+const MrpEventTypeType = new GraphQLObjectType({
+  name: 'MrpEventTypeType',
+  description: 'Type for MrpEventType in manufacturing',
 
   fields: () => ({
-    mrpEventType: {
-      type: MrpEventTypeType,
+    mrpEventTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    mrpEvents: {
+      type: new GraphQLList(MrpEventType),
       args : {mrpEventTypeId: {type: GraphQLString}},
-      resolve: (mrpEvent, args, {loaders}) => loaders.ofbiz.load(`mrpEventTypes/find?mrpEventTypeId=${mrpEvent.mrpEventTypeId}`)
-    },
-    mrpId: {type: GraphQLString},
-    facility: {
-      type: FacilityType,
-      args : {facilityId: {type: GraphQLString}},
-      resolve: (mrpEvent, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${mrpEvent.facilityId}`)
-    },
-    quantity: {type: GraphQLFloat},
-    product: {
-      type: ProductType,
-      args : {productId: {type: GraphQLString}},
-      resolve: (mrpEvent, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${mrpEvent.productId}`)
-    },
-    isLate: {type: GraphQLBoolean},
-    eventName: {type: GraphQLString},
-    eventDate: {type: GraphQLString}
+      resolve: (mrpEventType, args, {loaders}) => loaders.ofbizArray.load(`mrpEvents/find?mrpEventTypeId=${mrpEventType.mrpEventTypeId}`)
+    }
   })
 });
 
-export {MrpEventType};
+export {MrpEventTypeType};
+    
+
+
+
+
+const MrpEventTypeInputType = new GraphQLInputObjectType({
+  name: 'MrpEventTypeInputType',
+  description: 'input type for MrpEventType in manufacturing',
+
+  fields: () => ({
+    mrpEventTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {MrpEventTypeInputType};
     

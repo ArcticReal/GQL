@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,37 +10,46 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PartyRoleType} from '../party/PartyRoleType.js';
-import {PerfReviewItemTypeType} from '../humanres/PerfReviewItemTypeType.js';
-import {PerfRatingTypeType} from '../humanres/PerfRatingTypeType.js';
 
 
-const PerfReviewItemType = new GraphQLObjectType({
-  name: 'PerfReviewItemType',
-  description: 'Type for PerfReviewItem in humanres',
+const PerfReviewItemTypeType = new GraphQLObjectType({
+  name: 'PerfReviewItemTypeType',
+  description: 'Type for PerfReviewItemType in humanres',
 
   fields: () => ({
-    perfReviewItemType: {
+    perfReviewItemTypeId: {type: GraphQLString},
+    parentType: {
       type: PerfReviewItemTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (perfReviewItemType, args, {loaders}) => loaders.ofbiz.load(`perfReviewItemTypes/find?perfReviewItemTypeId=${perfReviewItemType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    perfReviewItemTypes: {
+      type: new GraphQLList(PerfReviewItemTypeType),
       args : {perfReviewItemTypeId: {type: GraphQLString}},
-      resolve: (perfReviewItem, args, {loaders}) => loaders.ofbiz.load(`perfReviewItemTypes/find?perfReviewItemTypeId=${perfReviewItem.perfReviewItemTypeId}`)
-    },
-    employeeRoleTypeId: {type: GraphQLString},
-    perfReviewItemSeqId: {type: GraphQLString},
-    perfRatingType: {
-      type: PerfRatingTypeType,
-      args : {perfRatingTypeId: {type: GraphQLString}},
-      resolve: (perfReviewItem, args, {loaders}) => loaders.ofbiz.load(`perfRatingTypes/find?perfRatingTypeId=${perfReviewItem.perfRatingTypeId}`)
-    },
-    employeeParty: {
-      type: PartyRoleType,
-      args : {employeePartyId: {type: GraphQLString}},
-      resolve: (perfReviewItem, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${perfReviewItem.employeePartyId}`)
-    },
-    comments: {type: GraphQLString},
-    perfReviewId: {type: GraphQLString}
+      resolve: (perfReviewItemType, args, {loaders}) => loaders.ofbizArray.load(`perfReviewItemTypes/find?perfReviewItemTypeId=${perfReviewItemType.perfReviewItemTypeId}`)
+    }
   })
 });
 
-export {PerfReviewItemType};
+export {PerfReviewItemTypeType};
+    
+
+
+
+
+const PerfReviewItemTypeInputType = new GraphQLInputObjectType({
+  name: 'PerfReviewItemTypeInputType',
+  description: 'input type for PerfReviewItemType in humanres',
+
+  fields: () => ({
+    perfReviewItemTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString}
+  })
+});
+
+export {PerfReviewItemTypeInputType};
     

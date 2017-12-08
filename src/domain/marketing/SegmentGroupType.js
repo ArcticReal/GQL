@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,47 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {SegmentGroupRoleType} from '../marketing/SegmentGroupRoleType.js';
-import {SegmentGroupTypeType} from '../marketing/SegmentGroupTypeType.js';
-import {SegmentGroupGeoType} from '../marketing/SegmentGroupGeoType.js';
-import {ProductStoreType} from '../product/ProductStoreType.js';
-import {SegmentGroupClassificationType} from '../marketing/SegmentGroupClassificationType.js';
+import {SegmentGroupType} from '../marketing/SegmentGroup.js';
 
 
-const SegmentGroupType = new GraphQLObjectType({
-  name: 'SegmentGroupType',
-  description: 'Type for SegmentGroup in marketing',
+const SegmentGroupTypeType = new GraphQLObjectType({
+  name: 'SegmentGroupTypeType',
+  description: 'Type for SegmentGroupType in marketing',
 
   fields: () => ({
     description: {type: GraphQLString},
-    segmentGroupId: {type: GraphQLString},
-    productStore: {
-      type: ProductStoreType,
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (segmentGroup, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${segmentGroup.productStoreId}`)
-    },
-    segmentGroupType: {
-      type: SegmentGroupTypeType,
+    segmentGroupTypeId: {type: GraphQLString},
+    segmentGroups: {
+      type: new GraphQLList(SegmentGroupType),
       args : {segmentGroupTypeId: {type: GraphQLString}},
-      resolve: (segmentGroup, args, {loaders}) => loaders.ofbiz.load(`segmentGroupTypes/find?segmentGroupTypeId=${segmentGroup.segmentGroupTypeId}`)
-    },
-    segmentGroupRole: {
-      type: new GraphQLList(SegmentGroupRoleType),
-      args : {segmentGroupId: {type: GraphQLString}},
-      resolve: (segmentGroup, args, {loaders}) => loaders.ofbizArray.load(`segmentGroupRoles/find?segmentGroupId=${segmentGroup.segmentGroupId}`)
-    },
-    segmentGroupClassification: {
-      type: new GraphQLList(SegmentGroupClassificationType),
-      args : {segmentGroupId: {type: GraphQLString}},
-      resolve: (segmentGroup, args, {loaders}) => loaders.ofbizArray.load(`segmentGroupClassifications/find?segmentGroupId=${segmentGroup.segmentGroupId}`)
-    },
-    segmentGroupGeo: {
-      type: new GraphQLList(SegmentGroupGeoType),
-      args : {segmentGroupId: {type: GraphQLString}},
-      resolve: (segmentGroup, args, {loaders}) => loaders.ofbizArray.load(`segmentGroupGeos/find?segmentGroupId=${segmentGroup.segmentGroupId}`)
+      resolve: (segmentGroupType, args, {loaders}) => loaders.ofbizArray.load(`segmentGroups/find?segmentGroupTypeId=${segmentGroupType.segmentGroupTypeId}`)
     }
   })
 });
 
-export {SegmentGroupType};
+export {SegmentGroupTypeType};
+    
+
+
+
+
+const SegmentGroupTypeInputType = new GraphQLInputObjectType({
+  name: 'SegmentGroupTypeInputType',
+  description: 'input type for SegmentGroupType in marketing',
+
+  fields: () => ({
+    description: {type: GraphQLString},
+    segmentGroupTypeId: {type: GraphQLString}
+  })
+});
+
+export {SegmentGroupTypeInputType};
     

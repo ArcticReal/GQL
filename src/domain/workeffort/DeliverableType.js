@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,36 +10,45 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {WorkEffortDeliverableProdType} from '../workeffort/WorkEffortDeliverableProdType.js';
-import {RequirementType} from '../order/RequirementType.js';
-import {DeliverableTypeType} from '../workeffort/DeliverableTypeType.js';
+import {QuoteItemType} from '../order/QuoteItem.js';
+import {DeliverableType} from '../workeffort/Deliverable.js';
 
 
-const DeliverableType = new GraphQLObjectType({
-  name: 'DeliverableType',
-  description: 'Type for Deliverable in workeffort',
+const DeliverableTypeType = new GraphQLObjectType({
+  name: 'DeliverableTypeType',
+  description: 'Type for DeliverableType in workeffort',
 
   fields: () => ({
-    deliverableName: {type: GraphQLString},
-    deliverableType: {
-      type: DeliverableTypeType,
-      args : {deliverableTypeId: {type: GraphQLString}},
-      resolve: (deliverable, args, {loaders}) => loaders.ofbiz.load(`deliverableTypes/find?deliverableTypeId=${deliverable.deliverableTypeId}`)
-    },
+    deliverableTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    deliverableId: {type: GraphQLString},
-    workEffortDeliverableProd: {
-      type: new GraphQLList(WorkEffortDeliverableProdType),
-      args : {deliverableId: {type: GraphQLString}},
-      resolve: (deliverable, args, {loaders}) => loaders.ofbizArray.load(`workEffortDeliverableProds/find?deliverableId=${deliverable.deliverableId}`)
+    deliverables: {
+      type: new GraphQLList(DeliverableType),
+      args : {deliverableTypeId: {type: GraphQLString}},
+      resolve: (deliverableType, args, {loaders}) => loaders.ofbizArray.load(`deliverables/find?deliverableTypeId=${deliverableType.deliverableTypeId}`)
     },
-    requirement: {
-      type: new GraphQLList(RequirementType),
-      args : {deliverableId: {type: GraphQLString}},
-      resolve: (deliverable, args, {loaders}) => loaders.ofbizArray.load(`requirements/find?deliverableId=${deliverable.deliverableId}`)
+    quoteItems: {
+      type: new GraphQLList(QuoteItemType),
+      args : {deliverableTypeId: {type: GraphQLString}},
+      resolve: (deliverableType, args, {loaders}) => loaders.ofbizArray.load(`quoteItems/find?deliverableTypeId=${deliverableType.deliverableTypeId}`)
     }
   })
 });
 
-export {DeliverableType};
+export {DeliverableTypeType};
+    
+
+
+
+
+const DeliverableTypeInputType = new GraphQLInputObjectType({
+  name: 'DeliverableTypeInputType',
+  description: 'input type for DeliverableType in workeffort',
+
+  fields: () => ({
+    deliverableTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {DeliverableTypeInputType};
     

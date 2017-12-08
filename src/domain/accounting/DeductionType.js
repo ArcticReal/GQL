@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,29 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PaymentType} from '../accounting/PaymentType.js';
-import {DeductionTypeType} from '../accounting/DeductionTypeType.js';
+import {DeductionType} from '../accounting/Deduction.js';
 
 
-const DeductionType = new GraphQLObjectType({
-  name: 'DeductionType',
-  description: 'Type for Deduction in accounting',
+const DeductionTypeType = new GraphQLObjectType({
+  name: 'DeductionTypeType',
+  description: 'Type for DeductionType in accounting',
 
   fields: () => ({
-    amount: {type: GraphQLFloat},
-    payment: {
-      type: PaymentType,
-      args : {paymentId: {type: GraphQLString}},
-      resolve: (deduction, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${deduction.paymentId}`)
-    },
-    deductionType: {
+    parentType: {
       type: DeductionTypeType,
-      args : {deductionTypeId: {type: GraphQLString}},
-      resolve: (deduction, args, {loaders}) => loaders.ofbiz.load(`deductionTypes/find?deductionTypeId=${deduction.deductionTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (deductionType, args, {loaders}) => loaders.ofbiz.load(`deductionTypes/find?deductionTypeId=${deductionType.parentTypeId}`)
     },
-    deductionId: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    deductionTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    deductions: {
+      type: new GraphQLList(DeductionType),
+      args : {deductionTypeId: {type: GraphQLString}},
+      resolve: (deductionType, args, {loaders}) => loaders.ofbizArray.load(`deductions/find?deductionTypeId=${deductionType.deductionTypeId}`)
+    },
+    deductionTypes: {
+      type: new GraphQLList(DeductionTypeType),
+      args : {deductionTypeId: {type: GraphQLString}},
+      resolve: (deductionType, args, {loaders}) => loaders.ofbizArray.load(`deductionTypes/find?deductionTypeId=${deductionType.deductionTypeId}`)
+    }
   })
 });
 
-export {DeductionType};
+export {DeductionTypeType};
+    
+
+
+
+
+const DeductionTypeInputType = new GraphQLInputObjectType({
+  name: 'DeductionTypeInputType',
+  description: 'input type for DeductionType in accounting',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    deductionTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {DeductionTypeInputType};
     

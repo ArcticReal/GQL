@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,33 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PartyType} from '../party/PartyType.js';
-import {PartyQualTypeType} from '../humanres/PartyQualTypeType.js';
+import {PartyQualType} from '../humanres/PartyQual.js';
 
 
-const PartyQualType = new GraphQLObjectType({
-  name: 'PartyQualType',
-  description: 'Type for PartyQual in humanres',
+const PartyQualTypeType = new GraphQLObjectType({
+  name: 'PartyQualTypeType',
+  description: 'Type for PartyQualType in humanres',
 
   fields: () => ({
-    qualificationDesc: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    verifStatusId: {type: GraphQLString},
-    partyQualType: {
+    parentType: {
       type: PartyQualTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (partyQualType, args, {loaders}) => loaders.ofbiz.load(`partyQualTypes/find?partyQualTypeId=${partyQualType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    partyQualTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    partyQuals: {
+      type: new GraphQLList(PartyQualType),
       args : {partyQualTypeId: {type: GraphQLString}},
-      resolve: (partyQual, args, {loaders}) => loaders.ofbiz.load(`partyQualTypes/find?partyQualTypeId=${partyQual.partyQualTypeId}`)
+      resolve: (partyQualType, args, {loaders}) => loaders.ofbizArray.load(`partyQuals/find?partyQualTypeId=${partyQualType.partyQualTypeId}`)
     },
-    party: {
-      type: PartyType,
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyQual, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyQual.partyId}`)
-    },
-    title: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    partyQualTypes: {
+      type: new GraphQLList(PartyQualTypeType),
+      args : {partyQualTypeId: {type: GraphQLString}},
+      resolve: (partyQualType, args, {loaders}) => loaders.ofbizArray.load(`partyQualTypes/find?partyQualTypeId=${partyQualType.partyQualTypeId}`)
+    }
   })
 });
 
-export {PartyQualType};
+export {PartyQualTypeType};
+    
+
+
+
+
+const PartyQualTypeInputType = new GraphQLInputObjectType({
+  name: 'PartyQualTypeInputType',
+  description: 'input type for PartyQualType in humanres',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    partyQualTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {PartyQualTypeInputType};
     

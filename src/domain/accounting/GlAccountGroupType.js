@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,29 +10,45 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {GlAccountGroupTypeType} from '../accounting/GlAccountGroupTypeType.js';
-import {GlAccountGroupMemberType} from '../accounting/GlAccountGroupMemberType.js';
+import {GlAccountGroupType} from '../accounting/GlAccountGroup.js';
+import {GlAccountGroupMemberType} from '../accounting/GlAccountGroupMember.js';
 
 
-const GlAccountGroupType = new GraphQLObjectType({
-  name: 'GlAccountGroupType',
-  description: 'Type for GlAccountGroup in accounting',
+const GlAccountGroupTypeType = new GraphQLObjectType({
+  name: 'GlAccountGroupTypeType',
+  description: 'Type for GlAccountGroupType in accounting',
 
   fields: () => ({
-    glAccountGroupType: {
-      type: GlAccountGroupTypeType,
-      args : {glAccountGroupTypeId: {type: GraphQLString}},
-      resolve: (glAccountGroup, args, {loaders}) => loaders.ofbiz.load(`glAccountGroupTypes/find?glAccountGroupTypeId=${glAccountGroup.glAccountGroupTypeId}`)
-    },
+    glAccountGroupTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    glAccountGroupId: {type: GraphQLString},
-    glAccountGroupMember: {
+    glAccountGroups: {
+      type: new GraphQLList(GlAccountGroupType),
+      args : {glAccountGroupTypeId: {type: GraphQLString}},
+      resolve: (glAccountGroupType, args, {loaders}) => loaders.ofbizArray.load(`glAccountGroups/find?glAccountGroupTypeId=${glAccountGroupType.glAccountGroupTypeId}`)
+    },
+    glAccountGroupMembers: {
       type: new GraphQLList(GlAccountGroupMemberType),
-      args : {glAccountGroupId: {type: GraphQLString}},
-      resolve: (glAccountGroup, args, {loaders}) => loaders.ofbizArray.load(`glAccountGroupMembers/find?glAccountGroupId=${glAccountGroup.glAccountGroupId}`)
+      args : {glAccountGroupTypeId: {type: GraphQLString}},
+      resolve: (glAccountGroupType, args, {loaders}) => loaders.ofbizArray.load(`glAccountGroupMembers/find?glAccountGroupTypeId=${glAccountGroupType.glAccountGroupTypeId}`)
     }
   })
 });
 
-export {GlAccountGroupType};
+export {GlAccountGroupTypeType};
+    
+
+
+
+
+const GlAccountGroupTypeInputType = new GraphQLInputObjectType({
+  name: 'GlAccountGroupTypeInputType',
+  description: 'input type for GlAccountGroupType in accounting',
+
+  fields: () => ({
+    glAccountGroupTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {GlAccountGroupTypeInputType};
     

@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,44 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ProductFeatureType} from '../product/ProductFeatureType.js';
-import {ProductFeatureApplTypeType} from '../product/ProductFeatureApplTypeType.js';
-import {ProductFeatureApplAttrType} from '../product/ProductFeatureApplAttrType.js';
-import {ProductType} from '../product/ProductType.js';
+import {ProductFeatureApplType} from '../product/ProductFeatureAppl.js';
 
 
-const ProductFeatureApplType = new GraphQLObjectType({
-  name: 'ProductFeatureApplType',
-  description: 'Type for ProductFeatureAppl in product',
+const ProductFeatureApplTypeType = new GraphQLObjectType({
+  name: 'ProductFeatureApplTypeType',
+  description: 'Type for ProductFeatureApplType in product',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    amount: {type: GraphQLFloat},
-    product: {
-      type: ProductType,
-      args : {productId: {type: GraphQLString}},
-      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productFeatureAppl.productId}`)
-    },
-    sequenceNum: {type: GraphQLInt},
-    recurringAmount: {type: GraphQLFloat},
-    productFeature: {
-      type: ProductFeatureType,
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbiz.load(`productFeatures/find?productFeatureId=${productFeatureAppl.productFeatureId}`)
-    },
-    productFeatureApplType: {
+    parentType: {
       type: ProductFeatureApplTypeType,
-      args : {productFeatureApplTypeId: {type: GraphQLString}},
-      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbiz.load(`productFeatureApplTypes/find?productFeatureApplTypeId=${productFeatureAppl.productFeatureApplTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (productFeatureApplType, args, {loaders}) => loaders.ofbiz.load(`productFeatureApplTypes/find?productFeatureApplTypeId=${productFeatureApplType.parentTypeId}`)
     },
-    thruDate: {type: GraphQLString},
-    productFeatureApplAttr: {
-      type: new GraphQLList(ProductFeatureApplAttrType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbizArray.load(`productFeatureApplAttrs/find?productId=${productFeatureAppl.productId}`)
+    hasTable: {type: GraphQLBoolean},
+    productFeatureApplTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    productFeatureAppls: {
+      type: new GraphQLList(ProductFeatureApplType),
+      args : {productFeatureApplTypeId: {type: GraphQLString}},
+      resolve: (productFeatureApplType, args, {loaders}) => loaders.ofbizArray.load(`productFeatureAppls/find?productFeatureApplTypeId=${productFeatureApplType.productFeatureApplTypeId}`)
+    },
+    productFeatureApplTypes: {
+      type: new GraphQLList(ProductFeatureApplTypeType),
+      args : {productFeatureApplTypeId: {type: GraphQLString}},
+      resolve: (productFeatureApplType, args, {loaders}) => loaders.ofbizArray.load(`productFeatureApplTypes/find?productFeatureApplTypeId=${productFeatureApplType.productFeatureApplTypeId}`)
     }
   })
 });
 
-export {ProductFeatureApplType};
+export {ProductFeatureApplTypeType};
+    
+
+
+
+
+const ProductFeatureApplTypeInputType = new GraphQLInputObjectType({
+  name: 'ProductFeatureApplTypeInputType',
+  description: 'input type for ProductFeatureApplType in product',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    productFeatureApplTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {ProductFeatureApplTypeInputType};
     

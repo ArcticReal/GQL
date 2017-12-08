@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,35 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PaymentType} from '../accounting/PaymentType.js';
-import {ContentType} from '../content/ContentType.js';
-import {PaymentContentTypeType} from '../accounting/PaymentContentTypeType.js';
+import {PaymentContentType} from '../accounting/PaymentContent.js';
 
 
-const PaymentContentType = new GraphQLObjectType({
-  name: 'PaymentContentType',
-  description: 'Type for PaymentContent in accounting',
+const PaymentContentTypeType = new GraphQLObjectType({
+  name: 'PaymentContentTypeType',
+  description: 'Type for PaymentContentType in accounting',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    paymentContentType: {
+    parentType: {
       type: PaymentContentTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (paymentContentType, args, {loaders}) => loaders.ofbiz.load(`paymentContentTypes/find?paymentContentTypeId=${paymentContentType.parentTypeId}`)
+    },
+    paymentContentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    paymentContents: {
+      type: new GraphQLList(PaymentContentType),
       args : {paymentContentTypeId: {type: GraphQLString}},
-      resolve: (paymentContent, args, {loaders}) => loaders.ofbiz.load(`paymentContentTypes/find?paymentContentTypeId=${paymentContent.paymentContentTypeId}`)
+      resolve: (paymentContentType, args, {loaders}) => loaders.ofbizArray.load(`paymentContents/find?paymentContentTypeId=${paymentContentType.paymentContentTypeId}`)
     },
-    payment: {
-      type: PaymentType,
-      args : {paymentId: {type: GraphQLString}},
-      resolve: (paymentContent, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${paymentContent.paymentId}`)
-    },
-    content: {
-      type: ContentType,
-      args : {contentId: {type: GraphQLString}},
-      resolve: (paymentContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${paymentContent.contentId}`)
-    },
-    thruDate: {type: GraphQLString}
+    paymentContentTypes: {
+      type: new GraphQLList(PaymentContentTypeType),
+      args : {paymentContentTypeId: {type: GraphQLString}},
+      resolve: (paymentContentType, args, {loaders}) => loaders.ofbizArray.load(`paymentContentTypes/find?paymentContentTypeId=${paymentContentType.paymentContentTypeId}`)
+    }
   })
 });
 
-export {PaymentContentType};
+export {PaymentContentTypeType};
+    
+
+
+
+
+const PaymentContentTypeInputType = new GraphQLInputObjectType({
+  name: 'PaymentContentTypeInputType',
+  description: 'input type for PaymentContentType in accounting',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    paymentContentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString}
+  })
+});
+
+export {PaymentContentTypeInputType};
     

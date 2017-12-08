@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,28 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ProductType} from '../product/ProductType.js';
-import {GoodIdentificationTypeType} from '../product/GoodIdentificationTypeType.js';
+import {GoodIdentificationType} from '../product/GoodIdentification.js';
 
 
-const GoodIdentificationType = new GraphQLObjectType({
-  name: 'GoodIdentificationType',
-  description: 'Type for GoodIdentification in product',
+const GoodIdentificationTypeType = new GraphQLObjectType({
+  name: 'GoodIdentificationTypeType',
+  description: 'Type for GoodIdentificationType in product',
 
   fields: () => ({
-    product: {
-      type: ProductType,
-      args : {productId: {type: GraphQLString}},
-      resolve: (goodIdentification, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${goodIdentification.productId}`)
-    },
-    goodentificationType: {
+    parentType: {
       type: GoodIdentificationTypeType,
-      args : {goodIdentificationTypeId: {type: GraphQLString}},
-      resolve: (goodIdentification, args, {loaders}) => loaders.ofbiz.load(`goodIdentificationTypes/find?goodIdentificationTypeId=${goodIdentification.goodIdentificationTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (goodIdentificationType, args, {loaders}) => loaders.ofbiz.load(`goodIdentificationTypes/find?goodIdentificationTypeId=${goodIdentificationType.parentTypeId}`)
     },
-    idValue: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    goodIdentificationTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    goodIdentificationTypes: {
+      type: new GraphQLList(GoodIdentificationTypeType),
+      args : {goodIdentificationTypeId: {type: GraphQLString}},
+      resolve: (goodIdentificationType, args, {loaders}) => loaders.ofbizArray.load(`goodIdentificationTypes/find?goodIdentificationTypeId=${goodIdentificationType.goodIdentificationTypeId}`)
+    },
+    goodIdentifications: {
+      type: new GraphQLList(GoodIdentificationType),
+      args : {goodIdentificationTypeId: {type: GraphQLString}},
+      resolve: (goodIdentificationType, args, {loaders}) => loaders.ofbizArray.load(`goodIdentifications/find?goodIdentificationTypeId=${goodIdentificationType.goodIdentificationTypeId}`)
+    }
   })
 });
 
-export {GoodIdentificationType};
+export {GoodIdentificationTypeType};
+    
+
+
+
+
+const GoodIdentificationTypeInputType = new GraphQLInputObjectType({
+  name: 'GoodIdentificationTypeInputType',
+  description: 'input type for GoodIdentificationType in product',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    goodIdentificationTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {GoodIdentificationTypeInputType};
     

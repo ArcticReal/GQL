@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,22 +10,39 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {OrderBlacklistTypeType} from '../order/OrderBlacklistTypeType.js';
+import {OrderBlacklistType} from '../order/OrderBlacklist.js';
 
 
-const OrderBlacklistType = new GraphQLObjectType({
-  name: 'OrderBlacklistType',
-  description: 'Type for OrderBlacklist in order',
+const OrderBlacklistTypeType = new GraphQLObjectType({
+  name: 'OrderBlacklistTypeType',
+  description: 'Type for OrderBlacklistType in order',
 
   fields: () => ({
-    orderBlacklistType: {
-      type: OrderBlacklistTypeType,
+    description: {type: GraphQLString},
+    orderBlacklistTypeId: {type: GraphQLString},
+    orderBlacklists: {
+      type: new GraphQLList(OrderBlacklistType),
       args : {orderBlacklistTypeId: {type: GraphQLString}},
-      resolve: (orderBlacklist, args, {loaders}) => loaders.ofbiz.load(`orderBlacklistTypes/find?orderBlacklistTypeId=${orderBlacklist.orderBlacklistTypeId}`)
-    },
-    blacklistString: {type: GraphQLString}
+      resolve: (orderBlacklistType, args, {loaders}) => loaders.ofbizArray.load(`orderBlacklists/find?orderBlacklistTypeId=${orderBlacklistType.orderBlacklistTypeId}`)
+    }
   })
 });
 
-export {OrderBlacklistType};
+export {OrderBlacklistTypeType};
+    
+
+
+
+
+const OrderBlacklistTypeInputType = new GraphQLInputObjectType({
+  name: 'OrderBlacklistTypeInputType',
+  description: 'input type for OrderBlacklistType in order',
+
+  fields: () => ({
+    description: {type: GraphQLString},
+    orderBlacklistTypeId: {type: GraphQLString}
+  })
+});
+
+export {OrderBlacklistTypeInputType};
     

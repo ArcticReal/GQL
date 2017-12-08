@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,42 +10,52 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {ProductAverageCostTypeType} from '../accounting/ProductAverageCostTypeType.js';
-import {PartyType} from '../party/PartyType.js';
-import {ProductType} from '../product/ProductType.js';
-import {FacilityType} from '../product/FacilityType.js';
+import {ProductAverageCostType} from '../accounting/ProductAverageCost.js';
 
 
-const ProductAverageCostType = new GraphQLObjectType({
-  name: 'ProductAverageCostType',
-  description: 'Type for ProductAverageCost in accounting',
+const ProductAverageCostTypeType = new GraphQLObjectType({
+  name: 'ProductAverageCostTypeType',
+  description: 'Type for ProductAverageCostType in accounting',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    facility: {
-      type: FacilityType,
-      args : {facilityId: {type: GraphQLString}},
-      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${productAverageCost.facilityId}`)
-    },
-    product: {
-      type: ProductType,
-      args : {productId: {type: GraphQLString}},
-      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productAverageCost.productId}`)
-    },
-    productAverageCostType: {
+    parentType: {
       type: ProductAverageCostTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (productAverageCostType, args, {loaders}) => loaders.ofbiz.load(`productAverageCostTypes/find?productAverageCostTypeId=${productAverageCostType.parentTypeId}`)
+    },
+    productAverageCostTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    productAverageCosts: {
+      type: new GraphQLList(ProductAverageCostType),
       args : {productAverageCostTypeId: {type: GraphQLString}},
-      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`productAverageCostTypes/find?productAverageCostTypeId=${productAverageCost.productAverageCostTypeId}`)
+      resolve: (productAverageCostType, args, {loaders}) => loaders.ofbizArray.load(`productAverageCosts/find?productAverageCostTypeId=${productAverageCostType.productAverageCostTypeId}`)
     },
-    organizationParty: {
-      type: PartyType,
-      args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productAverageCost.organizationPartyId}`)
-    },
-    averageCost: {type: GraphQLFloat},
-    thruDate: {type: GraphQLString}
+    productAverageCostTypes: {
+      type: new GraphQLList(ProductAverageCostTypeType),
+      args : {productAverageCostTypeId: {type: GraphQLString}},
+      resolve: (productAverageCostType, args, {loaders}) => loaders.ofbizArray.load(`productAverageCostTypes/find?productAverageCostTypeId=${productAverageCostType.productAverageCostTypeId}`)
+    }
   })
 });
 
-export {ProductAverageCostType};
+export {ProductAverageCostTypeType};
+    
+
+
+
+
+const ProductAverageCostTypeInputType = new GraphQLInputObjectType({
+  name: 'ProductAverageCostTypeInputType',
+  description: 'input type for ProductAverageCostType in accounting',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    productAverageCostTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString}
+  })
+});
+
+export {ProductAverageCostTypeInputType};
     

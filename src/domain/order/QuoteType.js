@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,96 +10,58 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PartyType} from '../party/PartyType.js';
-import {QuoteNoteType} from '../order/QuoteNoteType.js';
-import {QuoteAdjustmentType} from '../order/QuoteAdjustmentType.js';
-import {QuoteTermType} from '../order/QuoteTermType.js';
-import {QuoteItemType} from '../order/QuoteItemType.js';
-import {QuoteWorkEffortType} from '../order/QuoteWorkEffortType.js';
-import {ProductStoreType} from '../product/ProductStoreType.js';
-import {QuoteAttributeType} from '../order/QuoteAttributeType.js';
-import {QuoteTypeType} from '../order/QuoteTypeType.js';
-import {QuoteCoefficientType} from '../order/QuoteCoefficientType.js';
-import {SalesOpportunityQuoteType} from '../marketing/SalesOpportunityQuoteType.js';
-import {QuoteRoleType} from '../order/QuoteRoleType.js';
+import {QuoteType} from '../order/Quote.js';
+import {QuoteTypeAttrType} from '../order/QuoteTypeAttr.js';
 
 
-const QuoteType = new GraphQLObjectType({
-  name: 'QuoteType',
-  description: 'Type for Quote in order',
+const QuoteTypeType = new GraphQLObjectType({
+  name: 'QuoteTypeType',
+  description: 'Type for QuoteType in order',
 
   fields: () => ({
-    quoteType: {
+    quoteTypeId: {type: GraphQLString},
+    parentType: {
       type: QuoteTypeType,
-      args : {quoteTypeId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbiz.load(`quoteTypes/find?quoteTypeId=${quote.quoteTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (quoteType, args, {loaders}) => loaders.ofbiz.load(`quoteTypes/find?quoteTypeId=${quoteType.parentTypeId}`)
     },
-    currencyUomId: {type: GraphQLString},
-    salesChannelEnumId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    validFromDate: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
-    productStore: {
-      type: ProductStoreType,
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${quote.productStoreId}`)
+    quotes: {
+      type: new GraphQLList(QuoteType),
+      args : {quoteTypeId: {type: GraphQLString}},
+      resolve: (quoteType, args, {loaders}) => loaders.ofbizArray.load(`quotes/find?quoteTypeId=${quoteType.quoteTypeId}`)
     },
-    party: {
-      type: PartyType,
-      args : {partyId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${quote.partyId}`)
+    quoteTypes: {
+      type: new GraphQLList(QuoteTypeType),
+      args : {quoteTypeId: {type: GraphQLString}},
+      resolve: (quoteType, args, {loaders}) => loaders.ofbizArray.load(`quoteTypes/find?quoteTypeId=${quoteType.quoteTypeId}`)
     },
-    issueDate: {type: GraphQLString},
-    quoteId: {type: GraphQLString},
-    validThruDate: {type: GraphQLString},
-    quoteName: {type: GraphQLString},
-    salesOpportunityQuote: {
-      type: new GraphQLList(SalesOpportunityQuoteType),
-      args : {quoteId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbizArray.load(`salesOpportunityQuotes/find?quoteId=${quote.quoteId}`)
-    },
-    quoteNote: {
-      type: new GraphQLList(QuoteNoteType),
-      args : {quoteId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbizArray.load(`quoteNotes/find?quoteId=${quote.quoteId}`)
-    },
-    quoteAttribute: {
-      type: new GraphQLList(QuoteAttributeType),
-      args : {quoteId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbizArray.load(`quoteAttributes/find?quoteId=${quote.quoteId}`)
-    },
-    quoteRole: {
-      type: new GraphQLList(QuoteRoleType),
-      args : {quoteId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbizArray.load(`quoteRoles/find?quoteId=${quote.quoteId}`)
-    },
-    quoteWorkEffort: {
-      type: new GraphQLList(QuoteWorkEffortType),
-      args : {quoteId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbizArray.load(`quoteWorkEfforts/find?quoteId=${quote.quoteId}`)
-    },
-    quoteItem: {
-      type: new GraphQLList(QuoteItemType),
-      args : {quoteId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbizArray.load(`quoteItems/find?quoteId=${quote.quoteId}`)
-    },
-    quoteCoefficient: {
-      type: new GraphQLList(QuoteCoefficientType),
-      args : {quoteId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbizArray.load(`quoteCoefficients/find?quoteId=${quote.quoteId}`)
-    },
-    quoteAdjustment: {
-      type: new GraphQLList(QuoteAdjustmentType),
-      args : {quoteId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbizArray.load(`quoteAdjustments/find?quoteId=${quote.quoteId}`)
-    },
-    quoteTerm: {
-      type: new GraphQLList(QuoteTermType),
-      args : {quoteId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbizArray.load(`quoteTerms/find?quoteId=${quote.quoteId}`)
+    quoteTypeAttrs: {
+      type: new GraphQLList(QuoteTypeAttrType),
+      args : {quoteTypeId: {type: GraphQLString}},
+      resolve: (quoteType, args, {loaders}) => loaders.ofbizArray.load(`quoteTypeAttrs/find?quoteTypeId=${quoteType.quoteTypeId}`)
     }
   })
 });
 
-export {QuoteType};
+export {QuoteTypeType};
+    
+
+
+
+
+const QuoteTypeInputType = new GraphQLInputObjectType({
+  name: 'QuoteTypeInputType',
+  description: 'input type for QuoteType in order',
+
+  fields: () => ({
+    quoteTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString}
+  })
+});
+
+export {QuoteTypeInputType};
     

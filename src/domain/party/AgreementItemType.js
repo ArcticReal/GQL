@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,85 +10,58 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {AgreementFacilityApplType} from '../party/AgreementFacilityApplType.js';
-import {AddendumType} from '../party/AddendumType.js';
-import {AgreementType} from '../party/AgreementType.js';
-import {SupplierProductType} from '../product/SupplierProductType.js';
-import {AgreementTermType} from '../party/AgreementTermType.js';
-import {AgreementEmploymentApplType} from '../party/AgreementEmploymentApplType.js';
-import {AgreementItemTypeType} from '../party/AgreementItemTypeType.js';
-import {AgreementItemAttributeType} from '../party/AgreementItemAttributeType.js';
-import {AgreementGeographicalApplicType} from '../party/AgreementGeographicalApplicType.js';
-import {AgreementProductApplType} from '../party/AgreementProductApplType.js';
-import {AgreementPromoApplType} from '../party/AgreementPromoApplType.js';
+import {AgreementItemType} from '../party/AgreementItem.js';
+import {AgreementItemTypeAttrType} from '../party/AgreementItemTypeAttr.js';
 
 
-const AgreementItemType = new GraphQLObjectType({
-  name: 'AgreementItemType',
-  description: 'Type for AgreementItem in party',
+const AgreementItemTypeType = new GraphQLObjectType({
+  name: 'AgreementItemTypeType',
+  description: 'Type for AgreementItemType in party',
 
   fields: () => ({
-    currencyUomId: {type: GraphQLString},
-    agreementText: {type: GraphQLString},
-    agreementImage: {type: GraphQLString/*this was an Object TODO find a solution*/},
-    agreement: {
-      type: AgreementType,
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbiz.load(`agreements/find?agreementId=${agreementItem.agreementId}`)
-    },
-    agreementItemSeqId: {type: GraphQLString},
-    agreementItemType: {
+    parentType: {
       type: AgreementItemTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (agreementItemType, args, {loaders}) => loaders.ofbiz.load(`agreementItemTypes/find?agreementItemTypeId=${agreementItemType.parentTypeId}`)
+    },
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    agreementItemTypeId: {type: GraphQLString},
+    agreementItemTypeAttrs: {
+      type: new GraphQLList(AgreementItemTypeAttrType),
       args : {agreementItemTypeId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbiz.load(`agreementItemTypes/find?agreementItemTypeId=${agreementItem.agreementItemTypeId}`)
+      resolve: (agreementItemType, args, {loaders}) => loaders.ofbizArray.load(`agreementItemTypeAttrs/find?agreementItemTypeId=${agreementItemType.agreementItemTypeId}`)
     },
-    agreementTerm: {
-      type: new GraphQLList(AgreementTermType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementTerms/find?agreementId=${agreementItem.agreementId}`)
+    agreementItems: {
+      type: new GraphQLList(AgreementItemType),
+      args : {agreementItemTypeId: {type: GraphQLString}},
+      resolve: (agreementItemType, args, {loaders}) => loaders.ofbizArray.load(`agreementItems/find?agreementItemTypeId=${agreementItemType.agreementItemTypeId}`)
     },
-    supplierProduct: {
-      type: new GraphQLList(SupplierProductType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`supplierProducts/find?agreementId=${agreementItem.agreementId}`)
-    },
-    agreementFacilityAppl: {
-      type: new GraphQLList(AgreementFacilityApplType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementFacilityAppls/find?agreementId=${agreementItem.agreementId}`)
-    },
-    addendum: {
-      type: new GraphQLList(AddendumType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`addendums/find?agreementId=${agreementItem.agreementId}`)
-    },
-    agreementProductAppl: {
-      type: new GraphQLList(AgreementProductApplType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementProductAppls/find?agreementId=${agreementItem.agreementId}`)
-    },
-    agreementItemAttribute: {
-      type: new GraphQLList(AgreementItemAttributeType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementItemAttributes/find?agreementId=${agreementItem.agreementId}`)
-    },
-    agreementPromoAppl: {
-      type: new GraphQLList(AgreementPromoApplType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementPromoAppls/find?agreementId=${agreementItem.agreementId}`)
-    },
-    agreementEmploymentAppl: {
-      type: new GraphQLList(AgreementEmploymentApplType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementEmploymentAppls/find?agreementId=${agreementItem.agreementId}`)
-    },
-    agreementGeographicalApplic: {
-      type: new GraphQLList(AgreementGeographicalApplicType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementGeographicalApplics/find?agreementId=${agreementItem.agreementId}`)
+    agreementItemTypes: {
+      type: new GraphQLList(AgreementItemTypeType),
+      args : {agreementItemTypeId: {type: GraphQLString}},
+      resolve: (agreementItemType, args, {loaders}) => loaders.ofbizArray.load(`agreementItemTypes/find?agreementItemTypeId=${agreementItemType.agreementItemTypeId}`)
     }
   })
 });
 
-export {AgreementItemType};
+export {AgreementItemTypeType};
+    
+
+
+
+
+const AgreementItemTypeInputType = new GraphQLInputObjectType({
+  name: 'AgreementItemTypeInputType',
+  description: 'input type for AgreementItemType in party',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
+    agreementItemTypeId: {type: GraphQLString}
+  })
+});
+
+export {AgreementItemTypeInputType};
     

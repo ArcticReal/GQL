@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,35 +10,50 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PartyType} from '../party/PartyType.js';
-import {ContentType} from '../content/ContentType.js';
-import {PartyContentTypeType} from '../party/PartyContentTypeType.js';
+import {PartyContentType} from '../party/PartyContent.js';
 
 
-const PartyContentType = new GraphQLObjectType({
-  name: 'PartyContentType',
-  description: 'Type for PartyContent in party',
+const PartyContentTypeType = new GraphQLObjectType({
+  name: 'PartyContentTypeType',
+  description: 'Type for PartyContentType in party',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    partyContentType: {
+    partyContentTypeId: {type: GraphQLString},
+    parentType: {
       type: PartyContentTypeType,
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (partyContentType, args, {loaders}) => loaders.ofbiz.load(`partyContentTypes/find?partyContentTypeId=${partyContentType.parentTypeId}`)
+    },
+    description: {type: GraphQLString},
+    partyContentTypes: {
+      type: new GraphQLList(PartyContentTypeType),
       args : {partyContentTypeId: {type: GraphQLString}},
-      resolve: (partyContent, args, {loaders}) => loaders.ofbiz.load(`partyContentTypes/find?partyContentTypeId=${partyContent.partyContentTypeId}`)
+      resolve: (partyContentType, args, {loaders}) => loaders.ofbizArray.load(`partyContentTypes/find?partyContentTypeId=${partyContentType.partyContentTypeId}`)
     },
-    content: {
-      type: ContentType,
-      args : {contentId: {type: GraphQLString}},
-      resolve: (partyContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${partyContent.contentId}`)
-    },
-    party: {
-      type: PartyType,
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyContent, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyContent.partyId}`)
-    },
-    thruDate: {type: GraphQLString}
+    partyContents: {
+      type: new GraphQLList(PartyContentType),
+      args : {partyContentTypeId: {type: GraphQLString}},
+      resolve: (partyContentType, args, {loaders}) => loaders.ofbizArray.load(`partyContents/find?partyContentTypeId=${partyContentType.partyContentTypeId}`)
+    }
   })
 });
 
-export {PartyContentType};
+export {PartyContentTypeType};
+    
+
+
+
+
+const PartyContentTypeInputType = new GraphQLInputObjectType({
+  name: 'PartyContentTypeInputType',
+  description: 'input type for PartyContentType in party',
+
+  fields: () => ({
+    partyContentTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {PartyContentTypeInputType};
     

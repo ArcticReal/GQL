@@ -2,6 +2,7 @@
 import {
   GraphQLSchema,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLInt,
   GraphQLFloat,
   GraphQLString,
@@ -9,120 +10,64 @@ import {
   GraphQLList,
 } from 'graphql';
 
-import {PaymentApplicationType} from '../accounting/PaymentApplicationType.js';
-import {InvoiceItemType} from '../accounting/InvoiceItemType.js';
-import {InvoiceAttributeType} from '../accounting/InvoiceAttributeType.js';
-import {InvoiceRoleType} from '../accounting/InvoiceRoleType.js';
-import {RoleTypeType} from '../party/RoleTypeType.js';
-import {AcctgTransType} from '../accounting/AcctgTransType.js';
-import {ContactMechType} from '../party/ContactMechType.js';
-import {InvoiceTypeType} from '../accounting/InvoiceTypeType.js';
-import {InvoiceTermType} from '../accounting/InvoiceTermType.js';
-import {PartyType} from '../party/PartyType.js';
-import {InvoiceContactMechType} from '../accounting/InvoiceContactMechType.js';
-import {BillingAccountType} from '../accounting/BillingAccountType.js';
-import {InvoiceNoteType} from '../accounting/InvoiceNoteType.js';
-import {InvoiceStatusType} from '../accounting/InvoiceStatusType.js';
-import {InvoiceContentType} from '../accounting/InvoiceContentType.js';
+import {InvoiceType} from '../accounting/Invoice.js';
+import {InvoiceTypeAttrType} from '../accounting/InvoiceTypeAttr.js';
+import {InvoiceItemTypeMapType} from '../accounting/InvoiceItemTypeMap.js';
 
 
-const InvoiceType = new GraphQLObjectType({
-  name: 'InvoiceType',
-  description: 'Type for Invoice in accounting',
+const InvoiceTypeType = new GraphQLObjectType({
+  name: 'InvoiceTypeType',
+  description: 'Type for InvoiceType in accounting',
 
   fields: () => ({
-    partyFrom: {
-      type: PartyType,
-      args : {partyIdFrom: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${invoice.partyIdFrom}`)
-    },
-    roleType: {
-      type: RoleTypeType,
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${invoice.roleTypeId}`)
-    },
-    recurrenceInfoId: {type: GraphQLString},
-    invoiceType: {
+    parentType: {
       type: InvoiceTypeType,
-      args : {invoiceTypeId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbiz.load(`invoiceTypes/find?invoiceTypeId=${invoice.invoiceTypeId}`)
+      args : {parentTypeId: {type: GraphQLString}},
+      resolve: (invoiceType, args, {loaders}) => loaders.ofbiz.load(`invoiceTypes/find?invoiceTypeId=${invoiceType.parentTypeId}`)
     },
-    dueDate: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    invoiceTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    billingAccount: {
-      type: BillingAccountType,
-      args : {billingAccountId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbiz.load(`billingAccounts/find?billingAccountId=${invoice.billingAccountId}`)
+    invoiceItemTypeMaps: {
+      type: new GraphQLList(InvoiceItemTypeMapType),
+      args : {invoiceTypeId: {type: GraphQLString}},
+      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemTypeMaps/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
     },
-    invoiceDate: {type: GraphQLString},
-    contactMech: {
-      type: ContactMechType,
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${invoice.contactMechId}`)
+    invoiceTypeAttrs: {
+      type: new GraphQLList(InvoiceTypeAttrType),
+      args : {invoiceTypeId: {type: GraphQLString}},
+      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`invoiceTypeAttrs/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
     },
-    currencyUomId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    paidDate: {type: GraphQLString},
-    referenceNumber: {type: GraphQLString},
-    invoiceId: {type: GraphQLString},
-    invoiceMessage: {type: GraphQLString},
-    party: {
-      type: PartyType,
-      args : {partyId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${invoice.partyId}`)
+    invoiceTypes: {
+      type: new GraphQLList(InvoiceTypeType),
+      args : {invoiceTypeId: {type: GraphQLString}},
+      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`invoiceTypes/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
     },
-    invoiceContent: {
-      type: new GraphQLList(InvoiceContentType),
-      args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbizArray.load(`invoiceContents/find?invoiceId=${invoice.invoiceId}`)
-    },
-    invoiceContactMech: {
-      type: new GraphQLList(InvoiceContactMechType),
-      args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbizArray.load(`invoiceContactMechs/find?invoiceId=${invoice.invoiceId}`)
-    },
-    invoiceItem: {
-      type: new GraphQLList(InvoiceItemType),
-      args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbizArray.load(`invoiceItems/find?invoiceId=${invoice.invoiceId}`)
-    },
-    invoiceStatus: {
-      type: new GraphQLList(InvoiceStatusType),
-      args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbizArray.load(`invoiceStatuss/find?invoiceId=${invoice.invoiceId}`)
-    },
-    invoiceTerm: {
-      type: new GraphQLList(InvoiceTermType),
-      args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbizArray.load(`invoiceTerms/find?invoiceId=${invoice.invoiceId}`)
-    },
-    acctgTrans: {
-      type: new GraphQLList(AcctgTransType),
-      args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbizArray.load(`acctgTranss/find?invoiceId=${invoice.invoiceId}`)
-    },
-    invoiceNote: {
-      type: new GraphQLList(InvoiceNoteType),
-      args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbizArray.load(`invoiceNotes/find?invoiceId=${invoice.invoiceId}`)
-    },
-    invoiceAttribute: {
-      type: new GraphQLList(InvoiceAttributeType),
-      args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbizArray.load(`invoiceAttributes/find?invoiceId=${invoice.invoiceId}`)
-    },
-    invoiceRole: {
-      type: new GraphQLList(InvoiceRoleType),
-      args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbizArray.load(`invoiceRoles/find?invoiceId=${invoice.invoiceId}`)
-    },
-    paymentApplication: {
-      type: new GraphQLList(PaymentApplicationType),
-      args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbizArray.load(`paymentApplications/find?invoiceId=${invoice.invoiceId}`)
+    invoices: {
+      type: new GraphQLList(InvoiceType),
+      args : {invoiceTypeId: {type: GraphQLString}},
+      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`invoices/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
     }
   })
 });
 
-export {InvoiceType};
+export {InvoiceTypeType};
+    
+
+
+
+
+const InvoiceTypeInputType = new GraphQLInputObjectType({
+  name: 'InvoiceTypeInputType',
+  description: 'input type for InvoiceType in accounting',
+
+  fields: () => ({
+    parentTypeId: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    invoiceTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
+  })
+});
+
+export {InvoiceTypeInputType};
     
