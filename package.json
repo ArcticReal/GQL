@@ -23,7 +23,7 @@
     "mocha": "^4.0.1"
   },
   "scripts": {
-    "start": "babel src -d lib && node lib/index.js",
+    "start": "rm -R lib/* && babel src -d lib && node lib/index.js",
     "run": "node lib/index.js"
   },
   "author": "",
