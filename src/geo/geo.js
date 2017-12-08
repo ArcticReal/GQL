@@ -19,7 +19,7 @@ const GeoType = new GraphQLObjectType({
     wellKnownText: { type: GraphQLString },
     regions: {
       type: new GraphQLList(GeoType),
-      resolve: (geo, args, {loaders}) => loaders.ofbiz.load(`geo/${geo.geoId}/regions/`)
+      resolve: (geo, args, {loaders}) => loaders.ofbizArray.load(`geo/${geo.geoId}/regions/`)
     }
   })
 });

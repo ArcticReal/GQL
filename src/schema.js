@@ -1,9 +1,6 @@
 //External Imports
 import { GraphQLSchema, GraphQLObjectType } from 'graphql';
 
-
-
-
 //Mutations
 import {mutationFields} from './framework/mutationBuilder.js';
 
