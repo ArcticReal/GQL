@@ -24,3 +24,5 @@ const productPromoQueries = {
     resolve: (root, args, {loaders}) => loaders.ofbiz.load(`productPromos/${args.productPromoId}`)
   }
 };
+
+export {productPromoQueries};
