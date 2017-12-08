@@ -27,7 +27,7 @@ import { ProductPromoType } from './domain/product/ProductPromoType.js';
 import {mutationFields} from './framework/mutationBuilder.js';
 
 //Etc.
-import { LoggedInPersonType } from './loggedInPerson.js';
+import { LoggedInPersonType } from './loginServices/loggedInPerson.js';
 import { VerifyType, ResendVerificationType } from './verification.js';
 
 const RootQueryType = new GraphQLObjectType({
