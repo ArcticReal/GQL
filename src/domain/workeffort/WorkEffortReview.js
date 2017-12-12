@@ -22,12 +22,12 @@ const WorkEffortReviewType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortReview, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortReview.workEffortId}`)
+      resolve: (workEffortReview, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortReview.workEffortId}`)
     },
     userLogin: {
       type: UserLoginType,
       args : {userLoginId: {type: GraphQLString}},
-      resolve: (workEffortReview, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${workEffortReview.userLoginId}`)
+      resolve: (workEffortReview, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${workEffortReview.userLoginId}`)
     },
     statusId: {type: GraphQLString},
     reviewDate: {type: GraphQLString},

@@ -22,8 +22,8 @@ const ContentAssocPredicateType = new GraphQLObjectType({
     description: {type: GraphQLString},
     contentAssocs: {
       type: new GraphQLList(ContentAssocType),
-      args : {contentAssocPredicateId: {type: GraphQLString}},
-      resolve: (contentAssocPredicate, args, {loaders}) => loaders.ofbizArray.load(`contentAssocs/find?contentAssocPredicateId=${contentAssocPredicate.contentAssocPredicateId}`)
+      args : {},
+      resolve: (contentAssocPredicate, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentAssocs/find?contentAssocPredicateId=${contentAssocPredicate.contentAssocPredicateId}`)
     }
   })
 });

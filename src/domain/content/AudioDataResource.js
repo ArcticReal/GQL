@@ -22,7 +22,7 @@ const AudioDataResourceType = new GraphQLObjectType({
     dataResource: {
       type: DataResourceType,
       args : {dataResourceId: {type: GraphQLString}},
-      resolve: (audioDataResource, args, {loaders}) => loaders.ofbiz.load(`dataResources/find?dataResourceId=${audioDataResource.dataResourceId}`)
+      resolve: (audioDataResource, args, {loaders}) => loaders.ofbiz.load(`content/dataResources/find?dataResourceId=${audioDataResource.dataResourceId}`)
     }
   })
 });

@@ -35,55 +35,55 @@ const SubscriptionType = new GraphQLObjectType({
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${subscription.orderId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${subscription.orderId}`)
     },
     subscriptionResource: {
       type: SubscriptionResourceType,
       args : {subscriptionResourceId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`subscriptionResources/find?subscriptionResourceId=${subscription.subscriptionResourceId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`product/subscription/subscriptionResources/find?subscriptionResourceId=${subscription.subscriptionResourceId}`)
     },
     description: {type: GraphQLString},
     subscriptionType: {
       type: SubscriptionTypeType,
       args : {subscriptionTypeId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`subscriptionTypes/find?subscriptionTypeId=${subscription.subscriptionTypeId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`product/subscription/subscriptionTypes/find?subscriptionTypeId=${subscription.subscriptionTypeId}`)
     },
     canclAutmExtTimeUomId: {type: GraphQLString},
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${subscription.contactMechId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${subscription.contactMechId}`)
     },
     gracePeriodOnExpiryUomId: {type: GraphQLString},
     availableTime: {type: GraphQLInt},
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${subscription.productCategoryId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${subscription.productCategoryId}`)
     },
     partyNeedId: {type: GraphQLString},
     useTime: {type: GraphQLInt},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${subscription.partyId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${subscription.partyId}`)
     },
     orderItemSeqId: {type: GraphQLString},
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${subscription.roleTypeId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${subscription.roleTypeId}`)
     },
     purchaseFromDate: {type: GraphQLString},
     needType: {
       type: NeedTypeType,
       args : {needTypeId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`needTypes/find?needTypeId=${subscription.needTypeId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`party/needTypes/find?needTypeId=${subscription.needTypeId}`)
     },
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${subscription.productId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${subscription.productId}`)
     },
     useCountLimit: {type: GraphQLInt},
     expirationCompletedDate: {type: GraphQLString},
@@ -92,20 +92,20 @@ const SubscriptionType = new GraphQLObjectType({
     inventoryItem: {
       type: InventoryItemType,
       args : {inventoryItemId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${subscription.inventoryItemId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItems/find?inventoryItemId=${subscription.inventoryItemId}`)
     },
     fromDate: {type: GraphQLString},
     canclAutmExtTime: {type: GraphQLInt},
     originatedFromRoleType: {
       type: RoleTypeType,
       args : {originatedFromRoleTypeId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${subscription.originatedFromRoleTypeId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${subscription.originatedFromRoleTypeId}`)
     },
     automaticExtend: {type: GraphQLBoolean},
     originatedFromParty: {
       type: PartyType,
       args : {originatedFromPartyId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${subscription.originatedFromPartyId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${subscription.originatedFromPartyId}`)
     },
     communicationEventId: {type: GraphQLString},
     maxLifeTime: {type: GraphQLInt},
@@ -115,18 +115,18 @@ const SubscriptionType = new GraphQLObjectType({
     subscriptionId: {type: GraphQLString},
     subscriptionAttributes: {
       type: new GraphQLList(SubscriptionAttributeType),
-      args : {subscriptionId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbizArray.load(`subscriptionAttributes/find?subscriptionId=${subscription.subscriptionId}`)
+      args : {},
+      resolve: (subscription, args, {loaders}) => loaders.ofbizArray.load(`product/subscription/subscriptionAttributes/find?subscriptionId=${subscription.subscriptionId}`)
     },
     subscriptionFulfillmentPieces: {
       type: new GraphQLList(SubscriptionFulfillmentPieceType),
-      args : {subscriptionId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbizArray.load(`subscriptionFulfillmentPieces/find?subscriptionId=${subscription.subscriptionId}`)
+      args : {},
+      resolve: (subscription, args, {loaders}) => loaders.ofbizArray.load(`product/subscription/subscriptionFulfillmentPieces/find?subscriptionId=${subscription.subscriptionId}`)
     },
     subscriptionCommEvents: {
       type: new GraphQLList(SubscriptionCommEventType),
-      args : {subscriptionId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbizArray.load(`subscriptionCommEvents/find?subscriptionId=${subscription.subscriptionId}`)
+      args : {},
+      resolve: (subscription, args, {loaders}) => loaders.ofbizArray.load(`product/subscription/subscriptionCommEvents/find?subscriptionId=${subscription.subscriptionId}`)
     }
   })
 });

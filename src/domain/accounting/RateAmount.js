@@ -24,26 +24,26 @@ const RateAmountType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (rateAmount, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${rateAmount.workEffortId}`)
+      resolve: (rateAmount, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${rateAmount.workEffortId}`)
     },
     fromDate: {type: GraphQLString},
     rateType: {
       type: RateTypeType,
       args : {rateTypeId: {type: GraphQLString}},
-      resolve: (rateAmount, args, {loaders}) => loaders.ofbiz.load(`rateTypes/find?rateTypeId=${rateAmount.rateTypeId}`)
+      resolve: (rateAmount, args, {loaders}) => loaders.ofbiz.load(`accounting/rateTypes/find?rateTypeId=${rateAmount.rateTypeId}`)
     },
     rateAmount: {type: GraphQLFloat},
     periodTypeId: {type: GraphQLString},
     emplPositionType: {
       type: EmplPositionTypeType,
       args : {emplPositionTypeId: {type: GraphQLString}},
-      resolve: (rateAmount, args, {loaders}) => loaders.ofbiz.load(`emplPositionTypes/find?emplPositionTypeId=${rateAmount.emplPositionTypeId}`)
+      resolve: (rateAmount, args, {loaders}) => loaders.ofbiz.load(`humanres/emplPosition/emplPositionTypes/find?emplPositionTypeId=${rateAmount.emplPositionTypeId}`)
     },
     rateCurrencyUomId: {type: GraphQLString},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (rateAmount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${rateAmount.partyId}`)
+      resolve: (rateAmount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${rateAmount.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

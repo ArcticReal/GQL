@@ -22,7 +22,7 @@ const WorkEffortFixedAssetAssignType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortFixedAssetAssign, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortFixedAssetAssign.workEffortId}`)
+      resolve: (workEffortFixedAssetAssign, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortFixedAssetAssign.workEffortId}`)
     },
     fromDate: {type: GraphQLString},
     comments: {type: GraphQLString},
@@ -31,7 +31,7 @@ const WorkEffortFixedAssetAssignType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (workEffortFixedAssetAssign, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${workEffortFixedAssetAssign.fixedAssetId}`)
+      resolve: (workEffortFixedAssetAssign, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${workEffortFixedAssetAssign.fixedAssetId}`)
     },
     availabilityStatusId: {type: GraphQLString},
     thruDate: {type: GraphQLString}

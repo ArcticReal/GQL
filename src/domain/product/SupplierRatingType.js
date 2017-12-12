@@ -22,8 +22,8 @@ const SupplierRatingTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     supplierProducts: {
       type: new GraphQLList(SupplierProductType),
-      args : {supplierRatingTypeId: {type: GraphQLString}},
-      resolve: (supplierRatingType, args, {loaders}) => loaders.ofbizArray.load(`supplierProducts/find?supplierRatingTypeId=${supplierRatingType.supplierRatingTypeId}`)
+      args : {},
+      resolve: (supplierRatingType, args, {loaders}) => loaders.ofbizArray.load(`product/product/supplierProducts/find?supplierRatingTypeId=${supplierRatingType.supplierRatingTypeId}`)
     }
   })
 });

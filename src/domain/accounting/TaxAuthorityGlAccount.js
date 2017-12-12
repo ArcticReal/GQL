@@ -24,17 +24,17 @@ const TaxAuthorityGlAccountType = new GraphQLObjectType({
     glAccount: {
       type: GlAccountType,
       args : {glAccountId: {type: GraphQLString}},
-      resolve: (taxAuthorityGlAccount, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${taxAuthorityGlAccount.glAccountId}`)
+      resolve: (taxAuthorityGlAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${taxAuthorityGlAccount.glAccountId}`)
     },
     taxAuthGeo: {
       type: TaxAuthorityType,
       args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthorityGlAccount, args, {loaders}) => loaders.ofbiz.load(`taxAuthoritys/find?taxAuthGeoId=${taxAuthorityGlAccount.taxAuthGeoId}`)
+      resolve: (taxAuthorityGlAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthoritys/find?taxAuthGeoId=${taxAuthorityGlAccount.taxAuthGeoId}`)
     },
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (taxAuthorityGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${taxAuthorityGlAccount.organizationPartyId}`)
+      resolve: (taxAuthorityGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${taxAuthorityGlAccount.organizationPartyId}`)
     }
   })
 });

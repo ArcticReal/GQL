@@ -23,8 +23,8 @@ const ReturnReasonType = new GraphQLObjectType({
     sequenceId: {type: GraphQLString},
     returnItems: {
       type: new GraphQLList(ReturnItemType),
-      args : {returnReasonId: {type: GraphQLString}},
-      resolve: (returnReason, args, {loaders}) => loaders.ofbizArray.load(`returnItems/find?returnReasonId=${returnReason.returnReasonId}`)
+      args : {},
+      resolve: (returnReason, args, {loaders}) => loaders.ofbizArray.load(`order/returnItems/find?returnReasonId=${returnReason.returnReasonId}`)
     }
   })
 });

@@ -26,21 +26,21 @@ const InvoiceTermType = new GraphQLObjectType({
     termType: {
       type: TermTypeType,
       args : {termTypeId: {type: GraphQLString}},
-      resolve: (invoiceTerm, args, {loaders}) => loaders.ofbiz.load(`termTypes/find?termTypeId=${invoiceTerm.termTypeId}`)
+      resolve: (invoiceTerm, args, {loaders}) => loaders.ofbiz.load(`party/termTypes/find?termTypeId=${invoiceTerm.termTypeId}`)
     },
     description: {type: GraphQLString},
     invoice: {
       type: InvoiceType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoiceTerm, args, {loaders}) => loaders.ofbiz.load(`invoices/find?invoiceId=${invoiceTerm.invoiceId}`)
+      resolve: (invoiceTerm, args, {loaders}) => loaders.ofbiz.load(`accounting/invoices/find?invoiceId=${invoiceTerm.invoiceId}`)
     },
     invoiceItemSeqId: {type: GraphQLString},
     uomId: {type: GraphQLString},
     termValue: {type: GraphQLFloat},
     invoiceTermAttributes: {
       type: new GraphQLList(InvoiceTermAttributeType),
-      args : {invoiceTermId: {type: GraphQLString}},
-      resolve: (invoiceTerm, args, {loaders}) => loaders.ofbizArray.load(`invoiceTermAttributes/find?invoiceTermId=${invoiceTerm.invoiceTermId}`)
+      args : {},
+      resolve: (invoiceTerm, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceTermAttributes/find?invoiceTermId=${invoiceTerm.invoiceTermId}`)
     }
   })
 });

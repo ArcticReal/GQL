@@ -39,7 +39,7 @@ const ProductPromoType = new GraphQLObjectType({
     overrideOrgParty: {
       type: PartyType,
       args : {overrideOrgPartyId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productPromo.overrideOrgPartyId}`)
+      resolve: (productPromo, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productPromo.overrideOrgPartyId}`)
     },
     productPromoId: {type: GraphQLString},
     useLimitPerCustomer: {type: GraphQLInt},
@@ -51,84 +51,84 @@ const ProductPromoType = new GraphQLObjectType({
     lastModifiedByUserLogin: {
       type: UserLoginType,
       args : {lastModifiedByUserLogin: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${productPromo.lastModifiedByUserLogin}`)
+      resolve: (productPromo, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${productPromo.lastModifiedByUserLogin}`)
     },
     createdDate: {type: GraphQLString},
     billbackFactor: {type: GraphQLFloat},
     createdByUserLogin: {
       type: UserLoginType,
       args : {createdByUserLogin: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${productPromo.createdByUserLogin}`)
+      resolve: (productPromo, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${productPromo.createdByUserLogin}`)
     },
     productStorePromoAppls: {
       type: new GraphQLList(ProductStorePromoApplType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`productStorePromoAppls/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStorePromoAppls/find?productPromoId=${productPromo.productPromoId}`)
     },
     productPromoActions: {
       type: new GraphQLList(ProductPromoActionType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`productPromoActions/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoActions/find?productPromoId=${productPromo.productPromoId}`)
     },
     agreementPromoAppls: {
       type: new GraphQLList(AgreementPromoApplType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`agreementPromoAppls/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementPromoAppls/find?productPromoId=${productPromo.productPromoId}`)
     },
     productPromoCategories: {
       type: new GraphQLList(ProductPromoCategoryType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`productPromoCategorys/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoCategorys/find?productPromoId=${productPromo.productPromoId}`)
     },
     productPromoContents: {
       type: new GraphQLList(ProductPromoContentType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`productPromoContents/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoContents/find?productPromoId=${productPromo.productPromoId}`)
     },
     marketingCampaignPromos: {
       type: new GraphQLList(MarketingCampaignPromoType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`marketingCampaignPromos/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`marketing/marketingCampaign/marketingCampaignPromos/find?productPromoId=${productPromo.productPromoId}`)
     },
     productPromoConds: {
       type: new GraphQLList(ProductPromoCondType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`productPromoConds/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoConds/find?productPromoId=${productPromo.productPromoId}`)
     },
     returnAdjustments: {
       type: new GraphQLList(ReturnAdjustmentType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`returnAdjustments/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`order/returnAdjustments/find?productPromoId=${productPromo.productPromoId}`)
     },
     productPromoUses: {
       type: new GraphQLList(ProductPromoUseType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`productPromoUses/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoUses/find?productPromoId=${productPromo.productPromoId}`)
     },
     productPromoRules: {
       type: new GraphQLList(ProductPromoRuleType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`productPromoRules/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoRules/find?productPromoId=${productPromo.productPromoId}`)
     },
     quoteAdjustments: {
       type: new GraphQLList(QuoteAdjustmentType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`quoteAdjustments/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteAdjustments/find?productPromoId=${productPromo.productPromoId}`)
     },
     orderAdjustments: {
       type: new GraphQLList(OrderAdjustmentType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`orderAdjustments/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`order/orderAdjustments/find?productPromoId=${productPromo.productPromoId}`)
     },
     productPromoCodes: {
       type: new GraphQLList(ProductPromoCodeType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`productPromoCodes/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoCodes/find?productPromoId=${productPromo.productPromoId}`)
     },
     productPromoProducts: {
       type: new GraphQLList(ProductPromoProductType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`productPromoProducts/find?productPromoId=${productPromo.productPromoId}`)
+      args : {},
+      resolve: (productPromo, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoProducts/find?productPromoId=${productPromo.productPromoId}`)
     }
   })
 });

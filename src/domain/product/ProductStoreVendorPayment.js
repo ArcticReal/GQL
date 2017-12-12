@@ -23,17 +23,17 @@ const ProductStoreVendorPaymentType = new GraphQLObjectType({
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStoreVendorPayment, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${productStoreVendorPayment.productStoreId}`)
+      resolve: (productStoreVendorPayment, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${productStoreVendorPayment.productStoreId}`)
     },
     paymentMethodType: {
       type: PaymentMethodTypeType,
       args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (productStoreVendorPayment, args, {loaders}) => loaders.ofbiz.load(`paymentMethodTypes/find?paymentMethodTypeId=${productStoreVendorPayment.paymentMethodTypeId}`)
+      resolve: (productStoreVendorPayment, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethodTypes/find?paymentMethodTypeId=${productStoreVendorPayment.paymentMethodTypeId}`)
     },
     vendorParty: {
       type: PartyType,
       args : {vendorPartyId: {type: GraphQLString}},
-      resolve: (productStoreVendorPayment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productStoreVendorPayment.vendorPartyId}`)
+      resolve: (productStoreVendorPayment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productStoreVendorPayment.vendorPartyId}`)
     },
     creditCardEnumId: {type: GraphQLString}
   })

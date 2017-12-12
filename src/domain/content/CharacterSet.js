@@ -23,13 +23,13 @@ const CharacterSetType = new GraphQLObjectType({
     characterSetId: {type: GraphQLString},
     contents: {
       type: new GraphQLList(ContentType),
-      args : {characterSetId: {type: GraphQLString}},
-      resolve: (characterSet, args, {loaders}) => loaders.ofbizArray.load(`contents/find?characterSetId=${characterSet.characterSetId}`)
+      args : {},
+      resolve: (characterSet, args, {loaders}) => loaders.ofbizArray.load(`/contents/find?characterSetId=${characterSet.characterSetId}`)
     },
     dataResources: {
       type: new GraphQLList(DataResourceType),
-      args : {characterSetId: {type: GraphQLString}},
-      resolve: (characterSet, args, {loaders}) => loaders.ofbizArray.load(`dataResources/find?characterSetId=${characterSet.characterSetId}`)
+      args : {},
+      resolve: (characterSet, args, {loaders}) => loaders.ofbizArray.load(`content/dataResources/find?characterSetId=${characterSet.characterSetId}`)
     }
   })
 });

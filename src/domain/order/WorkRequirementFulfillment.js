@@ -23,17 +23,17 @@ const WorkRequirementFulfillmentType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workRequirementFulfillment, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workRequirementFulfillment.workEffortId}`)
+      resolve: (workRequirementFulfillment, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workRequirementFulfillment.workEffortId}`)
     },
     workReqFulfType: {
       type: WorkReqFulfTypeType,
       args : {workReqFulfTypeId: {type: GraphQLString}},
-      resolve: (workRequirementFulfillment, args, {loaders}) => loaders.ofbiz.load(`workReqFulfTypes/find?workReqFulfTypeId=${workRequirementFulfillment.workReqFulfTypeId}`)
+      resolve: (workRequirementFulfillment, args, {loaders}) => loaders.ofbiz.load(`order/workReqFulfTypes/find?workReqFulfTypeId=${workRequirementFulfillment.workReqFulfTypeId}`)
     },
     requirement: {
       type: RequirementType,
       args : {requirementId: {type: GraphQLString}},
-      resolve: (workRequirementFulfillment, args, {loaders}) => loaders.ofbiz.load(`requirements/find?requirementId=${workRequirementFulfillment.requirementId}`)
+      resolve: (workRequirementFulfillment, args, {loaders}) => loaders.ofbiz.load(`order/requirements/find?requirementId=${workRequirementFulfillment.requirementId}`)
     }
   })
 });

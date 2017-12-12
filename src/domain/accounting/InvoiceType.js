@@ -23,30 +23,30 @@ const InvoiceTypeType = new GraphQLObjectType({
     parentType: {
       type: InvoiceTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (invoiceType, args, {loaders}) => loaders.ofbiz.load(`invoiceTypes/find?invoiceTypeId=${invoiceType.parentTypeId}`)
+      resolve: (invoiceType, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceTypes/find?invoiceTypeId=${invoiceType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     invoiceTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     invoiceItemTypeMaps: {
       type: new GraphQLList(InvoiceItemTypeMapType),
-      args : {invoiceTypeId: {type: GraphQLString}},
-      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemTypeMaps/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
+      args : {},
+      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItemTypeMaps/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
     },
     invoiceTypeAttrs: {
       type: new GraphQLList(InvoiceTypeAttrType),
-      args : {invoiceTypeId: {type: GraphQLString}},
-      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`invoiceTypeAttrs/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
+      args : {},
+      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceTypeAttrs/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
     },
     invoiceTypes: {
       type: new GraphQLList(InvoiceTypeType),
-      args : {invoiceTypeId: {type: GraphQLString}},
-      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`invoiceTypes/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
+      args : {},
+      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceTypes/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
     },
     invoices: {
       type: new GraphQLList(InvoiceType),
-      args : {invoiceTypeId: {type: GraphQLString}},
-      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`invoices/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
+      args : {},
+      resolve: (invoiceType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoices/find?invoiceTypeId=${invoiceType.invoiceTypeId}`)
     }
   })
 });

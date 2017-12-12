@@ -25,12 +25,12 @@ const ProductStoreRoleType = new GraphQLObjectType({
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStoreRole, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${productStoreRole.productStoreId}`)
+      resolve: (productStoreRole, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${productStoreRole.productStoreId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (productStoreRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${productStoreRole.partyId}`)
+      resolve: (productStoreRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${productStoreRole.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

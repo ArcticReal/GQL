@@ -23,19 +23,19 @@ const WebUserPreferenceType = new GraphQLObjectType({
     userLogin: {
       type: UserLoginType,
       args : {userLoginId: {type: GraphQLString}},
-      resolve: (webUserPreference, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${webUserPreference.userLoginId}`)
+      resolve: (webUserPreference, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${webUserPreference.userLoginId}`)
     },
     webPreferenceType: {
       type: WebPreferenceTypeType,
       args : {webPreferenceTypeId: {type: GraphQLString}},
-      resolve: (webUserPreference, args, {loaders}) => loaders.ofbiz.load(`webPreferenceTypes/find?webPreferenceTypeId=${webUserPreference.webPreferenceTypeId}`)
+      resolve: (webUserPreference, args, {loaders}) => loaders.ofbiz.load(`content/webPreferenceTypes/find?webPreferenceTypeId=${webUserPreference.webPreferenceTypeId}`)
     },
     visitId: {type: GraphQLString},
     webPreferenceValue: {type: GraphQLString},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (webUserPreference, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${webUserPreference.partyId}`)
+      resolve: (webUserPreference, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${webUserPreference.partyId}`)
     }
   })
 });

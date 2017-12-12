@@ -23,13 +23,13 @@ const SurveyApplTypeType = new GraphQLObjectType({
     surveyApplTypeId: {type: GraphQLString},
     surveyTriggers: {
       type: new GraphQLList(SurveyTriggerType),
-      args : {surveyApplTypeId: {type: GraphQLString}},
-      resolve: (surveyApplType, args, {loaders}) => loaders.ofbizArray.load(`surveyTriggers/find?surveyApplTypeId=${surveyApplType.surveyApplTypeId}`)
+      args : {},
+      resolve: (surveyApplType, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyTriggers/find?surveyApplTypeId=${surveyApplType.surveyApplTypeId}`)
     },
     productStoreSurveyAppls: {
       type: new GraphQLList(ProductStoreSurveyApplType),
-      args : {surveyApplTypeId: {type: GraphQLString}},
-      resolve: (surveyApplType, args, {loaders}) => loaders.ofbizArray.load(`productStoreSurveyAppls/find?surveyApplTypeId=${surveyApplType.surveyApplTypeId}`)
+      args : {},
+      resolve: (surveyApplType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreSurveyAppls/find?surveyApplTypeId=${surveyApplType.surveyApplTypeId}`)
     }
   })
 });

@@ -22,8 +22,8 @@ const WorkReqFulfTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     workRequirementFulfillments: {
       type: new GraphQLList(WorkRequirementFulfillmentType),
-      args : {workReqFulfTypeId: {type: GraphQLString}},
-      resolve: (workReqFulfType, args, {loaders}) => loaders.ofbizArray.load(`workRequirementFulfillments/find?workReqFulfTypeId=${workReqFulfType.workReqFulfTypeId}`)
+      args : {},
+      resolve: (workReqFulfType, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/workRequirementFulfillments/find?workReqFulfTypeId=${workReqFulfType.workReqFulfTypeId}`)
     }
   })
 });

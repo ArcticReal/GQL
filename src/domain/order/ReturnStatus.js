@@ -24,13 +24,13 @@ const ReturnStatusType = new GraphQLObjectType({
     return: {
       type: ReturnHeaderType,
       args : {returnId: {type: GraphQLString}},
-      resolve: (returnStatus, args, {loaders}) => loaders.ofbiz.load(`returnHeaders/find?returnId=${returnStatus.returnId}`)
+      resolve: (returnStatus, args, {loaders}) => loaders.ofbiz.load(`order/returnHeaders/find?returnId=${returnStatus.returnId}`)
     },
     returnItemSeqId: {type: GraphQLString},
     changeByUserLogin: {
       type: UserLoginType,
       args : {changeByUserLoginId: {type: GraphQLString}},
-      resolve: (returnStatus, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${returnStatus.changeByUserLoginId}`)
+      resolve: (returnStatus, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${returnStatus.changeByUserLoginId}`)
     },
     statusDatetime: {type: GraphQLString}
   })

@@ -24,18 +24,18 @@ const MimeTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     communicationEvents: {
       type: new GraphQLList(CommunicationEventType),
-      args : {mimeTypeId: {type: GraphQLString}},
-      resolve: (mimeType, args, {loaders}) => loaders.ofbizArray.load(`communicationEvents/find?mimeTypeId=${mimeType.mimeTypeId}`)
+      args : {},
+      resolve: (mimeType, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvents/find?mimeTypeId=${mimeType.mimeTypeId}`)
     },
     fileExtensions: {
       type: new GraphQLList(FileExtensionType),
-      args : {mimeTypeId: {type: GraphQLString}},
-      resolve: (mimeType, args, {loaders}) => loaders.ofbizArray.load(`fileExtensions/find?mimeTypeId=${mimeType.mimeTypeId}`)
+      args : {},
+      resolve: (mimeType, args, {loaders}) => loaders.ofbizArray.load(`content/fileExtensions/find?mimeTypeId=${mimeType.mimeTypeId}`)
     },
     mimeTypeHtmlTemplates: {
       type: new GraphQLList(MimeTypeHtmlTemplateType),
-      args : {mimeTypeId: {type: GraphQLString}},
-      resolve: (mimeType, args, {loaders}) => loaders.ofbizArray.load(`mimeTypeHtmlTemplates/find?mimeTypeId=${mimeType.mimeTypeId}`)
+      args : {},
+      resolve: (mimeType, args, {loaders}) => loaders.ofbizArray.load(`content/mimeType/mimeTypeHtmlTemplates/find?mimeTypeId=${mimeType.mimeTypeId}`)
     }
   })
 });

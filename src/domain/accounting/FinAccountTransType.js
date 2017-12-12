@@ -23,24 +23,24 @@ const FinAccountTransTypeType = new GraphQLObjectType({
     parentType: {
       type: FinAccountTransTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (finAccountTransType, args, {loaders}) => loaders.ofbiz.load(`finAccountTransTypes/find?finAccountTransTypeId=${finAccountTransType.parentTypeId}`)
+      resolve: (finAccountTransType, args, {loaders}) => loaders.ofbiz.load(`accounting/finAccount/finAccountTransTypes/find?finAccountTransTypeId=${finAccountTransType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     finAccountTranses: {
       type: new GraphQLList(FinAccountTransType),
-      args : {finAccountTransTypeId: {type: GraphQLString}},
-      resolve: (finAccountTransType, args, {loaders}) => loaders.ofbizArray.load(`finAccountTranss/find?finAccountTransTypeId=${finAccountTransType.finAccountTransTypeId}`)
+      args : {},
+      resolve: (finAccountTransType, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccount/finAccountTranss/find?finAccountTransTypeId=${finAccountTransType.finAccountTransTypeId}`)
     },
     finAccountTransTypeAttrs: {
       type: new GraphQLList(FinAccountTransTypeAttrType),
-      args : {finAccountTransTypeId: {type: GraphQLString}},
-      resolve: (finAccountTransType, args, {loaders}) => loaders.ofbizArray.load(`finAccountTransTypeAttrs/find?finAccountTransTypeId=${finAccountTransType.finAccountTransTypeId}`)
+      args : {},
+      resolve: (finAccountTransType, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccount/finAccountTransTypeAttrs/find?finAccountTransTypeId=${finAccountTransType.finAccountTransTypeId}`)
     },
     finAccountTransTypes: {
       type: new GraphQLList(FinAccountTransTypeType),
-      args : {finAccountTransTypeId: {type: GraphQLString}},
-      resolve: (finAccountTransType, args, {loaders}) => loaders.ofbizArray.load(`finAccountTransTypes/find?finAccountTransTypeId=${finAccountTransType.finAccountTransTypeId}`)
+      args : {},
+      resolve: (finAccountTransType, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccount/finAccountTransTypes/find?finAccountTransTypeId=${finAccountTransType.finAccountTransTypeId}`)
     }
   })
 });

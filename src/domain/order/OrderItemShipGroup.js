@@ -30,13 +30,13 @@ const OrderItemShipGroupType = new GraphQLObjectType({
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${orderItemShipGroup.facilityId}`)
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${orderItemShipGroup.facilityId}`)
     },
     giftMessage: {type: GraphQLString},
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderItemShipGroup.orderId}`)
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderItemShipGroup.orderId}`)
     },
     shippingInstructions: {type: GraphQLString},
     maySplit: {type: GraphQLBoolean},
@@ -46,23 +46,23 @@ const OrderItemShipGroupType = new GraphQLObjectType({
     vendorParty: {
       type: PartyType,
       args : {vendorPartyId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${orderItemShipGroup.vendorPartyId}`)
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${orderItemShipGroup.vendorPartyId}`)
     },
     contactMech: {
       type: PostalAddressType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`postalAddresss/find?contactMechId=${orderItemShipGroup.contactMechId}`)
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`party/postalAddresss/find?contactMechId=${orderItemShipGroup.contactMechId}`)
     },
     telecomContactMech: {
       type: TelecomNumberType,
       args : {telecomContactMechId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`telecomNumbers/find?contactMechId=${orderItemShipGroup.telecomContactMechId}`)
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`party/telecomNumbers/find?contactMechId=${orderItemShipGroup.telecomContactMechId}`)
     },
     shipAfterDate: {type: GraphQLString},
     carrierParty: {
       type: PartyRoleType,
       args : {carrierPartyId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${orderItemShipGroup.carrierPartyId}`)
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${orderItemShipGroup.carrierPartyId}`)
     },
     carrierRoleTypeId: {type: GraphQLString},
     isGift: {type: GraphQLBoolean},
@@ -70,28 +70,28 @@ const OrderItemShipGroupType = new GraphQLObjectType({
     supplierParty: {
       type: PartyType,
       args : {supplierPartyId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${orderItemShipGroup.supplierPartyId}`)
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${orderItemShipGroup.supplierPartyId}`)
     },
     shipmentMethodType: {
       type: ShipmentMethodTypeType,
       args : {shipmentMethodTypeId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`shipmentMethodTypes/find?shipmentMethodTypeId=${orderItemShipGroup.shipmentMethodTypeId}`)
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentMethodTypes/find?shipmentMethodTypeId=${orderItemShipGroup.shipmentMethodTypeId}`)
     },
     trackingNumber: {type: GraphQLString},
     orderItemShipGroupAssocs: {
       type: new GraphQLList(OrderItemShipGroupAssocType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbizArray.load(`orderItemShipGroupAssocs/find?orderId=${orderItemShipGroup.orderId}`)
+      args : {},
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemShipGroupAssocs/find?orderId=${orderItemShipGroup.orderId}`)
     },
     picklistBins: {
       type: new GraphQLList(PicklistBinType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbizArray.load(`picklistBins/find?orderId=${orderItemShipGroup.orderId}`)
+      args : {},
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbizArray.load(`shipment/picklist/picklistBins/find?orderId=${orderItemShipGroup.orderId}`)
     },
     picklistItems: {
       type: new GraphQLList(PicklistItemType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbizArray.load(`picklistItems/find?orderId=${orderItemShipGroup.orderId}`)
+      args : {},
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbizArray.load(`shipment/picklist/picklistItems/find?orderId=${orderItemShipGroup.orderId}`)
     }
   })
 });

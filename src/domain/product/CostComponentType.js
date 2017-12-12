@@ -25,34 +25,34 @@ const CostComponentTypeType = new GraphQLObjectType({
     parentType: {
       type: CostComponentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (costComponentType, args, {loaders}) => loaders.ofbiz.load(`costComponentTypes/find?costComponentTypeId=${costComponentType.parentTypeId}`)
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbiz.load(`product/costComponent/costComponentTypes/find?costComponentTypeId=${costComponentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     costComponentTypes: {
       type: new GraphQLList(CostComponentTypeType),
-      args : {costComponentTypeId: {type: GraphQLString}},
-      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`costComponentTypes/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
+      args : {},
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`product/costComponent/costComponentTypes/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
     },
     workEffortCostCalcs: {
       type: new GraphQLList(WorkEffortCostCalcType),
-      args : {costComponentTypeId: {type: GraphQLString}},
-      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`workEffortCostCalcs/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
+      args : {},
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortCostCalcs/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
     },
     costComponentTypeAttrs: {
       type: new GraphQLList(CostComponentTypeAttrType),
-      args : {costComponentTypeId: {type: GraphQLString}},
-      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`costComponentTypeAttrs/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
+      args : {},
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`product/costComponent/costComponentTypeAttrs/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
     },
     costComponents: {
       type: new GraphQLList(CostComponentType),
-      args : {costComponentTypeId: {type: GraphQLString}},
-      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`costComponents/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
+      args : {},
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`product/costComponents/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
     },
     productCostComponentCalcs: {
       type: new GraphQLList(ProductCostComponentCalcType),
-      args : {costComponentTypeId: {type: GraphQLString}},
-      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`productCostComponentCalcs/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
+      args : {},
+      resolve: (costComponentType, args, {loaders}) => loaders.ofbizArray.load(`product/costComponent/productCostComponentCalcs/find?costComponentTypeId=${costComponentType.costComponentTypeId}`)
     }
   })
 });

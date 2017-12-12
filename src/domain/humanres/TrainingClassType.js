@@ -21,20 +21,20 @@ const TrainingClassTypeType = new GraphQLObjectType({
     parentType: {
       type: TrainingClassTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (trainingClassType, args, {loaders}) => loaders.ofbiz.load(`trainingClassTypes/find?trainingClassTypeId=${trainingClassType.parentTypeId}`)
+      resolve: (trainingClassType, args, {loaders}) => loaders.ofbiz.load(`humanres/trainingClassTypes/find?trainingClassTypeId=${trainingClassType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     trainingClassTypeId: {type: GraphQLString},
     trainingClassTypes: {
       type: new GraphQLList(TrainingClassTypeType),
-      args : {trainingClassTypeId: {type: GraphQLString}},
-      resolve: (trainingClassType, args, {loaders}) => loaders.ofbizArray.load(`trainingClassTypes/find?trainingClassTypeId=${trainingClassType.trainingClassTypeId}`)
+      args : {},
+      resolve: (trainingClassType, args, {loaders}) => loaders.ofbizArray.load(`humanres/trainingClassTypes/find?trainingClassTypeId=${trainingClassType.trainingClassTypeId}`)
     },
     personTrainings: {
       type: new GraphQLList(PersonTrainingType),
-      args : {trainingClassTypeId: {type: GraphQLString}},
-      resolve: (trainingClassType, args, {loaders}) => loaders.ofbizArray.load(`personTrainings/find?trainingClassTypeId=${trainingClassType.trainingClassTypeId}`)
+      args : {},
+      resolve: (trainingClassType, args, {loaders}) => loaders.ofbizArray.load(`humanres/personTrainings/find?trainingClassTypeId=${trainingClassType.trainingClassTypeId}`)
     }
   })
 });

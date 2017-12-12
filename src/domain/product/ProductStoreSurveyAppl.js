@@ -27,7 +27,7 @@ const ProductStoreSurveyApplType = new GraphQLObjectType({
     survey: {
       type: SurveyType,
       args : {surveyId: {type: GraphQLString}},
-      resolve: (productStoreSurveyAppl, args, {loaders}) => loaders.ofbiz.load(`surveys/find?surveyId=${productStoreSurveyAppl.surveyId}`)
+      resolve: (productStoreSurveyAppl, args, {loaders}) => loaders.ofbiz.load(`content/surveys/find?surveyId=${productStoreSurveyAppl.surveyId}`)
     },
     productCategoryId: {type: GraphQLString},
     productId: {type: GraphQLString},
@@ -36,19 +36,19 @@ const ProductStoreSurveyApplType = new GraphQLObjectType({
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStoreSurveyAppl, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${productStoreSurveyAppl.productStoreId}`)
+      resolve: (productStoreSurveyAppl, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${productStoreSurveyAppl.productStoreId}`)
     },
     resultTemplate: {type: GraphQLString},
     surveyApplType: {
       type: SurveyApplTypeType,
       args : {surveyApplTypeId: {type: GraphQLString}},
-      resolve: (productStoreSurveyAppl, args, {loaders}) => loaders.ofbiz.load(`surveyApplTypes/find?surveyApplTypeId=${productStoreSurveyAppl.surveyApplTypeId}`)
+      resolve: (productStoreSurveyAppl, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyApplTypes/find?surveyApplTypeId=${productStoreSurveyAppl.surveyApplTypeId}`)
     },
     thruDate: {type: GraphQLString},
     workEffortSurveyAppls: {
       type: new GraphQLList(WorkEffortSurveyApplType),
-      args : {productStoreSurveyId: {type: GraphQLString}},
-      resolve: (productStoreSurveyAppl, args, {loaders}) => loaders.ofbizArray.load(`workEffortSurveyAppls/find?productStoreSurveyId=${productStoreSurveyAppl.productStoreSurveyId}`)
+      args : {},
+      resolve: (productStoreSurveyAppl, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortSurveyAppls/find?productStoreSurveyId=${productStoreSurveyAppl.productStoreSurveyId}`)
     }
   })
 });

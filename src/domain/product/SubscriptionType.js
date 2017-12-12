@@ -22,25 +22,25 @@ const SubscriptionTypeType = new GraphQLObjectType({
     parentType: {
       type: SubscriptionTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (subscriptionType, args, {loaders}) => loaders.ofbiz.load(`subscriptionTypes/find?subscriptionTypeId=${subscriptionType.parentTypeId}`)
+      resolve: (subscriptionType, args, {loaders}) => loaders.ofbiz.load(`product/subscription/subscriptionTypes/find?subscriptionTypeId=${subscriptionType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     subscriptionTypeId: {type: GraphQLString},
     subscriptionTypes: {
       type: new GraphQLList(SubscriptionTypeType),
-      args : {subscriptionTypeId: {type: GraphQLString}},
-      resolve: (subscriptionType, args, {loaders}) => loaders.ofbizArray.load(`subscriptionTypes/find?subscriptionTypeId=${subscriptionType.subscriptionTypeId}`)
+      args : {},
+      resolve: (subscriptionType, args, {loaders}) => loaders.ofbizArray.load(`product/subscription/subscriptionTypes/find?subscriptionTypeId=${subscriptionType.subscriptionTypeId}`)
     },
     subscriptionTypeAttrs: {
       type: new GraphQLList(SubscriptionTypeAttrType),
-      args : {subscriptionTypeId: {type: GraphQLString}},
-      resolve: (subscriptionType, args, {loaders}) => loaders.ofbizArray.load(`subscriptionTypeAttrs/find?subscriptionTypeId=${subscriptionType.subscriptionTypeId}`)
+      args : {},
+      resolve: (subscriptionType, args, {loaders}) => loaders.ofbizArray.load(`product/subscription/subscriptionTypeAttrs/find?subscriptionTypeId=${subscriptionType.subscriptionTypeId}`)
     },
     subscriptions: {
       type: new GraphQLList(SubscriptionType),
-      args : {subscriptionTypeId: {type: GraphQLString}},
-      resolve: (subscriptionType, args, {loaders}) => loaders.ofbizArray.load(`subscriptions/find?subscriptionTypeId=${subscriptionType.subscriptionTypeId}`)
+      args : {},
+      resolve: (subscriptionType, args, {loaders}) => loaders.ofbizArray.load(`product/subscriptions/find?subscriptionTypeId=${subscriptionType.subscriptionTypeId}`)
     }
   })
 });

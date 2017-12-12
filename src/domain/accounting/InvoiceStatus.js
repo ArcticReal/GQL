@@ -24,12 +24,12 @@ const InvoiceStatusType = new GraphQLObjectType({
     invoice: {
       type: InvoiceType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoiceStatus, args, {loaders}) => loaders.ofbiz.load(`invoices/find?invoiceId=${invoiceStatus.invoiceId}`)
+      resolve: (invoiceStatus, args, {loaders}) => loaders.ofbiz.load(`accounting/invoices/find?invoiceId=${invoiceStatus.invoiceId}`)
     },
     changeByUserLogin: {
       type: UserLoginType,
       args : {changeByUserLoginId: {type: GraphQLString}},
-      resolve: (invoiceStatus, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${invoiceStatus.changeByUserLoginId}`)
+      resolve: (invoiceStatus, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${invoiceStatus.changeByUserLoginId}`)
     }
   })
 });

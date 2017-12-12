@@ -22,7 +22,7 @@ const ContainerGeoPointType = new GraphQLObjectType({
     container: {
       type: ContainerType,
       args : {containerId: {type: GraphQLString}},
-      resolve: (containerGeoPoint, args, {loaders}) => loaders.ofbiz.load(`containers/find?containerId=${containerGeoPoint.containerId}`)
+      resolve: (containerGeoPoint, args, {loaders}) => loaders.ofbiz.load(`product/containers/find?containerId=${containerGeoPoint.containerId}`)
     },
     geoPointId: {type: GraphQLString},
     thruDate: {type: GraphQLString}

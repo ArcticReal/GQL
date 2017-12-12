@@ -24,22 +24,22 @@ const ProductFeatureCategoryType = new GraphQLObjectType({
     parentCategory: {
       type: ProductFeatureCategoryType,
       args : {parentCategoryId: {type: GraphQLString}},
-      resolve: (productFeatureCategory, args, {loaders}) => loaders.ofbiz.load(`productFeatureCategorys/find?productFeatureCategoryId=${productFeatureCategory.parentCategoryId}`)
+      resolve: (productFeatureCategory, args, {loaders}) => loaders.ofbiz.load(`product/product/productFeatureCategorys/find?productFeatureCategoryId=${productFeatureCategory.parentCategoryId}`)
     },
     productFeatureCategories: {
       type: new GraphQLList(ProductFeatureCategoryType),
-      args : {productFeatureCategoryId: {type: GraphQLString}},
-      resolve: (productFeatureCategory, args, {loaders}) => loaders.ofbizArray.load(`productFeatureCategorys/find?productFeatureCategoryId=${productFeatureCategory.productFeatureCategoryId}`)
+      args : {},
+      resolve: (productFeatureCategory, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureCategorys/find?productFeatureCategoryId=${productFeatureCategory.productFeatureCategoryId}`)
     },
     productFeatureCategoryAppls: {
       type: new GraphQLList(ProductFeatureCategoryApplType),
-      args : {productFeatureCategoryId: {type: GraphQLString}},
-      resolve: (productFeatureCategory, args, {loaders}) => loaders.ofbizArray.load(`productFeatureCategoryAppls/find?productFeatureCategoryId=${productFeatureCategory.productFeatureCategoryId}`)
+      args : {},
+      resolve: (productFeatureCategory, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureCategoryAppls/find?productFeatureCategoryId=${productFeatureCategory.productFeatureCategoryId}`)
     },
     productFeatures: {
       type: new GraphQLList(ProductFeatureType),
-      args : {productFeatureCategoryId: {type: GraphQLString}},
-      resolve: (productFeatureCategory, args, {loaders}) => loaders.ofbizArray.load(`productFeatures/find?productFeatureCategoryId=${productFeatureCategory.productFeatureCategoryId}`)
+      args : {},
+      resolve: (productFeatureCategory, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatures/find?productFeatureCategoryId=${productFeatureCategory.productFeatureCategoryId}`)
     }
   })
 });

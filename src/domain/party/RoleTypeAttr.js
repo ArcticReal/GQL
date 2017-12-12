@@ -21,7 +21,7 @@ const RoleTypeAttrType = new GraphQLObjectType({
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleTypeAttr, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${roleTypeAttr.roleTypeId}`)
+      resolve: (roleTypeAttr, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${roleTypeAttr.roleTypeId}`)
     },
     description: {type: GraphQLString},
     attrName: {type: GraphQLString}

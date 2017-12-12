@@ -21,7 +21,7 @@ const SurveyMultiRespColumnType = new GraphQLObjectType({
     survey: {
       type: SurveyMultiRespType,
       args : {surveyId: {type: GraphQLString}},
-      resolve: (surveyMultiRespColumn, args, {loaders}) => loaders.ofbiz.load(`surveyMultiResps/find?surveyId=${surveyMultiRespColumn.surveyId}`)
+      resolve: (surveyMultiRespColumn, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyMultiResps/find?surveyId=${surveyMultiRespColumn.surveyId}`)
     },
     sequenceNum: {type: GraphQLInt},
     columnTitle: {type: GraphQLString},

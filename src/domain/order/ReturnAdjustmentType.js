@@ -22,19 +22,19 @@ const ReturnAdjustmentTypeType = new GraphQLObjectType({
     parentType: {
       type: ReturnAdjustmentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (returnAdjustmentType, args, {loaders}) => loaders.ofbiz.load(`returnAdjustmentTypes/find?returnAdjustmentTypeId=${returnAdjustmentType.parentTypeId}`)
+      resolve: (returnAdjustmentType, args, {loaders}) => loaders.ofbiz.load(`order/returnAdjustment/returnAdjustmentTypes/find?returnAdjustmentTypeId=${returnAdjustmentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     returnAdjustmentTypes: {
       type: new GraphQLList(ReturnAdjustmentTypeType),
-      args : {returnAdjustmentTypeId: {type: GraphQLString}},
-      resolve: (returnAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`returnAdjustmentTypes/find?returnAdjustmentTypeId=${returnAdjustmentType.returnAdjustmentTypeId}`)
+      args : {},
+      resolve: (returnAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`order/returnAdjustment/returnAdjustmentTypes/find?returnAdjustmentTypeId=${returnAdjustmentType.returnAdjustmentTypeId}`)
     },
     returnAdjustments: {
       type: new GraphQLList(ReturnAdjustmentType),
-      args : {returnAdjustmentTypeId: {type: GraphQLString}},
-      resolve: (returnAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`returnAdjustments/find?returnAdjustmentTypeId=${returnAdjustmentType.returnAdjustmentTypeId}`)
+      args : {},
+      resolve: (returnAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`order/returnAdjustments/find?returnAdjustmentTypeId=${returnAdjustmentType.returnAdjustmentTypeId}`)
     }
   })
 });

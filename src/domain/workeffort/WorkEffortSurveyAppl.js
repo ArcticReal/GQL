@@ -22,13 +22,13 @@ const WorkEffortSurveyApplType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortSurveyAppl, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortSurveyAppl.workEffortId}`)
+      resolve: (workEffortSurveyAppl, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortSurveyAppl.workEffortId}`)
     },
     fromDate: {type: GraphQLString},
     survey: {
       type: ProductStoreSurveyApplType,
       args : {surveyId: {type: GraphQLString}},
-      resolve: (workEffortSurveyAppl, args, {loaders}) => loaders.ofbiz.load(`productStoreSurveyAppls/find?productStoreSurveyId=${workEffortSurveyAppl.surveyId}`)
+      resolve: (workEffortSurveyAppl, args, {loaders}) => loaders.ofbiz.load(`product/product/productStoreSurveyAppls/find?productStoreSurveyId=${workEffortSurveyAppl.surveyId}`)
     },
     thruDate: {type: GraphQLString}
   })

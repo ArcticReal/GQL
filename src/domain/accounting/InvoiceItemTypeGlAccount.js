@@ -23,17 +23,17 @@ const InvoiceItemTypeGlAccountType = new GraphQLObjectType({
     glAccount: {
       type: GlAccountType,
       args : {glAccountId: {type: GraphQLString}},
-      resolve: (invoiceItemTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${invoiceItemTypeGlAccount.glAccountId}`)
+      resolve: (invoiceItemTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${invoiceItemTypeGlAccount.glAccountId}`)
     },
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (invoiceItemTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${invoiceItemTypeGlAccount.organizationPartyId}`)
+      resolve: (invoiceItemTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${invoiceItemTypeGlAccount.organizationPartyId}`)
     },
     invoiceItemType: {
       type: InvoiceItemTypeType,
       args : {invoiceItemTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`invoiceItemTypes/find?invoiceItemTypeId=${invoiceItemTypeGlAccount.invoiceItemTypeId}`)
+      resolve: (invoiceItemTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItemTypes/find?invoiceItemTypeId=${invoiceItemTypeGlAccount.invoiceItemTypeId}`)
     }
   })
 });

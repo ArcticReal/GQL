@@ -22,19 +22,19 @@ const WorkEffortGoodStandardTypeType = new GraphQLObjectType({
     parentType: {
       type: WorkEffortGoodStandardTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (workEffortGoodStandardType, args, {loaders}) => loaders.ofbiz.load(`workEffortGoodStandardTypes/find?workEffortGoodStdTypeId=${workEffortGoodStandardType.parentTypeId}`)
+      resolve: (workEffortGoodStandardType, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEffort/workEffortGoodStandardTypes/find?workEffortGoodStdTypeId=${workEffortGoodStandardType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     workEffortGoodStandards: {
       type: new GraphQLList(WorkEffortGoodStandardType),
-      args : {workEffortGoodStdTypeId: {type: GraphQLString}},
-      resolve: (workEffortGoodStandardType, args, {loaders}) => loaders.ofbizArray.load(`workEffortGoodStandards/find?workEffortGoodStdTypeId=${workEffortGoodStandardType.workEffortGoodStdTypeId}`)
+      args : {},
+      resolve: (workEffortGoodStandardType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortGoodStandards/find?workEffortGoodStdTypeId=${workEffortGoodStandardType.workEffortGoodStdTypeId}`)
     },
     workEffortGoodStandardTypes: {
       type: new GraphQLList(WorkEffortGoodStandardTypeType),
-      args : {workEffortGoodStdTypeId: {type: GraphQLString}},
-      resolve: (workEffortGoodStandardType, args, {loaders}) => loaders.ofbizArray.load(`workEffortGoodStandardTypes/find?workEffortGoodStdTypeId=${workEffortGoodStandardType.workEffortGoodStdTypeId}`)
+      args : {},
+      resolve: (workEffortGoodStandardType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortGoodStandardTypes/find?workEffortGoodStdTypeId=${workEffortGoodStandardType.workEffortGoodStdTypeId}`)
     }
   })
 });

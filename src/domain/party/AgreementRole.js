@@ -23,12 +23,12 @@ const AgreementRoleType = new GraphQLObjectType({
     agreement: {
       type: AgreementType,
       args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementRole, args, {loaders}) => loaders.ofbiz.load(`agreements/find?agreementId=${agreementRole.agreementId}`)
+      resolve: (agreementRole, args, {loaders}) => loaders.ofbiz.load(`party/agreements/find?agreementId=${agreementRole.agreementId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (agreementRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${agreementRole.partyId}`)
+      resolve: (agreementRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${agreementRole.partyId}`)
     }
   })
 });

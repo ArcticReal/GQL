@@ -22,8 +22,8 @@ const FixedAssetIdentTypeType = new GraphQLObjectType({
     fixedAssetIdentTypeId: {type: GraphQLString},
     fixedAssetIdents: {
       type: new GraphQLList(FixedAssetIdentType),
-      args : {fixedAssetIdentTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetIdentType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetIdents/find?fixedAssetIdentTypeId=${fixedAssetIdentType.fixedAssetIdentTypeId}`)
+      args : {},
+      resolve: (fixedAssetIdentType, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetIdents/find?fixedAssetIdentTypeId=${fixedAssetIdentType.fixedAssetIdentTypeId}`)
     }
   })
 });

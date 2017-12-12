@@ -26,7 +26,7 @@ const CheckAccountType = new GraphQLObjectType({
     paymentMethod: {
       type: PaymentMethodType,
       args : {paymentMethodId: {type: GraphQLString}},
-      resolve: (checkAccount, args, {loaders}) => loaders.ofbiz.load(`paymentMethods/find?paymentMethodId=${checkAccount.paymentMethodId}`)
+      resolve: (checkAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethods/find?paymentMethodId=${checkAccount.paymentMethodId}`)
     },
     accountType: {type: GraphQLString},
     bankName: {type: GraphQLString},
@@ -34,7 +34,7 @@ const CheckAccountType = new GraphQLObjectType({
     contactMech: {
       type: PostalAddressType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (checkAccount, args, {loaders}) => loaders.ofbiz.load(`postalAddresss/find?contactMechId=${checkAccount.contactMechId}`)
+      resolve: (checkAccount, args, {loaders}) => loaders.ofbiz.load(`party/postalAddresss/find?contactMechId=${checkAccount.contactMechId}`)
     }
   })
 });

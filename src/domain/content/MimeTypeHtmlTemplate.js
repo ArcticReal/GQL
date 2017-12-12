@@ -21,7 +21,7 @@ const MimeTypeHtmlTemplateType = new GraphQLObjectType({
     mimeType: {
       type: MimeTypeType,
       args : {mimeTypeId: {type: GraphQLString}},
-      resolve: (mimeTypeHtmlTemplate, args, {loaders}) => loaders.ofbiz.load(`mimeTypes/find?mimeTypeId=${mimeTypeHtmlTemplate.mimeTypeId}`)
+      resolve: (mimeTypeHtmlTemplate, args, {loaders}) => loaders.ofbiz.load(`content/mimeTypes/find?mimeTypeId=${mimeTypeHtmlTemplate.mimeTypeId}`)
     },
     templateLocation: {type: GraphQLString}
   })

@@ -25,7 +25,7 @@ const BudgetRevisionImpactType = new GraphQLObjectType({
     budget: {
       type: BudgetRevisionType,
       args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetRevisionImpact, args, {loaders}) => loaders.ofbiz.load(`budgetRevisions/find?budgetId=${budgetRevisionImpact.budgetId}`)
+      resolve: (budgetRevisionImpact, args, {loaders}) => loaders.ofbiz.load(`accounting/budget/budgetRevisions/find?budgetId=${budgetRevisionImpact.budgetId}`)
     },
     revisedAmount: {type: GraphQLFloat}
   })

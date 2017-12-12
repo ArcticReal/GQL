@@ -22,25 +22,25 @@ const ProductContentTypeType = new GraphQLObjectType({
     parentType: {
       type: ProductContentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (productContentType, args, {loaders}) => loaders.ofbiz.load(`productContentTypes/find?productContentTypeId=${productContentType.parentTypeId}`)
+      resolve: (productContentType, args, {loaders}) => loaders.ofbiz.load(`product/product/productContentTypes/find?productContentTypeId=${productContentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     productContentTypeId: {type: GraphQLString},
     productContents: {
       type: new GraphQLList(ProductContentType),
-      args : {productContentTypeId: {type: GraphQLString}},
-      resolve: (productContentType, args, {loaders}) => loaders.ofbizArray.load(`productContents/find?productContentTypeId=${productContentType.productContentTypeId}`)
+      args : {},
+      resolve: (productContentType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productContents/find?productContentTypeId=${productContentType.productContentTypeId}`)
     },
     productContentTypes: {
       type: new GraphQLList(ProductContentTypeType),
-      args : {productContentTypeId: {type: GraphQLString}},
-      resolve: (productContentType, args, {loaders}) => loaders.ofbizArray.load(`productContentTypes/find?productContentTypeId=${productContentType.productContentTypeId}`)
+      args : {},
+      resolve: (productContentType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productContentTypes/find?productContentTypeId=${productContentType.productContentTypeId}`)
     },
     productPromoContents: {
       type: new GraphQLList(ProductPromoContentType),
-      args : {productContentTypeId: {type: GraphQLString}},
-      resolve: (productContentType, args, {loaders}) => loaders.ofbizArray.load(`productPromoContents/find?productContentTypeId=${productContentType.productContentTypeId}`)
+      args : {},
+      resolve: (productContentType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoContents/find?productContentTypeId=${productContentType.productContentTypeId}`)
     }
   })
 });

@@ -23,12 +23,12 @@ const MarketInterestType = new GraphQLObjectType({
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (marketInterest, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${marketInterest.productCategoryId}`)
+      resolve: (marketInterest, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${marketInterest.productCategoryId}`)
     },
     partyClassificationGroup: {
       type: PartyClassificationGroupType,
       args : {partyClassificationGroupId: {type: GraphQLString}},
-      resolve: (marketInterest, args, {loaders}) => loaders.ofbiz.load(`partyClassificationGroups/find?partyClassificationGroupId=${marketInterest.partyClassificationGroupId}`)
+      resolve: (marketInterest, args, {loaders}) => loaders.ofbiz.load(`party/party/partyClassificationGroups/find?partyClassificationGroupId=${marketInterest.partyClassificationGroupId}`)
     },
     thruDate: {type: GraphQLString}
   })

@@ -24,8 +24,8 @@ const SettlementTermType = new GraphQLObjectType({
     termValue: {type: GraphQLInt},
     acctgTransEntries: {
       type: new GraphQLList(AcctgTransEntryType),
-      args : {settlementTermId: {type: GraphQLString}},
-      resolve: (settlementTerm, args, {loaders}) => loaders.ofbizArray.load(`acctgTransEntrys/find?settlementTermId=${settlementTerm.settlementTermId}`)
+      args : {},
+      resolve: (settlementTerm, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTrans/acctgTransEntrys/find?settlementTermId=${settlementTerm.settlementTermId}`)
     }
   })
 });

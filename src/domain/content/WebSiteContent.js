@@ -23,12 +23,12 @@ const WebSiteContentType = new GraphQLObjectType({
     webSiteContentType: {
       type: WebSiteContentTypeType,
       args : {webSiteContentTypeId: {type: GraphQLString}},
-      resolve: (webSiteContent, args, {loaders}) => loaders.ofbiz.load(`webSiteContentTypes/find?webSiteContentTypeId=${webSiteContent.webSiteContentTypeId}`)
+      resolve: (webSiteContent, args, {loaders}) => loaders.ofbiz.load(`content/content/webSiteContentTypes/find?webSiteContentTypeId=${webSiteContent.webSiteContentTypeId}`)
     },
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (webSiteContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${webSiteContent.contentId}`)
+      resolve: (webSiteContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${webSiteContent.contentId}`)
     },
     webSiteId: {type: GraphQLString},
     thruDate: {type: GraphQLString}

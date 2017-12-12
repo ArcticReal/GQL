@@ -24,30 +24,30 @@ const PaymentApplicationType = new GraphQLObjectType({
     toPayment: {
       type: PaymentType,
       args : {toPaymentId: {type: GraphQLString}},
-      resolve: (paymentApplication, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${paymentApplication.toPaymentId}`)
+      resolve: (paymentApplication, args, {loaders}) => loaders.ofbiz.load(`accounting/payments/find?paymentId=${paymentApplication.toPaymentId}`)
     },
     payment: {
       type: PaymentType,
       args : {paymentId: {type: GraphQLString}},
-      resolve: (paymentApplication, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${paymentApplication.paymentId}`)
+      resolve: (paymentApplication, args, {loaders}) => loaders.ofbiz.load(`accounting/payments/find?paymentId=${paymentApplication.paymentId}`)
     },
     amountApplied: {type: GraphQLFloat},
     overrideGlAccount: {
       type: GlAccountType,
       args : {overrideGlAccountId: {type: GraphQLString}},
-      resolve: (paymentApplication, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${paymentApplication.overrideGlAccountId}`)
+      resolve: (paymentApplication, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${paymentApplication.overrideGlAccountId}`)
     },
     taxAuthGeoId: {type: GraphQLString},
     invoice: {
       type: InvoiceType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (paymentApplication, args, {loaders}) => loaders.ofbiz.load(`invoices/find?invoiceId=${paymentApplication.invoiceId}`)
+      resolve: (paymentApplication, args, {loaders}) => loaders.ofbiz.load(`accounting/invoices/find?invoiceId=${paymentApplication.invoiceId}`)
     },
     invoiceItemSeqId: {type: GraphQLString},
     billingAccount: {
       type: BillingAccountType,
       args : {billingAccountId: {type: GraphQLString}},
-      resolve: (paymentApplication, args, {loaders}) => loaders.ofbiz.load(`billingAccounts/find?billingAccountId=${paymentApplication.billingAccountId}`)
+      resolve: (paymentApplication, args, {loaders}) => loaders.ofbiz.load(`accounting/billingAccounts/find?billingAccountId=${paymentApplication.billingAccountId}`)
     },
     paymentApplicationId: {type: GraphQLString}
   })

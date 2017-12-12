@@ -26,13 +26,13 @@ const PartyTaxAuthInfoType = new GraphQLObjectType({
     taxAuthGeo: {
       type: TaxAuthorityType,
       args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (partyTaxAuthInfo, args, {loaders}) => loaders.ofbiz.load(`taxAuthoritys/find?taxAuthGeoId=${partyTaxAuthInfo.taxAuthGeoId}`)
+      resolve: (partyTaxAuthInfo, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthoritys/find?taxAuthGeoId=${partyTaxAuthInfo.taxAuthGeoId}`)
     },
     isExempt: {type: GraphQLBoolean},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyTaxAuthInfo, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyTaxAuthInfo.partyId}`)
+      resolve: (partyTaxAuthInfo, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyTaxAuthInfo.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

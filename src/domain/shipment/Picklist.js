@@ -27,7 +27,7 @@ const PicklistType = new GraphQLObjectType({
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (picklist, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${picklist.facilityId}`)
+      resolve: (picklist, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${picklist.facilityId}`)
     },
     statusId: {type: GraphQLString},
     description: {type: GraphQLString},
@@ -35,23 +35,23 @@ const PicklistType = new GraphQLObjectType({
     shipmentMethodType: {
       type: ShipmentMethodTypeType,
       args : {shipmentMethodTypeId: {type: GraphQLString}},
-      resolve: (picklist, args, {loaders}) => loaders.ofbiz.load(`shipmentMethodTypes/find?shipmentMethodTypeId=${picklist.shipmentMethodTypeId}`)
+      resolve: (picklist, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentMethodTypes/find?shipmentMethodTypeId=${picklist.shipmentMethodTypeId}`)
     },
     createdByUserLogin: {type: GraphQLString},
     picklistRoles: {
       type: new GraphQLList(PicklistRoleType),
-      args : {picklistId: {type: GraphQLString}},
-      resolve: (picklist, args, {loaders}) => loaders.ofbizArray.load(`picklistRoles/find?picklistId=${picklist.picklistId}`)
+      args : {},
+      resolve: (picklist, args, {loaders}) => loaders.ofbizArray.load(`shipment/picklist/picklistRoles/find?picklistId=${picklist.picklistId}`)
     },
     picklistStatusHistories: {
       type: new GraphQLList(PicklistStatusHistoryType),
-      args : {picklistId: {type: GraphQLString}},
-      resolve: (picklist, args, {loaders}) => loaders.ofbizArray.load(`picklistStatusHistorys/find?picklistId=${picklist.picklistId}`)
+      args : {},
+      resolve: (picklist, args, {loaders}) => loaders.ofbizArray.load(`shipment/picklist/picklistStatusHistorys/find?picklistId=${picklist.picklistId}`)
     },
     picklistBins: {
       type: new GraphQLList(PicklistBinType),
-      args : {picklistId: {type: GraphQLString}},
-      resolve: (picklist, args, {loaders}) => loaders.ofbizArray.load(`picklistBins/find?picklistId=${picklist.picklistId}`)
+      args : {},
+      resolve: (picklist, args, {loaders}) => loaders.ofbizArray.load(`shipment/picklist/picklistBins/find?picklistId=${picklist.picklistId}`)
     }
   })
 });

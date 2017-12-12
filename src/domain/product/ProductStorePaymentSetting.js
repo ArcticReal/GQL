@@ -23,7 +23,7 @@ const ProductStorePaymentSettingType = new GraphQLObjectType({
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (productStorePaymentSetting, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${productStorePaymentSetting.paymentGatewayConfigId}`)
+      resolve: (productStorePaymentSetting, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGatewayConfigs/find?paymentGatewayConfigId=${productStorePaymentSetting.paymentGatewayConfigId}`)
     },
     paymentService: {type: GraphQLString},
     paymentPropertiesPath: {type: GraphQLString},
@@ -32,12 +32,12 @@ const ProductStorePaymentSettingType = new GraphQLObjectType({
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStorePaymentSetting, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${productStorePaymentSetting.productStoreId}`)
+      resolve: (productStorePaymentSetting, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${productStorePaymentSetting.productStoreId}`)
     },
     paymentMethodType: {
       type: PaymentMethodTypeType,
       args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (productStorePaymentSetting, args, {loaders}) => loaders.ofbiz.load(`paymentMethodTypes/find?paymentMethodTypeId=${productStorePaymentSetting.paymentMethodTypeId}`)
+      resolve: (productStorePaymentSetting, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethodTypes/find?paymentMethodTypeId=${productStorePaymentSetting.paymentMethodTypeId}`)
     },
     paymentCustomMethodId: {type: GraphQLString}
   })

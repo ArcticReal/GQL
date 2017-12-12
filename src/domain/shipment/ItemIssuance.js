@@ -31,7 +31,7 @@ const ItemIssuanceType = new GraphQLObjectType({
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (itemIssuance, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${itemIssuance.orderId}`)
+      resolve: (itemIssuance, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${itemIssuance.orderId}`)
     },
     maintHistSeqId: {type: GraphQLString},
     shipmentItemSeqId: {type: GraphQLString},
@@ -40,44 +40,44 @@ const ItemIssuanceType = new GraphQLObjectType({
     inventoryItem: {
       type: InventoryItemType,
       args : {inventoryItemId: {type: GraphQLString}},
-      resolve: (itemIssuance, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${itemIssuance.inventoryItemId}`)
+      resolve: (itemIssuance, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItems/find?inventoryItemId=${itemIssuance.inventoryItemId}`)
     },
     itemIssuanceId: {type: GraphQLString},
     shipment: {
       type: ShipmentItemType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (itemIssuance, args, {loaders}) => loaders.ofbiz.load(`shipmentItems/find?shipmentId=${itemIssuance.shipmentId}`)
+      resolve: (itemIssuance, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentItems/find?shipmentId=${itemIssuance.shipmentId}`)
     },
     issuedDateTime: {type: GraphQLString},
     fixedAsset: {
       type: FixedAssetMaintType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (itemIssuance, args, {loaders}) => loaders.ofbiz.load(`fixedAssetMaints/find?fixedAssetId=${itemIssuance.fixedAssetId}`)
+      resolve: (itemIssuance, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAsset/fixedAssetMaints/find?fixedAssetId=${itemIssuance.fixedAssetId}`)
     },
     issuedByUserLogin: {
       type: UserLoginType,
       args : {issuedByUserLoginId: {type: GraphQLString}},
-      resolve: (itemIssuance, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${itemIssuance.issuedByUserLoginId}`)
+      resolve: (itemIssuance, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${itemIssuance.issuedByUserLoginId}`)
     },
     inventoryItemDetails: {
       type: new GraphQLList(InventoryItemDetailType),
-      args : {itemIssuanceId: {type: GraphQLString}},
-      resolve: (itemIssuance, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemDetails/find?itemIssuanceId=${itemIssuance.itemIssuanceId}`)
+      args : {},
+      resolve: (itemIssuance, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemDetails/find?itemIssuanceId=${itemIssuance.itemIssuanceId}`)
     },
     itemIssuanceRoles: {
       type: new GraphQLList(ItemIssuanceRoleType),
-      args : {itemIssuanceId: {type: GraphQLString}},
-      resolve: (itemIssuance, args, {loaders}) => loaders.ofbizArray.load(`itemIssuanceRoles/find?itemIssuanceId=${itemIssuance.itemIssuanceId}`)
+      args : {},
+      resolve: (itemIssuance, args, {loaders}) => loaders.ofbizArray.load(`shipment/itemIssuance/itemIssuanceRoles/find?itemIssuanceId=${itemIssuance.itemIssuanceId}`)
     },
     orderItemBillings: {
       type: new GraphQLList(OrderItemBillingType),
-      args : {itemIssuanceId: {type: GraphQLString}},
-      resolve: (itemIssuance, args, {loaders}) => loaders.ofbizArray.load(`orderItemBillings/find?itemIssuanceId=${itemIssuance.itemIssuanceId}`)
+      args : {},
+      resolve: (itemIssuance, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemBillings/find?itemIssuanceId=${itemIssuance.itemIssuanceId}`)
     },
     inventoryTransfers: {
       type: new GraphQLList(InventoryTransferType),
-      args : {itemIssuanceId: {type: GraphQLString}},
-      resolve: (itemIssuance, args, {loaders}) => loaders.ofbizArray.load(`inventoryTransfers/find?itemIssuanceId=${itemIssuance.itemIssuanceId}`)
+      args : {},
+      resolve: (itemIssuance, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryTransfers/find?itemIssuanceId=${itemIssuance.itemIssuanceId}`)
     }
   })
 });

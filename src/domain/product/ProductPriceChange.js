@@ -27,7 +27,7 @@ const ProductPriceChangeType = new GraphQLObjectType({
     changedByUserLogin: {
       type: UserLoginType,
       args : {changedByUserLogin: {type: GraphQLString}},
-      resolve: (productPriceChange, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${productPriceChange.changedByUserLogin}`)
+      resolve: (productPriceChange, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${productPriceChange.changedByUserLogin}`)
     },
     productPriceChangeId: {type: GraphQLString},
     productPricePurposeId: {type: GraphQLString},

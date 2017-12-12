@@ -1,6 +1,7 @@
 import express from 'express';
 import graphQLHTTP from 'express-graphql';
 import DataLoader from 'dataloader';
+import depthLimit from 'graphql-depth-limit'
 
 import cors from 'cors';
 
@@ -31,12 +32,14 @@ app.use(cors({credentials: true, origin: alexServerURI, methods: "POST, OPTIONS"
   return {
     context: {req, res, loaders},
     schema,
+    validationRules: [ depthLimit(7, {}, depths => console.log(depths))],
     graphiql: true,
     formatError: error => ({
       message: error.message,
     }),
   };
 }));
+
 
 app.listen(5000);
 console.log("\nserver running at http://localhost:5000\n"+

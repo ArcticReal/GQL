@@ -24,18 +24,18 @@ const ContentPurposeTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     contentPurposes: {
       type: new GraphQLList(ContentPurposeType),
-      args : {contentPurposeTypeId: {type: GraphQLString}},
-      resolve: (contentPurposeType, args, {loaders}) => loaders.ofbizArray.load(`contentPurposes/find?contentPurposeTypeId=${contentPurposeType.contentPurposeTypeId}`)
+      args : {},
+      resolve: (contentPurposeType, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentPurposes/find?contentPurposeTypeId=${contentPurposeType.contentPurposeTypeId}`)
     },
     contentPurposeOperations: {
       type: new GraphQLList(ContentPurposeOperationType),
-      args : {contentPurposeTypeId: {type: GraphQLString}},
-      resolve: (contentPurposeType, args, {loaders}) => loaders.ofbizArray.load(`contentPurposeOperations/find?contentPurposeTypeId=${contentPurposeType.contentPurposeTypeId}`)
+      args : {},
+      resolve: (contentPurposeType, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentPurposeOperations/find?contentPurposeTypeId=${contentPurposeType.contentPurposeTypeId}`)
     },
     dataResourcePurposes: {
       type: new GraphQLList(DataResourcePurposeType),
-      args : {contentPurposeTypeId: {type: GraphQLString}},
-      resolve: (contentPurposeType, args, {loaders}) => loaders.ofbizArray.load(`dataResourcePurposes/find?contentPurposeTypeId=${contentPurposeType.contentPurposeTypeId}`)
+      args : {},
+      resolve: (contentPurposeType, args, {loaders}) => loaders.ofbizArray.load(`content/dataResource/dataResourcePurposes/find?contentPurposeTypeId=${contentPurposeType.contentPurposeTypeId}`)
     }
   })
 });

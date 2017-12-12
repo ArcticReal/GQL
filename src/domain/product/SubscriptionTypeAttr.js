@@ -22,7 +22,7 @@ const SubscriptionTypeAttrType = new GraphQLObjectType({
     subscriptionType: {
       type: SubscriptionTypeType,
       args : {subscriptionTypeId: {type: GraphQLString}},
-      resolve: (subscriptionTypeAttr, args, {loaders}) => loaders.ofbiz.load(`subscriptionTypes/find?subscriptionTypeId=${subscriptionTypeAttr.subscriptionTypeId}`)
+      resolve: (subscriptionTypeAttr, args, {loaders}) => loaders.ofbiz.load(`product/subscription/subscriptionTypes/find?subscriptionTypeId=${subscriptionTypeAttr.subscriptionTypeId}`)
     },
     attrName: {type: GraphQLString}
   })

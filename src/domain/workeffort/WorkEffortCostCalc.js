@@ -23,18 +23,18 @@ const WorkEffortCostCalcType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortCostCalc, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortCostCalc.workEffortId}`)
+      resolve: (workEffortCostCalc, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortCostCalc.workEffortId}`)
     },
     fromDate: {type: GraphQLString},
     costComponentType: {
       type: CostComponentTypeType,
       args : {costComponentTypeId: {type: GraphQLString}},
-      resolve: (workEffortCostCalc, args, {loaders}) => loaders.ofbiz.load(`costComponentTypes/find?costComponentTypeId=${workEffortCostCalc.costComponentTypeId}`)
+      resolve: (workEffortCostCalc, args, {loaders}) => loaders.ofbiz.load(`product/costComponent/costComponentTypes/find?costComponentTypeId=${workEffortCostCalc.costComponentTypeId}`)
     },
     costComponentCalc: {
       type: CostComponentCalcType,
       args : {costComponentCalcId: {type: GraphQLString}},
-      resolve: (workEffortCostCalc, args, {loaders}) => loaders.ofbiz.load(`costComponentCalcs/find?costComponentCalcId=${workEffortCostCalc.costComponentCalcId}`)
+      resolve: (workEffortCostCalc, args, {loaders}) => loaders.ofbiz.load(`product/costComponent/costComponentCalcs/find?costComponentCalcId=${workEffortCostCalc.costComponentCalcId}`)
     },
     thruDate: {type: GraphQLString}
   })

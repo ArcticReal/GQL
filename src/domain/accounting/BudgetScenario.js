@@ -23,13 +23,13 @@ const BudgetScenarioType = new GraphQLObjectType({
     description: {type: GraphQLString},
     budgetScenarioApplications: {
       type: new GraphQLList(BudgetScenarioApplicationType),
-      args : {budgetScenarioId: {type: GraphQLString}},
-      resolve: (budgetScenario, args, {loaders}) => loaders.ofbizArray.load(`budgetScenarioApplications/find?budgetScenarioId=${budgetScenario.budgetScenarioId}`)
+      args : {},
+      resolve: (budgetScenario, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetScenarioApplications/find?budgetScenarioId=${budgetScenario.budgetScenarioId}`)
     },
     budgetScenarioRules: {
       type: new GraphQLList(BudgetScenarioRuleType),
-      args : {budgetScenarioId: {type: GraphQLString}},
-      resolve: (budgetScenario, args, {loaders}) => loaders.ofbizArray.load(`budgetScenarioRules/find?budgetScenarioId=${budgetScenario.budgetScenarioId}`)
+      args : {},
+      resolve: (budgetScenario, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetScenarioRules/find?budgetScenarioId=${budgetScenario.budgetScenarioId}`)
     }
   })
 });

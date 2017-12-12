@@ -22,24 +22,24 @@ const ProductMaintTypeType = new GraphQLObjectType({
     parentType: {
       type: ProductMaintTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (productMaintType, args, {loaders}) => loaders.ofbiz.load(`productMaintTypes/find?productMaintTypeId=${productMaintType.parentTypeId}`)
+      resolve: (productMaintType, args, {loaders}) => loaders.ofbiz.load(`product/product/productMaintTypes/find?productMaintTypeId=${productMaintType.parentTypeId}`)
     },
     description: {type: GraphQLString},
     productMaintTypeId: {type: GraphQLString},
     fixedAssetMaints: {
       type: new GraphQLList(FixedAssetMaintType),
-      args : {productMaintTypeId: {type: GraphQLString}},
-      resolve: (productMaintType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetMaints/find?productMaintTypeId=${productMaintType.productMaintTypeId}`)
+      args : {},
+      resolve: (productMaintType, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetMaints/find?productMaintTypeId=${productMaintType.productMaintTypeId}`)
     },
     productMaints: {
       type: new GraphQLList(ProductMaintType),
-      args : {productMaintTypeId: {type: GraphQLString}},
-      resolve: (productMaintType, args, {loaders}) => loaders.ofbizArray.load(`productMaints/find?productMaintTypeId=${productMaintType.productMaintTypeId}`)
+      args : {},
+      resolve: (productMaintType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productMaints/find?productMaintTypeId=${productMaintType.productMaintTypeId}`)
     },
     productMaintTypes: {
       type: new GraphQLList(ProductMaintTypeType),
-      args : {productMaintTypeId: {type: GraphQLString}},
-      resolve: (productMaintType, args, {loaders}) => loaders.ofbizArray.load(`productMaintTypes/find?productMaintTypeId=${productMaintType.productMaintTypeId}`)
+      args : {},
+      resolve: (productMaintType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productMaintTypes/find?productMaintTypeId=${productMaintType.productMaintTypeId}`)
     }
   })
 });

@@ -22,7 +22,7 @@ const PaymentGatewaySagePayType = new GraphQLObjectType({
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewaySagePay, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewaySagePay.paymentGatewayConfigId}`)
+      resolve: (paymentGatewaySagePay, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewaySagePay.paymentGatewayConfigId}`)
     },
     voidUrl: {type: GraphQLString},
     testingHost: {type: GraphQLString},

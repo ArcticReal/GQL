@@ -22,12 +22,12 @@ const SubscriptionFulfillmentPieceType = new GraphQLObjectType({
     subscriptionActivity: {
       type: SubscriptionActivityType,
       args : {subscriptionActivityId: {type: GraphQLString}},
-      resolve: (subscriptionFulfillmentPiece, args, {loaders}) => loaders.ofbiz.load(`subscriptionActivitys/find?subscriptionActivityId=${subscriptionFulfillmentPiece.subscriptionActivityId}`)
+      resolve: (subscriptionFulfillmentPiece, args, {loaders}) => loaders.ofbiz.load(`product/subscription/subscriptionActivitys/find?subscriptionActivityId=${subscriptionFulfillmentPiece.subscriptionActivityId}`)
     },
     subscription: {
       type: SubscriptionType,
       args : {subscriptionId: {type: GraphQLString}},
-      resolve: (subscriptionFulfillmentPiece, args, {loaders}) => loaders.ofbiz.load(`subscriptions/find?subscriptionId=${subscriptionFulfillmentPiece.subscriptionId}`)
+      resolve: (subscriptionFulfillmentPiece, args, {loaders}) => loaders.ofbiz.load(`product/subscriptions/find?subscriptionId=${subscriptionFulfillmentPiece.subscriptionId}`)
     }
   })
 });

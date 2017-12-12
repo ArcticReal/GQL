@@ -22,7 +22,7 @@ const FixedAssetAttributeType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetAttribute, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${fixedAssetAttribute.fixedAssetId}`)
+      resolve: (fixedAssetAttribute, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${fixedAssetAttribute.fixedAssetId}`)
     },
     attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}

@@ -23,17 +23,17 @@ const InvoiceContactMechType = new GraphQLObjectType({
     contactMechPurposeType: {
       type: ContactMechPurposeTypeType,
       args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (invoiceContactMech, args, {loaders}) => loaders.ofbiz.load(`contactMechPurposeTypes/find?contactMechPurposeTypeId=${invoiceContactMech.contactMechPurposeTypeId}`)
+      resolve: (invoiceContactMech, args, {loaders}) => loaders.ofbiz.load(`party/contactMech/contactMechPurposeTypes/find?contactMechPurposeTypeId=${invoiceContactMech.contactMechPurposeTypeId}`)
     },
     invoice: {
       type: InvoiceType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoiceContactMech, args, {loaders}) => loaders.ofbiz.load(`invoices/find?invoiceId=${invoiceContactMech.invoiceId}`)
+      resolve: (invoiceContactMech, args, {loaders}) => loaders.ofbiz.load(`accounting/invoices/find?invoiceId=${invoiceContactMech.invoiceId}`)
     },
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (invoiceContactMech, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${invoiceContactMech.contactMechId}`)
+      resolve: (invoiceContactMech, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${invoiceContactMech.contactMechId}`)
     }
   })
 });

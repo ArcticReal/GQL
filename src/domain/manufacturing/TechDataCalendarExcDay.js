@@ -22,7 +22,7 @@ const TechDataCalendarExcDayType = new GraphQLObjectType({
     calendar: {
       type: TechDataCalendarType,
       args : {calendarId: {type: GraphQLString}},
-      resolve: (techDataCalendarExcDay, args, {loaders}) => loaders.ofbiz.load(`techDataCalendars/find?calendarId=${techDataCalendarExcDay.calendarId}`)
+      resolve: (techDataCalendarExcDay, args, {loaders}) => loaders.ofbiz.load(`manufacturing/techDataCalendars/find?calendarId=${techDataCalendarExcDay.calendarId}`)
     },
     exceptionCapacity: {type: GraphQLFloat},
     usedCapacity: {type: GraphQLFloat},

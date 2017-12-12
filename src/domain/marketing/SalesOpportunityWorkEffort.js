@@ -22,12 +22,12 @@ const SalesOpportunityWorkEffortType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (salesOpportunityWorkEffort, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${salesOpportunityWorkEffort.workEffortId}`)
+      resolve: (salesOpportunityWorkEffort, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${salesOpportunityWorkEffort.workEffortId}`)
     },
     salesOpportunity: {
       type: SalesOpportunityType,
       args : {salesOpportunityId: {type: GraphQLString}},
-      resolve: (salesOpportunityWorkEffort, args, {loaders}) => loaders.ofbiz.load(`salesOpportunitys/find?salesOpportunityId=${salesOpportunityWorkEffort.salesOpportunityId}`)
+      resolve: (salesOpportunityWorkEffort, args, {loaders}) => loaders.ofbiz.load(`marketing/salesOpportunitys/find?salesOpportunityId=${salesOpportunityWorkEffort.salesOpportunityId}`)
     }
   })
 });

@@ -25,23 +25,23 @@ const SecurityGroupType = new GraphQLObjectType({
     description: {type: GraphQLString},
     partyRelationships: {
       type: new GraphQLList(PartyRelationshipType),
-      args : {groupId: {type: GraphQLString}},
-      resolve: (securityGroup, args, {loaders}) => loaders.ofbizArray.load(`partyRelationships/find?groupId=${securityGroup.groupId}`)
+      args : {},
+      resolve: (securityGroup, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyRelationships/find?groupId=${securityGroup.groupId}`)
     },
     userLoginSecurityGroups: {
       type: new GraphQLList(UserLoginSecurityGroupType),
-      args : {groupId: {type: GraphQLString}},
-      resolve: (securityGroup, args, {loaders}) => loaders.ofbizArray.load(`userLoginSecurityGroups/find?groupId=${securityGroup.groupId}`)
+      args : {},
+      resolve: (securityGroup, args, {loaders}) => loaders.ofbizArray.load(`login/userLogin/userLoginSecurityGroups/find?groupId=${securityGroup.groupId}`)
     },
     securityGroupPermissions: {
       type: new GraphQLList(SecurityGroupPermissionType),
-      args : {groupId: {type: GraphQLString}},
-      resolve: (securityGroup, args, {loaders}) => loaders.ofbizArray.load(`securityGroupPermissions/find?groupId=${securityGroup.groupId}`)
+      args : {},
+      resolve: (securityGroup, args, {loaders}) => loaders.ofbizArray.load(`login/securityGroup/securityGroupPermissions/find?groupId=${securityGroup.groupId}`)
     },
     protectedViews: {
       type: new GraphQLList(ProtectedViewType),
-      args : {groupId: {type: GraphQLString}},
-      resolve: (securityGroup, args, {loaders}) => loaders.ofbizArray.load(`protectedViews/find?groupId=${securityGroup.groupId}`)
+      args : {},
+      resolve: (securityGroup, args, {loaders}) => loaders.ofbizArray.load(`login/protectedViews/find?groupId=${securityGroup.groupId}`)
     }
   })
 });

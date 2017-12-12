@@ -23,17 +23,17 @@ const SurveyQuestionCategoryType = new GraphQLObjectType({
     parentCategory: {
       type: SurveyQuestionCategoryType,
       args : {parentCategoryId: {type: GraphQLString}},
-      resolve: (surveyQuestionCategory, args, {loaders}) => loaders.ofbiz.load(`surveyQuestionCategorys/find?surveyQuestionCategoryId=${surveyQuestionCategory.parentCategoryId}`)
+      resolve: (surveyQuestionCategory, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyQuestionCategorys/find?surveyQuestionCategoryId=${surveyQuestionCategory.parentCategoryId}`)
     },
     surveyQuestions: {
       type: new GraphQLList(SurveyQuestionType),
-      args : {surveyQuestionCategoryId: {type: GraphQLString}},
-      resolve: (surveyQuestionCategory, args, {loaders}) => loaders.ofbizArray.load(`surveyQuestions/find?surveyQuestionCategoryId=${surveyQuestionCategory.surveyQuestionCategoryId}`)
+      args : {},
+      resolve: (surveyQuestionCategory, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyQuestions/find?surveyQuestionCategoryId=${surveyQuestionCategory.surveyQuestionCategoryId}`)
     },
     surveyQuestionCategories: {
       type: new GraphQLList(SurveyQuestionCategoryType),
-      args : {surveyQuestionCategoryId: {type: GraphQLString}},
-      resolve: (surveyQuestionCategory, args, {loaders}) => loaders.ofbizArray.load(`surveyQuestionCategorys/find?surveyQuestionCategoryId=${surveyQuestionCategory.surveyQuestionCategoryId}`)
+      args : {},
+      resolve: (surveyQuestionCategory, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyQuestionCategorys/find?surveyQuestionCategoryId=${surveyQuestionCategory.surveyQuestionCategoryId}`)
     }
   })
 });

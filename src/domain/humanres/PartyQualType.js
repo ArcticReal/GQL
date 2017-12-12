@@ -21,20 +21,20 @@ const PartyQualTypeType = new GraphQLObjectType({
     parentType: {
       type: PartyQualTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (partyQualType, args, {loaders}) => loaders.ofbiz.load(`partyQualTypes/find?partyQualTypeId=${partyQualType.parentTypeId}`)
+      resolve: (partyQualType, args, {loaders}) => loaders.ofbiz.load(`humanres/partyQual/partyQualTypes/find?partyQualTypeId=${partyQualType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     partyQualTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     partyQuals: {
       type: new GraphQLList(PartyQualType),
-      args : {partyQualTypeId: {type: GraphQLString}},
-      resolve: (partyQualType, args, {loaders}) => loaders.ofbizArray.load(`partyQuals/find?partyQualTypeId=${partyQualType.partyQualTypeId}`)
+      args : {},
+      resolve: (partyQualType, args, {loaders}) => loaders.ofbizArray.load(`humanres/partyQuals/find?partyQualTypeId=${partyQualType.partyQualTypeId}`)
     },
     partyQualTypes: {
       type: new GraphQLList(PartyQualTypeType),
-      args : {partyQualTypeId: {type: GraphQLString}},
-      resolve: (partyQualType, args, {loaders}) => loaders.ofbizArray.load(`partyQualTypes/find?partyQualTypeId=${partyQualType.partyQualTypeId}`)
+      args : {},
+      resolve: (partyQualType, args, {loaders}) => loaders.ofbizArray.load(`humanres/partyQual/partyQualTypes/find?partyQualTypeId=${partyQualType.partyQualTypeId}`)
     }
   })
 });

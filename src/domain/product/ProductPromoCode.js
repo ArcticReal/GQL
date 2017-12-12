@@ -30,7 +30,7 @@ const ProductPromoCodeType = new GraphQLObjectType({
     lastModifiedByUserLogin: {
       type: UserLoginType,
       args : {lastModifiedByUserLogin: {type: GraphQLString}},
-      resolve: (productPromoCode, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${productPromoCode.lastModifiedByUserLogin}`)
+      resolve: (productPromoCode, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${productPromoCode.lastModifiedByUserLogin}`)
     },
     createdDate: {type: GraphQLString},
     lastModifiedDate: {type: GraphQLString},
@@ -39,39 +39,39 @@ const ProductPromoCodeType = new GraphQLObjectType({
     productPromo: {
       type: ProductPromoType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromoCode, args, {loaders}) => loaders.ofbiz.load(`productPromos/find?productPromoId=${productPromoCode.productPromoId}`)
+      resolve: (productPromoCode, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromos/find?productPromoId=${productPromoCode.productPromoId}`)
     },
     useLimitPerCustomer: {type: GraphQLInt},
     createdByUserLogin: {
       type: UserLoginType,
       args : {createdByUserLogin: {type: GraphQLString}},
-      resolve: (productPromoCode, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${productPromoCode.createdByUserLogin}`)
+      resolve: (productPromoCode, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${productPromoCode.createdByUserLogin}`)
     },
     thruDate: {type: GraphQLString},
     productPromoCodeParties: {
       type: new GraphQLList(ProductPromoCodePartyType),
-      args : {productPromoCodeId: {type: GraphQLString}},
-      resolve: (productPromoCode, args, {loaders}) => loaders.ofbizArray.load(`productPromoCodePartys/find?productPromoCodeId=${productPromoCode.productPromoCodeId}`)
+      args : {},
+      resolve: (productPromoCode, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoCodePartys/find?productPromoCodeId=${productPromoCode.productPromoCodeId}`)
     },
     orderProductPromoCodes: {
       type: new GraphQLList(OrderProductPromoCodeType),
-      args : {productPromoCodeId: {type: GraphQLString}},
-      resolve: (productPromoCode, args, {loaders}) => loaders.ofbizArray.load(`orderProductPromoCodes/find?productPromoCodeId=${productPromoCode.productPromoCodeId}`)
+      args : {},
+      resolve: (productPromoCode, args, {loaders}) => loaders.ofbizArray.load(`order/orderProductPromoCodes/find?productPromoCodeId=${productPromoCode.productPromoCodeId}`)
     },
     productPromoUses: {
       type: new GraphQLList(ProductPromoUseType),
-      args : {productPromoCodeId: {type: GraphQLString}},
-      resolve: (productPromoCode, args, {loaders}) => loaders.ofbizArray.load(`productPromoUses/find?productPromoCodeId=${productPromoCode.productPromoCodeId}`)
+      args : {},
+      resolve: (productPromoCode, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoUses/find?productPromoCodeId=${productPromoCode.productPromoCodeId}`)
     },
     shoppingLists: {
       type: new GraphQLList(ShoppingListType),
-      args : {productPromoCodeId: {type: GraphQLString}},
-      resolve: (productPromoCode, args, {loaders}) => loaders.ofbizArray.load(`shoppingLists/find?productPromoCodeId=${productPromoCode.productPromoCodeId}`)
+      args : {},
+      resolve: (productPromoCode, args, {loaders}) => loaders.ofbizArray.load(`order/shoppingLists/find?productPromoCodeId=${productPromoCode.productPromoCodeId}`)
     },
     productPromoCodeEmails: {
       type: new GraphQLList(ProductPromoCodeEmailType),
-      args : {productPromoCodeId: {type: GraphQLString}},
-      resolve: (productPromoCode, args, {loaders}) => loaders.ofbizArray.load(`productPromoCodeEmails/find?productPromoCodeId=${productPromoCode.productPromoCodeId}`)
+      args : {},
+      resolve: (productPromoCode, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoCodeEmails/find?productPromoCodeId=${productPromoCode.productPromoCodeId}`)
     }
   })
 });

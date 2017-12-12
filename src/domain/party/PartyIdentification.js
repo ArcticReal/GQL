@@ -22,13 +22,13 @@ const PartyIdentificationType = new GraphQLObjectType({
     partyentificationType: {
       type: PartyIdentificationTypeType,
       args : {partyIdentificationTypeId: {type: GraphQLString}},
-      resolve: (partyIdentification, args, {loaders}) => loaders.ofbiz.load(`partyIdentificationTypes/find?partyIdentificationTypeId=${partyIdentification.partyIdentificationTypeId}`)
+      resolve: (partyIdentification, args, {loaders}) => loaders.ofbiz.load(`party/party/partyIdentificationTypes/find?partyIdentificationTypeId=${partyIdentification.partyIdentificationTypeId}`)
     },
     idValue: {type: GraphQLString},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyIdentification, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyIdentification.partyId}`)
+      resolve: (partyIdentification, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyIdentification.partyId}`)
     }
   })
 });

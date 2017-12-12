@@ -24,17 +24,17 @@ const ProductOrderItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productOrderItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productOrderItem.productId}`)
+      resolve: (productOrderItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productOrderItem.productId}`)
     },
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (productOrderItem, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${productOrderItem.orderId}`)
+      resolve: (productOrderItem, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${productOrderItem.orderId}`)
     },
     engagement: {
       type: OrderItemType,
       args : {engagementId: {type: GraphQLString}},
-      resolve: (productOrderItem, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${productOrderItem.engagementId}`)
+      resolve: (productOrderItem, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${productOrderItem.engagementId}`)
     }
   })
 });

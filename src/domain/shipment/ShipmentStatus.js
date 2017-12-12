@@ -24,12 +24,12 @@ const ShipmentStatusType = new GraphQLObjectType({
     shipment: {
       type: ShipmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentStatus, args, {loaders}) => loaders.ofbiz.load(`shipments/find?shipmentId=${shipmentStatus.shipmentId}`)
+      resolve: (shipmentStatus, args, {loaders}) => loaders.ofbiz.load(`/shipments/find?shipmentId=${shipmentStatus.shipmentId}`)
     },
     changeByUserLogin: {
       type: UserLoginType,
       args : {changeByUserLoginId: {type: GraphQLString}},
-      resolve: (shipmentStatus, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${shipmentStatus.changeByUserLoginId}`)
+      resolve: (shipmentStatus, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${shipmentStatus.changeByUserLoginId}`)
     }
   })
 });

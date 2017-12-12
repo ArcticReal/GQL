@@ -24,18 +24,18 @@ const ProductCostComponentCalcType = new GraphQLObjectType({
     costComponentType: {
       type: CostComponentTypeType,
       args : {costComponentTypeId: {type: GraphQLString}},
-      resolve: (productCostComponentCalc, args, {loaders}) => loaders.ofbiz.load(`costComponentTypes/find?costComponentTypeId=${productCostComponentCalc.costComponentTypeId}`)
+      resolve: (productCostComponentCalc, args, {loaders}) => loaders.ofbiz.load(`product/costComponent/costComponentTypes/find?costComponentTypeId=${productCostComponentCalc.costComponentTypeId}`)
     },
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productCostComponentCalc, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productCostComponentCalc.productId}`)
+      resolve: (productCostComponentCalc, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productCostComponentCalc.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     costComponentCalc: {
       type: CostComponentCalcType,
       args : {costComponentCalcId: {type: GraphQLString}},
-      resolve: (productCostComponentCalc, args, {loaders}) => loaders.ofbiz.load(`costComponentCalcs/find?costComponentCalcId=${productCostComponentCalc.costComponentCalcId}`)
+      resolve: (productCostComponentCalc, args, {loaders}) => loaders.ofbiz.load(`product/costComponent/costComponentCalcs/find?costComponentCalcId=${productCostComponentCalc.costComponentCalcId}`)
     },
     thruDate: {type: GraphQLString}
   })

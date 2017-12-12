@@ -20,15 +20,15 @@ const EmploymentAppSourceTypeType = new GraphQLObjectType({
     parentType: {
       type: EmploymentAppSourceTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (employmentAppSourceType, args, {loaders}) => loaders.ofbiz.load(`employmentAppSourceTypes/find?employmentAppSourceTypeId=${employmentAppSourceType.parentTypeId}`)
+      resolve: (employmentAppSourceType, args, {loaders}) => loaders.ofbiz.load(`humanres/employment/employmentAppSourceTypes/find?employmentAppSourceTypeId=${employmentAppSourceType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     employmentAppSourceTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     employmentAppSourceTypes: {
       type: new GraphQLList(EmploymentAppSourceTypeType),
-      args : {employmentAppSourceTypeId: {type: GraphQLString}},
-      resolve: (employmentAppSourceType, args, {loaders}) => loaders.ofbizArray.load(`employmentAppSourceTypes/find?employmentAppSourceTypeId=${employmentAppSourceType.employmentAppSourceTypeId}`)
+      args : {},
+      resolve: (employmentAppSourceType, args, {loaders}) => loaders.ofbizArray.load(`humanres/employment/employmentAppSourceTypes/find?employmentAppSourceTypeId=${employmentAppSourceType.employmentAppSourceTypeId}`)
     }
   })
 });

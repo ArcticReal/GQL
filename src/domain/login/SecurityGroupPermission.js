@@ -22,7 +22,7 @@ const SecurityGroupPermissionType = new GraphQLObjectType({
     group: {
       type: SecurityGroupType,
       args : {groupId: {type: GraphQLString}},
-      resolve: (securityGroupPermission, args, {loaders}) => loaders.ofbiz.load(`securityGroups/find?groupId=${securityGroupPermission.groupId}`)
+      resolve: (securityGroupPermission, args, {loaders}) => loaders.ofbiz.load(`login/securityGroups/find?groupId=${securityGroupPermission.groupId}`)
     }
   })
 });

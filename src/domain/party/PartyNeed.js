@@ -27,40 +27,40 @@ const PartyNeedType = new GraphQLObjectType({
     partyType: {
       type: PartyTypeType,
       args : {partyTypeId: {type: GraphQLString}},
-      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`partyTypes/find?partyTypeId=${partyNeed.partyTypeId}`)
+      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`party/party/partyTypes/find?partyTypeId=${partyNeed.partyTypeId}`)
     },
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${partyNeed.roleTypeId}`)
+      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${partyNeed.roleTypeId}`)
     },
     needType: {
       type: NeedTypeType,
       args : {needTypeId: {type: GraphQLString}},
-      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`needTypes/find?needTypeId=${partyNeed.needTypeId}`)
+      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`party/needTypes/find?needTypeId=${partyNeed.needTypeId}`)
     },
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${partyNeed.productCategoryId}`)
+      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${partyNeed.productCategoryId}`)
     },
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${partyNeed.productId}`)
+      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${partyNeed.productId}`)
     },
     visitId: {type: GraphQLString},
     partyNeedId: {type: GraphQLString},
     communicationEvent: {
       type: CommunicationEventType,
       args : {communicationEventId: {type: GraphQLString}},
-      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`communicationEvents/find?communicationEventId=${partyNeed.communicationEventId}`)
+      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvents/find?communicationEventId=${partyNeed.communicationEventId}`)
     },
     description: {type: GraphQLString},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyNeed.partyId}`)
+      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyNeed.partyId}`)
     },
     datetimeRecorded: {type: GraphQLString}
   })

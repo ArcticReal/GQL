@@ -23,12 +23,12 @@ const ItemIssuanceRoleType = new GraphQLObjectType({
     itemIssuance: {
       type: ItemIssuanceType,
       args : {itemIssuanceId: {type: GraphQLString}},
-      resolve: (itemIssuanceRole, args, {loaders}) => loaders.ofbiz.load(`itemIssuances/find?itemIssuanceId=${itemIssuanceRole.itemIssuanceId}`)
+      resolve: (itemIssuanceRole, args, {loaders}) => loaders.ofbiz.load(`shipment/itemIssuances/find?itemIssuanceId=${itemIssuanceRole.itemIssuanceId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (itemIssuanceRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${itemIssuanceRole.partyId}`)
+      resolve: (itemIssuanceRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${itemIssuanceRole.partyId}`)
     }
   })
 });

@@ -22,12 +22,12 @@ const ProductPromoCodePartyType = new GraphQLObjectType({
     productPromoCode: {
       type: ProductPromoCodeType,
       args : {productPromoCodeId: {type: GraphQLString}},
-      resolve: (productPromoCodeParty, args, {loaders}) => loaders.ofbiz.load(`productPromoCodes/find?productPromoCodeId=${productPromoCodeParty.productPromoCodeId}`)
+      resolve: (productPromoCodeParty, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromoCodes/find?productPromoCodeId=${productPromoCodeParty.productPromoCodeId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (productPromoCodeParty, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productPromoCodeParty.partyId}`)
+      resolve: (productPromoCodeParty, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productPromoCodeParty.partyId}`)
     }
   })
 });

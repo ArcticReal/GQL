@@ -25,18 +25,18 @@ const ProductPriceActionType = new GraphQLObjectType({
     productPriceActionType: {
       type: ProductPriceActionTypeType,
       args : {productPriceActionTypeId: {type: GraphQLString}},
-      resolve: (productPriceAction, args, {loaders}) => loaders.ofbiz.load(`productPriceActionTypes/find?productPriceActionTypeId=${productPriceAction.productPriceActionTypeId}`)
+      resolve: (productPriceAction, args, {loaders}) => loaders.ofbiz.load(`product/product/productPriceActionTypes/find?productPriceActionTypeId=${productPriceAction.productPriceActionTypeId}`)
     },
     productPriceRule: {
       type: ProductPriceRuleType,
       args : {productPriceRuleId: {type: GraphQLString}},
-      resolve: (productPriceAction, args, {loaders}) => loaders.ofbiz.load(`productPriceRules/find?productPriceRuleId=${productPriceAction.productPriceRuleId}`)
+      resolve: (productPriceAction, args, {loaders}) => loaders.ofbiz.load(`product/product/productPriceRules/find?productPriceRuleId=${productPriceAction.productPriceRuleId}`)
     },
     rateCode: {type: GraphQLString},
     orderItemPriceInfos: {
       type: new GraphQLList(OrderItemPriceInfoType),
-      args : {productPriceRuleId: {type: GraphQLString}},
-      resolve: (productPriceAction, args, {loaders}) => loaders.ofbizArray.load(`orderItemPriceInfos/find?productPriceRuleId=${productPriceAction.productPriceRuleId}`)
+      args : {},
+      resolve: (productPriceAction, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemPriceInfos/find?productPriceRuleId=${productPriceAction.productPriceRuleId}`)
     }
   })
 });

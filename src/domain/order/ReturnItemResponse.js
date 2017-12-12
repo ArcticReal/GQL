@@ -26,35 +26,35 @@ const ReturnItemResponseType = new GraphQLObjectType({
     replacementOrder: {
       type: OrderHeaderType,
       args : {replacementOrderId: {type: GraphQLString}},
-      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${returnItemResponse.replacementOrderId}`)
+      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${returnItemResponse.replacementOrderId}`)
     },
     finAccountTrans: {
       type: FinAccountTransType,
       args : {finAccountTransId: {type: GraphQLString}},
-      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbiz.load(`finAccountTranss/find?finAccountTransId=${returnItemResponse.finAccountTransId}`)
+      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbiz.load(`accounting/finAccount/finAccountTranss/find?finAccountTransId=${returnItemResponse.finAccountTransId}`)
     },
     returnItemResponseId: {type: GraphQLString},
     orderPaymentPreference: {
       type: OrderPaymentPreferenceType,
       args : {orderPaymentPreferenceId: {type: GraphQLString}},
-      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbiz.load(`orderPaymentPreferences/find?orderPaymentPreferenceId=${returnItemResponse.orderPaymentPreferenceId}`)
+      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbiz.load(`order/orderPaymentPreferences/find?orderPaymentPreferenceId=${returnItemResponse.orderPaymentPreferenceId}`)
     },
     responseAmount: {type: GraphQLFloat},
     payment: {
       type: PaymentType,
       args : {paymentId: {type: GraphQLString}},
-      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${returnItemResponse.paymentId}`)
+      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbiz.load(`accounting/payments/find?paymentId=${returnItemResponse.paymentId}`)
     },
     billingAccount: {
       type: BillingAccountType,
       args : {billingAccountId: {type: GraphQLString}},
-      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbiz.load(`billingAccounts/find?billingAccountId=${returnItemResponse.billingAccountId}`)
+      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbiz.load(`accounting/billingAccounts/find?billingAccountId=${returnItemResponse.billingAccountId}`)
     },
     responseDate: {type: GraphQLString},
     returnItems: {
       type: new GraphQLList(ReturnItemType),
-      args : {returnItemResponseId: {type: GraphQLString}},
-      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbizArray.load(`returnItems/find?returnItemResponseId=${returnItemResponse.returnItemResponseId}`)
+      args : {},
+      resolve: (returnItemResponse, args, {loaders}) => loaders.ofbizArray.load(`order/returnItems/find?returnItemResponseId=${returnItemResponse.returnItemResponseId}`)
     }
   })
 });

@@ -24,12 +24,12 @@ const RequirementBudgetAllocationType = new GraphQLObjectType({
     budget: {
       type: BudgetItemType,
       args : {budgetId: {type: GraphQLString}},
-      resolve: (requirementBudgetAllocation, args, {loaders}) => loaders.ofbiz.load(`budgetItems/find?budgetId=${requirementBudgetAllocation.budgetId}`)
+      resolve: (requirementBudgetAllocation, args, {loaders}) => loaders.ofbiz.load(`accounting/budget/budgetItems/find?budgetId=${requirementBudgetAllocation.budgetId}`)
     },
     requirement: {
       type: RequirementType,
       args : {requirementId: {type: GraphQLString}},
-      resolve: (requirementBudgetAllocation, args, {loaders}) => loaders.ofbiz.load(`requirements/find?requirementId=${requirementBudgetAllocation.requirementId}`)
+      resolve: (requirementBudgetAllocation, args, {loaders}) => loaders.ofbiz.load(`order/requirements/find?requirementId=${requirementBudgetAllocation.requirementId}`)
     }
   })
 });

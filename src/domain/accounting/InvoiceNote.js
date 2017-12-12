@@ -21,7 +21,7 @@ const InvoiceNoteType = new GraphQLObjectType({
     invoice: {
       type: InvoiceType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoiceNote, args, {loaders}) => loaders.ofbiz.load(`invoices/find?invoiceId=${invoiceNote.invoiceId}`)
+      resolve: (invoiceNote, args, {loaders}) => loaders.ofbiz.load(`accounting/invoices/find?invoiceId=${invoiceNote.invoiceId}`)
     },
     noteId: {type: GraphQLString}
   })

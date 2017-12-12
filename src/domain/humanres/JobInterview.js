@@ -24,25 +24,25 @@ const JobInterviewType = new GraphQLObjectType({
     jobInterviewType: {
       type: JobInterviewTypeType,
       args : {jobInterviewTypeId: {type: GraphQLString}},
-      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`jobInterviewTypes/find?jobInterviewTypeId=${jobInterview.jobInterviewTypeId}`)
+      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`humanres/jobInterview/jobInterviewTypes/find?jobInterviewTypeId=${jobInterview.jobInterviewTypeId}`)
     },
     gradeSecuredEnumId: {type: GraphQLString},
     jobIntervieweeParty: {
       type: PartyType,
       args : {jobIntervieweePartyId: {type: GraphQLString}},
-      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${jobInterview.jobIntervieweePartyId}`)
+      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${jobInterview.jobIntervieweePartyId}`)
     },
     jobInterviewDate: {type: GraphQLString},
     jobInterviewerParty: {
       type: PartyType,
       args : {jobInterviewerPartyId: {type: GraphQLString}},
-      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${jobInterview.jobInterviewerPartyId}`)
+      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${jobInterview.jobInterviewerPartyId}`)
     },
     jobInterviewResult: {type: GraphQLString},
     jobRequisition: {
       type: JobRequisitionType,
       args : {jobRequisitionId: {type: GraphQLString}},
-      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`jobRequisitions/find?jobRequisitionId=${jobInterview.jobRequisitionId}`)
+      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`humanres/jobRequisitions/find?jobRequisitionId=${jobInterview.jobRequisitionId}`)
     }
   })
 });

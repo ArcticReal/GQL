@@ -21,20 +21,20 @@ const DeductionTypeType = new GraphQLObjectType({
     parentType: {
       type: DeductionTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (deductionType, args, {loaders}) => loaders.ofbiz.load(`deductionTypes/find?deductionTypeId=${deductionType.parentTypeId}`)
+      resolve: (deductionType, args, {loaders}) => loaders.ofbiz.load(`accounting/deduction/deductionTypes/find?deductionTypeId=${deductionType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     deductionTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     deductions: {
       type: new GraphQLList(DeductionType),
-      args : {deductionTypeId: {type: GraphQLString}},
-      resolve: (deductionType, args, {loaders}) => loaders.ofbizArray.load(`deductions/find?deductionTypeId=${deductionType.deductionTypeId}`)
+      args : {},
+      resolve: (deductionType, args, {loaders}) => loaders.ofbizArray.load(`accounting/deductions/find?deductionTypeId=${deductionType.deductionTypeId}`)
     },
     deductionTypes: {
       type: new GraphQLList(DeductionTypeType),
-      args : {deductionTypeId: {type: GraphQLString}},
-      resolve: (deductionType, args, {loaders}) => loaders.ofbizArray.load(`deductionTypes/find?deductionTypeId=${deductionType.deductionTypeId}`)
+      args : {},
+      resolve: (deductionType, args, {loaders}) => loaders.ofbizArray.load(`accounting/deduction/deductionTypes/find?deductionTypeId=${deductionType.deductionTypeId}`)
     }
   })
 });

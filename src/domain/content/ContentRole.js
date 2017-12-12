@@ -24,12 +24,12 @@ const ContentRoleType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (contentRole, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentRole.contentId}`)
+      resolve: (contentRole, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentRole.contentId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (contentRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${contentRole.partyId}`)
+      resolve: (contentRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${contentRole.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

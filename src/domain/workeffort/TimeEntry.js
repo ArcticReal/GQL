@@ -26,17 +26,17 @@ const TimeEntryType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${timeEntry.workEffortId}`)
+      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${timeEntry.workEffortId}`)
     },
     timesheet: {
       type: TimesheetType,
       args : {timesheetId: {type: GraphQLString}},
-      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`timesheets/find?timesheetId=${timeEntry.timesheetId}`)
+      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`workeffort/timesheets/find?timesheetId=${timeEntry.timesheetId}`)
     },
     rateType: {
       type: RateTypeType,
       args : {rateTypeId: {type: GraphQLString}},
-      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`rateTypes/find?rateTypeId=${timeEntry.rateTypeId}`)
+      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`accounting/rateTypes/find?rateTypeId=${timeEntry.rateTypeId}`)
     },
     hours: {type: GraphQLFloat},
     comments: {type: GraphQLString},
@@ -44,13 +44,13 @@ const TimeEntryType = new GraphQLObjectType({
     invoice: {
       type: InvoiceItemType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`invoiceItems/find?invoiceId=${timeEntry.invoiceId}`)
+      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItems/find?invoiceId=${timeEntry.invoiceId}`)
     },
     invoiceItemSeqId: {type: GraphQLString},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${timeEntry.partyId}`)
+      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${timeEntry.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

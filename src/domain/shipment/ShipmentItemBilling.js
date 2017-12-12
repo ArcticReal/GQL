@@ -22,12 +22,12 @@ const ShipmentItemBillingType = new GraphQLObjectType({
     shipment: {
       type: ShipmentItemType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentItemBilling, args, {loaders}) => loaders.ofbiz.load(`shipmentItems/find?shipmentId=${shipmentItemBilling.shipmentId}`)
+      resolve: (shipmentItemBilling, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentItems/find?shipmentId=${shipmentItemBilling.shipmentId}`)
     },
     invoice: {
       type: InvoiceItemType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (shipmentItemBilling, args, {loaders}) => loaders.ofbiz.load(`invoiceItems/find?invoiceId=${shipmentItemBilling.invoiceId}`)
+      resolve: (shipmentItemBilling, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItems/find?invoiceId=${shipmentItemBilling.invoiceId}`)
     },
     invoiceItemSeqId: {type: GraphQLString},
     shipmentItemSeqId: {type: GraphQLString}

@@ -22,12 +22,12 @@ const CommunicationEventPurposeType = new GraphQLObjectType({
     communicationEventPrpTyp: {
       type: CommunicationEventPrpTypType,
       args : {communicationEventPrpTypId: {type: GraphQLString}},
-      resolve: (communicationEventPurpose, args, {loaders}) => loaders.ofbiz.load(`communicationEventPrpTyps/find?communicationEventPrpTypId=${communicationEventPurpose.communicationEventPrpTypId}`)
+      resolve: (communicationEventPurpose, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvent/communicationEventPrpTyps/find?communicationEventPrpTypId=${communicationEventPurpose.communicationEventPrpTypId}`)
     },
     communicationEvent: {
       type: CommunicationEventType,
       args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEventPurpose, args, {loaders}) => loaders.ofbiz.load(`communicationEvents/find?communicationEventId=${communicationEventPurpose.communicationEventId}`)
+      resolve: (communicationEventPurpose, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvents/find?communicationEventId=${communicationEventPurpose.communicationEventId}`)
     },
     description: {type: GraphQLString}
   })

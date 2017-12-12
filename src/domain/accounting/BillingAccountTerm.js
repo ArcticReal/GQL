@@ -25,19 +25,19 @@ const BillingAccountTermType = new GraphQLObjectType({
     termType: {
       type: TermTypeType,
       args : {termTypeId: {type: GraphQLString}},
-      resolve: (billingAccountTerm, args, {loaders}) => loaders.ofbiz.load(`termTypes/find?termTypeId=${billingAccountTerm.termTypeId}`)
+      resolve: (billingAccountTerm, args, {loaders}) => loaders.ofbiz.load(`party/termTypes/find?termTypeId=${billingAccountTerm.termTypeId}`)
     },
     billingAccount: {
       type: BillingAccountType,
       args : {billingAccountId: {type: GraphQLString}},
-      resolve: (billingAccountTerm, args, {loaders}) => loaders.ofbiz.load(`billingAccounts/find?billingAccountId=${billingAccountTerm.billingAccountId}`)
+      resolve: (billingAccountTerm, args, {loaders}) => loaders.ofbiz.load(`accounting/billingAccounts/find?billingAccountId=${billingAccountTerm.billingAccountId}`)
     },
     uomId: {type: GraphQLString},
     termValue: {type: GraphQLFloat},
     billingAccountTermAttrs: {
       type: new GraphQLList(BillingAccountTermAttrType),
-      args : {billingAccountTermId: {type: GraphQLString}},
-      resolve: (billingAccountTerm, args, {loaders}) => loaders.ofbizArray.load(`billingAccountTermAttrs/find?billingAccountTermId=${billingAccountTerm.billingAccountTermId}`)
+      args : {},
+      resolve: (billingAccountTerm, args, {loaders}) => loaders.ofbizArray.load(`accounting/billingAccount/billingAccountTermAttrs/find?billingAccountTermId=${billingAccountTerm.billingAccountTermId}`)
     }
   })
 });

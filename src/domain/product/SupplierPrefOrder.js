@@ -22,8 +22,8 @@ const SupplierPrefOrderType = new GraphQLObjectType({
     supplierPrefOrderId: {type: GraphQLString},
     supplierProducts: {
       type: new GraphQLList(SupplierProductType),
-      args : {supplierPrefOrderId: {type: GraphQLString}},
-      resolve: (supplierPrefOrder, args, {loaders}) => loaders.ofbizArray.load(`supplierProducts/find?supplierPrefOrderId=${supplierPrefOrder.supplierPrefOrderId}`)
+      args : {},
+      resolve: (supplierPrefOrder, args, {loaders}) => loaders.ofbizArray.load(`product/product/supplierProducts/find?supplierPrefOrderId=${supplierPrefOrder.supplierPrefOrderId}`)
     }
   })
 });

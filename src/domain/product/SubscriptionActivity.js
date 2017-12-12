@@ -23,8 +23,8 @@ const SubscriptionActivityType = new GraphQLObjectType({
     dateSent: {type: GraphQLString},
     subscriptionFulfillmentPieces: {
       type: new GraphQLList(SubscriptionFulfillmentPieceType),
-      args : {subscriptionActivityId: {type: GraphQLString}},
-      resolve: (subscriptionActivity, args, {loaders}) => loaders.ofbizArray.load(`subscriptionFulfillmentPieces/find?subscriptionActivityId=${subscriptionActivity.subscriptionActivityId}`)
+      args : {},
+      resolve: (subscriptionActivity, args, {loaders}) => loaders.ofbizArray.load(`product/subscription/subscriptionFulfillmentPieces/find?subscriptionActivityId=${subscriptionActivity.subscriptionActivityId}`)
     }
   })
 });

@@ -21,19 +21,19 @@ const DataCategoryType = new GraphQLObjectType({
     parentCategory: {
       type: DataCategoryType,
       args : {parentCategoryId: {type: GraphQLString}},
-      resolve: (dataCategory, args, {loaders}) => loaders.ofbiz.load(`dataCategorys/find?dataCategoryId=${dataCategory.parentCategoryId}`)
+      resolve: (dataCategory, args, {loaders}) => loaders.ofbiz.load(`content/dataCategorys/find?dataCategoryId=${dataCategory.parentCategoryId}`)
     },
     dataCategoryId: {type: GraphQLString},
     categoryName: {type: GraphQLString},
     dataCategories: {
       type: new GraphQLList(DataCategoryType),
-      args : {dataCategoryId: {type: GraphQLString}},
-      resolve: (dataCategory, args, {loaders}) => loaders.ofbizArray.load(`dataCategorys/find?dataCategoryId=${dataCategory.dataCategoryId}`)
+      args : {},
+      resolve: (dataCategory, args, {loaders}) => loaders.ofbizArray.load(`content/dataCategorys/find?dataCategoryId=${dataCategory.dataCategoryId}`)
     },
     dataResources: {
       type: new GraphQLList(DataResourceType),
-      args : {dataCategoryId: {type: GraphQLString}},
-      resolve: (dataCategory, args, {loaders}) => loaders.ofbizArray.load(`dataResources/find?dataCategoryId=${dataCategory.dataCategoryId}`)
+      args : {},
+      resolve: (dataCategory, args, {loaders}) => loaders.ofbizArray.load(`content/dataResources/find?dataCategoryId=${dataCategory.dataCategoryId}`)
     }
   })
 });

@@ -21,20 +21,20 @@ const EmplPositionClassTypeType = new GraphQLObjectType({
     parentType: {
       type: EmplPositionClassTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (emplPositionClassType, args, {loaders}) => loaders.ofbiz.load(`emplPositionClassTypes/find?emplPositionClassTypeId=${emplPositionClassType.parentTypeId}`)
+      resolve: (emplPositionClassType, args, {loaders}) => loaders.ofbiz.load(`humanres/emplPosition/emplPositionClassTypes/find?emplPositionClassTypeId=${emplPositionClassType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     emplPositionClassTypeId: {type: GraphQLString},
     emplPositionClassTypes: {
       type: new GraphQLList(EmplPositionClassTypeType),
-      args : {emplPositionClassTypeId: {type: GraphQLString}},
-      resolve: (emplPositionClassType, args, {loaders}) => loaders.ofbizArray.load(`emplPositionClassTypes/find?emplPositionClassTypeId=${emplPositionClassType.emplPositionClassTypeId}`)
+      args : {},
+      resolve: (emplPositionClassType, args, {loaders}) => loaders.ofbizArray.load(`humanres/emplPosition/emplPositionClassTypes/find?emplPositionClassTypeId=${emplPositionClassType.emplPositionClassTypeId}`)
     },
     emplPositionTypeClasses: {
       type: new GraphQLList(EmplPositionTypeClassType),
-      args : {emplPositionClassTypeId: {type: GraphQLString}},
-      resolve: (emplPositionClassType, args, {loaders}) => loaders.ofbizArray.load(`emplPositionTypeClasss/find?emplPositionClassTypeId=${emplPositionClassType.emplPositionClassTypeId}`)
+      args : {},
+      resolve: (emplPositionClassType, args, {loaders}) => loaders.ofbizArray.load(`humanres/emplPosition/emplPositionTypeClasss/find?emplPositionClassTypeId=${emplPositionClassType.emplPositionClassTypeId}`)
     }
   })
 });

@@ -21,7 +21,7 @@ const DocumentTypeAttrType = new GraphQLObjectType({
     documentType: {
       type: DocumentTypeType,
       args : {documentTypeId: {type: GraphQLString}},
-      resolve: (documentTypeAttr, args, {loaders}) => loaders.ofbiz.load(`documentTypes/find?documentTypeId=${documentTypeAttr.documentTypeId}`)
+      resolve: (documentTypeAttr, args, {loaders}) => loaders.ofbiz.load(`content/document/documentTypes/find?documentTypeId=${documentTypeAttr.documentTypeId}`)
     },
     description: {type: GraphQLString},
     attrName: {type: GraphQLString}

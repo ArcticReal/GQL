@@ -26,7 +26,7 @@ const QuoteTermType = new GraphQLObjectType({
     termType: {
       type: TermTypeType,
       args : {termTypeId: {type: GraphQLString}},
-      resolve: (quoteTerm, args, {loaders}) => loaders.ofbiz.load(`termTypes/find?termTypeId=${quoteTerm.termTypeId}`)
+      resolve: (quoteTerm, args, {loaders}) => loaders.ofbiz.load(`party/termTypes/find?termTypeId=${quoteTerm.termTypeId}`)
     },
     description: {type: GraphQLString},
     uomId: {type: GraphQLString},
@@ -34,12 +34,12 @@ const QuoteTermType = new GraphQLObjectType({
     quote: {
       type: QuoteType,
       args : {quoteId: {type: GraphQLString}},
-      resolve: (quoteTerm, args, {loaders}) => loaders.ofbiz.load(`quotes/find?quoteId=${quoteTerm.quoteId}`)
+      resolve: (quoteTerm, args, {loaders}) => loaders.ofbiz.load(`order/quotes/find?quoteId=${quoteTerm.quoteId}`)
     },
     quoteTermAttributes: {
       type: new GraphQLList(QuoteTermAttributeType),
-      args : {termTypeId: {type: GraphQLString}},
-      resolve: (quoteTerm, args, {loaders}) => loaders.ofbizArray.load(`quoteTermAttributes/find?termTypeId=${quoteTerm.termTypeId}`)
+      args : {},
+      resolve: (quoteTerm, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteTermAttributes/find?termTypeId=${quoteTerm.termTypeId}`)
     }
   })
 });

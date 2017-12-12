@@ -27,50 +27,50 @@ const ProductStoreGroupType = new GraphQLObjectType({
     productStoreGroupType: {
       type: ProductStoreGroupTypeType,
       args : {productStoreGroupTypeId: {type: GraphQLString}},
-      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbiz.load(`productStoreGroupTypes/find?productStoreGroupTypeId=${productStoreGroup.productStoreGroupTypeId}`)
+      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbiz.load(`product/product/productStoreGroupTypes/find?productStoreGroupTypeId=${productStoreGroup.productStoreGroupTypeId}`)
     },
     primaryParentGroup: {
       type: ProductStoreGroupType,
       args : {primaryParentGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbiz.load(`productStoreGroups/find?productStoreGroupId=${productStoreGroup.primaryParentGroupId}`)
+      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbiz.load(`product/product/productStoreGroups/find?productStoreGroupId=${productStoreGroup.primaryParentGroupId}`)
     },
     productStoreGroupName: {type: GraphQLString},
     description: {type: GraphQLString},
     productStoreGroupId: {type: GraphQLString},
     productStores: {
       type: new GraphQLList(ProductStoreType),
-      args : {productStoreGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`productStores/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
+      args : {},
+      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStores/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
     },
     productStoreGroupMembers: {
       type: new GraphQLList(ProductStoreGroupMemberType),
-      args : {productStoreGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`productStoreGroupMembers/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
+      args : {},
+      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreGroupMembers/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
     },
     productStoreGroupRollups: {
       type: new GraphQLList(ProductStoreGroupRollupType),
-      args : {productStoreGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`productStoreGroupRollups/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
+      args : {},
+      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreGroupRollups/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
     },
     vendorProducts: {
       type: new GraphQLList(VendorProductType),
-      args : {productStoreGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`vendorProducts/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
+      args : {},
+      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`product/product/vendorProducts/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
     },
     productStoreGroups: {
       type: new GraphQLList(ProductStoreGroupType),
-      args : {productStoreGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`productStoreGroups/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
+      args : {},
+      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreGroups/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
     },
     productPrices: {
       type: new GraphQLList(ProductPriceType),
-      args : {productStoreGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`productPrices/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
+      args : {},
+      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPrices/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
     },
     productStoreGroupRoles: {
       type: new GraphQLList(ProductStoreGroupRoleType),
-      args : {productStoreGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`productStoreGroupRoles/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
+      args : {},
+      resolve: (productStoreGroup, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreGroupRoles/find?productStoreGroupId=${productStoreGroup.productStoreGroupId}`)
     }
   })
 });

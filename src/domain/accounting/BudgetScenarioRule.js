@@ -24,12 +24,12 @@ const BudgetScenarioRuleType = new GraphQLObjectType({
     budgetScenario: {
       type: BudgetScenarioType,
       args : {budgetScenarioId: {type: GraphQLString}},
-      resolve: (budgetScenarioRule, args, {loaders}) => loaders.ofbiz.load(`budgetScenarios/find?budgetScenarioId=${budgetScenarioRule.budgetScenarioId}`)
+      resolve: (budgetScenarioRule, args, {loaders}) => loaders.ofbiz.load(`accounting/budget/budgetScenarios/find?budgetScenarioId=${budgetScenarioRule.budgetScenarioId}`)
     },
     budgetItemType: {
       type: BudgetItemTypeType,
       args : {budgetItemTypeId: {type: GraphQLString}},
-      resolve: (budgetScenarioRule, args, {loaders}) => loaders.ofbiz.load(`budgetItemTypes/find?budgetItemTypeId=${budgetScenarioRule.budgetItemTypeId}`)
+      resolve: (budgetScenarioRule, args, {loaders}) => loaders.ofbiz.load(`accounting/budget/budgetItemTypes/find?budgetItemTypeId=${budgetScenarioRule.budgetItemTypeId}`)
     }
   })
 });

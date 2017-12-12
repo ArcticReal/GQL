@@ -21,7 +21,7 @@ const ApplicationSandboxType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortPartyAssignmentType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (applicationSandbox, args, {loaders}) => loaders.ofbiz.load(`workEffortPartyAssignments/find?workEffortId=${applicationSandbox.workEffortId}`)
+      resolve: (applicationSandbox, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEffort/workEffortPartyAssignments/find?workEffortId=${applicationSandbox.workEffortId}`)
     },
     fromDate: {type: GraphQLString},
     roleTypeId: {type: GraphQLString},

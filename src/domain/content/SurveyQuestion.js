@@ -25,7 +25,7 @@ const SurveyQuestionType = new GraphQLObjectType({
     surveyQuestionType: {
       type: SurveyQuestionTypeType,
       args : {surveyQuestionTypeId: {type: GraphQLString}},
-      resolve: (surveyQuestion, args, {loaders}) => loaders.ofbiz.load(`surveyQuestionTypes/find?surveyQuestionTypeId=${surveyQuestion.surveyQuestionTypeId}`)
+      resolve: (surveyQuestion, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyQuestionTypes/find?surveyQuestionTypeId=${surveyQuestion.surveyQuestionTypeId}`)
     },
     enumTypeId: {type: GraphQLString},
     formatString: {type: GraphQLString},
@@ -33,7 +33,7 @@ const SurveyQuestionType = new GraphQLObjectType({
     surveyQuestionCategory: {
       type: SurveyQuestionCategoryType,
       args : {surveyQuestionCategoryId: {type: GraphQLString}},
-      resolve: (surveyQuestion, args, {loaders}) => loaders.ofbiz.load(`surveyQuestionCategorys/find?surveyQuestionCategoryId=${surveyQuestion.surveyQuestionCategoryId}`)
+      resolve: (surveyQuestion, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyQuestionCategorys/find?surveyQuestionCategoryId=${surveyQuestion.surveyQuestionCategoryId}`)
     },
     question: {type: GraphQLString},
     hint: {type: GraphQLString},
@@ -41,18 +41,18 @@ const SurveyQuestionType = new GraphQLObjectType({
     description: {type: GraphQLString},
     surveyResponseAnswers: {
       type: new GraphQLList(SurveyResponseAnswerType),
-      args : {surveyQuestionId: {type: GraphQLString}},
-      resolve: (surveyQuestion, args, {loaders}) => loaders.ofbizArray.load(`surveyResponseAnswers/find?surveyQuestionId=${surveyQuestion.surveyQuestionId}`)
+      args : {},
+      resolve: (surveyQuestion, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyResponseAnswers/find?surveyQuestionId=${surveyQuestion.surveyQuestionId}`)
     },
     surveyQuestionAppls: {
       type: new GraphQLList(SurveyQuestionApplType),
-      args : {surveyQuestionId: {type: GraphQLString}},
-      resolve: (surveyQuestion, args, {loaders}) => loaders.ofbizArray.load(`surveyQuestionAppls/find?surveyQuestionId=${surveyQuestion.surveyQuestionId}`)
+      args : {},
+      resolve: (surveyQuestion, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyQuestionAppls/find?surveyQuestionId=${surveyQuestion.surveyQuestionId}`)
     },
     surveyQuestionOptions: {
       type: new GraphQLList(SurveyQuestionOptionType),
-      args : {surveyQuestionId: {type: GraphQLString}},
-      resolve: (surveyQuestion, args, {loaders}) => loaders.ofbizArray.load(`surveyQuestionOptions/find?surveyQuestionId=${surveyQuestion.surveyQuestionId}`)
+      args : {},
+      resolve: (surveyQuestion, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyQuestionOptions/find?surveyQuestionId=${surveyQuestion.surveyQuestionId}`)
     }
   })
 });

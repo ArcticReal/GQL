@@ -21,7 +21,7 @@ const SurveyPageType = new GraphQLObjectType({
     survey: {
       type: SurveyType,
       args : {surveyId: {type: GraphQLString}},
-      resolve: (surveyPage, args, {loaders}) => loaders.ofbiz.load(`surveys/find?surveyId=${surveyPage.surveyId}`)
+      resolve: (surveyPage, args, {loaders}) => loaders.ofbiz.load(`content/surveys/find?surveyId=${surveyPage.surveyId}`)
     },
     sequenceNum: {type: GraphQLInt},
     surveyPageSeqId: {type: GraphQLString},

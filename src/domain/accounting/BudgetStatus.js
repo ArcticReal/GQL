@@ -25,12 +25,12 @@ const BudgetStatusType = new GraphQLObjectType({
     budget: {
       type: BudgetType,
       args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetStatus, args, {loaders}) => loaders.ofbiz.load(`budgets/find?budgetId=${budgetStatus.budgetId}`)
+      resolve: (budgetStatus, args, {loaders}) => loaders.ofbiz.load(`accounting/budgets/find?budgetId=${budgetStatus.budgetId}`)
     },
     changeByUserLogin: {
       type: UserLoginType,
       args : {changeByUserLoginId: {type: GraphQLString}},
-      resolve: (budgetStatus, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${budgetStatus.changeByUserLoginId}`)
+      resolve: (budgetStatus, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${budgetStatus.changeByUserLoginId}`)
     }
   })
 });

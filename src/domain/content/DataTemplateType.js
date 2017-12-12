@@ -23,8 +23,8 @@ const DataTemplateTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     dataResources: {
       type: new GraphQLList(DataResourceType),
-      args : {dataTemplateTypeId: {type: GraphQLString}},
-      resolve: (dataTemplateType, args, {loaders}) => loaders.ofbizArray.load(`dataResources/find?dataTemplateTypeId=${dataTemplateType.dataTemplateTypeId}`)
+      args : {},
+      resolve: (dataTemplateType, args, {loaders}) => loaders.ofbizArray.load(`content/dataResources/find?dataTemplateTypeId=${dataTemplateType.dataTemplateTypeId}`)
     }
   })
 });

@@ -25,17 +25,17 @@ const CommunicationEventRoleType = new GraphQLObjectType({
     communicationEvent: {
       type: CommunicationEventType,
       args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEventRole, args, {loaders}) => loaders.ofbiz.load(`communicationEvents/find?communicationEventId=${communicationEventRole.communicationEventId}`)
+      resolve: (communicationEventRole, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvents/find?communicationEventId=${communicationEventRole.communicationEventId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (communicationEventRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${communicationEventRole.partyId}`)
+      resolve: (communicationEventRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${communicationEventRole.partyId}`)
     },
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (communicationEventRole, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${communicationEventRole.contactMechId}`)
+      resolve: (communicationEventRole, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${communicationEventRole.contactMechId}`)
     }
   })
 });

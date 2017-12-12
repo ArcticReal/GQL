@@ -23,12 +23,12 @@ const SegmentGroupRoleType = new GraphQLObjectType({
     segmentGroup: {
       type: SegmentGroupType,
       args : {segmentGroupId: {type: GraphQLString}},
-      resolve: (segmentGroupRole, args, {loaders}) => loaders.ofbiz.load(`segmentGroups/find?segmentGroupId=${segmentGroupRole.segmentGroupId}`)
+      resolve: (segmentGroupRole, args, {loaders}) => loaders.ofbiz.load(`marketing/segmentGroups/find?segmentGroupId=${segmentGroupRole.segmentGroupId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (segmentGroupRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${segmentGroupRole.partyId}`)
+      resolve: (segmentGroupRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${segmentGroupRole.partyId}`)
     }
   })
 });

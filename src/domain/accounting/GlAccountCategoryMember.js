@@ -24,12 +24,12 @@ const GlAccountCategoryMemberType = new GraphQLObjectType({
     glAccount: {
       type: GlAccountType,
       args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccountCategoryMember, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${glAccountCategoryMember.glAccountId}`)
+      resolve: (glAccountCategoryMember, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${glAccountCategoryMember.glAccountId}`)
     },
     glAccountCategory: {
       type: GlAccountCategoryType,
       args : {glAccountCategoryId: {type: GraphQLString}},
-      resolve: (glAccountCategoryMember, args, {loaders}) => loaders.ofbiz.load(`glAccountCategorys/find?glAccountCategoryId=${glAccountCategoryMember.glAccountCategoryId}`)
+      resolve: (glAccountCategoryMember, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountCategorys/find?glAccountCategoryId=${glAccountCategoryMember.glAccountCategoryId}`)
     },
     thruDate: {type: GraphQLString}
   })

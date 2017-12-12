@@ -34,58 +34,58 @@ const AgreementItemType = new GraphQLObjectType({
     agreement: {
       type: AgreementType,
       args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbiz.load(`agreements/find?agreementId=${agreementItem.agreementId}`)
+      resolve: (agreementItem, args, {loaders}) => loaders.ofbiz.load(`party/agreements/find?agreementId=${agreementItem.agreementId}`)
     },
     agreementItemSeqId: {type: GraphQLString},
     agreementItemType: {
       type: AgreementItemTypeType,
       args : {agreementItemTypeId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbiz.load(`agreementItemTypes/find?agreementItemTypeId=${agreementItem.agreementItemTypeId}`)
+      resolve: (agreementItem, args, {loaders}) => loaders.ofbiz.load(`party/agreement/agreementItemTypes/find?agreementItemTypeId=${agreementItem.agreementItemTypeId}`)
     },
     agreementTerms: {
       type: new GraphQLList(AgreementTermType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementTerms/find?agreementId=${agreementItem.agreementId}`)
+      args : {},
+      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementTerms/find?agreementId=${agreementItem.agreementId}`)
     },
     supplierProducts: {
       type: new GraphQLList(SupplierProductType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`supplierProducts/find?agreementId=${agreementItem.agreementId}`)
+      args : {},
+      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`product/product/supplierProducts/find?agreementId=${agreementItem.agreementId}`)
     },
     agreementFacilityAppls: {
       type: new GraphQLList(AgreementFacilityApplType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementFacilityAppls/find?agreementId=${agreementItem.agreementId}`)
+      args : {},
+      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementFacilityAppls/find?agreementId=${agreementItem.agreementId}`)
     },
     addendums: {
       type: new GraphQLList(AddendumType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`addendums/find?agreementId=${agreementItem.agreementId}`)
+      args : {},
+      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`party/addendums/find?agreementId=${agreementItem.agreementId}`)
     },
     agreementProductAppls: {
       type: new GraphQLList(AgreementProductApplType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementProductAppls/find?agreementId=${agreementItem.agreementId}`)
+      args : {},
+      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementProductAppls/find?agreementId=${agreementItem.agreementId}`)
     },
     agreementItemAttributes: {
       type: new GraphQLList(AgreementItemAttributeType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementItemAttributes/find?agreementId=${agreementItem.agreementId}`)
+      args : {},
+      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementItemAttributes/find?agreementId=${agreementItem.agreementId}`)
     },
     agreementPromoAppls: {
       type: new GraphQLList(AgreementPromoApplType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementPromoAppls/find?agreementId=${agreementItem.agreementId}`)
+      args : {},
+      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementPromoAppls/find?agreementId=${agreementItem.agreementId}`)
     },
     agreementEmploymentAppls: {
       type: new GraphQLList(AgreementEmploymentApplType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementEmploymentAppls/find?agreementId=${agreementItem.agreementId}`)
+      args : {},
+      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementEmploymentAppls/find?agreementId=${agreementItem.agreementId}`)
     },
     agreementGeographicalApplics: {
       type: new GraphQLList(AgreementGeographicalApplicType),
-      args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`agreementGeographicalApplics/find?agreementId=${agreementItem.agreementId}`)
+      args : {},
+      resolve: (agreementItem, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementGeographicalApplics/find?agreementId=${agreementItem.agreementId}`)
     }
   })
 });

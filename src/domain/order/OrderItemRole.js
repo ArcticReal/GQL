@@ -24,12 +24,12 @@ const OrderItemRoleType = new GraphQLObjectType({
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemRole, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${orderItemRole.orderId}`)
+      resolve: (orderItemRole, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${orderItemRole.orderId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (orderItemRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${orderItemRole.partyId}`)
+      resolve: (orderItemRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${orderItemRole.partyId}`)
     }
   })
 });

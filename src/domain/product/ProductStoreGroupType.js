@@ -22,8 +22,8 @@ const ProductStoreGroupTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     productStoreGroups: {
       type: new GraphQLList(ProductStoreGroupType),
-      args : {productStoreGroupTypeId: {type: GraphQLString}},
-      resolve: (productStoreGroupType, args, {loaders}) => loaders.ofbizArray.load(`productStoreGroups/find?productStoreGroupTypeId=${productStoreGroupType.productStoreGroupTypeId}`)
+      args : {},
+      resolve: (productStoreGroupType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreGroups/find?productStoreGroupTypeId=${productStoreGroupType.productStoreGroupTypeId}`)
     }
   })
 });

@@ -22,25 +22,25 @@ const AgreementItemTypeType = new GraphQLObjectType({
     parentType: {
       type: AgreementItemTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (agreementItemType, args, {loaders}) => loaders.ofbiz.load(`agreementItemTypes/find?agreementItemTypeId=${agreementItemType.parentTypeId}`)
+      resolve: (agreementItemType, args, {loaders}) => loaders.ofbiz.load(`party/agreement/agreementItemTypes/find?agreementItemTypeId=${agreementItemType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     agreementItemTypeId: {type: GraphQLString},
     agreementItemTypeAttrs: {
       type: new GraphQLList(AgreementItemTypeAttrType),
-      args : {agreementItemTypeId: {type: GraphQLString}},
-      resolve: (agreementItemType, args, {loaders}) => loaders.ofbizArray.load(`agreementItemTypeAttrs/find?agreementItemTypeId=${agreementItemType.agreementItemTypeId}`)
+      args : {},
+      resolve: (agreementItemType, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementItemTypeAttrs/find?agreementItemTypeId=${agreementItemType.agreementItemTypeId}`)
     },
     agreementItems: {
       type: new GraphQLList(AgreementItemType),
-      args : {agreementItemTypeId: {type: GraphQLString}},
-      resolve: (agreementItemType, args, {loaders}) => loaders.ofbizArray.load(`agreementItems/find?agreementItemTypeId=${agreementItemType.agreementItemTypeId}`)
+      args : {},
+      resolve: (agreementItemType, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementItems/find?agreementItemTypeId=${agreementItemType.agreementItemTypeId}`)
     },
     agreementItemTypes: {
       type: new GraphQLList(AgreementItemTypeType),
-      args : {agreementItemTypeId: {type: GraphQLString}},
-      resolve: (agreementItemType, args, {loaders}) => loaders.ofbizArray.load(`agreementItemTypes/find?agreementItemTypeId=${agreementItemType.agreementItemTypeId}`)
+      args : {},
+      resolve: (agreementItemType, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementItemTypes/find?agreementItemTypeId=${agreementItemType.agreementItemTypeId}`)
     }
   })
 });

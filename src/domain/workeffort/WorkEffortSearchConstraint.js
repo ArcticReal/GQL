@@ -21,7 +21,7 @@ const WorkEffortSearchConstraintType = new GraphQLObjectType({
     workEffortSearchResult: {
       type: WorkEffortSearchResultType,
       args : {workEffortSearchResultId: {type: GraphQLString}},
-      resolve: (workEffortSearchConstraint, args, {loaders}) => loaders.ofbiz.load(`workEffortSearchResults/find?workEffortSearchResultId=${workEffortSearchConstraint.workEffortSearchResultId}`)
+      resolve: (workEffortSearchConstraint, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEffort/workEffortSearchResults/find?workEffortSearchResultId=${workEffortSearchConstraint.workEffortSearchResultId}`)
     },
     isAnd: {type: GraphQLBoolean},
     removeStems: {type: GraphQLBoolean},

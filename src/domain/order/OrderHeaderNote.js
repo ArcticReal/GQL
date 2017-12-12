@@ -21,7 +21,7 @@ const OrderHeaderNoteType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderHeaderNote, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderHeaderNote.orderId}`)
+      resolve: (orderHeaderNote, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderHeaderNote.orderId}`)
     },
     internalNote: {type: GraphQLBoolean},
     noteId: {type: GraphQLString}

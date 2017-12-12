@@ -24,35 +24,35 @@ const OrderAdjustmentTypeType = new GraphQLObjectType({
     parentType: {
       type: OrderAdjustmentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbiz.load(`orderAdjustmentTypes/find?orderAdjustmentTypeId=${orderAdjustmentType.parentTypeId}`)
+      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbiz.load(`order/orderAdjustment/orderAdjustmentTypes/find?orderAdjustmentTypeId=${orderAdjustmentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     orderAdjustmentTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     orderAdjustmentTypes: {
       type: new GraphQLList(OrderAdjustmentTypeType),
-      args : {orderAdjustmentTypeId: {type: GraphQLString}},
-      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`orderAdjustmentTypes/find?orderAdjustmentTypeId=${orderAdjustmentType.orderAdjustmentTypeId}`)
+      args : {},
+      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`order/orderAdjustment/orderAdjustmentTypes/find?orderAdjustmentTypeId=${orderAdjustmentType.orderAdjustmentTypeId}`)
     },
     quoteAdjustments: {
       type: new GraphQLList(QuoteAdjustmentType),
-      args : {orderAdjustmentTypeId: {type: GraphQLString}},
-      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`quoteAdjustments/find?orderAdjustmentTypeId=${orderAdjustmentType.orderAdjustmentTypeId}`)
+      args : {},
+      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteAdjustments/find?orderAdjustmentTypeId=${orderAdjustmentType.orderAdjustmentTypeId}`)
     },
     productPromoActions: {
       type: new GraphQLList(ProductPromoActionType),
-      args : {orderAdjustmentTypeId: {type: GraphQLString}},
-      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`productPromoActions/find?orderAdjustmentTypeId=${orderAdjustmentType.orderAdjustmentTypeId}`)
+      args : {},
+      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoActions/find?orderAdjustmentTypeId=${orderAdjustmentType.orderAdjustmentTypeId}`)
     },
     orderAdjustmentTypeAttrs: {
       type: new GraphQLList(OrderAdjustmentTypeAttrType),
-      args : {orderAdjustmentTypeId: {type: GraphQLString}},
-      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`orderAdjustmentTypeAttrs/find?orderAdjustmentTypeId=${orderAdjustmentType.orderAdjustmentTypeId}`)
+      args : {},
+      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`order/orderAdjustment/orderAdjustmentTypeAttrs/find?orderAdjustmentTypeId=${orderAdjustmentType.orderAdjustmentTypeId}`)
     },
     orderAdjustments: {
       type: new GraphQLList(OrderAdjustmentType),
-      args : {orderAdjustmentTypeId: {type: GraphQLString}},
-      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`orderAdjustments/find?orderAdjustmentTypeId=${orderAdjustmentType.orderAdjustmentTypeId}`)
+      args : {},
+      resolve: (orderAdjustmentType, args, {loaders}) => loaders.ofbizArray.load(`order/orderAdjustments/find?orderAdjustmentTypeId=${orderAdjustmentType.orderAdjustmentTypeId}`)
     }
   })
 });

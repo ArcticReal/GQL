@@ -24,14 +24,14 @@ const SurveyResponseAnswerType = new GraphQLObjectType({
     surveyQuestion: {
       type: SurveyQuestionOptionType,
       args : {surveyQuestionId: {type: GraphQLString}},
-      resolve: (surveyResponseAnswer, args, {loaders}) => loaders.ofbiz.load(`surveyQuestionOptions/find?surveyQuestionId=${surveyResponseAnswer.surveyQuestionId}`)
+      resolve: (surveyResponseAnswer, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyQuestionOptions/find?surveyQuestionId=${surveyResponseAnswer.surveyQuestionId}`)
     },
     sequenceNum: {type: GraphQLInt},
     surveyOptionSeqId: {type: GraphQLString},
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (surveyResponseAnswer, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${surveyResponseAnswer.contentId}`)
+      resolve: (surveyResponseAnswer, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${surveyResponseAnswer.contentId}`)
     },
     durationUomId: {type: GraphQLString},
     currencyResponse: {type: GraphQLFloat},
@@ -40,7 +40,7 @@ const SurveyResponseAnswerType = new GraphQLObjectType({
     surveyResponse: {
       type: SurveyResponseType,
       args : {surveyResponseId: {type: GraphQLString}},
-      resolve: (surveyResponseAnswer, args, {loaders}) => loaders.ofbiz.load(`surveyResponses/find?surveyResponseId=${surveyResponseAnswer.surveyResponseId}`)
+      resolve: (surveyResponseAnswer, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyResponses/find?surveyResponseId=${surveyResponseAnswer.surveyResponseId}`)
     },
     duration: {type: GraphQLInt},
     answeredDate: {type: GraphQLString},

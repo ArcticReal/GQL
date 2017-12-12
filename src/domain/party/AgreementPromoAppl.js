@@ -24,13 +24,13 @@ const AgreementPromoApplType = new GraphQLObjectType({
     agreement: {
       type: AgreementItemType,
       args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementPromoAppl, args, {loaders}) => loaders.ofbiz.load(`agreementItems/find?agreementId=${agreementPromoAppl.agreementId}`)
+      resolve: (agreementPromoAppl, args, {loaders}) => loaders.ofbiz.load(`party/agreement/agreementItems/find?agreementId=${agreementPromoAppl.agreementId}`)
     },
     agreementItemSeqId: {type: GraphQLString},
     productPromo: {
       type: ProductPromoType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (agreementPromoAppl, args, {loaders}) => loaders.ofbiz.load(`productPromos/find?productPromoId=${agreementPromoAppl.productPromoId}`)
+      resolve: (agreementPromoAppl, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromos/find?productPromoId=${agreementPromoAppl.productPromoId}`)
     },
     thruDate: {type: GraphQLString}
   })

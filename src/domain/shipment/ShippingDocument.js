@@ -22,13 +22,13 @@ const ShippingDocumentType = new GraphQLObjectType({
     shipment: {
       type: ShipmentPackageType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (shippingDocument, args, {loaders}) => loaders.ofbiz.load(`shipmentPackages/find?shipmentId=${shippingDocument.shipmentId}`)
+      resolve: (shippingDocument, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentPackages/find?shipmentId=${shippingDocument.shipmentId}`)
     },
     description: {type: GraphQLString},
     document: {
       type: DocumentType,
       args : {documentId: {type: GraphQLString}},
-      resolve: (shippingDocument, args, {loaders}) => loaders.ofbiz.load(`documents/find?documentId=${shippingDocument.documentId}`)
+      resolve: (shippingDocument, args, {loaders}) => loaders.ofbiz.load(`content/documents/find?documentId=${shippingDocument.documentId}`)
     },
     shipmentPackageSeqId: {type: GraphQLString},
     shipmentItemSeqId: {type: GraphQLString}

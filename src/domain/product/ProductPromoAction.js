@@ -27,14 +27,14 @@ const ProductPromoActionType = new GraphQLObjectType({
     orderAdjustmentType: {
       type: OrderAdjustmentTypeType,
       args : {orderAdjustmentTypeId: {type: GraphQLString}},
-      resolve: (productPromoAction, args, {loaders}) => loaders.ofbiz.load(`orderAdjustmentTypes/find?orderAdjustmentTypeId=${productPromoAction.orderAdjustmentTypeId}`)
+      resolve: (productPromoAction, args, {loaders}) => loaders.ofbiz.load(`order/orderAdjustment/orderAdjustmentTypes/find?orderAdjustmentTypeId=${productPromoAction.orderAdjustmentTypeId}`)
     },
     useCartQuantity: {type: GraphQLBoolean},
     productPromoActionEnumId: {type: GraphQLString},
     productPromo: {
       type: ProductPromoRuleType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromoAction, args, {loaders}) => loaders.ofbiz.load(`productPromoRules/find?productPromoId=${productPromoAction.productPromoId}`)
+      resolve: (productPromoAction, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromoRules/find?productPromoId=${productPromoAction.productPromoId}`)
     },
     serviceName: {type: GraphQLString},
     partyId: {type: GraphQLString}

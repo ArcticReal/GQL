@@ -21,7 +21,7 @@ const CustRequestNoteType = new GraphQLObjectType({
     custRequest: {
       type: CustRequestType,
       args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestNote, args, {loaders}) => loaders.ofbiz.load(`custRequests/find?custRequestId=${custRequestNote.custRequestId}`)
+      resolve: (custRequestNote, args, {loaders}) => loaders.ofbiz.load(`order/custRequests/find?custRequestId=${custRequestNote.custRequestId}`)
     },
     noteId: {type: GraphQLString}
   })

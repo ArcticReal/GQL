@@ -24,17 +24,17 @@ const BudgetReviewType = new GraphQLObjectType({
     budgetReviewResultType: {
       type: BudgetReviewResultTypeType,
       args : {budgetReviewResultTypeId: {type: GraphQLString}},
-      resolve: (budgetReview, args, {loaders}) => loaders.ofbiz.load(`budgetReviewResultTypes/find?budgetReviewResultTypeId=${budgetReview.budgetReviewResultTypeId}`)
+      resolve: (budgetReview, args, {loaders}) => loaders.ofbiz.load(`accounting/budget/budgetReviewResultTypes/find?budgetReviewResultTypeId=${budgetReview.budgetReviewResultTypeId}`)
     },
     budget: {
       type: BudgetType,
       args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetReview, args, {loaders}) => loaders.ofbiz.load(`budgets/find?budgetId=${budgetReview.budgetId}`)
+      resolve: (budgetReview, args, {loaders}) => loaders.ofbiz.load(`accounting/budgets/find?budgetId=${budgetReview.budgetId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (budgetReview, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${budgetReview.partyId}`)
+      resolve: (budgetReview, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${budgetReview.partyId}`)
     },
     budgetReviewId: {type: GraphQLString}
   })

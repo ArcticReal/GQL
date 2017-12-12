@@ -26,13 +26,13 @@ const OrderStatusType = new GraphQLObjectType({
     statusUserLogin: {
       type: UserLoginType,
       args : {statusUserLogin: {type: GraphQLString}},
-      resolve: (orderStatus, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${orderStatus.statusUserLogin}`)
+      resolve: (orderStatus, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${orderStatus.statusUserLogin}`)
     },
     changeReason: {type: GraphQLString},
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderStatus, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderStatus.orderId}`)
+      resolve: (orderStatus, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderStatus.orderId}`)
     },
     statusDatetime: {type: GraphQLString}
   })

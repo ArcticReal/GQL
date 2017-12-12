@@ -24,12 +24,12 @@ const DataResourceMetaDataType = new GraphQLObjectType({
     metaDataPredicate: {
       type: MetaDataPredicateType,
       args : {metaDataPredicateId: {type: GraphQLString}},
-      resolve: (dataResourceMetaData, args, {loaders}) => loaders.ofbiz.load(`metaDataPredicates/find?metaDataPredicateId=${dataResourceMetaData.metaDataPredicateId}`)
+      resolve: (dataResourceMetaData, args, {loaders}) => loaders.ofbiz.load(`content/metaDataPredicates/find?metaDataPredicateId=${dataResourceMetaData.metaDataPredicateId}`)
     },
     dataResource: {
       type: DataResourceType,
       args : {dataResourceId: {type: GraphQLString}},
-      resolve: (dataResourceMetaData, args, {loaders}) => loaders.ofbiz.load(`dataResources/find?dataResourceId=${dataResourceMetaData.dataResourceId}`)
+      resolve: (dataResourceMetaData, args, {loaders}) => loaders.ofbiz.load(`content/dataResources/find?dataResourceId=${dataResourceMetaData.dataResourceId}`)
     }
   })
 });

@@ -23,24 +23,24 @@ const RequirementTypeType = new GraphQLObjectType({
     parentType: {
       type: RequirementTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (requirementType, args, {loaders}) => loaders.ofbiz.load(`requirementTypes/find?requirementTypeId=${requirementType.parentTypeId}`)
+      resolve: (requirementType, args, {loaders}) => loaders.ofbiz.load(`order/requirement/requirementTypes/find?requirementTypeId=${requirementType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     requirements: {
       type: new GraphQLList(RequirementType),
-      args : {requirementTypeId: {type: GraphQLString}},
-      resolve: (requirementType, args, {loaders}) => loaders.ofbizArray.load(`requirements/find?requirementTypeId=${requirementType.requirementTypeId}`)
+      args : {},
+      resolve: (requirementType, args, {loaders}) => loaders.ofbizArray.load(`order/requirements/find?requirementTypeId=${requirementType.requirementTypeId}`)
     },
     requirementTypes: {
       type: new GraphQLList(RequirementTypeType),
-      args : {requirementTypeId: {type: GraphQLString}},
-      resolve: (requirementType, args, {loaders}) => loaders.ofbizArray.load(`requirementTypes/find?requirementTypeId=${requirementType.requirementTypeId}`)
+      args : {},
+      resolve: (requirementType, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/requirementTypes/find?requirementTypeId=${requirementType.requirementTypeId}`)
     },
     requirementTypeAttrs: {
       type: new GraphQLList(RequirementTypeAttrType),
-      args : {requirementTypeId: {type: GraphQLString}},
-      resolve: (requirementType, args, {loaders}) => loaders.ofbizArray.load(`requirementTypeAttrs/find?requirementTypeId=${requirementType.requirementTypeId}`)
+      args : {},
+      resolve: (requirementType, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/requirementTypeAttrs/find?requirementTypeId=${requirementType.requirementTypeId}`)
     }
   })
 });

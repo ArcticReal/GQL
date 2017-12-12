@@ -22,13 +22,13 @@ const ShoppingListItemSurveyType = new GraphQLObjectType({
     shoppingList: {
       type: ShoppingListItemType,
       args : {shoppingListId: {type: GraphQLString}},
-      resolve: (shoppingListItemSurvey, args, {loaders}) => loaders.ofbiz.load(`shoppingListItems/find?shoppingListId=${shoppingListItemSurvey.shoppingListId}`)
+      resolve: (shoppingListItemSurvey, args, {loaders}) => loaders.ofbiz.load(`order/shoppingList/shoppingListItems/find?shoppingListId=${shoppingListItemSurvey.shoppingListId}`)
     },
     shoppingListItemSeqId: {type: GraphQLString},
     surveyResponse: {
       type: SurveyResponseType,
       args : {surveyResponseId: {type: GraphQLString}},
-      resolve: (shoppingListItemSurvey, args, {loaders}) => loaders.ofbiz.load(`surveyResponses/find?surveyResponseId=${shoppingListItemSurvey.surveyResponseId}`)
+      resolve: (shoppingListItemSurvey, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyResponses/find?surveyResponseId=${shoppingListItemSurvey.surveyResponseId}`)
     }
   })
 });

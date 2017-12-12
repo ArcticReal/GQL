@@ -22,12 +22,12 @@ const WorkEffortDeliverableProdType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortDeliverableProd, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortDeliverableProd.workEffortId}`)
+      resolve: (workEffortDeliverableProd, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortDeliverableProd.workEffortId}`)
     },
     deliverable: {
       type: DeliverableType,
       args : {deliverableId: {type: GraphQLString}},
-      resolve: (workEffortDeliverableProd, args, {loaders}) => loaders.ofbiz.load(`deliverables/find?deliverableId=${workEffortDeliverableProd.deliverableId}`)
+      resolve: (workEffortDeliverableProd, args, {loaders}) => loaders.ofbiz.load(`workeffort/deliverables/find?deliverableId=${workEffortDeliverableProd.deliverableId}`)
     }
   })
 });

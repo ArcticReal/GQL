@@ -102,12 +102,12 @@ const ProductType = new GraphQLObjectType({
     createdByUserLogin: {
       type: UserLoginType,
       args : {createdByUserLogin: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${product.createdByUserLogin}`)
+      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${product.createdByUserLogin}`)
     },
     manufacturerParty: {
       type: PartyType,
       args : {manufacturerPartyId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${product.manufacturerPartyId}`)
+      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${product.manufacturerPartyId}`)
     },
     brandName: {type: GraphQLString},
     requireAmount: {type: GraphQLBoolean},
@@ -117,7 +117,7 @@ const ProductType = new GraphQLObjectType({
     primaryProductCategory: {
       type: ProductCategoryType,
       args : {primaryProductCategoryId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${product.primaryProductCategoryId}`)
+      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${product.primaryProductCategoryId}`)
     },
     salesDiscontinuationDate: {type: GraphQLString},
     salesDiscWhenNotAvail: {type: GraphQLBoolean},
@@ -142,7 +142,7 @@ const ProductType = new GraphQLObjectType({
     lastModifiedByUserLogin: {
       type: UserLoginType,
       args : {lastModifiedByUserLogin: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${product.lastModifiedByUserLogin}`)
+      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${product.lastModifiedByUserLogin}`)
     },
     virtualVariantMethodEnum: {type: GraphQLString},
     shippingWeight: {type: GraphQLFloat},
@@ -153,14 +153,14 @@ const ProductType = new GraphQLObjectType({
     inventoryItemType: {
       type: InventoryItemTypeType,
       args : {inventoryItemTypeId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`inventoryItemTypes/find?inventoryItemTypeId=${product.inventoryItemTypeId}`)
+      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItem/inventoryItemTypes/find?inventoryItemTypeId=${product.inventoryItemTypeId}`)
     },
     piecesIncluded: {type: GraphQLInt},
     productDepth: {type: GraphQLFloat},
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${product.facilityId}`)
+      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${product.facilityId}`)
     },
     comments: {type: GraphQLString},
     releaseDate: {type: GraphQLString},
@@ -169,7 +169,7 @@ const ProductType = new GraphQLObjectType({
     defaultShipmentBoxType: {
       type: ShipmentBoxTypeType,
       args : {defaultShipmentBoxTypeId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`shipmentBoxTypes/find?shipmentBoxTypeId=${product.defaultShipmentBoxTypeId}`)
+      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentBoxTypes/find?shipmentBoxTypeId=${product.defaultShipmentBoxTypeId}`)
     },
     orderDecimalQuantity: {type: GraphQLBoolean},
     inventoryMessage: {type: GraphQLString},
@@ -178,7 +178,7 @@ const ProductType = new GraphQLObjectType({
     productType: {
       type: ProductTypeType,
       args : {productTypeId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`productTypes/find?productTypeId=${product.productTypeId}`)
+      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`product/product/productTypes/find?productTypeId=${product.productTypeId}`)
     },
     createdDate: {type: GraphQLString},
     isVariant: {type: GraphQLBoolean},
@@ -186,288 +186,288 @@ const ProductType = new GraphQLObjectType({
     requirementMethodEnumId: {type: GraphQLString},
     productFeatureApplAttrs: {
       type: new GraphQLList(ProductFeatureApplAttrType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productFeatureApplAttrs/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureApplAttrs/find?productId=${product.productId}`)
     },
     shoppingListItems: {
       type: new GraphQLList(ShoppingListItemType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`shoppingListItems/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`order/shoppingList/shoppingListItems/find?productId=${product.productId}`)
     },
     agreementProductAppls: {
       type: new GraphQLList(AgreementProductApplType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`agreementProductAppls/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementProductAppls/find?productId=${product.productId}`)
     },
     productAssocs: {
       type: new GraphQLList(ProductAssocType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productAssocs/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productAssocs/find?productId=${product.productId}`)
     },
     productManufacturingRules: {
       type: new GraphQLList(ProductManufacturingRuleType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productManufacturingRules/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`manufacturing/productManufacturingRules/find?productId=${product.productId}`)
     },
     costComponents: {
       type: new GraphQLList(CostComponentType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`costComponents/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/costComponents/find?productId=${product.productId}`)
     },
     productReviews: {
       type: new GraphQLList(ProductReviewType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productReviews/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productReviews/find?productId=${product.productId}`)
     },
     supplierProducts: {
       type: new GraphQLList(SupplierProductType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`supplierProducts/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/supplierProducts/find?productId=${product.productId}`)
     },
     productGroupOrders: {
       type: new GraphQLList(ProductGroupOrderType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productGroupOrders/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productGroupOrders/find?productId=${product.productId}`)
     },
     productAttributes: {
       type: new GraphQLList(ProductAttributeType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productAttributes/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productAttributes/find?productId=${product.productId}`)
     },
     salesForecastDetails: {
       type: new GraphQLList(SalesForecastDetailType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`salesForecastDetails/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`marketing/salesForecast/salesForecastDetails/find?productId=${product.productId}`)
     },
     workEffortGoodStandards: {
       type: new GraphQLList(WorkEffortGoodStandardType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`workEffortGoodStandards/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortGoodStandards/find?productId=${product.productId}`)
     },
     productFacilities: {
       type: new GraphQLList(ProductFacilityType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productFacilitys/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/facility/productFacilitys/find?productId=${product.productId}`)
     },
     productGlAccounts: {
       type: new GraphQLList(ProductGlAccountType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productGlAccounts/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productGlAccounts/find?productId=${product.productId}`)
     },
     productGeos: {
       type: new GraphQLList(ProductGeoType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productGeos/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productGeos/find?productId=${product.productId}`)
     },
     productContents: {
       type: new GraphQLList(ProductContentType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productContents/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productContents/find?productId=${product.productId}`)
     },
     vendorProducts: {
       type: new GraphQLList(VendorProductType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`vendorProducts/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/vendorProducts/find?productId=${product.productId}`)
     },
     orderSummaryEntries: {
       type: new GraphQLList(OrderSummaryEntryType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`orderSummaryEntrys/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`order/orderSummaryEntrys/find?productId=${product.productId}`)
     },
     custRequestItems: {
       type: new GraphQLList(CustRequestItemType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`custRequestItems/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestItems/find?productId=${product.productId}`)
     },
     agreements: {
       type: new GraphQLList(AgreementType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`agreements/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`party/agreements/find?productId=${product.productId}`)
     },
     shipmentPackageContents: {
       type: new GraphQLList(ShipmentPackageContentType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`shipmentPackageContents/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentPackageContents/find?productId=${product.productId}`)
     },
     partyNeeds: {
       type: new GraphQLList(PartyNeedType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`partyNeeds/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyNeeds/find?productId=${product.productId}`)
     },
     productFeatureAppls: {
       type: new GraphQLList(ProductFeatureApplType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productFeatureAppls/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureAppls/find?productId=${product.productId}`)
     },
     productConfigProducts: {
       type: new GraphQLList(ProductConfigProductType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productConfigProducts/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productConfigProducts/find?productId=${product.productId}`)
     },
     productSubscriptionResources: {
       type: new GraphQLList(ProductSubscriptionResourceType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productSubscriptionResources/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productSubscriptionResources/find?productId=${product.productId}`)
     },
     fixedAssets: {
       type: new GraphQLList(FixedAssetType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`fixedAssets/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAssets/find?productId=${product.productId}`)
     },
     productCostComponentCalcs: {
       type: new GraphQLList(ProductCostComponentCalcType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productCostComponentCalcs/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/costComponent/productCostComponentCalcs/find?productId=${product.productId}`)
     },
     productPaymentMethodTypes: {
       type: new GraphQLList(ProductPaymentMethodTypeType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productPaymentMethodTypes/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPaymentMethodTypes/find?productId=${product.productId}`)
     },
     goodIdentifications: {
       type: new GraphQLList(GoodIdentificationType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`goodIdentifications/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/goodIdentifications/find?productId=${product.productId}`)
     },
     inventoryItemTempReses: {
       type: new GraphQLList(InventoryItemTempResType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemTempRess/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemTempRess/find?productId=${product.productId}`)
     },
     productPromoProducts: {
       type: new GraphQLList(ProductPromoProductType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productPromoProducts/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoProducts/find?productId=${product.productId}`)
     },
     fixedAssetProducts: {
       type: new GraphQLList(FixedAssetProductType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetProducts/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetProducts/find?productId=${product.productId}`)
     },
     communicationEventProducts: {
       type: new GraphQLList(CommunicationEventProductType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`communicationEventProducts/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvent/communicationEventProducts/find?productId=${product.productId}`)
     },
     productCategoryMembers: {
       type: new GraphQLList(ProductCategoryMemberType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productCategoryMembers/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productCategoryMembers/find?productId=${product.productId}`)
     },
     productKeywords: {
       type: new GraphQLList(ProductKeywordType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productKeywords/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productKeywords/find?productId=${product.productId}`)
     },
     mrpEvents: {
       type: new GraphQLList(MrpEventType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`mrpEvents/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`manufacturing/mrpEvents/find?productId=${product.productId}`)
     },
     inventoryItems: {
       type: new GraphQLList(InventoryItemType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`inventoryItems/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItems/find?productId=${product.productId}`)
     },
     productCalculatedInfos: {
       type: new GraphQLList(ProductCalculatedInfoType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productCalculatedInfos/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productCalculatedInfos/find?productId=${product.productId}`)
     },
     invoiceItems: {
       type: new GraphQLList(InvoiceItemType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`invoiceItems/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItems/find?productId=${product.productId}`)
     },
     productMaints: {
       type: new GraphQLList(ProductMaintType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productMaints/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productMaints/find?productId=${product.productId}`)
     },
     orderItems: {
       type: new GraphQLList(OrderItemType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`orderItems/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`order/orderItems/find?productId=${product.productId}`)
     },
     shipmentItems: {
       type: new GraphQLList(ShipmentItemType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`shipmentItems/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentItems/find?productId=${product.productId}`)
     },
     productFacilityLocations: {
       type: new GraphQLList(ProductFacilityLocationType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productFacilityLocations/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/facility/productFacilityLocations/find?productId=${product.productId}`)
     },
     reorderGuidelines: {
       type: new GraphQLList(ReorderGuidelineType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`reorderGuidelines/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/reorderGuidelines/find?productId=${product.productId}`)
     },
     productConfigs: {
       type: new GraphQLList(ProductConfigType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productConfigs/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productConfigs/find?productId=${product.productId}`)
     },
     productRoles: {
       type: new GraphQLList(ProductRoleType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productRoles/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productRoles/find?productId=${product.productId}`)
     },
     returnItems: {
       type: new GraphQLList(ReturnItemType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`returnItems/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`order/returnItems/find?productId=${product.productId}`)
     },
     productOrderItems: {
       type: new GraphQLList(ProductOrderItemType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productOrderItems/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/productOrderItems/find?productId=${product.productId}`)
     },
     subscriptions: {
       type: new GraphQLList(SubscriptionType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`subscriptions/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/subscriptions/find?productId=${product.productId}`)
     },
     cartAbandonedLines: {
       type: new GraphQLList(CartAbandonedLineType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`cartAbandonedLines/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`order/cartAbandonedLines/find?productId=${product.productId}`)
     },
     shipmentReceipts: {
       type: new GraphQLList(ShipmentReceiptType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`shipmentReceipts/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentReceipts/find?productId=${product.productId}`)
     },
     productAverageCosts: {
       type: new GraphQLList(ProductAverageCostType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productAverageCosts/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`accounting/productAverageCosts/find?productId=${product.productId}`)
     },
     productPrices: {
       type: new GraphQLList(ProductPriceType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productPrices/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPrices/find?productId=${product.productId}`)
     },
     quoteItems: {
       type: new GraphQLList(QuoteItemType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`quoteItems/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteItems/find?productId=${product.productId}`)
     },
     productConfigStatses: {
       type: new GraphQLList(ProductConfigStatsType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productConfigStatss/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productConfigStatss/find?productId=${product.productId}`)
     },
     productMeters: {
       type: new GraphQLList(ProductMeterType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`productMeters/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`product/product/productMeters/find?productId=${product.productId}`)
     },
     requirements: {
       type: new GraphQLList(RequirementType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`requirements/find?productId=${product.productId}`)
+      args : {},
+      resolve: (product, args, {loaders}) => loaders.ofbizArray.load(`order/requirements/find?productId=${product.productId}`)
     }
   })
 });

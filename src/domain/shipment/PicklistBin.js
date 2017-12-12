@@ -24,25 +24,25 @@ const PicklistBinType = new GraphQLObjectType({
     picklist: {
       type: PicklistType,
       args : {picklistId: {type: GraphQLString}},
-      resolve: (picklistBin, args, {loaders}) => loaders.ofbiz.load(`picklists/find?picklistId=${picklistBin.picklistId}`)
+      resolve: (picklistBin, args, {loaders}) => loaders.ofbiz.load(`shipment/picklists/find?picklistId=${picklistBin.picklistId}`)
     },
     primaryOrder: {
       type: OrderItemShipGroupType,
       args : {primaryOrderId: {type: GraphQLString}},
-      resolve: (picklistBin, args, {loaders}) => loaders.ofbiz.load(`orderItemShipGroups/find?orderId=${picklistBin.primaryOrderId}`)
+      resolve: (picklistBin, args, {loaders}) => loaders.ofbiz.load(`order/orderItem/orderItemShipGroups/find?orderId=${picklistBin.primaryOrderId}`)
     },
     picklistBinId: {type: GraphQLString},
     primaryShipGroupSeqId: {type: GraphQLString},
     binLocationNumber: {type: GraphQLInt},
     shipments: {
       type: new GraphQLList(ShipmentType),
-      args : {picklistBinId: {type: GraphQLString}},
-      resolve: (picklistBin, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?picklistBinId=${picklistBin.picklistBinId}`)
+      args : {},
+      resolve: (picklistBin, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?picklistBinId=${picklistBin.picklistBinId}`)
     },
     picklistItems: {
       type: new GraphQLList(PicklistItemType),
-      args : {picklistBinId: {type: GraphQLString}},
-      resolve: (picklistBin, args, {loaders}) => loaders.ofbizArray.load(`picklistItems/find?picklistBinId=${picklistBin.picklistBinId}`)
+      args : {},
+      resolve: (picklistBin, args, {loaders}) => loaders.ofbizArray.load(`shipment/picklist/picklistItems/find?picklistBinId=${picklistBin.picklistBinId}`)
     }
   })
 });

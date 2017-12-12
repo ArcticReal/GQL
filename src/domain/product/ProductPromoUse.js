@@ -25,24 +25,24 @@ const ProductPromoUseType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (productPromoUse, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${productPromoUse.orderId}`)
+      resolve: (productPromoUse, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${productPromoUse.orderId}`)
     },
     totalDiscountAmount: {type: GraphQLFloat},
     productPromoCode: {
       type: ProductPromoCodeType,
       args : {productPromoCodeId: {type: GraphQLString}},
-      resolve: (productPromoUse, args, {loaders}) => loaders.ofbiz.load(`productPromoCodes/find?productPromoCodeId=${productPromoUse.productPromoCodeId}`)
+      resolve: (productPromoUse, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromoCodes/find?productPromoCodeId=${productPromoUse.productPromoCodeId}`)
     },
     promoSequenceId: {type: GraphQLString},
     productPromo: {
       type: ProductPromoType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromoUse, args, {loaders}) => loaders.ofbiz.load(`productPromos/find?productPromoId=${productPromoUse.productPromoId}`)
+      resolve: (productPromoUse, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromos/find?productPromoId=${productPromoUse.productPromoId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (productPromoUse, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productPromoUse.partyId}`)
+      resolve: (productPromoUse, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productPromoUse.partyId}`)
     }
   })
 });

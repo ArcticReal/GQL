@@ -25,17 +25,17 @@ const ProductPromoRuleType = new GraphQLObjectType({
     productPromo: {
       type: ProductPromoType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromoRule, args, {loaders}) => loaders.ofbiz.load(`productPromos/find?productPromoId=${productPromoRule.productPromoId}`)
+      resolve: (productPromoRule, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromos/find?productPromoId=${productPromoRule.productPromoId}`)
     },
     productPromoConds: {
       type: new GraphQLList(ProductPromoCondType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromoRule, args, {loaders}) => loaders.ofbizArray.load(`productPromoConds/find?productPromoId=${productPromoRule.productPromoId}`)
+      args : {},
+      resolve: (productPromoRule, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoConds/find?productPromoId=${productPromoRule.productPromoId}`)
     },
     productPromoActions: {
       type: new GraphQLList(ProductPromoActionType),
-      args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromoRule, args, {loaders}) => loaders.ofbizArray.load(`productPromoActions/find?productPromoId=${productPromoRule.productPromoId}`)
+      args : {},
+      resolve: (productPromoRule, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoActions/find?productPromoId=${productPromoRule.productPromoId}`)
     }
   })
 });

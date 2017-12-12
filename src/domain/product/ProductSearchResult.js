@@ -27,8 +27,8 @@ const ProductSearchResultType = new GraphQLObjectType({
     isAscending: {type: GraphQLBoolean},
     productSearchConstraints: {
       type: new GraphQLList(ProductSearchConstraintType),
-      args : {productSearchResultId: {type: GraphQLString}},
-      resolve: (productSearchResult, args, {loaders}) => loaders.ofbizArray.load(`productSearchConstraints/find?productSearchResultId=${productSearchResult.productSearchResultId}`)
+      args : {},
+      resolve: (productSearchResult, args, {loaders}) => loaders.ofbizArray.load(`product/product/productSearchConstraints/find?productSearchResultId=${productSearchResult.productSearchResultId}`)
     }
   })
 });

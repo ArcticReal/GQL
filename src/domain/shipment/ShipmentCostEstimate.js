@@ -25,7 +25,7 @@ const ShipmentCostEstimateType = new GraphQLObjectType({
     productStoreShipMeth: {
       type: ProductStoreShipmentMethType,
       args : {productStoreShipMethId: {type: GraphQLString}},
-      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`productStoreShipmentMeths/find?productStoreShipMethId=${shipmentCostEstimate.productStoreShipMethId}`)
+      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`product/product/productStoreShipmentMeths/find?productStoreShipMethId=${shipmentCostEstimate.productStoreShipMethId}`)
     },
     quantityUnitPrice: {type: GraphQLFloat},
     quantityUomId: {type: GraphQLString},
@@ -37,14 +37,14 @@ const ShipmentCostEstimateType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${shipmentCostEstimate.partyId}`)
+      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${shipmentCostEstimate.partyId}`)
     },
     productFeatureGroupId: {type: GraphQLString},
     oversizePrice: {type: GraphQLFloat},
     shipmentMethodType: {
       type: CarrierShipmentMethodType,
       args : {shipmentMethodTypeId: {type: GraphQLString}},
-      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`carrierShipmentMethods/find?shipmentMethodTypeId=${shipmentCostEstimate.shipmentMethodTypeId}`)
+      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/carrierShipmentMethods/find?shipmentMethodTypeId=${shipmentCostEstimate.shipmentMethodTypeId}`)
     },
     geoIdTo: {type: GraphQLString},
     orderPricePercent: {type: GraphQLFloat},
@@ -52,23 +52,23 @@ const ShipmentCostEstimateType = new GraphQLObjectType({
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${shipmentCostEstimate.roleTypeId}`)
+      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${shipmentCostEstimate.roleTypeId}`)
     },
     shippingPricePercent: {type: GraphQLFloat},
     weightBreak: {
       type: QuantityBreakType,
       args : {weightBreakId: {type: GraphQLString}},
-      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`quantityBreaks/find?quantityBreakId=${shipmentCostEstimate.weightBreakId}`)
+      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`product/quantityBreaks/find?quantityBreakId=${shipmentCostEstimate.weightBreakId}`)
     },
     quantityBreak: {
       type: QuantityBreakType,
       args : {quantityBreakId: {type: GraphQLString}},
-      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`quantityBreaks/find?quantityBreakId=${shipmentCostEstimate.quantityBreakId}`)
+      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`product/quantityBreaks/find?quantityBreakId=${shipmentCostEstimate.quantityBreakId}`)
     },
     priceBreak: {
       type: QuantityBreakType,
       args : {priceBreakId: {type: GraphQLString}},
-      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`quantityBreaks/find?quantityBreakId=${shipmentCostEstimate.priceBreakId}`)
+      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`product/quantityBreaks/find?quantityBreakId=${shipmentCostEstimate.priceBreakId}`)
     },
     carrierPartyId: {type: GraphQLString},
     geoIdFrom: {type: GraphQLString},

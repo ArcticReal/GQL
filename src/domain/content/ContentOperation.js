@@ -22,8 +22,8 @@ const ContentOperationType = new GraphQLObjectType({
     description: {type: GraphQLString},
     contentPurposeOperations: {
       type: new GraphQLList(ContentPurposeOperationType),
-      args : {contentOperationId: {type: GraphQLString}},
-      resolve: (contentOperation, args, {loaders}) => loaders.ofbizArray.load(`contentPurposeOperations/find?contentOperationId=${contentOperation.contentOperationId}`)
+      args : {},
+      resolve: (contentOperation, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentPurposeOperations/find?contentOperationId=${contentOperation.contentOperationId}`)
     }
   })
 });

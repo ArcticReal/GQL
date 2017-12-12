@@ -28,7 +28,7 @@ const ShipmentPackageType = new GraphQLObjectType({
     shipment: {
       type: ShipmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbiz.load(`shipments/find?shipmentId=${shipmentPackage.shipmentId}`)
+      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbiz.load(`/shipments/find?shipmentId=${shipmentPackage.shipmentId}`)
     },
     dimensionUomId: {type: GraphQLString},
     insuredValue: {type: GraphQLFloat},
@@ -40,27 +40,27 @@ const ShipmentPackageType = new GraphQLObjectType({
     shipmentBoxType: {
       type: ShipmentBoxTypeType,
       args : {shipmentBoxTypeId: {type: GraphQLString}},
-      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbiz.load(`shipmentBoxTypes/find?shipmentBoxTypeId=${shipmentPackage.shipmentBoxTypeId}`)
+      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentBoxTypes/find?shipmentBoxTypeId=${shipmentPackage.shipmentBoxTypeId}`)
     },
     shippingDocuments: {
       type: new GraphQLList(ShippingDocumentType),
-      args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbizArray.load(`shippingDocuments/find?shipmentId=${shipmentPackage.shipmentId}`)
+      args : {},
+      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbizArray.load(`shipment/shippingDocuments/find?shipmentId=${shipmentPackage.shipmentId}`)
     },
     shipmentPackageRouteSegs: {
       type: new GraphQLList(ShipmentPackageRouteSegType),
-      args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbizArray.load(`shipmentPackageRouteSegs/find?shipmentId=${shipmentPackage.shipmentId}`)
+      args : {},
+      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentPackageRouteSegs/find?shipmentId=${shipmentPackage.shipmentId}`)
     },
     shipmentReceipts: {
       type: new GraphQLList(ShipmentReceiptType),
-      args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbizArray.load(`shipmentReceipts/find?shipmentId=${shipmentPackage.shipmentId}`)
+      args : {},
+      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentReceipts/find?shipmentId=${shipmentPackage.shipmentId}`)
     },
     shipmentPackageContents: {
       type: new GraphQLList(ShipmentPackageContentType),
-      args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbizArray.load(`shipmentPackageContents/find?shipmentId=${shipmentPackage.shipmentId}`)
+      args : {},
+      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentPackageContents/find?shipmentId=${shipmentPackage.shipmentId}`)
     }
   })
 });

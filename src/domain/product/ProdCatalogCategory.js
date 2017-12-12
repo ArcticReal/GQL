@@ -24,18 +24,18 @@ const ProdCatalogCategoryType = new GraphQLObjectType({
     prodCatalogCategoryType: {
       type: ProdCatalogCategoryTypeType,
       args : {prodCatalogCategoryTypeId: {type: GraphQLString}},
-      resolve: (prodCatalogCategory, args, {loaders}) => loaders.ofbiz.load(`prodCatalogCategoryTypes/find?prodCatalogCategoryTypeId=${prodCatalogCategory.prodCatalogCategoryTypeId}`)
+      resolve: (prodCatalogCategory, args, {loaders}) => loaders.ofbiz.load(`product/prodCatalog/prodCatalogCategoryTypes/find?prodCatalogCategoryTypeId=${prodCatalogCategory.prodCatalogCategoryTypeId}`)
     },
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (prodCatalogCategory, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${prodCatalogCategory.productCategoryId}`)
+      resolve: (prodCatalogCategory, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${prodCatalogCategory.productCategoryId}`)
     },
     sequenceNum: {type: GraphQLInt},
     prodCatalog: {
       type: ProdCatalogType,
       args : {prodCatalogId: {type: GraphQLString}},
-      resolve: (prodCatalogCategory, args, {loaders}) => loaders.ofbiz.load(`prodCatalogs/find?prodCatalogId=${prodCatalogCategory.prodCatalogId}`)
+      resolve: (prodCatalogCategory, args, {loaders}) => loaders.ofbiz.load(`product/prodCatalogs/find?prodCatalogId=${prodCatalogCategory.prodCatalogId}`)
     },
     thruDate: {type: GraphQLString}
   })

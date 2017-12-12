@@ -28,34 +28,34 @@ const EmploymentType = new GraphQLObjectType({
     partyFrom: {
       type: PartyRoleType,
       args : {partyIdFrom: {type: GraphQLString}},
-      resolve: (employment, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${employment.partyIdFrom}`)
+      resolve: (employment, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${employment.partyIdFrom}`)
     },
     terminationReason: {
       type: TerminationReasonType,
       args : {terminationReasonId: {type: GraphQLString}},
-      resolve: (employment, args, {loaders}) => loaders.ofbiz.load(`terminationReasons/find?terminationReasonId=${employment.terminationReasonId}`)
+      resolve: (employment, args, {loaders}) => loaders.ofbiz.load(`humanres/terminationReasons/find?terminationReasonId=${employment.terminationReasonId}`)
     },
     terminationType: {
       type: TerminationTypeType,
       args : {terminationTypeId: {type: GraphQLString}},
-      resolve: (employment, args, {loaders}) => loaders.ofbiz.load(`terminationTypes/find?terminationTypeId=${employment.terminationTypeId}`)
+      resolve: (employment, args, {loaders}) => loaders.ofbiz.load(`humanres/terminationTypes/find?terminationTypeId=${employment.terminationTypeId}`)
     },
     partyTo: {
       type: new GraphQLList(AgreementType),
       args : {partyIdTo: {type: GraphQLString}},
-      resolve: (employment, args, {loaders}) => loaders.ofbizArray.load(`agreements/find?agreementId=${employment.partyIdTo}`)
+      resolve: (employment, args, {loaders}) => loaders.ofbizArray.load(`party/agreements/find?agreementId=${employment.partyIdTo}`)
     },
     roleTypeIdFrom: {type: GraphQLString},
     thruDate: {type: GraphQLString},
     agreementEmploymentAppls: {
       type: new GraphQLList(AgreementEmploymentApplType),
-      args : {roleTypeIdFrom: {type: GraphQLString}},
-      resolve: (employment, args, {loaders}) => loaders.ofbizArray.load(`agreementEmploymentAppls/find?roleTypeIdFrom=${employment.roleTypeIdFrom}`)
+      args : {},
+      resolve: (employment, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementEmploymentAppls/find?roleTypeIdFrom=${employment.roleTypeIdFrom}`)
     },
     payHistories: {
       type: new GraphQLList(PayHistoryType),
-      args : {roleTypeIdFrom: {type: GraphQLString}},
-      resolve: (employment, args, {loaders}) => loaders.ofbizArray.load(`payHistorys/find?roleTypeIdFrom=${employment.roleTypeIdFrom}`)
+      args : {},
+      resolve: (employment, args, {loaders}) => loaders.ofbizArray.load(`humanres/payHistorys/find?roleTypeIdFrom=${employment.roleTypeIdFrom}`)
     }
   })
 });

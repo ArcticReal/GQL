@@ -23,12 +23,12 @@ const SurveyTriggerType = new GraphQLObjectType({
     survey: {
       type: SurveyType,
       args : {surveyId: {type: GraphQLString}},
-      resolve: (surveyTrigger, args, {loaders}) => loaders.ofbiz.load(`surveys/find?surveyId=${surveyTrigger.surveyId}`)
+      resolve: (surveyTrigger, args, {loaders}) => loaders.ofbiz.load(`content/surveys/find?surveyId=${surveyTrigger.surveyId}`)
     },
     surveyApplType: {
       type: SurveyApplTypeType,
       args : {surveyApplTypeId: {type: GraphQLString}},
-      resolve: (surveyTrigger, args, {loaders}) => loaders.ofbiz.load(`surveyApplTypes/find?surveyApplTypeId=${surveyTrigger.surveyApplTypeId}`)
+      resolve: (surveyTrigger, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyApplTypes/find?surveyApplTypeId=${surveyTrigger.surveyApplTypeId}`)
     },
     thruDate: {type: GraphQLString}
   })

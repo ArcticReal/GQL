@@ -34,7 +34,7 @@ const ShipmentGatewayUpsType = new GraphQLObjectType({
     shipmentGatewayConfig: {
       type: ShipmentGatewayConfigType,
       args : {shipmentGatewayConfigId: {type: GraphQLString}},
-      resolve: (shipmentGatewayUps, args, {loaders}) => loaders.ofbiz.load(`shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayUps.shipmentGatewayConfigId}`)
+      resolve: (shipmentGatewayUps, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayUps.shipmentGatewayConfigId}`)
     },
     minEstimateWeight: {type: GraphQLFloat},
     codAllowCod: {type: GraphQLString},

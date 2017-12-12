@@ -23,7 +23,7 @@ const FinAccountAuthType = new GraphQLObjectType({
     finAccount: {
       type: FinAccountType,
       args : {finAccountId: {type: GraphQLString}},
-      resolve: (finAccountAuth, args, {loaders}) => loaders.ofbiz.load(`finAccounts/find?finAccountId=${finAccountAuth.finAccountId}`)
+      resolve: (finAccountAuth, args, {loaders}) => loaders.ofbiz.load(`accounting/finAccounts/find?finAccountId=${finAccountAuth.finAccountId}`)
     },
     amount: {type: GraphQLFloat},
     currencyUomId: {type: GraphQLString},

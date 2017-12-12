@@ -22,25 +22,25 @@ const WorkEffortTypeType = new GraphQLObjectType({
     parentType: {
       type: WorkEffortTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (workEffortType, args, {loaders}) => loaders.ofbiz.load(`workEffortTypes/find?workEffortTypeId=${workEffortType.parentTypeId}`)
+      resolve: (workEffortType, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEffort/workEffortTypes/find?workEffortTypeId=${workEffortType.parentTypeId}`)
     },
     workEffortTypeId: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     workEffortTypes: {
       type: new GraphQLList(WorkEffortTypeType),
-      args : {workEffortTypeId: {type: GraphQLString}},
-      resolve: (workEffortType, args, {loaders}) => loaders.ofbizArray.load(`workEffortTypes/find?workEffortTypeId=${workEffortType.workEffortTypeId}`)
+      args : {},
+      resolve: (workEffortType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortTypes/find?workEffortTypeId=${workEffortType.workEffortTypeId}`)
     },
     workEffortTypeAttrs: {
       type: new GraphQLList(WorkEffortTypeAttrType),
-      args : {workEffortTypeId: {type: GraphQLString}},
-      resolve: (workEffortType, args, {loaders}) => loaders.ofbizArray.load(`workEffortTypeAttrs/find?workEffortTypeId=${workEffortType.workEffortTypeId}`)
+      args : {},
+      resolve: (workEffortType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortTypeAttrs/find?workEffortTypeId=${workEffortType.workEffortTypeId}`)
     },
     workEfforts: {
       type: new GraphQLList(WorkEffortType),
-      args : {workEffortTypeId: {type: GraphQLString}},
-      resolve: (workEffortType, args, {loaders}) => loaders.ofbizArray.load(`workEfforts/find?workEffortTypeId=${workEffortType.workEffortTypeId}`)
+      args : {},
+      resolve: (workEffortType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEfforts/find?workEffortTypeId=${workEffortType.workEffortTypeId}`)
     }
   })
 });

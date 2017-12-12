@@ -21,7 +21,7 @@ const FacilityTypeAttrType = new GraphQLObjectType({
     facilityType: {
       type: FacilityTypeType,
       args : {facilityTypeId: {type: GraphQLString}},
-      resolve: (facilityTypeAttr, args, {loaders}) => loaders.ofbiz.load(`facilityTypes/find?facilityTypeId=${facilityTypeAttr.facilityTypeId}`)
+      resolve: (facilityTypeAttr, args, {loaders}) => loaders.ofbiz.load(`product/facility/facilityTypes/find?facilityTypeId=${facilityTypeAttr.facilityTypeId}`)
     },
     description: {type: GraphQLString},
     attrName: {type: GraphQLString}

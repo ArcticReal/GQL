@@ -28,7 +28,7 @@ const PaymentGatewayResponseType = new GraphQLObjectType({
     paymentMethodType: {
       type: PaymentMethodTypeType,
       args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (paymentGatewayResponse, args, {loaders}) => loaders.ofbiz.load(`paymentMethodTypes/find?paymentMethodTypeId=${paymentGatewayResponse.paymentMethodTypeId}`)
+      resolve: (paymentGatewayResponse, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethodTypes/find?paymentMethodTypeId=${paymentGatewayResponse.paymentMethodTypeId}`)
     },
     transactionDate: {type: GraphQLString},
     resultNsf: {type: GraphQLBoolean},
@@ -36,7 +36,7 @@ const PaymentGatewayResponseType = new GraphQLObjectType({
     orderPaymentPreference: {
       type: OrderPaymentPreferenceType,
       args : {orderPaymentPreferenceId: {type: GraphQLString}},
-      resolve: (paymentGatewayResponse, args, {loaders}) => loaders.ofbiz.load(`orderPaymentPreferences/find?orderPaymentPreferenceId=${paymentGatewayResponse.orderPaymentPreferenceId}`)
+      resolve: (paymentGatewayResponse, args, {loaders}) => loaders.ofbiz.load(`order/orderPaymentPreferences/find?orderPaymentPreferenceId=${paymentGatewayResponse.orderPaymentPreferenceId}`)
     },
     currencyUomId: {type: GraphQLString},
     gatewayCode: {type: GraphQLString},
@@ -45,7 +45,7 @@ const PaymentGatewayResponseType = new GraphQLObjectType({
     paymentMethod: {
       type: PaymentMethodType,
       args : {paymentMethodId: {type: GraphQLString}},
-      resolve: (paymentGatewayResponse, args, {loaders}) => loaders.ofbiz.load(`paymentMethods/find?paymentMethodId=${paymentGatewayResponse.paymentMethodId}`)
+      resolve: (paymentGatewayResponse, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethods/find?paymentMethodId=${paymentGatewayResponse.paymentMethodId}`)
     },
     subReference: {type: GraphQLString},
     gatewayFlag: {type: GraphQLString},
@@ -58,13 +58,13 @@ const PaymentGatewayResponseType = new GraphQLObjectType({
     resultBadExpire: {type: GraphQLBoolean},
     payments: {
       type: new GraphQLList(PaymentType),
-      args : {paymentGatewayResponseId: {type: GraphQLString}},
-      resolve: (paymentGatewayResponse, args, {loaders}) => loaders.ofbizArray.load(`payments/find?paymentGatewayResponseId=${paymentGatewayResponse.paymentGatewayResponseId}`)
+      args : {},
+      resolve: (paymentGatewayResponse, args, {loaders}) => loaders.ofbizArray.load(`accounting/payments/find?paymentGatewayResponseId=${paymentGatewayResponse.paymentGatewayResponseId}`)
     },
     paymentGatewayRespMsgs: {
       type: new GraphQLList(PaymentGatewayRespMsgType),
-      args : {paymentGatewayResponseId: {type: GraphQLString}},
-      resolve: (paymentGatewayResponse, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayRespMsgs/find?paymentGatewayResponseId=${paymentGatewayResponse.paymentGatewayResponseId}`)
+      args : {},
+      resolve: (paymentGatewayResponse, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayRespMsgs/find?paymentGatewayResponseId=${paymentGatewayResponse.paymentGatewayResponseId}`)
     }
   })
 });

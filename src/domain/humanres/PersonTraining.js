@@ -25,7 +25,7 @@ const PersonTrainingType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${personTraining.workEffortId}`)
+      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${personTraining.workEffortId}`)
     },
     fromDate: {type: GraphQLString},
     approvalStatus: {type: GraphQLString},
@@ -33,22 +33,22 @@ const PersonTrainingType = new GraphQLObjectType({
     trainingRequest: {
       type: TrainingRequestType,
       args : {trainingRequestId: {type: GraphQLString}},
-      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`trainingRequests/find?trainingRequestId=${personTraining.trainingRequestId}`)
+      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`humanres/trainingRequests/find?trainingRequestId=${personTraining.trainingRequestId}`)
     },
     approver: {
       type: PersonType,
       args : {approverId: {type: GraphQLString}},
-      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`persons/find?partyId=${personTraining.approverId}`)
+      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`party/persons/find?partyId=${personTraining.approverId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${personTraining.partyId}`)
+      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${personTraining.partyId}`)
     },
     trainingClassType: {
       type: TrainingClassTypeType,
       args : {trainingClassTypeId: {type: GraphQLString}},
-      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`trainingClassTypes/find?trainingClassTypeId=${personTraining.trainingClassTypeId}`)
+      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`humanres/trainingClassTypes/find?trainingClassTypeId=${personTraining.trainingClassTypeId}`)
     },
     thruDate: {type: GraphQLString}
   })

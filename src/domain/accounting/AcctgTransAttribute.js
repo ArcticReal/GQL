@@ -23,7 +23,7 @@ const AcctgTransAttributeType = new GraphQLObjectType({
     acctgTrans: {
       type: AcctgTransType,
       args : {acctgTransId: {type: GraphQLString}},
-      resolve: (acctgTransAttribute, args, {loaders}) => loaders.ofbiz.load(`acctgTranss/find?acctgTransId=${acctgTransAttribute.acctgTransId}`)
+      resolve: (acctgTransAttribute, args, {loaders}) => loaders.ofbiz.load(`accounting/acctgTranss/find?acctgTransId=${acctgTransAttribute.acctgTransId}`)
     },
     attrName: {type: GraphQLString}
   })

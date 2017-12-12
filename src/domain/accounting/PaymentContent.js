@@ -24,17 +24,17 @@ const PaymentContentType = new GraphQLObjectType({
     paymentContentType: {
       type: PaymentContentTypeType,
       args : {paymentContentTypeId: {type: GraphQLString}},
-      resolve: (paymentContent, args, {loaders}) => loaders.ofbiz.load(`paymentContentTypes/find?paymentContentTypeId=${paymentContent.paymentContentTypeId}`)
+      resolve: (paymentContent, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentContentTypes/find?paymentContentTypeId=${paymentContent.paymentContentTypeId}`)
     },
     payment: {
       type: PaymentType,
       args : {paymentId: {type: GraphQLString}},
-      resolve: (paymentContent, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${paymentContent.paymentId}`)
+      resolve: (paymentContent, args, {loaders}) => loaders.ofbiz.load(`accounting/payments/find?paymentId=${paymentContent.paymentId}`)
     },
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (paymentContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${paymentContent.contentId}`)
+      resolve: (paymentContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${paymentContent.contentId}`)
     },
     thruDate: {type: GraphQLString}
   })

@@ -22,12 +22,12 @@ const ProductFeatureDataResourceType = new GraphQLObjectType({
     dataResource: {
       type: DataResourceType,
       args : {dataResourceId: {type: GraphQLString}},
-      resolve: (productFeatureDataResource, args, {loaders}) => loaders.ofbiz.load(`dataResources/find?dataResourceId=${productFeatureDataResource.dataResourceId}`)
+      resolve: (productFeatureDataResource, args, {loaders}) => loaders.ofbiz.load(`content/dataResources/find?dataResourceId=${productFeatureDataResource.dataResourceId}`)
     },
     productFeature: {
       type: ProductFeatureType,
       args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeatureDataResource, args, {loaders}) => loaders.ofbiz.load(`productFeatures/find?productFeatureId=${productFeatureDataResource.productFeatureId}`)
+      resolve: (productFeatureDataResource, args, {loaders}) => loaders.ofbiz.load(`product/product/productFeatures/find?productFeatureId=${productFeatureDataResource.productFeatureId}`)
     }
   })
 });

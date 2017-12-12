@@ -21,7 +21,7 @@ const UserLoginHistoryType = new GraphQLObjectType({
     userLogin: {
       type: UserLoginType,
       args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLoginHistory, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${userLoginHistory.userLoginId}`)
+      resolve: (userLoginHistory, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${userLoginHistory.userLoginId}`)
     },
     fromDate: {type: GraphQLString},
     visitId: {type: GraphQLString},

@@ -28,28 +28,28 @@ const TimesheetType = new GraphQLObjectType({
     approvedByUserLogin: {
       type: UserLoginType,
       args : {approvedByUserLoginId: {type: GraphQLString}},
-      resolve: (timesheet, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${timesheet.approvedByUserLoginId}`)
+      resolve: (timesheet, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${timesheet.approvedByUserLoginId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (timesheet, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${timesheet.partyId}`)
+      resolve: (timesheet, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${timesheet.partyId}`)
     },
     clientParty: {
       type: PartyType,
       args : {clientPartyId: {type: GraphQLString}},
-      resolve: (timesheet, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${timesheet.clientPartyId}`)
+      resolve: (timesheet, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${timesheet.clientPartyId}`)
     },
     thruDate: {type: GraphQLString},
     timeEntries: {
       type: new GraphQLList(TimeEntryType),
-      args : {timesheetId: {type: GraphQLString}},
-      resolve: (timesheet, args, {loaders}) => loaders.ofbizArray.load(`timeEntrys/find?timesheetId=${timesheet.timesheetId}`)
+      args : {},
+      resolve: (timesheet, args, {loaders}) => loaders.ofbizArray.load(`workeffort/timeEntrys/find?timesheetId=${timesheet.timesheetId}`)
     },
     timesheetRoles: {
       type: new GraphQLList(TimesheetRoleType),
-      args : {timesheetId: {type: GraphQLString}},
-      resolve: (timesheet, args, {loaders}) => loaders.ofbizArray.load(`timesheetRoles/find?timesheetId=${timesheet.timesheetId}`)
+      args : {},
+      resolve: (timesheet, args, {loaders}) => loaders.ofbizArray.load(`workeffort/timesheet/timesheetRoles/find?timesheetId=${timesheet.timesheetId}`)
     }
   })
 });

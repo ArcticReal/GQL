@@ -36,7 +36,7 @@ const CustRequestType = new GraphQLObjectType({
     fromParty: {
       type: PartyType,
       args : {fromPartyId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${custRequest.fromPartyId}`)
+      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${custRequest.fromPartyId}`)
     },
     custRequestName: {type: GraphQLString},
     responseRequiredDate: {type: GraphQLString},
@@ -45,7 +45,7 @@ const CustRequestType = new GraphQLObjectType({
     fulfillContactMech: {
       type: ContactMechType,
       args : {fulfillContactMechId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${custRequest.fulfillContactMechId}`)
+      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${custRequest.fulfillContactMechId}`)
     },
     description: {type: GraphQLString},
     custRequestDate: {type: GraphQLString},
@@ -61,69 +61,69 @@ const CustRequestType = new GraphQLObjectType({
     custRequestType: {
       type: CustRequestTypeType,
       args : {custRequestTypeId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`custRequestTypes/find?custRequestTypeId=${custRequest.custRequestTypeId}`)
+      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`order/custRequest/custRequestTypes/find?custRequestTypeId=${custRequest.custRequestTypeId}`)
     },
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${custRequest.productStoreId}`)
+      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${custRequest.productStoreId}`)
     },
     custRequestCategory: {
       type: CustRequestCategoryType,
       args : {custRequestCategoryId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`custRequestCategorys/find?custRequestCategoryId=${custRequest.custRequestCategoryId}`)
+      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`order/custRequest/custRequestCategorys/find?custRequestCategoryId=${custRequest.custRequestCategoryId}`)
     },
     createdByUserLogin: {type: GraphQLString},
     closedDateTime: {type: GraphQLString},
     custRequestAttributes: {
       type: new GraphQLList(CustRequestAttributeType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestAttributes/find?custRequestId=${custRequest.custRequestId}`)
+      args : {},
+      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestAttributes/find?custRequestId=${custRequest.custRequestId}`)
     },
     custRequestStatuses: {
       type: new GraphQLList(CustRequestStatusType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestStatuss/find?custRequestId=${custRequest.custRequestId}`)
+      args : {},
+      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestStatuss/find?custRequestId=${custRequest.custRequestId}`)
     },
     respondingParties: {
       type: new GraphQLList(RespondingPartyType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`respondingPartys/find?custRequestId=${custRequest.custRequestId}`)
+      args : {},
+      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`order/respondingPartys/find?custRequestId=${custRequest.custRequestId}`)
     },
     custRequestNotes: {
       type: new GraphQLList(CustRequestNoteType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestNotes/find?custRequestId=${custRequest.custRequestId}`)
+      args : {},
+      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestNotes/find?custRequestId=${custRequest.custRequestId}`)
     },
     custRequestWorkEfforts: {
       type: new GraphQLList(CustRequestWorkEffortType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestWorkEfforts/find?custRequestId=${custRequest.custRequestId}`)
+      args : {},
+      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestWorkEfforts/find?custRequestId=${custRequest.custRequestId}`)
     },
     custRequestItems: {
       type: new GraphQLList(CustRequestItemType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestItems/find?custRequestId=${custRequest.custRequestId}`)
+      args : {},
+      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestItems/find?custRequestId=${custRequest.custRequestId}`)
     },
     custRequestParties: {
       type: new GraphQLList(CustRequestPartyType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestPartys/find?custRequestId=${custRequest.custRequestId}`)
+      args : {},
+      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestPartys/find?custRequestId=${custRequest.custRequestId}`)
     },
     custRequestContents: {
       type: new GraphQLList(CustRequestContentType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestContents/find?custRequestId=${custRequest.custRequestId}`)
+      args : {},
+      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestContents/find?custRequestId=${custRequest.custRequestId}`)
     },
     quoteItems: {
       type: new GraphQLList(QuoteItemType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`quoteItems/find?custRequestId=${custRequest.custRequestId}`)
+      args : {},
+      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteItems/find?custRequestId=${custRequest.custRequestId}`)
     },
     custRequestCommEvents: {
       type: new GraphQLList(CustRequestCommEventType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`custRequestCommEvents/find?custRequestId=${custRequest.custRequestId}`)
+      args : {},
+      resolve: (custRequest, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestCommEvents/find?custRequestId=${custRequest.custRequestId}`)
     }
   })
 });

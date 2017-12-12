@@ -23,13 +23,13 @@ const FacilityGroupMemberType = new GraphQLObjectType({
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (facilityGroupMember, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${facilityGroupMember.facilityId}`)
+      resolve: (facilityGroupMember, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${facilityGroupMember.facilityId}`)
     },
     sequenceNum: {type: GraphQLInt},
     facilityGroup: {
       type: FacilityGroupType,
       args : {facilityGroupId: {type: GraphQLString}},
-      resolve: (facilityGroupMember, args, {loaders}) => loaders.ofbiz.load(`facilityGroups/find?facilityGroupId=${facilityGroupMember.facilityGroupId}`)
+      resolve: (facilityGroupMember, args, {loaders}) => loaders.ofbiz.load(`product/facility/facilityGroups/find?facilityGroupId=${facilityGroupMember.facilityGroupId}`)
     },
     thruDate: {type: GraphQLString}
   })

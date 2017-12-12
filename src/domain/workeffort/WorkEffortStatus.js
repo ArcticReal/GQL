@@ -22,14 +22,14 @@ const WorkEffortStatusType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortStatus, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortStatus.workEffortId}`)
+      resolve: (workEffortStatus, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortStatus.workEffortId}`)
     },
     reason: {type: GraphQLString},
     statusId: {type: GraphQLString},
     setByUserLogin: {
       type: UserLoginType,
       args : {setByUserLogin: {type: GraphQLString}},
-      resolve: (workEffortStatus, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${workEffortStatus.setByUserLogin}`)
+      resolve: (workEffortStatus, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${workEffortStatus.setByUserLogin}`)
     },
     statusDatetime: {type: GraphQLString}
   })

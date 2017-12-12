@@ -23,20 +23,20 @@ const ProductConfigProductType = new GraphQLObjectType({
     configItem: {
       type: ProductConfigOptionType,
       args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigProduct, args, {loaders}) => loaders.ofbiz.load(`productConfigOptions/find?configItemId=${productConfigProduct.configItemId}`)
+      resolve: (productConfigProduct, args, {loaders}) => loaders.ofbiz.load(`product/product/productConfigOptions/find?configItemId=${productConfigProduct.configItemId}`)
     },
     quantity: {type: GraphQLFloat},
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productConfigProduct, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productConfigProduct.productId}`)
+      resolve: (productConfigProduct, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productConfigProduct.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     configOptionId: {type: GraphQLString},
     configOptionProductOptions: {
       type: new GraphQLList(ConfigOptionProductOptionType),
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigProduct, args, {loaders}) => loaders.ofbizArray.load(`configOptionProductOptions/find?configItemId=${productConfigProduct.configItemId}`)
+      args : {},
+      resolve: (productConfigProduct, args, {loaders}) => loaders.ofbizArray.load(`product/product/configOptionProductOptions/find?configItemId=${productConfigProduct.configItemId}`)
     }
   })
 });

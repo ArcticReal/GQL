@@ -33,12 +33,12 @@ const ShipmentReceiptType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${shipmentReceipt.productId}`)
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${shipmentReceipt.productId}`)
     },
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${shipmentReceipt.orderId}`)
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${shipmentReceipt.orderId}`)
     },
     quantityAccepted: {type: GraphQLFloat},
     shipmentPackageSeqId: {type: GraphQLString},
@@ -47,27 +47,27 @@ const ShipmentReceiptType = new GraphQLObjectType({
     inventoryItem: {
       type: InventoryItemType,
       args : {inventoryItemId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${shipmentReceipt.inventoryItemId}`)
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItems/find?inventoryItemId=${shipmentReceipt.inventoryItemId}`)
     },
     rejection: {
       type: RejectionReasonType,
       args : {rejectionId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`rejectionReasons/find?rejectionId=${shipmentReceipt.rejectionId}`)
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`shipment/rejectionReasons/find?rejectionId=${shipmentReceipt.rejectionId}`)
     },
     shipment: {
       type: ShipmentItemType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`shipmentItems/find?shipmentId=${shipmentReceipt.shipmentId}`)
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentItems/find?shipmentId=${shipmentReceipt.shipmentId}`)
     },
     receivedByUserLogin: {
       type: UserLoginType,
       args : {receivedByUserLoginId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${shipmentReceipt.receivedByUserLoginId}`)
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${shipmentReceipt.receivedByUserLoginId}`)
     },
     return: {
       type: ReturnItemType,
       args : {returnId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`returnItems/find?returnId=${shipmentReceipt.returnId}`)
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`order/returnItems/find?returnId=${shipmentReceipt.returnId}`)
     },
     returnItemSeqId: {type: GraphQLString},
     datetimeReceived: {type: GraphQLString},
@@ -75,28 +75,28 @@ const ShipmentReceiptType = new GraphQLObjectType({
     receiptId: {type: GraphQLString},
     returnItemBillings: {
       type: new GraphQLList(ReturnItemBillingType),
-      args : {receiptId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbizArray.load(`returnItemBillings/find?receiptId=${shipmentReceipt.receiptId}`)
+      args : {},
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbizArray.load(`order/returnItem/returnItemBillings/find?receiptId=${shipmentReceipt.receiptId}`)
     },
     acctgTranses: {
       type: new GraphQLList(AcctgTransType),
-      args : {receiptId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbizArray.load(`acctgTranss/find?receiptId=${shipmentReceipt.receiptId}`)
+      args : {},
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTranss/find?receiptId=${shipmentReceipt.receiptId}`)
     },
     shipmentReceiptRoles: {
       type: new GraphQLList(ShipmentReceiptRoleType),
-      args : {receiptId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbizArray.load(`shipmentReceiptRoles/find?receiptId=${shipmentReceipt.receiptId}`)
+      args : {},
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentReceiptRoles/find?receiptId=${shipmentReceipt.receiptId}`)
     },
     inventoryItemDetails: {
       type: new GraphQLList(InventoryItemDetailType),
-      args : {receiptId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemDetails/find?receiptId=${shipmentReceipt.receiptId}`)
+      args : {},
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemDetails/find?receiptId=${shipmentReceipt.receiptId}`)
     },
     orderItemBillings: {
       type: new GraphQLList(OrderItemBillingType),
-      args : {receiptId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbizArray.load(`orderItemBillings/find?receiptId=${shipmentReceipt.receiptId}`)
+      args : {},
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemBillings/find?receiptId=${shipmentReceipt.receiptId}`)
     }
   })
 });

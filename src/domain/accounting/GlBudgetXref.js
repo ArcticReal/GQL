@@ -24,12 +24,12 @@ const GlBudgetXrefType = new GraphQLObjectType({
     glAccount: {
       type: GlAccountType,
       args : {glAccountId: {type: GraphQLString}},
-      resolve: (glBudgetXref, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${glBudgetXref.glAccountId}`)
+      resolve: (glBudgetXref, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${glBudgetXref.glAccountId}`)
     },
     budgetItemType: {
       type: BudgetItemTypeType,
       args : {budgetItemTypeId: {type: GraphQLString}},
-      resolve: (glBudgetXref, args, {loaders}) => loaders.ofbiz.load(`budgetItemTypes/find?budgetItemTypeId=${glBudgetXref.budgetItemTypeId}`)
+      resolve: (glBudgetXref, args, {loaders}) => loaders.ofbiz.load(`accounting/budget/budgetItemTypes/find?budgetItemTypeId=${glBudgetXref.budgetItemTypeId}`)
     },
     thruDate: {type: GraphQLString}
   })

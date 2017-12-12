@@ -22,7 +22,7 @@ const SegmentGroupGeoType = new GraphQLObjectType({
     segmentGroup: {
       type: SegmentGroupType,
       args : {segmentGroupId: {type: GraphQLString}},
-      resolve: (segmentGroupGeo, args, {loaders}) => loaders.ofbiz.load(`segmentGroups/find?segmentGroupId=${segmentGroupGeo.segmentGroupId}`)
+      resolve: (segmentGroupGeo, args, {loaders}) => loaders.ofbiz.load(`marketing/segmentGroups/find?segmentGroupId=${segmentGroupGeo.segmentGroupId}`)
     }
   })
 });

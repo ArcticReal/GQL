@@ -22,7 +22,7 @@ const PaymentGatewayAuthorizeNetType = new GraphQLObjectType({
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayAuthorizeNet, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayAuthorizeNet.paymentGatewayConfigId}`)
+      resolve: (paymentGatewayAuthorizeNet, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayAuthorizeNet.paymentGatewayConfigId}`)
     },
     method: {type: GraphQLString},
     transDescription: {type: GraphQLString},

@@ -22,13 +22,13 @@ const ContentPurposeType = new GraphQLObjectType({
     contentPurposeType: {
       type: ContentPurposeTypeType,
       args : {contentPurposeTypeId: {type: GraphQLString}},
-      resolve: (contentPurpose, args, {loaders}) => loaders.ofbiz.load(`contentPurposeTypes/find?contentPurposeTypeId=${contentPurpose.contentPurposeTypeId}`)
+      resolve: (contentPurpose, args, {loaders}) => loaders.ofbiz.load(`content/content/contentPurposeTypes/find?contentPurposeTypeId=${contentPurpose.contentPurposeTypeId}`)
     },
     sequenceNum: {type: GraphQLInt},
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (contentPurpose, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentPurpose.contentId}`)
+      resolve: (contentPurpose, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentPurpose.contentId}`)
     }
   })
 });

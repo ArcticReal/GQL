@@ -22,25 +22,25 @@ const AgreementTypeType = new GraphQLObjectType({
     parentType: {
       type: AgreementTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (agreementType, args, {loaders}) => loaders.ofbiz.load(`agreementTypes/find?agreementTypeId=${agreementType.parentTypeId}`)
+      resolve: (agreementType, args, {loaders}) => loaders.ofbiz.load(`party/agreement/agreementTypes/find?agreementTypeId=${agreementType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     agreementTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     agreements: {
       type: new GraphQLList(AgreementType),
-      args : {agreementTypeId: {type: GraphQLString}},
-      resolve: (agreementType, args, {loaders}) => loaders.ofbizArray.load(`agreements/find?agreementTypeId=${agreementType.agreementTypeId}`)
+      args : {},
+      resolve: (agreementType, args, {loaders}) => loaders.ofbizArray.load(`party/agreements/find?agreementTypeId=${agreementType.agreementTypeId}`)
     },
     agreementTypes: {
       type: new GraphQLList(AgreementTypeType),
-      args : {agreementTypeId: {type: GraphQLString}},
-      resolve: (agreementType, args, {loaders}) => loaders.ofbizArray.load(`agreementTypes/find?agreementTypeId=${agreementType.agreementTypeId}`)
+      args : {},
+      resolve: (agreementType, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementTypes/find?agreementTypeId=${agreementType.agreementTypeId}`)
     },
     agreementTypeAttrs: {
       type: new GraphQLList(AgreementTypeAttrType),
-      args : {agreementTypeId: {type: GraphQLString}},
-      resolve: (agreementType, args, {loaders}) => loaders.ofbizArray.load(`agreementTypeAttrs/find?agreementTypeId=${agreementType.agreementTypeId}`)
+      args : {},
+      resolve: (agreementType, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementTypeAttrs/find?agreementTypeId=${agreementType.agreementTypeId}`)
     }
   })
 });

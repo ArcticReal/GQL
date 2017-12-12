@@ -22,8 +22,8 @@ const CommContentAssocTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     commEventContentAssocs: {
       type: new GraphQLList(CommEventContentAssocType),
-      args : {commContentAssocTypeId: {type: GraphQLString}},
-      resolve: (commContentAssocType, args, {loaders}) => loaders.ofbizArray.load(`commEventContentAssocs/find?commContentAssocTypeId=${commContentAssocType.commContentAssocTypeId}`)
+      args : {},
+      resolve: (commContentAssocType, args, {loaders}) => loaders.ofbizArray.load(`party/commEventContentAssocs/find?commContentAssocTypeId=${commContentAssocType.commContentAssocTypeId}`)
     }
   })
 });

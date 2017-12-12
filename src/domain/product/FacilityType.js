@@ -22,25 +22,25 @@ const FacilityTypeType = new GraphQLObjectType({
     parentType: {
       type: FacilityTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (facilityType, args, {loaders}) => loaders.ofbiz.load(`facilityTypes/find?facilityTypeId=${facilityType.parentTypeId}`)
+      resolve: (facilityType, args, {loaders}) => loaders.ofbiz.load(`product/facility/facilityTypes/find?facilityTypeId=${facilityType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     facilityTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     facilities: {
       type: new GraphQLList(FacilityType),
-      args : {facilityTypeId: {type: GraphQLString}},
-      resolve: (facilityType, args, {loaders}) => loaders.ofbizArray.load(`facilitys/find?facilityTypeId=${facilityType.facilityTypeId}`)
+      args : {},
+      resolve: (facilityType, args, {loaders}) => loaders.ofbizArray.load(`product/facilitys/find?facilityTypeId=${facilityType.facilityTypeId}`)
     },
     facilityTypeAttrs: {
       type: new GraphQLList(FacilityTypeAttrType),
-      args : {facilityTypeId: {type: GraphQLString}},
-      resolve: (facilityType, args, {loaders}) => loaders.ofbizArray.load(`facilityTypeAttrs/find?facilityTypeId=${facilityType.facilityTypeId}`)
+      args : {},
+      resolve: (facilityType, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityTypeAttrs/find?facilityTypeId=${facilityType.facilityTypeId}`)
     },
     facilityTypes: {
       type: new GraphQLList(FacilityTypeType),
-      args : {facilityTypeId: {type: GraphQLString}},
-      resolve: (facilityType, args, {loaders}) => loaders.ofbizArray.load(`facilityTypes/find?facilityTypeId=${facilityType.facilityTypeId}`)
+      args : {},
+      resolve: (facilityType, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityTypes/find?facilityTypeId=${facilityType.facilityTypeId}`)
     }
   })
 });

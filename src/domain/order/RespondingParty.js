@@ -24,18 +24,18 @@ const RespondingPartyType = new GraphQLObjectType({
     custRequest: {
       type: CustRequestType,
       args : {custRequestId: {type: GraphQLString}},
-      resolve: (respondingParty, args, {loaders}) => loaders.ofbiz.load(`custRequests/find?custRequestId=${respondingParty.custRequestId}`)
+      resolve: (respondingParty, args, {loaders}) => loaders.ofbiz.load(`order/custRequests/find?custRequestId=${respondingParty.custRequestId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (respondingParty, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${respondingParty.partyId}`)
+      resolve: (respondingParty, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${respondingParty.partyId}`)
     },
     dateSent: {type: GraphQLString},
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (respondingParty, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${respondingParty.contactMechId}`)
+      resolve: (respondingParty, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${respondingParty.contactMechId}`)
     }
   })
 });

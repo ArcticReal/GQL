@@ -24,7 +24,7 @@ const OrderTermAttributeType = new GraphQLObjectType({
     termType: {
       type: OrderTermType,
       args : {termTypeId: {type: GraphQLString}},
-      resolve: (orderTermAttribute, args, {loaders}) => loaders.ofbiz.load(`orderTerms/find?termTypeId=${orderTermAttribute.termTypeId}`)
+      resolve: (orderTermAttribute, args, {loaders}) => loaders.ofbiz.load(`order/orderTerms/find?termTypeId=${orderTermAttribute.termTypeId}`)
     },
     attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}

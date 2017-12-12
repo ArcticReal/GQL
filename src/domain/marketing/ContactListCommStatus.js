@@ -26,28 +26,28 @@ const ContactListCommStatusType = new GraphQLObjectType({
     contactList: {
       type: ContactListType,
       args : {contactListId: {type: GraphQLString}},
-      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`contactLists/find?contactListId=${contactListCommStatus.contactListId}`)
+      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`marketing/contactLists/find?contactListId=${contactListCommStatus.contactListId}`)
     },
     communicationEvent: {
       type: CommunicationEventType,
       args : {communicationEventId: {type: GraphQLString}},
-      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`communicationEvents/find?communicationEventId=${contactListCommStatus.communicationEventId}`)
+      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvents/find?communicationEventId=${contactListCommStatus.communicationEventId}`)
     },
     messageId: {type: GraphQLString},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${contactListCommStatus.partyId}`)
+      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${contactListCommStatus.partyId}`)
     },
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${contactListCommStatus.contactMechId}`)
+      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${contactListCommStatus.contactMechId}`)
     },
     changeByUserLogin: {
       type: UserLoginType,
       args : {changeByUserLoginId: {type: GraphQLString}},
-      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${contactListCommStatus.changeByUserLoginId}`)
+      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${contactListCommStatus.changeByUserLoginId}`)
     }
   })
 });

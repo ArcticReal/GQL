@@ -23,13 +23,13 @@ const ProductFeatureGroupType = new GraphQLObjectType({
     productFeatureGroupId: {type: GraphQLString},
     productFeatureGroupAppls: {
       type: new GraphQLList(ProductFeatureGroupApplType),
-      args : {productFeatureGroupId: {type: GraphQLString}},
-      resolve: (productFeatureGroup, args, {loaders}) => loaders.ofbizArray.load(`productFeatureGroupAppls/find?productFeatureGroupId=${productFeatureGroup.productFeatureGroupId}`)
+      args : {},
+      resolve: (productFeatureGroup, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureGroupAppls/find?productFeatureGroupId=${productFeatureGroup.productFeatureGroupId}`)
     },
     productFeatureCatGrpAppls: {
       type: new GraphQLList(ProductFeatureCatGrpApplType),
-      args : {productFeatureGroupId: {type: GraphQLString}},
-      resolve: (productFeatureGroup, args, {loaders}) => loaders.ofbizArray.load(`productFeatureCatGrpAppls/find?productFeatureGroupId=${productFeatureGroup.productFeatureGroupId}`)
+      args : {},
+      resolve: (productFeatureGroup, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureCatGrpAppls/find?productFeatureGroupId=${productFeatureGroup.productFeatureGroupId}`)
     }
   })
 });

@@ -22,14 +22,14 @@ const PaymentGroupMemberType = new GraphQLObjectType({
     paymentGroup: {
       type: PaymentGroupType,
       args : {paymentGroupId: {type: GraphQLString}},
-      resolve: (paymentGroupMember, args, {loaders}) => loaders.ofbiz.load(`paymentGroups/find?paymentGroupId=${paymentGroupMember.paymentGroupId}`)
+      resolve: (paymentGroupMember, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGroups/find?paymentGroupId=${paymentGroupMember.paymentGroupId}`)
     },
     fromDate: {type: GraphQLString},
     sequenceNum: {type: GraphQLInt},
     payment: {
       type: PaymentType,
       args : {paymentId: {type: GraphQLString}},
-      resolve: (paymentGroupMember, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${paymentGroupMember.paymentId}`)
+      resolve: (paymentGroupMember, args, {loaders}) => loaders.ofbiz.load(`accounting/payments/find?paymentId=${paymentGroupMember.paymentId}`)
     },
     thruDate: {type: GraphQLString}
   })

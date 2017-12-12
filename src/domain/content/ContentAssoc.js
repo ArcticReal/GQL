@@ -26,14 +26,14 @@ const ContentAssocType = new GraphQLObjectType({
     contentTo: {
       type: ContentType,
       args : {contentIdTo: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentAssoc.contentIdTo}`)
+      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentAssoc.contentIdTo}`)
     },
     upperCoordinate: {type: GraphQLInt},
     leftCoordinate: {type: GraphQLInt},
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentAssoc.contentId}`)
+      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentAssoc.contentId}`)
     },
     mapKey: {type: GraphQLString},
     thruDate: {type: GraphQLString},
@@ -41,24 +41,24 @@ const ContentAssocType = new GraphQLObjectType({
     contentAssocPredicate: {
       type: ContentAssocPredicateType,
       args : {contentAssocPredicateId: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`contentAssocPredicates/find?contentAssocPredicateId=${contentAssoc.contentAssocPredicateId}`)
+      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`content/content/contentAssocPredicates/find?contentAssocPredicateId=${contentAssoc.contentAssocPredicateId}`)
     },
     dataSourceId: {type: GraphQLString},
     lastModifiedByUserLogin: {
       type: UserLoginType,
       args : {lastModifiedByUserLogin: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${contentAssoc.lastModifiedByUserLogin}`)
+      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${contentAssoc.lastModifiedByUserLogin}`)
     },
     createdDate: {type: GraphQLString},
     contentAssocType: {
       type: ContentAssocTypeType,
       args : {contentAssocTypeId: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`contentAssocTypes/find?contentAssocTypeId=${contentAssoc.contentAssocTypeId}`)
+      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`content/content/contentAssocTypes/find?contentAssocTypeId=${contentAssoc.contentAssocTypeId}`)
     },
     createdByUserLogin: {
       type: UserLoginType,
       args : {createdByUserLogin: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${contentAssoc.createdByUserLogin}`)
+      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${contentAssoc.createdByUserLogin}`)
     }
   })
 });

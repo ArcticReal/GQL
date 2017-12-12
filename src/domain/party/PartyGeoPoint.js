@@ -22,7 +22,7 @@ const PartyGeoPointType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyGeoPoint, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyGeoPoint.partyId}`)
+      resolve: (partyGeoPoint, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyGeoPoint.partyId}`)
     },
     geoPointId: {type: GraphQLString},
     thruDate: {type: GraphQLString}

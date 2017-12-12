@@ -24,7 +24,7 @@ const ShipmentGatewayDhlType = new GraphQLObjectType({
     shipmentGatewayConfig: {
       type: ShipmentGatewayConfigType,
       args : {shipmentGatewayConfigId: {type: GraphQLString}},
-      resolve: (shipmentGatewayDhl, args, {loaders}) => loaders.ofbiz.load(`shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayDhl.shipmentGatewayConfigId}`)
+      resolve: (shipmentGatewayDhl, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayDhl.shipmentGatewayConfigId}`)
     },
     rateEstimateTemplate: {type: GraphQLString},
     connectTimeout: {type: GraphQLInt},

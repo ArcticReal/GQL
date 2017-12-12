@@ -25,22 +25,22 @@ const TrackingCodeOrderReturnType = new GraphQLObjectType({
     trackingCode: {
       type: TrackingCodeType,
       args : {trackingCodeId: {type: GraphQLString}},
-      resolve: (trackingCodeOrderReturn, args, {loaders}) => loaders.ofbiz.load(`trackingCodes/find?trackingCodeId=${trackingCodeOrderReturn.trackingCodeId}`)
+      resolve: (trackingCodeOrderReturn, args, {loaders}) => loaders.ofbiz.load(`marketing/trackingCodes/find?trackingCodeId=${trackingCodeOrderReturn.trackingCodeId}`)
     },
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (trackingCodeOrderReturn, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${trackingCodeOrderReturn.orderId}`)
+      resolve: (trackingCodeOrderReturn, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${trackingCodeOrderReturn.orderId}`)
     },
     trackingCodeType: {
       type: TrackingCodeTypeType,
       args : {trackingCodeTypeId: {type: GraphQLString}},
-      resolve: (trackingCodeOrderReturn, args, {loaders}) => loaders.ofbiz.load(`trackingCodeTypes/find?trackingCodeTypeId=${trackingCodeOrderReturn.trackingCodeTypeId}`)
+      resolve: (trackingCodeOrderReturn, args, {loaders}) => loaders.ofbiz.load(`marketing/trackingCode/trackingCodeTypes/find?trackingCodeTypeId=${trackingCodeOrderReturn.trackingCodeTypeId}`)
     },
     return: {
       type: ReturnHeaderType,
       args : {returnId: {type: GraphQLString}},
-      resolve: (trackingCodeOrderReturn, args, {loaders}) => loaders.ofbiz.load(`returnHeaders/find?returnId=${trackingCodeOrderReturn.returnId}`)
+      resolve: (trackingCodeOrderReturn, args, {loaders}) => loaders.ofbiz.load(`order/returnHeaders/find?returnId=${trackingCodeOrderReturn.returnId}`)
     },
     siteId: {type: GraphQLString},
     hasExported: {type: GraphQLBoolean},

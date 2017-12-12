@@ -41,114 +41,114 @@ const RoleTypeType = new GraphQLObjectType({
     parentType: {
       type: RoleTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${roleType.parentTypeId}`)
+      resolve: (roleType, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${roleType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     productContents: {
       type: new GraphQLList(ProductContentType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`productContents/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productContents/find?roleTypeId=${roleType.roleTypeId}`)
     },
     partyRelationshipTypes: {
       type: new GraphQLList(PartyRelationshipTypeType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`partyRelationshipTypes/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyRelationshipTypes/find?roleTypeId=${roleType.roleTypeId}`)
     },
     contentPurposeOperations: {
       type: new GraphQLList(ContentPurposeOperationType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`contentPurposeOperations/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentPurposeOperations/find?roleTypeId=${roleType.roleTypeId}`)
     },
     communicationEvents: {
       type: new GraphQLList(CommunicationEventType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`communicationEvents/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvents/find?roleTypeId=${roleType.roleTypeId}`)
     },
     shipmentCostEstimates: {
       type: new GraphQLList(ShipmentCostEstimateType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`shipmentCostEstimates/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentCostEstimates/find?roleTypeId=${roleType.roleTypeId}`)
     },
     fixedAssets: {
       type: new GraphQLList(FixedAssetType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssets/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAssets/find?roleTypeId=${roleType.roleTypeId}`)
     },
     partyNeeds: {
       type: new GraphQLList(PartyNeedType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`partyNeeds/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyNeeds/find?roleTypeId=${roleType.roleTypeId}`)
     },
     productSubscriptionResources: {
       type: new GraphQLList(ProductSubscriptionResourceType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`productSubscriptionResources/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productSubscriptionResources/find?roleTypeId=${roleType.roleTypeId}`)
     },
     payments: {
       type: new GraphQLList(PaymentType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`payments/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payments/find?roleTypeId=${roleType.roleTypeId}`)
     },
     contentApprovals: {
       type: new GraphQLList(ContentApprovalType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`contentApprovals/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentApprovals/find?roleTypeId=${roleType.roleTypeId}`)
     },
     partyContactMeches: {
       type: new GraphQLList(PartyContactMechType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`partyContactMechs/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`party/contactMech/partyContactMechs/find?roleTypeId=${roleType.roleTypeId}`)
     },
     validContactMechRoles: {
       type: new GraphQLList(ValidContactMechRoleType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`validContactMechRoles/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`party/contactMech/validContactMechRoles/find?roleTypeId=${roleType.roleTypeId}`)
     },
     subscriptions: {
       type: new GraphQLList(SubscriptionType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`subscriptions/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`product/subscriptions/find?roleTypeId=${roleType.roleTypeId}`)
     },
     roleTypeAttrs: {
       type: new GraphQLList(RoleTypeAttrType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`roleTypeAttrs/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`party/roleType/roleTypeAttrs/find?roleTypeId=${roleType.roleTypeId}`)
     },
     acctgTranses: {
       type: new GraphQLList(AcctgTransType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`acctgTranss/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTranss/find?roleTypeId=${roleType.roleTypeId}`)
     },
     facilityParties: {
       type: new GraphQLList(FacilityPartyType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`facilityPartys/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityPartys/find?roleTypeId=${roleType.roleTypeId}`)
     },
     invoices: {
       type: new GraphQLList(InvoiceType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`invoices/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoices/find?roleTypeId=${roleType.roleTypeId}`)
     },
     partyInvitationRoleAssocs: {
       type: new GraphQLList(PartyInvitationRoleAssocType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`partyInvitationRoleAssocs/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyInvitationRoleAssocs/find?roleTypeId=${roleType.roleTypeId}`)
     },
     acctgTransEntries: {
       type: new GraphQLList(AcctgTransEntryType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`acctgTransEntrys/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTrans/acctgTransEntrys/find?roleTypeId=${roleType.roleTypeId}`)
     },
     roleTypes: {
       type: new GraphQLList(RoleTypeType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`roleTypes/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`party/roleTypes/find?roleTypeId=${roleType.roleTypeId}`)
     },
     partyRoles: {
       type: new GraphQLList(PartyRoleType),
-      args : {roleTypeId: {type: GraphQLString}},
-      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`partyRoles/find?roleTypeId=${roleType.roleTypeId}`)
+      args : {},
+      resolve: (roleType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyRoles/find?roleTypeId=${roleType.roleTypeId}`)
     }
   })
 });

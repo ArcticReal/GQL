@@ -24,7 +24,7 @@ const SalesForecastHistoryType = new GraphQLObjectType({
     modifiedByUserLogin: {
       type: UserLoginType,
       args : {modifiedByUserLoginId: {type: GraphQLString}},
-      resolve: (salesForecastHistory, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${salesForecastHistory.modifiedByUserLoginId}`)
+      resolve: (salesForecastHistory, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${salesForecastHistory.modifiedByUserLoginId}`)
     },
     quotaAmount: {type: GraphQLFloat},
     bestCaseAmount: {type: GraphQLFloat},
@@ -33,13 +33,13 @@ const SalesForecastHistoryType = new GraphQLObjectType({
     internalParty: {
       type: PartyType,
       args : {internalPartyId: {type: GraphQLString}},
-      resolve: (salesForecastHistory, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${salesForecastHistory.internalPartyId}`)
+      resolve: (salesForecastHistory, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${salesForecastHistory.internalPartyId}`)
     },
     closedAmount: {type: GraphQLFloat},
     salesForecast: {
       type: SalesForecastType,
       args : {salesForecastId: {type: GraphQLString}},
-      resolve: (salesForecastHistory, args, {loaders}) => loaders.ofbiz.load(`salesForecasts/find?salesForecastId=${salesForecastHistory.salesForecastId}`)
+      resolve: (salesForecastHistory, args, {loaders}) => loaders.ofbiz.load(`marketing/salesForecasts/find?salesForecastId=${salesForecastHistory.salesForecastId}`)
     },
     percentOfQuotaForecast: {type: GraphQLFloat},
     currencyUomId: {type: GraphQLString},
@@ -47,7 +47,7 @@ const SalesForecastHistoryType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (salesForecastHistory, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${salesForecastHistory.organizationPartyId}`)
+      resolve: (salesForecastHistory, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${salesForecastHistory.organizationPartyId}`)
     },
     percentOfQuotaClosed: {type: GraphQLFloat},
     modifiedTimestamp: {type: GraphQLString},

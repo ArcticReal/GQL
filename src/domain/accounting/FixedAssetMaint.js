@@ -31,50 +31,50 @@ const FixedAssetMaintType = new GraphQLObjectType({
     purchaseOrder: {
       type: OrderHeaderType,
       args : {purchaseOrderId: {type: GraphQLString}},
-      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${fixedAssetMaint.purchaseOrderId}`)
+      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${fixedAssetMaint.purchaseOrderId}`)
     },
     scheduleWorkEffort: {
       type: WorkEffortType,
       args : {scheduleWorkEffortId: {type: GraphQLString}},
-      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${fixedAssetMaint.scheduleWorkEffortId}`)
+      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${fixedAssetMaint.scheduleWorkEffortId}`)
     },
     intervalQuantity: {type: GraphQLFloat},
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${fixedAssetMaint.fixedAssetId}`)
+      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${fixedAssetMaint.fixedAssetId}`)
     },
     maintHistSeqId: {type: GraphQLString},
     productMaintType: {
       type: ProductMaintTypeType,
       args : {productMaintTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbiz.load(`productMaintTypes/find?productMaintTypeId=${fixedAssetMaint.productMaintTypeId}`)
+      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbiz.load(`product/product/productMaintTypes/find?productMaintTypeId=${fixedAssetMaint.productMaintTypeId}`)
     },
     intervalMeterType: {
       type: ProductMeterTypeType,
       args : {intervalMeterTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbiz.load(`productMeterTypes/find?productMeterTypeId=${fixedAssetMaint.intervalMeterTypeId}`)
+      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbiz.load(`product/product/productMeterTypes/find?productMeterTypeId=${fixedAssetMaint.intervalMeterTypeId}`)
     },
     productMaintSeqId: {type: GraphQLString},
     inventoryItemDetails: {
       type: new GraphQLList(InventoryItemDetailType),
-      args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemDetails/find?fixedAssetId=${fixedAssetMaint.fixedAssetId}`)
+      args : {},
+      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemDetails/find?fixedAssetId=${fixedAssetMaint.fixedAssetId}`)
     },
     fixedAssetMaintMeters: {
       type: new GraphQLList(FixedAssetMaintMeterType),
-      args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetMaintMeters/find?fixedAssetId=${fixedAssetMaint.fixedAssetId}`)
+      args : {},
+      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetMaintMeters/find?fixedAssetId=${fixedAssetMaint.fixedAssetId}`)
     },
     itemIssuances: {
       type: new GraphQLList(ItemIssuanceType),
-      args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbizArray.load(`itemIssuances/find?fixedAssetId=${fixedAssetMaint.fixedAssetId}`)
+      args : {},
+      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbizArray.load(`shipment/itemIssuances/find?fixedAssetId=${fixedAssetMaint.fixedAssetId}`)
     },
     fixedAssetMeters: {
       type: new GraphQLList(FixedAssetMeterType),
-      args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetMeters/find?fixedAssetId=${fixedAssetMaint.fixedAssetId}`)
+      args : {},
+      resolve: (fixedAssetMaint, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetMeters/find?fixedAssetId=${fixedAssetMaint.fixedAssetId}`)
     }
   })
 });

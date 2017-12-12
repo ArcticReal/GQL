@@ -24,7 +24,7 @@ const ProductConfigOptionType = new GraphQLObjectType({
     configItem: {
       type: ProductConfigItemType,
       args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigOption, args, {loaders}) => loaders.ofbiz.load(`productConfigItems/find?configItemId=${productConfigOption.configItemId}`)
+      resolve: (productConfigOption, args, {loaders}) => loaders.ofbiz.load(`product/product/productConfigItems/find?configItemId=${productConfigOption.configItemId}`)
     },
     sequenceNum: {type: GraphQLInt},
     configOptionId: {type: GraphQLString},
@@ -32,18 +32,18 @@ const ProductConfigOptionType = new GraphQLObjectType({
     description: {type: GraphQLString},
     productConfigOptionIactns: {
       type: new GraphQLList(ProductConfigOptionIactnType),
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigOption, args, {loaders}) => loaders.ofbizArray.load(`productConfigOptionIactns/find?configItemId=${productConfigOption.configItemId}`)
+      args : {},
+      resolve: (productConfigOption, args, {loaders}) => loaders.ofbizArray.load(`product/product/productConfigOptionIactns/find?configItemId=${productConfigOption.configItemId}`)
     },
     productConfigProducts: {
       type: new GraphQLList(ProductConfigProductType),
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigOption, args, {loaders}) => loaders.ofbizArray.load(`productConfigProducts/find?configItemId=${productConfigOption.configItemId}`)
+      args : {},
+      resolve: (productConfigOption, args, {loaders}) => loaders.ofbizArray.load(`product/product/productConfigProducts/find?configItemId=${productConfigOption.configItemId}`)
     },
     productConfigConfigs: {
       type: new GraphQLList(ProductConfigConfigType),
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigOption, args, {loaders}) => loaders.ofbizArray.load(`productConfigConfigs/find?configItemId=${productConfigOption.configItemId}`)
+      args : {},
+      resolve: (productConfigOption, args, {loaders}) => loaders.ofbizArray.load(`product/product/productConfigConfigs/find?configItemId=${productConfigOption.configItemId}`)
     }
   })
 });

@@ -22,8 +22,8 @@ const WebPreferenceTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     webUserPreferences: {
       type: new GraphQLList(WebUserPreferenceType),
-      args : {webPreferenceTypeId: {type: GraphQLString}},
-      resolve: (webPreferenceType, args, {loaders}) => loaders.ofbizArray.load(`webUserPreferences/find?webPreferenceTypeId=${webPreferenceType.webPreferenceTypeId}`)
+      args : {},
+      resolve: (webPreferenceType, args, {loaders}) => loaders.ofbizArray.load(`content/webUserPreferences/find?webPreferenceTypeId=${webPreferenceType.webPreferenceTypeId}`)
     }
   })
 });

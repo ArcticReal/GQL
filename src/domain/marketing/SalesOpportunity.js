@@ -39,33 +39,33 @@ const SalesOpportunityType = new GraphQLObjectType({
     salesOpportunityId: {type: GraphQLString},
     salesOpportunityWorkEfforts: {
       type: new GraphQLList(SalesOpportunityWorkEffortType),
-      args : {salesOpportunityId: {type: GraphQLString}},
-      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`salesOpportunityWorkEfforts/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
+      args : {},
+      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`marketing/salesOpportunity/salesOpportunityWorkEfforts/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
     },
     salesOpportunityTrckCodes: {
       type: new GraphQLList(SalesOpportunityTrckCodeType),
-      args : {salesOpportunityId: {type: GraphQLString}},
-      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`salesOpportunityTrckCodes/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
+      args : {},
+      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`marketing/salesOpportunity/salesOpportunityTrckCodes/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
     },
     salesOpportunityCompetitors: {
       type: new GraphQLList(SalesOpportunityCompetitorType),
-      args : {salesOpportunityId: {type: GraphQLString}},
-      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`salesOpportunityCompetitors/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
+      args : {},
+      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`marketing/salesOpportunity/salesOpportunityCompetitors/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
     },
     invoiceItems: {
       type: new GraphQLList(InvoiceItemType),
-      args : {salesOpportunityId: {type: GraphQLString}},
-      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`invoiceItems/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
+      args : {},
+      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItems/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
     },
     orderItems: {
       type: new GraphQLList(OrderItemType),
-      args : {salesOpportunityId: {type: GraphQLString}},
-      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`orderItems/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
+      args : {},
+      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`order/orderItems/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
     },
     salesOpportunityQuotes: {
       type: new GraphQLList(SalesOpportunityQuoteType),
-      args : {salesOpportunityId: {type: GraphQLString}},
-      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`salesOpportunityQuotes/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
+      args : {},
+      resolve: (salesOpportunity, args, {loaders}) => loaders.ofbizArray.load(`marketing/salesOpportunity/salesOpportunityQuotes/find?salesOpportunityId=${salesOpportunity.salesOpportunityId}`)
     }
   })
 });

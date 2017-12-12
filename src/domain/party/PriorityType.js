@@ -22,8 +22,8 @@ const PriorityTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     partyRelationships: {
       type: new GraphQLList(PartyRelationshipType),
-      args : {priorityTypeId: {type: GraphQLString}},
-      resolve: (priorityType, args, {loaders}) => loaders.ofbizArray.load(`partyRelationships/find?priorityTypeId=${priorityType.priorityTypeId}`)
+      args : {},
+      resolve: (priorityType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyRelationships/find?priorityTypeId=${priorityType.priorityTypeId}`)
     }
   })
 });

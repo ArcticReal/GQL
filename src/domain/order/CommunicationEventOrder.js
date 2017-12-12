@@ -22,12 +22,12 @@ const CommunicationEventOrderType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (communicationEventOrder, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${communicationEventOrder.orderId}`)
+      resolve: (communicationEventOrder, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${communicationEventOrder.orderId}`)
     },
     communicationEvent: {
       type: CommunicationEventType,
       args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEventOrder, args, {loaders}) => loaders.ofbiz.load(`communicationEvents/find?communicationEventId=${communicationEventOrder.communicationEventId}`)
+      resolve: (communicationEventOrder, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvents/find?communicationEventId=${communicationEventOrder.communicationEventId}`)
     }
   })
 });

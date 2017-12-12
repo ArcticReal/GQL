@@ -25,7 +25,7 @@ const SalesOpportunityCompetitorType = new GraphQLObjectType({
     salesOpportunity: {
       type: SalesOpportunityType,
       args : {salesOpportunityId: {type: GraphQLString}},
-      resolve: (salesOpportunityCompetitor, args, {loaders}) => loaders.ofbiz.load(`salesOpportunitys/find?salesOpportunityId=${salesOpportunityCompetitor.salesOpportunityId}`)
+      resolve: (salesOpportunityCompetitor, args, {loaders}) => loaders.ofbiz.load(`marketing/salesOpportunitys/find?salesOpportunityId=${salesOpportunityCompetitor.salesOpportunityId}`)
     }
   })
 });

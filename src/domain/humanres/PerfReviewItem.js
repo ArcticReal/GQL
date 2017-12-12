@@ -23,19 +23,19 @@ const PerfReviewItemType = new GraphQLObjectType({
     perfReviewItemType: {
       type: PerfReviewItemTypeType,
       args : {perfReviewItemTypeId: {type: GraphQLString}},
-      resolve: (perfReviewItem, args, {loaders}) => loaders.ofbiz.load(`perfReviewItemTypes/find?perfReviewItemTypeId=${perfReviewItem.perfReviewItemTypeId}`)
+      resolve: (perfReviewItem, args, {loaders}) => loaders.ofbiz.load(`humanres/perfReview/perfReviewItemTypes/find?perfReviewItemTypeId=${perfReviewItem.perfReviewItemTypeId}`)
     },
     employeeRoleTypeId: {type: GraphQLString},
     perfReviewItemSeqId: {type: GraphQLString},
     perfRatingType: {
       type: PerfRatingTypeType,
       args : {perfRatingTypeId: {type: GraphQLString}},
-      resolve: (perfReviewItem, args, {loaders}) => loaders.ofbiz.load(`perfRatingTypes/find?perfRatingTypeId=${perfReviewItem.perfRatingTypeId}`)
+      resolve: (perfReviewItem, args, {loaders}) => loaders.ofbiz.load(`humanres/perfRatingTypes/find?perfRatingTypeId=${perfReviewItem.perfRatingTypeId}`)
     },
     employeeParty: {
       type: PartyRoleType,
       args : {employeePartyId: {type: GraphQLString}},
-      resolve: (perfReviewItem, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${perfReviewItem.employeePartyId}`)
+      resolve: (perfReviewItem, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${perfReviewItem.employeePartyId}`)
     },
     comments: {type: GraphQLString},
     perfReviewId: {type: GraphQLString}

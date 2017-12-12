@@ -23,7 +23,7 @@ const OrderItemShipGroupAssocType = new GraphQLObjectType({
     order: {
       type: OrderItemShipGroupType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemShipGroupAssoc, args, {loaders}) => loaders.ofbiz.load(`orderItemShipGroups/find?orderId=${orderItemShipGroupAssoc.orderId}`)
+      resolve: (orderItemShipGroupAssoc, args, {loaders}) => loaders.ofbiz.load(`order/orderItem/orderItemShipGroups/find?orderId=${orderItemShipGroupAssoc.orderId}`)
     },
     shipGroupSeqId: {type: GraphQLString},
     cancelQuantity: {type: GraphQLFloat}

@@ -21,7 +21,7 @@ const OrderTypeAttrType = new GraphQLObjectType({
     orderType: {
       type: OrderTypeType,
       args : {orderTypeId: {type: GraphQLString}},
-      resolve: (orderTypeAttr, args, {loaders}) => loaders.ofbiz.load(`orderTypes/find?orderTypeId=${orderTypeAttr.orderTypeId}`)
+      resolve: (orderTypeAttr, args, {loaders}) => loaders.ofbiz.load(`order/orderTypes/find?orderTypeId=${orderTypeAttr.orderTypeId}`)
     },
     description: {type: GraphQLString},
     attrName: {type: GraphQLString}

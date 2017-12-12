@@ -24,18 +24,18 @@ const RateTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     timeEntries: {
       type: new GraphQLList(TimeEntryType),
-      args : {rateTypeId: {type: GraphQLString}},
-      resolve: (rateType, args, {loaders}) => loaders.ofbizArray.load(`timeEntrys/find?rateTypeId=${rateType.rateTypeId}`)
+      args : {},
+      resolve: (rateType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/timeEntrys/find?rateTypeId=${rateType.rateTypeId}`)
     },
     partyRates: {
       type: new GraphQLList(PartyRateType),
-      args : {rateTypeId: {type: GraphQLString}},
-      resolve: (rateType, args, {loaders}) => loaders.ofbizArray.load(`partyRates/find?rateTypeId=${rateType.rateTypeId}`)
+      args : {},
+      resolve: (rateType, args, {loaders}) => loaders.ofbizArray.load(`accounting/partyRates/find?rateTypeId=${rateType.rateTypeId}`)
     },
     rateAmounts: {
       type: new GraphQLList(RateAmountType),
-      args : {rateTypeId: {type: GraphQLString}},
-      resolve: (rateType, args, {loaders}) => loaders.ofbizArray.load(`rateAmounts/find?rateTypeId=${rateType.rateTypeId}`)
+      args : {},
+      resolve: (rateType, args, {loaders}) => loaders.ofbizArray.load(`accounting/rateAmounts/find?rateTypeId=${rateType.rateTypeId}`)
     }
   })
 });

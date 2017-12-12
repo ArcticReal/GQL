@@ -22,12 +22,12 @@ const AgreementFacilityApplType = new GraphQLObjectType({
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (agreementFacilityAppl, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${agreementFacilityAppl.facilityId}`)
+      resolve: (agreementFacilityAppl, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${agreementFacilityAppl.facilityId}`)
     },
     agreement: {
       type: AgreementItemType,
       args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementFacilityAppl, args, {loaders}) => loaders.ofbiz.load(`agreementItems/find?agreementId=${agreementFacilityAppl.agreementId}`)
+      resolve: (agreementFacilityAppl, args, {loaders}) => loaders.ofbiz.load(`party/agreement/agreementItems/find?agreementId=${agreementFacilityAppl.agreementId}`)
     },
     agreementItemSeqId: {type: GraphQLString}
   })

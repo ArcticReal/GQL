@@ -24,7 +24,7 @@ const PartyBenefitType = new GraphQLObjectType({
     partyFrom: {
       type: PartyRoleType,
       args : {partyIdFrom: {type: GraphQLString}},
-      resolve: (partyBenefit, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${partyBenefit.partyIdFrom}`)
+      resolve: (partyBenefit, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${partyBenefit.partyIdFrom}`)
     },
     availableTime: {type: GraphQLInt},
     cost: {type: GraphQLFloat},
@@ -32,13 +32,13 @@ const PartyBenefitType = new GraphQLObjectType({
     benefitType: {
       type: BenefitTypeType,
       args : {benefitTypeId: {type: GraphQLString}},
-      resolve: (partyBenefit, args, {loaders}) => loaders.ofbiz.load(`benefitTypes/find?benefitTypeId=${partyBenefit.benefitTypeId}`)
+      resolve: (partyBenefit, args, {loaders}) => loaders.ofbiz.load(`humanres/benefitTypes/find?benefitTypeId=${partyBenefit.benefitTypeId}`)
     },
     periodTypeId: {type: GraphQLString},
     partyTo: {
       type: PartyRoleType,
       args : {partyIdTo: {type: GraphQLString}},
-      resolve: (partyBenefit, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${partyBenefit.partyIdTo}`)
+      resolve: (partyBenefit, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${partyBenefit.partyIdTo}`)
     },
     roleTypeIdFrom: {type: GraphQLString},
     thruDate: {type: GraphQLString}

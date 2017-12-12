@@ -22,7 +22,7 @@ const FixedAssetGeoPointType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetGeoPoint, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${fixedAssetGeoPoint.fixedAssetId}`)
+      resolve: (fixedAssetGeoPoint, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${fixedAssetGeoPoint.fixedAssetId}`)
     },
     geoPointId: {type: GraphQLString},
     thruDate: {type: GraphQLString}

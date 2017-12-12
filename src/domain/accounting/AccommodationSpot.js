@@ -24,19 +24,19 @@ const AccommodationSpotType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (accommodationSpot, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${accommodationSpot.fixedAssetId}`)
+      resolve: (accommodationSpot, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${accommodationSpot.fixedAssetId}`)
     },
     numberOfSpaces: {type: GraphQLInt},
     description: {type: GraphQLString},
     accommodationClass: {
       type: AccommodationClassType,
       args : {accommodationClassId: {type: GraphQLString}},
-      resolve: (accommodationSpot, args, {loaders}) => loaders.ofbiz.load(`accommodationClasss/find?accommodationClassId=${accommodationSpot.accommodationClassId}`)
+      resolve: (accommodationSpot, args, {loaders}) => loaders.ofbiz.load(`accounting/accommodationClasss/find?accommodationClassId=${accommodationSpot.accommodationClassId}`)
     },
     workEfforts: {
       type: new GraphQLList(WorkEffortType),
-      args : {accommodationSpotId: {type: GraphQLString}},
-      resolve: (accommodationSpot, args, {loaders}) => loaders.ofbizArray.load(`workEfforts/find?accommodationSpotId=${accommodationSpot.accommodationSpotId}`)
+      args : {},
+      resolve: (accommodationSpot, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEfforts/find?accommodationSpotId=${accommodationSpot.accommodationSpotId}`)
     }
   })
 });

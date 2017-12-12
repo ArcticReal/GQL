@@ -25,22 +25,22 @@ const PartyGlAccountType = new GraphQLObjectType({
     glAccountType: {
       type: GlAccountTypeType,
       args : {glAccountTypeId: {type: GraphQLString}},
-      resolve: (partyGlAccount, args, {loaders}) => loaders.ofbiz.load(`glAccountTypes/find?glAccountTypeId=${partyGlAccount.glAccountTypeId}`)
+      resolve: (partyGlAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountTypes/find?glAccountTypeId=${partyGlAccount.glAccountTypeId}`)
     },
     glAccount: {
       type: GlAccountType,
       args : {glAccountId: {type: GraphQLString}},
-      resolve: (partyGlAccount, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${partyGlAccount.glAccountId}`)
+      resolve: (partyGlAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${partyGlAccount.glAccountId}`)
     },
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (partyGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyGlAccount.organizationPartyId}`)
+      resolve: (partyGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyGlAccount.organizationPartyId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyGlAccount, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${partyGlAccount.partyId}`)
+      resolve: (partyGlAccount, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${partyGlAccount.partyId}`)
     }
   })
 });

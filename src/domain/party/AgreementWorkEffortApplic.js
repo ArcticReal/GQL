@@ -22,12 +22,12 @@ const AgreementWorkEffortApplicType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (agreementWorkEffortApplic, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${agreementWorkEffortApplic.workEffortId}`)
+      resolve: (agreementWorkEffortApplic, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${agreementWorkEffortApplic.workEffortId}`)
     },
     agreement: {
       type: AgreementType,
       args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementWorkEffortApplic, args, {loaders}) => loaders.ofbiz.load(`agreements/find?agreementId=${agreementWorkEffortApplic.agreementId}`)
+      resolve: (agreementWorkEffortApplic, args, {loaders}) => loaders.ofbiz.load(`party/agreements/find?agreementId=${agreementWorkEffortApplic.agreementId}`)
     },
     agreementItemSeqId: {type: GraphQLString}
   })

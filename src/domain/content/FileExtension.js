@@ -21,7 +21,7 @@ const FileExtensionType = new GraphQLObjectType({
     mimeType: {
       type: MimeTypeType,
       args : {mimeTypeId: {type: GraphQLString}},
-      resolve: (fileExtension, args, {loaders}) => loaders.ofbiz.load(`mimeTypes/find?mimeTypeId=${fileExtension.mimeTypeId}`)
+      resolve: (fileExtension, args, {loaders}) => loaders.ofbiz.load(`content/mimeTypes/find?mimeTypeId=${fileExtension.mimeTypeId}`)
     },
     fileExtensionId: {type: GraphQLString}
   })

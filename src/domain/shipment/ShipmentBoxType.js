@@ -30,18 +30,18 @@ const ShipmentBoxTypeType = new GraphQLObjectType({
     shipmentBoxTypeId: {type: GraphQLString},
     products: {
       type: new GraphQLList(ProductType),
-      args : {shipmentBoxTypeId: {type: GraphQLString}},
-      resolve: (shipmentBoxType, args, {loaders}) => loaders.ofbizArray.load(`products/find?shipmentBoxTypeId=${shipmentBoxType.shipmentBoxTypeId}`)
+      args : {},
+      resolve: (shipmentBoxType, args, {loaders}) => loaders.ofbizArray.load(`/products/find?shipmentBoxTypeId=${shipmentBoxType.shipmentBoxTypeId}`)
     },
     carrierShipmentBoxTypes: {
       type: new GraphQLList(CarrierShipmentBoxTypeType),
-      args : {shipmentBoxTypeId: {type: GraphQLString}},
-      resolve: (shipmentBoxType, args, {loaders}) => loaders.ofbizArray.load(`carrierShipmentBoxTypes/find?shipmentBoxTypeId=${shipmentBoxType.shipmentBoxTypeId}`)
+      args : {},
+      resolve: (shipmentBoxType, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/carrierShipmentBoxTypes/find?shipmentBoxTypeId=${shipmentBoxType.shipmentBoxTypeId}`)
     },
     shipmentPackages: {
       type: new GraphQLList(ShipmentPackageType),
-      args : {shipmentBoxTypeId: {type: GraphQLString}},
-      resolve: (shipmentBoxType, args, {loaders}) => loaders.ofbizArray.load(`shipmentPackages/find?shipmentBoxTypeId=${shipmentBoxType.shipmentBoxTypeId}`)
+      args : {},
+      resolve: (shipmentBoxType, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentPackages/find?shipmentBoxTypeId=${shipmentBoxType.shipmentBoxTypeId}`)
     }
   })
 });

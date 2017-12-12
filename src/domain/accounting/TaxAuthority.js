@@ -30,7 +30,7 @@ const TaxAuthorityType = new GraphQLObjectType({
     taxAuthParty: {
       type: PartyType,
       args : {taxAuthPartyId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${taxAuthority.taxAuthPartyId}`)
+      resolve: (taxAuthority, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${taxAuthority.taxAuthPartyId}`)
     },
     requireTaxIdForExemption: {type: GraphQLBoolean},
     includeTaxInPrice: {type: GraphQLBoolean},
@@ -38,48 +38,48 @@ const TaxAuthorityType = new GraphQLObjectType({
     taxIdFormatPattern: {type: GraphQLString},
     taxAuthorityCategories: {
       type: new GraphQLList(TaxAuthorityCategoryType),
-      args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`taxAuthorityCategorys/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
+      args : {},
+      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`accounting/taxAuthority/taxAuthorityCategorys/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
     },
     quoteAdjustments: {
       type: new GraphQLList(QuoteAdjustmentType),
-      args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`quoteAdjustments/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
+      args : {},
+      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteAdjustments/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
     },
     orderAdjustments: {
       type: new GraphQLList(OrderAdjustmentType),
-      args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`orderAdjustments/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
+      args : {},
+      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`order/orderAdjustments/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
     },
     productStores: {
       type: new GraphQLList(ProductStoreType),
-      args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`productStores/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
+      args : {},
+      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStores/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
     },
     partyTaxAuthInfos: {
       type: new GraphQLList(PartyTaxAuthInfoType),
-      args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`partyTaxAuthInfos/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
+      args : {},
+      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`accounting/partyTaxAuthInfos/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
     },
     taxAuthorityAssocs: {
       type: new GraphQLList(TaxAuthorityAssocType),
-      args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`taxAuthorityAssocs/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
+      args : {},
+      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`accounting/taxAuthority/taxAuthorityAssocs/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
     },
     taxAuthorityGlAccounts: {
       type: new GraphQLList(TaxAuthorityGlAccountType),
-      args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`taxAuthorityGlAccounts/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
+      args : {},
+      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/taxAuthorityGlAccounts/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
     },
     taxAuthorityRateProducts: {
       type: new GraphQLList(TaxAuthorityRateProductType),
-      args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`taxAuthorityRateProducts/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
+      args : {},
+      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`accounting/taxAuthority/taxAuthorityRateProducts/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
     },
     returnAdjustments: {
       type: new GraphQLList(ReturnAdjustmentType),
-      args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`returnAdjustments/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
+      args : {},
+      resolve: (taxAuthority, args, {loaders}) => loaders.ofbizArray.load(`order/returnAdjustments/find?taxAuthGeoId=${taxAuthority.taxAuthGeoId}`)
     }
   })
 });

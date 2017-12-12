@@ -32,7 +32,7 @@ const MarketingCampaignType = new GraphQLObjectType({
     parentCampaign: {
       type: MarketingCampaignType,
       args : {parentCampaignId: {type: GraphQLString}},
-      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbiz.load(`marketingCampaigns/find?marketingCampaignId=${marketingCampaign.parentCampaignId}`)
+      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbiz.load(`marketing/marketingCampaigns/find?marketingCampaignId=${marketingCampaign.parentCampaignId}`)
     },
     estimatedCost: {type: GraphQLFloat},
     isActive: {type: GraphQLBoolean},
@@ -48,38 +48,38 @@ const MarketingCampaignType = new GraphQLObjectType({
     actualCost: {type: GraphQLFloat},
     marketingCampaignPromos: {
       type: new GraphQLList(MarketingCampaignPromoType),
-      args : {marketingCampaignId: {type: GraphQLString}},
-      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketingCampaignPromos/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
+      args : {},
+      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketing/marketingCampaign/marketingCampaignPromos/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
     },
     trackingCodes: {
       type: new GraphQLList(TrackingCodeType),
-      args : {marketingCampaignId: {type: GraphQLString}},
-      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`trackingCodes/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
+      args : {},
+      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketing/trackingCodes/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
     },
     marketingCampaigns: {
       type: new GraphQLList(MarketingCampaignType),
-      args : {marketingCampaignId: {type: GraphQLString}},
-      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketingCampaigns/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
+      args : {},
+      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketing/marketingCampaigns/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
     },
     contactLists: {
       type: new GraphQLList(ContactListType),
-      args : {marketingCampaignId: {type: GraphQLString}},
-      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`contactLists/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
+      args : {},
+      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketing/contactLists/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
     },
     marketingCampaignNotes: {
       type: new GraphQLList(MarketingCampaignNoteType),
-      args : {marketingCampaignId: {type: GraphQLString}},
-      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketingCampaignNotes/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
+      args : {},
+      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketing/marketingCampaign/marketingCampaignNotes/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
     },
     marketingCampaignRoles: {
       type: new GraphQLList(MarketingCampaignRoleType),
-      args : {marketingCampaignId: {type: GraphQLString}},
-      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketingCampaignRoles/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
+      args : {},
+      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketing/marketingCampaign/marketingCampaignRoles/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
     },
     marketingCampaignPrices: {
       type: new GraphQLList(MarketingCampaignPriceType),
-      args : {marketingCampaignId: {type: GraphQLString}},
-      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketingCampaignPrices/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
+      args : {},
+      resolve: (marketingCampaign, args, {loaders}) => loaders.ofbizArray.load(`marketing/marketingCampaign/marketingCampaignPrices/find?marketingCampaignId=${marketingCampaign.marketingCampaignId}`)
     }
   })
 });

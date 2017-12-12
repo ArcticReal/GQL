@@ -25,7 +25,7 @@ const ProductGroupOrderType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productGroupOrder, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productGroupOrder.productId}`)
+      resolve: (productGroupOrder, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productGroupOrder.productId}`)
     },
     statusId: {type: GraphQLString},
     reqOrderQty: {type: GraphQLFloat},
@@ -33,8 +33,8 @@ const ProductGroupOrderType = new GraphQLObjectType({
     thruDate: {type: GraphQLString},
     orderItemGroupOrders: {
       type: new GraphQLList(OrderItemGroupOrderType),
-      args : {groupOrderId: {type: GraphQLString}},
-      resolve: (productGroupOrder, args, {loaders}) => loaders.ofbizArray.load(`orderItemGroupOrders/find?groupOrderId=${productGroupOrder.groupOrderId}`)
+      args : {},
+      resolve: (productGroupOrder, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemGroupOrders/find?groupOrderId=${productGroupOrder.groupOrderId}`)
     }
   })
 });

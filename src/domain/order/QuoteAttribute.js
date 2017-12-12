@@ -23,7 +23,7 @@ const QuoteAttributeType = new GraphQLObjectType({
     quote: {
       type: QuoteType,
       args : {quoteId: {type: GraphQLString}},
-      resolve: (quoteAttribute, args, {loaders}) => loaders.ofbiz.load(`quotes/find?quoteId=${quoteAttribute.quoteId}`)
+      resolve: (quoteAttribute, args, {loaders}) => loaders.ofbiz.load(`order/quotes/find?quoteId=${quoteAttribute.quoteId}`)
     },
     attrName: {type: GraphQLString}
   })

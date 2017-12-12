@@ -23,13 +23,13 @@ const CustRequestCategoryType = new GraphQLObjectType({
     custRequestType: {
       type: CustRequestTypeType,
       args : {custRequestTypeId: {type: GraphQLString}},
-      resolve: (custRequestCategory, args, {loaders}) => loaders.ofbiz.load(`custRequestTypes/find?custRequestTypeId=${custRequestCategory.custRequestTypeId}`)
+      resolve: (custRequestCategory, args, {loaders}) => loaders.ofbiz.load(`order/custRequest/custRequestTypes/find?custRequestTypeId=${custRequestCategory.custRequestTypeId}`)
     },
     custRequestCategoryId: {type: GraphQLString},
     custRequests: {
       type: new GraphQLList(CustRequestType),
-      args : {custRequestCategoryId: {type: GraphQLString}},
-      resolve: (custRequestCategory, args, {loaders}) => loaders.ofbizArray.load(`custRequests/find?custRequestCategoryId=${custRequestCategory.custRequestCategoryId}`)
+      args : {},
+      resolve: (custRequestCategory, args, {loaders}) => loaders.ofbizArray.load(`order/custRequests/find?custRequestCategoryId=${custRequestCategory.custRequestCategoryId}`)
     }
   })
 });

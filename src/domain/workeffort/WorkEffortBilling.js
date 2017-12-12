@@ -22,13 +22,13 @@ const WorkEffortBillingType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortBilling, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortBilling.workEffortId}`)
+      resolve: (workEffortBilling, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortBilling.workEffortId}`)
     },
     percentage: {type: GraphQLFloat},
     invoice: {
       type: InvoiceItemType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (workEffortBilling, args, {loaders}) => loaders.ofbiz.load(`invoiceItems/find?invoiceId=${workEffortBilling.invoiceId}`)
+      resolve: (workEffortBilling, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItems/find?invoiceId=${workEffortBilling.invoiceId}`)
     },
     invoiceItemSeqId: {type: GraphQLString}
   })

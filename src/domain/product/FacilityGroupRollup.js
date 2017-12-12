@@ -23,12 +23,12 @@ const FacilityGroupRollupType = new GraphQLObjectType({
     facilityGroup: {
       type: FacilityGroupType,
       args : {facilityGroupId: {type: GraphQLString}},
-      resolve: (facilityGroupRollup, args, {loaders}) => loaders.ofbiz.load(`facilityGroups/find?facilityGroupId=${facilityGroupRollup.facilityGroupId}`)
+      resolve: (facilityGroupRollup, args, {loaders}) => loaders.ofbiz.load(`product/facility/facilityGroups/find?facilityGroupId=${facilityGroupRollup.facilityGroupId}`)
     },
     parentFacilityGroup: {
       type: FacilityGroupType,
       args : {parentFacilityGroupId: {type: GraphQLString}},
-      resolve: (facilityGroupRollup, args, {loaders}) => loaders.ofbiz.load(`facilityGroups/find?facilityGroupId=${facilityGroupRollup.parentFacilityGroupId}`)
+      resolve: (facilityGroupRollup, args, {loaders}) => loaders.ofbiz.load(`product/facility/facilityGroups/find?facilityGroupId=${facilityGroupRollup.parentFacilityGroupId}`)
     },
     thruDate: {type: GraphQLString}
   })

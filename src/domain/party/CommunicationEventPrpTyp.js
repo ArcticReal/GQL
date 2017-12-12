@@ -22,19 +22,19 @@ const CommunicationEventPrpTypType = new GraphQLObjectType({
     parentType: {
       type: CommunicationEventPrpTypType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (communicationEventPrpTyp, args, {loaders}) => loaders.ofbiz.load(`communicationEventPrpTyps/find?communicationEventPrpTypId=${communicationEventPrpTyp.parentTypeId}`)
+      resolve: (communicationEventPrpTyp, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvent/communicationEventPrpTyps/find?communicationEventPrpTypId=${communicationEventPrpTyp.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     communicationEventPrpTyps: {
       type: new GraphQLList(CommunicationEventPrpTypType),
-      args : {communicationEventPrpTypId: {type: GraphQLString}},
-      resolve: (communicationEventPrpTyp, args, {loaders}) => loaders.ofbizArray.load(`communicationEventPrpTyps/find?communicationEventPrpTypId=${communicationEventPrpTyp.communicationEventPrpTypId}`)
+      args : {},
+      resolve: (communicationEventPrpTyp, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvent/communicationEventPrpTyps/find?communicationEventPrpTypId=${communicationEventPrpTyp.communicationEventPrpTypId}`)
     },
     communicationEventPurposes: {
       type: new GraphQLList(CommunicationEventPurposeType),
-      args : {communicationEventPrpTypId: {type: GraphQLString}},
-      resolve: (communicationEventPrpTyp, args, {loaders}) => loaders.ofbizArray.load(`communicationEventPurposes/find?communicationEventPrpTypId=${communicationEventPrpTyp.communicationEventPrpTypId}`)
+      args : {},
+      resolve: (communicationEventPrpTyp, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvent/communicationEventPurposes/find?communicationEventPrpTypId=${communicationEventPrpTyp.communicationEventPrpTypId}`)
     }
   })
 });

@@ -24,13 +24,13 @@ const CustRequestStatusType = new GraphQLObjectType({
     custRequest: {
       type: CustRequestType,
       args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestStatus, args, {loaders}) => loaders.ofbiz.load(`custRequests/find?custRequestId=${custRequestStatus.custRequestId}`)
+      resolve: (custRequestStatus, args, {loaders}) => loaders.ofbiz.load(`order/custRequests/find?custRequestId=${custRequestStatus.custRequestId}`)
     },
     custRequestStatusId: {type: GraphQLString},
     changeByUserLogin: {
       type: UserLoginType,
       args : {changeByUserLoginId: {type: GraphQLString}},
-      resolve: (custRequestStatus, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${custRequestStatus.changeByUserLoginId}`)
+      resolve: (custRequestStatus, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${custRequestStatus.changeByUserLoginId}`)
     },
     custRequestItemSeqId: {type: GraphQLString}
   })

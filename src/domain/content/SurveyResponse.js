@@ -26,7 +26,7 @@ const SurveyResponseType = new GraphQLObjectType({
     survey: {
       type: SurveyType,
       args : {surveyId: {type: GraphQLString}},
-      resolve: (surveyResponse, args, {loaders}) => loaders.ofbiz.load(`surveys/find?surveyId=${surveyResponse.surveyId}`)
+      resolve: (surveyResponse, args, {loaders}) => loaders.ofbiz.load(`content/surveys/find?surveyId=${surveyResponse.surveyId}`)
     },
     statusId: {type: GraphQLString},
     lastModifiedDate: {type: GraphQLString},
@@ -38,23 +38,23 @@ const SurveyResponseType = new GraphQLObjectType({
     referenceId: {type: GraphQLString},
     giftCardFulfillments: {
       type: new GraphQLList(GiftCardFulfillmentType),
-      args : {surveyResponseId: {type: GraphQLString}},
-      resolve: (surveyResponse, args, {loaders}) => loaders.ofbizArray.load(`giftCardFulfillments/find?surveyResponseId=${surveyResponse.surveyResponseId}`)
+      args : {},
+      resolve: (surveyResponse, args, {loaders}) => loaders.ofbizArray.load(`accounting/giftCard/giftCardFulfillments/find?surveyResponseId=${surveyResponse.surveyResponseId}`)
     },
     surveyResponseAnswers: {
       type: new GraphQLList(SurveyResponseAnswerType),
-      args : {surveyResponseId: {type: GraphQLString}},
-      resolve: (surveyResponse, args, {loaders}) => loaders.ofbizArray.load(`surveyResponseAnswers/find?surveyResponseId=${surveyResponse.surveyResponseId}`)
+      args : {},
+      resolve: (surveyResponse, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyResponseAnswers/find?surveyResponseId=${surveyResponse.surveyResponseId}`)
     },
     dataResources: {
       type: new GraphQLList(DataResourceType),
-      args : {surveyResponseId: {type: GraphQLString}},
-      resolve: (surveyResponse, args, {loaders}) => loaders.ofbizArray.load(`dataResources/find?surveyResponseId=${surveyResponse.surveyResponseId}`)
+      args : {},
+      resolve: (surveyResponse, args, {loaders}) => loaders.ofbizArray.load(`content/dataResources/find?surveyResponseId=${surveyResponse.surveyResponseId}`)
     },
     shoppingListItemSurveies: {
       type: new GraphQLList(ShoppingListItemSurveyType),
-      args : {surveyResponseId: {type: GraphQLString}},
-      resolve: (surveyResponse, args, {loaders}) => loaders.ofbizArray.load(`shoppingListItemSurveys/find?surveyResponseId=${surveyResponse.surveyResponseId}`)
+      args : {},
+      resolve: (surveyResponse, args, {loaders}) => loaders.ofbizArray.load(`order/shoppingList/shoppingListItemSurveys/find?surveyResponseId=${surveyResponse.surveyResponseId}`)
     }
   })
 });

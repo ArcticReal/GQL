@@ -24,19 +24,19 @@ const DeliverableType = new GraphQLObjectType({
     deliverableType: {
       type: DeliverableTypeType,
       args : {deliverableTypeId: {type: GraphQLString}},
-      resolve: (deliverable, args, {loaders}) => loaders.ofbiz.load(`deliverableTypes/find?deliverableTypeId=${deliverable.deliverableTypeId}`)
+      resolve: (deliverable, args, {loaders}) => loaders.ofbiz.load(`workeffort/deliverable/deliverableTypes/find?deliverableTypeId=${deliverable.deliverableTypeId}`)
     },
     description: {type: GraphQLString},
     deliverableId: {type: GraphQLString},
     workEffortDeliverableProds: {
       type: new GraphQLList(WorkEffortDeliverableProdType),
-      args : {deliverableId: {type: GraphQLString}},
-      resolve: (deliverable, args, {loaders}) => loaders.ofbizArray.load(`workEffortDeliverableProds/find?deliverableId=${deliverable.deliverableId}`)
+      args : {},
+      resolve: (deliverable, args, {loaders}) => loaders.ofbizArray.load(`workeffort/deliverable/workEffortDeliverableProds/find?deliverableId=${deliverable.deliverableId}`)
     },
     requirements: {
       type: new GraphQLList(RequirementType),
-      args : {deliverableId: {type: GraphQLString}},
-      resolve: (deliverable, args, {loaders}) => loaders.ofbizArray.load(`requirements/find?deliverableId=${deliverable.deliverableId}`)
+      args : {},
+      resolve: (deliverable, args, {loaders}) => loaders.ofbizArray.load(`order/requirements/find?deliverableId=${deliverable.deliverableId}`)
     }
   })
 });

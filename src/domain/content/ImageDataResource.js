@@ -22,7 +22,7 @@ const ImageDataResourceType = new GraphQLObjectType({
     dataResource: {
       type: DataResourceType,
       args : {dataResourceId: {type: GraphQLString}},
-      resolve: (imageDataResource, args, {loaders}) => loaders.ofbiz.load(`dataResources/find?dataResourceId=${imageDataResource.dataResourceId}`)
+      resolve: (imageDataResource, args, {loaders}) => loaders.ofbiz.load(`content/dataResources/find?dataResourceId=${imageDataResource.dataResourceId}`)
     }
   })
 });

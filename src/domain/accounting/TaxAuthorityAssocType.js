@@ -22,8 +22,8 @@ const TaxAuthorityAssocTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     taxAuthorityAssocs: {
       type: new GraphQLList(TaxAuthorityAssocType),
-      args : {taxAuthorityAssocTypeId: {type: GraphQLString}},
-      resolve: (taxAuthorityAssocType, args, {loaders}) => loaders.ofbizArray.load(`taxAuthorityAssocs/find?taxAuthorityAssocTypeId=${taxAuthorityAssocType.taxAuthorityAssocTypeId}`)
+      args : {},
+      resolve: (taxAuthorityAssocType, args, {loaders}) => loaders.ofbizArray.load(`accounting/taxAuthority/taxAuthorityAssocs/find?taxAuthorityAssocTypeId=${taxAuthorityAssocType.taxAuthorityAssocTypeId}`)
     }
   })
 });

@@ -25,12 +25,12 @@ const ProdCatalogRoleType = new GraphQLObjectType({
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (prodCatalogRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${prodCatalogRole.partyId}`)
+      resolve: (prodCatalogRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${prodCatalogRole.partyId}`)
     },
     prodCatalog: {
       type: ProdCatalogType,
       args : {prodCatalogId: {type: GraphQLString}},
-      resolve: (prodCatalogRole, args, {loaders}) => loaders.ofbiz.load(`prodCatalogs/find?prodCatalogId=${prodCatalogRole.prodCatalogId}`)
+      resolve: (prodCatalogRole, args, {loaders}) => loaders.ofbiz.load(`product/prodCatalogs/find?prodCatalogId=${prodCatalogRole.prodCatalogId}`)
     },
     thruDate: {type: GraphQLString}
   })

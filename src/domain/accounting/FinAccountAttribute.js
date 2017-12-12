@@ -21,7 +21,7 @@ const FinAccountAttributeType = new GraphQLObjectType({
     finAccount: {
       type: FinAccountType,
       args : {finAccountId: {type: GraphQLString}},
-      resolve: (finAccountAttribute, args, {loaders}) => loaders.ofbiz.load(`finAccounts/find?finAccountId=${finAccountAttribute.finAccountId}`)
+      resolve: (finAccountAttribute, args, {loaders}) => loaders.ofbiz.load(`accounting/finAccounts/find?finAccountId=${finAccountAttribute.finAccountId}`)
     },
     attrDescription: {type: GraphQLString},
     attrValue: {type: GraphQLString},

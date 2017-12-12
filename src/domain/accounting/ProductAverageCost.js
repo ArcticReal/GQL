@@ -25,22 +25,22 @@ const ProductAverageCostType = new GraphQLObjectType({
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${productAverageCost.facilityId}`)
+      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${productAverageCost.facilityId}`)
     },
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productAverageCost.productId}`)
+      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productAverageCost.productId}`)
     },
     productAverageCostType: {
       type: ProductAverageCostTypeType,
       args : {productAverageCostTypeId: {type: GraphQLString}},
-      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`productAverageCostTypes/find?productAverageCostTypeId=${productAverageCost.productAverageCostTypeId}`)
+      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`accounting/productAverageCost/productAverageCostTypes/find?productAverageCostTypeId=${productAverageCost.productAverageCostTypeId}`)
     },
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productAverageCost.organizationPartyId}`)
+      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productAverageCost.organizationPartyId}`)
     },
     averageCost: {type: GraphQLFloat},
     thruDate: {type: GraphQLString}

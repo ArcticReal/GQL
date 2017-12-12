@@ -23,12 +23,12 @@ const MarketingCampaignRoleType = new GraphQLObjectType({
     marketingCampaign: {
       type: MarketingCampaignType,
       args : {marketingCampaignId: {type: GraphQLString}},
-      resolve: (marketingCampaignRole, args, {loaders}) => loaders.ofbiz.load(`marketingCampaigns/find?marketingCampaignId=${marketingCampaignRole.marketingCampaignId}`)
+      resolve: (marketingCampaignRole, args, {loaders}) => loaders.ofbiz.load(`marketing/marketingCampaigns/find?marketingCampaignId=${marketingCampaignRole.marketingCampaignId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (marketingCampaignRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${marketingCampaignRole.partyId}`)
+      resolve: (marketingCampaignRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${marketingCampaignRole.partyId}`)
     }
   })
 });

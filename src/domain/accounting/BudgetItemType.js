@@ -24,35 +24,35 @@ const BudgetItemTypeType = new GraphQLObjectType({
     parentType: {
       type: BudgetItemTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (budgetItemType, args, {loaders}) => loaders.ofbiz.load(`budgetItemTypes/find?budgetItemTypeId=${budgetItemType.parentTypeId}`)
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbiz.load(`accounting/budget/budgetItemTypes/find?budgetItemTypeId=${budgetItemType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     budgetItemTypeId: {type: GraphQLString},
     budgetItems: {
       type: new GraphQLList(BudgetItemType),
-      args : {budgetItemTypeId: {type: GraphQLString}},
-      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`budgetItems/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
+      args : {},
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetItems/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
     },
     budgetItemTypeAttrs: {
       type: new GraphQLList(BudgetItemTypeAttrType),
-      args : {budgetItemTypeId: {type: GraphQLString}},
-      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`budgetItemTypeAttrs/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
+      args : {},
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetItemTypeAttrs/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
     },
     glBudgetXrefs: {
       type: new GraphQLList(GlBudgetXrefType),
-      args : {budgetItemTypeId: {type: GraphQLString}},
-      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`glBudgetXrefs/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
+      args : {},
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/glBudgetXrefs/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
     },
     budgetScenarioRules: {
       type: new GraphQLList(BudgetScenarioRuleType),
-      args : {budgetItemTypeId: {type: GraphQLString}},
-      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`budgetScenarioRules/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
+      args : {},
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetScenarioRules/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
     },
     budgetItemTypes: {
       type: new GraphQLList(BudgetItemTypeType),
-      args : {budgetItemTypeId: {type: GraphQLString}},
-      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`budgetItemTypes/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
+      args : {},
+      resolve: (budgetItemType, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetItemTypes/find?budgetItemTypeId=${budgetItemType.budgetItemTypeId}`)
     }
   })
 });

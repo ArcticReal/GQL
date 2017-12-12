@@ -28,7 +28,7 @@ const ProductCategoryLinkType = new GraphQLObjectType({
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (productCategoryLink, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${productCategoryLink.productCategoryId}`)
+      resolve: (productCategoryLink, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${productCategoryLink.productCategoryId}`)
     },
     titleText: {type: GraphQLString},
     imageUrl: {type: GraphQLString},

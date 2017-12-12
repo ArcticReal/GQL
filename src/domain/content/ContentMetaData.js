@@ -24,12 +24,12 @@ const ContentMetaDataType = new GraphQLObjectType({
     metaDataPredicate: {
       type: MetaDataPredicateType,
       args : {metaDataPredicateId: {type: GraphQLString}},
-      resolve: (contentMetaData, args, {loaders}) => loaders.ofbiz.load(`metaDataPredicates/find?metaDataPredicateId=${contentMetaData.metaDataPredicateId}`)
+      resolve: (contentMetaData, args, {loaders}) => loaders.ofbiz.load(`content/metaDataPredicates/find?metaDataPredicateId=${contentMetaData.metaDataPredicateId}`)
     },
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (contentMetaData, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentMetaData.contentId}`)
+      resolve: (contentMetaData, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentMetaData.contentId}`)
     }
   })
 });

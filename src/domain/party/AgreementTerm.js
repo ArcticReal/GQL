@@ -27,7 +27,7 @@ const AgreementTermType = new GraphQLObjectType({
     termType: {
       type: TermTypeType,
       args : {termTypeId: {type: GraphQLString}},
-      resolve: (agreementTerm, args, {loaders}) => loaders.ofbiz.load(`termTypes/find?termTypeId=${agreementTerm.termTypeId}`)
+      resolve: (agreementTerm, args, {loaders}) => loaders.ofbiz.load(`party/termTypes/find?termTypeId=${agreementTerm.termTypeId}`)
     },
     agreementItemSeqId: {type: GraphQLString},
     description: {type: GraphQLString},
@@ -36,7 +36,7 @@ const AgreementTermType = new GraphQLObjectType({
     invoiceItemType: {
       type: InvoiceItemTypeType,
       args : {invoiceItemTypeId: {type: GraphQLString}},
-      resolve: (agreementTerm, args, {loaders}) => loaders.ofbiz.load(`invoiceItemTypes/find?invoiceItemTypeId=${agreementTerm.invoiceItemTypeId}`)
+      resolve: (agreementTerm, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItemTypes/find?invoiceItemTypeId=${agreementTerm.invoiceItemTypeId}`)
     },
     thruDate: {type: GraphQLString},
     fromDate: {type: GraphQLString},
@@ -44,12 +44,12 @@ const AgreementTermType = new GraphQLObjectType({
     agreement: {
       type: AgreementItemType,
       args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementTerm, args, {loaders}) => loaders.ofbiz.load(`agreementItems/find?agreementId=${agreementTerm.agreementId}`)
+      resolve: (agreementTerm, args, {loaders}) => loaders.ofbiz.load(`party/agreement/agreementItems/find?agreementId=${agreementTerm.agreementId}`)
     },
     agreementTermAttributes: {
       type: new GraphQLList(AgreementTermAttributeType),
-      args : {agreementTermId: {type: GraphQLString}},
-      resolve: (agreementTerm, args, {loaders}) => loaders.ofbizArray.load(`agreementTermAttributes/find?agreementTermId=${agreementTerm.agreementTermId}`)
+      args : {},
+      resolve: (agreementTerm, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementTermAttributes/find?agreementTermId=${agreementTerm.agreementTermId}`)
     }
   })
 });

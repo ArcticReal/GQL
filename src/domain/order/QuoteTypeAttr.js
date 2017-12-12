@@ -21,7 +21,7 @@ const QuoteTypeAttrType = new GraphQLObjectType({
     quoteType: {
       type: QuoteTypeType,
       args : {quoteTypeId: {type: GraphQLString}},
-      resolve: (quoteTypeAttr, args, {loaders}) => loaders.ofbiz.load(`quoteTypes/find?quoteTypeId=${quoteTypeAttr.quoteTypeId}`)
+      resolve: (quoteTypeAttr, args, {loaders}) => loaders.ofbiz.load(`order/quote/quoteTypes/find?quoteTypeId=${quoteTypeAttr.quoteTypeId}`)
     },
     description: {type: GraphQLString},
     attrName: {type: GraphQLString}

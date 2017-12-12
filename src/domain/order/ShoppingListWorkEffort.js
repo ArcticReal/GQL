@@ -22,12 +22,12 @@ const ShoppingListWorkEffortType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (shoppingListWorkEffort, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${shoppingListWorkEffort.workEffortId}`)
+      resolve: (shoppingListWorkEffort, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${shoppingListWorkEffort.workEffortId}`)
     },
     shoppingList: {
       type: ShoppingListType,
       args : {shoppingListId: {type: GraphQLString}},
-      resolve: (shoppingListWorkEffort, args, {loaders}) => loaders.ofbiz.load(`shoppingLists/find?shoppingListId=${shoppingListWorkEffort.shoppingListId}`)
+      resolve: (shoppingListWorkEffort, args, {loaders}) => loaders.ofbiz.load(`order/shoppingLists/find?shoppingListId=${shoppingListWorkEffort.shoppingListId}`)
     }
   })
 });

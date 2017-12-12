@@ -27,8 +27,8 @@ const ContentSearchResultType = new GraphQLObjectType({
     isAscending: {type: GraphQLBoolean},
     contentSearchConstraints: {
       type: new GraphQLList(ContentSearchConstraintType),
-      args : {contentSearchResultId: {type: GraphQLString}},
-      resolve: (contentSearchResult, args, {loaders}) => loaders.ofbizArray.load(`contentSearchConstraints/find?contentSearchResultId=${contentSearchResult.contentSearchResultId}`)
+      args : {},
+      resolve: (contentSearchResult, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentSearchConstraints/find?contentSearchResultId=${contentSearchResult.contentSearchResultId}`)
     }
   })
 });

@@ -23,30 +23,30 @@ const FixedAssetTypeType = new GraphQLObjectType({
     parentType: {
       type: FixedAssetTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetType, args, {loaders}) => loaders.ofbiz.load(`fixedAssetTypes/find?fixedAssetTypeId=${fixedAssetType.parentTypeId}`)
+      resolve: (fixedAssetType, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAsset/fixedAssetTypes/find?fixedAssetTypeId=${fixedAssetType.parentTypeId}`)
     },
     fixedAssetTypeId: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     fixedAssetTypeAttrs: {
       type: new GraphQLList(FixedAssetTypeAttrType),
-      args : {fixedAssetTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetTypeAttrs/find?fixedAssetTypeId=${fixedAssetType.fixedAssetTypeId}`)
+      args : {},
+      resolve: (fixedAssetType, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetTypeAttrs/find?fixedAssetTypeId=${fixedAssetType.fixedAssetTypeId}`)
     },
     workEffortFixedAssetStds: {
       type: new GraphQLList(WorkEffortFixedAssetStdType),
-      args : {fixedAssetTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetType, args, {loaders}) => loaders.ofbizArray.load(`workEffortFixedAssetStds/find?fixedAssetTypeId=${fixedAssetType.fixedAssetTypeId}`)
+      args : {},
+      resolve: (fixedAssetType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortFixedAssetStds/find?fixedAssetTypeId=${fixedAssetType.fixedAssetTypeId}`)
     },
     fixedAssetTypes: {
       type: new GraphQLList(FixedAssetTypeType),
-      args : {fixedAssetTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetTypes/find?fixedAssetTypeId=${fixedAssetType.fixedAssetTypeId}`)
+      args : {},
+      resolve: (fixedAssetType, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetTypes/find?fixedAssetTypeId=${fixedAssetType.fixedAssetTypeId}`)
     },
     fixedAssets: {
       type: new GraphQLList(FixedAssetType),
-      args : {fixedAssetTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssets/find?fixedAssetTypeId=${fixedAssetType.fixedAssetTypeId}`)
+      args : {},
+      resolve: (fixedAssetType, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAssets/find?fixedAssetTypeId=${fixedAssetType.fixedAssetTypeId}`)
     }
   })
 });

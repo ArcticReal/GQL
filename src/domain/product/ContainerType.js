@@ -22,8 +22,8 @@ const ContainerTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     containers: {
       type: new GraphQLList(ContainerType),
-      args : {containerTypeId: {type: GraphQLString}},
-      resolve: (containerType, args, {loaders}) => loaders.ofbizArray.load(`containers/find?containerTypeId=${containerType.containerTypeId}`)
+      args : {},
+      resolve: (containerType, args, {loaders}) => loaders.ofbizArray.load(`product/containers/find?containerTypeId=${containerType.containerTypeId}`)
     }
   })
 });

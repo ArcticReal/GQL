@@ -22,8 +22,8 @@ const JobInterviewTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     jobInterviews: {
       type: new GraphQLList(JobInterviewType),
-      args : {jobInterviewTypeId: {type: GraphQLString}},
-      resolve: (jobInterviewType, args, {loaders}) => loaders.ofbizArray.load(`jobInterviews/find?jobInterviewTypeId=${jobInterviewType.jobInterviewTypeId}`)
+      args : {},
+      resolve: (jobInterviewType, args, {loaders}) => loaders.ofbizArray.load(`humanres/jobInterviews/find?jobInterviewTypeId=${jobInterviewType.jobInterviewTypeId}`)
     }
   })
 });

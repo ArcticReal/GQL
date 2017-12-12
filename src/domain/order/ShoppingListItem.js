@@ -25,12 +25,12 @@ const ShoppingListItemType = new GraphQLObjectType({
     shoppingList: {
       type: ShoppingListType,
       args : {shoppingListId: {type: GraphQLString}},
-      resolve: (shoppingListItem, args, {loaders}) => loaders.ofbiz.load(`shoppingLists/find?shoppingListId=${shoppingListItem.shoppingListId}`)
+      resolve: (shoppingListItem, args, {loaders}) => loaders.ofbiz.load(`order/shoppingLists/find?shoppingListId=${shoppingListItem.shoppingListId}`)
     },
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (shoppingListItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${shoppingListItem.productId}`)
+      resolve: (shoppingListItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${shoppingListItem.productId}`)
     },
     reservPersons: {type: GraphQLFloat},
     reservStart: {type: GraphQLString},
@@ -40,8 +40,8 @@ const ShoppingListItemType = new GraphQLObjectType({
     modifiedPrice: {type: GraphQLFloat},
     shoppingListItemSurveies: {
       type: new GraphQLList(ShoppingListItemSurveyType),
-      args : {shoppingListId: {type: GraphQLString}},
-      resolve: (shoppingListItem, args, {loaders}) => loaders.ofbizArray.load(`shoppingListItemSurveys/find?shoppingListId=${shoppingListItem.shoppingListId}`)
+      args : {},
+      resolve: (shoppingListItem, args, {loaders}) => loaders.ofbizArray.load(`order/shoppingList/shoppingListItemSurveys/find?shoppingListId=${shoppingListItem.shoppingListId}`)
     }
   })
 });

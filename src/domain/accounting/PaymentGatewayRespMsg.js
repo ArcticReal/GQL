@@ -22,7 +22,7 @@ const PaymentGatewayRespMsgType = new GraphQLObjectType({
     paymentGatewayResponse: {
       type: PaymentGatewayResponseType,
       args : {paymentGatewayResponseId: {type: GraphQLString}},
-      resolve: (paymentGatewayRespMsg, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayResponses/find?paymentGatewayResponseId=${paymentGatewayRespMsg.paymentGatewayResponseId}`)
+      resolve: (paymentGatewayRespMsg, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGatewayResponses/find?paymentGatewayResponseId=${paymentGatewayRespMsg.paymentGatewayResponseId}`)
     },
     pgrMessage: {type: GraphQLString}
   })

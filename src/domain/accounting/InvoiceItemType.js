@@ -26,45 +26,45 @@ const InvoiceItemTypeType = new GraphQLObjectType({
     parentType: {
       type: InvoiceItemTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbiz.load(`invoiceItemTypes/find?invoiceItemTypeId=${invoiceItemType.parentTypeId}`)
+      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItemTypes/find?invoiceItemTypeId=${invoiceItemType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     defaultGlAccount: {
       type: GlAccountType,
       args : {defaultGlAccountId: {type: GraphQLString}},
-      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${invoiceItemType.defaultGlAccountId}`)
+      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${invoiceItemType.defaultGlAccountId}`)
     },
     description: {type: GraphQLString},
     invoiceItemTypeId: {type: GraphQLString},
     invoiceItemTypeGlAccounts: {
       type: new GraphQLList(InvoiceItemTypeGlAccountType),
-      args : {invoiceItemTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemTypeGlAccounts/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
+      args : {},
+      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItemTypeGlAccounts/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
     },
     invoiceItemTypeAttrs: {
       type: new GraphQLList(InvoiceItemTypeAttrType),
-      args : {invoiceItemTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemTypeAttrs/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
+      args : {},
+      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItemTypeAttrs/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
     },
     invoiceItemTypeMaps: {
       type: new GraphQLList(InvoiceItemTypeMapType),
-      args : {invoiceItemTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemTypeMaps/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
+      args : {},
+      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItemTypeMaps/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
     },
     invoiceItemTypes: {
       type: new GraphQLList(InvoiceItemTypeType),
-      args : {invoiceItemTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemTypes/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
+      args : {},
+      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItemTypes/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
     },
     invoiceItems: {
       type: new GraphQLList(InvoiceItemType),
-      args : {invoiceItemTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`invoiceItems/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
+      args : {},
+      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItems/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
     },
     agreementTerms: {
       type: new GraphQLList(AgreementTermType),
-      args : {invoiceItemTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`agreementTerms/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
+      args : {},
+      resolve: (invoiceItemType, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementTerms/find?invoiceItemTypeId=${invoiceItemType.invoiceItemTypeId}`)
     }
   })
 });

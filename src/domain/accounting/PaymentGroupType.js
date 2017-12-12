@@ -21,20 +21,20 @@ const PaymentGroupTypeType = new GraphQLObjectType({
     parentType: {
       type: PaymentGroupTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (paymentGroupType, args, {loaders}) => loaders.ofbiz.load(`paymentGroupTypes/find?paymentGroupTypeId=${paymentGroupType.parentTypeId}`)
+      resolve: (paymentGroupType, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGroupTypes/find?paymentGroupTypeId=${paymentGroupType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     paymentGroupTypeId: {type: GraphQLString},
     paymentGroupTypes: {
       type: new GraphQLList(PaymentGroupTypeType),
-      args : {paymentGroupTypeId: {type: GraphQLString}},
-      resolve: (paymentGroupType, args, {loaders}) => loaders.ofbizArray.load(`paymentGroupTypes/find?paymentGroupTypeId=${paymentGroupType.paymentGroupTypeId}`)
+      args : {},
+      resolve: (paymentGroupType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGroupTypes/find?paymentGroupTypeId=${paymentGroupType.paymentGroupTypeId}`)
     },
     paymentGroups: {
       type: new GraphQLList(PaymentGroupType),
-      args : {paymentGroupTypeId: {type: GraphQLString}},
-      resolve: (paymentGroupType, args, {loaders}) => loaders.ofbizArray.load(`paymentGroups/find?paymentGroupTypeId=${paymentGroupType.paymentGroupTypeId}`)
+      args : {},
+      resolve: (paymentGroupType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGroups/find?paymentGroupTypeId=${paymentGroupType.paymentGroupTypeId}`)
     }
   })
 });

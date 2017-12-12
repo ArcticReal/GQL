@@ -24,7 +24,7 @@ const ShipmentGatewayUspsType = new GraphQLObjectType({
     shipmentGatewayConfig: {
       type: ShipmentGatewayConfigType,
       args : {shipmentGatewayConfigId: {type: GraphQLString}},
-      resolve: (shipmentGatewayUsps, args, {loaders}) => loaders.ofbiz.load(`shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayUsps.shipmentGatewayConfigId}`)
+      resolve: (shipmentGatewayUsps, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayUsps.shipmentGatewayConfigId}`)
     },
     connectTimeout: {type: GraphQLInt},
     connectUrlLabels: {type: GraphQLString},

@@ -22,8 +22,8 @@ const RejectionReasonType = new GraphQLObjectType({
     description: {type: GraphQLString},
     shipmentReceipts: {
       type: new GraphQLList(ShipmentReceiptType),
-      args : {rejectionId: {type: GraphQLString}},
-      resolve: (rejectionReason, args, {loaders}) => loaders.ofbizArray.load(`shipmentReceipts/find?rejectionId=${rejectionReason.rejectionId}`)
+      args : {},
+      resolve: (rejectionReason, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentReceipts/find?rejectionId=${rejectionReason.rejectionId}`)
     }
   })
 });

@@ -26,7 +26,7 @@ const SalaryStepType = new GraphQLObjectType({
     payGrade: {
       type: PayGradeType,
       args : {payGradeId: {type: GraphQLString}},
-      resolve: (salaryStep, args, {loaders}) => loaders.ofbiz.load(`payGrades/find?payGradeId=${salaryStep.payGradeId}`)
+      resolve: (salaryStep, args, {loaders}) => loaders.ofbiz.load(`humanres/payGrades/find?payGradeId=${salaryStep.payGradeId}`)
     },
     createdByUserLogin: {type: GraphQLString},
     thruDate: {type: GraphQLString}

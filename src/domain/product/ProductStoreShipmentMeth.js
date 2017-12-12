@@ -32,7 +32,7 @@ const ProductStoreShipmentMethType = new GraphQLObjectType({
     shipmentGatewayConfig: {
       type: ShipmentGatewayConfigType,
       args : {shipmentGatewayConfigId: {type: GraphQLString}},
-      resolve: (productStoreShipmentMeth, args, {loaders}) => loaders.ofbiz.load(`shipmentGatewayConfigs/find?shipmentGatewayConfigId=${productStoreShipmentMeth.shipmentGatewayConfigId}`)
+      resolve: (productStoreShipmentMeth, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentGatewayConfigs/find?shipmentGatewayConfigId=${productStoreShipmentMeth.shipmentGatewayConfigId}`)
     },
     minSize: {type: GraphQLFloat},
     productStoreId: {type: GraphQLString},
@@ -53,8 +53,8 @@ const ProductStoreShipmentMethType = new GraphQLObjectType({
     includeNoChargeItems: {type: GraphQLBoolean},
     shipmentCostEstimates: {
       type: new GraphQLList(ShipmentCostEstimateType),
-      args : {productStoreShipMethId: {type: GraphQLString}},
-      resolve: (productStoreShipmentMeth, args, {loaders}) => loaders.ofbizArray.load(`shipmentCostEstimates/find?productStoreShipMethId=${productStoreShipmentMeth.productStoreShipMethId}`)
+      args : {},
+      resolve: (productStoreShipmentMeth, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentCostEstimates/find?productStoreShipMethId=${productStoreShipmentMeth.productStoreShipMethId}`)
     }
   })
 });

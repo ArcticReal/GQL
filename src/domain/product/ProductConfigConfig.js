@@ -22,7 +22,7 @@ const ProductConfigConfigType = new GraphQLObjectType({
     configItem: {
       type: ProductConfigOptionType,
       args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigConfig, args, {loaders}) => loaders.ofbiz.load(`productConfigOptions/find?configItemId=${productConfigConfig.configItemId}`)
+      resolve: (productConfigConfig, args, {loaders}) => loaders.ofbiz.load(`product/product/productConfigOptions/find?configItemId=${productConfigConfig.configItemId}`)
     },
     sequenceNum: {type: GraphQLInt},
     configId: {type: GraphQLString},
@@ -30,8 +30,8 @@ const ProductConfigConfigType = new GraphQLObjectType({
     description: {type: GraphQLString},
     configOptionProductOptions: {
       type: new GraphQLList(ConfigOptionProductOptionType),
-      args : {configId: {type: GraphQLString}},
-      resolve: (productConfigConfig, args, {loaders}) => loaders.ofbizArray.load(`configOptionProductOptions/find?configId=${productConfigConfig.configId}`)
+      args : {},
+      resolve: (productConfigConfig, args, {loaders}) => loaders.ofbizArray.load(`product/product/configOptionProductOptions/find?configId=${productConfigConfig.configId}`)
     }
   })
 });

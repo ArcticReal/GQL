@@ -22,13 +22,13 @@ const TimesheetRoleType = new GraphQLObjectType({
     timesheet: {
       type: TimesheetType,
       args : {timesheetId: {type: GraphQLString}},
-      resolve: (timesheetRole, args, {loaders}) => loaders.ofbiz.load(`timesheets/find?timesheetId=${timesheetRole.timesheetId}`)
+      resolve: (timesheetRole, args, {loaders}) => loaders.ofbiz.load(`workeffort/timesheets/find?timesheetId=${timesheetRole.timesheetId}`)
     },
     roleTypeId: {type: GraphQLString},
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (timesheetRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${timesheetRole.partyId}`)
+      resolve: (timesheetRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${timesheetRole.partyId}`)
     }
   })
 });

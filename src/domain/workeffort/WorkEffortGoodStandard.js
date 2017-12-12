@@ -23,18 +23,18 @@ const WorkEffortGoodStandardType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortGoodStandard, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortGoodStandard.workEffortId}`)
+      resolve: (workEffortGoodStandard, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortGoodStandard.workEffortId}`)
     },
     workEffortGoodStdType: {
       type: WorkEffortGoodStandardTypeType,
       args : {workEffortGoodStdTypeId: {type: GraphQLString}},
-      resolve: (workEffortGoodStandard, args, {loaders}) => loaders.ofbiz.load(`workEffortGoodStandardTypes/find?workEffortGoodStdTypeId=${workEffortGoodStandard.workEffortGoodStdTypeId}`)
+      resolve: (workEffortGoodStandard, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEffort/workEffortGoodStandardTypes/find?workEffortGoodStdTypeId=${workEffortGoodStandard.workEffortGoodStdTypeId}`)
     },
     fromDate: {type: GraphQLString},
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (workEffortGoodStandard, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${workEffortGoodStandard.productId}`)
+      resolve: (workEffortGoodStandard, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${workEffortGoodStandard.productId}`)
     },
     statusId: {type: GraphQLString},
     estimatedQuantity: {type: GraphQLFloat},

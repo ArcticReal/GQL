@@ -31,33 +31,33 @@ const ProductConfigItemType = new GraphQLObjectType({
     description: {type: GraphQLString},
     productConfigOptionIactns: {
       type: new GraphQLList(ProductConfigOptionIactnType),
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`productConfigOptionIactns/find?configItemId=${productConfigItem.configItemId}`)
+      args : {},
+      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`product/product/productConfigOptionIactns/find?configItemId=${productConfigItem.configItemId}`)
     },
     productConfigOptions: {
       type: new GraphQLList(ProductConfigOptionType),
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`productConfigOptions/find?configItemId=${productConfigItem.configItemId}`)
+      args : {},
+      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`product/product/productConfigOptions/find?configItemId=${productConfigItem.configItemId}`)
     },
     productConfigConfigs: {
       type: new GraphQLList(ProductConfigConfigType),
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`productConfigConfigs/find?configItemId=${productConfigItem.configItemId}`)
+      args : {},
+      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`product/product/productConfigConfigs/find?configItemId=${productConfigItem.configItemId}`)
     },
     productConfigs: {
       type: new GraphQLList(ProductConfigType),
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`productConfigs/find?configItemId=${productConfigItem.configItemId}`)
+      args : {},
+      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`product/product/productConfigs/find?configItemId=${productConfigItem.configItemId}`)
     },
     productConfigProducts: {
       type: new GraphQLList(ProductConfigProductType),
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`productConfigProducts/find?configItemId=${productConfigItem.configItemId}`)
+      args : {},
+      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`product/product/productConfigProducts/find?configItemId=${productConfigItem.configItemId}`)
     },
     prodConfItemContents: {
       type: new GraphQLList(ProdConfItemContentType),
-      args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`prodConfItemContents/find?configItemId=${productConfigItem.configItemId}`)
+      args : {},
+      resolve: (productConfigItem, args, {loaders}) => loaders.ofbizArray.load(`product/prodConfItemContents/find?configItemId=${productConfigItem.configItemId}`)
     }
   })
 });

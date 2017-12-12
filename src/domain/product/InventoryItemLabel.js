@@ -23,13 +23,13 @@ const InventoryItemLabelType = new GraphQLObjectType({
     inventoryItemLabelType: {
       type: InventoryItemLabelTypeType,
       args : {inventoryItemLabelTypeId: {type: GraphQLString}},
-      resolve: (inventoryItemLabel, args, {loaders}) => loaders.ofbiz.load(`inventoryItemLabelTypes/find?inventoryItemLabelTypeId=${inventoryItemLabel.inventoryItemLabelTypeId}`)
+      resolve: (inventoryItemLabel, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItem/inventoryItemLabelTypes/find?inventoryItemLabelTypeId=${inventoryItemLabel.inventoryItemLabelTypeId}`)
     },
     description: {type: GraphQLString},
     inventoryItemLabelAppls: {
       type: new GraphQLList(InventoryItemLabelApplType),
-      args : {inventoryItemLabelId: {type: GraphQLString}},
-      resolve: (inventoryItemLabel, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemLabelAppls/find?inventoryItemLabelId=${inventoryItemLabel.inventoryItemLabelId}`)
+      args : {},
+      resolve: (inventoryItemLabel, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemLabelAppls/find?inventoryItemLabelId=${inventoryItemLabel.inventoryItemLabelId}`)
     }
   })
 });

@@ -64,222 +64,222 @@ const PartyRoleType = new GraphQLObjectType({
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${partyRole.roleTypeId}`)
+      resolve: (partyRole, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${partyRole.roleTypeId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyRole.partyId}`)
+      resolve: (partyRole, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyRole.partyId}`)
     },
     payrollPreferences: {
       type: new GraphQLList(PayrollPreferenceType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`payrollPreferences/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`humanres/payrollPreferences/find?partyId=${partyRole.partyId}`)
     },
     carrierShipmentMethods: {
       type: new GraphQLList(CarrierShipmentMethodType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`carrierShipmentMethods/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/carrierShipmentMethods/find?partyId=${partyRole.partyId}`)
     },
     workEffortPartyAssignments: {
       type: new GraphQLList(WorkEffortPartyAssignmentType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`workEffortPartyAssignments/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortPartyAssignments/find?partyId=${partyRole.partyId}`)
     },
     glAccountRoles: {
       type: new GraphQLList(GlAccountRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`glAccountRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/glAccountRoles/find?partyId=${partyRole.partyId}`)
     },
     partyGlAccounts: {
       type: new GraphQLList(PartyGlAccountType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`partyGlAccounts/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/partyGlAccounts/find?partyId=${partyRole.partyId}`)
     },
     productCategoryRoles: {
       type: new GraphQLList(ProductCategoryRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`productCategoryRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`product/product/productCategoryRoles/find?partyId=${partyRole.partyId}`)
     },
     perfReviewItems: {
       type: new GraphQLList(PerfReviewItemType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`perfReviewItems/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`humanres/perfReview/perfReviewItems/find?partyId=${partyRole.partyId}`)
     },
     partyBenefits: {
       type: new GraphQLList(PartyBenefitType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`partyBenefits/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`humanres/partyBenefits/find?partyId=${partyRole.partyId}`)
     },
     contentRoles: {
       type: new GraphQLList(ContentRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`contentRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentRoles/find?partyId=${partyRole.partyId}`)
     },
     agreements: {
       type: new GraphQLList(AgreementType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`agreements/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`party/agreements/find?partyId=${partyRole.partyId}`)
     },
     finAccountRoles: {
       type: new GraphQLList(FinAccountRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`finAccountRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccount/finAccountRoles/find?partyId=${partyRole.partyId}`)
     },
     productStoreGroupRoles: {
       type: new GraphQLList(ProductStoreGroupRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`productStoreGroupRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreGroupRoles/find?partyId=${partyRole.partyId}`)
     },
     partyFixedAssetAssignments: {
       type: new GraphQLList(PartyFixedAssetAssignmentType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`partyFixedAssetAssignments/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/partyFixedAssetAssignments/find?partyId=${partyRole.partyId}`)
     },
     communicationEventRoles: {
       type: new GraphQLList(CommunicationEventRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`communicationEventRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvent/communicationEventRoles/find?partyId=${partyRole.partyId}`)
     },
     employments: {
       type: new GraphQLList(EmploymentType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`employments/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`humanres/employments/find?partyId=${partyRole.partyId}`)
     },
     itemIssuanceRoles: {
       type: new GraphQLList(ItemIssuanceRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`itemIssuanceRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`shipment/itemIssuance/itemIssuanceRoles/find?partyId=${partyRole.partyId}`)
     },
     performanceNotes: {
       type: new GraphQLList(PerformanceNoteType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`performanceNotes/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`humanres/performanceNotes/find?partyId=${partyRole.partyId}`)
     },
     orderItemRoles: {
       type: new GraphQLList(OrderItemRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`orderItemRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemRoles/find?partyId=${partyRole.partyId}`)
     },
     picklistRoles: {
       type: new GraphQLList(PicklistRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`picklistRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`shipment/picklist/picklistRoles/find?partyId=${partyRole.partyId}`)
     },
     partyRelationships: {
       type: new GraphQLList(PartyRelationshipType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`partyRelationships/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyRelationships/find?partyId=${partyRole.partyId}`)
     },
     productStoreRoles: {
       type: new GraphQLList(ProductStoreRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`productStoreRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreRoles/find?partyId=${partyRole.partyId}`)
     },
     perfReviews: {
       type: new GraphQLList(PerfReviewType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`perfReviews/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`humanres/perfReviews/find?partyId=${partyRole.partyId}`)
     },
     budgetRoles: {
       type: new GraphQLList(BudgetRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`budgetRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetRoles/find?partyId=${partyRole.partyId}`)
     },
     facilityParties: {
       type: new GraphQLList(FacilityPartyType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`facilityPartys/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityPartys/find?partyId=${partyRole.partyId}`)
     },
     orderRoles: {
       type: new GraphQLList(OrderRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`orderRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`order/orderRoles/find?partyId=${partyRole.partyId}`)
     },
     segmentGroupRoles: {
       type: new GraphQLList(SegmentGroupRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`segmentGroupRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`marketing/segmentGroup/segmentGroupRoles/find?partyId=${partyRole.partyId}`)
     },
     webSiteRoles: {
       type: new GraphQLList(WebSiteRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`webSiteRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`content/webSiteRoles/find?partyId=${partyRole.partyId}`)
     },
     orderItemShipGroups: {
       type: new GraphQLList(OrderItemShipGroupType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`orderItemShipGroups/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemShipGroups/find?partyId=${partyRole.partyId}`)
     },
     custRequestParties: {
       type: new GraphQLList(CustRequestPartyType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`custRequestPartys/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestPartys/find?partyId=${partyRole.partyId}`)
     },
     agreementRoles: {
       type: new GraphQLList(AgreementRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`agreementRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementRoles/find?partyId=${partyRole.partyId}`)
     },
     productRoles: {
       type: new GraphQLList(ProductRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`productRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`product/product/productRoles/find?partyId=${partyRole.partyId}`)
     },
     dataResourceRoles: {
       type: new GraphQLList(DataResourceRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`dataResourceRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`content/dataResource/dataResourceRoles/find?partyId=${partyRole.partyId}`)
     },
     requirementRoles: {
       type: new GraphQLList(RequirementRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`requirementRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/requirementRoles/find?partyId=${partyRole.partyId}`)
     },
     shipmentReceiptRoles: {
       type: new GraphQLList(ShipmentReceiptRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`shipmentReceiptRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentReceiptRoles/find?partyId=${partyRole.partyId}`)
     },
     invoiceRoles: {
       type: new GraphQLList(InvoiceRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`invoiceRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceRoles/find?partyId=${partyRole.partyId}`)
     },
     prodCatalogRoles: {
       type: new GraphQLList(ProdCatalogRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`prodCatalogRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`product/prodCatalog/prodCatalogRoles/find?partyId=${partyRole.partyId}`)
     },
     billingAccountRoles: {
       type: new GraphQLList(BillingAccountRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`billingAccountRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`accounting/billingAccount/billingAccountRoles/find?partyId=${partyRole.partyId}`)
     },
     partyContactMeches: {
       type: new GraphQLList(PartyContactMechType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`partyContactMechs/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`party/contactMech/partyContactMechs/find?partyId=${partyRole.partyId}`)
     },
     facilityGroupRoles: {
       type: new GraphQLList(FacilityGroupRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`facilityGroupRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityGroupRoles/find?partyId=${partyRole.partyId}`)
     },
     quoteRoles: {
       type: new GraphQLList(QuoteRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`quoteRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteRoles/find?partyId=${partyRole.partyId}`)
     },
     timesheetRoles: {
       type: new GraphQLList(TimesheetRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`timesheetRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`workeffort/timesheet/timesheetRoles/find?partyId=${partyRole.partyId}`)
     },
     marketingCampaignRoles: {
       type: new GraphQLList(MarketingCampaignRoleType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`marketingCampaignRoles/find?partyId=${partyRole.partyId}`)
+      args : {},
+      resolve: (partyRole, args, {loaders}) => loaders.ofbizArray.load(`marketing/marketingCampaign/marketingCampaignRoles/find?partyId=${partyRole.partyId}`)
     }
   })
 });

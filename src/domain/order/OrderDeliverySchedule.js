@@ -25,7 +25,7 @@ const OrderDeliveryScheduleType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderDeliverySchedule, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderDeliverySchedule.orderId}`)
+      resolve: (orderDeliverySchedule, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderDeliverySchedule.orderId}`)
     },
     totalWeight: {type: GraphQLFloat},
     totalCubicSize: {type: GraphQLFloat},

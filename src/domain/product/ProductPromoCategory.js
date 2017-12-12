@@ -22,7 +22,7 @@ const ProductPromoCategoryType = new GraphQLObjectType({
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (productPromoCategory, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${productPromoCategory.productCategoryId}`)
+      resolve: (productPromoCategory, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${productPromoCategory.productCategoryId}`)
     },
     andGroupId: {type: GraphQLString},
     productPromoActionSeqId: {type: GraphQLString},
@@ -32,7 +32,7 @@ const ProductPromoCategoryType = new GraphQLObjectType({
     productPromo: {
       type: ProductPromoType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromoCategory, args, {loaders}) => loaders.ofbiz.load(`productPromos/find?productPromoId=${productPromoCategory.productPromoId}`)
+      resolve: (productPromoCategory, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromos/find?productPromoId=${productPromoCategory.productPromoId}`)
     },
     productPromoCondSeqId: {type: GraphQLString}
   })

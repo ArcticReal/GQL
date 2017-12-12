@@ -22,12 +22,12 @@ const OrderProductPromoCodeType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderProductPromoCode, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderProductPromoCode.orderId}`)
+      resolve: (orderProductPromoCode, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderProductPromoCode.orderId}`)
     },
     productPromoCode: {
       type: ProductPromoCodeType,
       args : {productPromoCodeId: {type: GraphQLString}},
-      resolve: (orderProductPromoCode, args, {loaders}) => loaders.ofbiz.load(`productPromoCodes/find?productPromoCodeId=${orderProductPromoCode.productPromoCodeId}`)
+      resolve: (orderProductPromoCode, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromoCodes/find?productPromoCodeId=${orderProductPromoCode.productPromoCodeId}`)
     }
   })
 });

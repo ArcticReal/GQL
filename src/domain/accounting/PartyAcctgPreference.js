@@ -29,7 +29,7 @@ const PartyAcctgPreferenceType = new GraphQLObjectType({
     errorGlJournal: {
       type: GlJournalType,
       args : {errorGlJournalId: {type: GraphQLString}},
-      resolve: (partyAcctgPreference, args, {loaders}) => loaders.ofbiz.load(`glJournals/find?glJournalId=${partyAcctgPreference.errorGlJournalId}`)
+      resolve: (partyAcctgPreference, args, {loaders}) => loaders.ofbiz.load(`accounting/glJournals/find?glJournalId=${partyAcctgPreference.errorGlJournalId}`)
     },
     orderIdPrefix: {type: GraphQLString},
     fiscalYearStartDay: {type: GraphQLInt},
@@ -39,7 +39,7 @@ const PartyAcctgPreferenceType = new GraphQLObjectType({
     refundPaymentMethod: {
       type: PaymentMethodType,
       args : {refundPaymentMethodId: {type: GraphQLString}},
-      resolve: (partyAcctgPreference, args, {loaders}) => loaders.ofbiz.load(`paymentMethods/find?paymentMethodId=${partyAcctgPreference.refundPaymentMethodId}`)
+      resolve: (partyAcctgPreference, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethods/find?paymentMethodId=${partyAcctgPreference.refundPaymentMethodId}`)
     },
     useInvoiceIdForReturns: {type: GraphQLBoolean},
     invoiceIdPrefix: {type: GraphQLString},
@@ -49,7 +49,7 @@ const PartyAcctgPreferenceType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyAcctgPreference, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyAcctgPreference.partyId}`)
+      resolve: (partyAcctgPreference, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyAcctgPreference.partyId}`)
     },
     quoteIdPrefix: {type: GraphQLString},
     oldOrderSequenceEnumId: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},

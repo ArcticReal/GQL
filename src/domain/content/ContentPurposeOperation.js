@@ -23,19 +23,19 @@ const ContentPurposeOperationType = new GraphQLObjectType({
     contentPurposeType: {
       type: ContentPurposeTypeType,
       args : {contentPurposeTypeId: {type: GraphQLString}},
-      resolve: (contentPurposeOperation, args, {loaders}) => loaders.ofbiz.load(`contentPurposeTypes/find?contentPurposeTypeId=${contentPurposeOperation.contentPurposeTypeId}`)
+      resolve: (contentPurposeOperation, args, {loaders}) => loaders.ofbiz.load(`content/content/contentPurposeTypes/find?contentPurposeTypeId=${contentPurposeOperation.contentPurposeTypeId}`)
     },
     privilegeEnumId: {type: GraphQLString},
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (contentPurposeOperation, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${contentPurposeOperation.roleTypeId}`)
+      resolve: (contentPurposeOperation, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${contentPurposeOperation.roleTypeId}`)
     },
     statusId: {type: GraphQLString},
     contentOperation: {
       type: ContentOperationType,
       args : {contentOperationId: {type: GraphQLString}},
-      resolve: (contentPurposeOperation, args, {loaders}) => loaders.ofbiz.load(`contentOperations/find?contentOperationId=${contentPurposeOperation.contentOperationId}`)
+      resolve: (contentPurposeOperation, args, {loaders}) => loaders.ofbiz.load(`content/content/contentOperations/find?contentOperationId=${contentPurposeOperation.contentOperationId}`)
     }
   })
 });

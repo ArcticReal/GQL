@@ -33,28 +33,28 @@ const ProdCatalogType = new GraphQLObjectType({
     purchaseAllowPermReqd: {type: GraphQLBoolean},
     productStoreCatalogs: {
       type: new GraphQLList(ProductStoreCatalogType),
-      args : {prodCatalogId: {type: GraphQLString}},
-      resolve: (prodCatalog, args, {loaders}) => loaders.ofbizArray.load(`productStoreCatalogs/find?prodCatalogId=${prodCatalog.prodCatalogId}`)
+      args : {},
+      resolve: (prodCatalog, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreCatalogs/find?prodCatalogId=${prodCatalog.prodCatalogId}`)
     },
     prodCatalogCategories: {
       type: new GraphQLList(ProdCatalogCategoryType),
-      args : {prodCatalogId: {type: GraphQLString}},
-      resolve: (prodCatalog, args, {loaders}) => loaders.ofbizArray.load(`prodCatalogCategorys/find?prodCatalogId=${prodCatalog.prodCatalogId}`)
+      args : {},
+      resolve: (prodCatalog, args, {loaders}) => loaders.ofbizArray.load(`product/prodCatalog/prodCatalogCategorys/find?prodCatalogId=${prodCatalog.prodCatalogId}`)
     },
     cartAbandonedLines: {
       type: new GraphQLList(CartAbandonedLineType),
-      args : {prodCatalogId: {type: GraphQLString}},
-      resolve: (prodCatalog, args, {loaders}) => loaders.ofbizArray.load(`cartAbandonedLines/find?prodCatalogId=${prodCatalog.prodCatalogId}`)
+      args : {},
+      resolve: (prodCatalog, args, {loaders}) => loaders.ofbizArray.load(`order/cartAbandonedLines/find?prodCatalogId=${prodCatalog.prodCatalogId}`)
     },
     prodCatalogInvFacilities: {
       type: new GraphQLList(ProdCatalogInvFacilityType),
-      args : {prodCatalogId: {type: GraphQLString}},
-      resolve: (prodCatalog, args, {loaders}) => loaders.ofbizArray.load(`prodCatalogInvFacilitys/find?prodCatalogId=${prodCatalog.prodCatalogId}`)
+      args : {},
+      resolve: (prodCatalog, args, {loaders}) => loaders.ofbizArray.load(`product/prodCatalog/prodCatalogInvFacilitys/find?prodCatalogId=${prodCatalog.prodCatalogId}`)
     },
     prodCatalogRoles: {
       type: new GraphQLList(ProdCatalogRoleType),
-      args : {prodCatalogId: {type: GraphQLString}},
-      resolve: (prodCatalog, args, {loaders}) => loaders.ofbizArray.load(`prodCatalogRoles/find?prodCatalogId=${prodCatalog.prodCatalogId}`)
+      args : {},
+      resolve: (prodCatalog, args, {loaders}) => loaders.ofbizArray.load(`product/prodCatalog/prodCatalogRoles/find?prodCatalogId=${prodCatalog.prodCatalogId}`)
     }
   })
 });

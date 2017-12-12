@@ -34,13 +34,13 @@ const RequirementType = new GraphQLObjectType({
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${requirement.facilityId}`)
+      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${requirement.facilityId}`)
     },
     quantity: {type: GraphQLFloat},
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${requirement.productId}`)
+      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${requirement.productId}`)
     },
     lastModifiedDate: {type: GraphQLString},
     estimatedBudget: {type: GraphQLFloat},
@@ -50,7 +50,7 @@ const RequirementType = new GraphQLObjectType({
     requirementType: {
       type: RequirementTypeType,
       args : {requirementTypeId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`requirementTypes/find?requirementTypeId=${requirement.requirementTypeId}`)
+      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`order/requirement/requirementTypes/find?requirementTypeId=${requirement.requirementTypeId}`)
     },
     useCase: {type: GraphQLString},
     lastModifiedByUserLogin: {type: GraphQLString},
@@ -59,54 +59,54 @@ const RequirementType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${requirement.fixedAssetId}`)
+      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${requirement.fixedAssetId}`)
     },
     requirementId: {type: GraphQLString},
     createdByUserLogin: {type: GraphQLString},
     deliverable: {
       type: DeliverableType,
       args : {deliverableId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`deliverables/find?deliverableId=${requirement.deliverableId}`)
+      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`workeffort/deliverables/find?deliverableId=${requirement.deliverableId}`)
     },
     requirementRoles: {
       type: new GraphQLList(RequirementRoleType),
-      args : {requirementId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`requirementRoles/find?requirementId=${requirement.requirementId}`)
+      args : {},
+      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/requirementRoles/find?requirementId=${requirement.requirementId}`)
     },
     workRequirementFulfillments: {
       type: new GraphQLList(WorkRequirementFulfillmentType),
-      args : {requirementId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`workRequirementFulfillments/find?requirementId=${requirement.requirementId}`)
+      args : {},
+      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/workRequirementFulfillments/find?requirementId=${requirement.requirementId}`)
     },
     desiredFeatures: {
       type: new GraphQLList(DesiredFeatureType),
-      args : {requirementId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`desiredFeatures/find?requirementId=${requirement.requirementId}`)
+      args : {},
+      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`order/desiredFeatures/find?requirementId=${requirement.requirementId}`)
     },
     requirementAttributes: {
       type: new GraphQLList(RequirementAttributeType),
-      args : {requirementId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`requirementAttributes/find?requirementId=${requirement.requirementId}`)
+      args : {},
+      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/requirementAttributes/find?requirementId=${requirement.requirementId}`)
     },
     requirementCustRequests: {
       type: new GraphQLList(RequirementCustRequestType),
-      args : {requirementId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`requirementCustRequests/find?requirementId=${requirement.requirementId}`)
+      args : {},
+      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/requirementCustRequests/find?requirementId=${requirement.requirementId}`)
     },
     requirementStatuses: {
       type: new GraphQLList(RequirementStatusType),
-      args : {requirementId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`requirementStatuss/find?requirementId=${requirement.requirementId}`)
+      args : {},
+      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/requirementStatuss/find?requirementId=${requirement.requirementId}`)
     },
     orderRequirementCommitments: {
       type: new GraphQLList(OrderRequirementCommitmentType),
-      args : {requirementId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`orderRequirementCommitments/find?requirementId=${requirement.requirementId}`)
+      args : {},
+      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/orderRequirementCommitments/find?requirementId=${requirement.requirementId}`)
     },
     requirementBudgetAllocations: {
       type: new GraphQLList(RequirementBudgetAllocationType),
-      args : {requirementId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`requirementBudgetAllocations/find?requirementId=${requirement.requirementId}`)
+      args : {},
+      resolve: (requirement, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/requirementBudgetAllocations/find?requirementId=${requirement.requirementId}`)
     }
   })
 });

@@ -25,14 +25,14 @@ const PartyRelationshipType = new GraphQLObjectType({
     partyFrom: {
       type: PartyRoleType,
       args : {partyIdFrom: {type: GraphQLString}},
-      resolve: (partyRelationship, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${partyRelationship.partyIdFrom}`)
+      resolve: (partyRelationship, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${partyRelationship.partyIdFrom}`)
     },
     positionTitle: {type: GraphQLString},
     comments: {type: GraphQLString},
     priorityType: {
       type: PriorityTypeType,
       args : {priorityTypeId: {type: GraphQLString}},
-      resolve: (partyRelationship, args, {loaders}) => loaders.ofbiz.load(`priorityTypes/find?priorityTypeId=${partyRelationship.priorityTypeId}`)
+      resolve: (partyRelationship, args, {loaders}) => loaders.ofbiz.load(`party/priorityTypes/find?priorityTypeId=${partyRelationship.priorityTypeId}`)
     },
     permissionsEnumId: {type: GraphQLString},
     roleTypeIdFrom: {type: GraphQLString},
@@ -42,18 +42,18 @@ const PartyRelationshipType = new GraphQLObjectType({
     securityGroup: {
       type: SecurityGroupType,
       args : {securityGroupId: {type: GraphQLString}},
-      resolve: (partyRelationship, args, {loaders}) => loaders.ofbiz.load(`securityGroups/find?groupId=${partyRelationship.securityGroupId}`)
+      resolve: (partyRelationship, args, {loaders}) => loaders.ofbiz.load(`login/securityGroups/find?groupId=${partyRelationship.securityGroupId}`)
     },
     partyRelationshipType: {
       type: PartyRelationshipTypeType,
       args : {partyRelationshipTypeId: {type: GraphQLString}},
-      resolve: (partyRelationship, args, {loaders}) => loaders.ofbiz.load(`partyRelationshipTypes/find?partyRelationshipTypeId=${partyRelationship.partyRelationshipTypeId}`)
+      resolve: (partyRelationship, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRelationshipTypes/find?partyRelationshipTypeId=${partyRelationship.partyRelationshipTypeId}`)
     },
     statusId: {type: GraphQLString},
     partyTo: {
       type: PartyRoleType,
       args : {partyIdTo: {type: GraphQLString}},
-      resolve: (partyRelationship, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${partyRelationship.partyIdTo}`)
+      resolve: (partyRelationship, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${partyRelationship.partyIdTo}`)
     }
   })
 });

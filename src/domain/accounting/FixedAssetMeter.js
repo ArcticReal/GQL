@@ -24,12 +24,12 @@ const FixedAssetMeterType = new GraphQLObjectType({
     productMeterType: {
       type: ProductMeterTypeType,
       args : {productMeterTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetMeter, args, {loaders}) => loaders.ofbiz.load(`productMeterTypes/find?productMeterTypeId=${fixedAssetMeter.productMeterTypeId}`)
+      resolve: (fixedAssetMeter, args, {loaders}) => loaders.ofbiz.load(`product/product/productMeterTypes/find?productMeterTypeId=${fixedAssetMeter.productMeterTypeId}`)
     },
     fixedAsset: {
       type: FixedAssetMaintType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetMeter, args, {loaders}) => loaders.ofbiz.load(`fixedAssetMaints/find?fixedAssetId=${fixedAssetMeter.fixedAssetId}`)
+      resolve: (fixedAssetMeter, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAsset/fixedAssetMaints/find?fixedAssetId=${fixedAssetMeter.fixedAssetId}`)
     },
     maintHistSeqId: {type: GraphQLString},
     meterValue: {type: GraphQLFloat},

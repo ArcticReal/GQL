@@ -22,8 +22,8 @@ const ContentAssocTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     contentAssocs: {
       type: new GraphQLList(ContentAssocType),
-      args : {contentAssocTypeId: {type: GraphQLString}},
-      resolve: (contentAssocType, args, {loaders}) => loaders.ofbizArray.load(`contentAssocs/find?contentAssocTypeId=${contentAssocType.contentAssocTypeId}`)
+      args : {},
+      resolve: (contentAssocType, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentAssocs/find?contentAssocTypeId=${contentAssocType.contentAssocTypeId}`)
     }
   })
 });

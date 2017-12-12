@@ -25,23 +25,23 @@ const AccommodationMapType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (accommodationMap, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${accommodationMap.fixedAssetId}`)
+      resolve: (accommodationMap, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${accommodationMap.fixedAssetId}`)
     },
     numberOfSpaces: {type: GraphQLInt},
     accommodationClass: {
       type: AccommodationClassType,
       args : {accommodationClassId: {type: GraphQLString}},
-      resolve: (accommodationMap, args, {loaders}) => loaders.ofbiz.load(`accommodationClasss/find?accommodationClassId=${accommodationMap.accommodationClassId}`)
+      resolve: (accommodationMap, args, {loaders}) => loaders.ofbiz.load(`accounting/accommodationClasss/find?accommodationClassId=${accommodationMap.accommodationClassId}`)
     },
     accommodationMapType: {
       type: AccommodationMapTypeType,
       args : {accommodationMapTypeId: {type: GraphQLString}},
-      resolve: (accommodationMap, args, {loaders}) => loaders.ofbiz.load(`accommodationMapTypes/find?accommodationMapTypeId=${accommodationMap.accommodationMapTypeId}`)
+      resolve: (accommodationMap, args, {loaders}) => loaders.ofbiz.load(`accounting/accommodationMap/accommodationMapTypes/find?accommodationMapTypeId=${accommodationMap.accommodationMapTypeId}`)
     },
     workEfforts: {
       type: new GraphQLList(WorkEffortType),
-      args : {accommodationMapId: {type: GraphQLString}},
-      resolve: (accommodationMap, args, {loaders}) => loaders.ofbizArray.load(`workEfforts/find?accommodationMapId=${accommodationMap.accommodationMapId}`)
+      args : {},
+      resolve: (accommodationMap, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEfforts/find?accommodationMapId=${accommodationMap.accommodationMapId}`)
     }
   })
 });

@@ -22,14 +22,14 @@ const GlAccountCategoryType = new GraphQLObjectType({
     glAccountCategoryType: {
       type: GlAccountCategoryTypeType,
       args : {glAccountCategoryTypeId: {type: GraphQLString}},
-      resolve: (glAccountCategory, args, {loaders}) => loaders.ofbiz.load(`glAccountCategoryTypes/find?glAccountCategoryTypeId=${glAccountCategory.glAccountCategoryTypeId}`)
+      resolve: (glAccountCategory, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountCategoryTypes/find?glAccountCategoryTypeId=${glAccountCategory.glAccountCategoryTypeId}`)
     },
     glAccountCategoryId: {type: GraphQLString},
     description: {type: GraphQLString},
     glAccountCategoryMembers: {
       type: new GraphQLList(GlAccountCategoryMemberType),
-      args : {glAccountCategoryId: {type: GraphQLString}},
-      resolve: (glAccountCategory, args, {loaders}) => loaders.ofbizArray.load(`glAccountCategoryMembers/find?glAccountCategoryId=${glAccountCategory.glAccountCategoryId}`)
+      args : {},
+      resolve: (glAccountCategory, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/glAccountCategoryMembers/find?glAccountCategoryId=${glAccountCategory.glAccountCategoryId}`)
     }
   })
 });

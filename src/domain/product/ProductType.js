@@ -23,7 +23,7 @@ const ProductTypeType = new GraphQLObjectType({
     parentType: {
       type: ProductTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (productType, args, {loaders}) => loaders.ofbiz.load(`productTypes/find?productTypeId=${productType.parentTypeId}`)
+      resolve: (productType, args, {loaders}) => loaders.ofbiz.load(`product/product/productTypes/find?productTypeId=${productType.parentTypeId}`)
     },
     isDigital: {type: GraphQLBoolean},
     hasTable: {type: GraphQLBoolean},
@@ -31,18 +31,18 @@ const ProductTypeType = new GraphQLObjectType({
     productTypeId: {type: GraphQLString},
     products: {
       type: new GraphQLList(ProductType),
-      args : {productTypeId: {type: GraphQLString}},
-      resolve: (productType, args, {loaders}) => loaders.ofbizArray.load(`products/find?productTypeId=${productType.productTypeId}`)
+      args : {},
+      resolve: (productType, args, {loaders}) => loaders.ofbizArray.load(`/products/find?productTypeId=${productType.productTypeId}`)
     },
     productTypes: {
       type: new GraphQLList(ProductTypeType),
-      args : {productTypeId: {type: GraphQLString}},
-      resolve: (productType, args, {loaders}) => loaders.ofbizArray.load(`productTypes/find?productTypeId=${productType.productTypeId}`)
+      args : {},
+      resolve: (productType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productTypes/find?productTypeId=${productType.productTypeId}`)
     },
     productTypeAttrs: {
       type: new GraphQLList(ProductTypeAttrType),
-      args : {productTypeId: {type: GraphQLString}},
-      resolve: (productType, args, {loaders}) => loaders.ofbizArray.load(`productTypeAttrs/find?productTypeId=${productType.productTypeId}`)
+      args : {},
+      resolve: (productType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productTypeAttrs/find?productTypeId=${productType.productTypeId}`)
     }
   })
 });

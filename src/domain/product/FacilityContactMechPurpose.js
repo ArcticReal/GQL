@@ -24,17 +24,17 @@ const FacilityContactMechPurposeType = new GraphQLObjectType({
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (facilityContactMechPurpose, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${facilityContactMechPurpose.facilityId}`)
+      resolve: (facilityContactMechPurpose, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${facilityContactMechPurpose.facilityId}`)
     },
     contactMechPurposeType: {
       type: ContactMechPurposeTypeType,
       args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (facilityContactMechPurpose, args, {loaders}) => loaders.ofbiz.load(`contactMechPurposeTypes/find?contactMechPurposeTypeId=${facilityContactMechPurpose.contactMechPurposeTypeId}`)
+      resolve: (facilityContactMechPurpose, args, {loaders}) => loaders.ofbiz.load(`party/contactMech/contactMechPurposeTypes/find?contactMechPurposeTypeId=${facilityContactMechPurpose.contactMechPurposeTypeId}`)
     },
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (facilityContactMechPurpose, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${facilityContactMechPurpose.contactMechId}`)
+      resolve: (facilityContactMechPurpose, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${facilityContactMechPurpose.contactMechId}`)
     },
     thruDate: {type: GraphQLString}
   })

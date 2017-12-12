@@ -21,7 +21,7 @@ const TrackingCodeVisitType = new GraphQLObjectType({
     trackingCode: {
       type: TrackingCodeType,
       args : {trackingCodeId: {type: GraphQLString}},
-      resolve: (trackingCodeVisit, args, {loaders}) => loaders.ofbiz.load(`trackingCodes/find?trackingCodeId=${trackingCodeVisit.trackingCodeId}`)
+      resolve: (trackingCodeVisit, args, {loaders}) => loaders.ofbiz.load(`marketing/trackingCodes/find?trackingCodeId=${trackingCodeVisit.trackingCodeId}`)
     },
     fromDate: {type: GraphQLString},
     visitId: {type: GraphQLString},

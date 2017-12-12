@@ -24,7 +24,7 @@ const PaymentGatewayWorldPayType = new GraphQLObjectType({
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayWorldPay, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayWorldPay.paymentGatewayConfigId}`)
+      resolve: (paymentGatewayWorldPay, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayWorldPay.paymentGatewayConfigId}`)
     },
     hideContact: {type: GraphQLBoolean},
     testMode: {type: GraphQLInt},

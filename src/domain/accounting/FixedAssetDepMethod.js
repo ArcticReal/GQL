@@ -22,7 +22,7 @@ const FixedAssetDepMethodType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetDepMethod, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${fixedAssetDepMethod.fixedAssetId}`)
+      resolve: (fixedAssetDepMethod, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${fixedAssetDepMethod.fixedAssetId}`)
     },
     depreciationCustomMethodId: {type: GraphQLString},
     thruDate: {type: GraphQLString}

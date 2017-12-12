@@ -22,25 +22,25 @@ const AcctgTransTypeType = new GraphQLObjectType({
     parentType: {
       type: AcctgTransTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (acctgTransType, args, {loaders}) => loaders.ofbiz.load(`acctgTransTypes/find?acctgTransTypeId=${acctgTransType.parentTypeId}`)
+      resolve: (acctgTransType, args, {loaders}) => loaders.ofbiz.load(`accounting/acctgTrans/acctgTransTypes/find?acctgTransTypeId=${acctgTransType.parentTypeId}`)
     },
     acctgTransTypeId: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     acctgTransTypeAttrs: {
       type: new GraphQLList(AcctgTransTypeAttrType),
-      args : {acctgTransTypeId: {type: GraphQLString}},
-      resolve: (acctgTransType, args, {loaders}) => loaders.ofbizArray.load(`acctgTransTypeAttrs/find?acctgTransTypeId=${acctgTransType.acctgTransTypeId}`)
+      args : {},
+      resolve: (acctgTransType, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTrans/acctgTransTypeAttrs/find?acctgTransTypeId=${acctgTransType.acctgTransTypeId}`)
     },
     acctgTranses: {
       type: new GraphQLList(AcctgTransType),
-      args : {acctgTransTypeId: {type: GraphQLString}},
-      resolve: (acctgTransType, args, {loaders}) => loaders.ofbizArray.load(`acctgTranss/find?acctgTransTypeId=${acctgTransType.acctgTransTypeId}`)
+      args : {},
+      resolve: (acctgTransType, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTranss/find?acctgTransTypeId=${acctgTransType.acctgTransTypeId}`)
     },
     acctgTransTypes: {
       type: new GraphQLList(AcctgTransTypeType),
-      args : {acctgTransTypeId: {type: GraphQLString}},
-      resolve: (acctgTransType, args, {loaders}) => loaders.ofbizArray.load(`acctgTransTypes/find?acctgTransTypeId=${acctgTransType.acctgTransTypeId}`)
+      args : {},
+      resolve: (acctgTransType, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTrans/acctgTransTypes/find?acctgTransTypeId=${acctgTransType.acctgTransTypeId}`)
     }
   })
 });

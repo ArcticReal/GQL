@@ -24,7 +24,7 @@ const ProductPriceCondType = new GraphQLObjectType({
     productPriceRule: {
       type: ProductPriceRuleType,
       args : {productPriceRuleId: {type: GraphQLString}},
-      resolve: (productPriceCond, args, {loaders}) => loaders.ofbiz.load(`productPriceRules/find?productPriceRuleId=${productPriceCond.productPriceRuleId}`)
+      resolve: (productPriceCond, args, {loaders}) => loaders.ofbiz.load(`product/product/productPriceRules/find?productPriceRuleId=${productPriceCond.productPriceRuleId}`)
     },
     operatorEnumId: {type: GraphQLString}
   })

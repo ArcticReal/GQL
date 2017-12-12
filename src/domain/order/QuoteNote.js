@@ -22,7 +22,7 @@ const QuoteNoteType = new GraphQLObjectType({
     quote: {
       type: QuoteType,
       args : {quoteId: {type: GraphQLString}},
-      resolve: (quoteNote, args, {loaders}) => loaders.ofbiz.load(`quotes/find?quoteId=${quoteNote.quoteId}`)
+      resolve: (quoteNote, args, {loaders}) => loaders.ofbiz.load(`order/quotes/find?quoteId=${quoteNote.quoteId}`)
     }
   })
 });

@@ -22,25 +22,25 @@ const CommunicationEventTypeType = new GraphQLObjectType({
     parentType: {
       type: CommunicationEventTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (communicationEventType, args, {loaders}) => loaders.ofbiz.load(`communicationEventTypes/find?communicationEventTypeId=${communicationEventType.parentTypeId}`)
+      resolve: (communicationEventType, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvent/communicationEventTypes/find?communicationEventTypeId=${communicationEventType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     contactMechType: {
       type: ContactMechTypeType,
       args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (communicationEventType, args, {loaders}) => loaders.ofbiz.load(`contactMechTypes/find?contactMechTypeId=${communicationEventType.contactMechTypeId}`)
+      resolve: (communicationEventType, args, {loaders}) => loaders.ofbiz.load(`party/contactMech/contactMechTypes/find?contactMechTypeId=${communicationEventType.contactMechTypeId}`)
     },
     communicationEventTypeId: {type: GraphQLString},
     communicationEventTypes: {
       type: new GraphQLList(CommunicationEventTypeType),
-      args : {communicationEventTypeId: {type: GraphQLString}},
-      resolve: (communicationEventType, args, {loaders}) => loaders.ofbizArray.load(`communicationEventTypes/find?communicationEventTypeId=${communicationEventType.communicationEventTypeId}`)
+      args : {},
+      resolve: (communicationEventType, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvent/communicationEventTypes/find?communicationEventTypeId=${communicationEventType.communicationEventTypeId}`)
     },
     communicationEvents: {
       type: new GraphQLList(CommunicationEventType),
-      args : {communicationEventTypeId: {type: GraphQLString}},
-      resolve: (communicationEventType, args, {loaders}) => loaders.ofbizArray.load(`communicationEvents/find?communicationEventTypeId=${communicationEventType.communicationEventTypeId}`)
+      args : {},
+      resolve: (communicationEventType, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvents/find?communicationEventTypeId=${communicationEventType.communicationEventTypeId}`)
     }
   })
 });

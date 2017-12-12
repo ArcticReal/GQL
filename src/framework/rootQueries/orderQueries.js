@@ -3,7 +3,7 @@ import {
   GraphQLString,
 } from 'graphql';
 
-import {OrderHeaderType} from '../order/OrderHeader.js';
+import {OrderHeaderType} from '../../domain/order/OrderHeader.js';
 
 const orderQueries = {
   orders: {
@@ -11,7 +11,7 @@ const orderQueries = {
     args: {
 
     },
-    resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`orderHeaders/find`)
+    resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`order/orderHeaders/find`)
   },
   order: {
     type: OrderHeaderType,
@@ -20,7 +20,7 @@ const orderQueries = {
         type: GraphQLString
       }
     },
-    resolve: (root, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/${args.orderId}`)
+    resolve: (root, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/${args.orderId}`)
   },
 };
 

@@ -22,7 +22,7 @@ const CustRequestAttributeType = new GraphQLObjectType({
     custRequest: {
       type: CustRequestType,
       args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestAttribute, args, {loaders}) => loaders.ofbiz.load(`custRequests/find?custRequestId=${custRequestAttribute.custRequestId}`)
+      resolve: (custRequestAttribute, args, {loaders}) => loaders.ofbiz.load(`order/custRequests/find?custRequestId=${custRequestAttribute.custRequestId}`)
     },
     attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}

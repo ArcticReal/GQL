@@ -21,7 +21,7 @@ const InvoiceTypeAttrType = new GraphQLObjectType({
     invoiceType: {
       type: InvoiceTypeType,
       args : {invoiceTypeId: {type: GraphQLString}},
-      resolve: (invoiceTypeAttr, args, {loaders}) => loaders.ofbiz.load(`invoiceTypes/find?invoiceTypeId=${invoiceTypeAttr.invoiceTypeId}`)
+      resolve: (invoiceTypeAttr, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceTypes/find?invoiceTypeId=${invoiceTypeAttr.invoiceTypeId}`)
     },
     description: {type: GraphQLString},
     attrName: {type: GraphQLString}

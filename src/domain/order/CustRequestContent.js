@@ -23,12 +23,12 @@ const CustRequestContentType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (custRequestContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${custRequestContent.contentId}`)
+      resolve: (custRequestContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${custRequestContent.contentId}`)
     },
     custRequest: {
       type: CustRequestType,
       args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestContent, args, {loaders}) => loaders.ofbiz.load(`custRequests/find?custRequestId=${custRequestContent.custRequestId}`)
+      resolve: (custRequestContent, args, {loaders}) => loaders.ofbiz.load(`order/custRequests/find?custRequestId=${custRequestContent.custRequestId}`)
     },
     thruDate: {type: GraphQLString}
   })

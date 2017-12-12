@@ -31,7 +31,7 @@ const FinAccountType = new GraphQLObjectType({
     finAccountType: {
       type: FinAccountTypeType,
       args : {finAccountTypeId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`finAccountTypes/find?finAccountTypeId=${finAccount.finAccountTypeId}`)
+      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/finAccount/finAccountTypes/find?finAccountTypeId=${finAccount.finAccountTypeId}`)
     },
     thruDate: {type: GraphQLString},
     isRefundable: {type: GraphQLBoolean},
@@ -40,13 +40,13 @@ const FinAccountType = new GraphQLObjectType({
     ownerParty: {
       type: PartyType,
       args : {ownerPartyId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${finAccount.ownerPartyId}`)
+      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${finAccount.ownerPartyId}`)
     },
     finAccountId: {type: GraphQLString},
     postToGlAccount: {
       type: GlAccountType,
       args : {postToGlAccountId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${finAccount.postToGlAccountId}`)
+      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${finAccount.postToGlAccountId}`)
     },
     currencyUomId: {type: GraphQLString},
     statusId: {type: GraphQLString},
@@ -57,53 +57,53 @@ const FinAccountType = new GraphQLObjectType({
     replenishPayment: {
       type: PaymentMethodType,
       args : {replenishPaymentId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`paymentMethods/find?paymentMethodId=${finAccount.replenishPaymentId}`)
+      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethods/find?paymentMethodId=${finAccount.replenishPaymentId}`)
     },
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${finAccount.organizationPartyId}`)
+      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${finAccount.organizationPartyId}`)
     },
     finAccountCode: {type: GraphQLString},
     finAccountRoles: {
       type: new GraphQLList(FinAccountRoleType),
-      args : {finAccountId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`finAccountRoles/find?finAccountId=${finAccount.finAccountId}`)
+      args : {},
+      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccount/finAccountRoles/find?finAccountId=${finAccount.finAccountId}`)
     },
     orderPaymentPreferences: {
       type: new GraphQLList(OrderPaymentPreferenceType),
-      args : {finAccountId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`orderPaymentPreferences/find?finAccountId=${finAccount.finAccountId}`)
+      args : {},
+      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`order/orderPaymentPreferences/find?finAccountId=${finAccount.finAccountId}`)
     },
     finAccountAttributes: {
       type: new GraphQLList(FinAccountAttributeType),
-      args : {finAccountId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`finAccountAttributes/find?finAccountId=${finAccount.finAccountId}`)
+      args : {},
+      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccount/finAccountAttributes/find?finAccountId=${finAccount.finAccountId}`)
     },
     finAccountTranses: {
       type: new GraphQLList(FinAccountTransType),
-      args : {finAccountId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`finAccountTranss/find?finAccountId=${finAccount.finAccountId}`)
+      args : {},
+      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccount/finAccountTranss/find?finAccountId=${finAccount.finAccountId}`)
     },
     paymentMethods: {
       type: new GraphQLList(PaymentMethodType),
-      args : {finAccountId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`paymentMethods/find?finAccountId=${finAccount.finAccountId}`)
+      args : {},
+      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentMethods/find?finAccountId=${finAccount.finAccountId}`)
     },
     finAccountStatuses: {
       type: new GraphQLList(FinAccountStatusType),
-      args : {finAccountId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`finAccountStatuss/find?finAccountId=${finAccount.finAccountId}`)
+      args : {},
+      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccount/finAccountStatuss/find?finAccountId=${finAccount.finAccountId}`)
     },
     returnHeaders: {
       type: new GraphQLList(ReturnHeaderType),
-      args : {finAccountId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`returnHeaders/find?finAccountId=${finAccount.finAccountId}`)
+      args : {},
+      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`order/returnHeaders/find?finAccountId=${finAccount.finAccountId}`)
     },
     finAccountAuths: {
       type: new GraphQLList(FinAccountAuthType),
-      args : {finAccountId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`finAccountAuths/find?finAccountId=${finAccount.finAccountId}`)
+      args : {},
+      resolve: (finAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccount/finAccountAuths/find?finAccountId=${finAccount.finAccountId}`)
     }
   })
 });

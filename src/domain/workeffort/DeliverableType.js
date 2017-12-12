@@ -23,13 +23,13 @@ const DeliverableTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     deliverables: {
       type: new GraphQLList(DeliverableType),
-      args : {deliverableTypeId: {type: GraphQLString}},
-      resolve: (deliverableType, args, {loaders}) => loaders.ofbizArray.load(`deliverables/find?deliverableTypeId=${deliverableType.deliverableTypeId}`)
+      args : {},
+      resolve: (deliverableType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/deliverables/find?deliverableTypeId=${deliverableType.deliverableTypeId}`)
     },
     quoteItems: {
       type: new GraphQLList(QuoteItemType),
-      args : {deliverableTypeId: {type: GraphQLString}},
-      resolve: (deliverableType, args, {loaders}) => loaders.ofbizArray.load(`quoteItems/find?deliverableTypeId=${deliverableType.deliverableTypeId}`)
+      args : {},
+      resolve: (deliverableType, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteItems/find?deliverableTypeId=${deliverableType.deliverableTypeId}`)
     }
   })
 });

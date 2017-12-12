@@ -22,7 +22,7 @@ const ElectronicTextType = new GraphQLObjectType({
     dataResource: {
       type: DataResourceType,
       args : {dataResourceId: {type: GraphQLString}},
-      resolve: (electronicText, args, {loaders}) => loaders.ofbiz.load(`dataResources/find?dataResourceId=${electronicText.dataResourceId}`)
+      resolve: (electronicText, args, {loaders}) => loaders.ofbiz.load(`content/dataResources/find?dataResourceId=${electronicText.dataResourceId}`)
     }
   })
 });

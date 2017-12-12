@@ -23,13 +23,13 @@ const PaymentBudgetAllocationType = new GraphQLObjectType({
     payment: {
       type: PaymentType,
       args : {paymentId: {type: GraphQLString}},
-      resolve: (paymentBudgetAllocation, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${paymentBudgetAllocation.paymentId}`)
+      resolve: (paymentBudgetAllocation, args, {loaders}) => loaders.ofbiz.load(`accounting/payments/find?paymentId=${paymentBudgetAllocation.paymentId}`)
     },
     budgetItemSeqId: {type: GraphQLString},
     budget: {
       type: BudgetType,
       args : {budgetId: {type: GraphQLString}},
-      resolve: (paymentBudgetAllocation, args, {loaders}) => loaders.ofbiz.load(`budgets/find?budgetId=${paymentBudgetAllocation.budgetId}`)
+      resolve: (paymentBudgetAllocation, args, {loaders}) => loaders.ofbiz.load(`accounting/budgets/find?budgetId=${paymentBudgetAllocation.budgetId}`)
     }
   })
 });

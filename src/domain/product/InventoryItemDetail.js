@@ -27,7 +27,7 @@ const InventoryItemDetailType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${inventoryItemDetail.workEffortId}`)
+      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${inventoryItemDetail.workEffortId}`)
     },
     orderId: {type: GraphQLString},
     description: {type: GraphQLString},
@@ -38,20 +38,20 @@ const InventoryItemDetailType = new GraphQLObjectType({
     inventoryItem: {
       type: InventoryItemType,
       args : {inventoryItemId: {type: GraphQLString}},
-      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${inventoryItemDetail.inventoryItemId}`)
+      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItems/find?inventoryItemId=${inventoryItemDetail.inventoryItemId}`)
     },
     accountingQuantityDiff: {type: GraphQLFloat},
     physicalInventory: {
       type: PhysicalInventoryType,
       args : {physicalInventoryId: {type: GraphQLString}},
-      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`physicalInventorys/find?physicalInventoryId=${inventoryItemDetail.physicalInventoryId}`)
+      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`product/physicalInventorys/find?physicalInventoryId=${inventoryItemDetail.physicalInventoryId}`)
     },
     availableToPromiseDiff: {type: GraphQLFloat},
     shipmentId: {type: GraphQLString},
     itemIssuance: {
       type: ItemIssuanceType,
       args : {itemIssuanceId: {type: GraphQLString}},
-      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`itemIssuances/find?itemIssuanceId=${inventoryItemDetail.itemIssuanceId}`)
+      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`shipment/itemIssuances/find?itemIssuanceId=${inventoryItemDetail.itemIssuanceId}`)
     },
     unitCost: {type: GraphQLFloat},
     returnId: {type: GraphQLString},
@@ -59,13 +59,13 @@ const InventoryItemDetailType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetMaintType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`fixedAssetMaints/find?fixedAssetId=${inventoryItemDetail.fixedAssetId}`)
+      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAsset/fixedAssetMaints/find?fixedAssetId=${inventoryItemDetail.fixedAssetId}`)
     },
     reasonEnumId: {type: GraphQLString},
     receipt: {
       type: ShipmentReceiptType,
       args : {receiptId: {type: GraphQLString}},
-      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`shipmentReceipts/find?receiptId=${inventoryItemDetail.receiptId}`)
+      resolve: (inventoryItemDetail, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentReceipts/find?receiptId=${inventoryItemDetail.receiptId}`)
     },
     effectiveDate: {type: GraphQLString},
     quantityOnHandDiff: {type: GraphQLFloat}

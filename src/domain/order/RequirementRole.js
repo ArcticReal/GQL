@@ -24,12 +24,12 @@ const RequirementRoleType = new GraphQLObjectType({
     requirement: {
       type: RequirementType,
       args : {requirementId: {type: GraphQLString}},
-      resolve: (requirementRole, args, {loaders}) => loaders.ofbiz.load(`requirements/find?requirementId=${requirementRole.requirementId}`)
+      resolve: (requirementRole, args, {loaders}) => loaders.ofbiz.load(`order/requirements/find?requirementId=${requirementRole.requirementId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (requirementRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${requirementRole.partyId}`)
+      resolve: (requirementRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${requirementRole.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

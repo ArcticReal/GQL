@@ -24,18 +24,18 @@ const AgreementContentType = new GraphQLObjectType({
     agreement: {
       type: AgreementType,
       args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementContent, args, {loaders}) => loaders.ofbiz.load(`agreements/find?agreementId=${agreementContent.agreementId}`)
+      resolve: (agreementContent, args, {loaders}) => loaders.ofbiz.load(`party/agreements/find?agreementId=${agreementContent.agreementId}`)
     },
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (agreementContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${agreementContent.contentId}`)
+      resolve: (agreementContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${agreementContent.contentId}`)
     },
     agreementItemSeqId: {type: GraphQLString},
     agreementContentType: {
       type: AgreementContentTypeType,
       args : {agreementContentTypeId: {type: GraphQLString}},
-      resolve: (agreementContent, args, {loaders}) => loaders.ofbiz.load(`agreementContentTypes/find?agreementContentTypeId=${agreementContent.agreementContentTypeId}`)
+      resolve: (agreementContent, args, {loaders}) => loaders.ofbiz.load(`party/agreement/agreementContentTypes/find?agreementContentTypeId=${agreementContent.agreementContentTypeId}`)
     },
     thruDate: {type: GraphQLString}
   })

@@ -23,30 +23,30 @@ const PartyRelationshipTypeType = new GraphQLObjectType({
     roleTypeValidTo: {
       type: RoleTypeType,
       args : {roleTypeIdValidTo: {type: GraphQLString}},
-      resolve: (partyRelationshipType, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${partyRelationshipType.roleTypeIdValidTo}`)
+      resolve: (partyRelationshipType, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${partyRelationshipType.roleTypeIdValidTo}`)
     },
     partyRelationshipTypeId: {type: GraphQLString},
     roleTypeValidFrom: {
       type: RoleTypeType,
       args : {roleTypeIdValidFrom: {type: GraphQLString}},
-      resolve: (partyRelationshipType, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${partyRelationshipType.roleTypeIdValidFrom}`)
+      resolve: (partyRelationshipType, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${partyRelationshipType.roleTypeIdValidFrom}`)
     },
     parentType: {
       type: PartyRelationshipTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (partyRelationshipType, args, {loaders}) => loaders.ofbiz.load(`partyRelationshipTypes/find?partyRelationshipTypeId=${partyRelationshipType.parentTypeId}`)
+      resolve: (partyRelationshipType, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRelationshipTypes/find?partyRelationshipTypeId=${partyRelationshipType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     partyRelationshipTypes: {
       type: new GraphQLList(PartyRelationshipTypeType),
-      args : {partyRelationshipTypeId: {type: GraphQLString}},
-      resolve: (partyRelationshipType, args, {loaders}) => loaders.ofbizArray.load(`partyRelationshipTypes/find?partyRelationshipTypeId=${partyRelationshipType.partyRelationshipTypeId}`)
+      args : {},
+      resolve: (partyRelationshipType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyRelationshipTypes/find?partyRelationshipTypeId=${partyRelationshipType.partyRelationshipTypeId}`)
     },
     partyRelationships: {
       type: new GraphQLList(PartyRelationshipType),
-      args : {partyRelationshipTypeId: {type: GraphQLString}},
-      resolve: (partyRelationshipType, args, {loaders}) => loaders.ofbizArray.load(`partyRelationships/find?partyRelationshipTypeId=${partyRelationshipType.partyRelationshipTypeId}`)
+      args : {},
+      resolve: (partyRelationshipType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyRelationships/find?partyRelationshipTypeId=${partyRelationshipType.partyRelationshipTypeId}`)
     }
   })
 });

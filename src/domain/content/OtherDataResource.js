@@ -22,7 +22,7 @@ const OtherDataResourceType = new GraphQLObjectType({
     dataResource: {
       type: DataResourceType,
       args : {dataResourceId: {type: GraphQLString}},
-      resolve: (otherDataResource, args, {loaders}) => loaders.ofbiz.load(`dataResources/find?dataResourceId=${otherDataResource.dataResourceId}`)
+      resolve: (otherDataResource, args, {loaders}) => loaders.ofbiz.load(`content/dataResources/find?dataResourceId=${otherDataResource.dataResourceId}`)
     }
   })
 });

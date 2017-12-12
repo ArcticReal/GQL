@@ -25,13 +25,13 @@ const FixedAssetRegistrationType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetRegistration, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${fixedAssetRegistration.fixedAssetId}`)
+      resolve: (fixedAssetRegistration, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${fixedAssetRegistration.fixedAssetId}`)
     },
     licenseNumber: {type: GraphQLString},
     govAgencyParty: {
       type: PartyType,
       args : {govAgencyPartyId: {type: GraphQLString}},
-      resolve: (fixedAssetRegistration, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${fixedAssetRegistration.govAgencyPartyId}`)
+      resolve: (fixedAssetRegistration, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${fixedAssetRegistration.govAgencyPartyId}`)
     },
     thruDate: {type: GraphQLString}
   })

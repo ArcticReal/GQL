@@ -22,8 +22,8 @@ const GlResourceTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     glAccounts: {
       type: new GraphQLList(GlAccountType),
-      args : {glResourceTypeId: {type: GraphQLString}},
-      resolve: (glResourceType, args, {loaders}) => loaders.ofbizArray.load(`glAccounts/find?glResourceTypeId=${glResourceType.glResourceTypeId}`)
+      args : {},
+      resolve: (glResourceType, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccounts/find?glResourceTypeId=${glResourceType.glResourceTypeId}`)
     }
   })
 });

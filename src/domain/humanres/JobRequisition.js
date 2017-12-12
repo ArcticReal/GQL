@@ -31,7 +31,7 @@ const JobRequisitionType = new GraphQLObjectType({
     skillType: {
       type: SkillTypeType,
       args : {skillTypeId: {type: GraphQLString}},
-      resolve: (jobRequisition, args, {loaders}) => loaders.ofbiz.load(`skillTypes/find?skillTypeId=${jobRequisition.skillTypeId}`)
+      resolve: (jobRequisition, args, {loaders}) => loaders.ofbiz.load(`humanres/skillTypes/find?skillTypeId=${jobRequisition.skillTypeId}`)
     },
     experienceMonths: {type: GraphQLInt},
     jobLocation: {type: GraphQLString},
@@ -40,13 +40,13 @@ const JobRequisitionType = new GraphQLObjectType({
     jobPostingTypeEnumId: {type: GraphQLString},
     jobInterviews: {
       type: new GraphQLList(JobInterviewType),
-      args : {jobRequisitionId: {type: GraphQLString}},
-      resolve: (jobRequisition, args, {loaders}) => loaders.ofbizArray.load(`jobInterviews/find?jobRequisitionId=${jobRequisition.jobRequisitionId}`)
+      args : {},
+      resolve: (jobRequisition, args, {loaders}) => loaders.ofbizArray.load(`humanres/jobInterviews/find?jobRequisitionId=${jobRequisition.jobRequisitionId}`)
     },
     employmentApps: {
       type: new GraphQLList(EmploymentAppType),
-      args : {jobRequisitionId: {type: GraphQLString}},
-      resolve: (jobRequisition, args, {loaders}) => loaders.ofbizArray.load(`employmentApps/find?jobRequisitionId=${jobRequisition.jobRequisitionId}`)
+      args : {},
+      resolve: (jobRequisition, args, {loaders}) => loaders.ofbizArray.load(`humanres/employment/employmentApps/find?jobRequisitionId=${jobRequisition.jobRequisitionId}`)
     }
   })
 });

@@ -24,12 +24,12 @@ const PartyResumeType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (partyResume, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${partyResume.contentId}`)
+      resolve: (partyResume, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${partyResume.contentId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyResume, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyResume.partyId}`)
+      resolve: (partyResume, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyResume.partyId}`)
     },
     resumeDate: {type: GraphQLString}
   })

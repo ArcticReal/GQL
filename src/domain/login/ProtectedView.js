@@ -24,7 +24,7 @@ const ProtectedViewType = new GraphQLObjectType({
     group: {
       type: SecurityGroupType,
       args : {groupId: {type: GraphQLString}},
-      resolve: (protectedView, args, {loaders}) => loaders.ofbiz.load(`securityGroups/find?groupId=${protectedView.groupId}`)
+      resolve: (protectedView, args, {loaders}) => loaders.ofbiz.load(`login/securityGroups/find?groupId=${protectedView.groupId}`)
     },
     maxHits: {type: GraphQLInt}
   })

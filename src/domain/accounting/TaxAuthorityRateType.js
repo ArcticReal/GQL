@@ -22,8 +22,8 @@ const TaxAuthorityRateTypeType = new GraphQLObjectType({
     taxAuthorityRateTypeId: {type: GraphQLString},
     taxAuthorityRateProducts: {
       type: new GraphQLList(TaxAuthorityRateProductType),
-      args : {taxAuthorityRateTypeId: {type: GraphQLString}},
-      resolve: (taxAuthorityRateType, args, {loaders}) => loaders.ofbizArray.load(`taxAuthorityRateProducts/find?taxAuthorityRateTypeId=${taxAuthorityRateType.taxAuthorityRateTypeId}`)
+      args : {},
+      resolve: (taxAuthorityRateType, args, {loaders}) => loaders.ofbizArray.load(`accounting/taxAuthority/taxAuthorityRateProducts/find?taxAuthorityRateTypeId=${taxAuthorityRateType.taxAuthorityRateTypeId}`)
     }
   })
 });

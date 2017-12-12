@@ -22,25 +22,25 @@ const WorkEffortAssocTypeType = new GraphQLObjectType({
     parentType: {
       type: WorkEffortAssocTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbiz.load(`workEffortAssocTypes/find?workEffortAssocTypeId=${workEffortAssocType.parentTypeId}`)
+      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEffort/workEffortAssocTypes/find?workEffortAssocTypeId=${workEffortAssocType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     workEffortAssocTypeId: {type: GraphQLString},
     workEffortAssocs: {
       type: new GraphQLList(WorkEffortAssocType),
-      args : {workEffortAssocTypeId: {type: GraphQLString}},
-      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbizArray.load(`workEffortAssocs/find?workEffortAssocTypeId=${workEffortAssocType.workEffortAssocTypeId}`)
+      args : {},
+      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortAssocs/find?workEffortAssocTypeId=${workEffortAssocType.workEffortAssocTypeId}`)
     },
     workEffortAssocTypes: {
       type: new GraphQLList(WorkEffortAssocTypeType),
-      args : {workEffortAssocTypeId: {type: GraphQLString}},
-      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbizArray.load(`workEffortAssocTypes/find?workEffortAssocTypeId=${workEffortAssocType.workEffortAssocTypeId}`)
+      args : {},
+      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortAssocTypes/find?workEffortAssocTypeId=${workEffortAssocType.workEffortAssocTypeId}`)
     },
     workEffortAssocTypeAttrs: {
       type: new GraphQLList(WorkEffortAssocTypeAttrType),
-      args : {workEffortAssocTypeId: {type: GraphQLString}},
-      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbizArray.load(`workEffortAssocTypeAttrs/find?workEffortAssocTypeId=${workEffortAssocType.workEffortAssocTypeId}`)
+      args : {},
+      resolve: (workEffortAssocType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortAssocTypeAttrs/find?workEffortAssocTypeId=${workEffortAssocType.workEffortAssocTypeId}`)
     }
   })
 });

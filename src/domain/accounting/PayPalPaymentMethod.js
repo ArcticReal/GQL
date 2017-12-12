@@ -24,7 +24,7 @@ const PayPalPaymentMethodType = new GraphQLObjectType({
     paymentMethod: {
       type: PaymentMethodType,
       args : {paymentMethodId: {type: GraphQLString}},
-      resolve: (payPalPaymentMethod, args, {loaders}) => loaders.ofbiz.load(`paymentMethods/find?paymentMethodId=${payPalPaymentMethod.paymentMethodId}`)
+      resolve: (payPalPaymentMethod, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethods/find?paymentMethodId=${payPalPaymentMethod.paymentMethodId}`)
     },
     payerId: {type: GraphQLString},
     avsZip: {type: GraphQLBoolean},
@@ -33,7 +33,7 @@ const PayPalPaymentMethodType = new GraphQLObjectType({
     contactMech: {
       type: PostalAddressType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (payPalPaymentMethod, args, {loaders}) => loaders.ofbiz.load(`postalAddresss/find?contactMechId=${payPalPaymentMethod.contactMechId}`)
+      resolve: (payPalPaymentMethod, args, {loaders}) => loaders.ofbiz.load(`party/postalAddresss/find?contactMechId=${payPalPaymentMethod.contactMechId}`)
     },
     transactionId: {type: GraphQLString}
   })

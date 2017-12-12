@@ -23,19 +23,19 @@ const MrpEventType = new GraphQLObjectType({
     mrpEventType: {
       type: MrpEventTypeType,
       args : {mrpEventTypeId: {type: GraphQLString}},
-      resolve: (mrpEvent, args, {loaders}) => loaders.ofbiz.load(`mrpEventTypes/find?mrpEventTypeId=${mrpEvent.mrpEventTypeId}`)
+      resolve: (mrpEvent, args, {loaders}) => loaders.ofbiz.load(`manufacturing/mrpEvent/mrpEventTypes/find?mrpEventTypeId=${mrpEvent.mrpEventTypeId}`)
     },
     mrpId: {type: GraphQLString},
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (mrpEvent, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${mrpEvent.facilityId}`)
+      resolve: (mrpEvent, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${mrpEvent.facilityId}`)
     },
     quantity: {type: GraphQLFloat},
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (mrpEvent, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${mrpEvent.productId}`)
+      resolve: (mrpEvent, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${mrpEvent.productId}`)
     },
     isLate: {type: GraphQLBoolean},
     eventName: {type: GraphQLString},

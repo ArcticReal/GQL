@@ -22,7 +22,7 @@ const FacilityLocationGeoPointType = new GraphQLObjectType({
     facility: {
       type: FacilityLocationType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (facilityLocationGeoPoint, args, {loaders}) => loaders.ofbiz.load(`facilityLocations/find?facilityId=${facilityLocationGeoPoint.facilityId}`)
+      resolve: (facilityLocationGeoPoint, args, {loaders}) => loaders.ofbiz.load(`product/facility/facilityLocations/find?facilityId=${facilityLocationGeoPoint.facilityId}`)
     },
     geoPointId: {type: GraphQLString},
     locationSeqId: {type: GraphQLString},

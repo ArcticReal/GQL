@@ -25,19 +25,19 @@ const GlJournalType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (glJournal, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${glJournal.organizationPartyId}`)
+      resolve: (glJournal, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${glJournal.organizationPartyId}`)
     },
     glJournalId: {type: GraphQLString},
     postedDate: {type: GraphQLString},
     acctgTranses: {
       type: new GraphQLList(AcctgTransType),
-      args : {glJournalId: {type: GraphQLString}},
-      resolve: (glJournal, args, {loaders}) => loaders.ofbizArray.load(`acctgTranss/find?glJournalId=${glJournal.glJournalId}`)
+      args : {},
+      resolve: (glJournal, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTranss/find?glJournalId=${glJournal.glJournalId}`)
     },
     partyAcctgPreferences: {
       type: new GraphQLList(PartyAcctgPreferenceType),
-      args : {glJournalId: {type: GraphQLString}},
-      resolve: (glJournal, args, {loaders}) => loaders.ofbizArray.load(`partyAcctgPreferences/find?glJournalId=${glJournal.glJournalId}`)
+      args : {},
+      resolve: (glJournal, args, {loaders}) => loaders.ofbizArray.load(`accounting/partyAcctgPreferences/find?glJournalId=${glJournal.glJournalId}`)
     }
   })
 });

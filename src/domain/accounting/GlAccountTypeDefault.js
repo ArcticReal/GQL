@@ -23,17 +23,17 @@ const GlAccountTypeDefaultType = new GraphQLObjectType({
     glAccountType: {
       type: GlAccountTypeType,
       args : {glAccountTypeId: {type: GraphQLString}},
-      resolve: (glAccountTypeDefault, args, {loaders}) => loaders.ofbiz.load(`glAccountTypes/find?glAccountTypeId=${glAccountTypeDefault.glAccountTypeId}`)
+      resolve: (glAccountTypeDefault, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountTypes/find?glAccountTypeId=${glAccountTypeDefault.glAccountTypeId}`)
     },
     glAccount: {
       type: GlAccountType,
       args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccountTypeDefault, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${glAccountTypeDefault.glAccountId}`)
+      resolve: (glAccountTypeDefault, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${glAccountTypeDefault.glAccountId}`)
     },
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (glAccountTypeDefault, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${glAccountTypeDefault.organizationPartyId}`)
+      resolve: (glAccountTypeDefault, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${glAccountTypeDefault.organizationPartyId}`)
     }
   })
 });

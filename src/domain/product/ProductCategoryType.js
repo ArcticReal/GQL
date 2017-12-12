@@ -23,24 +23,24 @@ const ProductCategoryTypeType = new GraphQLObjectType({
     parentType: {
       type: ProductCategoryTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (productCategoryType, args, {loaders}) => loaders.ofbiz.load(`productCategoryTypes/find?productCategoryTypeId=${productCategoryType.parentTypeId}`)
+      resolve: (productCategoryType, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategoryTypes/find?productCategoryTypeId=${productCategoryType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     productCategories: {
       type: new GraphQLList(ProductCategoryType),
-      args : {productCategoryTypeId: {type: GraphQLString}},
-      resolve: (productCategoryType, args, {loaders}) => loaders.ofbizArray.load(`productCategorys/find?productCategoryTypeId=${productCategoryType.productCategoryTypeId}`)
+      args : {},
+      resolve: (productCategoryType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productCategorys/find?productCategoryTypeId=${productCategoryType.productCategoryTypeId}`)
     },
     productCategoryTypes: {
       type: new GraphQLList(ProductCategoryTypeType),
-      args : {productCategoryTypeId: {type: GraphQLString}},
-      resolve: (productCategoryType, args, {loaders}) => loaders.ofbizArray.load(`productCategoryTypes/find?productCategoryTypeId=${productCategoryType.productCategoryTypeId}`)
+      args : {},
+      resolve: (productCategoryType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productCategoryTypes/find?productCategoryTypeId=${productCategoryType.productCategoryTypeId}`)
     },
     productCategoryTypeAttrs: {
       type: new GraphQLList(ProductCategoryTypeAttrType),
-      args : {productCategoryTypeId: {type: GraphQLString}},
-      resolve: (productCategoryType, args, {loaders}) => loaders.ofbizArray.load(`productCategoryTypeAttrs/find?productCategoryTypeId=${productCategoryType.productCategoryTypeId}`)
+      args : {},
+      resolve: (productCategoryType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productCategoryTypeAttrs/find?productCategoryTypeId=${productCategoryType.productCategoryTypeId}`)
     }
   })
 });

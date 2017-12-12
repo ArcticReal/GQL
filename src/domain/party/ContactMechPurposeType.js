@@ -28,38 +28,38 @@ const ContactMechPurposeTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     facilityContactMechPurposes: {
       type: new GraphQLList(FacilityContactMechPurposeType),
-      args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`facilityContactMechPurposes/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
+      args : {},
+      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityContactMechPurposes/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
     },
     invoiceContactMeches: {
       type: new GraphQLList(InvoiceContactMechType),
-      args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`invoiceContactMechs/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
+      args : {},
+      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceContactMechs/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
     },
     orderItemContactMeches: {
       type: new GraphQLList(OrderItemContactMechType),
-      args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`orderItemContactMechs/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
+      args : {},
+      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemContactMechs/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
     },
     returnContactMeches: {
       type: new GraphQLList(ReturnContactMechType),
-      args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`returnContactMechs/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
+      args : {},
+      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`order/returnContactMechs/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
     },
     contactMechTypePurposes: {
       type: new GraphQLList(ContactMechTypePurposeType),
-      args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`contactMechTypePurposes/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
+      args : {},
+      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`party/contactMech/contactMechTypePurposes/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
     },
     orderContactMeches: {
       type: new GraphQLList(OrderContactMechType),
-      args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`orderContactMechs/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
+      args : {},
+      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`order/orderContactMechs/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
     },
     partyContactMechPurposes: {
       type: new GraphQLList(PartyContactMechPurposeType),
-      args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`partyContactMechPurposes/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
+      args : {},
+      resolve: (contactMechPurposeType, args, {loaders}) => loaders.ofbizArray.load(`party/contactMech/partyContactMechPurposes/find?contactMechPurposeTypeId=${contactMechPurposeType.contactMechPurposeTypeId}`)
     }
   })
 });

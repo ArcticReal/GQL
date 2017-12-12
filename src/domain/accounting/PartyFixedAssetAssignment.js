@@ -27,12 +27,12 @@ const PartyFixedAssetAssignmentType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (partyFixedAssetAssignment, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${partyFixedAssetAssignment.fixedAssetId}`)
+      resolve: (partyFixedAssetAssignment, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${partyFixedAssetAssignment.fixedAssetId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyFixedAssetAssignment, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${partyFixedAssetAssignment.partyId}`)
+      resolve: (partyFixedAssetAssignment, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${partyFixedAssetAssignment.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

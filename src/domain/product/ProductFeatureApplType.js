@@ -21,20 +21,20 @@ const ProductFeatureApplTypeType = new GraphQLObjectType({
     parentType: {
       type: ProductFeatureApplTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (productFeatureApplType, args, {loaders}) => loaders.ofbiz.load(`productFeatureApplTypes/find?productFeatureApplTypeId=${productFeatureApplType.parentTypeId}`)
+      resolve: (productFeatureApplType, args, {loaders}) => loaders.ofbiz.load(`product/product/productFeatureApplTypes/find?productFeatureApplTypeId=${productFeatureApplType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     productFeatureApplTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     productFeatureAppls: {
       type: new GraphQLList(ProductFeatureApplType),
-      args : {productFeatureApplTypeId: {type: GraphQLString}},
-      resolve: (productFeatureApplType, args, {loaders}) => loaders.ofbizArray.load(`productFeatureAppls/find?productFeatureApplTypeId=${productFeatureApplType.productFeatureApplTypeId}`)
+      args : {},
+      resolve: (productFeatureApplType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureAppls/find?productFeatureApplTypeId=${productFeatureApplType.productFeatureApplTypeId}`)
     },
     productFeatureApplTypes: {
       type: new GraphQLList(ProductFeatureApplTypeType),
-      args : {productFeatureApplTypeId: {type: GraphQLString}},
-      resolve: (productFeatureApplType, args, {loaders}) => loaders.ofbizArray.load(`productFeatureApplTypes/find?productFeatureApplTypeId=${productFeatureApplType.productFeatureApplTypeId}`)
+      args : {},
+      resolve: (productFeatureApplType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureApplTypes/find?productFeatureApplTypeId=${productFeatureApplType.productFeatureApplTypeId}`)
     }
   })
 });

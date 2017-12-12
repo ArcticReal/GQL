@@ -23,25 +23,25 @@ const WorkEffortAssocType = new GraphQLObjectType({
     workEffortTo: {
       type: WorkEffortType,
       args : {workEffortIdTo: {type: GraphQLString}},
-      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortAssoc.workEffortIdTo}`)
+      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortAssoc.workEffortIdTo}`)
     },
     fromDate: {type: GraphQLString},
     workEffortFrom: {
       type: WorkEffortType,
       args : {workEffortIdFrom: {type: GraphQLString}},
-      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortAssoc.workEffortIdFrom}`)
+      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortAssoc.workEffortIdFrom}`)
     },
     sequenceNum: {type: GraphQLInt},
     workEffortAssocType: {
       type: WorkEffortAssocTypeType,
       args : {workEffortAssocTypeId: {type: GraphQLString}},
-      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbiz.load(`workEffortAssocTypes/find?workEffortAssocTypeId=${workEffortAssoc.workEffortAssocTypeId}`)
+      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEffort/workEffortAssocTypes/find?workEffortAssocTypeId=${workEffortAssoc.workEffortAssocTypeId}`)
     },
     thruDate: {type: GraphQLString},
     workEffortAssocAttributes: {
       type: new GraphQLList(WorkEffortAssocAttributeType),
-      args : {workEffortIdFrom: {type: GraphQLString}},
-      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbizArray.load(`workEffortAssocAttributes/find?workEffortIdFrom=${workEffortAssoc.workEffortIdFrom}`)
+      args : {},
+      resolve: (workEffortAssoc, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortAssocAttributes/find?workEffortIdFrom=${workEffortAssoc.workEffortIdFrom}`)
     }
   })
 });

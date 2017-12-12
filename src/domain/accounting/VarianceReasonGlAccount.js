@@ -23,17 +23,17 @@ const VarianceReasonGlAccountType = new GraphQLObjectType({
     varianceReason: {
       type: VarianceReasonType,
       args : {varianceReasonId: {type: GraphQLString}},
-      resolve: (varianceReasonGlAccount, args, {loaders}) => loaders.ofbiz.load(`varianceReasons/find?varianceReasonId=${varianceReasonGlAccount.varianceReasonId}`)
+      resolve: (varianceReasonGlAccount, args, {loaders}) => loaders.ofbiz.load(`product/varianceReasons/find?varianceReasonId=${varianceReasonGlAccount.varianceReasonId}`)
     },
     glAccount: {
       type: GlAccountType,
       args : {glAccountId: {type: GraphQLString}},
-      resolve: (varianceReasonGlAccount, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${varianceReasonGlAccount.glAccountId}`)
+      resolve: (varianceReasonGlAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${varianceReasonGlAccount.glAccountId}`)
     },
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (varianceReasonGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${varianceReasonGlAccount.organizationPartyId}`)
+      resolve: (varianceReasonGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${varianceReasonGlAccount.organizationPartyId}`)
     }
   })
 });

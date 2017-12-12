@@ -25,12 +25,12 @@ const InvoiceRoleType = new GraphQLObjectType({
     invoice: {
       type: InvoiceType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (invoiceRole, args, {loaders}) => loaders.ofbiz.load(`invoices/find?invoiceId=${invoiceRole.invoiceId}`)
+      resolve: (invoiceRole, args, {loaders}) => loaders.ofbiz.load(`accounting/invoices/find?invoiceId=${invoiceRole.invoiceId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (invoiceRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${invoiceRole.partyId}`)
+      resolve: (invoiceRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${invoiceRole.partyId}`)
     }
   })
 });

@@ -27,28 +27,28 @@ const ProductMeterTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     fixedAssetMaints: {
       type: new GraphQLList(FixedAssetMaintType),
-      args : {productMeterTypeId: {type: GraphQLString}},
-      resolve: (productMeterType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetMaints/find?productMeterTypeId=${productMeterType.productMeterTypeId}`)
+      args : {},
+      resolve: (productMeterType, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetMaints/find?productMeterTypeId=${productMeterType.productMeterTypeId}`)
     },
     productMaints: {
       type: new GraphQLList(ProductMaintType),
-      args : {productMeterTypeId: {type: GraphQLString}},
-      resolve: (productMeterType, args, {loaders}) => loaders.ofbizArray.load(`productMaints/find?productMeterTypeId=${productMeterType.productMeterTypeId}`)
+      args : {},
+      resolve: (productMeterType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productMaints/find?productMeterTypeId=${productMeterType.productMeterTypeId}`)
     },
     fixedAssetMeters: {
       type: new GraphQLList(FixedAssetMeterType),
-      args : {productMeterTypeId: {type: GraphQLString}},
-      resolve: (productMeterType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetMeters/find?productMeterTypeId=${productMeterType.productMeterTypeId}`)
+      args : {},
+      resolve: (productMeterType, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetMeters/find?productMeterTypeId=${productMeterType.productMeterTypeId}`)
     },
     fixedAssetMaintMeters: {
       type: new GraphQLList(FixedAssetMaintMeterType),
-      args : {productMeterTypeId: {type: GraphQLString}},
-      resolve: (productMeterType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetMaintMeters/find?productMeterTypeId=${productMeterType.productMeterTypeId}`)
+      args : {},
+      resolve: (productMeterType, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetMaintMeters/find?productMeterTypeId=${productMeterType.productMeterTypeId}`)
     },
     productMeters: {
       type: new GraphQLList(ProductMeterType),
-      args : {productMeterTypeId: {type: GraphQLString}},
-      resolve: (productMeterType, args, {loaders}) => loaders.ofbizArray.load(`productMeters/find?productMeterTypeId=${productMeterType.productMeterTypeId}`)
+      args : {},
+      resolve: (productMeterType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productMeters/find?productMeterTypeId=${productMeterType.productMeterTypeId}`)
     }
   })
 });

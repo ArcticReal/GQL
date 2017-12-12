@@ -40,7 +40,7 @@ const PostalAddressType = new GraphQLObjectType({
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${postalAddress.contactMechId}`)
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${postalAddress.contactMechId}`)
     },
     attnName: {type: GraphQLString},
     directions: {type: GraphQLString},
@@ -52,53 +52,53 @@ const PostalAddressType = new GraphQLObjectType({
     geoPointId: {type: GraphQLString},
     orderItemShipGroups: {
       type: new GraphQLList(OrderItemShipGroupType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`orderItemShipGroups/find?contactMechId=${postalAddress.contactMechId}`)
+      args : {},
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemShipGroups/find?contactMechId=${postalAddress.contactMechId}`)
     },
     creditCards: {
       type: new GraphQLList(CreditCardType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`creditCards/find?contactMechId=${postalAddress.contactMechId}`)
+      args : {},
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`accounting/creditCards/find?contactMechId=${postalAddress.contactMechId}`)
     },
     shipments: {
       type: new GraphQLList(ShipmentType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?contactMechId=${postalAddress.contactMechId}`)
+      args : {},
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?contactMechId=${postalAddress.contactMechId}`)
     },
     shipmentRouteSegments: {
       type: new GraphQLList(ShipmentRouteSegmentType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`shipmentRouteSegments/find?contactMechId=${postalAddress.contactMechId}`)
+      args : {},
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentRouteSegments/find?contactMechId=${postalAddress.contactMechId}`)
     },
     checkAccounts: {
       type: new GraphQLList(CheckAccountType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`checkAccounts/find?contactMechId=${postalAddress.contactMechId}`)
+      args : {},
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`accounting/checkAccounts/find?contactMechId=${postalAddress.contactMechId}`)
     },
     eftAccounts: {
       type: new GraphQLList(EftAccountType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`eftAccounts/find?contactMechId=${postalAddress.contactMechId}`)
+      args : {},
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`accounting/eftAccounts/find?contactMechId=${postalAddress.contactMechId}`)
     },
     giftCards: {
       type: new GraphQLList(GiftCardType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`giftCards/find?contactMechId=${postalAddress.contactMechId}`)
+      args : {},
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`accounting/giftCards/find?contactMechId=${postalAddress.contactMechId}`)
     },
     payPalPaymentMethods: {
       type: new GraphQLList(PayPalPaymentMethodType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`payPalPaymentMethods/find?contactMechId=${postalAddress.contactMechId}`)
+      args : {},
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/payPalPaymentMethods/find?contactMechId=${postalAddress.contactMechId}`)
     },
     billingAccounts: {
       type: new GraphQLList(BillingAccountType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`billingAccounts/find?contactMechId=${postalAddress.contactMechId}`)
+      args : {},
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`accounting/billingAccounts/find?contactMechId=${postalAddress.contactMechId}`)
     },
     postalAddressBoundaries: {
       type: new GraphQLList(PostalAddressBoundaryType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`postalAddressBoundarys/find?contactMechId=${postalAddress.contactMechId}`)
+      args : {},
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`party/postalAddress/postalAddressBoundarys/find?contactMechId=${postalAddress.contactMechId}`)
     }
   })
 });

@@ -22,14 +22,14 @@ const GlAccountGroupType = new GraphQLObjectType({
     glAccountGroupType: {
       type: GlAccountGroupTypeType,
       args : {glAccountGroupTypeId: {type: GraphQLString}},
-      resolve: (glAccountGroup, args, {loaders}) => loaders.ofbiz.load(`glAccountGroupTypes/find?glAccountGroupTypeId=${glAccountGroup.glAccountGroupTypeId}`)
+      resolve: (glAccountGroup, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountGroupTypes/find?glAccountGroupTypeId=${glAccountGroup.glAccountGroupTypeId}`)
     },
     description: {type: GraphQLString},
     glAccountGroupId: {type: GraphQLString},
     glAccountGroupMembers: {
       type: new GraphQLList(GlAccountGroupMemberType),
-      args : {glAccountGroupId: {type: GraphQLString}},
-      resolve: (glAccountGroup, args, {loaders}) => loaders.ofbizArray.load(`glAccountGroupMembers/find?glAccountGroupId=${glAccountGroup.glAccountGroupId}`)
+      args : {},
+      resolve: (glAccountGroup, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/glAccountGroupMembers/find?glAccountGroupId=${glAccountGroup.glAccountGroupId}`)
     }
   })
 });

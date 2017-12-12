@@ -23,24 +23,24 @@ const QuoteTypeType = new GraphQLObjectType({
     parentType: {
       type: QuoteTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (quoteType, args, {loaders}) => loaders.ofbiz.load(`quoteTypes/find?quoteTypeId=${quoteType.parentTypeId}`)
+      resolve: (quoteType, args, {loaders}) => loaders.ofbiz.load(`order/quote/quoteTypes/find?quoteTypeId=${quoteType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     quotes: {
       type: new GraphQLList(QuoteType),
-      args : {quoteTypeId: {type: GraphQLString}},
-      resolve: (quoteType, args, {loaders}) => loaders.ofbizArray.load(`quotes/find?quoteTypeId=${quoteType.quoteTypeId}`)
+      args : {},
+      resolve: (quoteType, args, {loaders}) => loaders.ofbizArray.load(`order/quotes/find?quoteTypeId=${quoteType.quoteTypeId}`)
     },
     quoteTypes: {
       type: new GraphQLList(QuoteTypeType),
-      args : {quoteTypeId: {type: GraphQLString}},
-      resolve: (quoteType, args, {loaders}) => loaders.ofbizArray.load(`quoteTypes/find?quoteTypeId=${quoteType.quoteTypeId}`)
+      args : {},
+      resolve: (quoteType, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteTypes/find?quoteTypeId=${quoteType.quoteTypeId}`)
     },
     quoteTypeAttrs: {
       type: new GraphQLList(QuoteTypeAttrType),
-      args : {quoteTypeId: {type: GraphQLString}},
-      resolve: (quoteType, args, {loaders}) => loaders.ofbizArray.load(`quoteTypeAttrs/find?quoteTypeId=${quoteType.quoteTypeId}`)
+      args : {},
+      resolve: (quoteType, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteTypeAttrs/find?quoteTypeId=${quoteType.quoteTypeId}`)
     }
   })
 });

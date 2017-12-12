@@ -22,7 +22,7 @@ const InventoryItemStatusType = new GraphQLObjectType({
     inventoryItem: {
       type: InventoryItemType,
       args : {inventoryItemId: {type: GraphQLString}},
-      resolve: (inventoryItemStatus, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${inventoryItemStatus.inventoryItemId}`)
+      resolve: (inventoryItemStatus, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItems/find?inventoryItemId=${inventoryItemStatus.inventoryItemId}`)
     },
     ownerPartyId: {type: GraphQLString},
     statusId: {type: GraphQLString},
@@ -31,7 +31,7 @@ const InventoryItemStatusType = new GraphQLObjectType({
     changeByUserLogin: {
       type: UserLoginType,
       args : {changeByUserLoginId: {type: GraphQLString}},
-      resolve: (inventoryItemStatus, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${inventoryItemStatus.changeByUserLoginId}`)
+      resolve: (inventoryItemStatus, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${inventoryItemStatus.changeByUserLoginId}`)
     },
     statusEndDatetime: {type: GraphQLString}
   })

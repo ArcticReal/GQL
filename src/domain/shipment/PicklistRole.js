@@ -24,23 +24,23 @@ const PicklistRoleType = new GraphQLObjectType({
     picklist: {
       type: PicklistType,
       args : {picklistId: {type: GraphQLString}},
-      resolve: (picklistRole, args, {loaders}) => loaders.ofbiz.load(`picklists/find?picklistId=${picklistRole.picklistId}`)
+      resolve: (picklistRole, args, {loaders}) => loaders.ofbiz.load(`shipment/picklists/find?picklistId=${picklistRole.picklistId}`)
     },
     roleTypeId: {type: GraphQLString},
     lastModifiedByUserLogin: {
       type: UserLoginType,
       args : {lastModifiedByUserLogin: {type: GraphQLString}},
-      resolve: (picklistRole, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${picklistRole.lastModifiedByUserLogin}`)
+      resolve: (picklistRole, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${picklistRole.lastModifiedByUserLogin}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (picklistRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${picklistRole.partyId}`)
+      resolve: (picklistRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${picklistRole.partyId}`)
     },
     createdByUserLogin: {
       type: UserLoginType,
       args : {createdByUserLogin: {type: GraphQLString}},
-      resolve: (picklistRole, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${picklistRole.createdByUserLogin}`)
+      resolve: (picklistRole, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${picklistRole.createdByUserLogin}`)
     },
     thruDate: {type: GraphQLString}
   })

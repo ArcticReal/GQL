@@ -22,8 +22,8 @@ const ContactListTypeType = new GraphQLObjectType({
     contactListTypeId: {type: GraphQLString},
     contactLists: {
       type: new GraphQLList(ContactListType),
-      args : {contactListTypeId: {type: GraphQLString}},
-      resolve: (contactListType, args, {loaders}) => loaders.ofbizArray.load(`contactLists/find?contactListTypeId=${contactListType.contactListTypeId}`)
+      args : {},
+      resolve: (contactListType, args, {loaders}) => loaders.ofbizArray.load(`marketing/contactLists/find?contactListTypeId=${contactListType.contactListTypeId}`)
     }
   })
 });

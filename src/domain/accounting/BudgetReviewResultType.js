@@ -23,8 +23,8 @@ const BudgetReviewResultTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     budgetReviews: {
       type: new GraphQLList(BudgetReviewType),
-      args : {budgetReviewResultTypeId: {type: GraphQLString}},
-      resolve: (budgetReviewResultType, args, {loaders}) => loaders.ofbizArray.load(`budgetReviews/find?budgetReviewResultTypeId=${budgetReviewResultType.budgetReviewResultTypeId}`)
+      args : {},
+      resolve: (budgetReviewResultType, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetReviews/find?budgetReviewResultTypeId=${budgetReviewResultType.budgetReviewResultTypeId}`)
     }
   })
 });

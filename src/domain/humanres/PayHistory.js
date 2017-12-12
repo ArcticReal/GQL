@@ -28,19 +28,19 @@ const PayHistoryType = new GraphQLObjectType({
     salaryStepSeq: {
       type: SalaryStepType,
       args : {salaryStepSeqId: {type: GraphQLString}},
-      resolve: (payHistory, args, {loaders}) => loaders.ofbiz.load(`salarySteps/find?salaryStepSeqId=${payHistory.salaryStepSeqId}`)
+      resolve: (payHistory, args, {loaders}) => loaders.ofbiz.load(`humanres/salarySteps/find?salaryStepSeqId=${payHistory.salaryStepSeqId}`)
     },
     periodTypeId: {type: GraphQLString},
     partyIdTo: {type: GraphQLString},
     roleTypeFrom: {
       type: EmploymentType,
       args : {roleTypeIdFrom: {type: GraphQLString}},
-      resolve: (payHistory, args, {loaders}) => loaders.ofbiz.load(`employments/find?roleTypeIdFrom=${payHistory.roleTypeIdFrom}`)
+      resolve: (payHistory, args, {loaders}) => loaders.ofbiz.load(`humanres/employments/find?roleTypeIdFrom=${payHistory.roleTypeIdFrom}`)
     },
     payGrade: {
       type: PayGradeType,
       args : {payGradeId: {type: GraphQLString}},
-      resolve: (payHistory, args, {loaders}) => loaders.ofbiz.load(`payGrades/find?payGradeId=${payHistory.payGradeId}`)
+      resolve: (payHistory, args, {loaders}) => loaders.ofbiz.load(`humanres/payGrades/find?payGradeId=${payHistory.payGradeId}`)
     },
     thruDate: {type: GraphQLString}
   })

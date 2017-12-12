@@ -23,7 +23,7 @@ const BudgetItemAttributeType = new GraphQLObjectType({
     budget: {
       type: BudgetItemType,
       args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetItemAttribute, args, {loaders}) => loaders.ofbiz.load(`budgetItems/find?budgetId=${budgetItemAttribute.budgetId}`)
+      resolve: (budgetItemAttribute, args, {loaders}) => loaders.ofbiz.load(`accounting/budget/budgetItems/find?budgetId=${budgetItemAttribute.budgetId}`)
     },
     attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}

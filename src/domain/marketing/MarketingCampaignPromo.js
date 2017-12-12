@@ -22,12 +22,12 @@ const MarketingCampaignPromoType = new GraphQLObjectType({
     marketingCampaign: {
       type: MarketingCampaignType,
       args : {marketingCampaignId: {type: GraphQLString}},
-      resolve: (marketingCampaignPromo, args, {loaders}) => loaders.ofbiz.load(`marketingCampaigns/find?marketingCampaignId=${marketingCampaignPromo.marketingCampaignId}`)
+      resolve: (marketingCampaignPromo, args, {loaders}) => loaders.ofbiz.load(`marketing/marketingCampaigns/find?marketingCampaignId=${marketingCampaignPromo.marketingCampaignId}`)
     },
     productPromo: {
       type: ProductPromoType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (marketingCampaignPromo, args, {loaders}) => loaders.ofbiz.load(`productPromos/find?productPromoId=${marketingCampaignPromo.productPromoId}`)
+      resolve: (marketingCampaignPromo, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromos/find?productPromoId=${marketingCampaignPromo.productPromoId}`)
     }
   })
 });

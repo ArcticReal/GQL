@@ -23,12 +23,12 @@ const ShipmentReceiptRoleType = new GraphQLObjectType({
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (shipmentReceiptRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${shipmentReceiptRole.partyId}`)
+      resolve: (shipmentReceiptRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${shipmentReceiptRole.partyId}`)
     },
     receipt: {
       type: ShipmentReceiptType,
       args : {receiptId: {type: GraphQLString}},
-      resolve: (shipmentReceiptRole, args, {loaders}) => loaders.ofbiz.load(`shipmentReceipts/find?receiptId=${shipmentReceiptRole.receiptId}`)
+      resolve: (shipmentReceiptRole, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentReceipts/find?receiptId=${shipmentReceiptRole.receiptId}`)
     }
   })
 });

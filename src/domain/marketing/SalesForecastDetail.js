@@ -25,18 +25,18 @@ const SalesForecastDetailType = new GraphQLObjectType({
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (salesForecastDetail, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${salesForecastDetail.productCategoryId}`)
+      resolve: (salesForecastDetail, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${salesForecastDetail.productCategoryId}`)
     },
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (salesForecastDetail, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${salesForecastDetail.productId}`)
+      resolve: (salesForecastDetail, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${salesForecastDetail.productId}`)
     },
     quantityUomId: {type: GraphQLString},
     salesForecast: {
       type: SalesForecastType,
       args : {salesForecastId: {type: GraphQLString}},
-      resolve: (salesForecastDetail, args, {loaders}) => loaders.ofbiz.load(`salesForecasts/find?salesForecastId=${salesForecastDetail.salesForecastId}`)
+      resolve: (salesForecastDetail, args, {loaders}) => loaders.ofbiz.load(`marketing/salesForecasts/find?salesForecastId=${salesForecastDetail.salesForecastId}`)
     },
     salesForecastDetailId: {type: GraphQLString}
   })

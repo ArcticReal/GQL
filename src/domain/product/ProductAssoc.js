@@ -27,7 +27,7 @@ const ProductAssocType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productAssoc.productId}`)
+      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productAssoc.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     estimateCalcMethod: {type: GraphQLString},
@@ -37,17 +37,17 @@ const ProductAssocType = new GraphQLObjectType({
     productTo: {
       type: ProductType,
       args : {productIdTo: {type: GraphQLString}},
-      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productAssoc.productIdTo}`)
+      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productAssoc.productIdTo}`)
     },
     productAssocType: {
       type: ProductAssocTypeType,
       args : {productAssocTypeId: {type: GraphQLString}},
-      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`productAssocTypes/find?productAssocTypeId=${productAssoc.productAssocTypeId}`)
+      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`product/product/productAssocTypes/find?productAssocTypeId=${productAssoc.productAssocTypeId}`)
     },
     routingWorkEffort: {
       type: WorkEffortType,
       args : {routingWorkEffortId: {type: GraphQLString}},
-      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${productAssoc.routingWorkEffortId}`)
+      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${productAssoc.routingWorkEffortId}`)
     }
   })
 });

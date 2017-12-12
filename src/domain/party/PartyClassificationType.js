@@ -21,20 +21,20 @@ const PartyClassificationTypeType = new GraphQLObjectType({
     parentType: {
       type: PartyClassificationTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (partyClassificationType, args, {loaders}) => loaders.ofbiz.load(`partyClassificationTypes/find?partyClassificationTypeId=${partyClassificationType.parentTypeId}`)
+      resolve: (partyClassificationType, args, {loaders}) => loaders.ofbiz.load(`party/party/partyClassificationTypes/find?partyClassificationTypeId=${partyClassificationType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     partyClassificationTypeId: {type: GraphQLString},
     partyClassificationTypes: {
       type: new GraphQLList(PartyClassificationTypeType),
-      args : {partyClassificationTypeId: {type: GraphQLString}},
-      resolve: (partyClassificationType, args, {loaders}) => loaders.ofbizArray.load(`partyClassificationTypes/find?partyClassificationTypeId=${partyClassificationType.partyClassificationTypeId}`)
+      args : {},
+      resolve: (partyClassificationType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyClassificationTypes/find?partyClassificationTypeId=${partyClassificationType.partyClassificationTypeId}`)
     },
     partyClassificationGroups: {
       type: new GraphQLList(PartyClassificationGroupType),
-      args : {partyClassificationTypeId: {type: GraphQLString}},
-      resolve: (partyClassificationType, args, {loaders}) => loaders.ofbizArray.load(`partyClassificationGroups/find?partyClassificationTypeId=${partyClassificationType.partyClassificationTypeId}`)
+      args : {},
+      resolve: (partyClassificationType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyClassificationGroups/find?partyClassificationTypeId=${partyClassificationType.partyClassificationTypeId}`)
     }
   })
 });

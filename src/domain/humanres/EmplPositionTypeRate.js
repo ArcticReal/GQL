@@ -24,17 +24,17 @@ const EmplPositionTypeRateType = new GraphQLObjectType({
     rateType: {
       type: RateTypeType,
       args : {rateTypeId: {type: GraphQLString}},
-      resolve: (emplPositionTypeRate, args, {loaders}) => loaders.ofbiz.load(`rateTypes/find?rateTypeId=${emplPositionTypeRate.rateTypeId}`)
+      resolve: (emplPositionTypeRate, args, {loaders}) => loaders.ofbiz.load(`accounting/rateTypes/find?rateTypeId=${emplPositionTypeRate.rateTypeId}`)
     },
     emplPositionType: {
       type: EmplPositionTypeType,
       args : {emplPositionTypeId: {type: GraphQLString}},
-      resolve: (emplPositionTypeRate, args, {loaders}) => loaders.ofbiz.load(`emplPositionTypes/find?emplPositionTypeId=${emplPositionTypeRate.emplPositionTypeId}`)
+      resolve: (emplPositionTypeRate, args, {loaders}) => loaders.ofbiz.load(`humanres/emplPosition/emplPositionTypes/find?emplPositionTypeId=${emplPositionTypeRate.emplPositionTypeId}`)
     },
     salaryStepSeq: {
       type: SalaryStepType,
       args : {salaryStepSeqId: {type: GraphQLString}},
-      resolve: (emplPositionTypeRate, args, {loaders}) => loaders.ofbiz.load(`salarySteps/find?salaryStepSeqId=${emplPositionTypeRate.salaryStepSeqId}`)
+      resolve: (emplPositionTypeRate, args, {loaders}) => loaders.ofbiz.load(`humanres/salarySteps/find?salaryStepSeqId=${emplPositionTypeRate.salaryStepSeqId}`)
     },
     payGradeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}

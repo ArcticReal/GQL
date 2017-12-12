@@ -22,7 +22,7 @@ const PaymentGatewayPayflowProType = new GraphQLObjectType({
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayPayflowPro, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayPayflowPro.paymentGatewayConfigId}`)
+      resolve: (paymentGatewayPayflowPro, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayPayflowPro.paymentGatewayConfigId}`)
     },
     proxyPassword: {type: GraphQLString},
     cancelReturnUrl: {type: GraphQLString},

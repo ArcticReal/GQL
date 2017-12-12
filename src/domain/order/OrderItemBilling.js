@@ -27,23 +27,23 @@ const OrderItemBillingType = new GraphQLObjectType({
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemBilling, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${orderItemBilling.orderId}`)
+      resolve: (orderItemBilling, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${orderItemBilling.orderId}`)
     },
     itemIssuance: {
       type: ItemIssuanceType,
       args : {itemIssuanceId: {type: GraphQLString}},
-      resolve: (orderItemBilling, args, {loaders}) => loaders.ofbiz.load(`itemIssuances/find?itemIssuanceId=${orderItemBilling.itemIssuanceId}`)
+      resolve: (orderItemBilling, args, {loaders}) => loaders.ofbiz.load(`shipment/itemIssuances/find?itemIssuanceId=${orderItemBilling.itemIssuanceId}`)
     },
     invoice: {
       type: InvoiceItemType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (orderItemBilling, args, {loaders}) => loaders.ofbiz.load(`invoiceItems/find?invoiceId=${orderItemBilling.invoiceId}`)
+      resolve: (orderItemBilling, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItems/find?invoiceId=${orderItemBilling.invoiceId}`)
     },
     invoiceItemSeqId: {type: GraphQLString},
     shipmentReceipt: {
       type: ShipmentReceiptType,
       args : {shipmentReceiptId: {type: GraphQLString}},
-      resolve: (orderItemBilling, args, {loaders}) => loaders.ofbiz.load(`shipmentReceipts/find?receiptId=${orderItemBilling.shipmentReceiptId}`)
+      resolve: (orderItemBilling, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentReceipts/find?receiptId=${orderItemBilling.shipmentReceiptId}`)
     }
   })
 });

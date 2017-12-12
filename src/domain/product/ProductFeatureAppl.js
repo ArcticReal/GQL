@@ -26,25 +26,25 @@ const ProductFeatureApplType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productFeatureAppl.productId}`)
+      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productFeatureAppl.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     recurringAmount: {type: GraphQLFloat},
     productFeature: {
       type: ProductFeatureType,
       args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbiz.load(`productFeatures/find?productFeatureId=${productFeatureAppl.productFeatureId}`)
+      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbiz.load(`product/product/productFeatures/find?productFeatureId=${productFeatureAppl.productFeatureId}`)
     },
     productFeatureApplType: {
       type: ProductFeatureApplTypeType,
       args : {productFeatureApplTypeId: {type: GraphQLString}},
-      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbiz.load(`productFeatureApplTypes/find?productFeatureApplTypeId=${productFeatureAppl.productFeatureApplTypeId}`)
+      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbiz.load(`product/product/productFeatureApplTypes/find?productFeatureApplTypeId=${productFeatureAppl.productFeatureApplTypeId}`)
     },
     thruDate: {type: GraphQLString},
     productFeatureApplAttrs: {
       type: new GraphQLList(ProductFeatureApplAttrType),
-      args : {productId: {type: GraphQLString}},
-      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbizArray.load(`productFeatureApplAttrs/find?productId=${productFeatureAppl.productId}`)
+      args : {},
+      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureApplAttrs/find?productId=${productFeatureAppl.productId}`)
     }
   })
 });

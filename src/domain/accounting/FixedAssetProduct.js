@@ -26,18 +26,18 @@ const FixedAssetProductType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (fixedAssetProduct, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${fixedAssetProduct.productId}`)
+      resolve: (fixedAssetProduct, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${fixedAssetProduct.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetProduct, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${fixedAssetProduct.fixedAssetId}`)
+      resolve: (fixedAssetProduct, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${fixedAssetProduct.fixedAssetId}`)
     },
     fixedAssetProductType: {
       type: FixedAssetProductTypeType,
       args : {fixedAssetProductTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetProduct, args, {loaders}) => loaders.ofbiz.load(`fixedAssetProductTypes/find?fixedAssetProductTypeId=${fixedAssetProduct.fixedAssetProductTypeId}`)
+      resolve: (fixedAssetProduct, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAsset/fixedAssetProductTypes/find?fixedAssetProductTypeId=${fixedAssetProduct.fixedAssetProductTypeId}`)
     },
     quantityUomId: {type: GraphQLString},
     thruDate: {type: GraphQLString}

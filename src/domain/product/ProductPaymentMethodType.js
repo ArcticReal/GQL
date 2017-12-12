@@ -24,18 +24,18 @@ const ProductPaymentMethodTypeType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productPaymentMethodType, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productPaymentMethodType.productId}`)
+      resolve: (productPaymentMethodType, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productPaymentMethodType.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     paymentMethodType: {
       type: PaymentMethodTypeType,
       args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (productPaymentMethodType, args, {loaders}) => loaders.ofbiz.load(`paymentMethodTypes/find?paymentMethodTypeId=${productPaymentMethodType.paymentMethodTypeId}`)
+      resolve: (productPaymentMethodType, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethodTypes/find?paymentMethodTypeId=${productPaymentMethodType.paymentMethodTypeId}`)
     },
     productPricePurpose: {
       type: ProductPricePurposeType,
       args : {productPricePurposeId: {type: GraphQLString}},
-      resolve: (productPaymentMethodType, args, {loaders}) => loaders.ofbiz.load(`productPricePurposes/find?productPricePurposeId=${productPaymentMethodType.productPricePurposeId}`)
+      resolve: (productPaymentMethodType, args, {loaders}) => loaders.ofbiz.load(`product/product/productPricePurposes/find?productPricePurposeId=${productPaymentMethodType.productPricePurposeId}`)
     },
     thruDate: {type: GraphQLString}
   })

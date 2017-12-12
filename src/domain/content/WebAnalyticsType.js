@@ -20,15 +20,15 @@ const WebAnalyticsTypeType = new GraphQLObjectType({
     parentType: {
       type: WebAnalyticsTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (webAnalyticsType, args, {loaders}) => loaders.ofbiz.load(`webAnalyticsTypes/find?webAnalyticsTypeId=${webAnalyticsType.parentTypeId}`)
+      resolve: (webAnalyticsType, args, {loaders}) => loaders.ofbiz.load(`content/webAnalyticsTypes/find?webAnalyticsTypeId=${webAnalyticsType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     webAnalyticsTypeId: {type: GraphQLString},
     webAnalyticsTypes: {
       type: new GraphQLList(WebAnalyticsTypeType),
-      args : {webAnalyticsTypeId: {type: GraphQLString}},
-      resolve: (webAnalyticsType, args, {loaders}) => loaders.ofbizArray.load(`webAnalyticsTypes/find?webAnalyticsTypeId=${webAnalyticsType.webAnalyticsTypeId}`)
+      args : {},
+      resolve: (webAnalyticsType, args, {loaders}) => loaders.ofbizArray.load(`content/webAnalyticsTypes/find?webAnalyticsTypeId=${webAnalyticsType.webAnalyticsTypeId}`)
     }
   })
 });

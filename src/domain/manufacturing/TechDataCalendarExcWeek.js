@@ -22,13 +22,13 @@ const TechDataCalendarExcWeekType = new GraphQLObjectType({
     calendarWeek: {
       type: TechDataCalendarWeekType,
       args : {calendarWeekId: {type: GraphQLString}},
-      resolve: (techDataCalendarExcWeek, args, {loaders}) => loaders.ofbiz.load(`techDataCalendarWeeks/find?calendarWeekId=${techDataCalendarExcWeek.calendarWeekId}`)
+      resolve: (techDataCalendarExcWeek, args, {loaders}) => loaders.ofbiz.load(`manufacturing/techDataCalendar/techDataCalendarWeeks/find?calendarWeekId=${techDataCalendarExcWeek.calendarWeekId}`)
     },
     exceptionDateStart: {type: GraphQLString},
     calendar: {
       type: TechDataCalendarType,
       args : {calendarId: {type: GraphQLString}},
-      resolve: (techDataCalendarExcWeek, args, {loaders}) => loaders.ofbiz.load(`techDataCalendars/find?calendarId=${techDataCalendarExcWeek.calendarId}`)
+      resolve: (techDataCalendarExcWeek, args, {loaders}) => loaders.ofbiz.load(`manufacturing/techDataCalendars/find?calendarId=${techDataCalendarExcWeek.calendarId}`)
     },
     description: {type: GraphQLString}
   })

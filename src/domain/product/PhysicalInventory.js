@@ -26,18 +26,18 @@ const PhysicalInventoryType = new GraphQLObjectType({
     partyId: {type: GraphQLString},
     inventoryItemDetails: {
       type: new GraphQLList(InventoryItemDetailType),
-      args : {physicalInventoryId: {type: GraphQLString}},
-      resolve: (physicalInventory, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemDetails/find?physicalInventoryId=${physicalInventory.physicalInventoryId}`)
+      args : {},
+      resolve: (physicalInventory, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemDetails/find?physicalInventoryId=${physicalInventory.physicalInventoryId}`)
     },
     inventoryItemVariances: {
       type: new GraphQLList(InventoryItemVarianceType),
-      args : {physicalInventoryId: {type: GraphQLString}},
-      resolve: (physicalInventory, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemVariances/find?physicalInventoryId=${physicalInventory.physicalInventoryId}`)
+      args : {},
+      resolve: (physicalInventory, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemVariances/find?physicalInventoryId=${physicalInventory.physicalInventoryId}`)
     },
     acctgTranses: {
       type: new GraphQLList(AcctgTransType),
-      args : {physicalInventoryId: {type: GraphQLString}},
-      resolve: (physicalInventory, args, {loaders}) => loaders.ofbizArray.load(`acctgTranss/find?physicalInventoryId=${physicalInventory.physicalInventoryId}`)
+      args : {},
+      resolve: (physicalInventory, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTranss/find?physicalInventoryId=${physicalInventory.physicalInventoryId}`)
     }
   })
 });

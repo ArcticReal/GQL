@@ -21,20 +21,20 @@ const PaymentGatewayConfigTypeType = new GraphQLObjectType({
     parentType: {
       type: PaymentGatewayConfigTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfigType, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigTypes/find?paymentGatewayConfigTypeId=${paymentGatewayConfigType.parentTypeId}`)
+      resolve: (paymentGatewayConfigType, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGatewayConfigTypes/find?paymentGatewayConfigTypeId=${paymentGatewayConfigType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     paymentGatewayConfigTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     paymentGatewayConfigTypes: {
       type: new GraphQLList(PaymentGatewayConfigTypeType),
-      args : {paymentGatewayConfigTypeId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfigType, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayConfigTypes/find?paymentGatewayConfigTypeId=${paymentGatewayConfigType.paymentGatewayConfigTypeId}`)
+      args : {},
+      resolve: (paymentGatewayConfigType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayConfigTypes/find?paymentGatewayConfigTypeId=${paymentGatewayConfigType.paymentGatewayConfigTypeId}`)
     },
     paymentGatewayConfigs: {
       type: new GraphQLList(PaymentGatewayConfigType),
-      args : {paymentGatewayConfigTypeId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfigType, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayConfigs/find?paymentGatewayConfigTypeId=${paymentGatewayConfigType.paymentGatewayConfigTypeId}`)
+      args : {},
+      resolve: (paymentGatewayConfigType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayConfigs/find?paymentGatewayConfigTypeId=${paymentGatewayConfigType.paymentGatewayConfigTypeId}`)
     }
   })
 });

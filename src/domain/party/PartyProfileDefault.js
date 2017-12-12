@@ -25,12 +25,12 @@ const PartyProfileDefaultType = new GraphQLObjectType({
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (partyProfileDefault, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${partyProfileDefault.productStoreId}`)
+      resolve: (partyProfileDefault, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${partyProfileDefault.productStoreId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyProfileDefault, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyProfileDefault.partyId}`)
+      resolve: (partyProfileDefault, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyProfileDefault.partyId}`)
     },
     defaultBillAddr: {type: GraphQLString}
   })

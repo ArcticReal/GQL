@@ -59,7 +59,7 @@ const ProductStoreType = new GraphQLObjectType({
     inventoryFacility: {
       type: FacilityType,
       args : {inventoryFacilityId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${productStore.inventoryFacilityId}`)
+      resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${productStore.inventoryFacilityId}`)
     },
     headerApprovedStatus: {type: GraphQLString},
     oldHeaderMiddleBackground: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
@@ -96,7 +96,7 @@ const ProductStoreType = new GraphQLObjectType({
     primaryStoreGroup: {
       type: ProductStoreGroupType,
       args : {primaryStoreGroupId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`productStoreGroups/find?productStoreGroupId=${productStore.primaryStoreGroupId}`)
+      resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`product/product/productStoreGroups/find?productStoreGroupId=${productStore.primaryStoreGroupId}`)
     },
     oldHeaderRightBackground: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     enableDigProdUpload: {type: GraphQLBoolean},
@@ -127,7 +127,7 @@ const ProductStoreType = new GraphQLObjectType({
     vatTaxAuthGeo: {
       type: TaxAuthorityType,
       args : {vatTaxAuthGeoId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`taxAuthoritys/find?taxAuthGeoId=${productStore.vatTaxAuthGeoId}`)
+      resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthoritys/find?taxAuthGeoId=${productStore.vatTaxAuthGeoId}`)
     },
     vatTaxAuthPartyId: {type: GraphQLString},
     daysToCancelNonPay: {type: GraphQLInt},
@@ -135,108 +135,108 @@ const ProductStoreType = new GraphQLObjectType({
     payToParty: {
       type: PartyType,
       args : {payToPartyId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productStore.payToPartyId}`)
+      resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productStore.payToPartyId}`)
     },
     defaultLocaleString: {type: GraphQLString},
     productStoreEmailSettings: {
       type: new GraphQLList(ProductStoreEmailSettingType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStoreEmailSettings/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreEmailSettings/find?productStoreId=${productStore.productStoreId}`)
     },
     productStoreGroupMembers: {
       type: new GraphQLList(ProductStoreGroupMemberType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStoreGroupMembers/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreGroupMembers/find?productStoreId=${productStore.productStoreId}`)
     },
     productStoreKeywordOvrds: {
       type: new GraphQLList(ProductStoreKeywordOvrdType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStoreKeywordOvrds/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreKeywordOvrds/find?productStoreId=${productStore.productStoreId}`)
     },
     productStoreVendorPayments: {
       type: new GraphQLList(ProductStoreVendorPaymentType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStoreVendorPayments/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreVendorPayments/find?productStoreId=${productStore.productStoreId}`)
     },
     inventoryItemTempReses: {
       type: new GraphQLList(InventoryItemTempResType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemTempRess/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemTempRess/find?productStoreId=${productStore.productStoreId}`)
     },
     productStorePromoAppls: {
       type: new GraphQLList(ProductStorePromoApplType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStorePromoAppls/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStorePromoAppls/find?productStoreId=${productStore.productStoreId}`)
     },
     productStoreSurveyAppls: {
       type: new GraphQLList(ProductStoreSurveyApplType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStoreSurveyAppls/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreSurveyAppls/find?productStoreId=${productStore.productStoreId}`)
     },
     segmentGroups: {
       type: new GraphQLList(SegmentGroupType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`segmentGroups/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`marketing/segmentGroups/find?productStoreId=${productStore.productStoreId}`)
     },
     productStoreFacilities: {
       type: new GraphQLList(ProductStoreFacilityType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStoreFacilitys/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/facility/productStoreFacilitys/find?productStoreId=${productStore.productStoreId}`)
     },
     taxAuthorityRateProducts: {
       type: new GraphQLList(TaxAuthorityRateProductType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`taxAuthorityRateProducts/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`accounting/taxAuthority/taxAuthorityRateProducts/find?productStoreId=${productStore.productStoreId}`)
     },
     productStoreCatalogs: {
       type: new GraphQLList(ProductStoreCatalogType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStoreCatalogs/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreCatalogs/find?productStoreId=${productStore.productStoreId}`)
     },
     quotes: {
       type: new GraphQLList(QuoteType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`quotes/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`order/quotes/find?productStoreId=${productStore.productStoreId}`)
     },
     productStoreRoles: {
       type: new GraphQLList(ProductStoreRoleType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStoreRoles/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreRoles/find?productStoreId=${productStore.productStoreId}`)
     },
     productReviews: {
       type: new GraphQLList(ProductReviewType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productReviews/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/product/productReviews/find?productStoreId=${productStore.productStoreId}`)
     },
     shoppingLists: {
       type: new GraphQLList(ShoppingListType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`shoppingLists/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`order/shoppingLists/find?productStoreId=${productStore.productStoreId}`)
     },
     partyProfileDefaults: {
       type: new GraphQLList(PartyProfileDefaultType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`partyProfileDefaults/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyProfileDefaults/find?productStoreId=${productStore.productStoreId}`)
     },
     productStoreVendorShipments: {
       type: new GraphQLList(ProductStoreVendorShipmentType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStoreVendorShipments/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreVendorShipments/find?productStoreId=${productStore.productStoreId}`)
     },
     productStorePaymentSettings: {
       type: new GraphQLList(ProductStorePaymentSettingType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`productStorePaymentSettings/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStorePaymentSettings/find?productStoreId=${productStore.productStoreId}`)
     },
     custRequests: {
       type: new GraphQLList(CustRequestType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`custRequests/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`order/custRequests/find?productStoreId=${productStore.productStoreId}`)
     },
     orderHeaders: {
       type: new GraphQLList(OrderHeaderType),
-      args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`orderHeaders/find?productStoreId=${productStore.productStoreId}`)
+      args : {},
+      resolve: (productStore, args, {loaders}) => loaders.ofbizArray.load(`order/orderHeaders/find?productStoreId=${productStore.productStoreId}`)
     }
   })
 });

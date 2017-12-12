@@ -21,20 +21,20 @@ const AcctgTransEntryTypeType = new GraphQLObjectType({
     parentType: {
       type: AcctgTransEntryTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (acctgTransEntryType, args, {loaders}) => loaders.ofbiz.load(`acctgTransEntryTypes/find?acctgTransEntryTypeId=${acctgTransEntryType.parentTypeId}`)
+      resolve: (acctgTransEntryType, args, {loaders}) => loaders.ofbiz.load(`accounting/acctgTrans/acctgTransEntryTypes/find?acctgTransEntryTypeId=${acctgTransEntryType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     acctgTransEntryTypeId: {type: GraphQLString},
     acctgTransEntries: {
       type: new GraphQLList(AcctgTransEntryType),
-      args : {acctgTransEntryTypeId: {type: GraphQLString}},
-      resolve: (acctgTransEntryType, args, {loaders}) => loaders.ofbizArray.load(`acctgTransEntrys/find?acctgTransEntryTypeId=${acctgTransEntryType.acctgTransEntryTypeId}`)
+      args : {},
+      resolve: (acctgTransEntryType, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTrans/acctgTransEntrys/find?acctgTransEntryTypeId=${acctgTransEntryType.acctgTransEntryTypeId}`)
     },
     acctgTransEntryTypes: {
       type: new GraphQLList(AcctgTransEntryTypeType),
-      args : {acctgTransEntryTypeId: {type: GraphQLString}},
-      resolve: (acctgTransEntryType, args, {loaders}) => loaders.ofbizArray.load(`acctgTransEntryTypes/find?acctgTransEntryTypeId=${acctgTransEntryType.acctgTransEntryTypeId}`)
+      args : {},
+      resolve: (acctgTransEntryType, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTrans/acctgTransEntryTypes/find?acctgTransEntryTypeId=${acctgTransEntryType.acctgTransEntryTypeId}`)
     }
   })
 });

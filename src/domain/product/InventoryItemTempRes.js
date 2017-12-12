@@ -25,12 +25,12 @@ const InventoryItemTempResType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (inventoryItemTempRes, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${inventoryItemTempRes.productId}`)
+      resolve: (inventoryItemTempRes, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${inventoryItemTempRes.productId}`)
     },
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (inventoryItemTempRes, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${inventoryItemTempRes.productStoreId}`)
+      resolve: (inventoryItemTempRes, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${inventoryItemTempRes.productStoreId}`)
     }
   })
 });

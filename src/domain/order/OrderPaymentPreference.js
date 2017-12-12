@@ -31,7 +31,7 @@ const OrderPaymentPreferenceType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderPaymentPreference.orderId}`)
+      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderPaymentPreference.orderId}`)
     },
     lastModifiedDate: {type: GraphQLString},
     manualRefNum: {type: GraphQLString},
@@ -41,7 +41,7 @@ const OrderPaymentPreferenceType = new GraphQLObjectType({
     paymentMethodType: {
       type: PaymentMethodTypeType,
       args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`paymentMethodTypes/find?paymentMethodTypeId=${orderPaymentPreference.paymentMethodTypeId}`)
+      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethodTypes/find?paymentMethodTypeId=${orderPaymentPreference.paymentMethodTypeId}`)
     },
     shipGroupSeqId: {type: GraphQLString},
     processAttempt: {type: GraphQLInt},
@@ -49,7 +49,7 @@ const OrderPaymentPreferenceType = new GraphQLObjectType({
     finAccount: {
       type: FinAccountType,
       args : {finAccountId: {type: GraphQLString}},
-      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`finAccounts/find?finAccountId=${orderPaymentPreference.finAccountId}`)
+      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`accounting/finAccounts/find?finAccountId=${orderPaymentPreference.finAccountId}`)
     },
     lastModifiedByUserLogin: {type: GraphQLString},
     orderPaymentPreferenceId: {type: GraphQLString},
@@ -58,36 +58,36 @@ const OrderPaymentPreferenceType = new GraphQLObjectType({
     paymentMethod: {
       type: PaymentMethodType,
       args : {paymentMethodId: {type: GraphQLString}},
-      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`paymentMethods/find?paymentMethodId=${orderPaymentPreference.paymentMethodId}`)
+      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethods/find?paymentMethodId=${orderPaymentPreference.paymentMethodId}`)
     },
     billingPostalCode: {type: GraphQLString},
     overflowFlag: {type: GraphQLBoolean},
     productPricePurpose: {
       type: ProductPricePurposeType,
       args : {productPricePurposeId: {type: GraphQLString}},
-      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`productPricePurposes/find?productPricePurposeId=${orderPaymentPreference.productPricePurposeId}`)
+      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`product/product/productPricePurposes/find?productPricePurposeId=${orderPaymentPreference.productPricePurposeId}`)
     },
     maxAmount: {type: GraphQLFloat},
     createdByUserLogin: {
       type: UserLoginType,
       args : {createdByUserLogin: {type: GraphQLString}},
-      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${orderPaymentPreference.createdByUserLogin}`)
+      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${orderPaymentPreference.createdByUserLogin}`)
     },
     presentFlag: {type: GraphQLBoolean},
     returnItemResponses: {
       type: new GraphQLList(ReturnItemResponseType),
-      args : {orderPaymentPreferenceId: {type: GraphQLString}},
-      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbizArray.load(`returnItemResponses/find?orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}`)
+      args : {},
+      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbizArray.load(`order/returnItem/returnItemResponses/find?orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}`)
     },
     paymentGatewayResponses: {
       type: new GraphQLList(PaymentGatewayResponseType),
-      args : {orderPaymentPreferenceId: {type: GraphQLString}},
-      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayResponses/find?orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}`)
+      args : {},
+      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayResponses/find?orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}`)
     },
     payments: {
       type: new GraphQLList(PaymentType),
-      args : {orderPaymentPreferenceId: {type: GraphQLString}},
-      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbizArray.load(`payments/find?orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}`)
+      args : {},
+      resolve: (orderPaymentPreference, args, {loaders}) => loaders.ofbizArray.load(`accounting/payments/find?orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}`)
     }
   })
 });

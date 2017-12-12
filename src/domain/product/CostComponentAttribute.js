@@ -24,7 +24,7 @@ const CostComponentAttributeType = new GraphQLObjectType({
     costComponent: {
       type: CostComponentType,
       args : {costComponentId: {type: GraphQLString}},
-      resolve: (costComponentAttribute, args, {loaders}) => loaders.ofbiz.load(`costComponents/find?costComponentId=${costComponentAttribute.costComponentId}`)
+      resolve: (costComponentAttribute, args, {loaders}) => loaders.ofbiz.load(`product/costComponents/find?costComponentId=${costComponentAttribute.costComponentId}`)
     }
   })
 });

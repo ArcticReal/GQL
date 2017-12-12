@@ -22,7 +22,7 @@ const WebSiteContactListType = new GraphQLObjectType({
     contactList: {
       type: ContactListType,
       args : {contactListId: {type: GraphQLString}},
-      resolve: (webSiteContactList, args, {loaders}) => loaders.ofbiz.load(`contactLists/find?contactListId=${webSiteContactList.contactListId}`)
+      resolve: (webSiteContactList, args, {loaders}) => loaders.ofbiz.load(`marketing/contactLists/find?contactListId=${webSiteContactList.contactListId}`)
     },
     webSiteId: {type: GraphQLString},
     thruDate: {type: GraphQLString}

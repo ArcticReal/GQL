@@ -23,22 +23,22 @@ const ProductStoreVendorShipmentType = new GraphQLObjectType({
     carrierParty: {
       type: PartyType,
       args : {carrierPartyId: {type: GraphQLString}},
-      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productStoreVendorShipment.carrierPartyId}`)
+      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productStoreVendorShipment.carrierPartyId}`)
     },
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${productStoreVendorShipment.productStoreId}`)
+      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${productStoreVendorShipment.productStoreId}`)
     },
     shipmentMethodType: {
       type: ShipmentMethodTypeType,
       args : {shipmentMethodTypeId: {type: GraphQLString}},
-      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`shipmentMethodTypes/find?shipmentMethodTypeId=${productStoreVendorShipment.shipmentMethodTypeId}`)
+      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentMethodTypes/find?shipmentMethodTypeId=${productStoreVendorShipment.shipmentMethodTypeId}`)
     },
     vendorParty: {
       type: PartyType,
       args : {vendorPartyId: {type: GraphQLString}},
-      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productStoreVendorShipment.vendorPartyId}`)
+      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productStoreVendorShipment.vendorPartyId}`)
     }
   })
 });

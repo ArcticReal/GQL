@@ -28,14 +28,14 @@ const GiftCardFulfillmentType = new GraphQLObjectType({
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (giftCardFulfillment, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${giftCardFulfillment.orderId}`)
+      resolve: (giftCardFulfillment, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${giftCardFulfillment.orderId}`)
     },
     pinNumber: {type: GraphQLString},
     typeEnumId: {type: GraphQLString},
     surveyResponse: {
       type: SurveyResponseType,
       args : {surveyResponseId: {type: GraphQLString}},
-      resolve: (giftCardFulfillment, args, {loaders}) => loaders.ofbiz.load(`surveyResponses/find?surveyResponseId=${giftCardFulfillment.surveyResponseId}`)
+      resolve: (giftCardFulfillment, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyResponses/find?surveyResponseId=${giftCardFulfillment.surveyResponseId}`)
     },
     responseCode: {type: GraphQLString},
     referenceNum: {type: GraphQLString},
@@ -43,7 +43,7 @@ const GiftCardFulfillmentType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (giftCardFulfillment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${giftCardFulfillment.partyId}`)
+      resolve: (giftCardFulfillment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${giftCardFulfillment.partyId}`)
     },
     cardNumber: {type: GraphQLString}
   })

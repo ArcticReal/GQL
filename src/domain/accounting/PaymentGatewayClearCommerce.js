@@ -24,7 +24,7 @@ const PaymentGatewayClearCommerceType = new GraphQLObjectType({
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayClearCommerce, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayClearCommerce.paymentGatewayConfigId}`)
+      resolve: (paymentGatewayClearCommerce, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayClearCommerce.paymentGatewayConfigId}`)
     },
     groupId: {type: GraphQLString},
     userAlias: {type: GraphQLString},

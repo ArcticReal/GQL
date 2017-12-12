@@ -36,7 +36,7 @@ const AcctgTransType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${acctgTrans.workEffortId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${acctgTrans.workEffortId}`)
     },
     theirAcctgTransId: {type: GraphQLString},
     description: {type: GraphQLString},
@@ -44,52 +44,52 @@ const AcctgTransType = new GraphQLObjectType({
     physicalInventory: {
       type: PhysicalInventoryType,
       args : {physicalInventoryId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`physicalInventorys/find?physicalInventoryId=${acctgTrans.physicalInventoryId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`product/physicalInventorys/find?physicalInventoryId=${acctgTrans.physicalInventoryId}`)
     },
     lastModifiedByUserLogin: {type: GraphQLString},
     isPosted: {type: GraphQLBoolean},
     payment: {
       type: PaymentType,
       args : {paymentId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${acctgTrans.paymentId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`accounting/payments/find?paymentId=${acctgTrans.paymentId}`)
     },
     voucherDate: {type: GraphQLString},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${acctgTrans.partyId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${acctgTrans.partyId}`)
     },
     receipt: {
       type: ShipmentReceiptType,
       args : {receiptId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`shipmentReceipts/find?receiptId=${acctgTrans.receiptId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentReceipts/find?receiptId=${acctgTrans.receiptId}`)
     },
     createdByUserLogin: {type: GraphQLString},
     finAccountTrans: {
       type: FinAccountTransType,
       args : {finAccountTransId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`finAccountTranss/find?finAccountTransId=${acctgTrans.finAccountTransId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`accounting/finAccount/finAccountTranss/find?finAccountTransId=${acctgTrans.finAccountTransId}`)
     },
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${acctgTrans.roleTypeId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${acctgTrans.roleTypeId}`)
     },
     acctgTransType: {
       type: AcctgTransTypeType,
       args : {acctgTransTypeId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`acctgTransTypes/find?acctgTransTypeId=${acctgTrans.acctgTransTypeId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`accounting/acctgTrans/acctgTransTypes/find?acctgTransTypeId=${acctgTrans.acctgTransTypeId}`)
     },
     lastModifiedDate: {type: GraphQLString},
     glFiscalType: {
       type: GlFiscalTypeType,
       args : {glFiscalTypeId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`glFiscalTypes/find?glFiscalTypeId=${acctgTrans.glFiscalTypeId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`accounting/glFiscalTypes/find?glFiscalTypeId=${acctgTrans.glFiscalTypeId}`)
     },
     glJournal: {
       type: GlJournalType,
       args : {glJournalId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`glJournals/find?glJournalId=${acctgTrans.glJournalId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`accounting/glJournals/find?glJournalId=${acctgTrans.glJournalId}`)
     },
     transactionDate: {type: GraphQLString},
     scheduledPostingDate: {type: GraphQLString},
@@ -98,34 +98,34 @@ const AcctgTransType = new GraphQLObjectType({
     inventoryItem: {
       type: InventoryItemVarianceType,
       args : {inventoryItemId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`inventoryItemVariances/find?inventoryItemId=${acctgTrans.inventoryItemId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItem/inventoryItemVariances/find?inventoryItemId=${acctgTrans.inventoryItemId}`)
     },
     createdDate: {type: GraphQLString},
     shipment: {
       type: ShipmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`shipments/find?shipmentId=${acctgTrans.shipmentId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`/shipments/find?shipmentId=${acctgTrans.shipmentId}`)
     },
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${acctgTrans.fixedAssetId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${acctgTrans.fixedAssetId}`)
     },
     invoice: {
       type: InvoiceType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`invoices/find?invoiceId=${acctgTrans.invoiceId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`accounting/invoices/find?invoiceId=${acctgTrans.invoiceId}`)
     },
     groupStatusId: {type: GraphQLString},
     acctgTransAttributes: {
       type: new GraphQLList(AcctgTransAttributeType),
-      args : {acctgTransId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbizArray.load(`acctgTransAttributes/find?acctgTransId=${acctgTrans.acctgTransId}`)
+      args : {},
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTrans/acctgTransAttributes/find?acctgTransId=${acctgTrans.acctgTransId}`)
     },
     acctgTransEntries: {
       type: new GraphQLList(AcctgTransEntryType),
-      args : {acctgTransId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbizArray.load(`acctgTransEntrys/find?acctgTransId=${acctgTrans.acctgTransId}`)
+      args : {},
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTrans/acctgTransEntrys/find?acctgTransId=${acctgTrans.acctgTransId}`)
     }
   })
 });

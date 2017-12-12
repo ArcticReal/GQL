@@ -26,13 +26,13 @@ const OrderItemChangeType = new GraphQLObjectType({
     changeUserLogin: {
       type: UserLoginType,
       args : {changeUserLogin: {type: GraphQLString}},
-      resolve: (orderItemChange, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${orderItemChange.changeUserLogin}`)
+      resolve: (orderItemChange, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${orderItemChange.changeUserLogin}`)
     },
     quantity: {type: GraphQLFloat},
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemChange, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${orderItemChange.orderId}`)
+      resolve: (orderItemChange, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${orderItemChange.orderId}`)
     },
     changeComments: {type: GraphQLString},
     itemDescription: {type: GraphQLString},

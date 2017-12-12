@@ -22,7 +22,7 @@ const ProductStoreKeywordOvrdType = new GraphQLObjectType({
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStoreKeywordOvrd, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${productStoreKeywordOvrd.productStoreId}`)
+      resolve: (productStoreKeywordOvrd, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${productStoreKeywordOvrd.productStoreId}`)
     },
     targetTypeEnumId: {type: GraphQLString},
     keyword: {type: GraphQLString},

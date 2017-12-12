@@ -24,13 +24,13 @@ const ReturnTypeType = new GraphQLObjectType({
     sequenceId: {type: GraphQLString},
     returnItems: {
       type: new GraphQLList(ReturnItemType),
-      args : {returnTypeId: {type: GraphQLString}},
-      resolve: (returnType, args, {loaders}) => loaders.ofbizArray.load(`returnItems/find?returnTypeId=${returnType.returnTypeId}`)
+      args : {},
+      resolve: (returnType, args, {loaders}) => loaders.ofbizArray.load(`order/returnItems/find?returnTypeId=${returnType.returnTypeId}`)
     },
     returnAdjustments: {
       type: new GraphQLList(ReturnAdjustmentType),
-      args : {returnTypeId: {type: GraphQLString}},
-      resolve: (returnType, args, {loaders}) => loaders.ofbizArray.load(`returnAdjustments/find?returnTypeId=${returnType.returnTypeId}`)
+      args : {},
+      resolve: (returnType, args, {loaders}) => loaders.ofbizArray.load(`order/returnAdjustments/find?returnTypeId=${returnType.returnTypeId}`)
     }
   })
 });

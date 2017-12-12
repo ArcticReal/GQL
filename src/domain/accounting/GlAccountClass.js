@@ -21,20 +21,20 @@ const GlAccountClassType = new GraphQLObjectType({
     parentClass: {
       type: GlAccountClassType,
       args : {parentClassId: {type: GraphQLString}},
-      resolve: (glAccountClass, args, {loaders}) => loaders.ofbiz.load(`glAccountClasss/find?glAccountClassId=${glAccountClass.parentClassId}`)
+      resolve: (glAccountClass, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountClasss/find?glAccountClassId=${glAccountClass.parentClassId}`)
     },
     glAccountClassId: {type: GraphQLString},
     description: {type: GraphQLString},
     isAssetClass: {type: GraphQLBoolean},
     glAccounts: {
       type: new GraphQLList(GlAccountType),
-      args : {glAccountClassId: {type: GraphQLString}},
-      resolve: (glAccountClass, args, {loaders}) => loaders.ofbizArray.load(`glAccounts/find?glAccountClassId=${glAccountClass.glAccountClassId}`)
+      args : {},
+      resolve: (glAccountClass, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccounts/find?glAccountClassId=${glAccountClass.glAccountClassId}`)
     },
     glAccountClasses: {
       type: new GraphQLList(GlAccountClassType),
-      args : {glAccountClassId: {type: GraphQLString}},
-      resolve: (glAccountClass, args, {loaders}) => loaders.ofbizArray.load(`glAccountClasss/find?glAccountClassId=${glAccountClass.glAccountClassId}`)
+      args : {},
+      resolve: (glAccountClass, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/glAccountClasss/find?glAccountClassId=${glAccountClass.glAccountClassId}`)
     }
   })
 });

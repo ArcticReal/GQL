@@ -22,12 +22,12 @@ const SalesOpportunityQuoteType = new GraphQLObjectType({
     quote: {
       type: QuoteType,
       args : {quoteId: {type: GraphQLString}},
-      resolve: (salesOpportunityQuote, args, {loaders}) => loaders.ofbiz.load(`quotes/find?quoteId=${salesOpportunityQuote.quoteId}`)
+      resolve: (salesOpportunityQuote, args, {loaders}) => loaders.ofbiz.load(`order/quotes/find?quoteId=${salesOpportunityQuote.quoteId}`)
     },
     salesOpportunity: {
       type: SalesOpportunityType,
       args : {salesOpportunityId: {type: GraphQLString}},
-      resolve: (salesOpportunityQuote, args, {loaders}) => loaders.ofbiz.load(`salesOpportunitys/find?salesOpportunityId=${salesOpportunityQuote.salesOpportunityId}`)
+      resolve: (salesOpportunityQuote, args, {loaders}) => loaders.ofbiz.load(`marketing/salesOpportunitys/find?salesOpportunityId=${salesOpportunityQuote.salesOpportunityId}`)
     }
   })
 });

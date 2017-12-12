@@ -22,8 +22,8 @@ const SurveyQuestionTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     surveyQuestions: {
       type: new GraphQLList(SurveyQuestionType),
-      args : {surveyQuestionTypeId: {type: GraphQLString}},
-      resolve: (surveyQuestionType, args, {loaders}) => loaders.ofbizArray.load(`surveyQuestions/find?surveyQuestionTypeId=${surveyQuestionType.surveyQuestionTypeId}`)
+      args : {},
+      resolve: (surveyQuestionType, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyQuestions/find?surveyQuestionTypeId=${surveyQuestionType.surveyQuestionTypeId}`)
     }
   })
 });

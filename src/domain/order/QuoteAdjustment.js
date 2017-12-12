@@ -31,7 +31,7 @@ const QuoteAdjustmentType = new GraphQLObjectType({
     productPromo: {
       type: ProductPromoType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`productPromos/find?productPromoId=${quoteAdjustment.productPromoId}`)
+      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromos/find?productPromoId=${quoteAdjustment.productPromoId}`)
     },
     taxAuthPartyId: {type: GraphQLString},
     lastModifiedByUserLogin: {type: GraphQLString},
@@ -40,13 +40,13 @@ const QuoteAdjustmentType = new GraphQLObjectType({
     taxAuthGeo: {
       type: TaxAuthorityType,
       args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`taxAuthoritys/find?taxAuthGeoId=${quoteAdjustment.taxAuthGeoId}`)
+      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthoritys/find?taxAuthGeoId=${quoteAdjustment.taxAuthGeoId}`)
     },
     secondaryGeoId: {type: GraphQLString},
     createdByUserLogin: {
       type: UserLoginType,
       args : {createdByUserLogin: {type: GraphQLString}},
-      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${quoteAdjustment.createdByUserLogin}`)
+      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${quoteAdjustment.createdByUserLogin}`)
     },
     amount: {type: GraphQLFloat},
     comments: {type: GraphQLString},
@@ -58,18 +58,18 @@ const QuoteAdjustmentType = new GraphQLObjectType({
     overrideGlAccount: {
       type: GlAccountType,
       args : {overrideGlAccountId: {type: GraphQLString}},
-      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${quoteAdjustment.overrideGlAccountId}`)
+      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${quoteAdjustment.overrideGlAccountId}`)
     },
     quote: {
       type: QuoteType,
       args : {quoteId: {type: GraphQLString}},
-      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`quotes/find?quoteId=${quoteAdjustment.quoteId}`)
+      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`order/quotes/find?quoteId=${quoteAdjustment.quoteId}`)
     },
     includeInTax: {type: GraphQLBoolean},
     quoteAdjustmentType: {
       type: OrderAdjustmentTypeType,
       args : {quoteAdjustmentTypeId: {type: GraphQLString}},
-      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`orderAdjustmentTypes/find?orderAdjustmentTypeId=${quoteAdjustment.quoteAdjustmentTypeId}`)
+      resolve: (quoteAdjustment, args, {loaders}) => loaders.ofbiz.load(`order/orderAdjustment/orderAdjustmentTypes/find?orderAdjustmentTypeId=${quoteAdjustment.quoteAdjustmentTypeId}`)
     },
     createdDate: {type: GraphQLString},
     productPromoActionSeqId: {type: GraphQLString},

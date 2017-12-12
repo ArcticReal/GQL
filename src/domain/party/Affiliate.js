@@ -27,7 +27,7 @@ const AffiliateType = new GraphQLObjectType({
     party: {
       type: PartyGroupType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (affiliate, args, {loaders}) => loaders.ofbiz.load(`partyGroups/find?partyId=${affiliate.partyId}`)
+      resolve: (affiliate, args, {loaders}) => loaders.ofbiz.load(`party/party/partyGroups/find?partyId=${affiliate.partyId}`)
     },
     siteVisitors: {type: GraphQLString},
     siteType: {type: GraphQLString}

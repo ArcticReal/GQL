@@ -22,7 +22,7 @@ const PicklistStatusHistoryType = new GraphQLObjectType({
     picklist: {
       type: PicklistType,
       args : {picklistId: {type: GraphQLString}},
-      resolve: (picklistStatusHistory, args, {loaders}) => loaders.ofbiz.load(`picklists/find?picklistId=${picklistStatusHistory.picklistId}`)
+      resolve: (picklistStatusHistory, args, {loaders}) => loaders.ofbiz.load(`shipment/picklists/find?picklistId=${picklistStatusHistory.picklistId}`)
     },
     statusId: {type: GraphQLString},
     changeDate: {type: GraphQLString},
@@ -30,7 +30,7 @@ const PicklistStatusHistoryType = new GraphQLObjectType({
     changeUserLogin: {
       type: UserLoginType,
       args : {changeUserLoginId: {type: GraphQLString}},
-      resolve: (picklistStatusHistory, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${picklistStatusHistory.changeUserLoginId}`)
+      resolve: (picklistStatusHistory, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${picklistStatusHistory.changeUserLoginId}`)
     }
   })
 });

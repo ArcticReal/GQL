@@ -24,12 +24,12 @@ const CustRequestResolutionType = new GraphQLObjectType({
     custRequestType: {
       type: CustRequestTypeType,
       args : {custRequestTypeId: {type: GraphQLString}},
-      resolve: (custRequestResolution, args, {loaders}) => loaders.ofbiz.load(`custRequestTypes/find?custRequestTypeId=${custRequestResolution.custRequestTypeId}`)
+      resolve: (custRequestResolution, args, {loaders}) => loaders.ofbiz.load(`order/custRequest/custRequestTypes/find?custRequestTypeId=${custRequestResolution.custRequestTypeId}`)
     },
     custRequestItems: {
       type: new GraphQLList(CustRequestItemType),
-      args : {custRequestResolutionId: {type: GraphQLString}},
-      resolve: (custRequestResolution, args, {loaders}) => loaders.ofbizArray.load(`custRequestItems/find?custRequestResolutionId=${custRequestResolution.custRequestResolutionId}`)
+      args : {},
+      resolve: (custRequestResolution, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestItems/find?custRequestResolutionId=${custRequestResolution.custRequestResolutionId}`)
     }
   })
 });

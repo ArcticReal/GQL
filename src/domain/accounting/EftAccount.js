@@ -25,7 +25,7 @@ const EftAccountType = new GraphQLObjectType({
     paymentMethod: {
       type: PaymentMethodType,
       args : {paymentMethodId: {type: GraphQLString}},
-      resolve: (eftAccount, args, {loaders}) => loaders.ofbiz.load(`paymentMethods/find?paymentMethodId=${eftAccount.paymentMethodId}`)
+      resolve: (eftAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethods/find?paymentMethodId=${eftAccount.paymentMethodId}`)
     },
     accountType: {type: GraphQLString},
     bankName: {type: GraphQLString},
@@ -34,7 +34,7 @@ const EftAccountType = new GraphQLObjectType({
     contactMech: {
       type: PostalAddressType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (eftAccount, args, {loaders}) => loaders.ofbiz.load(`postalAddresss/find?contactMechId=${eftAccount.contactMechId}`)
+      resolve: (eftAccount, args, {loaders}) => loaders.ofbiz.load(`party/postalAddresss/find?contactMechId=${eftAccount.contactMechId}`)
     }
   })
 });

@@ -23,7 +23,7 @@ const WorkEffortEventReminderType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortEventReminder, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortEventReminder.workEffortId}`)
+      resolve: (workEffortEventReminder, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortEventReminder.workEffortId}`)
     },
     timeZoneId: {type: GraphQLString},
     currentCount: {type: GraphQLInt},
@@ -32,14 +32,14 @@ const WorkEffortEventReminderType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (workEffortEventReminder, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${workEffortEventReminder.partyId}`)
+      resolve: (workEffortEventReminder, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${workEffortEventReminder.partyId}`)
     },
     reminderOffset: {type: GraphQLInt},
     sequenceId: {type: GraphQLString},
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (workEffortEventReminder, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${workEffortEventReminder.contactMechId}`)
+      resolve: (workEffortEventReminder, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${workEffortEventReminder.contactMechId}`)
     },
     localeId: {type: GraphQLString},
     repeatCount: {type: GraphQLInt}

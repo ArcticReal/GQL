@@ -22,19 +22,19 @@ const InvoiceContentTypeType = new GraphQLObjectType({
     parentType: {
       type: InvoiceContentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (invoiceContentType, args, {loaders}) => loaders.ofbiz.load(`invoiceContentTypes/find?invoiceContentTypeId=${invoiceContentType.parentTypeId}`)
+      resolve: (invoiceContentType, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceContentTypes/find?invoiceContentTypeId=${invoiceContentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     invoiceContentTypes: {
       type: new GraphQLList(InvoiceContentTypeType),
-      args : {invoiceContentTypeId: {type: GraphQLString}},
-      resolve: (invoiceContentType, args, {loaders}) => loaders.ofbizArray.load(`invoiceContentTypes/find?invoiceContentTypeId=${invoiceContentType.invoiceContentTypeId}`)
+      args : {},
+      resolve: (invoiceContentType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceContentTypes/find?invoiceContentTypeId=${invoiceContentType.invoiceContentTypeId}`)
     },
     invoiceContents: {
       type: new GraphQLList(InvoiceContentType),
-      args : {invoiceContentTypeId: {type: GraphQLString}},
-      resolve: (invoiceContentType, args, {loaders}) => loaders.ofbizArray.load(`invoiceContents/find?invoiceContentTypeId=${invoiceContentType.invoiceContentTypeId}`)
+      args : {},
+      resolve: (invoiceContentType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceContents/find?invoiceContentTypeId=${invoiceContentType.invoiceContentTypeId}`)
     }
   })
 });

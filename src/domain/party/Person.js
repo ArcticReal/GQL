@@ -34,7 +34,7 @@ const PersonType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (person, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${person.partyId}`)
+      resolve: (person, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${person.partyId}`)
     },
     memberId: {type: GraphQLString},
     height: {type: GraphQLFloat},
@@ -57,8 +57,8 @@ const PersonType = new GraphQLObjectType({
     maritalStatus: {type: GraphQLBoolean},
     personTrainings: {
       type: new GraphQLList(PersonTrainingType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (person, args, {loaders}) => loaders.ofbizArray.load(`personTrainings/find?partyId=${person.partyId}`)
+      args : {},
+      resolve: (person, args, {loaders}) => loaders.ofbizArray.load(`humanres/personTrainings/find?partyId=${person.partyId}`)
     }
   })
 });

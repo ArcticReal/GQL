@@ -23,7 +23,7 @@ const ProductFeaturePriceType = new GraphQLObjectType({
     lastModifiedByUserLogin: {
       type: UserLoginType,
       args : {lastModifiedByUserLogin: {type: GraphQLString}},
-      resolve: (productFeaturePrice, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${productFeaturePrice.lastModifiedByUserLogin}`)
+      resolve: (productFeaturePrice, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${productFeaturePrice.lastModifiedByUserLogin}`)
     },
     currencyUomId: {type: GraphQLString},
     createdDate: {type: GraphQLString},
@@ -33,12 +33,12 @@ const ProductFeaturePriceType = new GraphQLObjectType({
     createdByUserLogin: {
       type: UserLoginType,
       args : {createdByUserLogin: {type: GraphQLString}},
-      resolve: (productFeaturePrice, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${productFeaturePrice.createdByUserLogin}`)
+      resolve: (productFeaturePrice, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${productFeaturePrice.createdByUserLogin}`)
     },
     productPriceType: {
       type: ProductPriceTypeType,
       args : {productPriceTypeId: {type: GraphQLString}},
-      resolve: (productFeaturePrice, args, {loaders}) => loaders.ofbiz.load(`productPriceTypes/find?productPriceTypeId=${productFeaturePrice.productPriceTypeId}`)
+      resolve: (productFeaturePrice, args, {loaders}) => loaders.ofbiz.load(`product/product/productPriceTypes/find?productPriceTypeId=${productFeaturePrice.productPriceTypeId}`)
     },
     thruDate: {type: GraphQLString}
   })

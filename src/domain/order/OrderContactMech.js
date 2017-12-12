@@ -23,17 +23,17 @@ const OrderContactMechType = new GraphQLObjectType({
     contactMechPurposeType: {
       type: ContactMechPurposeTypeType,
       args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (orderContactMech, args, {loaders}) => loaders.ofbiz.load(`contactMechPurposeTypes/find?contactMechPurposeTypeId=${orderContactMech.contactMechPurposeTypeId}`)
+      resolve: (orderContactMech, args, {loaders}) => loaders.ofbiz.load(`party/contactMech/contactMechPurposeTypes/find?contactMechPurposeTypeId=${orderContactMech.contactMechPurposeTypeId}`)
     },
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderContactMech, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderContactMech.orderId}`)
+      resolve: (orderContactMech, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderContactMech.orderId}`)
     },
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (orderContactMech, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${orderContactMech.contactMechId}`)
+      resolve: (orderContactMech, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${orderContactMech.contactMechId}`)
     }
   })
 });

@@ -24,12 +24,12 @@ const QuoteRoleType = new GraphQLObjectType({
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (quoteRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${quoteRole.partyId}`)
+      resolve: (quoteRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${quoteRole.partyId}`)
     },
     quote: {
       type: QuoteType,
       args : {quoteId: {type: GraphQLString}},
-      resolve: (quoteRole, args, {loaders}) => loaders.ofbiz.load(`quotes/find?quoteId=${quoteRole.quoteId}`)
+      resolve: (quoteRole, args, {loaders}) => loaders.ofbiz.load(`order/quotes/find?quoteId=${quoteRole.quoteId}`)
     },
     thruDate: {type: GraphQLString}
   })

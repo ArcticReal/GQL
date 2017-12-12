@@ -22,8 +22,8 @@ const FixedAssetProductTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     fixedAssetProducts: {
       type: new GraphQLList(FixedAssetProductType),
-      args : {fixedAssetProductTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetProductType, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetProducts/find?fixedAssetProductTypeId=${fixedAssetProductType.fixedAssetProductTypeId}`)
+      args : {},
+      resolve: (fixedAssetProductType, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetProducts/find?fixedAssetProductTypeId=${fixedAssetProductType.fixedAssetProductTypeId}`)
     }
   })
 });

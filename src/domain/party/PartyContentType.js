@@ -22,18 +22,18 @@ const PartyContentTypeType = new GraphQLObjectType({
     parentType: {
       type: PartyContentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (partyContentType, args, {loaders}) => loaders.ofbiz.load(`partyContentTypes/find?partyContentTypeId=${partyContentType.parentTypeId}`)
+      resolve: (partyContentType, args, {loaders}) => loaders.ofbiz.load(`party/party/partyContentTypes/find?partyContentTypeId=${partyContentType.parentTypeId}`)
     },
     description: {type: GraphQLString},
     partyContentTypes: {
       type: new GraphQLList(PartyContentTypeType),
-      args : {partyContentTypeId: {type: GraphQLString}},
-      resolve: (partyContentType, args, {loaders}) => loaders.ofbizArray.load(`partyContentTypes/find?partyContentTypeId=${partyContentType.partyContentTypeId}`)
+      args : {},
+      resolve: (partyContentType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyContentTypes/find?partyContentTypeId=${partyContentType.partyContentTypeId}`)
     },
     partyContents: {
       type: new GraphQLList(PartyContentType),
-      args : {partyContentTypeId: {type: GraphQLString}},
-      resolve: (partyContentType, args, {loaders}) => loaders.ofbizArray.load(`partyContents/find?partyContentTypeId=${partyContentType.partyContentTypeId}`)
+      args : {},
+      resolve: (partyContentType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyContents/find?partyContentTypeId=${partyContentType.partyContentTypeId}`)
     }
   })
 });

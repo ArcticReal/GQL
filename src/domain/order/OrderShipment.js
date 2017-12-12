@@ -24,12 +24,12 @@ const OrderShipmentType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderShipment, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderShipment.orderId}`)
+      resolve: (orderShipment, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderShipment.orderId}`)
     },
     shipment: {
       type: ShipmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (orderShipment, args, {loaders}) => loaders.ofbiz.load(`shipments/find?shipmentId=${orderShipment.shipmentId}`)
+      resolve: (orderShipment, args, {loaders}) => loaders.ofbiz.load(`/shipments/find?shipmentId=${orderShipment.shipmentId}`)
     },
     shipmentItemSeqId: {type: GraphQLString},
     shipGroupSeqId: {type: GraphQLString}

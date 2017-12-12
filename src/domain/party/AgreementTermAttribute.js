@@ -23,7 +23,7 @@ const AgreementTermAttributeType = new GraphQLObjectType({
     agreementTerm: {
       type: AgreementTermType,
       args : {agreementTermId: {type: GraphQLString}},
-      resolve: (agreementTermAttribute, args, {loaders}) => loaders.ofbiz.load(`agreementTerms/find?agreementTermId=${agreementTermAttribute.agreementTermId}`)
+      resolve: (agreementTermAttribute, args, {loaders}) => loaders.ofbiz.load(`party/agreement/agreementTerms/find?agreementTermId=${agreementTermAttribute.agreementTermId}`)
     },
     attrName: {type: GraphQLString}
   })

@@ -24,18 +24,18 @@ const ProductPricePurposeType = new GraphQLObjectType({
     productPricePurposeId: {type: GraphQLString},
     productPrices: {
       type: new GraphQLList(ProductPriceType),
-      args : {productPricePurposeId: {type: GraphQLString}},
-      resolve: (productPricePurpose, args, {loaders}) => loaders.ofbizArray.load(`productPrices/find?productPricePurposeId=${productPricePurpose.productPricePurposeId}`)
+      args : {},
+      resolve: (productPricePurpose, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPrices/find?productPricePurposeId=${productPricePurpose.productPricePurposeId}`)
     },
     orderPaymentPreferences: {
       type: new GraphQLList(OrderPaymentPreferenceType),
-      args : {productPricePurposeId: {type: GraphQLString}},
-      resolve: (productPricePurpose, args, {loaders}) => loaders.ofbizArray.load(`orderPaymentPreferences/find?productPricePurposeId=${productPricePurpose.productPricePurposeId}`)
+      args : {},
+      resolve: (productPricePurpose, args, {loaders}) => loaders.ofbizArray.load(`order/orderPaymentPreferences/find?productPricePurposeId=${productPricePurpose.productPricePurposeId}`)
     },
     productPaymentMethodTypes: {
       type: new GraphQLList(ProductPaymentMethodTypeType),
-      args : {productPricePurposeId: {type: GraphQLString}},
-      resolve: (productPricePurpose, args, {loaders}) => loaders.ofbizArray.load(`productPaymentMethodTypes/find?productPricePurposeId=${productPricePurpose.productPricePurposeId}`)
+      args : {},
+      resolve: (productPricePurpose, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPaymentMethodTypes/find?productPricePurposeId=${productPricePurpose.productPricePurposeId}`)
     }
   })
 });

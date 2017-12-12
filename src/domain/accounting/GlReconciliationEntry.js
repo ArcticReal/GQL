@@ -22,14 +22,14 @@ const GlReconciliationEntryType = new GraphQLObjectType({
     glReconciliation: {
       type: GlReconciliationType,
       args : {glReconciliationId: {type: GraphQLString}},
-      resolve: (glReconciliationEntry, args, {loaders}) => loaders.ofbiz.load(`glReconciliations/find?glReconciliationId=${glReconciliationEntry.glReconciliationId}`)
+      resolve: (glReconciliationEntry, args, {loaders}) => loaders.ofbiz.load(`accounting/glReconciliations/find?glReconciliationId=${glReconciliationEntry.glReconciliationId}`)
     },
     reconciledAmount: {type: GraphQLFloat},
     acctgTransEntrySeqId: {type: GraphQLString},
     acctgTrans: {
       type: AcctgTransEntryType,
       args : {acctgTransId: {type: GraphQLString}},
-      resolve: (glReconciliationEntry, args, {loaders}) => loaders.ofbiz.load(`acctgTransEntrys/find?acctgTransId=${glReconciliationEntry.acctgTransId}`)
+      resolve: (glReconciliationEntry, args, {loaders}) => loaders.ofbiz.load(`accounting/acctgTrans/acctgTransEntrys/find?acctgTransId=${glReconciliationEntry.acctgTransId}`)
     }
   })
 });

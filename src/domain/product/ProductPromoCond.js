@@ -24,7 +24,7 @@ const ProductPromoCondType = new GraphQLObjectType({
     productPromo: {
       type: ProductPromoRuleType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromoCond, args, {loaders}) => loaders.ofbiz.load(`productPromoRules/find?productPromoId=${productPromoCond.productPromoId}`)
+      resolve: (productPromoCond, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromoRules/find?productPromoId=${productPromoCond.productPromoId}`)
     },
     operatorEnumId: {type: GraphQLString},
     otherValue: {type: GraphQLString},

@@ -21,7 +21,7 @@ const MarketingCampaignNoteType = new GraphQLObjectType({
     marketingCampaign: {
       type: MarketingCampaignType,
       args : {marketingCampaignId: {type: GraphQLString}},
-      resolve: (marketingCampaignNote, args, {loaders}) => loaders.ofbiz.load(`marketingCampaigns/find?marketingCampaignId=${marketingCampaignNote.marketingCampaignId}`)
+      resolve: (marketingCampaignNote, args, {loaders}) => loaders.ofbiz.load(`marketing/marketingCampaigns/find?marketingCampaignId=${marketingCampaignNote.marketingCampaignId}`)
     },
     noteId: {type: GraphQLString}
   })

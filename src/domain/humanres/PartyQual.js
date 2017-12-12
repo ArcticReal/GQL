@@ -26,12 +26,12 @@ const PartyQualType = new GraphQLObjectType({
     partyQualType: {
       type: PartyQualTypeType,
       args : {partyQualTypeId: {type: GraphQLString}},
-      resolve: (partyQual, args, {loaders}) => loaders.ofbiz.load(`partyQualTypes/find?partyQualTypeId=${partyQual.partyQualTypeId}`)
+      resolve: (partyQual, args, {loaders}) => loaders.ofbiz.load(`humanres/partyQual/partyQualTypes/find?partyQualTypeId=${partyQual.partyQualTypeId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyQual, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyQual.partyId}`)
+      resolve: (partyQual, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyQual.partyId}`)
     },
     title: {type: GraphQLString},
     thruDate: {type: GraphQLString}

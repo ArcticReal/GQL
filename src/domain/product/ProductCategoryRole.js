@@ -24,13 +24,13 @@ const ProductCategoryRoleType = new GraphQLObjectType({
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (productCategoryRole, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${productCategoryRole.productCategoryId}`)
+      resolve: (productCategoryRole, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${productCategoryRole.productCategoryId}`)
     },
     comments: {type: GraphQLString},
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (productCategoryRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${productCategoryRole.partyId}`)
+      resolve: (productCategoryRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${productCategoryRole.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

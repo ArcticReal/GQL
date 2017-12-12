@@ -24,18 +24,18 @@ const TrackingCodeTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     trackingCodeOrderReturns: {
       type: new GraphQLList(TrackingCodeOrderReturnType),
-      args : {trackingCodeTypeId: {type: GraphQLString}},
-      resolve: (trackingCodeType, args, {loaders}) => loaders.ofbizArray.load(`trackingCodeOrderReturns/find?trackingCodeTypeId=${trackingCodeType.trackingCodeTypeId}`)
+      args : {},
+      resolve: (trackingCodeType, args, {loaders}) => loaders.ofbizArray.load(`marketing/trackingCode/trackingCodeOrderReturns/find?trackingCodeTypeId=${trackingCodeType.trackingCodeTypeId}`)
     },
     trackingCodes: {
       type: new GraphQLList(TrackingCodeType),
-      args : {trackingCodeTypeId: {type: GraphQLString}},
-      resolve: (trackingCodeType, args, {loaders}) => loaders.ofbizArray.load(`trackingCodes/find?trackingCodeTypeId=${trackingCodeType.trackingCodeTypeId}`)
+      args : {},
+      resolve: (trackingCodeType, args, {loaders}) => loaders.ofbizArray.load(`marketing/trackingCodes/find?trackingCodeTypeId=${trackingCodeType.trackingCodeTypeId}`)
     },
     trackingCodeOrders: {
       type: new GraphQLList(TrackingCodeOrderType),
-      args : {trackingCodeTypeId: {type: GraphQLString}},
-      resolve: (trackingCodeType, args, {loaders}) => loaders.ofbizArray.load(`trackingCodeOrders/find?trackingCodeTypeId=${trackingCodeType.trackingCodeTypeId}`)
+      args : {},
+      resolve: (trackingCodeType, args, {loaders}) => loaders.ofbizArray.load(`marketing/trackingCode/trackingCodeOrders/find?trackingCodeTypeId=${trackingCodeType.trackingCodeTypeId}`)
     }
   })
 });

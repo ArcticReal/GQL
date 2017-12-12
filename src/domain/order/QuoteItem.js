@@ -28,7 +28,7 @@ const QuoteItemType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${quoteItem.workEffortId}`)
+      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${quoteItem.workEffortId}`)
     },
     quantity: {type: GraphQLFloat},
     reservLength: {type: GraphQLFloat},
@@ -36,19 +36,19 @@ const QuoteItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${quoteItem.productId}`)
+      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${quoteItem.productId}`)
     },
     reservPersons: {type: GraphQLFloat},
     deliverableType: {
       type: DeliverableTypeType,
       args : {deliverableTypeId: {type: GraphQLString}},
-      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`deliverableTypes/find?deliverableTypeId=${quoteItem.deliverableTypeId}`)
+      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`workeffort/deliverable/deliverableTypes/find?deliverableTypeId=${quoteItem.deliverableTypeId}`)
     },
     quoteItemSeqId: {type: GraphQLString},
     productFeature: {
       type: ProductFeatureType,
       args : {productFeatureId: {type: GraphQLString}},
-      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`productFeatures/find?productFeatureId=${quoteItem.productFeatureId}`)
+      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`product/product/productFeatures/find?productFeatureId=${quoteItem.productFeatureId}`)
     },
     quoteUnitPrice: {type: GraphQLFloat},
     uomId: {type: GraphQLString},
@@ -57,27 +57,27 @@ const QuoteItemType = new GraphQLObjectType({
     quote: {
       type: QuoteType,
       args : {quoteId: {type: GraphQLString}},
-      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`quotes/find?quoteId=${quoteItem.quoteId}`)
+      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`order/quotes/find?quoteId=${quoteItem.quoteId}`)
     },
     custRequestItemSeqId: {type: GraphQLString},
     skillType: {
       type: SkillTypeType,
       args : {skillTypeId: {type: GraphQLString}},
-      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`skillTypes/find?skillTypeId=${quoteItem.skillTypeId}`)
+      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`humanres/skillTypes/find?skillTypeId=${quoteItem.skillTypeId}`)
     },
     reservStart: {type: GraphQLString},
     configId: {type: GraphQLString},
     custRequest: {
       type: CustRequestItemType,
       args : {custRequestId: {type: GraphQLString}},
-      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`custRequestItems/find?custRequestId=${quoteItem.custRequestId}`)
+      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`order/custRequest/custRequestItems/find?custRequestId=${quoteItem.custRequestId}`)
     },
     leadTimeDays: {type: GraphQLInt},
     selectedAmount: {type: GraphQLFloat},
     orderItems: {
       type: new GraphQLList(OrderItemType),
-      args : {quoteId: {type: GraphQLString}},
-      resolve: (quoteItem, args, {loaders}) => loaders.ofbizArray.load(`orderItems/find?quoteId=${quoteItem.quoteId}`)
+      args : {},
+      resolve: (quoteItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItems/find?quoteId=${quoteItem.quoteId}`)
     }
   })
 });

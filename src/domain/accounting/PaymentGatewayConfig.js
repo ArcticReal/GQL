@@ -34,68 +34,68 @@ const PaymentGatewayConfigType = new GraphQLObjectType({
     paymentGatewayConfigType: {
       type: PaymentGatewayConfigTypeType,
       args : {paymentGatewayConfigTypeId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigTypes/find?paymentGatewayConfigTypeId=${paymentGatewayConfig.paymentGatewayConfigTypeId}`)
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGatewayConfigTypes/find?paymentGatewayConfigTypeId=${paymentGatewayConfig.paymentGatewayConfigTypeId}`)
     },
     description: {type: GraphQLString},
     paymentGatewaySagePaies: {
       type: new GraphQLList(PaymentGatewaySagePayType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewaySagePays/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewaySagePays/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     },
     paymentGatewayAuthorizeNets: {
       type: new GraphQLList(PaymentGatewayAuthorizeNetType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayAuthorizeNets/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayAuthorizeNets/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     },
     paymentGatewayCyberSources: {
       type: new GraphQLList(PaymentGatewayCyberSourceType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayCyberSources/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayCyberSources/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     },
     paymentGatewayPayflowPros: {
       type: new GraphQLList(PaymentGatewayPayflowProType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayPayflowPros/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayPayflowPros/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     },
     paymentGatewayiDEALs: {
       type: new GraphQLList(PaymentGatewayiDEALType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayiDEALs/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayiDEALs/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     },
     productStorePaymentSettings: {
       type: new GraphQLList(ProductStorePaymentSettingType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`productStorePaymentSettings/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStorePaymentSettings/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     },
     paymentGatewayWorldPaies: {
       type: new GraphQLList(PaymentGatewayWorldPayType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayWorldPays/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayWorldPays/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     },
     paymentGatewayEwaies: {
       type: new GraphQLList(PaymentGatewayEwayType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayEways/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayEways/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     },
     paymentGatewaySecurePaies: {
       type: new GraphQLList(PaymentGatewaySecurePayType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewaySecurePays/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewaySecurePays/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     },
     paymentGatewayPayPals: {
       type: new GraphQLList(PaymentGatewayPayPalType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayPayPals/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayPayPals/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     },
     paymentGatewayClearCommerces: {
       type: new GraphQLList(PaymentGatewayClearCommerceType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayClearCommerces/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayClearCommerces/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     },
     paymentGatewayOrbitals: {
       type: new GraphQLList(PaymentGatewayOrbitalType),
-      args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayOrbitals/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
+      args : {},
+      resolve: (paymentGatewayConfig, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayOrbitals/find?paymentGatewayConfigId=${paymentGatewayConfig.paymentGatewayConfigId}`)
     }
   })
 });

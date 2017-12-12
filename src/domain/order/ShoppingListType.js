@@ -22,8 +22,8 @@ const ShoppingListTypeType = new GraphQLObjectType({
     shoppingListTypeId: {type: GraphQLString},
     shoppingLists: {
       type: new GraphQLList(ShoppingListType),
-      args : {shoppingListTypeId: {type: GraphQLString}},
-      resolve: (shoppingListType, args, {loaders}) => loaders.ofbizArray.load(`shoppingLists/find?shoppingListTypeId=${shoppingListType.shoppingListTypeId}`)
+      args : {},
+      resolve: (shoppingListType, args, {loaders}) => loaders.ofbizArray.load(`order/shoppingLists/find?shoppingListTypeId=${shoppingListType.shoppingListTypeId}`)
     }
   })
 });

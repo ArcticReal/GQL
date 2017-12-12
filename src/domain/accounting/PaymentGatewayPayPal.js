@@ -24,7 +24,7 @@ const PaymentGatewayPayPalType = new GraphQLObjectType({
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayPayPal, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayPayPal.paymentGatewayConfigId}`)
+      resolve: (paymentGatewayPayPal, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayPayPal.paymentGatewayConfigId}`)
     },
     confirmTemplate: {type: GraphQLString},
     cancelReturnUrl: {type: GraphQLString},

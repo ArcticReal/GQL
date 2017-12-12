@@ -27,18 +27,18 @@ const InvoiceItemAssocType = new GraphQLObjectType({
     invoiceFrom: {
       type: InvoiceItemType,
       args : {invoiceIdFrom: {type: GraphQLString}},
-      resolve: (invoiceItemAssoc, args, {loaders}) => loaders.ofbiz.load(`invoiceItems/find?invoiceId=${invoiceItemAssoc.invoiceIdFrom}`)
+      resolve: (invoiceItemAssoc, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItems/find?invoiceId=${invoiceItemAssoc.invoiceIdFrom}`)
     },
     invoiceItemSeqIdTo: {type: GraphQLString},
     invoiceItemAssocType: {
       type: InvoiceItemAssocTypeType,
       args : {invoiceItemAssocTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemAssoc, args, {loaders}) => loaders.ofbiz.load(`invoiceItemAssocTypes/find?invoiceItemAssocTypeId=${invoiceItemAssoc.invoiceItemAssocTypeId}`)
+      resolve: (invoiceItemAssoc, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItemAssocTypes/find?invoiceItemAssocTypeId=${invoiceItemAssoc.invoiceItemAssocTypeId}`)
     },
     invoiceTo: {
       type: InvoiceItemType,
       args : {invoiceIdTo: {type: GraphQLString}},
-      resolve: (invoiceItemAssoc, args, {loaders}) => loaders.ofbiz.load(`invoiceItems/find?invoiceId=${invoiceItemAssoc.invoiceIdTo}`)
+      resolve: (invoiceItemAssoc, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItems/find?invoiceId=${invoiceItemAssoc.invoiceIdTo}`)
     },
     partyIdTo: {type: GraphQLString},
     thruDate: {type: GraphQLString}

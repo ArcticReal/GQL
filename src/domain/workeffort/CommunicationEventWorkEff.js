@@ -22,12 +22,12 @@ const CommunicationEventWorkEffType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (communicationEventWorkEff, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${communicationEventWorkEff.workEffortId}`)
+      resolve: (communicationEventWorkEff, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${communicationEventWorkEff.workEffortId}`)
     },
     communicationEvent: {
       type: CommunicationEventType,
       args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEventWorkEff, args, {loaders}) => loaders.ofbiz.load(`communicationEvents/find?communicationEventId=${communicationEventWorkEff.communicationEventId}`)
+      resolve: (communicationEventWorkEff, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvents/find?communicationEventId=${communicationEventWorkEff.communicationEventId}`)
     },
     description: {type: GraphQLString}
   })

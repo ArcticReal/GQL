@@ -22,8 +22,8 @@ const GlAccountCategoryTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     glAccountCategories: {
       type: new GraphQLList(GlAccountCategoryType),
-      args : {glAccountCategoryTypeId: {type: GraphQLString}},
-      resolve: (glAccountCategoryType, args, {loaders}) => loaders.ofbizArray.load(`glAccountCategorys/find?glAccountCategoryTypeId=${glAccountCategoryType.glAccountCategoryTypeId}`)
+      args : {},
+      resolve: (glAccountCategoryType, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/glAccountCategorys/find?glAccountCategoryTypeId=${glAccountCategoryType.glAccountCategoryTypeId}`)
     }
   })
 });

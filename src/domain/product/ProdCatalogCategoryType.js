@@ -22,18 +22,18 @@ const ProdCatalogCategoryTypeType = new GraphQLObjectType({
     parentType: {
       type: ProdCatalogCategoryTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (prodCatalogCategoryType, args, {loaders}) => loaders.ofbiz.load(`prodCatalogCategoryTypes/find?prodCatalogCategoryTypeId=${prodCatalogCategoryType.parentTypeId}`)
+      resolve: (prodCatalogCategoryType, args, {loaders}) => loaders.ofbiz.load(`product/prodCatalog/prodCatalogCategoryTypes/find?prodCatalogCategoryTypeId=${prodCatalogCategoryType.parentTypeId}`)
     },
     description: {type: GraphQLString},
     prodCatalogCategories: {
       type: new GraphQLList(ProdCatalogCategoryType),
-      args : {prodCatalogCategoryTypeId: {type: GraphQLString}},
-      resolve: (prodCatalogCategoryType, args, {loaders}) => loaders.ofbizArray.load(`prodCatalogCategorys/find?prodCatalogCategoryTypeId=${prodCatalogCategoryType.prodCatalogCategoryTypeId}`)
+      args : {},
+      resolve: (prodCatalogCategoryType, args, {loaders}) => loaders.ofbizArray.load(`product/prodCatalog/prodCatalogCategorys/find?prodCatalogCategoryTypeId=${prodCatalogCategoryType.prodCatalogCategoryTypeId}`)
     },
     prodCatalogCategoryTypes: {
       type: new GraphQLList(ProdCatalogCategoryTypeType),
-      args : {prodCatalogCategoryTypeId: {type: GraphQLString}},
-      resolve: (prodCatalogCategoryType, args, {loaders}) => loaders.ofbizArray.load(`prodCatalogCategoryTypes/find?prodCatalogCategoryTypeId=${prodCatalogCategoryType.prodCatalogCategoryTypeId}`)
+      args : {},
+      resolve: (prodCatalogCategoryType, args, {loaders}) => loaders.ofbizArray.load(`product/prodCatalog/prodCatalogCategoryTypes/find?prodCatalogCategoryTypeId=${prodCatalogCategoryType.prodCatalogCategoryTypeId}`)
     }
   })
 });

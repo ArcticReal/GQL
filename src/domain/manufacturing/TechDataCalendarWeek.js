@@ -37,13 +37,13 @@ const TechDataCalendarWeekType = new GraphQLObjectType({
     tuesdayCapacity: {type: GraphQLFloat},
     techDataCalendarExcWeeks: {
       type: new GraphQLList(TechDataCalendarExcWeekType),
-      args : {calendarWeekId: {type: GraphQLString}},
-      resolve: (techDataCalendarWeek, args, {loaders}) => loaders.ofbizArray.load(`techDataCalendarExcWeeks/find?calendarWeekId=${techDataCalendarWeek.calendarWeekId}`)
+      args : {},
+      resolve: (techDataCalendarWeek, args, {loaders}) => loaders.ofbizArray.load(`manufacturing/techDataCalendar/techDataCalendarExcWeeks/find?calendarWeekId=${techDataCalendarWeek.calendarWeekId}`)
     },
     techDataCalendars: {
       type: new GraphQLList(TechDataCalendarType),
-      args : {calendarWeekId: {type: GraphQLString}},
-      resolve: (techDataCalendarWeek, args, {loaders}) => loaders.ofbizArray.load(`techDataCalendars/find?calendarWeekId=${techDataCalendarWeek.calendarWeekId}`)
+      args : {},
+      resolve: (techDataCalendarWeek, args, {loaders}) => loaders.ofbizArray.load(`manufacturing/techDataCalendars/find?calendarWeekId=${techDataCalendarWeek.calendarWeekId}`)
     }
   })
 });

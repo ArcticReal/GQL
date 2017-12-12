@@ -23,12 +23,12 @@ const DeliveryType = new GraphQLObjectType({
     originFacility: {
       type: FacilityType,
       args : {originFacilityId: {type: GraphQLString}},
-      resolve: (delivery, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${delivery.originFacilityId}`)
+      resolve: (delivery, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${delivery.originFacilityId}`)
     },
     destFacility: {
       type: FacilityType,
       args : {destFacilityId: {type: GraphQLString}},
-      resolve: (delivery, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${delivery.destFacilityId}`)
+      resolve: (delivery, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${delivery.destFacilityId}`)
     },
     actualArrivalDate: {type: GraphQLString},
     deliveryId: {type: GraphQLString},
@@ -38,15 +38,15 @@ const DeliveryType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (delivery, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${delivery.fixedAssetId}`)
+      resolve: (delivery, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${delivery.fixedAssetId}`)
     },
     startMileage: {type: GraphQLFloat},
     estimatedArrivalDate: {type: GraphQLString},
     endMileage: {type: GraphQLFloat},
     shipmentRouteSegments: {
       type: new GraphQLList(ShipmentRouteSegmentType),
-      args : {deliveryId: {type: GraphQLString}},
-      resolve: (delivery, args, {loaders}) => loaders.ofbizArray.load(`shipmentRouteSegments/find?deliveryId=${delivery.deliveryId}`)
+      args : {},
+      resolve: (delivery, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentRouteSegments/find?deliveryId=${delivery.deliveryId}`)
     }
   })
 });

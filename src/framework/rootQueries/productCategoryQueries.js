@@ -3,12 +3,12 @@ import {
   GraphQLString,
 } from 'graphql';
 
-import {ProductCategoryType} from '../product/ProductCategory.js';
+import {ProductCategoryType} from '../../domain/product/ProductCategory.js';
 
 const productCategoryQueries = {
   productCategories: {
     type: new GraphQLList(ProductCategoryType),
-    resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`productCategorys/find`)
+    resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`product/product/productCategorys/find`)
   },
   productCategory: {
     type: ProductCategoryType,
@@ -17,7 +17,7 @@ const productCategoryQueries = {
         type: GraphQLString
       },
     },
-    resolve: (root, args, {loaders}) => loaders.ofbiz.load(`productCategorys/${args.productCategoryId}`)
+    resolve: (root, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/${args.productCategoryId}`)
   }
 };
 

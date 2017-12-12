@@ -23,13 +23,13 @@ const MetaDataPredicateType = new GraphQLObjectType({
     description: {type: GraphQLString},
     dataResourceMetaDatas: {
       type: new GraphQLList(DataResourceMetaDataType),
-      args : {metaDataPredicateId: {type: GraphQLString}},
-      resolve: (metaDataPredicate, args, {loaders}) => loaders.ofbizArray.load(`dataResourceMetaDatas/find?metaDataPredicateId=${metaDataPredicate.metaDataPredicateId}`)
+      args : {},
+      resolve: (metaDataPredicate, args, {loaders}) => loaders.ofbizArray.load(`content/dataResource/dataResourceMetaDatas/find?metaDataPredicateId=${metaDataPredicate.metaDataPredicateId}`)
     },
     contentMetaDatas: {
       type: new GraphQLList(ContentMetaDataType),
-      args : {metaDataPredicateId: {type: GraphQLString}},
-      resolve: (metaDataPredicate, args, {loaders}) => loaders.ofbizArray.load(`contentMetaDatas/find?metaDataPredicateId=${metaDataPredicate.metaDataPredicateId}`)
+      args : {},
+      resolve: (metaDataPredicate, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentMetaDatas/find?metaDataPredicateId=${metaDataPredicate.metaDataPredicateId}`)
     }
   })
 });

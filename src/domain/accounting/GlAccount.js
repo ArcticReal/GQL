@@ -54,182 +54,182 @@ const GlAccountType = new GraphQLObjectType({
     glAccountType: {
       type: GlAccountTypeType,
       args : {glAccountTypeId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbiz.load(`glAccountTypes/find?glAccountTypeId=${glAccount.glAccountTypeId}`)
+      resolve: (glAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountTypes/find?glAccountTypeId=${glAccount.glAccountTypeId}`)
     },
     glResourceType: {
       type: GlResourceTypeType,
       args : {glResourceTypeId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbiz.load(`glResourceTypes/find?glResourceTypeId=${glAccount.glResourceTypeId}`)
+      resolve: (glAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/glResourceTypes/find?glResourceTypeId=${glAccount.glResourceTypeId}`)
     },
     productId: {type: GraphQLString},
     parentGlAccount: {
       type: GlAccountType,
       args : {parentGlAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${glAccount.parentGlAccountId}`)
+      resolve: (glAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${glAccount.parentGlAccountId}`)
     },
     accountName: {type: GraphQLString},
     glAccountId: {type: GraphQLString},
     glAccountClass: {
       type: GlAccountClassType,
       args : {glAccountClassId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbiz.load(`glAccountClasss/find?glAccountClassId=${glAccount.glAccountClassId}`)
+      resolve: (glAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountClasss/find?glAccountClassId=${glAccount.glAccountClassId}`)
     },
     description: {type: GraphQLString},
     externalId: {type: GraphQLString},
     glXbrlClass: {
       type: GlXbrlClassType,
       args : {glXbrlClassId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbiz.load(`glXbrlClasss/find?glXbrlClassId=${glAccount.glXbrlClassId}`)
+      resolve: (glAccount, args, {loaders}) => loaders.ofbiz.load(`accounting/glXbrlClasss/find?glXbrlClassId=${glAccount.glXbrlClassId}`)
     },
     glAccountRoles: {
       type: new GraphQLList(GlAccountRoleType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`glAccountRoles/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/glAccountRoles/find?glAccountId=${glAccount.glAccountId}`)
     },
     payments: {
       type: new GraphQLList(PaymentType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`payments/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/payments/find?glAccountId=${glAccount.glAccountId}`)
     },
     returnAdjustments: {
       type: new GraphQLList(ReturnAdjustmentType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`returnAdjustments/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`order/returnAdjustments/find?glAccountId=${glAccount.glAccountId}`)
     },
     invoiceItemTypeGlAccounts: {
       type: new GraphQLList(InvoiceItemTypeGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItemTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
     glAccounts: {
       type: new GraphQLList(GlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`glAccounts/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
     fixedAssetTypeGlAccounts: {
       type: new GraphQLList(FixedAssetTypeGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
     glAccountHistories: {
       type: new GraphQLList(GlAccountHistoryType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`glAccountHistorys/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/glAccountHistorys/find?glAccountId=${glAccount.glAccountId}`)
     },
     varianceReasonGlAccounts: {
       type: new GraphQLList(VarianceReasonGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`varianceReasonGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/varianceReasonGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
     orderItems: {
       type: new GraphQLList(OrderItemType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`orderItems/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`order/orderItems/find?glAccountId=${glAccount.glAccountId}`)
     },
     glReconciliations: {
       type: new GraphQLList(GlReconciliationType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`glReconciliations/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glReconciliations/find?glAccountId=${glAccount.glAccountId}`)
     },
     finAccounts: {
       type: new GraphQLList(FinAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`finAccounts/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
     productCategoryGlAccounts: {
       type: new GraphQLList(ProductCategoryGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`productCategoryGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`product/product/productCategoryGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
     glAccountOrganizations: {
       type: new GraphQLList(GlAccountOrganizationType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`glAccountOrganizations/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/glAccountOrganizations/find?glAccountId=${glAccount.glAccountId}`)
     },
     glAccountCategoryMembers: {
       type: new GraphQLList(GlAccountCategoryMemberType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`glAccountCategoryMembers/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/glAccountCategoryMembers/find?glAccountId=${glAccount.glAccountId}`)
     },
     partyGlAccounts: {
       type: new GraphQLList(PartyGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`partyGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/partyGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
     glBudgetXrefs: {
       type: new GraphQLList(GlBudgetXrefType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`glBudgetXrefs/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/glBudgetXrefs/find?glAccountId=${glAccount.glAccountId}`)
     },
     paymentApplications: {
       type: new GraphQLList(PaymentApplicationType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`paymentApplications/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentApplications/find?glAccountId=${glAccount.glAccountId}`)
     },
     glAccountTypeDefaults: {
       type: new GraphQLList(GlAccountTypeDefaultType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`glAccountTypeDefaults/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/glAccountTypeDefaults/find?glAccountId=${glAccount.glAccountId}`)
     },
     paymentMethods: {
       type: new GraphQLList(PaymentMethodType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`paymentMethods/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentMethods/find?glAccountId=${glAccount.glAccountId}`)
     },
     paymentMethodTypeGlAccounts: {
       type: new GraphQLList(PaymentMethodTypeGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`paymentMethodTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/paymentMethodTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
     glAccountGroupMembers: {
       type: new GraphQLList(GlAccountGroupMemberType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`glAccountGroupMembers/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/glAccountGroupMembers/find?glAccountId=${glAccount.glAccountId}`)
     },
     orderAdjustments: {
       type: new GraphQLList(OrderAdjustmentType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`orderAdjustments/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`order/orderAdjustments/find?glAccountId=${glAccount.glAccountId}`)
     },
     invoiceItems: {
       type: new GraphQLList(InvoiceItemType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`invoiceItems/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItems/find?glAccountId=${glAccount.glAccountId}`)
     },
     productGlAccounts: {
       type: new GraphQLList(ProductGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`productGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`product/product/productGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
     paymentMethodTypes: {
       type: new GraphQLList(PaymentMethodTypeType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`paymentMethodTypes/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentMethodTypes/find?glAccountId=${glAccount.glAccountId}`)
     },
     quoteAdjustments: {
       type: new GraphQLList(QuoteAdjustmentType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`quoteAdjustments/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteAdjustments/find?glAccountId=${glAccount.glAccountId}`)
     },
     invoiceItemTypes: {
       type: new GraphQLList(InvoiceItemTypeType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`invoiceItemTypes/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItemTypes/find?glAccountId=${glAccount.glAccountId}`)
     },
     acctgTransEntries: {
       type: new GraphQLList(AcctgTransEntryType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`acctgTransEntrys/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTrans/acctgTransEntrys/find?glAccountId=${glAccount.glAccountId}`)
     },
     taxAuthorityGlAccounts: {
       type: new GraphQLList(TaxAuthorityGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`taxAuthorityGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/taxAuthorityGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     },
     finAccountTypeGlAccounts: {
       type: new GraphQLList(FinAccountTypeGlAccountType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`finAccountTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
+      args : {},
+      resolve: (glAccount, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccount/finAccountTypeGlAccounts/find?glAccountId=${glAccount.glAccountId}`)
     }
   })
 });

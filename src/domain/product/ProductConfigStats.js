@@ -21,7 +21,7 @@ const ProductConfigStatsType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productConfigStats, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productConfigStats.productId}`)
+      resolve: (productConfigStats, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productConfigStats.productId}`)
     },
     configId: {type: GraphQLString},
     numOfConfs: {type: GraphQLInt},

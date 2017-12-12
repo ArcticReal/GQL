@@ -28,7 +28,7 @@ const UnemploymentClaimType = new GraphQLObjectType({
     roleTypeFrom: {
       type: EmploymentType,
       args : {roleTypeIdFrom: {type: GraphQLString}},
-      resolve: (unemploymentClaim, args, {loaders}) => loaders.ofbiz.load(`employments/find?roleTypeIdFrom=${unemploymentClaim.roleTypeIdFrom}`)
+      resolve: (unemploymentClaim, args, {loaders}) => loaders.ofbiz.load(`humanres/employments/find?roleTypeIdFrom=${unemploymentClaim.roleTypeIdFrom}`)
     },
     unemploymentClaimDate: {type: GraphQLString},
     thruDate: {type: GraphQLString}

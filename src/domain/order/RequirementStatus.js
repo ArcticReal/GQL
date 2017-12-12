@@ -24,12 +24,12 @@ const RequirementStatusType = new GraphQLObjectType({
     requirement: {
       type: RequirementType,
       args : {requirementId: {type: GraphQLString}},
-      resolve: (requirementStatus, args, {loaders}) => loaders.ofbiz.load(`requirements/find?requirementId=${requirementStatus.requirementId}`)
+      resolve: (requirementStatus, args, {loaders}) => loaders.ofbiz.load(`order/requirements/find?requirementId=${requirementStatus.requirementId}`)
     },
     changeByUserLogin: {
       type: UserLoginType,
       args : {changeByUserLoginId: {type: GraphQLString}},
-      resolve: (requirementStatus, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${requirementStatus.changeByUserLoginId}`)
+      resolve: (requirementStatus, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${requirementStatus.changeByUserLoginId}`)
     }
   })
 });

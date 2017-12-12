@@ -22,12 +22,12 @@ const WorkEffortSkillStandardType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortSkillStandard, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortSkillStandard.workEffortId}`)
+      resolve: (workEffortSkillStandard, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortSkillStandard.workEffortId}`)
     },
     skillType: {
       type: SkillTypeType,
       args : {skillTypeId: {type: GraphQLString}},
-      resolve: (workEffortSkillStandard, args, {loaders}) => loaders.ofbiz.load(`skillTypes/find?skillTypeId=${workEffortSkillStandard.skillTypeId}`)
+      resolve: (workEffortSkillStandard, args, {loaders}) => loaders.ofbiz.load(`humanres/skillTypes/find?skillTypeId=${workEffortSkillStandard.skillTypeId}`)
     },
     estimatedNumPeople: {type: GraphQLFloat},
     estimatedCost: {type: GraphQLFloat},

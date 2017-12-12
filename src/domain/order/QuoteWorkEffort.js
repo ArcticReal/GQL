@@ -22,12 +22,12 @@ const QuoteWorkEffortType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (quoteWorkEffort, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${quoteWorkEffort.workEffortId}`)
+      resolve: (quoteWorkEffort, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${quoteWorkEffort.workEffortId}`)
     },
     quote: {
       type: QuoteType,
       args : {quoteId: {type: GraphQLString}},
-      resolve: (quoteWorkEffort, args, {loaders}) => loaders.ofbiz.load(`quotes/find?quoteId=${quoteWorkEffort.quoteId}`)
+      resolve: (quoteWorkEffort, args, {loaders}) => loaders.ofbiz.load(`order/quotes/find?quoteId=${quoteWorkEffort.quoteId}`)
     }
   })
 });

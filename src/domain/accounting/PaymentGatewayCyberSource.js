@@ -22,7 +22,7 @@ const PaymentGatewayCyberSourceType = new GraphQLObjectType({
     paymentGatewayConfig: {
       type: PaymentGatewayConfigType,
       args : {paymentGatewayConfigId: {type: GraphQLString}},
-      resolve: (paymentGatewayCyberSource, args, {loaders}) => loaders.ofbiz.load(`paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayCyberSource.paymentGatewayConfigId}`)
+      resolve: (paymentGatewayCyberSource, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentGatewayConfigs/find?paymentGatewayConfigId=${paymentGatewayCyberSource.paymentGatewayConfigId}`)
     },
     production: {type: GraphQLString},
     keysDir: {type: GraphQLString},

@@ -31,54 +31,54 @@ const BudgetType = new GraphQLObjectType({
     budgetType: {
       type: BudgetTypeType,
       args : {budgetTypeId: {type: GraphQLString}},
-      resolve: (budget, args, {loaders}) => loaders.ofbiz.load(`budgetTypes/find?budgetTypeId=${budget.budgetTypeId}`)
+      resolve: (budget, args, {loaders}) => loaders.ofbiz.load(`accounting/budget/budgetTypes/find?budgetTypeId=${budget.budgetTypeId}`)
     },
     budgetId: {type: GraphQLString},
     customTimePeriodId: {type: GraphQLString},
     budgetRevisions: {
       type: new GraphQLList(BudgetRevisionType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`budgetRevisions/find?budgetId=${budget.budgetId}`)
+      args : {},
+      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetRevisions/find?budgetId=${budget.budgetId}`)
     },
     paymentBudgetAllocations: {
       type: new GraphQLList(PaymentBudgetAllocationType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`paymentBudgetAllocations/find?budgetId=${budget.budgetId}`)
+      args : {},
+      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/paymentBudgetAllocations/find?budgetId=${budget.budgetId}`)
     },
     budgetStatuses: {
       type: new GraphQLList(BudgetStatusType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`budgetStatuss/find?budgetId=${budget.budgetId}`)
+      args : {},
+      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetStatuss/find?budgetId=${budget.budgetId}`)
     },
     budgetItems: {
       type: new GraphQLList(BudgetItemType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`budgetItems/find?budgetId=${budget.budgetId}`)
+      args : {},
+      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetItems/find?budgetId=${budget.budgetId}`)
     },
     budgetScenarioApplications: {
       type: new GraphQLList(BudgetScenarioApplicationType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`budgetScenarioApplications/find?budgetId=${budget.budgetId}`)
+      args : {},
+      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetScenarioApplications/find?budgetId=${budget.budgetId}`)
     },
     budgetRoles: {
       type: new GraphQLList(BudgetRoleType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`budgetRoles/find?budgetId=${budget.budgetId}`)
+      args : {},
+      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetRoles/find?budgetId=${budget.budgetId}`)
     },
     budgetReviews: {
       type: new GraphQLList(BudgetReviewType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`budgetReviews/find?budgetId=${budget.budgetId}`)
+      args : {},
+      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetReviews/find?budgetId=${budget.budgetId}`)
     },
     budgetAttributes: {
       type: new GraphQLList(BudgetAttributeType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`budgetAttributes/find?budgetId=${budget.budgetId}`)
+      args : {},
+      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetAttributes/find?budgetId=${budget.budgetId}`)
     },
     budgetRevisionImpacts: {
       type: new GraphQLList(BudgetRevisionImpactType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`budgetRevisionImpacts/find?budgetId=${budget.budgetId}`)
+      args : {},
+      resolve: (budget, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetRevisionImpacts/find?budgetId=${budget.budgetId}`)
     }
   })
 });

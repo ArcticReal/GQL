@@ -23,13 +23,13 @@ const ProductPriceTypeType = new GraphQLObjectType({
     productPriceTypeId: {type: GraphQLString},
     productFeaturePrices: {
       type: new GraphQLList(ProductFeaturePriceType),
-      args : {productPriceTypeId: {type: GraphQLString}},
-      resolve: (productPriceType, args, {loaders}) => loaders.ofbizArray.load(`productFeaturePrices/find?productPriceTypeId=${productPriceType.productPriceTypeId}`)
+      args : {},
+      resolve: (productPriceType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeaturePrices/find?productPriceTypeId=${productPriceType.productPriceTypeId}`)
     },
     productPrices: {
       type: new GraphQLList(ProductPriceType),
-      args : {productPriceTypeId: {type: GraphQLString}},
-      resolve: (productPriceType, args, {loaders}) => loaders.ofbizArray.load(`productPrices/find?productPriceTypeId=${productPriceType.productPriceTypeId}`)
+      args : {},
+      resolve: (productPriceType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPrices/find?productPriceTypeId=${productPriceType.productPriceTypeId}`)
     }
   })
 });

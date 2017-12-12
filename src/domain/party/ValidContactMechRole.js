@@ -22,12 +22,12 @@ const ValidContactMechRoleType = new GraphQLObjectType({
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (validContactMechRole, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${validContactMechRole.roleTypeId}`)
+      resolve: (validContactMechRole, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${validContactMechRole.roleTypeId}`)
     },
     contactMechType: {
       type: ContactMechTypeType,
       args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (validContactMechRole, args, {loaders}) => loaders.ofbiz.load(`contactMechTypes/find?contactMechTypeId=${validContactMechRole.contactMechTypeId}`)
+      resolve: (validContactMechRole, args, {loaders}) => loaders.ofbiz.load(`party/contactMech/contactMechTypes/find?contactMechTypeId=${validContactMechRole.contactMechTypeId}`)
     }
   })
 });

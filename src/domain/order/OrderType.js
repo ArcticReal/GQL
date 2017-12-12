@@ -22,25 +22,25 @@ const OrderTypeType = new GraphQLObjectType({
     parentType: {
       type: OrderTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (orderType, args, {loaders}) => loaders.ofbiz.load(`orderTypes/find?orderTypeId=${orderType.parentTypeId}`)
+      resolve: (orderType, args, {loaders}) => loaders.ofbiz.load(`order/orderTypes/find?orderTypeId=${orderType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     orderTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     orderHeaders: {
       type: new GraphQLList(OrderHeaderType),
-      args : {orderTypeId: {type: GraphQLString}},
-      resolve: (orderType, args, {loaders}) => loaders.ofbizArray.load(`orderHeaders/find?orderTypeId=${orderType.orderTypeId}`)
+      args : {},
+      resolve: (orderType, args, {loaders}) => loaders.ofbizArray.load(`order/orderHeaders/find?orderTypeId=${orderType.orderTypeId}`)
     },
     orderTypes: {
       type: new GraphQLList(OrderTypeType),
-      args : {orderTypeId: {type: GraphQLString}},
-      resolve: (orderType, args, {loaders}) => loaders.ofbizArray.load(`orderTypes/find?orderTypeId=${orderType.orderTypeId}`)
+      args : {},
+      resolve: (orderType, args, {loaders}) => loaders.ofbizArray.load(`order/orderTypes/find?orderTypeId=${orderType.orderTypeId}`)
     },
     orderTypeAttrs: {
       type: new GraphQLList(OrderTypeAttrType),
-      args : {orderTypeId: {type: GraphQLString}},
-      resolve: (orderType, args, {loaders}) => loaders.ofbizArray.load(`orderTypeAttrs/find?orderTypeId=${orderType.orderTypeId}`)
+      args : {},
+      resolve: (orderType, args, {loaders}) => loaders.ofbizArray.load(`order/orderType/orderTypeAttrs/find?orderTypeId=${orderType.orderTypeId}`)
     }
   })
 });

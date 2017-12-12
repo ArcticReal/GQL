@@ -22,14 +22,14 @@ const OrderSummaryEntryType = new GraphQLObjectType({
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (orderSummaryEntry, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${orderSummaryEntry.facilityId}`)
+      resolve: (orderSummaryEntry, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${orderSummaryEntry.facilityId}`)
     },
     totalQuantity: {type: GraphQLFloat},
     productCost: {type: GraphQLFloat},
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (orderSummaryEntry, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${orderSummaryEntry.productId}`)
+      resolve: (orderSummaryEntry, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${orderSummaryEntry.productId}`)
     },
     entryDate: {type: GraphQLString},
     grossSales: {type: GraphQLFloat}

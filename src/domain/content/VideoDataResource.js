@@ -21,7 +21,7 @@ const VideoDataResourceType = new GraphQLObjectType({
     dataResource: {
       type: DataResourceType,
       args : {dataResourceId: {type: GraphQLString}},
-      resolve: (videoDataResource, args, {loaders}) => loaders.ofbiz.load(`dataResources/find?dataResourceId=${videoDataResource.dataResourceId}`)
+      resolve: (videoDataResource, args, {loaders}) => loaders.ofbiz.load(`content/dataResources/find?dataResourceId=${videoDataResource.dataResourceId}`)
     },
     videoData: {type: GraphQLString/*this was a byte Array TODO find a solution*/}
   })

@@ -37,7 +37,7 @@ const CommunicationEventType = new GraphQLObjectType({
     partyFrom: {
       type: PartyType,
       args : {partyIdFrom: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${communicationEvent.partyIdFrom}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${communicationEvent.partyIdFrom}`)
     },
     note: {type: GraphQLString},
     subject: {type: GraphQLString},
@@ -45,35 +45,35 @@ const CommunicationEventType = new GraphQLObjectType({
     contactMechType: {
       type: ContactMechTypeType,
       args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`contactMechTypes/find?contactMechTypeId=${communicationEvent.contactMechTypeId}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`party/contactMech/contactMechTypes/find?contactMechTypeId=${communicationEvent.contactMechTypeId}`)
     },
     communicationEventType: {
       type: CommunicationEventTypeType,
       args : {communicationEventTypeId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`communicationEventTypes/find?communicationEventTypeId=${communicationEvent.communicationEventTypeId}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvent/communicationEventTypes/find?communicationEventTypeId=${communicationEvent.communicationEventTypeId}`)
     },
     content: {type: GraphQLString},
     contentMimeType: {
       type: MimeTypeType,
       args : {contentMimeTypeId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`mimeTypes/find?mimeTypeId=${communicationEvent.contentMimeTypeId}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`content/mimeTypes/find?mimeTypeId=${communicationEvent.contentMimeTypeId}`)
     },
     datetimeStarted: {type: GraphQLString},
     contactList: {
       type: ContactListType,
       args : {contactListId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`contactLists/find?contactListId=${communicationEvent.contactListId}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`marketing/contactLists/find?contactListId=${communicationEvent.contactListId}`)
     },
     contactMechFrom: {
       type: ContactMechType,
       args : {contactMechIdFrom: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${communicationEvent.contactMechIdFrom}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${communicationEvent.contactMechIdFrom}`)
     },
     reasonEnumId: {type: GraphQLString},
     roleTypeTo: {
       type: RoleTypeType,
       args : {roleTypeIdTo: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${communicationEvent.roleTypeIdTo}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${communicationEvent.roleTypeIdTo}`)
     },
     parentCommEventId: {type: GraphQLString},
     entryDate: {type: GraphQLString},
@@ -83,12 +83,12 @@ const CommunicationEventType = new GraphQLObjectType({
     roleTypeFrom: {
       type: RoleTypeType,
       args : {roleTypeIdFrom: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${communicationEvent.roleTypeIdFrom}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${communicationEvent.roleTypeIdFrom}`)
     },
     contactMechTo: {
       type: ContactMechType,
       args : {contactMechIdTo: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${communicationEvent.contactMechIdTo}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${communicationEvent.contactMechIdTo}`)
     },
     headerString: {type: GraphQLString},
     statusId: {type: GraphQLString},
@@ -97,59 +97,59 @@ const CommunicationEventType = new GraphQLObjectType({
     partyTo: {
       type: PartyType,
       args : {partyIdTo: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${communicationEvent.partyIdTo}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${communicationEvent.partyIdTo}`)
     },
     toString: {type: GraphQLString},
     fromString: {type: GraphQLString},
     custRequestCommEvents: {
       type: new GraphQLList(CustRequestCommEventType),
-      args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`custRequestCommEvents/find?communicationEventId=${communicationEvent.communicationEventId}`)
+      args : {},
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestCommEvents/find?communicationEventId=${communicationEvent.communicationEventId}`)
     },
     communicationEventRoles: {
       type: new GraphQLList(CommunicationEventRoleType),
-      args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`communicationEventRoles/find?communicationEventId=${communicationEvent.communicationEventId}`)
+      args : {},
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvent/communicationEventRoles/find?communicationEventId=${communicationEvent.communicationEventId}`)
     },
     subscriptionCommEvents: {
       type: new GraphQLList(SubscriptionCommEventType),
-      args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`subscriptionCommEvents/find?communicationEventId=${communicationEvent.communicationEventId}`)
+      args : {},
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`product/subscription/subscriptionCommEvents/find?communicationEventId=${communicationEvent.communicationEventId}`)
     },
     communicationEventOrders: {
       type: new GraphQLList(CommunicationEventOrderType),
-      args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`communicationEventOrders/find?communicationEventId=${communicationEvent.communicationEventId}`)
+      args : {},
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`order/communicationEventOrders/find?communicationEventId=${communicationEvent.communicationEventId}`)
     },
     commEventContentAssocs: {
       type: new GraphQLList(CommEventContentAssocType),
-      args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`commEventContentAssocs/find?communicationEventId=${communicationEvent.communicationEventId}`)
+      args : {},
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`party/commEventContentAssocs/find?communicationEventId=${communicationEvent.communicationEventId}`)
     },
     contactListCommStatuses: {
       type: new GraphQLList(ContactListCommStatusType),
-      args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`contactListCommStatuss/find?communicationEventId=${communicationEvent.communicationEventId}`)
+      args : {},
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`marketing/contactList/contactListCommStatuss/find?communicationEventId=${communicationEvent.communicationEventId}`)
     },
     communicationEventWorkEffs: {
       type: new GraphQLList(CommunicationEventWorkEffType),
-      args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`communicationEventWorkEffs/find?communicationEventId=${communicationEvent.communicationEventId}`)
+      args : {},
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`workeffort/communicationEventWorkEffs/find?communicationEventId=${communicationEvent.communicationEventId}`)
     },
     communicationEventPurposes: {
       type: new GraphQLList(CommunicationEventPurposeType),
-      args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`communicationEventPurposes/find?communicationEventId=${communicationEvent.communicationEventId}`)
+      args : {},
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvent/communicationEventPurposes/find?communicationEventId=${communicationEvent.communicationEventId}`)
     },
     partyNeeds: {
       type: new GraphQLList(PartyNeedType),
-      args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`partyNeeds/find?communicationEventId=${communicationEvent.communicationEventId}`)
+      args : {},
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyNeeds/find?communicationEventId=${communicationEvent.communicationEventId}`)
     },
     communicationEventProducts: {
       type: new GraphQLList(CommunicationEventProductType),
-      args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`communicationEventProducts/find?communicationEventId=${communicationEvent.communicationEventId}`)
+      args : {},
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvent/communicationEventProducts/find?communicationEventId=${communicationEvent.communicationEventId}`)
     }
   })
 });

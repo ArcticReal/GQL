@@ -23,12 +23,12 @@ const PartyClassificationType = new GraphQLObjectType({
     partyClassificationGroup: {
       type: PartyClassificationGroupType,
       args : {partyClassificationGroupId: {type: GraphQLString}},
-      resolve: (partyClassification, args, {loaders}) => loaders.ofbiz.load(`partyClassificationGroups/find?partyClassificationGroupId=${partyClassification.partyClassificationGroupId}`)
+      resolve: (partyClassification, args, {loaders}) => loaders.ofbiz.load(`party/party/partyClassificationGroups/find?partyClassificationGroupId=${partyClassification.partyClassificationGroupId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyClassification, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyClassification.partyId}`)
+      resolve: (partyClassification, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyClassification.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

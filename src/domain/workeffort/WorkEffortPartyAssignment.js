@@ -25,20 +25,20 @@ const WorkEffortPartyAssignmentType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortPartyAssignment, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortPartyAssignment.workEffortId}`)
+      resolve: (workEffortPartyAssignment, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortPartyAssignment.workEffortId}`)
     },
     roleTypeId: {type: GraphQLString},
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (workEffortPartyAssignment, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${workEffortPartyAssignment.facilityId}`)
+      resolve: (workEffortPartyAssignment, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${workEffortPartyAssignment.facilityId}`)
     },
     comments: {type: GraphQLString},
     mustRsvp: {type: GraphQLBoolean},
     assignedByUserLogin: {
       type: UserLoginType,
       args : {assignedByUserLoginId: {type: GraphQLString}},
-      resolve: (workEffortPartyAssignment, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${workEffortPartyAssignment.assignedByUserLoginId}`)
+      resolve: (workEffortPartyAssignment, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${workEffortPartyAssignment.assignedByUserLoginId}`)
     },
     delegateReasonEnumId: {type: GraphQLString},
     thruDate: {type: GraphQLString},
@@ -50,12 +50,12 @@ const WorkEffortPartyAssignmentType = new GraphQLObjectType({
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (workEffortPartyAssignment, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${workEffortPartyAssignment.partyId}`)
+      resolve: (workEffortPartyAssignment, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${workEffortPartyAssignment.partyId}`)
     },
     applicationSandboxes: {
       type: new GraphQLList(ApplicationSandboxType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortPartyAssignment, args, {loaders}) => loaders.ofbizArray.load(`applicationSandboxs/find?workEffortId=${workEffortPartyAssignment.workEffortId}`)
+      args : {},
+      resolve: (workEffortPartyAssignment, args, {loaders}) => loaders.ofbizArray.load(`workeffort/applicationSandboxs/find?workEffortId=${workEffortPartyAssignment.workEffortId}`)
     }
   })
 });

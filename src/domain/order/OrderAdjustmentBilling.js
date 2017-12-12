@@ -23,13 +23,13 @@ const OrderAdjustmentBillingType = new GraphQLObjectType({
     invoice: {
       type: InvoiceItemType,
       args : {invoiceId: {type: GraphQLString}},
-      resolve: (orderAdjustmentBilling, args, {loaders}) => loaders.ofbiz.load(`invoiceItems/find?invoiceId=${orderAdjustmentBilling.invoiceId}`)
+      resolve: (orderAdjustmentBilling, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItems/find?invoiceId=${orderAdjustmentBilling.invoiceId}`)
     },
     invoiceItemSeqId: {type: GraphQLString},
     orderAdjustment: {
       type: OrderAdjustmentType,
       args : {orderAdjustmentId: {type: GraphQLString}},
-      resolve: (orderAdjustmentBilling, args, {loaders}) => loaders.ofbiz.load(`orderAdjustments/find?orderAdjustmentId=${orderAdjustmentBilling.orderAdjustmentId}`)
+      resolve: (orderAdjustmentBilling, args, {loaders}) => loaders.ofbiz.load(`order/orderAdjustments/find?orderAdjustmentId=${orderAdjustmentBilling.orderAdjustmentId}`)
     }
   })
 });

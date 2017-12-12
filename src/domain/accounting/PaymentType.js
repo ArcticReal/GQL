@@ -24,29 +24,29 @@ const PaymentTypeType = new GraphQLObjectType({
     parentType: {
       type: PaymentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (paymentType, args, {loaders}) => loaders.ofbiz.load(`paymentTypes/find?paymentTypeId=${paymentType.parentTypeId}`)
+      resolve: (paymentType, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentTypes/find?paymentTypeId=${paymentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     paymentTypeAttrs: {
       type: new GraphQLList(PaymentTypeAttrType),
-      args : {paymentTypeId: {type: GraphQLString}},
-      resolve: (paymentType, args, {loaders}) => loaders.ofbizArray.load(`paymentTypeAttrs/find?paymentTypeId=${paymentType.paymentTypeId}`)
+      args : {},
+      resolve: (paymentType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentTypeAttrs/find?paymentTypeId=${paymentType.paymentTypeId}`)
     },
     payments: {
       type: new GraphQLList(PaymentType),
-      args : {paymentTypeId: {type: GraphQLString}},
-      resolve: (paymentType, args, {loaders}) => loaders.ofbizArray.load(`payments/find?paymentTypeId=${paymentType.paymentTypeId}`)
+      args : {},
+      resolve: (paymentType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payments/find?paymentTypeId=${paymentType.paymentTypeId}`)
     },
     paymentTypes: {
       type: new GraphQLList(PaymentTypeType),
-      args : {paymentTypeId: {type: GraphQLString}},
-      resolve: (paymentType, args, {loaders}) => loaders.ofbizArray.load(`paymentTypes/find?paymentTypeId=${paymentType.paymentTypeId}`)
+      args : {},
+      resolve: (paymentType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentTypes/find?paymentTypeId=${paymentType.paymentTypeId}`)
     },
     paymentGlAccountTypeMaps: {
       type: new GraphQLList(PaymentGlAccountTypeMapType),
-      args : {paymentTypeId: {type: GraphQLString}},
-      resolve: (paymentType, args, {loaders}) => loaders.ofbizArray.load(`paymentGlAccountTypeMaps/find?paymentTypeId=${paymentType.paymentTypeId}`)
+      args : {},
+      resolve: (paymentType, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/paymentGlAccountTypeMaps/find?paymentTypeId=${paymentType.paymentTypeId}`)
     }
   })
 });

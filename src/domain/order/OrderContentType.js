@@ -21,20 +21,20 @@ const OrderContentTypeType = new GraphQLObjectType({
     parentType: {
       type: OrderContentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (orderContentType, args, {loaders}) => loaders.ofbiz.load(`orderContentTypes/find?orderContentTypeId=${orderContentType.parentTypeId}`)
+      resolve: (orderContentType, args, {loaders}) => loaders.ofbiz.load(`order/orderContent/orderContentTypes/find?orderContentTypeId=${orderContentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     orderContentTypeId: {type: GraphQLString},
     orderContents: {
       type: new GraphQLList(OrderContentType),
-      args : {orderContentTypeId: {type: GraphQLString}},
-      resolve: (orderContentType, args, {loaders}) => loaders.ofbizArray.load(`orderContents/find?orderContentTypeId=${orderContentType.orderContentTypeId}`)
+      args : {},
+      resolve: (orderContentType, args, {loaders}) => loaders.ofbizArray.load(`order/orderContents/find?orderContentTypeId=${orderContentType.orderContentTypeId}`)
     },
     orderContentTypes: {
       type: new GraphQLList(OrderContentTypeType),
-      args : {orderContentTypeId: {type: GraphQLString}},
-      resolve: (orderContentType, args, {loaders}) => loaders.ofbizArray.load(`orderContentTypes/find?orderContentTypeId=${orderContentType.orderContentTypeId}`)
+      args : {},
+      resolve: (orderContentType, args, {loaders}) => loaders.ofbizArray.load(`order/orderContent/orderContentTypes/find?orderContentTypeId=${orderContentType.orderContentTypeId}`)
     }
   })
 });

@@ -22,7 +22,7 @@ const PostalAddressBoundaryType = new GraphQLObjectType({
     contactMech: {
       type: PostalAddressType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (postalAddressBoundary, args, {loaders}) => loaders.ofbiz.load(`postalAddresss/find?contactMechId=${postalAddressBoundary.contactMechId}`)
+      resolve: (postalAddressBoundary, args, {loaders}) => loaders.ofbiz.load(`party/postalAddresss/find?contactMechId=${postalAddressBoundary.contactMechId}`)
     }
   })
 });

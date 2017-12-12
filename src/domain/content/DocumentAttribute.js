@@ -22,7 +22,7 @@ const DocumentAttributeType = new GraphQLObjectType({
     document: {
       type: DocumentType,
       args : {documentId: {type: GraphQLString}},
-      resolve: (documentAttribute, args, {loaders}) => loaders.ofbiz.load(`documents/find?documentId=${documentAttribute.documentId}`)
+      resolve: (documentAttribute, args, {loaders}) => loaders.ofbiz.load(`content/documents/find?documentId=${documentAttribute.documentId}`)
     },
     attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString}

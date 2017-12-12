@@ -24,24 +24,24 @@ const TechDataCalendarType = new GraphQLObjectType({
     calendarWeek: {
       type: TechDataCalendarWeekType,
       args : {calendarWeekId: {type: GraphQLString}},
-      resolve: (techDataCalendar, args, {loaders}) => loaders.ofbiz.load(`techDataCalendarWeeks/find?calendarWeekId=${techDataCalendar.calendarWeekId}`)
+      resolve: (techDataCalendar, args, {loaders}) => loaders.ofbiz.load(`manufacturing/techDataCalendar/techDataCalendarWeeks/find?calendarWeekId=${techDataCalendar.calendarWeekId}`)
     },
     calendarId: {type: GraphQLString},
     description: {type: GraphQLString},
     techDataCalendarExcWeeks: {
       type: new GraphQLList(TechDataCalendarExcWeekType),
-      args : {calendarId: {type: GraphQLString}},
-      resolve: (techDataCalendar, args, {loaders}) => loaders.ofbizArray.load(`techDataCalendarExcWeeks/find?calendarId=${techDataCalendar.calendarId}`)
+      args : {},
+      resolve: (techDataCalendar, args, {loaders}) => loaders.ofbizArray.load(`manufacturing/techDataCalendar/techDataCalendarExcWeeks/find?calendarId=${techDataCalendar.calendarId}`)
     },
     techDataCalendarExcDaies: {
       type: new GraphQLList(TechDataCalendarExcDayType),
-      args : {calendarId: {type: GraphQLString}},
-      resolve: (techDataCalendar, args, {loaders}) => loaders.ofbizArray.load(`techDataCalendarExcDays/find?calendarId=${techDataCalendar.calendarId}`)
+      args : {},
+      resolve: (techDataCalendar, args, {loaders}) => loaders.ofbizArray.load(`manufacturing/techDataCalendar/techDataCalendarExcDays/find?calendarId=${techDataCalendar.calendarId}`)
     },
     fixedAssets: {
       type: new GraphQLList(FixedAssetType),
-      args : {calendarId: {type: GraphQLString}},
-      resolve: (techDataCalendar, args, {loaders}) => loaders.ofbizArray.load(`fixedAssets/find?calendarId=${techDataCalendar.calendarId}`)
+      args : {},
+      resolve: (techDataCalendar, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAssets/find?calendarId=${techDataCalendar.calendarId}`)
     }
   })
 });

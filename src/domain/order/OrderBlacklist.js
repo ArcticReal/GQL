@@ -21,7 +21,7 @@ const OrderBlacklistType = new GraphQLObjectType({
     orderBlacklistType: {
       type: OrderBlacklistTypeType,
       args : {orderBlacklistTypeId: {type: GraphQLString}},
-      resolve: (orderBlacklist, args, {loaders}) => loaders.ofbiz.load(`orderBlacklistTypes/find?orderBlacklistTypeId=${orderBlacklist.orderBlacklistTypeId}`)
+      resolve: (orderBlacklist, args, {loaders}) => loaders.ofbiz.load(`order/orderBlacklist/orderBlacklistTypes/find?orderBlacklistTypeId=${orderBlacklist.orderBlacklistTypeId}`)
     },
     blacklistString: {type: GraphQLString}
   })

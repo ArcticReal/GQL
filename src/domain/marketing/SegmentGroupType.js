@@ -22,8 +22,8 @@ const SegmentGroupTypeType = new GraphQLObjectType({
     segmentGroupTypeId: {type: GraphQLString},
     segmentGroups: {
       type: new GraphQLList(SegmentGroupType),
-      args : {segmentGroupTypeId: {type: GraphQLString}},
-      resolve: (segmentGroupType, args, {loaders}) => loaders.ofbizArray.load(`segmentGroups/find?segmentGroupTypeId=${segmentGroupType.segmentGroupTypeId}`)
+      args : {},
+      resolve: (segmentGroupType, args, {loaders}) => loaders.ofbizArray.load(`marketing/segmentGroups/find?segmentGroupTypeId=${segmentGroupType.segmentGroupTypeId}`)
     }
   })
 });

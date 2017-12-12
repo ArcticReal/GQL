@@ -24,12 +24,12 @@ const DataResourceRoleType = new GraphQLObjectType({
     dataResource: {
       type: DataResourceType,
       args : {dataResourceId: {type: GraphQLString}},
-      resolve: (dataResourceRole, args, {loaders}) => loaders.ofbiz.load(`dataResources/find?dataResourceId=${dataResourceRole.dataResourceId}`)
+      resolve: (dataResourceRole, args, {loaders}) => loaders.ofbiz.load(`content/dataResources/find?dataResourceId=${dataResourceRole.dataResourceId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (dataResourceRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${dataResourceRole.partyId}`)
+      resolve: (dataResourceRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${dataResourceRole.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

@@ -23,12 +23,12 @@ const BudgetRoleType = new GraphQLObjectType({
     budget: {
       type: BudgetType,
       args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetRole, args, {loaders}) => loaders.ofbiz.load(`budgets/find?budgetId=${budgetRole.budgetId}`)
+      resolve: (budgetRole, args, {loaders}) => loaders.ofbiz.load(`accounting/budgets/find?budgetId=${budgetRole.budgetId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (budgetRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${budgetRole.partyId}`)
+      resolve: (budgetRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${budgetRole.partyId}`)
     }
   })
 });

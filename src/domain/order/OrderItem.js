@@ -48,12 +48,12 @@ const OrderItemType = new GraphQLObjectType({
     dontCancelSetUserLogin: {
       type: UserLoginType,
       args : {dontCancelSetUserLogin: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${orderItem.dontCancelSetUserLogin}`)
+      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${orderItem.dontCancelSetUserLogin}`)
     },
     order: {
       type: OrderItemGroupType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`orderItemGroups/find?orderId=${orderItem.orderId}`)
+      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`order/orderItem/orderItemGroups/find?orderId=${orderItem.orderId}`)
     },
     isPromo: {type: GraphQLBoolean},
     isModifiedPrice: {type: GraphQLBoolean},
@@ -69,7 +69,7 @@ const OrderItemType = new GraphQLObjectType({
     orderItemType: {
       type: OrderItemTypeType,
       args : {orderItemTypeId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`orderItemTypes/find?orderItemTypeId=${orderItem.orderItemTypeId}`)
+      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`order/orderItem/orderItemTypes/find?orderItemTypeId=${orderItem.orderItemTypeId}`)
     },
     orderItemSeqId: {type: GraphQLString},
     unitPrice: {type: GraphQLFloat},
@@ -79,7 +79,7 @@ const OrderItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${orderItem.productId}`)
+      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${orderItem.productId}`)
     },
     recurringFreqUomId: {type: GraphQLString},
     unitRecurringPrice: {type: GraphQLFloat},
@@ -92,12 +92,12 @@ const OrderItemType = new GraphQLObjectType({
     fromInventoryItem: {
       type: InventoryItemType,
       args : {fromInventoryItemId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${orderItem.fromInventoryItemId}`)
+      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItems/find?inventoryItemId=${orderItem.fromInventoryItemId}`)
     },
     overrideGlAccount: {
       type: GlAccountType,
       args : {overrideGlAccountId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${orderItem.overrideGlAccountId}`)
+      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${orderItem.overrideGlAccountId}`)
     },
     budgetItemSeqId: {type: GraphQLString},
     budgetId: {type: GraphQLString},
@@ -107,7 +107,7 @@ const OrderItemType = new GraphQLObjectType({
     quote: {
       type: QuoteItemType,
       args : {quoteId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`quoteItems/find?quoteId=${orderItem.quoteId}`)
+      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`order/quote/quoteItems/find?quoteId=${orderItem.quoteId}`)
     },
     cancelQuantity: {type: GraphQLFloat},
     shipAfterDate: {type: GraphQLString},
@@ -119,113 +119,113 @@ const OrderItemType = new GraphQLObjectType({
     changeByUserLogin: {
       type: UserLoginType,
       args : {changeByUserLoginId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${orderItem.changeByUserLoginId}`)
+      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${orderItem.changeByUserLoginId}`)
     },
     prodCatalogId: {type: GraphQLString},
     salesOpportunity: {
       type: SalesOpportunityType,
       args : {salesOpportunityId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`salesOpportunitys/find?salesOpportunityId=${orderItem.salesOpportunityId}`)
+      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`marketing/salesOpportunitys/find?salesOpportunityId=${orderItem.salesOpportunityId}`)
     },
     orderItemContactMeches: {
       type: new GraphQLList(OrderItemContactMechType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`orderItemContactMechs/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemContactMechs/find?orderId=${orderItem.orderId}`)
     },
     orderItemGroupOrders: {
       type: new GraphQLList(OrderItemGroupOrderType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`orderItemGroupOrders/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemGroupOrders/find?orderId=${orderItem.orderId}`)
     },
     orderItemPriceInfos: {
       type: new GraphQLList(OrderItemPriceInfoType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`orderItemPriceInfos/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemPriceInfos/find?orderId=${orderItem.orderId}`)
     },
     shipmentReceipts: {
       type: new GraphQLList(ShipmentReceiptType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`shipmentReceipts/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentReceipts/find?orderId=${orderItem.orderId}`)
     },
     workOrderItemFulfillments: {
       type: new GraphQLList(WorkOrderItemFulfillmentType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`workOrderItemFulfillments/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/workOrderItemFulfillments/find?orderId=${orderItem.orderId}`)
     },
     productOrderItems: {
       type: new GraphQLList(ProductOrderItemType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`productOrderItems/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/productOrderItems/find?orderId=${orderItem.orderId}`)
     },
     orderItemAttributes: {
       type: new GraphQLList(OrderItemAttributeType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`orderItemAttributes/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemAttributes/find?orderId=${orderItem.orderId}`)
     },
     orderRequirementCommitments: {
       type: new GraphQLList(OrderRequirementCommitmentType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`orderRequirementCommitments/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/orderRequirementCommitments/find?orderId=${orderItem.orderId}`)
     },
     finAccountTranses: {
       type: new GraphQLList(FinAccountTransType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`finAccountTranss/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`accounting/finAccount/finAccountTranss/find?orderId=${orderItem.orderId}`)
     },
     itemIssuances: {
       type: new GraphQLList(ItemIssuanceType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`itemIssuances/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`shipment/itemIssuances/find?orderId=${orderItem.orderId}`)
     },
     giftCardFulfillments: {
       type: new GraphQLList(GiftCardFulfillmentType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`giftCardFulfillments/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`accounting/giftCard/giftCardFulfillments/find?orderId=${orderItem.orderId}`)
     },
     orderItemShipGrpInvReses: {
       type: new GraphQLList(OrderItemShipGrpInvResType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`orderItemShipGrpInvRess/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemShipGrpInvRess/find?orderId=${orderItem.orderId}`)
     },
     subscriptions: {
       type: new GraphQLList(SubscriptionType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`subscriptions/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`product/subscriptions/find?orderId=${orderItem.orderId}`)
     },
     orderItemChanges: {
       type: new GraphQLList(OrderItemChangeType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`orderItemChanges/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemChanges/find?orderId=${orderItem.orderId}`)
     },
     orderItemRoles: {
       type: new GraphQLList(OrderItemRoleType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`orderItemRoles/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemRoles/find?orderId=${orderItem.orderId}`)
     },
     orderItemBillings: {
       type: new GraphQLList(OrderItemBillingType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`orderItemBillings/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemBillings/find?orderId=${orderItem.orderId}`)
     },
     orderItemShipGroupAssocs: {
       type: new GraphQLList(OrderItemShipGroupAssocType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`orderItemShipGroupAssocs/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemShipGroupAssocs/find?orderId=${orderItem.orderId}`)
     },
     picklistItems: {
       type: new GraphQLList(PicklistItemType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`picklistItems/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`shipment/picklist/picklistItems/find?orderId=${orderItem.orderId}`)
     },
     returnItems: {
       type: new GraphQLList(ReturnItemType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`returnItems/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`order/returnItems/find?orderId=${orderItem.orderId}`)
     },
     fixedAssets: {
       type: new GraphQLList(FixedAssetType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`fixedAssets/find?orderId=${orderItem.orderId}`)
+      args : {},
+      resolve: (orderItem, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAssets/find?orderId=${orderItem.orderId}`)
     }
   })
 });

@@ -27,8 +27,8 @@ const WorkEffortSearchResultType = new GraphQLObjectType({
     isAscending: {type: GraphQLBoolean},
     workEffortSearchConstraints: {
       type: new GraphQLList(WorkEffortSearchConstraintType),
-      args : {workEffortSearchResultId: {type: GraphQLString}},
-      resolve: (workEffortSearchResult, args, {loaders}) => loaders.ofbizArray.load(`workEffortSearchConstraints/find?workEffortSearchResultId=${workEffortSearchResult.workEffortSearchResultId}`)
+      args : {},
+      resolve: (workEffortSearchResult, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortSearchConstraints/find?workEffortSearchResultId=${workEffortSearchResult.workEffortSearchResultId}`)
     }
   })
 });

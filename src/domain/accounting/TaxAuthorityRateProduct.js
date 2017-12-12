@@ -36,39 +36,39 @@ const TaxAuthorityRateProductType = new GraphQLObjectType({
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${taxAuthorityRateProduct.productCategoryId}`)
+      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${taxAuthorityRateProduct.productCategoryId}`)
     },
     taxAuthGeo: {
       type: TaxAuthorityType,
       args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbiz.load(`taxAuthoritys/find?taxAuthGeoId=${taxAuthorityRateProduct.taxAuthGeoId}`)
+      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthoritys/find?taxAuthGeoId=${taxAuthorityRateProduct.taxAuthGeoId}`)
     },
     minItemPrice: {type: GraphQLFloat},
     minPurchase: {type: GraphQLFloat},
     taxAuthorityRateType: {
       type: TaxAuthorityRateTypeType,
       args : {taxAuthorityRateTypeId: {type: GraphQLString}},
-      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbiz.load(`taxAuthorityRateTypes/find?taxAuthorityRateTypeId=${taxAuthorityRateProduct.taxAuthorityRateTypeId}`)
+      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthority/taxAuthorityRateTypes/find?taxAuthorityRateTypeId=${taxAuthorityRateProduct.taxAuthorityRateTypeId}`)
     },
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${taxAuthorityRateProduct.productStoreId}`)
+      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${taxAuthorityRateProduct.productStoreId}`)
     },
     invoiceItems: {
       type: new GraphQLList(InvoiceItemType),
-      args : {taxAuthorityRateSeqId: {type: GraphQLString}},
-      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbizArray.load(`invoiceItems/find?taxAuthorityRateSeqId=${taxAuthorityRateProduct.taxAuthorityRateSeqId}`)
+      args : {},
+      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItems/find?taxAuthorityRateSeqId=${taxAuthorityRateProduct.taxAuthorityRateSeqId}`)
     },
     returnAdjustments: {
       type: new GraphQLList(ReturnAdjustmentType),
-      args : {taxAuthorityRateSeqId: {type: GraphQLString}},
-      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbizArray.load(`returnAdjustments/find?taxAuthorityRateSeqId=${taxAuthorityRateProduct.taxAuthorityRateSeqId}`)
+      args : {},
+      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbizArray.load(`order/returnAdjustments/find?taxAuthorityRateSeqId=${taxAuthorityRateProduct.taxAuthorityRateSeqId}`)
     },
     orderAdjustments: {
       type: new GraphQLList(OrderAdjustmentType),
-      args : {taxAuthorityRateSeqId: {type: GraphQLString}},
-      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbizArray.load(`orderAdjustments/find?taxAuthorityRateSeqId=${taxAuthorityRateProduct.taxAuthorityRateSeqId}`)
+      args : {},
+      resolve: (taxAuthorityRateProduct, args, {loaders}) => loaders.ofbizArray.load(`order/orderAdjustments/find?taxAuthorityRateSeqId=${taxAuthorityRateProduct.taxAuthorityRateSeqId}`)
     }
   })
 });

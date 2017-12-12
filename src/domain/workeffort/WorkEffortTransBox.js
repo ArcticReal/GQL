@@ -22,7 +22,7 @@ const WorkEffortTransBoxType = new GraphQLObjectType({
     processWorkEffort: {
       type: WorkEffortType,
       args : {processWorkEffortId: {type: GraphQLString}},
-      resolve: (workEffortTransBox, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortTransBox.processWorkEffortId}`)
+      resolve: (workEffortTransBox, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortTransBox.processWorkEffortId}`)
     },
     transitionId: {type: GraphQLString}
   })

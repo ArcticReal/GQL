@@ -23,7 +23,7 @@ const ContactMechAttributeType = new GraphQLObjectType({
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (contactMechAttribute, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${contactMechAttribute.contactMechId}`)
+      resolve: (contactMechAttribute, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${contactMechAttribute.contactMechId}`)
     },
     attrName: {type: GraphQLString}
   })

@@ -22,13 +22,13 @@ const WorkOrderItemFulfillmentType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workOrderItemFulfillment, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workOrderItemFulfillment.workEffortId}`)
+      resolve: (workOrderItemFulfillment, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workOrderItemFulfillment.workEffortId}`)
     },
     orderItemSeqId: {type: GraphQLString},
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (workOrderItemFulfillment, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${workOrderItemFulfillment.orderId}`)
+      resolve: (workOrderItemFulfillment, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${workOrderItemFulfillment.orderId}`)
     },
     shipGroupSeqId: {type: GraphQLString}
   })

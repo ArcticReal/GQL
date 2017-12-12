@@ -23,12 +23,12 @@ const ReturnItemShipmentType = new GraphQLObjectType({
     shipment: {
       type: ShipmentItemType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (returnItemShipment, args, {loaders}) => loaders.ofbiz.load(`shipmentItems/find?shipmentId=${returnItemShipment.shipmentId}`)
+      resolve: (returnItemShipment, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentItems/find?shipmentId=${returnItemShipment.shipmentId}`)
     },
     return: {
       type: ReturnItemType,
       args : {returnId: {type: GraphQLString}},
-      resolve: (returnItemShipment, args, {loaders}) => loaders.ofbiz.load(`returnItems/find?returnId=${returnItemShipment.returnId}`)
+      resolve: (returnItemShipment, args, {loaders}) => loaders.ofbiz.load(`order/returnItems/find?returnId=${returnItemShipment.returnId}`)
     },
     returnItemSeqId: {type: GraphQLString},
     shipmentItemSeqId: {type: GraphQLString}

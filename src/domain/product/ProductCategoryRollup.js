@@ -22,13 +22,13 @@ const ProductCategoryRollupType = new GraphQLObjectType({
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (productCategoryRollup, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${productCategoryRollup.productCategoryId}`)
+      resolve: (productCategoryRollup, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${productCategoryRollup.productCategoryId}`)
     },
     sequenceNum: {type: GraphQLInt},
     parentProductCategory: {
       type: ProductCategoryType,
       args : {parentProductCategoryId: {type: GraphQLString}},
-      resolve: (productCategoryRollup, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${productCategoryRollup.parentProductCategoryId}`)
+      resolve: (productCategoryRollup, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${productCategoryRollup.parentProductCategoryId}`)
     },
     thruDate: {type: GraphQLString}
   })

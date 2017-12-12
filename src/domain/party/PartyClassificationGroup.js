@@ -25,33 +25,33 @@ const PartyClassificationGroupType = new GraphQLObjectType({
     parentGroup: {
       type: PartyClassificationGroupType,
       args : {parentGroupId: {type: GraphQLString}},
-      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbiz.load(`partyClassificationGroups/find?partyClassificationGroupId=${partyClassificationGroup.parentGroupId}`)
+      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbiz.load(`party/party/partyClassificationGroups/find?partyClassificationGroupId=${partyClassificationGroup.parentGroupId}`)
     },
     description: {type: GraphQLString},
     partyClassificationType: {
       type: PartyClassificationTypeType,
       args : {partyClassificationTypeId: {type: GraphQLString}},
-      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbiz.load(`partyClassificationTypes/find?partyClassificationTypeId=${partyClassificationGroup.partyClassificationTypeId}`)
+      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbiz.load(`party/party/partyClassificationTypes/find?partyClassificationTypeId=${partyClassificationGroup.partyClassificationTypeId}`)
     },
     partyClassifications: {
       type: new GraphQLList(PartyClassificationType),
-      args : {partyClassificationGroupId: {type: GraphQLString}},
-      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbizArray.load(`partyClassifications/find?partyClassificationGroupId=${partyClassificationGroup.partyClassificationGroupId}`)
+      args : {},
+      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyClassifications/find?partyClassificationGroupId=${partyClassificationGroup.partyClassificationGroupId}`)
     },
     partyClassificationGroups: {
       type: new GraphQLList(PartyClassificationGroupType),
-      args : {partyClassificationGroupId: {type: GraphQLString}},
-      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbizArray.load(`partyClassificationGroups/find?partyClassificationGroupId=${partyClassificationGroup.partyClassificationGroupId}`)
+      args : {},
+      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyClassificationGroups/find?partyClassificationGroupId=${partyClassificationGroup.partyClassificationGroupId}`)
     },
     segmentGroupClassifications: {
       type: new GraphQLList(SegmentGroupClassificationType),
-      args : {partyClassificationGroupId: {type: GraphQLString}},
-      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbizArray.load(`segmentGroupClassifications/find?partyClassificationGroupId=${partyClassificationGroup.partyClassificationGroupId}`)
+      args : {},
+      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbizArray.load(`marketing/segmentGroup/segmentGroupClassifications/find?partyClassificationGroupId=${partyClassificationGroup.partyClassificationGroupId}`)
     },
     marketInterests: {
       type: new GraphQLList(MarketInterestType),
-      args : {partyClassificationGroupId: {type: GraphQLString}},
-      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbizArray.load(`marketInterests/find?partyClassificationGroupId=${partyClassificationGroup.partyClassificationGroupId}`)
+      args : {},
+      resolve: (partyClassificationGroup, args, {loaders}) => loaders.ofbizArray.load(`product/marketInterests/find?partyClassificationGroupId=${partyClassificationGroup.partyClassificationGroupId}`)
     }
   })
 });

@@ -27,18 +27,18 @@ const ProductContentType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productContent, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productContent.productId}`)
+      resolve: (productContent, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productContent.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     useRoleType: {
       type: RoleTypeType,
       args : {useRoleTypeId: {type: GraphQLString}},
-      resolve: (productContent, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${productContent.useRoleTypeId}`)
+      resolve: (productContent, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${productContent.useRoleTypeId}`)
     },
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (productContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${productContent.contentId}`)
+      resolve: (productContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${productContent.contentId}`)
     },
     useTime: {type: GraphQLInt},
     purchaseThruDate: {type: GraphQLString},
@@ -46,7 +46,7 @@ const ProductContentType = new GraphQLObjectType({
     productContentType: {
       type: ProductContentTypeType,
       args : {productContentTypeId: {type: GraphQLString}},
-      resolve: (productContent, args, {loaders}) => loaders.ofbiz.load(`productContentTypes/find?productContentTypeId=${productContent.productContentTypeId}`)
+      resolve: (productContent, args, {loaders}) => loaders.ofbiz.load(`product/product/productContentTypes/find?productContentTypeId=${productContent.productContentTypeId}`)
     },
     thruDate: {type: GraphQLString}
   })

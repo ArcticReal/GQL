@@ -21,14 +21,14 @@ const PerfRatingTypeType = new GraphQLObjectType({
     parentType: {
       type: PerfRatingTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (perfRatingType, args, {loaders}) => loaders.ofbiz.load(`perfRatingTypes/find?perfRatingTypeId=${perfRatingType.parentTypeId}`)
+      resolve: (perfRatingType, args, {loaders}) => loaders.ofbiz.load(`humanres/perfRatingTypes/find?perfRatingTypeId=${perfRatingType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     perfRatingTypes: {
       type: new GraphQLList(PerfRatingTypeType),
-      args : {perfRatingTypeId: {type: GraphQLString}},
-      resolve: (perfRatingType, args, {loaders}) => loaders.ofbizArray.load(`perfRatingTypes/find?perfRatingTypeId=${perfRatingType.perfRatingTypeId}`)
+      args : {},
+      resolve: (perfRatingType, args, {loaders}) => loaders.ofbizArray.load(`humanres/perfRatingTypes/find?perfRatingTypeId=${perfRatingType.perfRatingTypeId}`)
     }
   })
 });

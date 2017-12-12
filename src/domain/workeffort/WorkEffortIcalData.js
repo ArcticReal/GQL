@@ -21,7 +21,7 @@ const WorkEffortIcalDataType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortIcalData, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortIcalData.workEffortId}`)
+      resolve: (workEffortIcalData, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortIcalData.workEffortId}`)
     },
     icalData: {type: GraphQLString}
   })

@@ -23,13 +23,13 @@ const VarianceReasonType = new GraphQLObjectType({
     description: {type: GraphQLString},
     varianceReasonGlAccounts: {
       type: new GraphQLList(VarianceReasonGlAccountType),
-      args : {varianceReasonId: {type: GraphQLString}},
-      resolve: (varianceReason, args, {loaders}) => loaders.ofbizArray.load(`varianceReasonGlAccounts/find?varianceReasonId=${varianceReason.varianceReasonId}`)
+      args : {},
+      resolve: (varianceReason, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/varianceReasonGlAccounts/find?varianceReasonId=${varianceReason.varianceReasonId}`)
     },
     inventoryItemVariances: {
       type: new GraphQLList(InventoryItemVarianceType),
-      args : {varianceReasonId: {type: GraphQLString}},
-      resolve: (varianceReason, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemVariances/find?varianceReasonId=${varianceReason.varianceReasonId}`)
+      args : {},
+      resolve: (varianceReason, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemVariances/find?varianceReasonId=${varianceReason.varianceReasonId}`)
     }
   })
 });

@@ -26,7 +26,7 @@ const PayrollPreferenceType = new GraphQLObjectType({
     paymentMethodType: {
       type: PaymentMethodTypeType,
       args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (payrollPreference, args, {loaders}) => loaders.ofbiz.load(`paymentMethodTypes/find?paymentMethodTypeId=${payrollPreference.paymentMethodTypeId}`)
+      resolve: (payrollPreference, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethodTypes/find?paymentMethodTypeId=${payrollPreference.paymentMethodTypeId}`)
     },
     accountNumber: {type: GraphQLString},
     thruDate: {type: GraphQLString},
@@ -38,12 +38,12 @@ const PayrollPreferenceType = new GraphQLObjectType({
     deductionType: {
       type: DeductionTypeType,
       args : {deductionTypeId: {type: GraphQLString}},
-      resolve: (payrollPreference, args, {loaders}) => loaders.ofbiz.load(`deductionTypes/find?deductionTypeId=${payrollPreference.deductionTypeId}`)
+      resolve: (payrollPreference, args, {loaders}) => loaders.ofbiz.load(`accounting/deduction/deductionTypes/find?deductionTypeId=${payrollPreference.deductionTypeId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (payrollPreference, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${payrollPreference.partyId}`)
+      resolve: (payrollPreference, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${payrollPreference.partyId}`)
     }
   })
 });

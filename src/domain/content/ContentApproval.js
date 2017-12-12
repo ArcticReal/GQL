@@ -24,7 +24,7 @@ const ContentApprovalType = new GraphQLObjectType({
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (contentApproval, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${contentApproval.roleTypeId}`)
+      resolve: (contentApproval, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${contentApproval.roleTypeId}`)
     },
     approvalDate: {type: GraphQLString},
     comments: {type: GraphQLString},
@@ -32,13 +32,13 @@ const ContentApprovalType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (contentApproval, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentApproval.contentId}`)
+      resolve: (contentApproval, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentApproval.contentId}`)
     },
     contentRevisionSeqId: {type: GraphQLString},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (contentApproval, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${contentApproval.partyId}`)
+      resolve: (contentApproval, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${contentApproval.partyId}`)
     },
     approvalStatusId: {type: GraphQLString}
   })

@@ -22,8 +22,8 @@ const AccommodationMapTypeType = new GraphQLObjectType({
     accommodationMapTypeId: {type: GraphQLString},
     accommodationMaps: {
       type: new GraphQLList(AccommodationMapType),
-      args : {accommodationMapTypeId: {type: GraphQLString}},
-      resolve: (accommodationMapType, args, {loaders}) => loaders.ofbizArray.load(`accommodationMaps/find?accommodationMapTypeId=${accommodationMapType.accommodationMapTypeId}`)
+      args : {},
+      resolve: (accommodationMapType, args, {loaders}) => loaders.ofbizArray.load(`accounting/accommodationMaps/find?accommodationMapTypeId=${accommodationMapType.accommodationMapTypeId}`)
     }
   })
 });

@@ -28,20 +28,20 @@ const PartyGroupType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyGroup, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyGroup.partyId}`)
+      resolve: (partyGroup, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyGroup.partyId}`)
     },
     officeSiteName: {type: GraphQLString},
     annualRevenue: {type: GraphQLFloat},
     logoImageUrl: {type: GraphQLString},
     affiliates: {
       type: new GraphQLList(AffiliateType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyGroup, args, {loaders}) => loaders.ofbizArray.load(`affiliates/find?partyId=${partyGroup.partyId}`)
+      args : {},
+      resolve: (partyGroup, args, {loaders}) => loaders.ofbizArray.load(`party/affiliates/find?partyId=${partyGroup.partyId}`)
     },
     partyInvitationGroupAssocs: {
       type: new GraphQLList(PartyInvitationGroupAssocType),
-      args : {partyId: {type: GraphQLString}},
-      resolve: (partyGroup, args, {loaders}) => loaders.ofbizArray.load(`partyInvitationGroupAssocs/find?partyId=${partyGroup.partyId}`)
+      args : {},
+      resolve: (partyGroup, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyInvitationGroupAssocs/find?partyId=${partyGroup.partyId}`)
     }
   })
 });

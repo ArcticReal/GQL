@@ -21,20 +21,20 @@ const ProductAverageCostTypeType = new GraphQLObjectType({
     parentType: {
       type: ProductAverageCostTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (productAverageCostType, args, {loaders}) => loaders.ofbiz.load(`productAverageCostTypes/find?productAverageCostTypeId=${productAverageCostType.parentTypeId}`)
+      resolve: (productAverageCostType, args, {loaders}) => loaders.ofbiz.load(`accounting/productAverageCost/productAverageCostTypes/find?productAverageCostTypeId=${productAverageCostType.parentTypeId}`)
     },
     productAverageCostTypeId: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     productAverageCosts: {
       type: new GraphQLList(ProductAverageCostType),
-      args : {productAverageCostTypeId: {type: GraphQLString}},
-      resolve: (productAverageCostType, args, {loaders}) => loaders.ofbizArray.load(`productAverageCosts/find?productAverageCostTypeId=${productAverageCostType.productAverageCostTypeId}`)
+      args : {},
+      resolve: (productAverageCostType, args, {loaders}) => loaders.ofbizArray.load(`accounting/productAverageCosts/find?productAverageCostTypeId=${productAverageCostType.productAverageCostTypeId}`)
     },
     productAverageCostTypes: {
       type: new GraphQLList(ProductAverageCostTypeType),
-      args : {productAverageCostTypeId: {type: GraphQLString}},
-      resolve: (productAverageCostType, args, {loaders}) => loaders.ofbizArray.load(`productAverageCostTypes/find?productAverageCostTypeId=${productAverageCostType.productAverageCostTypeId}`)
+      args : {},
+      resolve: (productAverageCostType, args, {loaders}) => loaders.ofbizArray.load(`accounting/productAverageCost/productAverageCostTypes/find?productAverageCostTypeId=${productAverageCostType.productAverageCostTypeId}`)
     }
   })
 });

@@ -24,18 +24,18 @@ const TaxAuthorityAssocType = new GraphQLObjectType({
     taxAuthorityAssocType: {
       type: TaxAuthorityAssocTypeType,
       args : {taxAuthorityAssocTypeId: {type: GraphQLString}},
-      resolve: (taxAuthorityAssoc, args, {loaders}) => loaders.ofbiz.load(`taxAuthorityAssocTypes/find?taxAuthorityAssocTypeId=${taxAuthorityAssoc.taxAuthorityAssocTypeId}`)
+      resolve: (taxAuthorityAssoc, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthority/taxAuthorityAssocTypes/find?taxAuthorityAssocTypeId=${taxAuthorityAssoc.taxAuthorityAssocTypeId}`)
     },
     taxAuthGeo: {
       type: TaxAuthorityType,
       args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthorityAssoc, args, {loaders}) => loaders.ofbiz.load(`taxAuthoritys/find?taxAuthGeoId=${taxAuthorityAssoc.taxAuthGeoId}`)
+      resolve: (taxAuthorityAssoc, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthoritys/find?taxAuthGeoId=${taxAuthorityAssoc.taxAuthGeoId}`)
     },
     toTaxAuthPartyId: {type: GraphQLString},
     toTaxAuthGeo: {
       type: TaxAuthorityType,
       args : {toTaxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthorityAssoc, args, {loaders}) => loaders.ofbiz.load(`taxAuthoritys/find?taxAuthGeoId=${taxAuthorityAssoc.toTaxAuthGeoId}`)
+      resolve: (taxAuthorityAssoc, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthoritys/find?taxAuthGeoId=${taxAuthorityAssoc.toTaxAuthGeoId}`)
     },
     thruDate: {type: GraphQLString}
   })

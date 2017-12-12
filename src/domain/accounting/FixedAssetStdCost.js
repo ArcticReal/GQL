@@ -25,12 +25,12 @@ const FixedAssetStdCostType = new GraphQLObjectType({
     fixedAssetStdCostType: {
       type: FixedAssetStdCostTypeType,
       args : {fixedAssetStdCostTypeId: {type: GraphQLString}},
-      resolve: (fixedAssetStdCost, args, {loaders}) => loaders.ofbiz.load(`fixedAssetStdCostTypes/find?fixedAssetStdCostTypeId=${fixedAssetStdCost.fixedAssetStdCostTypeId}`)
+      resolve: (fixedAssetStdCost, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAsset/fixedAssetStdCostTypes/find?fixedAssetStdCostTypeId=${fixedAssetStdCost.fixedAssetStdCostTypeId}`)
     },
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetStdCost, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${fixedAssetStdCost.fixedAssetId}`)
+      resolve: (fixedAssetStdCost, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${fixedAssetStdCost.fixedAssetId}`)
     },
     thruDate: {type: GraphQLString}
   })

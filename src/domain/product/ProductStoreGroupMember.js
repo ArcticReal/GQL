@@ -24,12 +24,12 @@ const ProductStoreGroupMemberType = new GraphQLObjectType({
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStoreGroupMember, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${productStoreGroupMember.productStoreId}`)
+      resolve: (productStoreGroupMember, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${productStoreGroupMember.productStoreId}`)
     },
     productStoreGroup: {
       type: ProductStoreGroupType,
       args : {productStoreGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroupMember, args, {loaders}) => loaders.ofbiz.load(`productStoreGroups/find?productStoreGroupId=${productStoreGroupMember.productStoreGroupId}`)
+      resolve: (productStoreGroupMember, args, {loaders}) => loaders.ofbiz.load(`product/product/productStoreGroups/find?productStoreGroupId=${productStoreGroupMember.productStoreGroupId}`)
     },
     thruDate: {type: GraphQLString}
   })

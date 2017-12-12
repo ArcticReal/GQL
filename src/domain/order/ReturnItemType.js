@@ -21,19 +21,19 @@ const ReturnItemTypeType = new GraphQLObjectType({
     parentType: {
       type: ReturnItemTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (returnItemType, args, {loaders}) => loaders.ofbiz.load(`returnItemTypes/find?returnItemTypeId=${returnItemType.parentTypeId}`)
+      resolve: (returnItemType, args, {loaders}) => loaders.ofbiz.load(`order/returnItem/returnItemTypes/find?returnItemTypeId=${returnItemType.parentTypeId}`)
     },
     returnItemTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     returnItems: {
       type: new GraphQLList(ReturnItemType),
-      args : {returnItemTypeId: {type: GraphQLString}},
-      resolve: (returnItemType, args, {loaders}) => loaders.ofbizArray.load(`returnItems/find?returnItemTypeId=${returnItemType.returnItemTypeId}`)
+      args : {},
+      resolve: (returnItemType, args, {loaders}) => loaders.ofbizArray.load(`order/returnItems/find?returnItemTypeId=${returnItemType.returnItemTypeId}`)
     },
     returnItemTypes: {
       type: new GraphQLList(ReturnItemTypeType),
-      args : {returnItemTypeId: {type: GraphQLString}},
-      resolve: (returnItemType, args, {loaders}) => loaders.ofbizArray.load(`returnItemTypes/find?returnItemTypeId=${returnItemType.returnItemTypeId}`)
+      args : {},
+      resolve: (returnItemType, args, {loaders}) => loaders.ofbizArray.load(`order/returnItem/returnItemTypes/find?returnItemTypeId=${returnItemType.returnItemTypeId}`)
     }
   })
 });

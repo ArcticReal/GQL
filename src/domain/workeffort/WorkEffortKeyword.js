@@ -21,7 +21,7 @@ const WorkEffortKeywordType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortKeyword, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortKeyword.workEffortId}`)
+      resolve: (workEffortKeyword, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortKeyword.workEffortId}`)
     },
     relevancyWeight: {type: GraphQLInt},
     keyword: {type: GraphQLString}

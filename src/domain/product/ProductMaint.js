@@ -25,24 +25,24 @@ const ProductMaintType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productMaint.productId}`)
+      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productMaint.productId}`)
     },
     maintTemplateWorkEffort: {
       type: WorkEffortType,
       args : {maintTemplateWorkEffortId: {type: GraphQLString}},
-      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${productMaint.maintTemplateWorkEffortId}`)
+      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${productMaint.maintTemplateWorkEffortId}`)
     },
     maintName: {type: GraphQLString},
     intervalQuantity: {type: GraphQLFloat},
     productMaintType: {
       type: ProductMaintTypeType,
       args : {productMaintTypeId: {type: GraphQLString}},
-      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`productMaintTypes/find?productMaintTypeId=${productMaint.productMaintTypeId}`)
+      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`product/product/productMaintTypes/find?productMaintTypeId=${productMaint.productMaintTypeId}`)
     },
     intervalMeterType: {
       type: ProductMeterTypeType,
       args : {intervalMeterTypeId: {type: GraphQLString}},
-      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`productMeterTypes/find?productMeterTypeId=${productMaint.intervalMeterTypeId}`)
+      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`product/product/productMeterTypes/find?productMeterTypeId=${productMaint.intervalMeterTypeId}`)
     },
     productMaintSeqId: {type: GraphQLString},
     repeatCount: {type: GraphQLInt}

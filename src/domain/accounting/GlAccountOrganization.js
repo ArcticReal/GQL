@@ -25,18 +25,18 @@ const GlAccountOrganizationType = new GraphQLObjectType({
     glAccount: {
       type: GlAccountType,
       args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccountOrganization, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${glAccountOrganization.glAccountId}`)
+      resolve: (glAccountOrganization, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${glAccountOrganization.glAccountId}`)
     },
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (glAccountOrganization, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${glAccountOrganization.organizationPartyId}`)
+      resolve: (glAccountOrganization, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${glAccountOrganization.organizationPartyId}`)
     },
     thruDate: {type: GraphQLString},
     acctgTransEntries: {
       type: new GraphQLList(AcctgTransEntryType),
-      args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccountOrganization, args, {loaders}) => loaders.ofbizArray.load(`acctgTransEntrys/find?glAccountId=${glAccountOrganization.glAccountId}`)
+      args : {},
+      resolve: (glAccountOrganization, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTrans/acctgTransEntrys/find?glAccountId=${glAccountOrganization.glAccountId}`)
     }
   })
 });

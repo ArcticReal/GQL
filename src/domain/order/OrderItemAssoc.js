@@ -24,18 +24,18 @@ const OrderItemAssocType = new GraphQLObjectType({
     toOrder: {
       type: OrderHeaderType,
       args : {toOrderId: {type: GraphQLString}},
-      resolve: (orderItemAssoc, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderItemAssoc.toOrderId}`)
+      resolve: (orderItemAssoc, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderItemAssoc.toOrderId}`)
     },
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemAssoc, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderItemAssoc.orderId}`)
+      resolve: (orderItemAssoc, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderItemAssoc.orderId}`)
     },
     toOrderItemSeqId: {type: GraphQLString},
     orderItemAssocType: {
       type: OrderItemAssocTypeType,
       args : {orderItemAssocTypeId: {type: GraphQLString}},
-      resolve: (orderItemAssoc, args, {loaders}) => loaders.ofbiz.load(`orderItemAssocTypes/find?orderItemAssocTypeId=${orderItemAssoc.orderItemAssocTypeId}`)
+      resolve: (orderItemAssoc, args, {loaders}) => loaders.ofbiz.load(`order/orderItem/orderItemAssocTypes/find?orderItemAssocTypeId=${orderItemAssoc.orderItemAssocTypeId}`)
     },
     shipGroupSeqId: {type: GraphQLString},
     toShipGroupSeqId: {type: GraphQLString}

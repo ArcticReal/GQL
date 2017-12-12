@@ -31,26 +31,26 @@ const AcctgTransEntryType = new GraphQLObjectType({
     glAccount: {
       type: GlAccountOrganizationType,
       args : {glAccountId: {type: GraphQLString}},
-      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`glAccountOrganizations/find?glAccountId=${acctgTransEntry.glAccountId}`)
+      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountOrganizations/find?glAccountId=${acctgTransEntry.glAccountId}`)
     },
     description: {type: GraphQLString},
     theirPartyId: {type: GraphQLString},
     acctgTransEntryType: {
       type: AcctgTransEntryTypeType,
       args : {acctgTransEntryTypeId: {type: GraphQLString}},
-      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`acctgTransEntryTypes/find?acctgTransEntryTypeId=${acctgTransEntry.acctgTransEntryTypeId}`)
+      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`accounting/acctgTrans/acctgTransEntryTypes/find?acctgTransEntryTypeId=${acctgTransEntry.acctgTransEntryTypeId}`)
     },
     origAmount: {type: GraphQLFloat},
     debitCreditFlag: {type: GraphQLBoolean},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${acctgTransEntry.partyId}`)
+      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${acctgTransEntry.partyId}`)
     },
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${acctgTransEntry.roleTypeId}`)
+      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${acctgTransEntry.roleTypeId}`)
     },
     theirProductId: {type: GraphQLString},
     amount: {type: GraphQLFloat},
@@ -58,26 +58,26 @@ const AcctgTransEntryType = new GraphQLObjectType({
     settlementTerm: {
       type: SettlementTermType,
       args : {settlementTermId: {type: GraphQLString}},
-      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`settlementTerms/find?settlementTermId=${acctgTransEntry.settlementTermId}`)
+      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`accounting/settlementTerms/find?settlementTermId=${acctgTransEntry.settlementTermId}`)
     },
     reconcileStatusId: {type: GraphQLString},
     isSummary: {type: GraphQLBoolean},
     acctgTrans: {
       type: AcctgTransType,
       args : {acctgTransId: {type: GraphQLString}},
-      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`acctgTranss/find?acctgTransId=${acctgTransEntry.acctgTransId}`)
+      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`accounting/acctgTranss/find?acctgTransId=${acctgTransEntry.acctgTransId}`)
     },
     voucherRef: {type: GraphQLString},
     inventoryItem: {
       type: InventoryItemType,
       args : {inventoryItemId: {type: GraphQLString}},
-      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${acctgTransEntry.inventoryItemId}`)
+      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItems/find?inventoryItemId=${acctgTransEntry.inventoryItemId}`)
     },
     currencyUomId: {type: GraphQLString},
     glAccountType: {
       type: GlAccountTypeType,
       args : {glAccountTypeId: {type: GraphQLString}},
-      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`glAccountTypes/find?glAccountTypeId=${acctgTransEntry.glAccountTypeId}`)
+      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountTypes/find?glAccountTypeId=${acctgTransEntry.glAccountTypeId}`)
     },
     taxId: {type: GraphQLString},
     origCurrencyUomId: {type: GraphQLString},
@@ -85,8 +85,8 @@ const AcctgTransEntryType = new GraphQLObjectType({
     acctgTransEntrySeqId: {type: GraphQLString},
     glReconciliationEntries: {
       type: new GraphQLList(GlReconciliationEntryType),
-      args : {acctgTransId: {type: GraphQLString}},
-      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbizArray.load(`glReconciliationEntrys/find?acctgTransId=${acctgTransEntry.acctgTransId}`)
+      args : {},
+      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbizArray.load(`accounting/glReconciliation/glReconciliationEntrys/find?acctgTransId=${acctgTransEntry.acctgTransId}`)
     }
   })
 });

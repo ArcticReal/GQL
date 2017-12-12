@@ -25,7 +25,7 @@ const PerformanceNoteType = new GraphQLObjectType({
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (performanceNote, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${performanceNote.partyId}`)
+      resolve: (performanceNote, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${performanceNote.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

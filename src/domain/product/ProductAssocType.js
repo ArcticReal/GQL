@@ -21,20 +21,20 @@ const ProductAssocTypeType = new GraphQLObjectType({
     parentType: {
       type: ProductAssocTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (productAssocType, args, {loaders}) => loaders.ofbiz.load(`productAssocTypes/find?productAssocTypeId=${productAssocType.parentTypeId}`)
+      resolve: (productAssocType, args, {loaders}) => loaders.ofbiz.load(`product/product/productAssocTypes/find?productAssocTypeId=${productAssocType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     productAssocTypeId: {type: GraphQLString},
     productAssocTypes: {
       type: new GraphQLList(ProductAssocTypeType),
-      args : {productAssocTypeId: {type: GraphQLString}},
-      resolve: (productAssocType, args, {loaders}) => loaders.ofbizArray.load(`productAssocTypes/find?productAssocTypeId=${productAssocType.productAssocTypeId}`)
+      args : {},
+      resolve: (productAssocType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productAssocTypes/find?productAssocTypeId=${productAssocType.productAssocTypeId}`)
     },
     productAssocs: {
       type: new GraphQLList(ProductAssocType),
-      args : {productAssocTypeId: {type: GraphQLString}},
-      resolve: (productAssocType, args, {loaders}) => loaders.ofbizArray.load(`productAssocs/find?productAssocTypeId=${productAssocType.productAssocTypeId}`)
+      args : {},
+      resolve: (productAssocType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productAssocs/find?productAssocTypeId=${productAssocType.productAssocTypeId}`)
     }
   })
 });

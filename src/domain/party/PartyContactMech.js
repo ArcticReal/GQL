@@ -24,7 +24,7 @@ const PartyContactMechType = new GraphQLObjectType({
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (partyContactMech, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${partyContactMech.roleTypeId}`)
+      resolve: (partyContactMech, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${partyContactMech.roleTypeId}`)
     },
     allowSolicitation: {type: GraphQLBoolean},
     extension: {type: GraphQLString},
@@ -35,12 +35,12 @@ const PartyContactMechType = new GraphQLObjectType({
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyContactMech, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${partyContactMech.partyId}`)
+      resolve: (partyContactMech, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${partyContactMech.partyId}`)
     },
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (partyContactMech, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${partyContactMech.contactMechId}`)
+      resolve: (partyContactMech, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${partyContactMech.contactMechId}`)
     },
     thruDate: {type: GraphQLString}
   })

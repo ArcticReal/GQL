@@ -24,7 +24,7 @@ const OrderItemShipGrpInvResType = new GraphQLObjectType({
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemShipGrpInvRes, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${orderItemShipGrpInvRes.orderId}`)
+      resolve: (orderItemShipGrpInvRes, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${orderItemShipGrpInvRes.orderId}`)
     },
     promisedDatetime: {type: GraphQLString},
     priority: {type: GraphQLBoolean},
@@ -35,7 +35,7 @@ const OrderItemShipGrpInvResType = new GraphQLObjectType({
     inventoryItem: {
       type: InventoryItemType,
       args : {inventoryItemId: {type: GraphQLString}},
-      resolve: (orderItemShipGrpInvRes, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${orderItemShipGrpInvRes.inventoryItemId}`)
+      resolve: (orderItemShipGrpInvRes, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItems/find?inventoryItemId=${orderItemShipGrpInvRes.inventoryItemId}`)
     },
     quantityNotAvailable: {type: GraphQLFloat},
     createdDatetime: {type: GraphQLString},

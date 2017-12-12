@@ -23,17 +23,17 @@ const VendorProductType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (vendorProduct, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${vendorProduct.productId}`)
+      resolve: (vendorProduct, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${vendorProduct.productId}`)
     },
     vendorParty: {
       type: PartyType,
       args : {vendorPartyId: {type: GraphQLString}},
-      resolve: (vendorProduct, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${vendorProduct.vendorPartyId}`)
+      resolve: (vendorProduct, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${vendorProduct.vendorPartyId}`)
     },
     productStoreGroup: {
       type: ProductStoreGroupType,
       args : {productStoreGroupId: {type: GraphQLString}},
-      resolve: (vendorProduct, args, {loaders}) => loaders.ofbiz.load(`productStoreGroups/find?productStoreGroupId=${vendorProduct.productStoreGroupId}`)
+      resolve: (vendorProduct, args, {loaders}) => loaders.ofbiz.load(`product/product/productStoreGroups/find?productStoreGroupId=${vendorProduct.productStoreGroupId}`)
     }
   })
 });

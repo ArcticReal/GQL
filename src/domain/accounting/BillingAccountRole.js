@@ -24,12 +24,12 @@ const BillingAccountRoleType = new GraphQLObjectType({
     billingAccount: {
       type: BillingAccountType,
       args : {billingAccountId: {type: GraphQLString}},
-      resolve: (billingAccountRole, args, {loaders}) => loaders.ofbiz.load(`billingAccounts/find?billingAccountId=${billingAccountRole.billingAccountId}`)
+      resolve: (billingAccountRole, args, {loaders}) => loaders.ofbiz.load(`accounting/billingAccounts/find?billingAccountId=${billingAccountRole.billingAccountId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (billingAccountRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${billingAccountRole.partyId}`)
+      resolve: (billingAccountRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${billingAccountRole.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

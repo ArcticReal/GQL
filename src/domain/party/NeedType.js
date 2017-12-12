@@ -23,13 +23,13 @@ const NeedTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     partyNeeds: {
       type: new GraphQLList(PartyNeedType),
-      args : {needTypeId: {type: GraphQLString}},
-      resolve: (needType, args, {loaders}) => loaders.ofbizArray.load(`partyNeeds/find?needTypeId=${needType.needTypeId}`)
+      args : {},
+      resolve: (needType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyNeeds/find?needTypeId=${needType.needTypeId}`)
     },
     subscriptions: {
       type: new GraphQLList(SubscriptionType),
-      args : {needTypeId: {type: GraphQLString}},
-      resolve: (needType, args, {loaders}) => loaders.ofbizArray.load(`subscriptions/find?needTypeId=${needType.needTypeId}`)
+      args : {},
+      resolve: (needType, args, {loaders}) => loaders.ofbizArray.load(`product/subscriptions/find?needTypeId=${needType.needTypeId}`)
     }
   })
 });

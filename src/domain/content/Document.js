@@ -26,20 +26,20 @@ const DocumentType = new GraphQLObjectType({
     documentType: {
       type: DocumentTypeType,
       args : {documentTypeId: {type: GraphQLString}},
-      resolve: (document, args, {loaders}) => loaders.ofbiz.load(`documentTypes/find?documentTypeId=${document.documentTypeId}`)
+      resolve: (document, args, {loaders}) => loaders.ofbiz.load(`content/document/documentTypes/find?documentTypeId=${document.documentTypeId}`)
     },
     documentText: {type: GraphQLString},
     documentId: {type: GraphQLString},
     documentLocation: {type: GraphQLString},
     documentAttributes: {
       type: new GraphQLList(DocumentAttributeType),
-      args : {documentId: {type: GraphQLString}},
-      resolve: (document, args, {loaders}) => loaders.ofbizArray.load(`documentAttributes/find?documentId=${document.documentId}`)
+      args : {},
+      resolve: (document, args, {loaders}) => loaders.ofbizArray.load(`content/document/documentAttributes/find?documentId=${document.documentId}`)
     },
     shippingDocuments: {
       type: new GraphQLList(ShippingDocumentType),
-      args : {documentId: {type: GraphQLString}},
-      resolve: (document, args, {loaders}) => loaders.ofbizArray.load(`shippingDocuments/find?documentId=${document.documentId}`)
+      args : {},
+      resolve: (document, args, {loaders}) => loaders.ofbizArray.load(`shipment/shippingDocuments/find?documentId=${document.documentId}`)
     }
   })
 });

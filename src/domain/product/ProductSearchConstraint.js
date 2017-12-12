@@ -24,7 +24,7 @@ const ProductSearchConstraintType = new GraphQLObjectType({
     productSearchResult: {
       type: ProductSearchResultType,
       args : {productSearchResultId: {type: GraphQLString}},
-      resolve: (productSearchConstraint, args, {loaders}) => loaders.ofbiz.load(`productSearchResults/find?productSearchResultId=${productSearchConstraint.productSearchResultId}`)
+      resolve: (productSearchConstraint, args, {loaders}) => loaders.ofbiz.load(`product/product/productSearchResults/find?productSearchResultId=${productSearchConstraint.productSearchResultId}`)
     },
     constraintSeqId: {type: GraphQLString},
     infoString: {type: GraphQLString},

@@ -26,45 +26,45 @@ const TermTypeType = new GraphQLObjectType({
     parentType: {
       type: TermTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (termType, args, {loaders}) => loaders.ofbiz.load(`termTypes/find?termTypeId=${termType.parentTypeId}`)
+      resolve: (termType, args, {loaders}) => loaders.ofbiz.load(`party/termTypes/find?termTypeId=${termType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     termTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     quoteTerms: {
       type: new GraphQLList(QuoteTermType),
-      args : {termTypeId: {type: GraphQLString}},
-      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`quoteTerms/find?termTypeId=${termType.termTypeId}`)
+      args : {},
+      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteTerms/find?termTypeId=${termType.termTypeId}`)
     },
     termTypes: {
       type: new GraphQLList(TermTypeType),
-      args : {termTypeId: {type: GraphQLString}},
-      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`termTypes/find?termTypeId=${termType.termTypeId}`)
+      args : {},
+      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`party/termTypes/find?termTypeId=${termType.termTypeId}`)
     },
     orderTerms: {
       type: new GraphQLList(OrderTermType),
-      args : {termTypeId: {type: GraphQLString}},
-      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`orderTerms/find?termTypeId=${termType.termTypeId}`)
+      args : {},
+      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`order/orderTerms/find?termTypeId=${termType.termTypeId}`)
     },
     agreementTerms: {
       type: new GraphQLList(AgreementTermType),
-      args : {termTypeId: {type: GraphQLString}},
-      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`agreementTerms/find?termTypeId=${termType.termTypeId}`)
+      args : {},
+      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementTerms/find?termTypeId=${termType.termTypeId}`)
     },
     termTypeAttrs: {
       type: new GraphQLList(TermTypeAttrType),
-      args : {termTypeId: {type: GraphQLString}},
-      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`termTypeAttrs/find?termTypeId=${termType.termTypeId}`)
+      args : {},
+      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`party/termType/termTypeAttrs/find?termTypeId=${termType.termTypeId}`)
     },
     invoiceTerms: {
       type: new GraphQLList(InvoiceTermType),
-      args : {termTypeId: {type: GraphQLString}},
-      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`invoiceTerms/find?termTypeId=${termType.termTypeId}`)
+      args : {},
+      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceTerms/find?termTypeId=${termType.termTypeId}`)
     },
     billingAccountTerms: {
       type: new GraphQLList(BillingAccountTermType),
-      args : {termTypeId: {type: GraphQLString}},
-      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`billingAccountTerms/find?termTypeId=${termType.termTypeId}`)
+      args : {},
+      resolve: (termType, args, {loaders}) => loaders.ofbizArray.load(`accounting/billingAccount/billingAccountTerms/find?termTypeId=${termType.termTypeId}`)
     }
   })
 });

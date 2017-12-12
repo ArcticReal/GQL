@@ -22,25 +22,25 @@ const InventoryItemLabelTypeType = new GraphQLObjectType({
     parentType: {
       type: InventoryItemLabelTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbiz.load(`inventoryItemLabelTypes/find?inventoryItemLabelTypeId=${inventoryItemLabelType.parentTypeId}`)
+      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItem/inventoryItemLabelTypes/find?inventoryItemLabelTypeId=${inventoryItemLabelType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     inventoryItemLabelTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     inventoryItemLabelTypes: {
       type: new GraphQLList(InventoryItemLabelTypeType),
-      args : {inventoryItemLabelTypeId: {type: GraphQLString}},
-      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemLabelTypes/find?inventoryItemLabelTypeId=${inventoryItemLabelType.inventoryItemLabelTypeId}`)
+      args : {},
+      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemLabelTypes/find?inventoryItemLabelTypeId=${inventoryItemLabelType.inventoryItemLabelTypeId}`)
     },
     inventoryItemLabelAppls: {
       type: new GraphQLList(InventoryItemLabelApplType),
-      args : {inventoryItemLabelTypeId: {type: GraphQLString}},
-      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemLabelAppls/find?inventoryItemLabelTypeId=${inventoryItemLabelType.inventoryItemLabelTypeId}`)
+      args : {},
+      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemLabelAppls/find?inventoryItemLabelTypeId=${inventoryItemLabelType.inventoryItemLabelTypeId}`)
     },
     inventoryItemLabels: {
       type: new GraphQLList(InventoryItemLabelType),
-      args : {inventoryItemLabelTypeId: {type: GraphQLString}},
-      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemLabels/find?inventoryItemLabelTypeId=${inventoryItemLabelType.inventoryItemLabelTypeId}`)
+      args : {},
+      resolve: (inventoryItemLabelType, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemLabels/find?inventoryItemLabelTypeId=${inventoryItemLabelType.inventoryItemLabelTypeId}`)
     }
   })
 });

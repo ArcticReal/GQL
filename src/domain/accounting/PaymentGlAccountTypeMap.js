@@ -23,17 +23,17 @@ const PaymentGlAccountTypeMapType = new GraphQLObjectType({
     paymentType: {
       type: PaymentTypeType,
       args : {paymentTypeId: {type: GraphQLString}},
-      resolve: (paymentGlAccountTypeMap, args, {loaders}) => loaders.ofbiz.load(`paymentTypes/find?paymentTypeId=${paymentGlAccountTypeMap.paymentTypeId}`)
+      resolve: (paymentGlAccountTypeMap, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentTypes/find?paymentTypeId=${paymentGlAccountTypeMap.paymentTypeId}`)
     },
     glAccountType: {
       type: GlAccountTypeType,
       args : {glAccountTypeId: {type: GraphQLString}},
-      resolve: (paymentGlAccountTypeMap, args, {loaders}) => loaders.ofbiz.load(`glAccountTypes/find?glAccountTypeId=${paymentGlAccountTypeMap.glAccountTypeId}`)
+      resolve: (paymentGlAccountTypeMap, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountTypes/find?glAccountTypeId=${paymentGlAccountTypeMap.glAccountTypeId}`)
     },
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (paymentGlAccountTypeMap, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${paymentGlAccountTypeMap.organizationPartyId}`)
+      resolve: (paymentGlAccountTypeMap, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${paymentGlAccountTypeMap.organizationPartyId}`)
     }
   })
 });

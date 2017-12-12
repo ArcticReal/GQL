@@ -24,12 +24,12 @@ const OrderRequirementCommitmentType = new GraphQLObjectType({
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderRequirementCommitment, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${orderRequirementCommitment.orderId}`)
+      resolve: (orderRequirementCommitment, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${orderRequirementCommitment.orderId}`)
     },
     requirement: {
       type: RequirementType,
       args : {requirementId: {type: GraphQLString}},
-      resolve: (orderRequirementCommitment, args, {loaders}) => loaders.ofbiz.load(`requirements/find?requirementId=${orderRequirementCommitment.requirementId}`)
+      resolve: (orderRequirementCommitment, args, {loaders}) => loaders.ofbiz.load(`order/requirements/find?requirementId=${orderRequirementCommitment.requirementId}`)
     }
   })
 });

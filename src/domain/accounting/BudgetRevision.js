@@ -24,12 +24,12 @@ const BudgetRevisionType = new GraphQLObjectType({
     budget: {
       type: BudgetType,
       args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetRevision, args, {loaders}) => loaders.ofbiz.load(`budgets/find?budgetId=${budgetRevision.budgetId}`)
+      resolve: (budgetRevision, args, {loaders}) => loaders.ofbiz.load(`accounting/budgets/find?budgetId=${budgetRevision.budgetId}`)
     },
     budgetRevisionImpacts: {
       type: new GraphQLList(BudgetRevisionImpactType),
-      args : {budgetId: {type: GraphQLString}},
-      resolve: (budgetRevision, args, {loaders}) => loaders.ofbizArray.load(`budgetRevisionImpacts/find?budgetId=${budgetRevision.budgetId}`)
+      args : {},
+      resolve: (budgetRevision, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetRevisionImpacts/find?budgetId=${budgetRevision.budgetId}`)
     }
   })
 });

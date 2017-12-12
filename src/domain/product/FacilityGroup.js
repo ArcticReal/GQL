@@ -25,40 +25,40 @@ const FacilityGroupType = new GraphQLObjectType({
     primaryParentGroup: {
       type: FacilityGroupType,
       args : {primaryParentGroupId: {type: GraphQLString}},
-      resolve: (facilityGroup, args, {loaders}) => loaders.ofbiz.load(`facilityGroups/find?facilityGroupId=${facilityGroup.primaryParentGroupId}`)
+      resolve: (facilityGroup, args, {loaders}) => loaders.ofbiz.load(`product/facility/facilityGroups/find?facilityGroupId=${facilityGroup.primaryParentGroupId}`)
     },
     facilityGroupType: {
       type: FacilityGroupTypeType,
       args : {facilityGroupTypeId: {type: GraphQLString}},
-      resolve: (facilityGroup, args, {loaders}) => loaders.ofbiz.load(`facilityGroupTypes/find?facilityGroupTypeId=${facilityGroup.facilityGroupTypeId}`)
+      resolve: (facilityGroup, args, {loaders}) => loaders.ofbiz.load(`product/facility/facilityGroupTypes/find?facilityGroupTypeId=${facilityGroup.facilityGroupTypeId}`)
     },
     facilityGroupId: {type: GraphQLString},
     description: {type: GraphQLString},
     facilityGroupName: {type: GraphQLString},
     facilityGroupRollups: {
       type: new GraphQLList(FacilityGroupRollupType),
-      args : {facilityGroupId: {type: GraphQLString}},
-      resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`facilityGroupRollups/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
+      args : {},
+      resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityGroupRollups/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
     },
     facilityGroupMembers: {
       type: new GraphQLList(FacilityGroupMemberType),
-      args : {facilityGroupId: {type: GraphQLString}},
-      resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`facilityGroupMembers/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
+      args : {},
+      resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityGroupMembers/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
     },
     facilityGroupRoles: {
       type: new GraphQLList(FacilityGroupRoleType),
-      args : {facilityGroupId: {type: GraphQLString}},
-      resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`facilityGroupRoles/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
+      args : {},
+      resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityGroupRoles/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
     },
     facilityGroups: {
       type: new GraphQLList(FacilityGroupType),
-      args : {facilityGroupId: {type: GraphQLString}},
-      resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`facilityGroups/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
+      args : {},
+      resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityGroups/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
     },
     facilities: {
       type: new GraphQLList(FacilityType),
-      args : {facilityGroupId: {type: GraphQLString}},
-      resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`facilitys/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
+      args : {},
+      resolve: (facilityGroup, args, {loaders}) => loaders.ofbizArray.load(`product/facilitys/find?facilityGroupId=${facilityGroup.facilityGroupId}`)
     }
   })
 });

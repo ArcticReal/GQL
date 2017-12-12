@@ -23,7 +23,7 @@ const ReturnItemTypeMapType = new GraphQLObjectType({
     returnHeaderType: {
       type: ReturnHeaderTypeType,
       args : {returnHeaderTypeId: {type: GraphQLString}},
-      resolve: (returnItemTypeMap, args, {loaders}) => loaders.ofbiz.load(`returnHeaderTypes/find?returnHeaderTypeId=${returnItemTypeMap.returnHeaderTypeId}`)
+      resolve: (returnItemTypeMap, args, {loaders}) => loaders.ofbiz.load(`order/returnHeader/returnHeaderTypes/find?returnHeaderTypeId=${returnItemTypeMap.returnHeaderTypeId}`)
     }
   })
 });

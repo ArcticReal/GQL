@@ -33,7 +33,7 @@ const ShipmentPackageRouteSegType = new GraphQLObjectType({
     shipment: {
       type: ShipmentRouteSegmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentPackageRouteSeg, args, {loaders}) => loaders.ofbiz.load(`shipmentRouteSegments/find?shipmentId=${shipmentPackageRouteSeg.shipmentId}`)
+      resolve: (shipmentPackageRouteSeg, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentRouteSegments/find?shipmentId=${shipmentPackageRouteSeg.shipmentId}`)
     },
     codAmount: {type: GraphQLFloat},
     insuredAmount: {type: GraphQLFloat},

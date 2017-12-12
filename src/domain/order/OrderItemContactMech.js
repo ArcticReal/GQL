@@ -24,17 +24,17 @@ const OrderItemContactMechType = new GraphQLObjectType({
     contactMechPurposeType: {
       type: ContactMechPurposeTypeType,
       args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (orderItemContactMech, args, {loaders}) => loaders.ofbiz.load(`contactMechPurposeTypes/find?contactMechPurposeTypeId=${orderItemContactMech.contactMechPurposeTypeId}`)
+      resolve: (orderItemContactMech, args, {loaders}) => loaders.ofbiz.load(`party/contactMech/contactMechPurposeTypes/find?contactMechPurposeTypeId=${orderItemContactMech.contactMechPurposeTypeId}`)
     },
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemContactMech, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${orderItemContactMech.orderId}`)
+      resolve: (orderItemContactMech, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${orderItemContactMech.orderId}`)
     },
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (orderItemContactMech, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${orderItemContactMech.contactMechId}`)
+      resolve: (orderItemContactMech, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${orderItemContactMech.contactMechId}`)
     }
   })
 });

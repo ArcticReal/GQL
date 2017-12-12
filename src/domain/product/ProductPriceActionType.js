@@ -22,8 +22,8 @@ const ProductPriceActionTypeType = new GraphQLObjectType({
     productPriceActionTypeId: {type: GraphQLString},
     productPriceActions: {
       type: new GraphQLList(ProductPriceActionType),
-      args : {productPriceActionTypeId: {type: GraphQLString}},
-      resolve: (productPriceActionType, args, {loaders}) => loaders.ofbizArray.load(`productPriceActions/find?productPriceActionTypeId=${productPriceActionType.productPriceActionTypeId}`)
+      args : {},
+      resolve: (productPriceActionType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPriceActions/find?productPriceActionTypeId=${productPriceActionType.productPriceActionTypeId}`)
     }
   })
 });

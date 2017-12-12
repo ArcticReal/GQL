@@ -23,7 +23,7 @@ const OrderNotificationType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderNotification, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderNotification.orderId}`)
+      resolve: (orderNotification, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderNotification.orderId}`)
     },
     emailType: {type: GraphQLString},
     notificationDate: {type: GraphQLString}

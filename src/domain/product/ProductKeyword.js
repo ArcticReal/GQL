@@ -22,7 +22,7 @@ const ProductKeywordType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productKeyword, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productKeyword.productId}`)
+      resolve: (productKeyword, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productKeyword.productId}`)
     },
     statusId: {type: GraphQLString},
     keywordTypeId: {type: GraphQLString},

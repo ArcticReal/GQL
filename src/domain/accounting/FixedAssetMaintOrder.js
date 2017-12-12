@@ -23,12 +23,12 @@ const FixedAssetMaintOrderType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (fixedAssetMaintOrder, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${fixedAssetMaintOrder.orderId}`)
+      resolve: (fixedAssetMaintOrder, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${fixedAssetMaintOrder.orderId}`)
     },
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (fixedAssetMaintOrder, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${fixedAssetMaintOrder.fixedAssetId}`)
+      resolve: (fixedAssetMaintOrder, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${fixedAssetMaintOrder.fixedAssetId}`)
     },
     maintHistSeqId: {type: GraphQLString}
   })

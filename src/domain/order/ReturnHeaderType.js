@@ -22,24 +22,24 @@ const ReturnHeaderTypeType = new GraphQLObjectType({
     parentType: {
       type: ReturnHeaderTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (returnHeaderType, args, {loaders}) => loaders.ofbiz.load(`returnHeaderTypes/find?returnHeaderTypeId=${returnHeaderType.parentTypeId}`)
+      resolve: (returnHeaderType, args, {loaders}) => loaders.ofbiz.load(`order/returnHeader/returnHeaderTypes/find?returnHeaderTypeId=${returnHeaderType.parentTypeId}`)
     },
     description: {type: GraphQLString},
     returnHeaderTypeId: {type: GraphQLString},
     returnHeaderTypes: {
       type: new GraphQLList(ReturnHeaderTypeType),
-      args : {returnHeaderTypeId: {type: GraphQLString}},
-      resolve: (returnHeaderType, args, {loaders}) => loaders.ofbizArray.load(`returnHeaderTypes/find?returnHeaderTypeId=${returnHeaderType.returnHeaderTypeId}`)
+      args : {},
+      resolve: (returnHeaderType, args, {loaders}) => loaders.ofbizArray.load(`order/returnHeader/returnHeaderTypes/find?returnHeaderTypeId=${returnHeaderType.returnHeaderTypeId}`)
     },
     returnHeaders: {
       type: new GraphQLList(ReturnHeaderType),
-      args : {returnHeaderTypeId: {type: GraphQLString}},
-      resolve: (returnHeaderType, args, {loaders}) => loaders.ofbizArray.load(`returnHeaders/find?returnHeaderTypeId=${returnHeaderType.returnHeaderTypeId}`)
+      args : {},
+      resolve: (returnHeaderType, args, {loaders}) => loaders.ofbizArray.load(`order/returnHeaders/find?returnHeaderTypeId=${returnHeaderType.returnHeaderTypeId}`)
     },
     returnItemTypeMaps: {
       type: new GraphQLList(ReturnItemTypeMapType),
-      args : {returnHeaderTypeId: {type: GraphQLString}},
-      resolve: (returnHeaderType, args, {loaders}) => loaders.ofbizArray.load(`returnItemTypeMaps/find?returnHeaderTypeId=${returnHeaderType.returnHeaderTypeId}`)
+      args : {},
+      resolve: (returnHeaderType, args, {loaders}) => loaders.ofbizArray.load(`order/returnItem/returnItemTypeMaps/find?returnHeaderTypeId=${returnHeaderType.returnHeaderTypeId}`)
     }
   })
 });

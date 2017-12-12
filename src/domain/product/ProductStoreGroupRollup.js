@@ -23,12 +23,12 @@ const ProductStoreGroupRollupType = new GraphQLObjectType({
     parentGroup: {
       type: ProductStoreGroupType,
       args : {parentGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroupRollup, args, {loaders}) => loaders.ofbiz.load(`productStoreGroups/find?productStoreGroupId=${productStoreGroupRollup.parentGroupId}`)
+      resolve: (productStoreGroupRollup, args, {loaders}) => loaders.ofbiz.load(`product/product/productStoreGroups/find?productStoreGroupId=${productStoreGroupRollup.parentGroupId}`)
     },
     productStoreGroup: {
       type: ProductStoreGroupType,
       args : {productStoreGroupId: {type: GraphQLString}},
-      resolve: (productStoreGroupRollup, args, {loaders}) => loaders.ofbiz.load(`productStoreGroups/find?productStoreGroupId=${productStoreGroupRollup.productStoreGroupId}`)
+      resolve: (productStoreGroupRollup, args, {loaders}) => loaders.ofbiz.load(`product/product/productStoreGroups/find?productStoreGroupId=${productStoreGroupRollup.productStoreGroupId}`)
     },
     thruDate: {type: GraphQLString}
   })

@@ -23,17 +23,17 @@ const TrackingCodeOrderType = new GraphQLObjectType({
     trackingCode: {
       type: TrackingCodeType,
       args : {trackingCodeId: {type: GraphQLString}},
-      resolve: (trackingCodeOrder, args, {loaders}) => loaders.ofbiz.load(`trackingCodes/find?trackingCodeId=${trackingCodeOrder.trackingCodeId}`)
+      resolve: (trackingCodeOrder, args, {loaders}) => loaders.ofbiz.load(`marketing/trackingCodes/find?trackingCodeId=${trackingCodeOrder.trackingCodeId}`)
     },
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (trackingCodeOrder, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${trackingCodeOrder.orderId}`)
+      resolve: (trackingCodeOrder, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${trackingCodeOrder.orderId}`)
     },
     trackingCodeType: {
       type: TrackingCodeTypeType,
       args : {trackingCodeTypeId: {type: GraphQLString}},
-      resolve: (trackingCodeOrder, args, {loaders}) => loaders.ofbiz.load(`trackingCodeTypes/find?trackingCodeTypeId=${trackingCodeOrder.trackingCodeTypeId}`)
+      resolve: (trackingCodeOrder, args, {loaders}) => loaders.ofbiz.load(`marketing/trackingCode/trackingCodeTypes/find?trackingCodeTypeId=${trackingCodeOrder.trackingCodeTypeId}`)
     },
     siteId: {type: GraphQLString},
     hasExported: {type: GraphQLBoolean},

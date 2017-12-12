@@ -21,7 +21,7 @@ const ProductCategoryAttributeType = new GraphQLObjectType({
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (productCategoryAttribute, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${productCategoryAttribute.productCategoryId}`)
+      resolve: (productCategoryAttribute, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${productCategoryAttribute.productCategoryId}`)
     },
     attrDescription: {type: GraphQLString},
     attrValue: {type: GraphQLString},

@@ -22,12 +22,12 @@ const ContactMechTypePurposeType = new GraphQLObjectType({
     contactMechPurposeType: {
       type: ContactMechPurposeTypeType,
       args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (contactMechTypePurpose, args, {loaders}) => loaders.ofbiz.load(`contactMechPurposeTypes/find?contactMechPurposeTypeId=${contactMechTypePurpose.contactMechPurposeTypeId}`)
+      resolve: (contactMechTypePurpose, args, {loaders}) => loaders.ofbiz.load(`party/contactMech/contactMechPurposeTypes/find?contactMechPurposeTypeId=${contactMechTypePurpose.contactMechPurposeTypeId}`)
     },
     contactMechType: {
       type: ContactMechTypeType,
       args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (contactMechTypePurpose, args, {loaders}) => loaders.ofbiz.load(`contactMechTypes/find?contactMechTypeId=${contactMechTypePurpose.contactMechTypeId}`)
+      resolve: (contactMechTypePurpose, args, {loaders}) => loaders.ofbiz.load(`party/contactMech/contactMechTypes/find?contactMechTypeId=${contactMechTypePurpose.contactMechTypeId}`)
     }
   })
 });

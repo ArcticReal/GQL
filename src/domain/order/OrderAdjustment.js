@@ -32,7 +32,7 @@ const OrderAdjustmentType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderAdjustment.orderId}`)
+      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderAdjustment.orderId}`)
     },
     includeInShipping: {type: GraphQLBoolean},
     description: {type: GraphQLString},
@@ -40,7 +40,7 @@ const OrderAdjustmentType = new GraphQLObjectType({
     productPromo: {
       type: ProductPromoType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`productPromos/find?productPromoId=${orderAdjustment.productPromoId}`)
+      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromos/find?productPromoId=${orderAdjustment.productPromoId}`)
     },
     taxAuthPartyId: {type: GraphQLString},
     lastModifiedByUserLogin: {type: GraphQLString},
@@ -49,18 +49,18 @@ const OrderAdjustmentType = new GraphQLObjectType({
     taxAuthGeo: {
       type: TaxAuthorityType,
       args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`taxAuthoritys/find?taxAuthGeoId=${orderAdjustment.taxAuthGeoId}`)
+      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthoritys/find?taxAuthGeoId=${orderAdjustment.taxAuthGeoId}`)
     },
     originalAdjustment: {
       type: OrderAdjustmentType,
       args : {originalAdjustmentId: {type: GraphQLString}},
-      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`orderAdjustments/find?orderAdjustmentId=${orderAdjustment.originalAdjustmentId}`)
+      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`order/orderAdjustments/find?orderAdjustmentId=${orderAdjustment.originalAdjustmentId}`)
     },
     secondaryGeoId: {type: GraphQLString},
     createdByUserLogin: {
       type: UserLoginType,
       args : {createdByUserLogin: {type: GraphQLString}},
-      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${orderAdjustment.createdByUserLogin}`)
+      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${orderAdjustment.createdByUserLogin}`)
     },
     orderAdjustmentId: {type: GraphQLString},
     amountAlreadyIncluded: {type: GraphQLFloat},
@@ -73,7 +73,7 @@ const OrderAdjustmentType = new GraphQLObjectType({
     orderAdjustmentType: {
       type: OrderAdjustmentTypeType,
       args : {orderAdjustmentTypeId: {type: GraphQLString}},
-      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`orderAdjustmentTypes/find?orderAdjustmentTypeId=${orderAdjustment.orderAdjustmentTypeId}`)
+      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`order/orderAdjustment/orderAdjustmentTypes/find?orderAdjustmentTypeId=${orderAdjustment.orderAdjustmentTypeId}`)
     },
     productPromoRuleId: {type: GraphQLString},
     isManual: {type: GraphQLBoolean},
@@ -81,12 +81,12 @@ const OrderAdjustmentType = new GraphQLObjectType({
     taxAuthorityRateSeq: {
       type: TaxAuthorityRateProductType,
       args : {taxAuthorityRateSeqId: {type: GraphQLString}},
-      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`taxAuthorityRateProducts/find?taxAuthorityRateSeqId=${orderAdjustment.taxAuthorityRateSeqId}`)
+      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthority/taxAuthorityRateProducts/find?taxAuthorityRateSeqId=${orderAdjustment.taxAuthorityRateSeqId}`)
     },
     overrideGlAccount: {
       type: GlAccountType,
       args : {overrideGlAccountId: {type: GraphQLString}},
-      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${orderAdjustment.overrideGlAccountId}`)
+      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${orderAdjustment.overrideGlAccountId}`)
     },
     oldAmountPerQuantity: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     shipGroupSeqId: {type: GraphQLString},
@@ -96,18 +96,18 @@ const OrderAdjustmentType = new GraphQLObjectType({
     sourcePercentage: {type: GraphQLFloat},
     orderAdjustmentAttributes: {
       type: new GraphQLList(OrderAdjustmentAttributeType),
-      args : {orderAdjustmentId: {type: GraphQLString}},
-      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbizArray.load(`orderAdjustmentAttributes/find?orderAdjustmentId=${orderAdjustment.orderAdjustmentId}`)
+      args : {},
+      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbizArray.load(`order/orderAdjustment/orderAdjustmentAttributes/find?orderAdjustmentId=${orderAdjustment.orderAdjustmentId}`)
     },
     orderAdjustmentBillings: {
       type: new GraphQLList(OrderAdjustmentBillingType),
-      args : {orderAdjustmentId: {type: GraphQLString}},
-      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbizArray.load(`orderAdjustmentBillings/find?orderAdjustmentId=${orderAdjustment.orderAdjustmentId}`)
+      args : {},
+      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbizArray.load(`order/orderAdjustment/orderAdjustmentBillings/find?orderAdjustmentId=${orderAdjustment.orderAdjustmentId}`)
     },
     returnAdjustments: {
       type: new GraphQLList(ReturnAdjustmentType),
-      args : {orderAdjustmentId: {type: GraphQLString}},
-      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbizArray.load(`returnAdjustments/find?orderAdjustmentId=${orderAdjustment.orderAdjustmentId}`)
+      args : {},
+      resolve: (orderAdjustment, args, {loaders}) => loaders.ofbizArray.load(`order/returnAdjustments/find?orderAdjustmentId=${orderAdjustment.orderAdjustmentId}`)
     }
   })
 });

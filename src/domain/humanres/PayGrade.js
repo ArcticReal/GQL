@@ -24,13 +24,13 @@ const PayGradeType = new GraphQLObjectType({
     payGradeId: {type: GraphQLString},
     salarySteps: {
       type: new GraphQLList(SalaryStepType),
-      args : {payGradeId: {type: GraphQLString}},
-      resolve: (payGrade, args, {loaders}) => loaders.ofbizArray.load(`salarySteps/find?payGradeId=${payGrade.payGradeId}`)
+      args : {},
+      resolve: (payGrade, args, {loaders}) => loaders.ofbizArray.load(`humanres/salarySteps/find?payGradeId=${payGrade.payGradeId}`)
     },
     payHistories: {
       type: new GraphQLList(PayHistoryType),
-      args : {payGradeId: {type: GraphQLString}},
-      resolve: (payGrade, args, {loaders}) => loaders.ofbizArray.load(`payHistorys/find?payGradeId=${payGrade.payGradeId}`)
+      args : {},
+      resolve: (payGrade, args, {loaders}) => loaders.ofbizArray.load(`humanres/payHistorys/find?payGradeId=${payGrade.payGradeId}`)
     }
   })
 });

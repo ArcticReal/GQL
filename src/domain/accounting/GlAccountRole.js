@@ -24,12 +24,12 @@ const GlAccountRoleType = new GraphQLObjectType({
     glAccount: {
       type: GlAccountType,
       args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccountRole, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${glAccountRole.glAccountId}`)
+      resolve: (glAccountRole, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${glAccountRole.glAccountId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (glAccountRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${glAccountRole.partyId}`)
+      resolve: (glAccountRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${glAccountRole.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

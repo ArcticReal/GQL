@@ -23,18 +23,18 @@ const InventoryItemLabelApplType = new GraphQLObjectType({
     inventoryItem: {
       type: InventoryItemType,
       args : {inventoryItemId: {type: GraphQLString}},
-      resolve: (inventoryItemLabelAppl, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${inventoryItemLabelAppl.inventoryItemId}`)
+      resolve: (inventoryItemLabelAppl, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItems/find?inventoryItemId=${inventoryItemLabelAppl.inventoryItemId}`)
     },
     inventoryItemLabel: {
       type: InventoryItemLabelType,
       args : {inventoryItemLabelId: {type: GraphQLString}},
-      resolve: (inventoryItemLabelAppl, args, {loaders}) => loaders.ofbiz.load(`inventoryItemLabels/find?inventoryItemLabelId=${inventoryItemLabelAppl.inventoryItemLabelId}`)
+      resolve: (inventoryItemLabelAppl, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItem/inventoryItemLabels/find?inventoryItemLabelId=${inventoryItemLabelAppl.inventoryItemLabelId}`)
     },
     sequenceNum: {type: GraphQLInt},
     inventoryItemLabelType: {
       type: InventoryItemLabelTypeType,
       args : {inventoryItemLabelTypeId: {type: GraphQLString}},
-      resolve: (inventoryItemLabelAppl, args, {loaders}) => loaders.ofbiz.load(`inventoryItemLabelTypes/find?inventoryItemLabelTypeId=${inventoryItemLabelAppl.inventoryItemLabelTypeId}`)
+      resolve: (inventoryItemLabelAppl, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItem/inventoryItemLabelTypes/find?inventoryItemLabelTypeId=${inventoryItemLabelAppl.inventoryItemLabelTypeId}`)
     }
   })
 });

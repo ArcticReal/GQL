@@ -22,25 +22,25 @@ const ContentTypeType = new GraphQLObjectType({
     parentType: {
       type: ContentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (contentType, args, {loaders}) => loaders.ofbiz.load(`contentTypes/find?contentTypeId=${contentType.parentTypeId}`)
+      resolve: (contentType, args, {loaders}) => loaders.ofbiz.load(`content/content/contentTypes/find?contentTypeId=${contentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     contentTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     contentTypeAttrs: {
       type: new GraphQLList(ContentTypeAttrType),
-      args : {contentTypeId: {type: GraphQLString}},
-      resolve: (contentType, args, {loaders}) => loaders.ofbizArray.load(`contentTypeAttrs/find?contentTypeId=${contentType.contentTypeId}`)
+      args : {},
+      resolve: (contentType, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentTypeAttrs/find?contentTypeId=${contentType.contentTypeId}`)
     },
     contentTypes: {
       type: new GraphQLList(ContentTypeType),
-      args : {contentTypeId: {type: GraphQLString}},
-      resolve: (contentType, args, {loaders}) => loaders.ofbizArray.load(`contentTypes/find?contentTypeId=${contentType.contentTypeId}`)
+      args : {},
+      resolve: (contentType, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentTypes/find?contentTypeId=${contentType.contentTypeId}`)
     },
     contents: {
       type: new GraphQLList(ContentType),
-      args : {contentTypeId: {type: GraphQLString}},
-      resolve: (contentType, args, {loaders}) => loaders.ofbizArray.load(`contents/find?contentTypeId=${contentType.contentTypeId}`)
+      args : {},
+      resolve: (contentType, args, {loaders}) => loaders.ofbizArray.load(`/contents/find?contentTypeId=${contentType.contentTypeId}`)
     }
   })
 });

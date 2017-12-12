@@ -22,8 +22,8 @@ const MrpEventTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     mrpEvents: {
       type: new GraphQLList(MrpEventType),
-      args : {mrpEventTypeId: {type: GraphQLString}},
-      resolve: (mrpEventType, args, {loaders}) => loaders.ofbizArray.load(`mrpEvents/find?mrpEventTypeId=${mrpEventType.mrpEventTypeId}`)
+      args : {},
+      resolve: (mrpEventType, args, {loaders}) => loaders.ofbizArray.load(`manufacturing/mrpEvents/find?mrpEventTypeId=${mrpEventType.mrpEventTypeId}`)
     }
   })
 });

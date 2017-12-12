@@ -4,7 +4,7 @@ import {
 } from 'graphql';
 
 
-import { ProductPromoType } from '../product/ProductPromo.js';
+import { ProductPromoType } from '../../domain/product/ProductPromo.js';
 
 const productPromoQueries = {
   promos: {
@@ -12,7 +12,7 @@ const productPromoQueries = {
     args: {
 
     },
-    resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`productPromos/find`)
+    resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromos/find`)
   },
   promo: {
     type: ProductPromoType,
@@ -21,7 +21,7 @@ const productPromoQueries = {
         type: GraphQLString
       },
     },
-    resolve: (root, args, {loaders}) => loaders.ofbiz.load(`productPromos/${args.productPromoId}`)
+    resolve: (root, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromos/${args.productPromoId}`)
   }
 };
 

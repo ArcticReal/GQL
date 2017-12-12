@@ -30,7 +30,7 @@ const ShipmentGatewayFedexType = new GraphQLObjectType({
     shipmentGatewayConfig: {
       type: ShipmentGatewayConfigType,
       args : {shipmentGatewayConfigId: {type: GraphQLString}},
-      resolve: (shipmentGatewayFedex, args, {loaders}) => loaders.ofbiz.load(`shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayFedex.shipmentGatewayConfigId}`)
+      resolve: (shipmentGatewayFedex, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentGatewayConfigs/find?shipmentGatewayConfigId=${shipmentGatewayFedex.shipmentGatewayConfigId}`)
     },
     defaultPackagingType: {type: GraphQLString},
     connectTimeout: {type: GraphQLInt},

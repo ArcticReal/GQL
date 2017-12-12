@@ -22,25 +22,25 @@ const DataResourceTypeType = new GraphQLObjectType({
     parentType: {
       type: DataResourceTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (dataResourceType, args, {loaders}) => loaders.ofbiz.load(`dataResourceTypes/find?dataResourceTypeId=${dataResourceType.parentTypeId}`)
+      resolve: (dataResourceType, args, {loaders}) => loaders.ofbiz.load(`content/dataResource/dataResourceTypes/find?dataResourceTypeId=${dataResourceType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     dataResourceTypeId: {type: GraphQLString},
     dataResources: {
       type: new GraphQLList(DataResourceType),
-      args : {dataResourceTypeId: {type: GraphQLString}},
-      resolve: (dataResourceType, args, {loaders}) => loaders.ofbizArray.load(`dataResources/find?dataResourceTypeId=${dataResourceType.dataResourceTypeId}`)
+      args : {},
+      resolve: (dataResourceType, args, {loaders}) => loaders.ofbizArray.load(`content/dataResources/find?dataResourceTypeId=${dataResourceType.dataResourceTypeId}`)
     },
     dataResourceTypes: {
       type: new GraphQLList(DataResourceTypeType),
-      args : {dataResourceTypeId: {type: GraphQLString}},
-      resolve: (dataResourceType, args, {loaders}) => loaders.ofbizArray.load(`dataResourceTypes/find?dataResourceTypeId=${dataResourceType.dataResourceTypeId}`)
+      args : {},
+      resolve: (dataResourceType, args, {loaders}) => loaders.ofbizArray.load(`content/dataResource/dataResourceTypes/find?dataResourceTypeId=${dataResourceType.dataResourceTypeId}`)
     },
     dataResourceTypeAttrs: {
       type: new GraphQLList(DataResourceTypeAttrType),
-      args : {dataResourceTypeId: {type: GraphQLString}},
-      resolve: (dataResourceType, args, {loaders}) => loaders.ofbizArray.load(`dataResourceTypeAttrs/find?dataResourceTypeId=${dataResourceType.dataResourceTypeId}`)
+      args : {},
+      resolve: (dataResourceType, args, {loaders}) => loaders.ofbizArray.load(`content/dataResource/dataResourceTypeAttrs/find?dataResourceTypeId=${dataResourceType.dataResourceTypeId}`)
     }
   })
 });

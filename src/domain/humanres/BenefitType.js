@@ -21,7 +21,7 @@ const BenefitTypeType = new GraphQLObjectType({
     parentType: {
       type: BenefitTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (benefitType, args, {loaders}) => loaders.ofbiz.load(`benefitTypes/find?benefitTypeId=${benefitType.parentTypeId}`)
+      resolve: (benefitType, args, {loaders}) => loaders.ofbiz.load(`humanres/benefitTypes/find?benefitTypeId=${benefitType.parentTypeId}`)
     },
     employerPaidPercentage: {type: GraphQLFloat},
     hasTable: {type: GraphQLBoolean},
@@ -30,13 +30,13 @@ const BenefitTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     benefitTypes: {
       type: new GraphQLList(BenefitTypeType),
-      args : {benefitTypeId: {type: GraphQLString}},
-      resolve: (benefitType, args, {loaders}) => loaders.ofbizArray.load(`benefitTypes/find?benefitTypeId=${benefitType.benefitTypeId}`)
+      args : {},
+      resolve: (benefitType, args, {loaders}) => loaders.ofbizArray.load(`humanres/benefitTypes/find?benefitTypeId=${benefitType.benefitTypeId}`)
     },
     partyBenefits: {
       type: new GraphQLList(PartyBenefitType),
-      args : {benefitTypeId: {type: GraphQLString}},
-      resolve: (benefitType, args, {loaders}) => loaders.ofbizArray.load(`partyBenefits/find?benefitTypeId=${benefitType.benefitTypeId}`)
+      args : {},
+      resolve: (benefitType, args, {loaders}) => loaders.ofbizArray.load(`humanres/partyBenefits/find?benefitTypeId=${benefitType.benefitTypeId}`)
     }
   })
 });

@@ -21,20 +21,20 @@ const GoodIdentificationTypeType = new GraphQLObjectType({
     parentType: {
       type: GoodIdentificationTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (goodIdentificationType, args, {loaders}) => loaders.ofbiz.load(`goodIdentificationTypes/find?goodIdentificationTypeId=${goodIdentificationType.parentTypeId}`)
+      resolve: (goodIdentificationType, args, {loaders}) => loaders.ofbiz.load(`product/goodIdentification/goodIdentificationTypes/find?goodIdentificationTypeId=${goodIdentificationType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     goodIdentificationTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     goodIdentificationTypes: {
       type: new GraphQLList(GoodIdentificationTypeType),
-      args : {goodIdentificationTypeId: {type: GraphQLString}},
-      resolve: (goodIdentificationType, args, {loaders}) => loaders.ofbizArray.load(`goodIdentificationTypes/find?goodIdentificationTypeId=${goodIdentificationType.goodIdentificationTypeId}`)
+      args : {},
+      resolve: (goodIdentificationType, args, {loaders}) => loaders.ofbizArray.load(`product/goodIdentification/goodIdentificationTypes/find?goodIdentificationTypeId=${goodIdentificationType.goodIdentificationTypeId}`)
     },
     goodIdentifications: {
       type: new GraphQLList(GoodIdentificationType),
-      args : {goodIdentificationTypeId: {type: GraphQLString}},
-      resolve: (goodIdentificationType, args, {loaders}) => loaders.ofbizArray.load(`goodIdentifications/find?goodIdentificationTypeId=${goodIdentificationType.goodIdentificationTypeId}`)
+      args : {},
+      resolve: (goodIdentificationType, args, {loaders}) => loaders.ofbizArray.load(`product/goodIdentifications/find?goodIdentificationTypeId=${goodIdentificationType.goodIdentificationTypeId}`)
     }
   })
 });

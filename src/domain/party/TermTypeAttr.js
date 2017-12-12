@@ -21,7 +21,7 @@ const TermTypeAttrType = new GraphQLObjectType({
     termType: {
       type: TermTypeType,
       args : {termTypeId: {type: GraphQLString}},
-      resolve: (termTypeAttr, args, {loaders}) => loaders.ofbiz.load(`termTypes/find?termTypeId=${termTypeAttr.termTypeId}`)
+      resolve: (termTypeAttr, args, {loaders}) => loaders.ofbiz.load(`party/termTypes/find?termTypeId=${termTypeAttr.termTypeId}`)
     },
     description: {type: GraphQLString},
     attrName: {type: GraphQLString}

@@ -24,12 +24,12 @@ const ValidResponsibilityType = new GraphQLObjectType({
     responsibilityType: {
       type: ResponsibilityTypeType,
       args : {responsibilityTypeId: {type: GraphQLString}},
-      resolve: (validResponsibility, args, {loaders}) => loaders.ofbiz.load(`responsibilityTypes/find?responsibilityTypeId=${validResponsibility.responsibilityTypeId}`)
+      resolve: (validResponsibility, args, {loaders}) => loaders.ofbiz.load(`humanres/responsibilityTypes/find?responsibilityTypeId=${validResponsibility.responsibilityTypeId}`)
     },
     emplPositionType: {
       type: EmplPositionTypeType,
       args : {emplPositionTypeId: {type: GraphQLString}},
-      resolve: (validResponsibility, args, {loaders}) => loaders.ofbiz.load(`emplPositionTypes/find?emplPositionTypeId=${validResponsibility.emplPositionTypeId}`)
+      resolve: (validResponsibility, args, {loaders}) => loaders.ofbiz.load(`humanres/emplPosition/emplPositionTypes/find?emplPositionTypeId=${validResponsibility.emplPositionTypeId}`)
     },
     thruDate: {type: GraphQLString}
   })

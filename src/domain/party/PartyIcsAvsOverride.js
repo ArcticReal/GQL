@@ -22,7 +22,7 @@ const PartyIcsAvsOverrideType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyIcsAvsOverride, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyIcsAvsOverride.partyId}`)
+      resolve: (partyIcsAvsOverride, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyIcsAvsOverride.partyId}`)
     }
   })
 });

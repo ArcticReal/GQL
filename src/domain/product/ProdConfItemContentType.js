@@ -22,19 +22,19 @@ const ProdConfItemContentTypeType = new GraphQLObjectType({
     parentType: {
       type: ProdConfItemContentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (prodConfItemContentType, args, {loaders}) => loaders.ofbiz.load(`prodConfItemContentTypes/find?confItemContentTypeId=${prodConfItemContentType.parentTypeId}`)
+      resolve: (prodConfItemContentType, args, {loaders}) => loaders.ofbiz.load(`product/prodConfItemContent/prodConfItemContentTypes/find?confItemContentTypeId=${prodConfItemContentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     prodConfItemContents: {
       type: new GraphQLList(ProdConfItemContentType),
-      args : {confItemContentTypeId: {type: GraphQLString}},
-      resolve: (prodConfItemContentType, args, {loaders}) => loaders.ofbizArray.load(`prodConfItemContents/find?confItemContentTypeId=${prodConfItemContentType.confItemContentTypeId}`)
+      args : {},
+      resolve: (prodConfItemContentType, args, {loaders}) => loaders.ofbizArray.load(`product/prodConfItemContents/find?confItemContentTypeId=${prodConfItemContentType.confItemContentTypeId}`)
     },
     prodConfItemContentTypes: {
       type: new GraphQLList(ProdConfItemContentTypeType),
-      args : {confItemContentTypeId: {type: GraphQLString}},
-      resolve: (prodConfItemContentType, args, {loaders}) => loaders.ofbizArray.load(`prodConfItemContentTypes/find?confItemContentTypeId=${prodConfItemContentType.confItemContentTypeId}`)
+      args : {},
+      resolve: (prodConfItemContentType, args, {loaders}) => loaders.ofbizArray.load(`product/prodConfItemContent/prodConfItemContentTypes/find?confItemContentTypeId=${prodConfItemContentType.confItemContentTypeId}`)
     }
   })
 });

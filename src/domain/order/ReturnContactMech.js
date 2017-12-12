@@ -23,17 +23,17 @@ const ReturnContactMechType = new GraphQLObjectType({
     contactMechPurposeType: {
       type: ContactMechPurposeTypeType,
       args : {contactMechPurposeTypeId: {type: GraphQLString}},
-      resolve: (returnContactMech, args, {loaders}) => loaders.ofbiz.load(`contactMechPurposeTypes/find?contactMechPurposeTypeId=${returnContactMech.contactMechPurposeTypeId}`)
+      resolve: (returnContactMech, args, {loaders}) => loaders.ofbiz.load(`party/contactMech/contactMechPurposeTypes/find?contactMechPurposeTypeId=${returnContactMech.contactMechPurposeTypeId}`)
     },
     return: {
       type: ReturnHeaderType,
       args : {returnId: {type: GraphQLString}},
-      resolve: (returnContactMech, args, {loaders}) => loaders.ofbiz.load(`returnHeaders/find?returnId=${returnContactMech.returnId}`)
+      resolve: (returnContactMech, args, {loaders}) => loaders.ofbiz.load(`order/returnHeaders/find?returnId=${returnContactMech.returnId}`)
     },
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (returnContactMech, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${returnContactMech.contactMechId}`)
+      resolve: (returnContactMech, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${returnContactMech.contactMechId}`)
     }
   })
 });

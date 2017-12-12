@@ -22,12 +22,12 @@ const ProductMeterType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productMeter, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productMeter.productId}`)
+      resolve: (productMeter, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productMeter.productId}`)
     },
     productMeterType: {
       type: ProductMeterTypeType,
       args : {productMeterTypeId: {type: GraphQLString}},
-      resolve: (productMeter, args, {loaders}) => loaders.ofbiz.load(`productMeterTypes/find?productMeterTypeId=${productMeter.productMeterTypeId}`)
+      resolve: (productMeter, args, {loaders}) => loaders.ofbiz.load(`product/product/productMeterTypes/find?productMeterTypeId=${productMeter.productMeterTypeId}`)
     },
     meterName: {type: GraphQLString},
     meterUomId: {type: GraphQLString}

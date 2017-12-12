@@ -22,8 +22,8 @@ const QuantityBreakTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     quantityBreaks: {
       type: new GraphQLList(QuantityBreakType),
-      args : {quantityBreakTypeId: {type: GraphQLString}},
-      resolve: (quantityBreakType, args, {loaders}) => loaders.ofbizArray.load(`quantityBreaks/find?quantityBreakTypeId=${quantityBreakType.quantityBreakTypeId}`)
+      args : {},
+      resolve: (quantityBreakType, args, {loaders}) => loaders.ofbizArray.load(`product/quantityBreaks/find?quantityBreakTypeId=${quantityBreakType.quantityBreakTypeId}`)
     }
   })
 });

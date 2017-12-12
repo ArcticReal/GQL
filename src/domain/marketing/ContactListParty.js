@@ -26,23 +26,23 @@ const ContactListPartyType = new GraphQLObjectType({
     contactList: {
       type: ContactListType,
       args : {contactListId: {type: GraphQLString}},
-      resolve: (contactListParty, args, {loaders}) => loaders.ofbiz.load(`contactLists/find?contactListId=${contactListParty.contactListId}`)
+      resolve: (contactListParty, args, {loaders}) => loaders.ofbiz.load(`marketing/contactLists/find?contactListId=${contactListParty.contactListId}`)
     },
     preferredContactMech: {
       type: ContactMechType,
       args : {preferredContactMechId: {type: GraphQLString}},
-      resolve: (contactListParty, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${contactListParty.preferredContactMechId}`)
+      resolve: (contactListParty, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${contactListParty.preferredContactMechId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (contactListParty, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${contactListParty.partyId}`)
+      resolve: (contactListParty, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${contactListParty.partyId}`)
     },
     thruDate: {type: GraphQLString},
     contactListPartyStatuses: {
       type: new GraphQLList(ContactListPartyStatusType),
-      args : {contactListId: {type: GraphQLString}},
-      resolve: (contactListParty, args, {loaders}) => loaders.ofbizArray.load(`contactListPartyStatuss/find?contactListId=${contactListParty.contactListId}`)
+      args : {},
+      resolve: (contactListParty, args, {loaders}) => loaders.ofbizArray.load(`marketing/contactList/contactListPartyStatuss/find?contactListId=${contactListParty.contactListId}`)
     }
   })
 });

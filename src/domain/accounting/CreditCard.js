@@ -27,7 +27,7 @@ const CreditCardType = new GraphQLObjectType({
     contactMech: {
       type: PostalAddressType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (creditCard, args, {loaders}) => loaders.ofbiz.load(`postalAddresss/find?contactMechId=${creditCard.contactMechId}`)
+      resolve: (creditCard, args, {loaders}) => loaders.ofbiz.load(`party/postalAddresss/find?contactMechId=${creditCard.contactMechId}`)
     },
     companyNameOnCard: {type: GraphQLString},
     titleOnCard: {type: GraphQLString},
@@ -35,7 +35,7 @@ const CreditCardType = new GraphQLObjectType({
     paymentMethod: {
       type: PaymentMethodType,
       args : {paymentMethodId: {type: GraphQLString}},
-      resolve: (creditCard, args, {loaders}) => loaders.ofbiz.load(`paymentMethods/find?paymentMethodId=${creditCard.paymentMethodId}`)
+      resolve: (creditCard, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethods/find?paymentMethodId=${creditCard.paymentMethodId}`)
     },
     middleNameOnCard: {type: GraphQLString},
     validFromDate: {type: GraphQLString},

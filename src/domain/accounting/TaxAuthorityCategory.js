@@ -23,12 +23,12 @@ const TaxAuthorityCategoryType = new GraphQLObjectType({
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (taxAuthorityCategory, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${taxAuthorityCategory.productCategoryId}`)
+      resolve: (taxAuthorityCategory, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${taxAuthorityCategory.productCategoryId}`)
     },
     taxAuthGeo: {
       type: TaxAuthorityType,
       args : {taxAuthGeoId: {type: GraphQLString}},
-      resolve: (taxAuthorityCategory, args, {loaders}) => loaders.ofbiz.load(`taxAuthoritys/find?taxAuthGeoId=${taxAuthorityCategory.taxAuthGeoId}`)
+      resolve: (taxAuthorityCategory, args, {loaders}) => loaders.ofbiz.load(`accounting/taxAuthoritys/find?taxAuthGeoId=${taxAuthorityCategory.taxAuthGeoId}`)
     }
   })
 });

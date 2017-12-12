@@ -22,8 +22,8 @@ const GlFiscalTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     acctgTranses: {
       type: new GraphQLList(AcctgTransType),
-      args : {glFiscalTypeId: {type: GraphQLString}},
-      resolve: (glFiscalType, args, {loaders}) => loaders.ofbizArray.load(`acctgTranss/find?glFiscalTypeId=${glFiscalType.glFiscalTypeId}`)
+      args : {},
+      resolve: (glFiscalType, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTranss/find?glFiscalTypeId=${glFiscalType.glFiscalTypeId}`)
     }
   })
 });

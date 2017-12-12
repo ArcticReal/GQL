@@ -22,19 +22,19 @@ const ProductCategoryContentTypeType = new GraphQLObjectType({
     parentType: {
       type: ProductCategoryContentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (productCategoryContentType, args, {loaders}) => loaders.ofbiz.load(`productCategoryContentTypes/find?prodCatContentTypeId=${productCategoryContentType.parentTypeId}`)
+      resolve: (productCategoryContentType, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategoryContentTypes/find?prodCatContentTypeId=${productCategoryContentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     productCategoryContentTypes: {
       type: new GraphQLList(ProductCategoryContentTypeType),
-      args : {prodCatContentTypeId: {type: GraphQLString}},
-      resolve: (productCategoryContentType, args, {loaders}) => loaders.ofbizArray.load(`productCategoryContentTypes/find?prodCatContentTypeId=${productCategoryContentType.prodCatContentTypeId}`)
+      args : {},
+      resolve: (productCategoryContentType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productCategoryContentTypes/find?prodCatContentTypeId=${productCategoryContentType.prodCatContentTypeId}`)
     },
     productCategoryContents: {
       type: new GraphQLList(ProductCategoryContentType),
-      args : {prodCatContentTypeId: {type: GraphQLString}},
-      resolve: (productCategoryContentType, args, {loaders}) => loaders.ofbizArray.load(`productCategoryContents/find?prodCatContentTypeId=${productCategoryContentType.prodCatContentTypeId}`)
+      args : {},
+      resolve: (productCategoryContentType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productCategoryContents/find?prodCatContentTypeId=${productCategoryContentType.prodCatContentTypeId}`)
     }
   })
 });

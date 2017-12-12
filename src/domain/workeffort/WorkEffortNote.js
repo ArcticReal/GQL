@@ -21,7 +21,7 @@ const WorkEffortNoteType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortNote, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortNote.workEffortId}`)
+      resolve: (workEffortNote, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortNote.workEffortId}`)
     },
     internalNote: {type: GraphQLBoolean},
     noteId: {type: GraphQLString}

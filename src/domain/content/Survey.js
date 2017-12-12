@@ -37,43 +37,43 @@ const SurveyType = new GraphQLObjectType({
     submitCaption: {type: GraphQLString},
     surveyMultiResps: {
       type: new GraphQLList(SurveyMultiRespType),
-      args : {surveyId: {type: GraphQLString}},
-      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`surveyMultiResps/find?surveyId=${survey.surveyId}`)
+      args : {},
+      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyMultiResps/find?surveyId=${survey.surveyId}`)
     },
     productStoreSurveyAppls: {
       type: new GraphQLList(ProductStoreSurveyApplType),
-      args : {surveyId: {type: GraphQLString}},
-      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`productStoreSurveyAppls/find?surveyId=${survey.surveyId}`)
+      args : {},
+      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreSurveyAppls/find?surveyId=${survey.surveyId}`)
     },
     workEffortSurveyAppls: {
       type: new GraphQLList(WorkEffortSurveyApplType),
-      args : {surveyId: {type: GraphQLString}},
-      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`workEffortSurveyAppls/find?surveyId=${survey.surveyId}`)
+      args : {},
+      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortSurveyAppls/find?surveyId=${survey.surveyId}`)
     },
     surveyPages: {
       type: new GraphQLList(SurveyPageType),
-      args : {surveyId: {type: GraphQLString}},
-      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`surveyPages/find?surveyId=${survey.surveyId}`)
+      args : {},
+      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyPages/find?surveyId=${survey.surveyId}`)
     },
     surveyResponses: {
       type: new GraphQLList(SurveyResponseType),
-      args : {surveyId: {type: GraphQLString}},
-      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`surveyResponses/find?surveyId=${survey.surveyId}`)
+      args : {},
+      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyResponses/find?surveyId=${survey.surveyId}`)
     },
     surveyQuestionAppls: {
       type: new GraphQLList(SurveyQuestionApplType),
-      args : {surveyId: {type: GraphQLString}},
-      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`surveyQuestionAppls/find?surveyId=${survey.surveyId}`)
+      args : {},
+      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyQuestionAppls/find?surveyId=${survey.surveyId}`)
     },
     dataResources: {
       type: new GraphQLList(DataResourceType),
-      args : {surveyId: {type: GraphQLString}},
-      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`dataResources/find?surveyId=${survey.surveyId}`)
+      args : {},
+      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`content/dataResources/find?surveyId=${survey.surveyId}`)
     },
     surveyTriggers: {
       type: new GraphQLList(SurveyTriggerType),
-      args : {surveyId: {type: GraphQLString}},
-      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`surveyTriggers/find?surveyId=${survey.surveyId}`)
+      args : {},
+      resolve: (survey, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyTriggers/find?surveyId=${survey.surveyId}`)
     }
   })
 });

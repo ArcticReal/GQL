@@ -24,12 +24,12 @@ const CustRequestPartyType = new GraphQLObjectType({
     custRequest: {
       type: CustRequestType,
       args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestParty, args, {loaders}) => loaders.ofbiz.load(`custRequests/find?custRequestId=${custRequestParty.custRequestId}`)
+      resolve: (custRequestParty, args, {loaders}) => loaders.ofbiz.load(`order/custRequests/find?custRequestId=${custRequestParty.custRequestId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (custRequestParty, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${custRequestParty.partyId}`)
+      resolve: (custRequestParty, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${custRequestParty.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

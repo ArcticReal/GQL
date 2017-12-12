@@ -22,19 +22,19 @@ const OrderItemGroupType = new GraphQLObjectType({
     order: {
       type: OrderItemGroupType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemGroup, args, {loaders}) => loaders.ofbiz.load(`orderItemGroups/find?orderId=${orderItemGroup.orderId}`)
+      resolve: (orderItemGroup, args, {loaders}) => loaders.ofbiz.load(`order/orderItem/orderItemGroups/find?orderId=${orderItemGroup.orderId}`)
     },
     orderItemGroupSeqId: {type: GraphQLString},
     parentGroupSeqId: {type: GraphQLString},
     orderItemGroups: {
       type: new GraphQLList(OrderItemGroupType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemGroup, args, {loaders}) => loaders.ofbizArray.load(`orderItemGroups/find?orderId=${orderItemGroup.orderId}`)
+      args : {},
+      resolve: (orderItemGroup, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemGroups/find?orderId=${orderItemGroup.orderId}`)
     },
     orderItems: {
       type: new GraphQLList(OrderItemType),
-      args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemGroup, args, {loaders}) => loaders.ofbizArray.load(`orderItems/find?orderId=${orderItemGroup.orderId}`)
+      args : {},
+      resolve: (orderItemGroup, args, {loaders}) => loaders.ofbizArray.load(`order/orderItems/find?orderId=${orderItemGroup.orderId}`)
     }
   })
 });

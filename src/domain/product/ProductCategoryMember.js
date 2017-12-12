@@ -23,14 +23,14 @@ const ProductCategoryMemberType = new GraphQLObjectType({
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (productCategoryMember, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${productCategoryMember.productCategoryId}`)
+      resolve: (productCategoryMember, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${productCategoryMember.productCategoryId}`)
     },
     comments: {type: GraphQLString},
     quantity: {type: GraphQLFloat},
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productCategoryMember, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productCategoryMember.productId}`)
+      resolve: (productCategoryMember, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productCategoryMember.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}

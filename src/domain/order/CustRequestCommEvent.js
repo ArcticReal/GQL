@@ -22,12 +22,12 @@ const CustRequestCommEventType = new GraphQLObjectType({
     custRequest: {
       type: CustRequestType,
       args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestCommEvent, args, {loaders}) => loaders.ofbiz.load(`custRequests/find?custRequestId=${custRequestCommEvent.custRequestId}`)
+      resolve: (custRequestCommEvent, args, {loaders}) => loaders.ofbiz.load(`order/custRequests/find?custRequestId=${custRequestCommEvent.custRequestId}`)
     },
     communicationEvent: {
       type: CommunicationEventType,
       args : {communicationEventId: {type: GraphQLString}},
-      resolve: (custRequestCommEvent, args, {loaders}) => loaders.ofbiz.load(`communicationEvents/find?communicationEventId=${custRequestCommEvent.communicationEventId}`)
+      resolve: (custRequestCommEvent, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvents/find?communicationEventId=${custRequestCommEvent.communicationEventId}`)
     }
   })
 });

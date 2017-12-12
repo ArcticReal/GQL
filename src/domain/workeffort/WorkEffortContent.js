@@ -23,18 +23,18 @@ const WorkEffortContentType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortContent, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortContent.workEffortId}`)
+      resolve: (workEffortContent, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortContent.workEffortId}`)
     },
     fromDate: {type: GraphQLString},
     workEffortContentType: {
       type: WorkEffortContentTypeType,
       args : {workEffortContentTypeId: {type: GraphQLString}},
-      resolve: (workEffortContent, args, {loaders}) => loaders.ofbiz.load(`workEffortContentTypes/find?workEffortContentTypeId=${workEffortContent.workEffortContentTypeId}`)
+      resolve: (workEffortContent, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEffort/workEffortContentTypes/find?workEffortContentTypeId=${workEffortContent.workEffortContentTypeId}`)
     },
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (workEffortContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${workEffortContent.contentId}`)
+      resolve: (workEffortContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${workEffortContent.contentId}`)
     },
     thruDate: {type: GraphQLString}
   })

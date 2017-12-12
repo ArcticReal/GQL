@@ -22,25 +22,25 @@ const ShipmentTypeType = new GraphQLObjectType({
     parentType: {
       type: ShipmentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (shipmentType, args, {loaders}) => loaders.ofbiz.load(`shipmentTypes/find?shipmentTypeId=${shipmentType.parentTypeId}`)
+      resolve: (shipmentType, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentTypes/find?shipmentTypeId=${shipmentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     shipmentTypeId: {type: GraphQLString},
     shipmentTypes: {
       type: new GraphQLList(ShipmentTypeType),
-      args : {shipmentTypeId: {type: GraphQLString}},
-      resolve: (shipmentType, args, {loaders}) => loaders.ofbizArray.load(`shipmentTypes/find?shipmentTypeId=${shipmentType.shipmentTypeId}`)
+      args : {},
+      resolve: (shipmentType, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentTypes/find?shipmentTypeId=${shipmentType.shipmentTypeId}`)
     },
     shipments: {
       type: new GraphQLList(ShipmentType),
-      args : {shipmentTypeId: {type: GraphQLString}},
-      resolve: (shipmentType, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?shipmentTypeId=${shipmentType.shipmentTypeId}`)
+      args : {},
+      resolve: (shipmentType, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?shipmentTypeId=${shipmentType.shipmentTypeId}`)
     },
     shipmentTypeAttrs: {
       type: new GraphQLList(ShipmentTypeAttrType),
-      args : {shipmentTypeId: {type: GraphQLString}},
-      resolve: (shipmentType, args, {loaders}) => loaders.ofbizArray.load(`shipmentTypeAttrs/find?shipmentTypeId=${shipmentType.shipmentTypeId}`)
+      args : {},
+      resolve: (shipmentType, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentTypeAttrs/find?shipmentTypeId=${shipmentType.shipmentTypeId}`)
     }
   })
 });

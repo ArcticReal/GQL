@@ -21,20 +21,20 @@ const OrderItemAssocTypeType = new GraphQLObjectType({
     parentType: {
       type: OrderItemAssocTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (orderItemAssocType, args, {loaders}) => loaders.ofbiz.load(`orderItemAssocTypes/find?orderItemAssocTypeId=${orderItemAssocType.parentTypeId}`)
+      resolve: (orderItemAssocType, args, {loaders}) => loaders.ofbiz.load(`order/orderItem/orderItemAssocTypes/find?orderItemAssocTypeId=${orderItemAssocType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     orderItemAssocTypeId: {type: GraphQLString},
     orderItemAssocs: {
       type: new GraphQLList(OrderItemAssocType),
-      args : {orderItemAssocTypeId: {type: GraphQLString}},
-      resolve: (orderItemAssocType, args, {loaders}) => loaders.ofbizArray.load(`orderItemAssocs/find?orderItemAssocTypeId=${orderItemAssocType.orderItemAssocTypeId}`)
+      args : {},
+      resolve: (orderItemAssocType, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemAssocs/find?orderItemAssocTypeId=${orderItemAssocType.orderItemAssocTypeId}`)
     },
     orderItemAssocTypes: {
       type: new GraphQLList(OrderItemAssocTypeType),
-      args : {orderItemAssocTypeId: {type: GraphQLString}},
-      resolve: (orderItemAssocType, args, {loaders}) => loaders.ofbizArray.load(`orderItemAssocTypes/find?orderItemAssocTypeId=${orderItemAssocType.orderItemAssocTypeId}`)
+      args : {},
+      resolve: (orderItemAssocType, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemAssocTypes/find?orderItemAssocTypeId=${orderItemAssocType.orderItemAssocTypeId}`)
     }
   })
 });

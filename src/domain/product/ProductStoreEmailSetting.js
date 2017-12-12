@@ -27,7 +27,7 @@ const ProductStoreEmailSettingType = new GraphQLObjectType({
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStoreEmailSetting, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${productStoreEmailSetting.productStoreId}`)
+      resolve: (productStoreEmailSetting, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${productStoreEmailSetting.productStoreId}`)
     },
     contentType: {type: GraphQLString},
     ccAddress: {type: GraphQLString}

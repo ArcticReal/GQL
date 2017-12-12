@@ -27,50 +27,50 @@ const ContactMechTypeType = new GraphQLObjectType({
     parentType: {
       type: ContactMechTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (contactMechType, args, {loaders}) => loaders.ofbiz.load(`contactMechTypes/find?contactMechTypeId=${contactMechType.parentTypeId}`)
+      resolve: (contactMechType, args, {loaders}) => loaders.ofbiz.load(`party/contactMech/contactMechTypes/find?contactMechTypeId=${contactMechType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     contactMechTypeId: {type: GraphQLString},
     validContactMechRoles: {
       type: new GraphQLList(ValidContactMechRoleType),
-      args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`validContactMechRoles/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
+      args : {},
+      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`party/contactMech/validContactMechRoles/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
     },
     contactLists: {
       type: new GraphQLList(ContactListType),
-      args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`contactLists/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
+      args : {},
+      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`marketing/contactLists/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
     },
     contactMechTypePurposes: {
       type: new GraphQLList(ContactMechTypePurposeType),
-      args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`contactMechTypePurposes/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
+      args : {},
+      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`party/contactMech/contactMechTypePurposes/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
     },
     communicationEvents: {
       type: new GraphQLList(CommunicationEventType),
-      args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`communicationEvents/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
+      args : {},
+      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvents/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
     },
     contactMeches: {
       type: new GraphQLList(ContactMechType),
-      args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`contactMechs/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
+      args : {},
+      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`party/contactMechs/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
     },
     contactMechTypes: {
       type: new GraphQLList(ContactMechTypeType),
-      args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`contactMechTypes/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
+      args : {},
+      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`party/contactMech/contactMechTypes/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
     },
     contactMechTypeAttrs: {
       type: new GraphQLList(ContactMechTypeAttrType),
-      args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`contactMechTypeAttrs/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
+      args : {},
+      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`party/contactMech/contactMechTypeAttrs/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
     },
     communicationEventTypes: {
       type: new GraphQLList(CommunicationEventTypeType),
-      args : {contactMechTypeId: {type: GraphQLString}},
-      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`communicationEventTypes/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
+      args : {},
+      resolve: (contactMechType, args, {loaders}) => loaders.ofbizArray.load(`party/communicationEvent/communicationEventTypes/find?contactMechTypeId=${contactMechType.contactMechTypeId}`)
     }
   })
 });

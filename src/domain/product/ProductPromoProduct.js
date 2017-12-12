@@ -22,7 +22,7 @@ const ProductPromoProductType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productPromoProduct, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productPromoProduct.productId}`)
+      resolve: (productPromoProduct, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productPromoProduct.productId}`)
     },
     productPromoActionSeqId: {type: GraphQLString},
     productPromoRuleId: {type: GraphQLString},
@@ -30,7 +30,7 @@ const ProductPromoProductType = new GraphQLObjectType({
     productPromo: {
       type: ProductPromoType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (productPromoProduct, args, {loaders}) => loaders.ofbiz.load(`productPromos/find?productPromoId=${productPromoProduct.productPromoId}`)
+      resolve: (productPromoProduct, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromos/find?productPromoId=${productPromoProduct.productPromoId}`)
     },
     productPromoCondSeqId: {type: GraphQLString}
   })

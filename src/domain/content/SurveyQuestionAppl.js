@@ -25,20 +25,20 @@ const SurveyQuestionApplType = new GraphQLObjectType({
     surveyQuestion: {
       type: SurveyQuestionType,
       args : {surveyQuestionId: {type: GraphQLString}},
-      resolve: (surveyQuestionAppl, args, {loaders}) => loaders.ofbiz.load(`surveyQuestions/find?surveyQuestionId=${surveyQuestionAppl.surveyQuestionId}`)
+      resolve: (surveyQuestionAppl, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyQuestions/find?surveyQuestionId=${surveyQuestionAppl.surveyQuestionId}`)
     },
     externalFieldRef: {type: GraphQLString},
     survey: {
       type: SurveyType,
       args : {surveyId: {type: GraphQLString}},
-      resolve: (surveyQuestionAppl, args, {loaders}) => loaders.ofbiz.load(`surveys/find?surveyId=${surveyQuestionAppl.surveyId}`)
+      resolve: (surveyQuestionAppl, args, {loaders}) => loaders.ofbiz.load(`content/surveys/find?surveyId=${surveyQuestionAppl.surveyId}`)
     },
     requiredField: {type: GraphQLBoolean},
     sequenceNum: {type: GraphQLInt},
     withSurveyQuestion: {
       type: SurveyQuestionOptionType,
       args : {withSurveyQuestionId: {type: GraphQLString}},
-      resolve: (surveyQuestionAppl, args, {loaders}) => loaders.ofbiz.load(`surveyQuestionOptions/find?surveyQuestionId=${surveyQuestionAppl.withSurveyQuestionId}`)
+      resolve: (surveyQuestionAppl, args, {loaders}) => loaders.ofbiz.load(`content/survey/surveyQuestionOptions/find?surveyQuestionId=${surveyQuestionAppl.withSurveyQuestionId}`)
     },
     surveyPageSeqId: {type: GraphQLString},
     surveyMultiRespId: {type: GraphQLString},

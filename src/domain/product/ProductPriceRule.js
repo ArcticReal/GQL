@@ -28,18 +28,18 @@ const ProductPriceRuleType = new GraphQLObjectType({
     thruDate: {type: GraphQLString},
     productPriceConds: {
       type: new GraphQLList(ProductPriceCondType),
-      args : {productPriceRuleId: {type: GraphQLString}},
-      resolve: (productPriceRule, args, {loaders}) => loaders.ofbizArray.load(`productPriceConds/find?productPriceRuleId=${productPriceRule.productPriceRuleId}`)
+      args : {},
+      resolve: (productPriceRule, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPriceConds/find?productPriceRuleId=${productPriceRule.productPriceRuleId}`)
     },
     productPriceActions: {
       type: new GraphQLList(ProductPriceActionType),
-      args : {productPriceRuleId: {type: GraphQLString}},
-      resolve: (productPriceRule, args, {loaders}) => loaders.ofbizArray.load(`productPriceActions/find?productPriceRuleId=${productPriceRule.productPriceRuleId}`)
+      args : {},
+      resolve: (productPriceRule, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPriceActions/find?productPriceRuleId=${productPriceRule.productPriceRuleId}`)
     },
     marketingCampaignPrices: {
       type: new GraphQLList(MarketingCampaignPriceType),
-      args : {productPriceRuleId: {type: GraphQLString}},
-      resolve: (productPriceRule, args, {loaders}) => loaders.ofbizArray.load(`marketingCampaignPrices/find?productPriceRuleId=${productPriceRule.productPriceRuleId}`)
+      args : {},
+      resolve: (productPriceRule, args, {loaders}) => loaders.ofbizArray.load(`marketing/marketingCampaign/marketingCampaignPrices/find?productPriceRuleId=${productPriceRule.productPriceRuleId}`)
     }
   })
 });

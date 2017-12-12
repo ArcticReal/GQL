@@ -31,14 +31,14 @@ const ShipmentRouteSegmentType = new GraphQLObjectType({
     destTelecomNumber: {
       type: TelecomNumberType,
       args : {destTelecomNumberId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`telecomNumbers/find?contactMechId=${shipmentRouteSegment.destTelecomNumberId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`party/telecomNumbers/find?contactMechId=${shipmentRouteSegment.destTelecomNumberId}`)
     },
     carrierRestrictionCodes: {type: GraphQLString},
     trackingIdNumber: {type: GraphQLString},
     delivery: {
       type: DeliveryType,
       args : {deliveryId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`deliverys/find?deliveryId=${shipmentRouteSegment.deliveryId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`shipment/deliverys/find?deliveryId=${shipmentRouteSegment.deliveryId}`)
     },
     carrierServiceStatusId: {type: GraphQLString},
     actualStartDate: {type: GraphQLString},
@@ -46,7 +46,7 @@ const ShipmentRouteSegmentType = new GraphQLObjectType({
     shipmentMethodType: {
       type: ShipmentMethodTypeType,
       args : {shipmentMethodTypeId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`shipmentMethodTypes/find?shipmentMethodTypeId=${shipmentRouteSegment.shipmentMethodTypeId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentMethodTypes/find?shipmentMethodTypeId=${shipmentRouteSegment.shipmentMethodTypeId}`)
     },
     actualCost: {type: GraphQLFloat},
     upsHighValueReport: {type: GraphQLString/*this was a byte Array TODO find a solution*/},
@@ -55,7 +55,7 @@ const ShipmentRouteSegmentType = new GraphQLObjectType({
     originContactMech: {
       type: PostalAddressType,
       args : {originContactMechId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`postalAddresss/find?contactMechId=${shipmentRouteSegment.originContactMechId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`party/postalAddresss/find?contactMechId=${shipmentRouteSegment.originContactMechId}`)
     },
     estimatedStartDate: {type: GraphQLString},
     carrierRestrictionDesc: {type: GraphQLString},
@@ -65,18 +65,18 @@ const ShipmentRouteSegmentType = new GraphQLObjectType({
     originFacility: {
       type: FacilityType,
       args : {originFacilityId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${shipmentRouteSegment.originFacilityId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${shipmentRouteSegment.originFacilityId}`)
     },
     shipmentRouteSegmentId: {type: GraphQLString},
     destFacility: {
       type: FacilityType,
       args : {destFacilityId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${shipmentRouteSegment.destFacilityId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${shipmentRouteSegment.destFacilityId}`)
     },
     carrierParty: {
       type: PartyType,
       args : {carrierPartyId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${shipmentRouteSegment.carrierPartyId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${shipmentRouteSegment.carrierPartyId}`)
     },
     lastUpdatedDate: {type: GraphQLString},
     currencyUomId: {type: GraphQLString},
@@ -84,18 +84,18 @@ const ShipmentRouteSegmentType = new GraphQLObjectType({
     shipment: {
       type: ShipmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`shipments/find?shipmentId=${shipmentRouteSegment.shipmentId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`/shipments/find?shipmentId=${shipmentRouteSegment.shipmentId}`)
     },
     originTelecomNumber: {
       type: TelecomNumberType,
       args : {originTelecomNumberId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`telecomNumbers/find?contactMechId=${shipmentRouteSegment.originTelecomNumberId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`party/telecomNumbers/find?contactMechId=${shipmentRouteSegment.originTelecomNumberId}`)
     },
     thirdPartyCountryGeoCode: {type: GraphQLString},
     destContactMech: {
       type: PostalAddressType,
       args : {destContactMechId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`postalAddresss/find?contactMechId=${shipmentRouteSegment.destContactMechId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`party/postalAddresss/find?contactMechId=${shipmentRouteSegment.destContactMechId}`)
     },
     estimatedArrivalDate: {type: GraphQLString},
     homeDeliveryType: {type: GraphQLString},
@@ -103,8 +103,8 @@ const ShipmentRouteSegmentType = new GraphQLObjectType({
     updatedByUserLoginId: {type: GraphQLString},
     shipmentPackageRouteSegs: {
       type: new GraphQLList(ShipmentPackageRouteSegType),
-      args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbizArray.load(`shipmentPackageRouteSegs/find?shipmentId=${shipmentRouteSegment.shipmentId}`)
+      args : {},
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentPackageRouteSegs/find?shipmentId=${shipmentRouteSegment.shipmentId}`)
     }
   })
 });

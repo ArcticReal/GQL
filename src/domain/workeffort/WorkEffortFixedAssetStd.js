@@ -22,12 +22,12 @@ const WorkEffortFixedAssetStdType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortFixedAssetStd, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortFixedAssetStd.workEffortId}`)
+      resolve: (workEffortFixedAssetStd, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortFixedAssetStd.workEffortId}`)
     },
     fixedAssetType: {
       type: FixedAssetTypeType,
       args : {fixedAssetTypeId: {type: GraphQLString}},
-      resolve: (workEffortFixedAssetStd, args, {loaders}) => loaders.ofbiz.load(`fixedAssetTypes/find?fixedAssetTypeId=${workEffortFixedAssetStd.fixedAssetTypeId}`)
+      resolve: (workEffortFixedAssetStd, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAsset/fixedAssetTypes/find?fixedAssetTypeId=${workEffortFixedAssetStd.fixedAssetTypeId}`)
     },
     estimatedQuantity: {type: GraphQLFloat},
     estimatedCost: {type: GraphQLFloat},

@@ -21,8 +21,8 @@ const TrainingRequestType = new GraphQLObjectType({
     trainingRequestId: {type: GraphQLString},
     personTrainings: {
       type: new GraphQLList(PersonTrainingType),
-      args : {trainingRequestId: {type: GraphQLString}},
-      resolve: (trainingRequest, args, {loaders}) => loaders.ofbizArray.load(`personTrainings/find?trainingRequestId=${trainingRequest.trainingRequestId}`)
+      args : {},
+      resolve: (trainingRequest, args, {loaders}) => loaders.ofbizArray.load(`humanres/personTrainings/find?trainingRequestId=${trainingRequest.trainingRequestId}`)
     }
   })
 });

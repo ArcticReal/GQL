@@ -24,17 +24,17 @@ const FacilityPartyType = new GraphQLObjectType({
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (facilityParty, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${facilityParty.roleTypeId}`)
+      resolve: (facilityParty, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${facilityParty.roleTypeId}`)
     },
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (facilityParty, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${facilityParty.facilityId}`)
+      resolve: (facilityParty, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${facilityParty.facilityId}`)
     },
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (facilityParty, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${facilityParty.partyId}`)
+      resolve: (facilityParty, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${facilityParty.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

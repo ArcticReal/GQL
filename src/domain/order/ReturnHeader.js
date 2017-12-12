@@ -35,28 +35,28 @@ const ReturnHeaderType = new GraphQLObjectType({
     fromParty: {
       type: PartyType,
       args : {fromPartyId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${returnHeader.fromPartyId}`)
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${returnHeader.fromPartyId}`)
     },
     entryDate: {type: GraphQLString},
     originContactMech: {
       type: ContactMechType,
       args : {originContactMechId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${returnHeader.originContactMechId}`)
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${returnHeader.originContactMechId}`)
     },
     billingAccount: {
       type: BillingAccountType,
       args : {billingAccountId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`billingAccounts/find?billingAccountId=${returnHeader.billingAccountId}`)
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`accounting/billingAccounts/find?billingAccountId=${returnHeader.billingAccountId}`)
     },
     returnHeaderType: {
       type: ReturnHeaderTypeType,
       args : {returnHeaderTypeId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`returnHeaderTypes/find?returnHeaderTypeId=${returnHeader.returnHeaderTypeId}`)
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`order/returnHeader/returnHeaderTypes/find?returnHeaderTypeId=${returnHeader.returnHeaderTypeId}`)
     },
     finAccount: {
       type: FinAccountType,
       args : {finAccountId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`finAccounts/find?finAccountId=${returnHeader.finAccountId}`)
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`accounting/finAccounts/find?finAccountId=${returnHeader.finAccountId}`)
     },
     currencyUomId: {type: GraphQLString},
     statusId: {type: GraphQLString},
@@ -64,60 +64,60 @@ const ReturnHeaderType = new GraphQLObjectType({
     paymentMethod: {
       type: PaymentMethodType,
       args : {paymentMethodId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`paymentMethods/find?paymentMethodId=${returnHeader.paymentMethodId}`)
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentMethods/find?paymentMethodId=${returnHeader.paymentMethodId}`)
     },
     needsInventoryReceive: {type: GraphQLBoolean},
     returnId: {type: GraphQLString},
     toParty: {
       type: PartyType,
       args : {toPartyId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${returnHeader.toPartyId}`)
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${returnHeader.toPartyId}`)
     },
     destinationFacility: {
       type: FacilityType,
       args : {destinationFacilityId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${returnHeader.destinationFacilityId}`)
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${returnHeader.destinationFacilityId}`)
     },
     supplierRmaId: {type: GraphQLString},
     shipments: {
       type: new GraphQLList(ShipmentType),
-      args : {returnId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?returnId=${returnHeader.returnId}`)
+      args : {},
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?returnId=${returnHeader.returnId}`)
     },
     returnItems: {
       type: new GraphQLList(ReturnItemType),
-      args : {returnId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`returnItems/find?returnId=${returnHeader.returnId}`)
+      args : {},
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`order/returnItems/find?returnId=${returnHeader.returnId}`)
     },
     returnStatuses: {
       type: new GraphQLList(ReturnStatusType),
-      args : {returnId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`returnStatuss/find?returnId=${returnHeader.returnId}`)
+      args : {},
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`order/returnStatuss/find?returnId=${returnHeader.returnId}`)
     },
     returnItemShipments: {
       type: new GraphQLList(ReturnItemShipmentType),
-      args : {returnId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`returnItemShipments/find?returnId=${returnHeader.returnId}`)
+      args : {},
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`order/returnItem/returnItemShipments/find?returnId=${returnHeader.returnId}`)
     },
     returnItemBillings: {
       type: new GraphQLList(ReturnItemBillingType),
-      args : {returnId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`returnItemBillings/find?returnId=${returnHeader.returnId}`)
+      args : {},
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`order/returnItem/returnItemBillings/find?returnId=${returnHeader.returnId}`)
     },
     returnAdjustments: {
       type: new GraphQLList(ReturnAdjustmentType),
-      args : {returnId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`returnAdjustments/find?returnId=${returnHeader.returnId}`)
+      args : {},
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`order/returnAdjustments/find?returnId=${returnHeader.returnId}`)
     },
     returnContactMeches: {
       type: new GraphQLList(ReturnContactMechType),
-      args : {returnId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`returnContactMechs/find?returnId=${returnHeader.returnId}`)
+      args : {},
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`order/returnContactMechs/find?returnId=${returnHeader.returnId}`)
     },
     trackingCodeOrderReturns: {
       type: new GraphQLList(TrackingCodeOrderReturnType),
-      args : {returnId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`trackingCodeOrderReturns/find?returnId=${returnHeader.returnId}`)
+      args : {},
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`marketing/trackingCode/trackingCodeOrderReturns/find?returnId=${returnHeader.returnId}`)
     }
   })
 });

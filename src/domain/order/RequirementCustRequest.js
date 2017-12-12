@@ -22,12 +22,12 @@ const RequirementCustRequestType = new GraphQLObjectType({
     custRequest: {
       type: CustRequestItemType,
       args : {custRequestId: {type: GraphQLString}},
-      resolve: (requirementCustRequest, args, {loaders}) => loaders.ofbiz.load(`custRequestItems/find?custRequestId=${requirementCustRequest.custRequestId}`)
+      resolve: (requirementCustRequest, args, {loaders}) => loaders.ofbiz.load(`order/custRequest/custRequestItems/find?custRequestId=${requirementCustRequest.custRequestId}`)
     },
     requirement: {
       type: RequirementType,
       args : {requirementId: {type: GraphQLString}},
-      resolve: (requirementCustRequest, args, {loaders}) => loaders.ofbiz.load(`requirements/find?requirementId=${requirementCustRequest.requirementId}`)
+      resolve: (requirementCustRequest, args, {loaders}) => loaders.ofbiz.load(`order/requirements/find?requirementId=${requirementCustRequest.requirementId}`)
     },
     custRequestItemSeqId: {type: GraphQLString}
   })

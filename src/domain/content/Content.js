@@ -53,24 +53,24 @@ const ContentType = new GraphQLObjectType({
     ownerContent: {
       type: ContentType,
       args : {ownerContentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${content.ownerContentId}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${content.ownerContentId}`)
     },
     templateDataResource: {
       type: DataResourceType,
       args : {templateDataResourceId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`dataResources/find?dataResourceId=${content.templateDataResourceId}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`content/dataResources/find?dataResourceId=${content.templateDataResourceId}`)
     },
     lastModifiedDate: {type: GraphQLString},
     instanceOfContent: {
       type: ContentType,
       args : {instanceOfContentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${content.instanceOfContentId}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${content.instanceOfContentId}`)
     },
     contentId: {type: GraphQLString},
     contentType: {
       type: ContentTypeType,
       args : {contentTypeId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`contentTypes/find?contentTypeId=${content.contentTypeId}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`content/content/contentTypes/find?contentTypeId=${content.contentTypeId}`)
     },
     description: {type: GraphQLString},
     mimeTypeId: {type: GraphQLString},
@@ -80,7 +80,7 @@ const ContentType = new GraphQLObjectType({
     characterSet: {
       type: CharacterSetType,
       args : {characterSetId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`characterSets/find?characterSetId=${content.characterSetId}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`content/characterSets/find?characterSetId=${content.characterSetId}`)
     },
     contentName: {type: GraphQLString},
     privilegeEnumId: {type: GraphQLString},
@@ -88,7 +88,7 @@ const ContentType = new GraphQLObjectType({
     lastModifiedByUserLogin: {
       type: UserLoginType,
       args : {lastModifiedByUserLogin: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${content.lastModifiedByUserLogin}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${content.lastModifiedByUserLogin}`)
     },
     createdDate: {type: GraphQLString},
     statusId: {type: GraphQLString},
@@ -96,168 +96,168 @@ const ContentType = new GraphQLObjectType({
     dataResource: {
       type: DataResourceType,
       args : {dataResourceId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`dataResources/find?dataResourceId=${content.dataResourceId}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`content/dataResources/find?dataResourceId=${content.dataResourceId}`)
     },
     decoratorContent: {
       type: ContentType,
       args : {decoratorContentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${content.decoratorContentId}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${content.decoratorContentId}`)
     },
     createdByUserLogin: {
       type: UserLoginType,
       args : {createdByUserLogin: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${content.createdByUserLogin}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${content.createdByUserLogin}`)
     },
     childBranchCount: {type: GraphQLInt},
     webSiteRoles: {
       type: new GraphQLList(WebSiteRoleType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`webSiteRoles/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/webSiteRoles/find?contentId=${content.contentId}`)
     },
     commEventContentAssocs: {
       type: new GraphQLList(CommEventContentAssocType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`commEventContentAssocs/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`party/commEventContentAssocs/find?contentId=${content.contentId}`)
     },
     prodConfItemContents: {
       type: new GraphQLList(ProdConfItemContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`prodConfItemContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`product/prodConfItemContents/find?contentId=${content.contentId}`)
     },
     webSitePublishPoints: {
       type: new GraphQLList(WebSitePublishPointType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`webSitePublishPoints/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/webSitePublishPoints/find?contentId=${content.contentId}`)
     },
     surveyTriggers: {
       type: new GraphQLList(SurveyTriggerType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`surveyTriggers/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyTriggers/find?contentId=${content.contentId}`)
     },
     contentAssocs: {
       type: new GraphQLList(ContentAssocType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contentAssocs/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentAssocs/find?contentId=${content.contentId}`)
     },
     contentAttributes: {
       type: new GraphQLList(ContentAttributeType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contentAttributes/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentAttributes/find?contentId=${content.contentId}`)
     },
     contentPurposes: {
       type: new GraphQLList(ContentPurposeType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contentPurposes/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentPurposes/find?contentId=${content.contentId}`)
     },
     surveyResponseAnswers: {
       type: new GraphQLList(SurveyResponseAnswerType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`surveyResponseAnswers/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyResponseAnswers/find?contentId=${content.contentId}`)
     },
     partyContents: {
       type: new GraphQLList(PartyContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`partyContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyContents/find?contentId=${content.contentId}`)
     },
     productCategoryContents: {
       type: new GraphQLList(ProductCategoryContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`productCategoryContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`product/product/productCategoryContents/find?contentId=${content.contentId}`)
     },
     workEffortContents: {
       type: new GraphQLList(WorkEffortContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`workEffortContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortContents/find?contentId=${content.contentId}`)
     },
     webSitePathAliases: {
       type: new GraphQLList(WebSitePathAliasType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`webSitePathAliass/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/webSitePathAliass/find?contentId=${content.contentId}`)
     },
     productContents: {
       type: new GraphQLList(ProductContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`productContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`product/product/productContents/find?contentId=${content.contentId}`)
     },
     contentMetaDatas: {
       type: new GraphQLList(ContentMetaDataType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contentMetaDatas/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentMetaDatas/find?contentId=${content.contentId}`)
     },
     contentRevisions: {
       type: new GraphQLList(ContentRevisionType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contentRevisions/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentRevisions/find?contentId=${content.contentId}`)
     },
     custRequestContents: {
       type: new GraphQLList(CustRequestContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`custRequestContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestContents/find?contentId=${content.contentId}`)
     },
     vendors: {
       type: new GraphQLList(VendorType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`vendors/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`party/vendors/find?contentId=${content.contentId}`)
     },
     contentKeywords: {
       type: new GraphQLList(ContentKeywordType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contentKeywords/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentKeywords/find?contentId=${content.contentId}`)
     },
     contents: {
       type: new GraphQLList(ContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`/contents/find?contentId=${content.contentId}`)
     },
     invoiceContents: {
       type: new GraphQLList(InvoiceContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`invoiceContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceContents/find?contentId=${content.contentId}`)
     },
     paymentContents: {
       type: new GraphQLList(PaymentContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`paymentContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentContents/find?contentId=${content.contentId}`)
     },
     facilityContents: {
       type: new GraphQLList(FacilityContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`facilityContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityContents/find?contentId=${content.contentId}`)
     },
     webSiteContents: {
       type: new GraphQLList(WebSiteContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`webSiteContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/content/webSiteContents/find?contentId=${content.contentId}`)
     },
     orderContents: {
       type: new GraphQLList(OrderContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`orderContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`order/orderContents/find?contentId=${content.contentId}`)
     },
     productPromoContents: {
       type: new GraphQLList(ProductPromoContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`productPromoContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPromoContents/find?contentId=${content.contentId}`)
     },
     contentApprovals: {
       type: new GraphQLList(ContentApprovalType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contentApprovals/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentApprovals/find?contentId=${content.contentId}`)
     },
     contentRoles: {
       type: new GraphQLList(ContentRoleType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contentRoles/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`content/content/contentRoles/find?contentId=${content.contentId}`)
     },
     agreementContents: {
       type: new GraphQLList(AgreementContentType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`agreementContents/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementContents/find?contentId=${content.contentId}`)
     },
     subscriptionResources: {
       type: new GraphQLList(SubscriptionResourceType),
-      args : {contentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`subscriptionResources/find?contentId=${content.contentId}`)
+      args : {},
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`product/subscription/subscriptionResources/find?contentId=${content.contentId}`)
     }
   })
 });

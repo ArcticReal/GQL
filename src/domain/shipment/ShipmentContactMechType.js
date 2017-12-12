@@ -22,8 +22,8 @@ const ShipmentContactMechTypeType = new GraphQLObjectType({
     shipmentContactMechTypeId: {type: GraphQLString},
     shipmentContactMeches: {
       type: new GraphQLList(ShipmentContactMechType),
-      args : {shipmentContactMechTypeId: {type: GraphQLString}},
-      resolve: (shipmentContactMechType, args, {loaders}) => loaders.ofbizArray.load(`shipmentContactMechs/find?shipmentContactMechTypeId=${shipmentContactMechType.shipmentContactMechTypeId}`)
+      args : {},
+      resolve: (shipmentContactMechType, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentContactMechs/find?shipmentContactMechTypeId=${shipmentContactMechType.shipmentContactMechTypeId}`)
     }
   })
 });

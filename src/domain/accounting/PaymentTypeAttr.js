@@ -21,7 +21,7 @@ const PaymentTypeAttrType = new GraphQLObjectType({
     paymentType: {
       type: PaymentTypeType,
       args : {paymentTypeId: {type: GraphQLString}},
-      resolve: (paymentTypeAttr, args, {loaders}) => loaders.ofbiz.load(`paymentTypes/find?paymentTypeId=${paymentTypeAttr.paymentTypeId}`)
+      resolve: (paymentTypeAttr, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentTypes/find?paymentTypeId=${paymentTypeAttr.paymentTypeId}`)
     },
     description: {type: GraphQLString},
     attrName: {type: GraphQLString}

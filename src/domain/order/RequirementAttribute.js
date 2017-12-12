@@ -23,7 +23,7 @@ const RequirementAttributeType = new GraphQLObjectType({
     requirement: {
       type: RequirementType,
       args : {requirementId: {type: GraphQLString}},
-      resolve: (requirementAttribute, args, {loaders}) => loaders.ofbiz.load(`requirements/find?requirementId=${requirementAttribute.requirementId}`)
+      resolve: (requirementAttribute, args, {loaders}) => loaders.ofbiz.load(`order/requirements/find?requirementId=${requirementAttribute.requirementId}`)
     },
     attrName: {type: GraphQLString}
   })

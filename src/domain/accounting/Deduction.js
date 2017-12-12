@@ -23,12 +23,12 @@ const DeductionType = new GraphQLObjectType({
     payment: {
       type: PaymentType,
       args : {paymentId: {type: GraphQLString}},
-      resolve: (deduction, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${deduction.paymentId}`)
+      resolve: (deduction, args, {loaders}) => loaders.ofbiz.load(`accounting/payments/find?paymentId=${deduction.paymentId}`)
     },
     deductionType: {
       type: DeductionTypeType,
       args : {deductionTypeId: {type: GraphQLString}},
-      resolve: (deduction, args, {loaders}) => loaders.ofbiz.load(`deductionTypes/find?deductionTypeId=${deduction.deductionTypeId}`)
+      resolve: (deduction, args, {loaders}) => loaders.ofbiz.load(`accounting/deduction/deductionTypes/find?deductionTypeId=${deduction.deductionTypeId}`)
     },
     deductionId: {type: GraphQLString}
   })

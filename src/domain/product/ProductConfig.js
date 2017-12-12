@@ -22,14 +22,14 @@ const ProductConfigType = new GraphQLObjectType({
     configItem: {
       type: ProductConfigItemType,
       args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfig, args, {loaders}) => loaders.ofbiz.load(`productConfigItems/find?configItemId=${productConfig.configItemId}`)
+      resolve: (productConfig, args, {loaders}) => loaders.ofbiz.load(`product/product/productConfigItems/find?configItemId=${productConfig.configItemId}`)
     },
     fromDate: {type: GraphQLString},
     longDescription: {type: GraphQLString},
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productConfig, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productConfig.productId}`)
+      resolve: (productConfig, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productConfig.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     defaultConfigOptionId: {type: GraphQLString},

@@ -34,7 +34,7 @@ const EmplPositionType = new GraphQLObjectType({
     budget: {
       type: BudgetItemType,
       args : {budgetId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbiz.load(`budgetItems/find?budgetId=${emplPosition.budgetId}`)
+      resolve: (emplPosition, args, {loaders}) => loaders.ofbiz.load(`accounting/budget/budgetItems/find?budgetId=${emplPosition.budgetId}`)
     },
     salaryFlag: {type: GraphQLBoolean},
     statusId: {type: GraphQLString},
@@ -42,27 +42,27 @@ const EmplPositionType = new GraphQLObjectType({
     emplPositionType: {
       type: EmplPositionTypeType,
       args : {emplPositionTypeId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbiz.load(`emplPositionTypes/find?emplPositionTypeId=${emplPosition.emplPositionTypeId}`)
+      resolve: (emplPosition, args, {loaders}) => loaders.ofbiz.load(`humanres/emplPosition/emplPositionTypes/find?emplPositionTypeId=${emplPosition.emplPositionTypeId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${emplPosition.partyId}`)
+      resolve: (emplPosition, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${emplPosition.partyId}`)
     },
     emplPositionFulfillments: {
       type: new GraphQLList(EmplPositionFulfillmentType),
-      args : {emplPositionId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbizArray.load(`emplPositionFulfillments/find?emplPositionId=${emplPosition.emplPositionId}`)
+      args : {},
+      resolve: (emplPosition, args, {loaders}) => loaders.ofbizArray.load(`humanres/emplPosition/emplPositionFulfillments/find?emplPositionId=${emplPosition.emplPositionId}`)
     },
     emplPositionReportingStructs: {
       type: new GraphQLList(EmplPositionReportingStructType),
-      args : {emplPositionId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbizArray.load(`emplPositionReportingStructs/find?emplPositionId=${emplPosition.emplPositionId}`)
+      args : {},
+      resolve: (emplPosition, args, {loaders}) => loaders.ofbizArray.load(`humanres/emplPosition/emplPositionReportingStructs/find?emplPositionId=${emplPosition.emplPositionId}`)
     },
     emplPositionResponsibilities: {
       type: new GraphQLList(EmplPositionResponsibilityType),
-      args : {emplPositionId: {type: GraphQLString}},
-      resolve: (emplPosition, args, {loaders}) => loaders.ofbizArray.load(`emplPositionResponsibilitys/find?emplPositionId=${emplPosition.emplPositionId}`)
+      args : {},
+      resolve: (emplPosition, args, {loaders}) => loaders.ofbizArray.load(`humanres/emplPosition/emplPositionResponsibilitys/find?emplPositionId=${emplPosition.emplPositionId}`)
     }
   })
 });

@@ -24,12 +24,12 @@ const ProductFeatureGroupApplType = new GraphQLObjectType({
     productFeature: {
       type: ProductFeatureType,
       args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeatureGroupAppl, args, {loaders}) => loaders.ofbiz.load(`productFeatures/find?productFeatureId=${productFeatureGroupAppl.productFeatureId}`)
+      resolve: (productFeatureGroupAppl, args, {loaders}) => loaders.ofbiz.load(`product/product/productFeatures/find?productFeatureId=${productFeatureGroupAppl.productFeatureId}`)
     },
     productFeatureGroup: {
       type: ProductFeatureGroupType,
       args : {productFeatureGroupId: {type: GraphQLString}},
-      resolve: (productFeatureGroupAppl, args, {loaders}) => loaders.ofbiz.load(`productFeatureGroups/find?productFeatureGroupId=${productFeatureGroupAppl.productFeatureGroupId}`)
+      resolve: (productFeatureGroupAppl, args, {loaders}) => loaders.ofbiz.load(`product/product/productFeatureGroups/find?productFeatureGroupId=${productFeatureGroupAppl.productFeatureGroupId}`)
     },
     thruDate: {type: GraphQLString}
   })

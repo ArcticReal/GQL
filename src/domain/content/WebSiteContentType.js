@@ -21,20 +21,20 @@ const WebSiteContentTypeType = new GraphQLObjectType({
     parentType: {
       type: WebSiteContentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (webSiteContentType, args, {loaders}) => loaders.ofbiz.load(`webSiteContentTypes/find?webSiteContentTypeId=${webSiteContentType.parentTypeId}`)
+      resolve: (webSiteContentType, args, {loaders}) => loaders.ofbiz.load(`content/content/webSiteContentTypes/find?webSiteContentTypeId=${webSiteContentType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     webSiteContentTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     webSiteContents: {
       type: new GraphQLList(WebSiteContentType),
-      args : {webSiteContentTypeId: {type: GraphQLString}},
-      resolve: (webSiteContentType, args, {loaders}) => loaders.ofbizArray.load(`webSiteContents/find?webSiteContentTypeId=${webSiteContentType.webSiteContentTypeId}`)
+      args : {},
+      resolve: (webSiteContentType, args, {loaders}) => loaders.ofbizArray.load(`content/content/webSiteContents/find?webSiteContentTypeId=${webSiteContentType.webSiteContentTypeId}`)
     },
     webSiteContentTypes: {
       type: new GraphQLList(WebSiteContentTypeType),
-      args : {webSiteContentTypeId: {type: GraphQLString}},
-      resolve: (webSiteContentType, args, {loaders}) => loaders.ofbizArray.load(`webSiteContentTypes/find?webSiteContentTypeId=${webSiteContentType.webSiteContentTypeId}`)
+      args : {},
+      resolve: (webSiteContentType, args, {loaders}) => loaders.ofbizArray.load(`content/content/webSiteContentTypes/find?webSiteContentTypeId=${webSiteContentType.webSiteContentTypeId}`)
     }
   })
 });

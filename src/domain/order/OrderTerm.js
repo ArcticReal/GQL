@@ -25,21 +25,21 @@ const OrderTermType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderTerm, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderTerm.orderId}`)
+      resolve: (orderTerm, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderTerm.orderId}`)
     },
     termDays: {type: GraphQLInt},
     termType: {
       type: TermTypeType,
       args : {termTypeId: {type: GraphQLString}},
-      resolve: (orderTerm, args, {loaders}) => loaders.ofbiz.load(`termTypes/find?termTypeId=${orderTerm.termTypeId}`)
+      resolve: (orderTerm, args, {loaders}) => loaders.ofbiz.load(`party/termTypes/find?termTypeId=${orderTerm.termTypeId}`)
     },
     description: {type: GraphQLString},
     uomId: {type: GraphQLString},
     termValue: {type: GraphQLFloat},
     orderTermAttributes: {
       type: new GraphQLList(OrderTermAttributeType),
-      args : {termTypeId: {type: GraphQLString}},
-      resolve: (orderTerm, args, {loaders}) => loaders.ofbizArray.load(`orderTermAttributes/find?termTypeId=${orderTerm.termTypeId}`)
+      args : {},
+      resolve: (orderTerm, args, {loaders}) => loaders.ofbizArray.load(`order/orderTerm/orderTermAttributes/find?termTypeId=${orderTerm.termTypeId}`)
     }
   })
 });

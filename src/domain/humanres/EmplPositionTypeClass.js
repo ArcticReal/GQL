@@ -24,12 +24,12 @@ const EmplPositionTypeClassType = new GraphQLObjectType({
     emplPositionType: {
       type: EmplPositionTypeType,
       args : {emplPositionTypeId: {type: GraphQLString}},
-      resolve: (emplPositionTypeClass, args, {loaders}) => loaders.ofbiz.load(`emplPositionTypes/find?emplPositionTypeId=${emplPositionTypeClass.emplPositionTypeId}`)
+      resolve: (emplPositionTypeClass, args, {loaders}) => loaders.ofbiz.load(`humanres/emplPosition/emplPositionTypes/find?emplPositionTypeId=${emplPositionTypeClass.emplPositionTypeId}`)
     },
     emplPositionClassType: {
       type: EmplPositionClassTypeType,
       args : {emplPositionClassTypeId: {type: GraphQLString}},
-      resolve: (emplPositionTypeClass, args, {loaders}) => loaders.ofbiz.load(`emplPositionClassTypes/find?emplPositionClassTypeId=${emplPositionTypeClass.emplPositionClassTypeId}`)
+      resolve: (emplPositionTypeClass, args, {loaders}) => loaders.ofbiz.load(`humanres/emplPosition/emplPositionClassTypes/find?emplPositionClassTypeId=${emplPositionTypeClass.emplPositionClassTypeId}`)
     },
     thruDate: {type: GraphQLString}
   })

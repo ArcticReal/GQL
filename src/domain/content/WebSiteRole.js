@@ -24,7 +24,7 @@ const WebSiteRoleType = new GraphQLObjectType({
     party: {
       type: PartyRoleType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (webSiteRole, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${webSiteRole.partyId}`)
+      resolve: (webSiteRole, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${webSiteRole.partyId}`)
     },
     webSiteId: {type: GraphQLString},
     thruDate: {type: GraphQLString}

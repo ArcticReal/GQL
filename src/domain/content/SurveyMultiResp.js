@@ -22,14 +22,14 @@ const SurveyMultiRespType = new GraphQLObjectType({
     survey: {
       type: SurveyType,
       args : {surveyId: {type: GraphQLString}},
-      resolve: (surveyMultiResp, args, {loaders}) => loaders.ofbiz.load(`surveys/find?surveyId=${surveyMultiResp.surveyId}`)
+      resolve: (surveyMultiResp, args, {loaders}) => loaders.ofbiz.load(`content/surveys/find?surveyId=${surveyMultiResp.surveyId}`)
     },
     surveyMultiRespId: {type: GraphQLString},
     multiRespTitle: {type: GraphQLString},
     surveyMultiRespColumns: {
       type: new GraphQLList(SurveyMultiRespColumnType),
-      args : {surveyId: {type: GraphQLString}},
-      resolve: (surveyMultiResp, args, {loaders}) => loaders.ofbizArray.load(`surveyMultiRespColumns/find?surveyId=${surveyMultiResp.surveyId}`)
+      args : {},
+      resolve: (surveyMultiResp, args, {loaders}) => loaders.ofbizArray.load(`content/survey/surveyMultiRespColumns/find?surveyId=${surveyMultiResp.surveyId}`)
     }
   })
 });

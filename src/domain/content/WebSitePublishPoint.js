@@ -24,7 +24,7 @@ const WebSitePublishPointType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (webSitePublishPoint, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${webSitePublishPoint.contentId}`)
+      resolve: (webSitePublishPoint, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${webSitePublishPoint.contentId}`)
     },
     contentDept: {type: GraphQLString},
     logo: {type: GraphQLString},

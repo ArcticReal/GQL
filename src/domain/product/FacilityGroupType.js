@@ -22,8 +22,8 @@ const FacilityGroupTypeType = new GraphQLObjectType({
     description: {type: GraphQLString},
     facilityGroups: {
       type: new GraphQLList(FacilityGroupType),
-      args : {facilityGroupTypeId: {type: GraphQLString}},
-      resolve: (facilityGroupType, args, {loaders}) => loaders.ofbizArray.load(`facilityGroups/find?facilityGroupTypeId=${facilityGroupType.facilityGroupTypeId}`)
+      args : {},
+      resolve: (facilityGroupType, args, {loaders}) => loaders.ofbizArray.load(`product/facility/facilityGroups/find?facilityGroupTypeId=${facilityGroupType.facilityGroupTypeId}`)
     }
   })
 });

@@ -27,7 +27,7 @@ const CustRequestItemType = new GraphQLObjectType({
     custRequestResolution: {
       type: CustRequestResolutionType,
       args : {custRequestResolutionId: {type: GraphQLString}},
-      resolve: (custRequestItem, args, {loaders}) => loaders.ofbiz.load(`custRequestResolutions/find?custRequestResolutionId=${custRequestItem.custRequestResolutionId}`)
+      resolve: (custRequestItem, args, {loaders}) => loaders.ofbiz.load(`order/custRequest/custRequestResolutions/find?custRequestResolutionId=${custRequestItem.custRequestResolutionId}`)
     },
     quantity: {type: GraphQLFloat},
     reservLength: {type: GraphQLFloat},
@@ -35,7 +35,7 @@ const CustRequestItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (custRequestItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${custRequestItem.productId}`)
+      resolve: (custRequestItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${custRequestItem.productId}`)
     },
     reservPersons: {type: GraphQLFloat},
     maximumAmount: {type: GraphQLFloat},
@@ -49,29 +49,29 @@ const CustRequestItemType = new GraphQLObjectType({
     custRequest: {
       type: CustRequestType,
       args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestItem, args, {loaders}) => loaders.ofbiz.load(`custRequests/find?custRequestId=${custRequestItem.custRequestId}`)
+      resolve: (custRequestItem, args, {loaders}) => loaders.ofbiz.load(`order/custRequests/find?custRequestId=${custRequestItem.custRequestId}`)
     },
     selectedAmount: {type: GraphQLFloat},
     story: {type: GraphQLString},
     custRequestItemWorkEfforts: {
       type: new GraphQLList(CustRequestItemWorkEffortType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestItem, args, {loaders}) => loaders.ofbizArray.load(`custRequestItemWorkEfforts/find?custRequestId=${custRequestItem.custRequestId}`)
+      args : {},
+      resolve: (custRequestItem, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestItemWorkEfforts/find?custRequestId=${custRequestItem.custRequestId}`)
     },
     requirementCustRequests: {
       type: new GraphQLList(RequirementCustRequestType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestItem, args, {loaders}) => loaders.ofbizArray.load(`requirementCustRequests/find?custRequestId=${custRequestItem.custRequestId}`)
+      args : {},
+      resolve: (custRequestItem, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/requirementCustRequests/find?custRequestId=${custRequestItem.custRequestId}`)
     },
     quoteItems: {
       type: new GraphQLList(QuoteItemType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestItem, args, {loaders}) => loaders.ofbizArray.load(`quoteItems/find?custRequestId=${custRequestItem.custRequestId}`)
+      args : {},
+      resolve: (custRequestItem, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteItems/find?custRequestId=${custRequestItem.custRequestId}`)
     },
     custRequestItemNotes: {
       type: new GraphQLList(CustRequestItemNoteType),
-      args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestItem, args, {loaders}) => loaders.ofbizArray.load(`custRequestItemNotes/find?custRequestId=${custRequestItem.custRequestId}`)
+      args : {},
+      resolve: (custRequestItem, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestItemNotes/find?custRequestId=${custRequestItem.custRequestId}`)
     }
   })
 });

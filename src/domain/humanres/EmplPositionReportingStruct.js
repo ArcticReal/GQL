@@ -23,12 +23,12 @@ const EmplPositionReportingStructType = new GraphQLObjectType({
     emplPositionManagedBy: {
       type: EmplPositionType,
       args : {emplPositionIdManagedBy: {type: GraphQLString}},
-      resolve: (emplPositionReportingStruct, args, {loaders}) => loaders.ofbiz.load(`emplPositions/find?emplPositionId=${emplPositionReportingStruct.emplPositionIdManagedBy}`)
+      resolve: (emplPositionReportingStruct, args, {loaders}) => loaders.ofbiz.load(`humanres/emplPositions/find?emplPositionId=${emplPositionReportingStruct.emplPositionIdManagedBy}`)
     },
     emplPositionReportingTo: {
       type: EmplPositionType,
       args : {emplPositionIdReportingTo: {type: GraphQLString}},
-      resolve: (emplPositionReportingStruct, args, {loaders}) => loaders.ofbiz.load(`emplPositions/find?emplPositionId=${emplPositionReportingStruct.emplPositionIdReportingTo}`)
+      resolve: (emplPositionReportingStruct, args, {loaders}) => loaders.ofbiz.load(`humanres/emplPositions/find?emplPositionId=${emplPositionReportingStruct.emplPositionIdReportingTo}`)
     },
     primaryFlag: {type: GraphQLBoolean},
     thruDate: {type: GraphQLString}

@@ -21,14 +21,14 @@ const PerfReviewItemTypeType = new GraphQLObjectType({
     parentType: {
       type: PerfReviewItemTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (perfReviewItemType, args, {loaders}) => loaders.ofbiz.load(`perfReviewItemTypes/find?perfReviewItemTypeId=${perfReviewItemType.parentTypeId}`)
+      resolve: (perfReviewItemType, args, {loaders}) => loaders.ofbiz.load(`humanres/perfReview/perfReviewItemTypes/find?perfReviewItemTypeId=${perfReviewItemType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     perfReviewItemTypes: {
       type: new GraphQLList(PerfReviewItemTypeType),
-      args : {perfReviewItemTypeId: {type: GraphQLString}},
-      resolve: (perfReviewItemType, args, {loaders}) => loaders.ofbizArray.load(`perfReviewItemTypes/find?perfReviewItemTypeId=${perfReviewItemType.perfReviewItemTypeId}`)
+      args : {},
+      resolve: (perfReviewItemType, args, {loaders}) => loaders.ofbizArray.load(`humanres/perfReview/perfReviewItemTypes/find?perfReviewItemTypeId=${perfReviewItemType.perfReviewItemTypeId}`)
     }
   })
 });

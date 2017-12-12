@@ -26,14 +26,14 @@ const AgreementEmploymentApplType = new GraphQLObjectType({
     agreement: {
       type: AgreementItemType,
       args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementEmploymentAppl, args, {loaders}) => loaders.ofbiz.load(`agreementItems/find?agreementId=${agreementEmploymentAppl.agreementId}`)
+      resolve: (agreementEmploymentAppl, args, {loaders}) => loaders.ofbiz.load(`party/agreement/agreementItems/find?agreementId=${agreementEmploymentAppl.agreementId}`)
     },
     agreementItemSeqId: {type: GraphQLString},
     partyIdTo: {type: GraphQLString},
     roleTypeFrom: {
       type: EmploymentType,
       args : {roleTypeIdFrom: {type: GraphQLString}},
-      resolve: (agreementEmploymentAppl, args, {loaders}) => loaders.ofbiz.load(`employments/find?roleTypeIdFrom=${agreementEmploymentAppl.roleTypeIdFrom}`)
+      resolve: (agreementEmploymentAppl, args, {loaders}) => loaders.ofbiz.load(`humanres/employments/find?roleTypeIdFrom=${agreementEmploymentAppl.roleTypeIdFrom}`)
     },
     thruDate: {type: GraphQLString}
   })

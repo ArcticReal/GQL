@@ -24,29 +24,29 @@ const PartyTypeType = new GraphQLObjectType({
     parentType: {
       type: PartyTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (partyType, args, {loaders}) => loaders.ofbiz.load(`partyTypes/find?partyTypeId=${partyType.parentTypeId}`)
+      resolve: (partyType, args, {loaders}) => loaders.ofbiz.load(`party/party/partyTypes/find?partyTypeId=${partyType.parentTypeId}`)
     },
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     parties: {
       type: new GraphQLList(PartyType),
-      args : {partyTypeId: {type: GraphQLString}},
-      resolve: (partyType, args, {loaders}) => loaders.ofbizArray.load(`partys/find?partyTypeId=${partyType.partyTypeId}`)
+      args : {},
+      resolve: (partyType, args, {loaders}) => loaders.ofbizArray.load(`/partys/find?partyTypeId=${partyType.partyTypeId}`)
     },
     partyNeeds: {
       type: new GraphQLList(PartyNeedType),
-      args : {partyTypeId: {type: GraphQLString}},
-      resolve: (partyType, args, {loaders}) => loaders.ofbizArray.load(`partyNeeds/find?partyTypeId=${partyType.partyTypeId}`)
+      args : {},
+      resolve: (partyType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyNeeds/find?partyTypeId=${partyType.partyTypeId}`)
     },
     partyTypes: {
       type: new GraphQLList(PartyTypeType),
-      args : {partyTypeId: {type: GraphQLString}},
-      resolve: (partyType, args, {loaders}) => loaders.ofbizArray.load(`partyTypes/find?partyTypeId=${partyType.partyTypeId}`)
+      args : {},
+      resolve: (partyType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyTypes/find?partyTypeId=${partyType.partyTypeId}`)
     },
     partyTypeAttrs: {
       type: new GraphQLList(PartyTypeAttrType),
-      args : {partyTypeId: {type: GraphQLString}},
-      resolve: (partyType, args, {loaders}) => loaders.ofbizArray.load(`partyTypeAttrs/find?partyTypeId=${partyType.partyTypeId}`)
+      args : {},
+      resolve: (partyType, args, {loaders}) => loaders.ofbizArray.load(`party/party/partyTypeAttrs/find?partyTypeId=${partyType.partyTypeId}`)
     }
   })
 });

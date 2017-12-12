@@ -24,12 +24,12 @@ const DesiredFeatureType = new GraphQLObjectType({
     productFeature: {
       type: ProductFeatureType,
       args : {productFeatureId: {type: GraphQLString}},
-      resolve: (desiredFeature, args, {loaders}) => loaders.ofbiz.load(`productFeatures/find?productFeatureId=${desiredFeature.productFeatureId}`)
+      resolve: (desiredFeature, args, {loaders}) => loaders.ofbiz.load(`product/product/productFeatures/find?productFeatureId=${desiredFeature.productFeatureId}`)
     },
     requirement: {
       type: RequirementType,
       args : {requirementId: {type: GraphQLString}},
-      resolve: (desiredFeature, args, {loaders}) => loaders.ofbiz.load(`requirements/find?requirementId=${desiredFeature.requirementId}`)
+      resolve: (desiredFeature, args, {loaders}) => loaders.ofbiz.load(`order/requirements/find?requirementId=${desiredFeature.requirementId}`)
     }
   })
 });

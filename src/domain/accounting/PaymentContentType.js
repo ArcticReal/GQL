@@ -21,20 +21,20 @@ const PaymentContentTypeType = new GraphQLObjectType({
     parentType: {
       type: PaymentContentTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (paymentContentType, args, {loaders}) => loaders.ofbiz.load(`paymentContentTypes/find?paymentContentTypeId=${paymentContentType.parentTypeId}`)
+      resolve: (paymentContentType, args, {loaders}) => loaders.ofbiz.load(`accounting/payment/paymentContentTypes/find?paymentContentTypeId=${paymentContentType.parentTypeId}`)
     },
     paymentContentTypeId: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     paymentContents: {
       type: new GraphQLList(PaymentContentType),
-      args : {paymentContentTypeId: {type: GraphQLString}},
-      resolve: (paymentContentType, args, {loaders}) => loaders.ofbizArray.load(`paymentContents/find?paymentContentTypeId=${paymentContentType.paymentContentTypeId}`)
+      args : {},
+      resolve: (paymentContentType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentContents/find?paymentContentTypeId=${paymentContentType.paymentContentTypeId}`)
     },
     paymentContentTypes: {
       type: new GraphQLList(PaymentContentTypeType),
-      args : {paymentContentTypeId: {type: GraphQLString}},
-      resolve: (paymentContentType, args, {loaders}) => loaders.ofbizArray.load(`paymentContentTypes/find?paymentContentTypeId=${paymentContentType.paymentContentTypeId}`)
+      args : {},
+      resolve: (paymentContentType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentContentTypes/find?paymentContentTypeId=${paymentContentType.paymentContentTypeId}`)
     }
   })
 });

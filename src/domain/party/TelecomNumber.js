@@ -28,22 +28,22 @@ const TelecomNumberType = new GraphQLObjectType({
     contactMech: {
       type: ContactMechType,
       args : {contactMechId: {type: GraphQLString}},
-      resolve: (telecomNumber, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${telecomNumber.contactMechId}`)
+      resolve: (telecomNumber, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${telecomNumber.contactMechId}`)
     },
     shipments: {
       type: new GraphQLList(ShipmentType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?contactMechId=${telecomNumber.contactMechId}`)
+      args : {},
+      resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?contactMechId=${telecomNumber.contactMechId}`)
     },
     orderItemShipGroups: {
       type: new GraphQLList(OrderItemShipGroupType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`orderItemShipGroups/find?contactMechId=${telecomNumber.contactMechId}`)
+      args : {},
+      resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/orderItemShipGroups/find?contactMechId=${telecomNumber.contactMechId}`)
     },
     shipmentRouteSegments: {
       type: new GraphQLList(ShipmentRouteSegmentType),
-      args : {contactMechId: {type: GraphQLString}},
-      resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`shipmentRouteSegments/find?contactMechId=${telecomNumber.contactMechId}`)
+      args : {},
+      resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentRouteSegments/find?contactMechId=${telecomNumber.contactMechId}`)
     }
   })
 });

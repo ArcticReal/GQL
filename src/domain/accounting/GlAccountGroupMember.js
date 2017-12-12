@@ -23,17 +23,17 @@ const GlAccountGroupMemberType = new GraphQLObjectType({
     glAccount: {
       type: GlAccountType,
       args : {glAccountId: {type: GraphQLString}},
-      resolve: (glAccountGroupMember, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${glAccountGroupMember.glAccountId}`)
+      resolve: (glAccountGroupMember, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${glAccountGroupMember.glAccountId}`)
     },
     glAccountGroupType: {
       type: GlAccountGroupTypeType,
       args : {glAccountGroupTypeId: {type: GraphQLString}},
-      resolve: (glAccountGroupMember, args, {loaders}) => loaders.ofbiz.load(`glAccountGroupTypes/find?glAccountGroupTypeId=${glAccountGroupMember.glAccountGroupTypeId}`)
+      resolve: (glAccountGroupMember, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountGroupTypes/find?glAccountGroupTypeId=${glAccountGroupMember.glAccountGroupTypeId}`)
     },
     glAccountGroup: {
       type: GlAccountGroupType,
       args : {glAccountGroupId: {type: GraphQLString}},
-      resolve: (glAccountGroupMember, args, {loaders}) => loaders.ofbiz.load(`glAccountGroups/find?glAccountGroupId=${glAccountGroupMember.glAccountGroupId}`)
+      resolve: (glAccountGroupMember, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccount/glAccountGroups/find?glAccountGroupId=${glAccountGroupMember.glAccountGroupId}`)
     }
   })
 });

@@ -22,12 +22,12 @@ const OrderHeaderWorkEffortType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (orderHeaderWorkEffort, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${orderHeaderWorkEffort.workEffortId}`)
+      resolve: (orderHeaderWorkEffort, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${orderHeaderWorkEffort.workEffortId}`)
     },
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderHeaderWorkEffort, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderHeaderWorkEffort.orderId}`)
+      resolve: (orderHeaderWorkEffort, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderHeaderWorkEffort.orderId}`)
     }
   })
 });

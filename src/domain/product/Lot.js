@@ -24,8 +24,8 @@ const LotType = new GraphQLObjectType({
     expirationDate: {type: GraphQLString},
     inventoryItems: {
       type: new GraphQLList(InventoryItemType),
-      args : {lotId: {type: GraphQLString}},
-      resolve: (lot, args, {loaders}) => loaders.ofbizArray.load(`inventoryItems/find?lotId=${lot.lotId}`)
+      args : {},
+      resolve: (lot, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItems/find?lotId=${lot.lotId}`)
     }
   })
 });

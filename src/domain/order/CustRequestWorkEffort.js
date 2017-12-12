@@ -22,12 +22,12 @@ const CustRequestWorkEffortType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (custRequestWorkEffort, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${custRequestWorkEffort.workEffortId}`)
+      resolve: (custRequestWorkEffort, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${custRequestWorkEffort.workEffortId}`)
     },
     custRequest: {
       type: CustRequestType,
       args : {custRequestId: {type: GraphQLString}},
-      resolve: (custRequestWorkEffort, args, {loaders}) => loaders.ofbiz.load(`custRequests/find?custRequestId=${custRequestWorkEffort.custRequestId}`)
+      resolve: (custRequestWorkEffort, args, {loaders}) => loaders.ofbiz.load(`order/custRequests/find?custRequestId=${custRequestWorkEffort.custRequestId}`)
     }
   })
 });

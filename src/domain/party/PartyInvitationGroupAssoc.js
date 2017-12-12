@@ -22,12 +22,12 @@ const PartyInvitationGroupAssocType = new GraphQLObjectType({
     partyTo: {
       type: PartyType,
       args : {partyIdTo: {type: GraphQLString}},
-      resolve: (partyInvitationGroupAssoc, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyInvitationGroupAssoc.partyIdTo}`)
+      resolve: (partyInvitationGroupAssoc, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyInvitationGroupAssoc.partyIdTo}`)
     },
     partyInvitation: {
       type: PartyInvitationType,
       args : {partyInvitationId: {type: GraphQLString}},
-      resolve: (partyInvitationGroupAssoc, args, {loaders}) => loaders.ofbiz.load(`partyInvitations/find?partyInvitationId=${partyInvitationGroupAssoc.partyInvitationId}`)
+      resolve: (partyInvitationGroupAssoc, args, {loaders}) => loaders.ofbiz.load(`party/party/partyInvitations/find?partyInvitationId=${partyInvitationGroupAssoc.partyInvitationId}`)
     }
   })
 });

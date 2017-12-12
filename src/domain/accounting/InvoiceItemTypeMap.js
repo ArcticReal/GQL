@@ -23,12 +23,12 @@ const InvoiceItemTypeMapType = new GraphQLObjectType({
     invoiceType: {
       type: InvoiceTypeType,
       args : {invoiceTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemTypeMap, args, {loaders}) => loaders.ofbiz.load(`invoiceTypes/find?invoiceTypeId=${invoiceItemTypeMap.invoiceTypeId}`)
+      resolve: (invoiceItemTypeMap, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceTypes/find?invoiceTypeId=${invoiceItemTypeMap.invoiceTypeId}`)
     },
     invoiceItemType: {
       type: InvoiceItemTypeType,
       args : {invoiceItemTypeId: {type: GraphQLString}},
-      resolve: (invoiceItemTypeMap, args, {loaders}) => loaders.ofbiz.load(`invoiceItemTypes/find?invoiceItemTypeId=${invoiceItemTypeMap.invoiceItemTypeId}`)
+      resolve: (invoiceItemTypeMap, args, {loaders}) => loaders.ofbiz.load(`accounting/invoice/invoiceItemTypes/find?invoiceItemTypeId=${invoiceItemTypeMap.invoiceItemTypeId}`)
     }
   })
 });

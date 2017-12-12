@@ -21,7 +21,7 @@ const ProductConfigOptionIactnType = new GraphQLObjectType({
     configItem: {
       type: ProductConfigOptionType,
       args : {configItemId: {type: GraphQLString}},
-      resolve: (productConfigOptionIactn, args, {loaders}) => loaders.ofbiz.load(`productConfigOptions/find?configItemId=${productConfigOptionIactn.configItemId}`)
+      resolve: (productConfigOptionIactn, args, {loaders}) => loaders.ofbiz.load(`product/product/productConfigOptions/find?configItemId=${productConfigOptionIactn.configItemId}`)
     },
     configIactnTypeId: {type: GraphQLString},
     configOptionIdTo: {type: GraphQLString},
@@ -31,7 +31,7 @@ const ProductConfigOptionIactnType = new GraphQLObjectType({
     configItemTo: {
       type: ProductConfigOptionType,
       args : {configItemIdTo: {type: GraphQLString}},
-      resolve: (productConfigOptionIactn, args, {loaders}) => loaders.ofbiz.load(`productConfigOptions/find?configItemId=${productConfigOptionIactn.configItemIdTo}`)
+      resolve: (productConfigOptionIactn, args, {loaders}) => loaders.ofbiz.load(`product/product/productConfigOptions/find?configItemId=${productConfigOptionIactn.configItemIdTo}`)
     }
   })
 });

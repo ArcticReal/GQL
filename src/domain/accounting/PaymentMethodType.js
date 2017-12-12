@@ -29,49 +29,49 @@ const PaymentMethodTypeType = new GraphQLObjectType({
     defaultGlAccount: {
       type: GlAccountType,
       args : {defaultGlAccountId: {type: GraphQLString}},
-      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbiz.load(`glAccounts/find?glAccountId=${paymentMethodType.defaultGlAccountId}`)
+      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbiz.load(`accounting/glAccounts/find?glAccountId=${paymentMethodType.defaultGlAccountId}`)
     },
     description: {type: GraphQLString},
     paymentMethodTypeId: {type: GraphQLString},
     paymentMethodTypeGlAccounts: {
       type: new GraphQLList(PaymentMethodTypeGlAccountType),
-      args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`paymentMethodTypeGlAccounts/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
+      args : {},
+      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`accounting/glAccount/paymentMethodTypeGlAccounts/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
     },
     paymentGatewayResponses: {
       type: new GraphQLList(PaymentGatewayResponseType),
-      args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`paymentGatewayResponses/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
+      args : {},
+      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentGatewayResponses/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
     },
     productPaymentMethodTypes: {
       type: new GraphQLList(ProductPaymentMethodTypeType),
-      args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`productPaymentMethodTypes/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
+      args : {},
+      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productPaymentMethodTypes/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
     },
     orderPaymentPreferences: {
       type: new GraphQLList(OrderPaymentPreferenceType),
-      args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`orderPaymentPreferences/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
+      args : {},
+      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`order/orderPaymentPreferences/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
     },
     productStoreVendorPayments: {
       type: new GraphQLList(ProductStoreVendorPaymentType),
-      args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`productStoreVendorPayments/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
+      args : {},
+      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStoreVendorPayments/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
     },
     productStorePaymentSettings: {
       type: new GraphQLList(ProductStorePaymentSettingType),
-      args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`productStorePaymentSettings/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
+      args : {},
+      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`product/product/productStorePaymentSettings/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
     },
     payments: {
       type: new GraphQLList(PaymentType),
-      args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`payments/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
+      args : {},
+      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payments/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
     },
     paymentMethods: {
       type: new GraphQLList(PaymentMethodType),
-      args : {paymentMethodTypeId: {type: GraphQLString}},
-      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`paymentMethods/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
+      args : {},
+      resolve: (paymentMethodType, args, {loaders}) => loaders.ofbizArray.load(`accounting/payment/paymentMethods/find?paymentMethodTypeId=${paymentMethodType.paymentMethodTypeId}`)
     }
   })
 });

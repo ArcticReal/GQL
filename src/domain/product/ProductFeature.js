@@ -33,7 +33,7 @@ const ProductFeatureType = new GraphQLObjectType({
     productFeatureType: {
       type: ProductFeatureTypeType,
       args : {productFeatureTypeId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbiz.load(`productFeatureTypes/find?productFeatureTypeId=${productFeature.productFeatureTypeId}`)
+      resolve: (productFeature, args, {loaders}) => loaders.ofbiz.load(`product/product/productFeatureTypes/find?productFeatureTypeId=${productFeature.productFeatureTypeId}`)
     },
     defaultSequenceNum: {type: GraphQLInt},
     defaultAmount: {type: GraphQLFloat},
@@ -43,65 +43,65 @@ const ProductFeatureType = new GraphQLObjectType({
     productFeatureCategory: {
       type: ProductFeatureCategoryType,
       args : {productFeatureCategoryId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbiz.load(`productFeatureCategorys/find?productFeatureCategoryId=${productFeature.productFeatureCategoryId}`)
+      resolve: (productFeature, args, {loaders}) => loaders.ofbiz.load(`product/product/productFeatureCategorys/find?productFeatureCategoryId=${productFeature.productFeatureCategoryId}`)
     },
     description: {type: GraphQLString},
     uomId: {type: GraphQLString},
     abbrev: {type: GraphQLString},
     productFeatureGroupAppls: {
       type: new GraphQLList(ProductFeatureGroupApplType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`productFeatureGroupAppls/find?productFeatureId=${productFeature.productFeatureId}`)
+      args : {},
+      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureGroupAppls/find?productFeatureId=${productFeature.productFeatureId}`)
     },
     productFeatureIactns: {
       type: new GraphQLList(ProductFeatureIactnType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`productFeatureIactns/find?productFeatureId=${productFeature.productFeatureId}`)
+      args : {},
+      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureIactns/find?productFeatureId=${productFeature.productFeatureId}`)
     },
     productFeatureDataResources: {
       type: new GraphQLList(ProductFeatureDataResourceType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`productFeatureDataResources/find?productFeatureId=${productFeature.productFeatureId}`)
+      args : {},
+      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureDataResources/find?productFeatureId=${productFeature.productFeatureId}`)
     },
     productFeatureAppls: {
       type: new GraphQLList(ProductFeatureApplType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`productFeatureAppls/find?productFeatureId=${productFeature.productFeatureId}`)
+      args : {},
+      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureAppls/find?productFeatureId=${productFeature.productFeatureId}`)
     },
     invoiceItems: {
       type: new GraphQLList(InvoiceItemType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`invoiceItems/find?productFeatureId=${productFeature.productFeatureId}`)
+      args : {},
+      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`accounting/invoice/invoiceItems/find?productFeatureId=${productFeature.productFeatureId}`)
     },
     productFeatureApplAttrs: {
       type: new GraphQLList(ProductFeatureApplAttrType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`productFeatureApplAttrs/find?productFeatureId=${productFeature.productFeatureId}`)
+      args : {},
+      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`product/product/productFeatureApplAttrs/find?productFeatureId=${productFeature.productFeatureId}`)
     },
     shipmentItemFeatures: {
       type: new GraphQLList(ShipmentItemFeatureType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`shipmentItemFeatures/find?productFeatureId=${productFeature.productFeatureId}`)
+      args : {},
+      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`shipment/shipment/shipmentItemFeatures/find?productFeatureId=${productFeature.productFeatureId}`)
     },
     productManufacturingRules: {
       type: new GraphQLList(ProductManufacturingRuleType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`productManufacturingRules/find?productFeatureId=${productFeature.productFeatureId}`)
+      args : {},
+      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`manufacturing/productManufacturingRules/find?productFeatureId=${productFeature.productFeatureId}`)
     },
     costComponents: {
       type: new GraphQLList(CostComponentType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`costComponents/find?productFeatureId=${productFeature.productFeatureId}`)
+      args : {},
+      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`product/costComponents/find?productFeatureId=${productFeature.productFeatureId}`)
     },
     desiredFeatures: {
       type: new GraphQLList(DesiredFeatureType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`desiredFeatures/find?productFeatureId=${productFeature.productFeatureId}`)
+      args : {},
+      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`order/desiredFeatures/find?productFeatureId=${productFeature.productFeatureId}`)
     },
     quoteItems: {
       type: new GraphQLList(QuoteItemType),
-      args : {productFeatureId: {type: GraphQLString}},
-      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`quoteItems/find?productFeatureId=${productFeature.productFeatureId}`)
+      args : {},
+      resolve: (productFeature, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteItems/find?productFeatureId=${productFeature.productFeatureId}`)
     }
   })
 });

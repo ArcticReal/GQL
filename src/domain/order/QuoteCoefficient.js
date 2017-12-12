@@ -23,7 +23,7 @@ const QuoteCoefficientType = new GraphQLObjectType({
     quote: {
       type: QuoteType,
       args : {quoteId: {type: GraphQLString}},
-      resolve: (quoteCoefficient, args, {loaders}) => loaders.ofbiz.load(`quotes/find?quoteId=${quoteCoefficient.quoteId}`)
+      resolve: (quoteCoefficient, args, {loaders}) => loaders.ofbiz.load(`order/quotes/find?quoteId=${quoteCoefficient.quoteId}`)
     }
   })
 });

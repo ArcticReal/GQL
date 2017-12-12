@@ -22,12 +22,12 @@ const CommunicationEventProductType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (communicationEventProduct, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${communicationEventProduct.productId}`)
+      resolve: (communicationEventProduct, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${communicationEventProduct.productId}`)
     },
     communicationEvent: {
       type: CommunicationEventType,
       args : {communicationEventId: {type: GraphQLString}},
-      resolve: (communicationEventProduct, args, {loaders}) => loaders.ofbiz.load(`communicationEvents/find?communicationEventId=${communicationEventProduct.communicationEventId}`)
+      resolve: (communicationEventProduct, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvents/find?communicationEventId=${communicationEventProduct.communicationEventId}`)
     }
   })
 });

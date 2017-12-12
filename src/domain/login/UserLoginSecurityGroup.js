@@ -22,13 +22,13 @@ const UserLoginSecurityGroupType = new GraphQLObjectType({
     userLogin: {
       type: UserLoginType,
       args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLoginSecurityGroup, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${userLoginSecurityGroup.userLoginId}`)
+      resolve: (userLoginSecurityGroup, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${userLoginSecurityGroup.userLoginId}`)
     },
     fromDate: {type: GraphQLString},
     group: {
       type: SecurityGroupType,
       args : {groupId: {type: GraphQLString}},
-      resolve: (userLoginSecurityGroup, args, {loaders}) => loaders.ofbiz.load(`securityGroups/find?groupId=${userLoginSecurityGroup.groupId}`)
+      resolve: (userLoginSecurityGroup, args, {loaders}) => loaders.ofbiz.load(`login/securityGroups/find?groupId=${userLoginSecurityGroup.groupId}`)
     },
     thruDate: {type: GraphQLString}
   })

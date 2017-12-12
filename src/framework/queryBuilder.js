@@ -1,11 +1,11 @@
-import {productQueries} from '../domain/rootQueries/productQueries.js';
-import {cartQueries} from '../domain/rootQueries/cartQueries.js';
-import {countryQueries} from '../domain/rootQueries/countryQueries.js';
-import {loginQueries} from '../domain/rootQueries/loginQueries.js';
-import {orderQueries} from '../domain/rootQueries/orderQueries.js';
-import {productCategoryQueries} from '../domain/rootQueries/productCategoryQueries.js';
-import {productPromoQueries} from '../domain/rootQueries/productPromoQueries.js';
-import {verificationQueries} from '../domain/rootQueries/verificationQueries.js';
+import {productQueries} from './rootQueries/productQueries.js';
+import {cartQueries} from './rootQueries/cartQueries.js';
+import {countryQueries} from './rootQueries/countryQueries.js';
+import {loginQueries} from './rootQueries/loginQueries.js';
+import {orderQueries} from './rootQueries/orderQueries.js';
+import {productCategoryQueries} from './rootQueries/productCategoryQueries.js';
+import {productPromoQueries} from './rootQueries/productPromoQueries.js';
+import {verificationQueries} from './rootQueries/verificationQueries.js';
 
 const queryFields = Object.assign( {},
   productQueries,

@@ -22,25 +22,25 @@ const BudgetTypeType = new GraphQLObjectType({
     parentType: {
       type: BudgetTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (budgetType, args, {loaders}) => loaders.ofbiz.load(`budgetTypes/find?budgetTypeId=${budgetType.parentTypeId}`)
+      resolve: (budgetType, args, {loaders}) => loaders.ofbiz.load(`accounting/budget/budgetTypes/find?budgetTypeId=${budgetType.parentTypeId}`)
     },
     budgetTypeId: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     budgetTypeAttrs: {
       type: new GraphQLList(BudgetTypeAttrType),
-      args : {budgetTypeId: {type: GraphQLString}},
-      resolve: (budgetType, args, {loaders}) => loaders.ofbizArray.load(`budgetTypeAttrs/find?budgetTypeId=${budgetType.budgetTypeId}`)
+      args : {},
+      resolve: (budgetType, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetTypeAttrs/find?budgetTypeId=${budgetType.budgetTypeId}`)
     },
     budgetTypes: {
       type: new GraphQLList(BudgetTypeType),
-      args : {budgetTypeId: {type: GraphQLString}},
-      resolve: (budgetType, args, {loaders}) => loaders.ofbizArray.load(`budgetTypes/find?budgetTypeId=${budgetType.budgetTypeId}`)
+      args : {},
+      resolve: (budgetType, args, {loaders}) => loaders.ofbizArray.load(`accounting/budget/budgetTypes/find?budgetTypeId=${budgetType.budgetTypeId}`)
     },
     budgets: {
       type: new GraphQLList(BudgetType),
-      args : {budgetTypeId: {type: GraphQLString}},
-      resolve: (budgetType, args, {loaders}) => loaders.ofbizArray.load(`budgets/find?budgetTypeId=${budgetType.budgetTypeId}`)
+      args : {},
+      resolve: (budgetType, args, {loaders}) => loaders.ofbizArray.load(`accounting/budgets/find?budgetTypeId=${budgetType.budgetTypeId}`)
     }
   })
 });

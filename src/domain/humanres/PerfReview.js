@@ -27,30 +27,30 @@ const PerfReviewType = new GraphQLObjectType({
     employeeParty: {
       type: PartyRoleType,
       args : {employeePartyId: {type: GraphQLString}},
-      resolve: (perfReview, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${perfReview.employeePartyId}`)
+      resolve: (perfReview, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${perfReview.employeePartyId}`)
     },
     comments: {type: GraphQLString},
     payment: {
       type: PaymentType,
       args : {paymentId: {type: GraphQLString}},
-      resolve: (perfReview, args, {loaders}) => loaders.ofbiz.load(`payments/find?paymentId=${perfReview.paymentId}`)
+      resolve: (perfReview, args, {loaders}) => loaders.ofbiz.load(`accounting/payments/find?paymentId=${perfReview.paymentId}`)
     },
     perfReviewId: {type: GraphQLString},
     emplPosition: {
       type: EmplPositionType,
       args : {emplPositionId: {type: GraphQLString}},
-      resolve: (perfReview, args, {loaders}) => loaders.ofbiz.load(`emplPositions/find?emplPositionId=${perfReview.emplPositionId}`)
+      resolve: (perfReview, args, {loaders}) => loaders.ofbiz.load(`humanres/emplPositions/find?emplPositionId=${perfReview.emplPositionId}`)
     },
     managerParty: {
       type: PartyRoleType,
       args : {managerPartyId: {type: GraphQLString}},
-      resolve: (perfReview, args, {loaders}) => loaders.ofbiz.load(`partyRoles/find?partyId=${perfReview.managerPartyId}`)
+      resolve: (perfReview, args, {loaders}) => loaders.ofbiz.load(`party/party/partyRoles/find?partyId=${perfReview.managerPartyId}`)
     },
     thruDate: {type: GraphQLString},
     perfReviewItems: {
       type: new GraphQLList(PerfReviewItemType),
-      args : {employeePartyId: {type: GraphQLString}},
-      resolve: (perfReview, args, {loaders}) => loaders.ofbizArray.load(`perfReviewItems/find?employeePartyId=${perfReview.employeePartyId}`)
+      args : {},
+      resolve: (perfReview, args, {loaders}) => loaders.ofbizArray.load(`humanres/perfReview/perfReviewItems/find?employeePartyId=${perfReview.employeePartyId}`)
     }
   })
 });

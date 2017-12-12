@@ -27,27 +27,27 @@ const SegmentGroupType = new GraphQLObjectType({
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (segmentGroup, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${segmentGroup.productStoreId}`)
+      resolve: (segmentGroup, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${segmentGroup.productStoreId}`)
     },
     segmentGroupType: {
       type: SegmentGroupTypeType,
       args : {segmentGroupTypeId: {type: GraphQLString}},
-      resolve: (segmentGroup, args, {loaders}) => loaders.ofbiz.load(`segmentGroupTypes/find?segmentGroupTypeId=${segmentGroup.segmentGroupTypeId}`)
+      resolve: (segmentGroup, args, {loaders}) => loaders.ofbiz.load(`marketing/segmentGroup/segmentGroupTypes/find?segmentGroupTypeId=${segmentGroup.segmentGroupTypeId}`)
     },
     segmentGroupRoles: {
       type: new GraphQLList(SegmentGroupRoleType),
-      args : {segmentGroupId: {type: GraphQLString}},
-      resolve: (segmentGroup, args, {loaders}) => loaders.ofbizArray.load(`segmentGroupRoles/find?segmentGroupId=${segmentGroup.segmentGroupId}`)
+      args : {},
+      resolve: (segmentGroup, args, {loaders}) => loaders.ofbizArray.load(`marketing/segmentGroup/segmentGroupRoles/find?segmentGroupId=${segmentGroup.segmentGroupId}`)
     },
     segmentGroupClassifications: {
       type: new GraphQLList(SegmentGroupClassificationType),
-      args : {segmentGroupId: {type: GraphQLString}},
-      resolve: (segmentGroup, args, {loaders}) => loaders.ofbizArray.load(`segmentGroupClassifications/find?segmentGroupId=${segmentGroup.segmentGroupId}`)
+      args : {},
+      resolve: (segmentGroup, args, {loaders}) => loaders.ofbizArray.load(`marketing/segmentGroup/segmentGroupClassifications/find?segmentGroupId=${segmentGroup.segmentGroupId}`)
     },
     segmentGroupGeos: {
       type: new GraphQLList(SegmentGroupGeoType),
-      args : {segmentGroupId: {type: GraphQLString}},
-      resolve: (segmentGroup, args, {loaders}) => loaders.ofbizArray.load(`segmentGroupGeos/find?segmentGroupId=${segmentGroup.segmentGroupId}`)
+      args : {},
+      resolve: (segmentGroup, args, {loaders}) => loaders.ofbizArray.load(`marketing/segmentGroup/segmentGroupGeos/find?segmentGroupId=${segmentGroup.segmentGroupId}`)
     }
   })
 });

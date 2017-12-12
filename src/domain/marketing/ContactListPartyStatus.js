@@ -25,7 +25,7 @@ const ContactListPartyStatusType = new GraphQLObjectType({
     contactList: {
       type: ContactListPartyType,
       args : {contactListId: {type: GraphQLString}},
-      resolve: (contactListPartyStatus, args, {loaders}) => loaders.ofbiz.load(`contactListPartys/find?contactListId=${contactListPartyStatus.contactListId}`)
+      resolve: (contactListPartyStatus, args, {loaders}) => loaders.ofbiz.load(`marketing/contactList/contactListPartys/find?contactListId=${contactListPartyStatus.contactListId}`)
     },
     setByUserLoginId: {type: GraphQLString},
     partyId: {type: GraphQLString}

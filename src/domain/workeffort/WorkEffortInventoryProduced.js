@@ -22,12 +22,12 @@ const WorkEffortInventoryProducedType = new GraphQLObjectType({
     workEffort: {
       type: WorkEffortType,
       args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffortInventoryProduced, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffortInventoryProduced.workEffortId}`)
+      resolve: (workEffortInventoryProduced, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffortInventoryProduced.workEffortId}`)
     },
     inventoryItem: {
       type: InventoryItemType,
       args : {inventoryItemId: {type: GraphQLString}},
-      resolve: (workEffortInventoryProduced, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${workEffortInventoryProduced.inventoryItemId}`)
+      resolve: (workEffortInventoryProduced, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItems/find?inventoryItemId=${workEffortInventoryProduced.inventoryItemId}`)
     }
   })
 });

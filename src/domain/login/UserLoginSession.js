@@ -21,7 +21,7 @@ const UserLoginSessionType = new GraphQLObjectType({
     userLogin: {
       type: UserLoginType,
       args : {userLoginId: {type: GraphQLString}},
-      resolve: (userLoginSession, args, {loaders}) => loaders.ofbiz.load(`userLogins/find?userLoginId=${userLoginSession.userLoginId}`)
+      resolve: (userLoginSession, args, {loaders}) => loaders.ofbiz.load(`login/userLogins/find?userLoginId=${userLoginSession.userLoginId}`)
     },
     sessionData: {type: GraphQLString},
     savedDate: {type: GraphQLString}

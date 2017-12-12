@@ -21,19 +21,19 @@ const WorkEffortPurposeTypeType = new GraphQLObjectType({
     parentType: {
       type: WorkEffortPurposeTypeType,
       args : {parentTypeId: {type: GraphQLString}},
-      resolve: (workEffortPurposeType, args, {loaders}) => loaders.ofbiz.load(`workEffortPurposeTypes/find?workEffortPurposeTypeId=${workEffortPurposeType.parentTypeId}`)
+      resolve: (workEffortPurposeType, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEffort/workEffortPurposeTypes/find?workEffortPurposeTypeId=${workEffortPurposeType.parentTypeId}`)
     },
     workEffortPurposeTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     workEfforts: {
       type: new GraphQLList(WorkEffortType),
-      args : {workEffortPurposeTypeId: {type: GraphQLString}},
-      resolve: (workEffortPurposeType, args, {loaders}) => loaders.ofbizArray.load(`workEfforts/find?workEffortPurposeTypeId=${workEffortPurposeType.workEffortPurposeTypeId}`)
+      args : {},
+      resolve: (workEffortPurposeType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEfforts/find?workEffortPurposeTypeId=${workEffortPurposeType.workEffortPurposeTypeId}`)
     },
     workEffortPurposeTypes: {
       type: new GraphQLList(WorkEffortPurposeTypeType),
-      args : {workEffortPurposeTypeId: {type: GraphQLString}},
-      resolve: (workEffortPurposeType, args, {loaders}) => loaders.ofbizArray.load(`workEffortPurposeTypes/find?workEffortPurposeTypeId=${workEffortPurposeType.workEffortPurposeTypeId}`)
+      args : {},
+      resolve: (workEffortPurposeType, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortPurposeTypes/find?workEffortPurposeTypeId=${workEffortPurposeType.workEffortPurposeTypeId}`)
     }
   })
 });

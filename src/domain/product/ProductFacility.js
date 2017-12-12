@@ -23,12 +23,12 @@ const ProductFacilityType = new GraphQLObjectType({
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (productFacility, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${productFacility.facilityId}`)
+      resolve: (productFacility, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${productFacility.facilityId}`)
     },
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productFacility, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productFacility.productId}`)
+      resolve: (productFacility, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productFacility.productId}`)
     },
     minimumStock: {type: GraphQLFloat},
     reorderQuantity: {type: GraphQLFloat},

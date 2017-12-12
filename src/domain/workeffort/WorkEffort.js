@@ -71,7 +71,7 @@ const WorkEffortType = new GraphQLObjectType({
     workEffortType: {
       type: WorkEffortTypeType,
       args : {workEffortTypeId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`workEffortTypes/find?workEffortTypeId=${workEffort.workEffortTypeId}`)
+      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEffort/workEffortTypes/find?workEffortTypeId=${workEffort.workEffortTypeId}`)
     },
     reservPersons: {type: GraphQLFloat},
     revisionNumber: {type: GraphQLInt},
@@ -86,13 +86,13 @@ const WorkEffortType = new GraphQLObjectType({
     workEffortPurposeType: {
       type: WorkEffortPurposeTypeType,
       args : {workEffortPurposeTypeId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`workEffortPurposeTypes/find?workEffortPurposeTypeId=${workEffort.workEffortPurposeTypeId}`)
+      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEffort/workEffortPurposeTypes/find?workEffortPurposeTypeId=${workEffort.workEffortPurposeTypeId}`)
     },
     serviceLoaderName: {type: GraphQLString},
     accommodationSpot: {
       type: AccommodationSpotType,
       args : {accommodationSpotId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`accommodationSpots/find?accommodationSpotId=${workEffort.accommodationSpotId}`)
+      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`accounting/accommodationSpots/find?accommodationSpotId=${workEffort.accommodationSpotId}`)
     },
     estimatedStartDate: {type: GraphQLString},
     sendNotificationEmail: {type: GraphQLBoolean},
@@ -108,7 +108,7 @@ const WorkEffortType = new GraphQLObjectType({
     fixedAsset: {
       type: FixedAssetType,
       args : {fixedAssetId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`fixedAssets/find?fixedAssetId=${workEffort.fixedAssetId}`)
+      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`accounting/fixedAssets/find?fixedAssetId=${workEffort.fixedAssetId}`)
     },
     reserv2ndPPPerc: {type: GraphQLFloat},
     totalMoneyAllowed: {type: GraphQLFloat},
@@ -116,7 +116,7 @@ const WorkEffortType = new GraphQLObjectType({
     workEffortParent: {
       type: WorkEffortType,
       args : {workEffortParentId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`workEfforts/find?workEffortId=${workEffort.workEffortParentId}`)
+      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`workeffort/workEfforts/find?workEffortId=${workEffort.workEffortParentId}`)
     },
     description: {type: GraphQLString},
     moneyUomId: {type: GraphQLString},
@@ -126,7 +126,7 @@ const WorkEffortType = new GraphQLObjectType({
     accommodationMap: {
       type: AccommodationMapType,
       args : {accommodationMapId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`accommodationMaps/find?accommodationMapId=${workEffort.accommodationMapId}`)
+      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`accounting/accommodationMaps/find?accommodationMapId=${workEffort.accommodationMapId}`)
     },
     actualStartDate: {type: GraphQLString},
     scopeEnumId: {type: GraphQLString},
@@ -134,7 +134,7 @@ const WorkEffortType = new GraphQLObjectType({
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${workEffort.facilityId}`)
+      resolve: (workEffort, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${workEffort.facilityId}`)
     },
     estimatedSetupMillis: {type: GraphQLFloat},
     lastModifiedDate: {type: GraphQLString},
@@ -147,223 +147,223 @@ const WorkEffortType = new GraphQLObjectType({
     estimatedCompletionDate: {type: GraphQLString},
     quoteItems: {
       type: new GraphQLList(QuoteItemType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`quoteItems/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteItems/find?workEffortId=${workEffort.workEffortId}`)
     },
     communicationEventWorkEffs: {
       type: new GraphQLList(CommunicationEventWorkEffType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`communicationEventWorkEffs/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/communicationEventWorkEffs/find?workEffortId=${workEffort.workEffortId}`)
     },
     shoppingListWorkEfforts: {
       type: new GraphQLList(ShoppingListWorkEffortType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`shoppingListWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`order/shoppingList/shoppingListWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortEventReminders: {
       type: new GraphQLList(WorkEffortEventReminderType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortEventReminders/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortEventReminders/find?workEffortId=${workEffort.workEffortId}`)
     },
     orderHeaderWorkEfforts: {
       type: new GraphQLList(OrderHeaderWorkEffortType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`orderHeaderWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`order/orderHeader/orderHeaderWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
     },
     timeEntries: {
       type: new GraphQLList(TimeEntryType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`timeEntrys/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/timeEntrys/find?workEffortId=${workEffort.workEffortId}`)
     },
     rateAmounts: {
       type: new GraphQLList(RateAmountType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`rateAmounts/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`accounting/rateAmounts/find?workEffortId=${workEffort.workEffortId}`)
     },
     personTrainings: {
       type: new GraphQLList(PersonTrainingType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`personTrainings/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`humanres/personTrainings/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortTransBoxes: {
       type: new GraphQLList(WorkEffortTransBoxType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortTransBoxs/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortTransBoxs/find?workEffortId=${workEffort.workEffortId}`)
     },
     workRequirementFulfillments: {
       type: new GraphQLList(WorkRequirementFulfillmentType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workRequirementFulfillments/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`order/requirement/workRequirementFulfillments/find?workEffortId=${workEffort.workEffortId}`)
     },
     custRequestItemWorkEfforts: {
       type: new GraphQLList(CustRequestItemWorkEffortType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`custRequestItemWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestItemWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortIcalDatas: {
       type: new GraphQLList(WorkEffortIcalDataType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortIcalDatas/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortIcalDatas/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortInventoryAssigns: {
       type: new GraphQLList(WorkEffortInventoryAssignType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortInventoryAssigns/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortInventoryAssigns/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortDeliverableProds: {
       type: new GraphQLList(WorkEffortDeliverableProdType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortDeliverableProds/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/deliverable/workEffortDeliverableProds/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortKeywords: {
       type: new GraphQLList(WorkEffortKeywordType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortKeywords/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortKeywords/find?workEffortId=${workEffort.workEffortId}`)
     },
     productMaints: {
       type: new GraphQLList(ProductMaintType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`productMaints/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`product/product/productMaints/find?workEffortId=${workEffort.workEffortId}`)
     },
     workOrderItemFulfillments: {
       type: new GraphQLList(WorkOrderItemFulfillmentType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workOrderItemFulfillments/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`order/orderItem/workOrderItemFulfillments/find?workEffortId=${workEffort.workEffortId}`)
     },
     custRequestWorkEfforts: {
       type: new GraphQLList(CustRequestWorkEffortType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`custRequestWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`order/custRequest/custRequestWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortAssocs: {
       type: new GraphQLList(WorkEffortAssocType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortAssocs/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortAssocs/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortAttributes: {
       type: new GraphQLList(WorkEffortAttributeType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortAttributes/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortAttributes/find?workEffortId=${workEffort.workEffortId}`)
     },
     agreementWorkEffortApplics: {
       type: new GraphQLList(AgreementWorkEffortApplicType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`agreementWorkEffortApplics/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`party/agreement/agreementWorkEffortApplics/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortNotes: {
       type: new GraphQLList(WorkEffortNoteType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortNotes/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortNotes/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortGoodStandards: {
       type: new GraphQLList(WorkEffortGoodStandardType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortGoodStandards/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortGoodStandards/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortSkillStandards: {
       type: new GraphQLList(WorkEffortSkillStandardType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortSkillStandards/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortSkillStandards/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortSurveyAppls: {
       type: new GraphQLList(WorkEffortSurveyApplType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortSurveyAppls/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortSurveyAppls/find?workEffortId=${workEffort.workEffortId}`)
     },
     acctgTranses: {
       type: new GraphQLList(AcctgTransType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`acctgTranss/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`accounting/acctgTranss/find?workEffortId=${workEffort.workEffortId}`)
     },
     quoteWorkEfforts: {
       type: new GraphQLList(QuoteWorkEffortType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`quoteWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`order/quote/quoteWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
     },
     shipments: {
       type: new GraphQLList(ShipmentType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?workEffortId=${workEffort.workEffortId}`)
     },
     inventoryItemDetails: {
       type: new GraphQLList(InventoryItemDetailType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`inventoryItemDetails/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`product/inventoryItem/inventoryItemDetails/find?workEffortId=${workEffort.workEffortId}`)
     },
     productAssocs: {
       type: new GraphQLList(ProductAssocType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`productAssocs/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`product/product/productAssocs/find?workEffortId=${workEffort.workEffortId}`)
     },
     salesOpportunityWorkEfforts: {
       type: new GraphQLList(SalesOpportunityWorkEffortType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`salesOpportunityWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`marketing/salesOpportunity/salesOpportunityWorkEfforts/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortReviews: {
       type: new GraphQLList(WorkEffortReviewType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortReviews/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortReviews/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortPartyAssignments: {
       type: new GraphQLList(WorkEffortPartyAssignmentType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortPartyAssignments/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortPartyAssignments/find?workEffortId=${workEffort.workEffortId}`)
     },
     costComponents: {
       type: new GraphQLList(CostComponentType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`costComponents/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`product/costComponents/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortStatuses: {
       type: new GraphQLList(WorkEffortStatusType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortStatuss/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortStatuss/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortCostCalcs: {
       type: new GraphQLList(WorkEffortCostCalcType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortCostCalcs/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortCostCalcs/find?workEffortId=${workEffort.workEffortId}`)
     },
     fixedAssetMaints: {
       type: new GraphQLList(FixedAssetMaintType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`fixedAssetMaints/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`accounting/fixedAsset/fixedAssetMaints/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortFixedAssetAssigns: {
       type: new GraphQLList(WorkEffortFixedAssetAssignType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortFixedAssetAssigns/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortFixedAssetAssigns/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortFixedAssetStds: {
       type: new GraphQLList(WorkEffortFixedAssetStdType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortFixedAssetStds/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortFixedAssetStds/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEfforts: {
       type: new GraphQLList(WorkEffortType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEfforts/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEfforts/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortContactMeches: {
       type: new GraphQLList(WorkEffortContactMechType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortContactMechs/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortContactMechs/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortBillings: {
       type: new GraphQLList(WorkEffortBillingType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortBillings/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortBillings/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortContents: {
       type: new GraphQLList(WorkEffortContentType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortContents/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortContents/find?workEffortId=${workEffort.workEffortId}`)
     },
     workEffortInventoryProduceds: {
       type: new GraphQLList(WorkEffortInventoryProducedType),
-      args : {workEffortId: {type: GraphQLString}},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workEffortInventoryProduceds/find?workEffortId=${workEffort.workEffortId}`)
+      args : {},
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`workeffort/workEffort/workEffortInventoryProduceds/find?workEffortId=${workEffort.workEffortId}`)
     }
   })
 });

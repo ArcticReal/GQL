@@ -22,12 +22,12 @@ const SegmentGroupClassificationType = new GraphQLObjectType({
     partyClassificationGroup: {
       type: PartyClassificationGroupType,
       args : {partyClassificationGroupId: {type: GraphQLString}},
-      resolve: (segmentGroupClassification, args, {loaders}) => loaders.ofbiz.load(`partyClassificationGroups/find?partyClassificationGroupId=${segmentGroupClassification.partyClassificationGroupId}`)
+      resolve: (segmentGroupClassification, args, {loaders}) => loaders.ofbiz.load(`party/party/partyClassificationGroups/find?partyClassificationGroupId=${segmentGroupClassification.partyClassificationGroupId}`)
     },
     segmentGroup: {
       type: SegmentGroupType,
       args : {segmentGroupId: {type: GraphQLString}},
-      resolve: (segmentGroupClassification, args, {loaders}) => loaders.ofbiz.load(`segmentGroups/find?segmentGroupId=${segmentGroupClassification.segmentGroupId}`)
+      resolve: (segmentGroupClassification, args, {loaders}) => loaders.ofbiz.load(`marketing/segmentGroups/find?segmentGroupId=${segmentGroupClassification.segmentGroupId}`)
     }
   })
 });

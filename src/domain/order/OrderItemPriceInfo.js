@@ -23,7 +23,7 @@ const OrderItemPriceInfoType = new GraphQLObjectType({
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemPriceInfo, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${orderItemPriceInfo.orderId}`)
+      resolve: (orderItemPriceInfo, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${orderItemPriceInfo.orderId}`)
     },
     productPriceActionSeqId: {type: GraphQLString},
     modifyAmount: {type: GraphQLFloat},
@@ -31,7 +31,7 @@ const OrderItemPriceInfoType = new GraphQLObjectType({
     productPriceRule: {
       type: ProductPriceActionType,
       args : {productPriceRuleId: {type: GraphQLString}},
-      resolve: (orderItemPriceInfo, args, {loaders}) => loaders.ofbiz.load(`productPriceActions/find?productPriceRuleId=${orderItemPriceInfo.productPriceRuleId}`)
+      resolve: (orderItemPriceInfo, args, {loaders}) => loaders.ofbiz.load(`product/product/productPriceActions/find?productPriceRuleId=${orderItemPriceInfo.productPriceRuleId}`)
     },
     rateCode: {type: GraphQLString},
     orderItemPriceInfoId: {type: GraphQLString}

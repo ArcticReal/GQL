@@ -23,12 +23,12 @@ const OrderItemGroupOrderType = new GraphQLObjectType({
     groupOrder: {
       type: ProductGroupOrderType,
       args : {groupOrderId: {type: GraphQLString}},
-      resolve: (orderItemGroupOrder, args, {loaders}) => loaders.ofbiz.load(`productGroupOrders/find?groupOrderId=${orderItemGroupOrder.groupOrderId}`)
+      resolve: (orderItemGroupOrder, args, {loaders}) => loaders.ofbiz.load(`product/product/productGroupOrders/find?groupOrderId=${orderItemGroupOrder.groupOrderId}`)
     },
     order: {
       type: OrderItemType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderItemGroupOrder, args, {loaders}) => loaders.ofbiz.load(`orderItems/find?orderId=${orderItemGroupOrder.orderId}`)
+      resolve: (orderItemGroupOrder, args, {loaders}) => loaders.ofbiz.load(`order/orderItems/find?orderId=${orderItemGroupOrder.orderId}`)
     }
   })
 });

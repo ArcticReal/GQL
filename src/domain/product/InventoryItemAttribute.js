@@ -21,7 +21,7 @@ const InventoryItemAttributeType = new GraphQLObjectType({
     inventoryItem: {
       type: InventoryItemType,
       args : {inventoryItemId: {type: GraphQLString}},
-      resolve: (inventoryItemAttribute, args, {loaders}) => loaders.ofbiz.load(`inventoryItems/find?inventoryItemId=${inventoryItemAttribute.inventoryItemId}`)
+      resolve: (inventoryItemAttribute, args, {loaders}) => loaders.ofbiz.load(`product/inventoryItems/find?inventoryItemId=${inventoryItemAttribute.inventoryItemId}`)
     },
     attrDescription: {type: GraphQLString},
     attrValue: {type: GraphQLString},

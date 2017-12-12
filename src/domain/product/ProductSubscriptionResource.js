@@ -27,12 +27,12 @@ const ProductSubscriptionResourceType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productSubscriptionResource, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productSubscriptionResource.productId}`)
+      resolve: (productSubscriptionResource, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productSubscriptionResource.productId}`)
     },
     subscriptionResource: {
       type: SubscriptionResourceType,
       args : {subscriptionResourceId: {type: GraphQLString}},
-      resolve: (productSubscriptionResource, args, {loaders}) => loaders.ofbiz.load(`subscriptionResources/find?subscriptionResourceId=${productSubscriptionResource.subscriptionResourceId}`)
+      resolve: (productSubscriptionResource, args, {loaders}) => loaders.ofbiz.load(`product/subscription/subscriptionResources/find?subscriptionResourceId=${productSubscriptionResource.subscriptionResourceId}`)
     },
     canclAutmExtTimeUomId: {type: GraphQLString},
     useCountLimit: {type: GraphQLInt},
@@ -49,7 +49,7 @@ const ProductSubscriptionResourceType = new GraphQLObjectType({
     useRoleType: {
       type: RoleTypeType,
       args : {useRoleTypeId: {type: GraphQLString}},
-      resolve: (productSubscriptionResource, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${productSubscriptionResource.useRoleTypeId}`)
+      resolve: (productSubscriptionResource, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${productSubscriptionResource.useRoleTypeId}`)
     },
     maxLifeTime: {type: GraphQLInt},
     useTime: {type: GraphQLInt},
@@ -57,7 +57,7 @@ const ProductSubscriptionResourceType = new GraphQLObjectType({
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (productSubscriptionResource, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${productSubscriptionResource.productStoreId}`)
+      resolve: (productSubscriptionResource, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${productSubscriptionResource.productStoreId}`)
     },
     gracePeriodOnExpiry: {type: GraphQLInt},
     hostedPathAlias: {type: GraphQLString}

@@ -25,12 +25,12 @@ const ProductStorePromoApplType = new GraphQLObjectType({
     productStore: {
       type: ProductStoreType,
       args : {productStoreId: {type: GraphQLString}},
-      resolve: (productStorePromoAppl, args, {loaders}) => loaders.ofbiz.load(`productStores/find?productStoreId=${productStorePromoAppl.productStoreId}`)
+      resolve: (productStorePromoAppl, args, {loaders}) => loaders.ofbiz.load(`product/product/productStores/find?productStoreId=${productStorePromoAppl.productStoreId}`)
     },
     productPromo: {
       type: ProductPromoType,
       args : {productPromoId: {type: GraphQLString}},
-      resolve: (productStorePromoAppl, args, {loaders}) => loaders.ofbiz.load(`productPromos/find?productPromoId=${productStorePromoAppl.productPromoId}`)
+      resolve: (productStorePromoAppl, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromos/find?productPromoId=${productStorePromoAppl.productPromoId}`)
     },
     thruDate: {type: GraphQLString}
   })

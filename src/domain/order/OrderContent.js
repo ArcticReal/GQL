@@ -25,17 +25,17 @@ const OrderContentType = new GraphQLObjectType({
     order: {
       type: OrderHeaderType,
       args : {orderId: {type: GraphQLString}},
-      resolve: (orderContent, args, {loaders}) => loaders.ofbiz.load(`orderHeaders/find?orderId=${orderContent.orderId}`)
+      resolve: (orderContent, args, {loaders}) => loaders.ofbiz.load(`order/orderHeaders/find?orderId=${orderContent.orderId}`)
     },
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (orderContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${orderContent.contentId}`)
+      resolve: (orderContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${orderContent.contentId}`)
     },
     orderContentType: {
       type: OrderContentTypeType,
       args : {orderContentTypeId: {type: GraphQLString}},
-      resolve: (orderContent, args, {loaders}) => loaders.ofbiz.load(`orderContentTypes/find?orderContentTypeId=${orderContent.orderContentTypeId}`)
+      resolve: (orderContent, args, {loaders}) => loaders.ofbiz.load(`order/orderContent/orderContentTypes/find?orderContentTypeId=${orderContent.orderContentTypeId}`)
     },
     thruDate: {type: GraphQLString}
   })

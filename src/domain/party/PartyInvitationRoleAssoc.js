@@ -22,12 +22,12 @@ const PartyInvitationRoleAssocType = new GraphQLObjectType({
     roleType: {
       type: RoleTypeType,
       args : {roleTypeId: {type: GraphQLString}},
-      resolve: (partyInvitationRoleAssoc, args, {loaders}) => loaders.ofbiz.load(`roleTypes/find?roleTypeId=${partyInvitationRoleAssoc.roleTypeId}`)
+      resolve: (partyInvitationRoleAssoc, args, {loaders}) => loaders.ofbiz.load(`party/roleTypes/find?roleTypeId=${partyInvitationRoleAssoc.roleTypeId}`)
     },
     partyInvitation: {
       type: PartyInvitationType,
       args : {partyInvitationId: {type: GraphQLString}},
-      resolve: (partyInvitationRoleAssoc, args, {loaders}) => loaders.ofbiz.load(`partyInvitations/find?partyInvitationId=${partyInvitationRoleAssoc.partyInvitationId}`)
+      resolve: (partyInvitationRoleAssoc, args, {loaders}) => loaders.ofbiz.load(`party/party/partyInvitations/find?partyInvitationId=${partyInvitationRoleAssoc.partyInvitationId}`)
     }
   })
 });

@@ -22,12 +22,12 @@ const SubscriptionCommEventType = new GraphQLObjectType({
     communicationEvent: {
       type: CommunicationEventType,
       args : {communicationEventId: {type: GraphQLString}},
-      resolve: (subscriptionCommEvent, args, {loaders}) => loaders.ofbiz.load(`communicationEvents/find?communicationEventId=${subscriptionCommEvent.communicationEventId}`)
+      resolve: (subscriptionCommEvent, args, {loaders}) => loaders.ofbiz.load(`party/communicationEvents/find?communicationEventId=${subscriptionCommEvent.communicationEventId}`)
     },
     subscription: {
       type: SubscriptionType,
       args : {subscriptionId: {type: GraphQLString}},
-      resolve: (subscriptionCommEvent, args, {loaders}) => loaders.ofbiz.load(`subscriptions/find?subscriptionId=${subscriptionCommEvent.subscriptionId}`)
+      resolve: (subscriptionCommEvent, args, {loaders}) => loaders.ofbiz.load(`product/subscriptions/find?subscriptionId=${subscriptionCommEvent.subscriptionId}`)
     }
   })
 });

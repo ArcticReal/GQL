@@ -22,7 +22,7 @@ const ProductPromoCodeEmailType = new GraphQLObjectType({
     productPromoCode: {
       type: ProductPromoCodeType,
       args : {productPromoCodeId: {type: GraphQLString}},
-      resolve: (productPromoCodeEmail, args, {loaders}) => loaders.ofbiz.load(`productPromoCodes/find?productPromoCodeId=${productPromoCodeEmail.productPromoCodeId}`)
+      resolve: (productPromoCodeEmail, args, {loaders}) => loaders.ofbiz.load(`product/product/productPromoCodes/find?productPromoCodeId=${productPromoCodeEmail.productPromoCodeId}`)
     }
   })
 });

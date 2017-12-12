@@ -21,12 +21,12 @@ const ContactMechLinkType = new GraphQLObjectType({
     contactMechFrom: {
       type: ContactMechType,
       args : {contactMechIdFrom: {type: GraphQLString}},
-      resolve: (contactMechLink, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${contactMechLink.contactMechIdFrom}`)
+      resolve: (contactMechLink, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${contactMechLink.contactMechIdFrom}`)
     },
     contactMechTo: {
       type: ContactMechType,
       args : {contactMechIdTo: {type: GraphQLString}},
-      resolve: (contactMechLink, args, {loaders}) => loaders.ofbiz.load(`contactMechs/find?contactMechId=${contactMechLink.contactMechIdTo}`)
+      resolve: (contactMechLink, args, {loaders}) => loaders.ofbiz.load(`party/contactMechs/find?contactMechId=${contactMechLink.contactMechIdTo}`)
     }
   })
 });

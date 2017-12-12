@@ -26,7 +26,7 @@ const CartAbandonedLineType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (cartAbandonedLine, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${cartAbandonedLine.productId}`)
+      resolve: (cartAbandonedLine, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${cartAbandonedLine.productId}`)
     },
     reservPersons: {type: GraphQLFloat},
     totalWithAdjustments: {type: GraphQLFloat},
@@ -39,7 +39,7 @@ const CartAbandonedLineType = new GraphQLObjectType({
     prodCatalog: {
       type: ProdCatalogType,
       args : {prodCatalogId: {type: GraphQLString}},
-      resolve: (cartAbandonedLine, args, {loaders}) => loaders.ofbiz.load(`prodCatalogs/find?prodCatalogId=${cartAbandonedLine.prodCatalogId}`)
+      resolve: (cartAbandonedLine, args, {loaders}) => loaders.ofbiz.load(`product/prodCatalogs/find?prodCatalogId=${cartAbandonedLine.prodCatalogId}`)
     }
   })
 });

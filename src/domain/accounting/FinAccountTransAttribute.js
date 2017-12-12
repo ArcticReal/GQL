@@ -21,7 +21,7 @@ const FinAccountTransAttributeType = new GraphQLObjectType({
     finAccountTrans: {
       type: FinAccountTransType,
       args : {finAccountTransId: {type: GraphQLString}},
-      resolve: (finAccountTransAttribute, args, {loaders}) => loaders.ofbiz.load(`finAccountTranss/find?finAccountTransId=${finAccountTransAttribute.finAccountTransId}`)
+      resolve: (finAccountTransAttribute, args, {loaders}) => loaders.ofbiz.load(`accounting/finAccount/finAccountTranss/find?finAccountTransId=${finAccountTransAttribute.finAccountTransId}`)
     },
     attrDescription: {type: GraphQLString},
     attrValue: {type: GraphQLString},

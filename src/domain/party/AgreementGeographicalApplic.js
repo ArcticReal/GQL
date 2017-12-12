@@ -22,7 +22,7 @@ const AgreementGeographicalApplicType = new GraphQLObjectType({
     agreement: {
       type: AgreementItemType,
       args : {agreementId: {type: GraphQLString}},
-      resolve: (agreementGeographicalApplic, args, {loaders}) => loaders.ofbiz.load(`agreementItems/find?agreementId=${agreementGeographicalApplic.agreementId}`)
+      resolve: (agreementGeographicalApplic, args, {loaders}) => loaders.ofbiz.load(`party/agreement/agreementItems/find?agreementId=${agreementGeographicalApplic.agreementId}`)
     },
     agreementItemSeqId: {type: GraphQLString}
   })

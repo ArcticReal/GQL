@@ -23,7 +23,7 @@ const SalesOpportunityTrckCodeType = new GraphQLObjectType({
     salesOpportunity: {
       type: SalesOpportunityType,
       args : {salesOpportunityId: {type: GraphQLString}},
-      resolve: (salesOpportunityTrckCode, args, {loaders}) => loaders.ofbiz.load(`salesOpportunitys/find?salesOpportunityId=${salesOpportunityTrckCode.salesOpportunityId}`)
+      resolve: (salesOpportunityTrckCode, args, {loaders}) => loaders.ofbiz.load(`marketing/salesOpportunitys/find?salesOpportunityId=${salesOpportunityTrckCode.salesOpportunityId}`)
     }
   })
 });

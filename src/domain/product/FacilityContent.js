@@ -23,12 +23,12 @@ const FacilityContentType = new GraphQLObjectType({
     facility: {
       type: FacilityType,
       args : {facilityId: {type: GraphQLString}},
-      resolve: (facilityContent, args, {loaders}) => loaders.ofbiz.load(`facilitys/find?facilityId=${facilityContent.facilityId}`)
+      resolve: (facilityContent, args, {loaders}) => loaders.ofbiz.load(`product/facilitys/find?facilityId=${facilityContent.facilityId}`)
     },
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (facilityContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${facilityContent.contentId}`)
+      resolve: (facilityContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${facilityContent.contentId}`)
     },
     thruDate: {type: GraphQLString}
   })

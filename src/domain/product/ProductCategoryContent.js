@@ -24,18 +24,18 @@ const ProductCategoryContentType = new GraphQLObjectType({
     prodCatContentType: {
       type: ProductCategoryContentTypeType,
       args : {prodCatContentTypeId: {type: GraphQLString}},
-      resolve: (productCategoryContent, args, {loaders}) => loaders.ofbiz.load(`productCategoryContentTypes/find?prodCatContentTypeId=${productCategoryContent.prodCatContentTypeId}`)
+      resolve: (productCategoryContent, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategoryContentTypes/find?prodCatContentTypeId=${productCategoryContent.prodCatContentTypeId}`)
     },
     purchaseFromDate: {type: GraphQLString},
     productCategory: {
       type: ProductCategoryType,
       args : {productCategoryId: {type: GraphQLString}},
-      resolve: (productCategoryContent, args, {loaders}) => loaders.ofbiz.load(`productCategorys/find?productCategoryId=${productCategoryContent.productCategoryId}`)
+      resolve: (productCategoryContent, args, {loaders}) => loaders.ofbiz.load(`product/product/productCategorys/find?productCategoryId=${productCategoryContent.productCategoryId}`)
     },
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (productCategoryContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${productCategoryContent.contentId}`)
+      resolve: (productCategoryContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${productCategoryContent.contentId}`)
     },
     useDaysLimit: {type: GraphQLFloat},
     purchaseThruDate: {type: GraphQLString},

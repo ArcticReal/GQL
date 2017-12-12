@@ -23,18 +23,18 @@ const ProdConfItemContentType = new GraphQLObjectType({
     configItem: {
       type: ProductConfigItemType,
       args : {configItemId: {type: GraphQLString}},
-      resolve: (prodConfItemContent, args, {loaders}) => loaders.ofbiz.load(`productConfigItems/find?configItemId=${prodConfItemContent.configItemId}`)
+      resolve: (prodConfItemContent, args, {loaders}) => loaders.ofbiz.load(`product/product/productConfigItems/find?configItemId=${prodConfItemContent.configItemId}`)
     },
     confItemContentType: {
       type: ProdConfItemContentTypeType,
       args : {confItemContentTypeId: {type: GraphQLString}},
-      resolve: (prodConfItemContent, args, {loaders}) => loaders.ofbiz.load(`prodConfItemContentTypes/find?confItemContentTypeId=${prodConfItemContent.confItemContentTypeId}`)
+      resolve: (prodConfItemContent, args, {loaders}) => loaders.ofbiz.load(`product/prodConfItemContent/prodConfItemContentTypes/find?confItemContentTypeId=${prodConfItemContent.confItemContentTypeId}`)
     },
     fromDate: {type: GraphQLString},
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (prodConfItemContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${prodConfItemContent.contentId}`)
+      resolve: (prodConfItemContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${prodConfItemContent.contentId}`)
     },
     thruDate: {type: GraphQLString}
   })

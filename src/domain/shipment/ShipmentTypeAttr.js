@@ -22,7 +22,7 @@ const ShipmentTypeAttrType = new GraphQLObjectType({
     shipmentType: {
       type: ShipmentTypeType,
       args : {shipmentTypeId: {type: GraphQLString}},
-      resolve: (shipmentTypeAttr, args, {loaders}) => loaders.ofbiz.load(`shipmentTypes/find?shipmentTypeId=${shipmentTypeAttr.shipmentTypeId}`)
+      resolve: (shipmentTypeAttr, args, {loaders}) => loaders.ofbiz.load(`shipment/shipment/shipmentTypes/find?shipmentTypeId=${shipmentTypeAttr.shipmentTypeId}`)
     },
     attrName: {type: GraphQLString}
   })
