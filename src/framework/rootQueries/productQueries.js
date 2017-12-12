@@ -12,7 +12,7 @@ const productQueries = {
     args: {
 
     },
-    resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`products/productList`)
+    resolve: (root, args, {loaders}) => loaders.ofbizArray.load(`products/find`)
   },
   product: {
     type: ProductType,

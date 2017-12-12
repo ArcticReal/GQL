@@ -1,7 +1,7 @@
 import express from 'express';
 import graphQLHTTP from 'express-graphql';
 import DataLoader from 'dataloader';
-import depthLimit from 'graphql-depth-limit'
+import depthLimit from 'graphql-depth-limit';
 
 import cors from 'cors';
 
