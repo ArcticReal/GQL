@@ -21,6 +21,7 @@ const LoggedInPersonType = new GraphQLObjectType({
     toName: { type: GraphQLString },
     address1: { type: GraphQLString },
     houseNumber: { type: GraphQLString },
+    houseNumberExt: { type: GraphQLString },
     postalCode: { type: GraphQLString },
     city: { type: GraphQLString },
     countryGeoId: { type: GraphQLString },
