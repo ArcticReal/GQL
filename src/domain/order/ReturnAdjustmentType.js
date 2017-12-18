@@ -47,13 +47,13 @@ export {ReturnAdjustmentTypeType};
 
 const ReturnAdjustmentTypeInputType = new GraphQLInputObjectType({
   name: 'ReturnAdjustmentTypeInputType',
-  description: 'input type for ReturnAdjustmentType in order',
+  description: 'input type for ReturnAdjustmentType',
 
   fields: () => ({
-    returnAdjustmentTypeId: {type: GraphQLString},
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    returnAdjustmentTypeId: {type: GraphQLString}
   })
 });
 

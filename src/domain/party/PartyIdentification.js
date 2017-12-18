@@ -41,12 +41,12 @@ export {PartyIdentificationType};
 
 const PartyIdentificationInputType = new GraphQLInputObjectType({
   name: 'PartyIdentificationInputType',
-  description: 'input type for PartyIdentification in party',
+  description: 'input type for PartyIdentification',
 
   fields: () => ({
-    partyIdentificationTypeId: {type: GraphQLString},
     idValue: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    partyIdentificationTypeId: {type: GraphQLString}
   })
 });
 

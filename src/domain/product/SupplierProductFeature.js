@@ -33,14 +33,14 @@ export {SupplierProductFeatureType};
 
 const SupplierProductFeatureInputType = new GraphQLInputObjectType({
   name: 'SupplierProductFeatureInputType',
-  description: 'input type for SupplierProductFeature in product',
+  description: 'input type for SupplierProductFeature',
 
   fields: () => ({
-    idCode: {type: GraphQLString},
-    productFeatureId: {type: GraphQLString},
     description: {type: GraphQLString},
-    uomId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    idCode: {type: GraphQLString},
+    partyId: {type: GraphQLString},
+    productFeatureId: {type: GraphQLString},
+    uomId: {type: GraphQLString}
   })
 });
 

@@ -35,7 +35,7 @@ export {MarketingCampaignNoteType};
 
 const MarketingCampaignNoteInputType = new GraphQLInputObjectType({
   name: 'MarketingCampaignNoteInputType',
-  description: 'input type for MarketingCampaignNote in marketing',
+  description: 'input type for MarketingCampaignNote',
 
   fields: () => ({
     marketingCampaignId: {type: GraphQLString},

@@ -314,25 +314,25 @@ export {UserLoginType};
 
 const UserLoginInputType = new GraphQLInputObjectType({
   name: 'UserLoginInputType',
-  description: 'input type for UserLogin in login',
+  description: 'input type for UserLogin',
 
   fields: () => ({
-    successiveFailedLogins: {type: GraphQLInt},
-    passwordHint: {type: GraphQLString},
-    externalAuthId: {type: GraphQLString},
-    lastTimeZone: {type: GraphQLString},
-    enabled: {type: GraphQLBoolean},
-    lastLocale: {type: GraphQLString},
     currentPassword: {type: GraphQLString},
-    userLoginId: {type: GraphQLString},
-    isSystem: {type: GraphQLBoolean},
-    disabledDateTime: {type: GraphQLString},
     disabledBy: {type: GraphQLString},
+    disabledDateTime: {type: GraphQLString},
+    enabled: {type: GraphQLBoolean},
+    externalAuthId: {type: GraphQLString},
     hasLoggedOut: {type: GraphQLBoolean},
-    userLdapDn: {type: GraphQLString},
-    requirePasswordChange: {type: GraphQLBoolean},
+    isSystem: {type: GraphQLBoolean},
     lastCurrencyUom: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    lastLocale: {type: GraphQLString},
+    lastTimeZone: {type: GraphQLString},
+    partyId: {type: GraphQLString},
+    passwordHint: {type: GraphQLString},
+    requirePasswordChange: {type: GraphQLBoolean},
+    successiveFailedLogins: {type: GraphQLInt},
+    userLdapDn: {type: GraphQLString},
+    userLoginId: {type: GraphQLString}
   })
 });
 

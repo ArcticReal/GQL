@@ -42,7 +42,7 @@ export {BudgetScenarioType};
 
 const BudgetScenarioInputType = new GraphQLInputObjectType({
   name: 'BudgetScenarioInputType',
-  description: 'input type for BudgetScenario in accounting',
+  description: 'input type for BudgetScenario',
 
   fields: () => ({
     budgetScenarioId: {type: GraphQLString},

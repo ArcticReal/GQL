@@ -40,7 +40,7 @@ export {DataResourcePurposeType};
 
 const DataResourcePurposeInputType = new GraphQLInputObjectType({
   name: 'DataResourcePurposeInputType',
-  description: 'input type for DataResourcePurpose in content',
+  description: 'input type for DataResourcePurpose',
 
   fields: () => ({
     contentPurposeTypeId: {type: GraphQLString},

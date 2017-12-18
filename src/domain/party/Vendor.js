@@ -38,14 +38,14 @@ export {VendorType};
 
 const VendorInputType = new GraphQLInputObjectType({
   name: 'VendorInputType',
-  description: 'input type for Vendor in party',
+  description: 'input type for Vendor',
 
   fields: () => ({
+    manifestCompanyName: {type: GraphQLString},
     manifestCompanyTitle: {type: GraphQLString},
-    manifestPolicies: {type: GraphQLString},
     manifestLogoUrl: {type: GraphQLString},
-    partyId: {type: GraphQLString},
-    manifestCompanyName: {type: GraphQLString}
+    manifestPolicies: {type: GraphQLString},
+    partyId: {type: GraphQLString}
   })
 });
 

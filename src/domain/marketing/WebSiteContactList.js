@@ -37,13 +37,13 @@ export {WebSiteContactListType};
 
 const WebSiteContactListInputType = new GraphQLInputObjectType({
   name: 'WebSiteContactListInputType',
-  description: 'input type for WebSiteContactList in marketing',
+  description: 'input type for WebSiteContactList',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     contactListId: {type: GraphQLString},
-    webSiteId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    fromDate: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    webSiteId: {type: GraphQLString}
   })
 });
 

@@ -40,20 +40,20 @@ export {SalesOpportunityHistoryType};
 
 const SalesOpportunityHistoryInputType = new GraphQLInputObjectType({
   name: 'SalesOpportunityHistoryInputType',
-  description: 'input type for SalesOpportunityHistory in marketing',
+  description: 'input type for SalesOpportunityHistory',
 
   fields: () => ({
+    changeNote: {type: GraphQLString},
+    currencyUomId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    estimatedAmount: {type: GraphQLFloat},
     estimatedCloseDate: {type: GraphQLString},
     estimatedProbability: {type: GraphQLFloat},
-    currencyUomId: {type: GraphQLString},
-    salesOpportunityHistoryId: {type: GraphQLString},
-    changeNote: {type: GraphQLString},
-    description: {type: GraphQLString},
+    modifiedByUserLogin: {type: GraphQLString},
+    modifiedTimestamp: {type: GraphQLString},
     nextStep: {type: GraphQLString},
     opportunityStageId: {type: GraphQLString},
-    modifiedTimestamp: {type: GraphQLString},
-    modifiedByUserLogin: {type: GraphQLString},
-    estimatedAmount: {type: GraphQLFloat},
+    salesOpportunityHistoryId: {type: GraphQLString},
     salesOpportunityId: {type: GraphQLString}
   })
 });

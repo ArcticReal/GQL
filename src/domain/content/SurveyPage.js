@@ -37,13 +37,13 @@ export {SurveyPageType};
 
 const SurveyPageInputType = new GraphQLInputObjectType({
   name: 'SurveyPageInputType',
-  description: 'input type for SurveyPage in content',
+  description: 'input type for SurveyPage',
 
   fields: () => ({
-    surveyId: {type: GraphQLString},
+    pageName: {type: GraphQLString},
     sequenceNum: {type: GraphQLInt},
-    surveyPageSeqId: {type: GraphQLString},
-    pageName: {type: GraphQLString}
+    surveyId: {type: GraphQLString},
+    surveyPageSeqId: {type: GraphQLString}
   })
 });
 

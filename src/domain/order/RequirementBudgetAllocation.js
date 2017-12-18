@@ -42,12 +42,12 @@ export {RequirementBudgetAllocationType};
 
 const RequirementBudgetAllocationInputType = new GraphQLInputObjectType({
   name: 'RequirementBudgetAllocationInputType',
-  description: 'input type for RequirementBudgetAllocation in order',
+  description: 'input type for RequirementBudgetAllocation',
 
   fields: () => ({
     amount: {type: GraphQLFloat},
-    budgetItemSeqId: {type: GraphQLString},
     budgetId: {type: GraphQLString},
+    budgetItemSeqId: {type: GraphQLString},
     requirementId: {type: GraphQLString}
   })
 });

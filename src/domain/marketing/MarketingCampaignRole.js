@@ -41,12 +41,12 @@ export {MarketingCampaignRoleType};
 
 const MarketingCampaignRoleInputType = new GraphQLInputObjectType({
   name: 'MarketingCampaignRoleInputType',
-  description: 'input type for MarketingCampaignRole in marketing',
+  description: 'input type for MarketingCampaignRole',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
     marketingCampaignId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

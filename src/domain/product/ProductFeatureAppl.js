@@ -57,16 +57,16 @@ export {ProductFeatureApplType};
 
 const ProductFeatureApplInputType = new GraphQLInputObjectType({
   name: 'ProductFeatureApplInputType',
-  description: 'input type for ProductFeatureAppl in product',
+  description: 'input type for ProductFeatureAppl',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     amount: {type: GraphQLFloat},
-    productId: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
-    recurringAmount: {type: GraphQLFloat},
-    productFeatureId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     productFeatureApplTypeId: {type: GraphQLString},
+    productFeatureId: {type: GraphQLString},
+    productId: {type: GraphQLString},
+    recurringAmount: {type: GraphQLFloat},
+    sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}
   })
 });

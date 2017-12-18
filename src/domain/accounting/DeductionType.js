@@ -47,13 +47,13 @@ export {DeductionTypeType};
 
 const DeductionTypeInputType = new GraphQLInputObjectType({
   name: 'DeductionTypeInputType',
-  description: 'input type for DeductionType in accounting',
+  description: 'input type for DeductionType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
     deductionTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

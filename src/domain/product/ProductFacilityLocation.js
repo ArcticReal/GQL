@@ -43,14 +43,14 @@ export {ProductFacilityLocationType};
 
 const ProductFacilityLocationInputType = new GraphQLInputObjectType({
   name: 'ProductFacilityLocationInputType',
-  description: 'input type for ProductFacilityLocation in product',
+  description: 'input type for ProductFacilityLocation',
 
   fields: () => ({
     facilityId: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    moveQuantity: {type: GraphQLFloat},
+    locationSeqId: {type: GraphQLString},
     minimumStock: {type: GraphQLFloat},
-    locationSeqId: {type: GraphQLString}
+    moveQuantity: {type: GraphQLFloat},
+    productId: {type: GraphQLString}
   })
 });
 

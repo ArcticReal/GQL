@@ -44,19 +44,19 @@ export {PaymentGatewayClearCommerceType};
 
 const PaymentGatewayClearCommerceInputType = new GraphQLInputObjectType({
   name: 'PaymentGatewayClearCommerceInputType',
-  description: 'input type for PaymentGatewayClearCommerce in accounting',
+  description: 'input type for PaymentGatewayClearCommerce',
 
   fields: () => ({
-    sourceId: {type: GraphQLString},
-    effectiveAlias: {type: GraphQLString},
     clientId: {type: GraphQLString},
-    paymentGatewayConfigId: {type: GraphQLString},
-    groupId: {type: GraphQLString},
-    userAlias: {type: GraphQLString},
-    serverURL: {type: GraphQLString},
-    pwd: {type: GraphQLString},
-    processMode: {type: GraphQLBoolean},
+    effectiveAlias: {type: GraphQLString},
     enableCVM: {type: GraphQLBoolean},
+    groupId: {type: GraphQLString},
+    paymentGatewayConfigId: {type: GraphQLString},
+    processMode: {type: GraphQLBoolean},
+    pwd: {type: GraphQLString},
+    serverURL: {type: GraphQLString},
+    sourceId: {type: GraphQLString},
+    userAlias: {type: GraphQLString},
     username: {type: GraphQLString}
   })
 });

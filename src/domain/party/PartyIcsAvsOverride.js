@@ -35,7 +35,7 @@ export {PartyIcsAvsOverrideType};
 
 const PartyIcsAvsOverrideInputType = new GraphQLInputObjectType({
   name: 'PartyIcsAvsOverrideInputType',
-  description: 'input type for PartyIcsAvsOverride in party',
+  description: 'input type for PartyIcsAvsOverride',
 
   fields: () => ({
     avsDeclineString: {type: GraphQLString},

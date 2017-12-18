@@ -52,17 +52,17 @@ export {FixedAssetProductType};
 
 const FixedAssetProductInputType = new GraphQLInputObjectType({
   name: 'FixedAssetProductInputType',
-  description: 'input type for FixedAssetProduct in accounting',
+  description: 'input type for FixedAssetProduct',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     comments: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
-    productId: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
     fixedAssetId: {type: GraphQLString},
     fixedAssetProductTypeId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    productId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
     quantityUomId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}
   })
 });

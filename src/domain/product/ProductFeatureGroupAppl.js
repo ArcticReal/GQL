@@ -43,13 +43,13 @@ export {ProductFeatureGroupApplType};
 
 const ProductFeatureGroupApplInputType = new GraphQLInputObjectType({
   name: 'ProductFeatureGroupApplInputType',
-  description: 'input type for ProductFeatureGroupAppl in product',
+  description: 'input type for ProductFeatureGroupAppl',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
-    productFeatureId: {type: GraphQLString},
     productFeatureGroupId: {type: GraphQLString},
+    productFeatureId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}
   })
 });

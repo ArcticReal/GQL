@@ -98,25 +98,25 @@ export {ContactListType};
 
 const ContactListInputType = new GraphQLInputObjectType({
   name: 'ContactListInputType',
-  description: 'input type for ContactList in marketing',
+  description: 'input type for ContactList',
 
   fields: () => ({
-    verifyEmailSubject: {type: GraphQLString},
     comments: {type: GraphQLString},
+    contactListId: {type: GraphQLString},
     contactListName: {type: GraphQLString},
+    contactListTypeId: {type: GraphQLString},
+    contactMechTypeId: {type: GraphQLString},
+    createdByUserLogin: {type: GraphQLString},
+    description: {type: GraphQLString},
+    isPublic: {type: GraphQLBoolean},
+    lastModifiedByUserLogin: {type: GraphQLString},
     marketingCampaignId: {type: GraphQLString},
     optOutScreen: {type: GraphQLString},
-    description: {type: GraphQLString},
-    contactMechTypeId: {type: GraphQLString},
-    contactListTypeId: {type: GraphQLString},
-    verifyEmailFrom: {type: GraphQLString},
     ownerPartyId: {type: GraphQLString},
-    lastModifiedByUserLogin: {type: GraphQLString},
     singleUse: {type: GraphQLBoolean},
-    contactListId: {type: GraphQLString},
-    isPublic: {type: GraphQLBoolean},
-    createdByUserLogin: {type: GraphQLString},
+    verifyEmailFrom: {type: GraphQLString},
     verifyEmailScreen: {type: GraphQLString},
+    verifyEmailSubject: {type: GraphQLString},
     verifyEmailWebSiteId: {type: GraphQLString}
   })
 });

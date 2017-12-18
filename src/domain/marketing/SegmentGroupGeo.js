@@ -35,7 +35,7 @@ export {SegmentGroupGeoType};
 
 const SegmentGroupGeoInputType = new GraphQLInputObjectType({
   name: 'SegmentGroupGeoInputType',
-  description: 'input type for SegmentGroupGeo in marketing',
+  description: 'input type for SegmentGroupGeo',
 
   fields: () => ({
     geoId: {type: GraphQLString},

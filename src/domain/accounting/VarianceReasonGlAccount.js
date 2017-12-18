@@ -46,12 +46,12 @@ export {VarianceReasonGlAccountType};
 
 const VarianceReasonGlAccountInputType = new GraphQLInputObjectType({
   name: 'VarianceReasonGlAccountInputType',
-  description: 'input type for VarianceReasonGlAccount in accounting',
+  description: 'input type for VarianceReasonGlAccount',
 
   fields: () => ({
-    varianceReasonId: {type: GraphQLString},
     glAccountId: {type: GraphQLString},
-    organizationPartyId: {type: GraphQLString}
+    organizationPartyId: {type: GraphQLString},
+    varianceReasonId: {type: GraphQLString}
   })
 });
 

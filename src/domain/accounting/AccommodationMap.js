@@ -54,14 +54,14 @@ export {AccommodationMapType};
 
 const AccommodationMapInputType = new GraphQLInputObjectType({
   name: 'AccommodationMapInputType',
-  description: 'input type for AccommodationMap in accounting',
+  description: 'input type for AccommodationMap',
 
   fields: () => ({
-    accommodationMapId: {type: GraphQLString},
-    fixedAssetId: {type: GraphQLString},
-    numberOfSpaces: {type: GraphQLInt},
     accommodationClassId: {type: GraphQLString},
-    accommodationMapTypeId: {type: GraphQLString}
+    accommodationMapId: {type: GraphQLString},
+    accommodationMapTypeId: {type: GraphQLString},
+    fixedAssetId: {type: GraphQLString},
+    numberOfSpaces: {type: GraphQLInt}
   })
 });
 

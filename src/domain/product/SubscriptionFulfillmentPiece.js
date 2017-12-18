@@ -40,7 +40,7 @@ export {SubscriptionFulfillmentPieceType};
 
 const SubscriptionFulfillmentPieceInputType = new GraphQLInputObjectType({
   name: 'SubscriptionFulfillmentPieceInputType',
-  description: 'input type for SubscriptionFulfillmentPiece in product',
+  description: 'input type for SubscriptionFulfillmentPiece',
 
   fields: () => ({
     subscriptionActivityId: {type: GraphQLString},

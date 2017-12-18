@@ -48,12 +48,12 @@ export {InvoiceContentType};
 
 const InvoiceContentInputType = new GraphQLInputObjectType({
   name: 'InvoiceContentInputType',
-  description: 'input type for InvoiceContent in accounting',
+  description: 'input type for InvoiceContent',
 
   fields: () => ({
-    invoiceContentTypeId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
     contentId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    invoiceContentTypeId: {type: GraphQLString},
     invoiceId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })

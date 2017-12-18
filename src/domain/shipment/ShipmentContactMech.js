@@ -46,12 +46,12 @@ export {ShipmentContactMechType};
 
 const ShipmentContactMechInputType = new GraphQLInputObjectType({
   name: 'ShipmentContactMechInputType',
-  description: 'input type for ShipmentContactMech in shipment',
+  description: 'input type for ShipmentContactMech',
 
   fields: () => ({
-    shipmentId: {type: GraphQLString},
+    contactMechId: {type: GraphQLString},
     shipmentContactMechTypeId: {type: GraphQLString},
-    contactMechId: {type: GraphQLString}
+    shipmentId: {type: GraphQLString}
   })
 });
 

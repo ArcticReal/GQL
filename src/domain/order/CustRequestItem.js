@@ -84,25 +84,25 @@ export {CustRequestItemType};
 
 const CustRequestItemInputType = new GraphQLInputObjectType({
   name: 'CustRequestItemInputType',
-  description: 'input type for CustRequestItem in order',
+  description: 'input type for CustRequestItem',
 
   fields: () => ({
-    custRequestResolutionId: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
-    reservLength: {type: GraphQLFloat},
-    sequenceNum: {type: GraphQLInt},
-    productId: {type: GraphQLString},
-    reservPersons: {type: GraphQLFloat},
-    maximumAmount: {type: GraphQLFloat},
-    requiredByDate: {type: GraphQLString},
-    description: {type: GraphQLString},
-    priority: {type: GraphQLInt},
-    custRequestItemSeqId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    reservStart: {type: GraphQLString},
     configId: {type: GraphQLString},
     custRequestId: {type: GraphQLString},
+    custRequestItemSeqId: {type: GraphQLString},
+    custRequestResolutionId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    maximumAmount: {type: GraphQLFloat},
+    priority: {type: GraphQLInt},
+    productId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
+    requiredByDate: {type: GraphQLString},
+    reservLength: {type: GraphQLFloat},
+    reservPersons: {type: GraphQLFloat},
+    reservStart: {type: GraphQLString},
     selectedAmount: {type: GraphQLFloat},
+    sequenceNum: {type: GraphQLInt},
+    statusId: {type: GraphQLString},
     story: {type: GraphQLString}
   })
 });

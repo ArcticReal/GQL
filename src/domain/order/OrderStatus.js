@@ -46,17 +46,17 @@ export {OrderStatusType};
 
 const OrderStatusInputType = new GraphQLInputObjectType({
   name: 'OrderStatusInputType',
-  description: 'input type for OrderStatus in order',
+  description: 'input type for OrderStatus',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    orderStatusId: {type: GraphQLString},
-    orderPaymentPreferenceId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    statusUserLogin: {type: GraphQLString},
     changeReason: {type: GraphQLString},
     orderId: {type: GraphQLString},
-    statusDatetime: {type: GraphQLString}
+    orderItemSeqId: {type: GraphQLString},
+    orderPaymentPreferenceId: {type: GraphQLString},
+    orderStatusId: {type: GraphQLString},
+    statusDatetime: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    statusUserLogin: {type: GraphQLString}
   })
 });
 

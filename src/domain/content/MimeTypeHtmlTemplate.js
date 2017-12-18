@@ -35,7 +35,7 @@ export {MimeTypeHtmlTemplateType};
 
 const MimeTypeHtmlTemplateInputType = new GraphQLInputObjectType({
   name: 'MimeTypeHtmlTemplateInputType',
-  description: 'input type for MimeTypeHtmlTemplate in content',
+  description: 'input type for MimeTypeHtmlTemplate',
 
   fields: () => ({
     mimeTypeId: {type: GraphQLString},

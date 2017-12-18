@@ -49,14 +49,14 @@ export {OrderContentType};
 
 const OrderContentInputType = new GraphQLInputObjectType({
   name: 'OrderContentInputType',
-  description: 'input type for OrderContent in order',
+  description: 'input type for OrderContent',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    orderId: {type: GraphQLString},
     contentId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     orderContentTypeId: {type: GraphQLString},
+    orderId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

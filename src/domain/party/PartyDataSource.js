@@ -39,15 +39,15 @@ export {PartyDataSourceType};
 
 const PartyDataSourceInputType = new GraphQLInputObjectType({
   name: 'PartyDataSourceInputType',
-  description: 'input type for PartyDataSource in party',
+  description: 'input type for PartyDataSource',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    dataSourceId: {type: GraphQLString},
     comments: {type: GraphQLString},
-    visitId: {type: GraphQLString},
+    dataSourceId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     isCreate: {type: GraphQLBoolean},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    visitId: {type: GraphQLString}
   })
 });
 

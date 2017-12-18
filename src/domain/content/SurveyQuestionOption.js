@@ -54,17 +54,17 @@ export {SurveyQuestionOptionType};
 
 const SurveyQuestionOptionInputType = new GraphQLInputObjectType({
   name: 'SurveyQuestionOptionInputType',
-  description: 'input type for SurveyQuestionOption in content',
+  description: 'input type for SurveyQuestionOption',
 
   fields: () => ({
     amountBase: {type: GraphQLFloat},
+    amountBaseUomId: {type: GraphQLString},
+    description: {type: GraphQLString},
     duration: {type: GraphQLInt},
-    surveyQuestionId: {type: GraphQLString},
+    durationUomId: {type: GraphQLString},
     sequenceNum: {type: GraphQLInt},
     surveyOptionSeqId: {type: GraphQLString},
-    amountBaseUomId: {type: GraphQLString},
-    durationUomId: {type: GraphQLString},
-    description: {type: GraphQLString},
+    surveyQuestionId: {type: GraphQLString},
     weightFactor: {type: GraphQLFloat}
   })
 });

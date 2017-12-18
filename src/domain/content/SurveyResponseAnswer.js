@@ -61,27 +61,27 @@ export {SurveyResponseAnswerType};
 
 const SurveyResponseAnswerInputType = new GraphQLInputObjectType({
   name: 'SurveyResponseAnswerInputType',
-  description: 'input type for SurveyResponseAnswer in content',
+  description: 'input type for SurveyResponseAnswer',
 
   fields: () => ({
     amountBase: {type: GraphQLFloat},
-    surveyQuestionId: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
-    surveyOptionSeqId: {type: GraphQLString},
+    amountBaseUomId: {type: GraphQLString},
+    answeredDate: {type: GraphQLString},
+    booleanResponse: {type: GraphQLBoolean},
     contentId: {type: GraphQLString},
-    durationUomId: {type: GraphQLString},
     currencyResponse: {type: GraphQLFloat},
+    duration: {type: GraphQLInt},
+    durationUomId: {type: GraphQLString},
     floatResponse: {type: GraphQLFloat},
     numericResponse: {type: GraphQLInt},
-    surveyResponseId: {type: GraphQLString},
-    duration: {type: GraphQLInt},
-    answeredDate: {type: GraphQLString},
-    textResponse: {type: GraphQLString},
-    amountBaseUomId: {type: GraphQLString},
-    booleanResponse: {type: GraphQLBoolean},
-    weightFactor: {type: GraphQLFloat},
+    sequenceNum: {type: GraphQLInt},
     surveyMultiRespColId: {type: GraphQLString},
-    surveyMultiRespId: {type: GraphQLString}
+    surveyMultiRespId: {type: GraphQLString},
+    surveyOptionSeqId: {type: GraphQLString},
+    surveyQuestionId: {type: GraphQLString},
+    surveyResponseId: {type: GraphQLString},
+    textResponse: {type: GraphQLString},
+    weightFactor: {type: GraphQLFloat}
   })
 });
 

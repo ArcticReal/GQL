@@ -86,19 +86,19 @@ export {SurveyType};
 
 const SurveyInputType = new GraphQLInputObjectType({
   name: 'SurveyInputType',
-  description: 'input type for Survey in content',
+  description: 'input type for Survey',
 
   fields: () => ({
-    surveyId: {type: GraphQLString},
-    isAnonymous: {type: GraphQLBoolean},
-    comments: {type: GraphQLString},
-    surveyName: {type: GraphQLString},
-    allowMultiple: {type: GraphQLBoolean},
-    responseService: {type: GraphQLString},
-    description: {type: GraphQLString},
     acroFormContentId: {type: GraphQLString},
+    allowMultiple: {type: GraphQLBoolean},
     allowUpdate: {type: GraphQLBoolean},
-    submitCaption: {type: GraphQLString}
+    comments: {type: GraphQLString},
+    description: {type: GraphQLString},
+    isAnonymous: {type: GraphQLBoolean},
+    responseService: {type: GraphQLString},
+    submitCaption: {type: GraphQLString},
+    surveyId: {type: GraphQLString},
+    surveyName: {type: GraphQLString}
   })
 });
 

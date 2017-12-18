@@ -42,13 +42,13 @@ export {TechDataCalendarExcWeekType};
 
 const TechDataCalendarExcWeekInputType = new GraphQLInputObjectType({
   name: 'TechDataCalendarExcWeekInputType',
-  description: 'input type for TechDataCalendarExcWeek in manufacturing',
+  description: 'input type for TechDataCalendarExcWeek',
 
   fields: () => ({
-    calendarWeekId: {type: GraphQLString},
-    exceptionDateStart: {type: GraphQLString},
     calendarId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    calendarWeekId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    exceptionDateStart: {type: GraphQLString}
   })
 });
 

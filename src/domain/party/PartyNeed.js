@@ -74,20 +74,20 @@ export {PartyNeedType};
 
 const PartyNeedInputType = new GraphQLInputObjectType({
   name: 'PartyNeedInputType',
-  description: 'input type for PartyNeed in party',
+  description: 'input type for PartyNeed',
 
   fields: () => ({
-    partyTypeId: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
+    communicationEventId: {type: GraphQLString},
+    datetimeRecorded: {type: GraphQLString},
+    description: {type: GraphQLString},
     needTypeId: {type: GraphQLString},
+    partyId: {type: GraphQLString},
+    partyNeedId: {type: GraphQLString},
+    partyTypeId: {type: GraphQLString},
     productCategoryId: {type: GraphQLString},
     productId: {type: GraphQLString},
-    visitId: {type: GraphQLString},
-    partyNeedId: {type: GraphQLString},
-    communicationEventId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    partyId: {type: GraphQLString},
-    datetimeRecorded: {type: GraphQLString}
+    roleTypeId: {type: GraphQLString},
+    visitId: {type: GraphQLString}
   })
 });
 

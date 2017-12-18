@@ -52,17 +52,17 @@ export {ProductFeaturePriceType};
 
 const ProductFeaturePriceInputType = new GraphQLInputObjectType({
   name: 'ProductFeaturePriceInputType',
-  description: 'input type for ProductFeaturePrice in product',
+  description: 'input type for ProductFeaturePrice',
 
   fields: () => ({
+    createdByUserLogin: {type: GraphQLString},
+    createdDate: {type: GraphQLString},
+    currencyUomId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
     lastModifiedByUserLogin: {type: GraphQLString},
-    currencyUomId: {type: GraphQLString},
-    createdDate: {type: GraphQLString},
     lastModifiedDate: {type: GraphQLString},
     price: {type: GraphQLFloat},
     productFeatureId: {type: GraphQLString},
-    createdByUserLogin: {type: GraphQLString},
     productPriceTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })

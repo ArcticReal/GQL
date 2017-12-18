@@ -68,16 +68,16 @@ export {EmploymentType};
 
 const EmploymentInputType = new GraphQLInputObjectType({
   name: 'EmploymentInputType',
-  description: 'input type for Employment in humanres',
+  description: 'input type for Employment',
 
   fields: () => ({
-    roleTypeIdTo: {type: GraphQLString},
     fromDate: {type: GraphQLString},
     partyIdFrom: {type: GraphQLString},
-    terminationReasonId: {type: GraphQLString},
-    terminationTypeId: {type: GraphQLString},
     partyIdTo: {type: GraphQLString},
     roleTypeIdFrom: {type: GraphQLString},
+    roleTypeIdTo: {type: GraphQLString},
+    terminationReasonId: {type: GraphQLString},
+    terminationTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

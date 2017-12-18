@@ -53,13 +53,13 @@ export {ContentTypeType};
 
 const ContentTypeInputType = new GraphQLInputObjectType({
   name: 'ContentTypeInputType',
-  description: 'input type for ContentType in content',
+  description: 'input type for ContentType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
     contentTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

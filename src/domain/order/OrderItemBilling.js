@@ -56,16 +56,16 @@ export {OrderItemBillingType};
 
 const OrderItemBillingInputType = new GraphQLInputObjectType({
   name: 'OrderItemBillingInputType',
-  description: 'input type for OrderItemBilling in order',
+  description: 'input type for OrderItemBilling',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
     amount: {type: GraphQLFloat},
-    quantity: {type: GraphQLFloat},
-    orderId: {type: GraphQLString},
-    itemIssuanceId: {type: GraphQLString},
     invoiceId: {type: GraphQLString},
     invoiceItemSeqId: {type: GraphQLString},
+    itemIssuanceId: {type: GraphQLString},
+    orderId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
     shipmentReceiptId: {type: GraphQLString}
   })
 });

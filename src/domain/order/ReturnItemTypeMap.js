@@ -36,12 +36,12 @@ export {ReturnItemTypeMapType};
 
 const ReturnItemTypeMapInputType = new GraphQLInputObjectType({
   name: 'ReturnItemTypeMapInputType',
-  description: 'input type for ReturnItemTypeMap in order',
+  description: 'input type for ReturnItemTypeMap',
 
   fields: () => ({
-    returnItemTypeId: {type: GraphQLString},
+    returnHeaderTypeId: {type: GraphQLString},
     returnItemMapKey: {type: GraphQLString},
-    returnHeaderTypeId: {type: GraphQLString}
+    returnItemTypeId: {type: GraphQLString}
   })
 });
 

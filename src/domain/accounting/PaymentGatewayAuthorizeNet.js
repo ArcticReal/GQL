@@ -52,28 +52,28 @@ export {PaymentGatewayAuthorizeNetType};
 
 const PaymentGatewayAuthorizeNetInputType = new GraphQLInputObjectType({
   name: 'PaymentGatewayAuthorizeNetInputType',
-  description: 'input type for PaymentGatewayAuthorizeNet in accounting',
+  description: 'input type for PaymentGatewayAuthorizeNet',
 
   fields: () => ({
-    cpVersion: {type: GraphQLString},
-    paymentGatewayConfigId: {type: GraphQLString},
-    method: {type: GraphQLString},
-    transDescription: {type: GraphQLString},
-    cpMarketType: {type: GraphQLString},
-    certificateAlias: {type: GraphQLString},
-    delimiterChar: {type: GraphQLString},
-    emailCustomer: {type: GraphQLString},
-    transactionUrl: {type: GraphQLString},
-    userId: {type: GraphQLString},
-    delimitedData: {type: GraphQLString},
-    tranKey: {type: GraphQLString},
     apiVersion: {type: GraphQLString},
-    emailMerchant: {type: GraphQLString},
-    testMode: {type: GraphQLString},
-    relayResponse: {type: GraphQLString},
-    pwd: {type: GraphQLString},
+    certificateAlias: {type: GraphQLString},
+    cpDeviceType: {type: GraphQLString},
+    cpMarketType: {type: GraphQLString},
+    cpVersion: {type: GraphQLString},
+    delimitedData: {type: GraphQLString},
+    delimiterChar: {type: GraphQLString},
     duplicateWindow: {type: GraphQLInt},
-    cpDeviceType: {type: GraphQLString}
+    emailCustomer: {type: GraphQLString},
+    emailMerchant: {type: GraphQLString},
+    method: {type: GraphQLString},
+    paymentGatewayConfigId: {type: GraphQLString},
+    pwd: {type: GraphQLString},
+    relayResponse: {type: GraphQLString},
+    testMode: {type: GraphQLString},
+    tranKey: {type: GraphQLString},
+    transDescription: {type: GraphQLString},
+    transactionUrl: {type: GraphQLString},
+    userId: {type: GraphQLString}
   })
 });
 

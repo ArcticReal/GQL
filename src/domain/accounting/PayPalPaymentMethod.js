@@ -47,17 +47,17 @@ export {PayPalPaymentMethodType};
 
 const PayPalPaymentMethodInputType = new GraphQLInputObjectType({
   name: 'PayPalPaymentMethodInputType',
-  description: 'input type for PayPalPaymentMethod in accounting',
+  description: 'input type for PayPalPaymentMethod',
 
   fields: () => ({
-    expressCheckoutToken: {type: GraphQLString},
     avsAddr: {type: GraphQLBoolean},
-    paymentMethodId: {type: GraphQLString},
-    payerId: {type: GraphQLString},
     avsZip: {type: GraphQLBoolean},
-    correlationId: {type: GraphQLString},
-    payerStatus: {type: GraphQLString},
     contactMechId: {type: GraphQLString},
+    correlationId: {type: GraphQLString},
+    expressCheckoutToken: {type: GraphQLString},
+    payerId: {type: GraphQLString},
+    payerStatus: {type: GraphQLString},
+    paymentMethodId: {type: GraphQLString},
     transactionId: {type: GraphQLString}
   })
 });

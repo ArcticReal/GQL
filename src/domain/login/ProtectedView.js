@@ -38,14 +38,14 @@ export {ProtectedViewType};
 
 const ProtectedViewInputType = new GraphQLInputObjectType({
   name: 'ProtectedViewInputType',
-  description: 'input type for ProtectedView in login',
+  description: 'input type for ProtectedView',
 
   fields: () => ({
-    viewNameId: {type: GraphQLString},
+    groupId: {type: GraphQLString},
+    maxHits: {type: GraphQLInt},
     maxHitsDuration: {type: GraphQLInt},
     tarpitDuration: {type: GraphQLInt},
-    groupId: {type: GraphQLString},
-    maxHits: {type: GraphQLInt}
+    viewNameId: {type: GraphQLString}
   })
 });
 

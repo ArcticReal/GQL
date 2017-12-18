@@ -52,23 +52,23 @@ export {CartAbandonedLineType};
 
 const CartAbandonedLineInputType = new GraphQLInputObjectType({
   name: 'CartAbandonedLineInputType',
-  description: 'input type for CartAbandonedLine in order',
+  description: 'input type for CartAbandonedLine',
 
   fields: () => ({
-    unitPrice: {type: GraphQLFloat},
-    quantity: {type: GraphQLFloat},
-    reservLength: {type: GraphQLFloat},
     cartAbandonedLineSeqId: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    reservPersons: {type: GraphQLFloat},
-    totalWithAdjustments: {type: GraphQLFloat},
-    wasReserved: {type: GraphQLBoolean},
-    reservNthPPPerc: {type: GraphQLFloat},
-    visitId: {type: GraphQLString},
-    reservStart: {type: GraphQLString},
     configId: {type: GraphQLString},
+    prodCatalogId: {type: GraphQLString},
+    productId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
     reserv2ndPPPerc: {type: GraphQLFloat},
-    prodCatalogId: {type: GraphQLString}
+    reservLength: {type: GraphQLFloat},
+    reservNthPPPerc: {type: GraphQLFloat},
+    reservPersons: {type: GraphQLFloat},
+    reservStart: {type: GraphQLString},
+    totalWithAdjustments: {type: GraphQLFloat},
+    unitPrice: {type: GraphQLFloat},
+    visitId: {type: GraphQLString},
+    wasReserved: {type: GraphQLBoolean}
   })
 });
 

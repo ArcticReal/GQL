@@ -59,23 +59,23 @@ export {JobRequisitionType};
 
 const JobRequisitionInputType = new GraphQLInputObjectType({
   name: 'JobRequisitionInputType',
-  description: 'input type for JobRequisition in humanres',
+  description: 'input type for JobRequisition',
 
   fields: () => ({
-    durationMonths: {type: GraphQLInt},
-    gender: {type: GraphQLBoolean},
-    noOfResources: {type: GraphQLInt},
-    jobRequisitionId: {type: GraphQLString},
-    experienceYears: {type: GraphQLInt},
-    jobRequisitionDate: {type: GraphQLString},
-    requiredOnDate: {type: GraphQLString},
-    qualification: {type: GraphQLString},
-    skillTypeId: {type: GraphQLString},
-    experienceMonths: {type: GraphQLInt},
-    jobLocation: {type: GraphQLString},
-    examTypeEnumId: {type: GraphQLString},
     age: {type: GraphQLInt},
-    jobPostingTypeEnumId: {type: GraphQLString}
+    durationMonths: {type: GraphQLInt},
+    examTypeEnumId: {type: GraphQLString},
+    experienceMonths: {type: GraphQLInt},
+    experienceYears: {type: GraphQLInt},
+    gender: {type: GraphQLBoolean},
+    jobLocation: {type: GraphQLString},
+    jobPostingTypeEnumId: {type: GraphQLString},
+    jobRequisitionDate: {type: GraphQLString},
+    jobRequisitionId: {type: GraphQLString},
+    noOfResources: {type: GraphQLInt},
+    qualification: {type: GraphQLString},
+    requiredOnDate: {type: GraphQLString},
+    skillTypeId: {type: GraphQLString}
   })
 });
 

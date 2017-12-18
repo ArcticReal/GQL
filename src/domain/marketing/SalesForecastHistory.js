@@ -63,25 +63,25 @@ export {SalesForecastHistoryType};
 
 const SalesForecastHistoryInputType = new GraphQLInputObjectType({
   name: 'SalesForecastHistoryInputType',
-  description: 'input type for SalesForecastHistory in marketing',
+  description: 'input type for SalesForecastHistory',
 
   fields: () => ({
-    forecastAmount: {type: GraphQLFloat},
-    modifiedByUserLoginId: {type: GraphQLString},
-    quotaAmount: {type: GraphQLFloat},
     bestCaseAmount: {type: GraphQLFloat},
     changeNote: {type: GraphQLString},
-    salesForecastHistoryId: {type: GraphQLString},
-    internalPartyId: {type: GraphQLString},
     closedAmount: {type: GraphQLFloat},
-    salesForecastId: {type: GraphQLString},
-    percentOfQuotaForecast: {type: GraphQLFloat},
     currencyUomId: {type: GraphQLString},
-    parentSalesForecastId: {type: GraphQLString},
-    organizationPartyId: {type: GraphQLString},
-    percentOfQuotaClosed: {type: GraphQLFloat},
+    customTimePeriodId: {type: GraphQLString},
+    forecastAmount: {type: GraphQLFloat},
+    internalPartyId: {type: GraphQLString},
+    modifiedByUserLoginId: {type: GraphQLString},
     modifiedTimestamp: {type: GraphQLString},
-    customTimePeriodId: {type: GraphQLString}
+    organizationPartyId: {type: GraphQLString},
+    parentSalesForecastId: {type: GraphQLString},
+    percentOfQuotaClosed: {type: GraphQLFloat},
+    percentOfQuotaForecast: {type: GraphQLFloat},
+    quotaAmount: {type: GraphQLFloat},
+    salesForecastHistoryId: {type: GraphQLString},
+    salesForecastId: {type: GraphQLString}
   })
 });
 

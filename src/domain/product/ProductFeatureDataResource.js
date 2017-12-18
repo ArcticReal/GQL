@@ -40,7 +40,7 @@ export {ProductFeatureDataResourceType};
 
 const ProductFeatureDataResourceInputType = new GraphQLInputObjectType({
   name: 'ProductFeatureDataResourceInputType',
-  description: 'input type for ProductFeatureDataResource in product',
+  description: 'input type for ProductFeatureDataResource',
 
   fields: () => ({
     dataResourceId: {type: GraphQLString},

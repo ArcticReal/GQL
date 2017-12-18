@@ -43,14 +43,14 @@ export {FinAccountStatusType};
 
 const FinAccountStatusInputType = new GraphQLInputObjectType({
   name: 'FinAccountStatusInputType',
-  description: 'input type for FinAccountStatus in accounting',
+  description: 'input type for FinAccountStatus',
 
   fields: () => ({
-    statusDate: {type: GraphQLString},
+    changeByUserLoginId: {type: GraphQLString},
     finAccountId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    statusDate: {type: GraphQLString},
     statusEndDate: {type: GraphQLString},
-    changeByUserLoginId: {type: GraphQLString}
+    statusId: {type: GraphQLString}
   })
 });
 

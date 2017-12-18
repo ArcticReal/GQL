@@ -35,11 +35,11 @@ export {FileExtensionType};
 
 const FileExtensionInputType = new GraphQLInputObjectType({
   name: 'FileExtensionInputType',
-  description: 'input type for FileExtension in content',
+  description: 'input type for FileExtension',
 
   fields: () => ({
-    mimeTypeId: {type: GraphQLString},
-    fileExtensionId: {type: GraphQLString}
+    fileExtensionId: {type: GraphQLString},
+    mimeTypeId: {type: GraphQLString}
   })
 });
 

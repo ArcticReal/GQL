@@ -242,20 +242,20 @@ export {GlAccountType};
 
 const GlAccountInputType = new GraphQLInputObjectType({
   name: 'GlAccountInputType',
-  description: 'input type for GlAccount in accounting',
+  description: 'input type for GlAccount',
 
   fields: () => ({
     accountCode: {type: GraphQLString},
-    glAccountTypeId: {type: GraphQLString},
-    glResourceTypeId: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    parentGlAccountId: {type: GraphQLString},
     accountName: {type: GraphQLString},
-    glAccountId: {type: GraphQLString},
-    glAccountClassId: {type: GraphQLString},
     description: {type: GraphQLString},
     externalId: {type: GraphQLString},
-    glXbrlClassId: {type: GraphQLString}
+    glAccountClassId: {type: GraphQLString},
+    glAccountId: {type: GraphQLString},
+    glAccountTypeId: {type: GraphQLString},
+    glResourceTypeId: {type: GraphQLString},
+    glXbrlClassId: {type: GraphQLString},
+    parentGlAccountId: {type: GraphQLString},
+    productId: {type: GraphQLString}
   })
 });
 

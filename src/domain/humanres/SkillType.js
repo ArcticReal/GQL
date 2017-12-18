@@ -65,13 +65,13 @@ export {SkillTypeType};
 
 const SkillTypeInputType = new GraphQLInputObjectType({
   name: 'SkillTypeInputType',
-  description: 'input type for SkillType in humanres',
+  description: 'input type for SkillType',
 
   fields: () => ({
-    skillTypeId: {type: GraphQLString},
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    skillTypeId: {type: GraphQLString}
   })
 });
 

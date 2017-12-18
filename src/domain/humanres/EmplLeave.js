@@ -55,16 +55,16 @@ export {EmplLeaveType};
 
 const EmplLeaveInputType = new GraphQLInputObjectType({
   name: 'EmplLeaveInputType',
-  description: 'input type for EmplLeave in humanres',
+  description: 'input type for EmplLeave',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     approverPartyId: {type: GraphQLString},
-    emplLeaveReasonTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
+    emplLeaveReasonTypeId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    leaveStatus: {type: GraphQLString},
     leaveTypeId: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    leaveStatus: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

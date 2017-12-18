@@ -48,14 +48,14 @@ export {WorkEffortCostCalcType};
 
 const WorkEffortCostCalcInputType = new GraphQLInputObjectType({
   name: 'WorkEffortCostCalcInputType',
-  description: 'input type for WorkEffortCostCalc in workeffort',
+  description: 'input type for WorkEffortCostCalc',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    costComponentTypeId: {type: GraphQLString},
     costComponentCalcId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    costComponentTypeId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

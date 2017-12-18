@@ -49,14 +49,14 @@ export {EmplPositionTypeRateType};
 
 const EmplPositionTypeRateInputType = new GraphQLInputObjectType({
   name: 'EmplPositionTypeRateInputType',
-  description: 'input type for EmplPositionTypeRate in humanres',
+  description: 'input type for EmplPositionTypeRate',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    rateTypeId: {type: GraphQLString},
     emplPositionTypeId: {type: GraphQLString},
-    salaryStepSeqId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     payGradeId: {type: GraphQLString},
+    rateTypeId: {type: GraphQLString},
+    salaryStepSeqId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

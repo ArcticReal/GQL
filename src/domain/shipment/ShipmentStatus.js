@@ -42,13 +42,13 @@ export {ShipmentStatusType};
 
 const ShipmentStatusInputType = new GraphQLInputObjectType({
   name: 'ShipmentStatusInputType',
-  description: 'input type for ShipmentStatus in shipment',
+  description: 'input type for ShipmentStatus',
 
   fields: () => ({
-    statusDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    changeByUserLoginId: {type: GraphQLString},
     shipmentId: {type: GraphQLString},
-    changeByUserLoginId: {type: GraphQLString}
+    statusDate: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

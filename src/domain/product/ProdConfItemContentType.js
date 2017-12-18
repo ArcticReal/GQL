@@ -47,13 +47,13 @@ export {ProdConfItemContentTypeType};
 
 const ProdConfItemContentTypeInputType = new GraphQLInputObjectType({
   name: 'ProdConfItemContentTypeInputType',
-  description: 'input type for ProdConfItemContentType in product',
+  description: 'input type for ProdConfItemContentType',
 
   fields: () => ({
     confItemContentTypeId: {type: GraphQLString},
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString}
   })
 });
 

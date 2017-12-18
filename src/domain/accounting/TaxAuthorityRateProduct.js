@@ -81,24 +81,24 @@ export {TaxAuthorityRateProductType};
 
 const TaxAuthorityRateProductInputType = new GraphQLInputObjectType({
   name: 'TaxAuthorityRateProductInputType',
-  description: 'input type for TaxAuthorityRateProduct in accounting',
+  description: 'input type for TaxAuthorityRateProduct',
 
   fields: () => ({
-    taxShipping: {type: GraphQLBoolean},
-    taxPercentage: {type: GraphQLFloat},
-    taxAuthorityRateSeqId: {type: GraphQLString},
     description: {type: GraphQLString},
-    titleTransferEnumId: {type: GraphQLString},
-    taxPromotions: {type: GraphQLBoolean},
-    thruDate: {type: GraphQLString},
-    taxAuthPartyId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
-    productCategoryId: {type: GraphQLString},
-    taxAuthGeoId: {type: GraphQLString},
     minItemPrice: {type: GraphQLFloat},
     minPurchase: {type: GraphQLFloat},
+    productCategoryId: {type: GraphQLString},
+    productStoreId: {type: GraphQLString},
+    taxAuthGeoId: {type: GraphQLString},
+    taxAuthPartyId: {type: GraphQLString},
+    taxAuthorityRateSeqId: {type: GraphQLString},
     taxAuthorityRateTypeId: {type: GraphQLString},
-    productStoreId: {type: GraphQLString}
+    taxPercentage: {type: GraphQLFloat},
+    taxPromotions: {type: GraphQLBoolean},
+    taxShipping: {type: GraphQLBoolean},
+    thruDate: {type: GraphQLString},
+    titleTransferEnumId: {type: GraphQLString}
   })
 });
 

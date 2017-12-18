@@ -64,12 +64,12 @@ export {PartyClassificationGroupType};
 
 const PartyClassificationGroupInputType = new GraphQLInputObjectType({
   name: 'PartyClassificationGroupInputType',
-  description: 'input type for PartyClassificationGroup in party',
+  description: 'input type for PartyClassificationGroup',
 
   fields: () => ({
-    partyClassificationGroupId: {type: GraphQLString},
-    parentGroupId: {type: GraphQLString},
     description: {type: GraphQLString},
+    parentGroupId: {type: GraphQLString},
+    partyClassificationGroupId: {type: GraphQLString},
     partyClassificationTypeId: {type: GraphQLString}
   })
 });

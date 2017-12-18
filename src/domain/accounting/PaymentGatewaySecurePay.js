@@ -39,15 +39,15 @@ export {PaymentGatewaySecurePayType};
 
 const PaymentGatewaySecurePayInputType = new GraphQLInputObjectType({
   name: 'PaymentGatewaySecurePayInputType',
-  description: 'input type for PaymentGatewaySecurePay in accounting',
+  description: 'input type for PaymentGatewaySecurePay',
 
   fields: () => ({
-    paymentGatewayConfigId: {type: GraphQLString},
+    enableAmountRound: {type: GraphQLBoolean},
     merchantId: {type: GraphQLString},
-    serverURL: {type: GraphQLString},
-    pwd: {type: GraphQLString},
+    paymentGatewayConfigId: {type: GraphQLString},
     processTimeout: {type: GraphQLInt},
-    enableAmountRound: {type: GraphQLBoolean}
+    pwd: {type: GraphQLString},
+    serverURL: {type: GraphQLString}
   })
 });
 

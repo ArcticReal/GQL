@@ -57,23 +57,23 @@ export {GiftCardFulfillmentType};
 
 const GiftCardFulfillmentInputType = new GraphQLInputObjectType({
   name: 'GiftCardFulfillmentInputType',
-  description: 'input type for GiftCardFulfillment in accounting',
+  description: 'input type for GiftCardFulfillment',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    fulfillmentId: {type: GraphQLString},
-    fulfillmentDate: {type: GraphQLString},
     amount: {type: GraphQLFloat},
     authCode: {type: GraphQLString},
-    orderId: {type: GraphQLString},
-    pinNumber: {type: GraphQLString},
-    typeEnumId: {type: GraphQLString},
-    surveyResponseId: {type: GraphQLString},
-    responseCode: {type: GraphQLString},
-    referenceNum: {type: GraphQLString},
+    cardNumber: {type: GraphQLString},
+    fulfillmentDate: {type: GraphQLString},
+    fulfillmentId: {type: GraphQLString},
     merchantId: {type: GraphQLString},
+    orderId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    cardNumber: {type: GraphQLString}
+    pinNumber: {type: GraphQLString},
+    referenceNum: {type: GraphQLString},
+    responseCode: {type: GraphQLString},
+    surveyResponseId: {type: GraphQLString},
+    typeEnumId: {type: GraphQLString}
   })
 });
 

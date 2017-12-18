@@ -35,7 +35,7 @@ export {PartyNoteType};
 
 const PartyNoteInputType = new GraphQLInputObjectType({
   name: 'PartyNoteInputType',
-  description: 'input type for PartyNote in party',
+  description: 'input type for PartyNote',
 
   fields: () => ({
     noteId: {type: GraphQLString},

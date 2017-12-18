@@ -31,12 +31,12 @@ export {TarpittedLoginViewType};
 
 const TarpittedLoginViewInputType = new GraphQLInputObjectType({
   name: 'TarpittedLoginViewInputType',
-  description: 'input type for TarpittedLoginView in login',
+  description: 'input type for TarpittedLoginView',
 
   fields: () => ({
-    viewNameId: {type: GraphQLString},
+    tarpitReleaseDateTime: {type: GraphQLInt},
     userLoginId: {type: GraphQLString},
-    tarpitReleaseDateTime: {type: GraphQLInt}
+    viewNameId: {type: GraphQLString}
   })
 });
 

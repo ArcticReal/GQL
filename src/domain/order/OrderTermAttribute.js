@@ -39,15 +39,15 @@ export {OrderTermAttributeType};
 
 const OrderTermAttributeInputType = new GraphQLInputObjectType({
   name: 'OrderTermAttributeInputType',
-  description: 'input type for OrderTermAttribute in order',
+  description: 'input type for OrderTermAttribute',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    orderId: {type: GraphQLString},
     attrDescription: {type: GraphQLString},
-    termTypeId: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     attrValue: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    orderId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
+    termTypeId: {type: GraphQLString}
   })
 });
 

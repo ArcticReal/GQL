@@ -36,11 +36,11 @@ export {InventoryItemTypeAttrType};
 
 const InventoryItemTypeAttrInputType = new GraphQLInputObjectType({
   name: 'InventoryItemTypeAttrInputType',
-  description: 'input type for InventoryItemTypeAttr in product',
+  description: 'input type for InventoryItemTypeAttr',
 
   fields: () => ({
-    description: {type: GraphQLString},
     attrName: {type: GraphQLString},
+    description: {type: GraphQLString},
     inventoryItemTypeId: {type: GraphQLString}
   })
 });

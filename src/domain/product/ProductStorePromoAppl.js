@@ -44,14 +44,14 @@ export {ProductStorePromoApplType};
 
 const ProductStorePromoApplInputType = new GraphQLInputObjectType({
   name: 'ProductStorePromoApplInputType',
-  description: 'input type for ProductStorePromoAppl in product',
+  description: 'input type for ProductStorePromoAppl',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
     manualOnly: {type: GraphQLBoolean},
-    productStoreId: {type: GraphQLString},
     productPromoId: {type: GraphQLString},
+    productStoreId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}
   })
 });

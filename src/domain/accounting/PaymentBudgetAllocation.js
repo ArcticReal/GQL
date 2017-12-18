@@ -42,13 +42,13 @@ export {PaymentBudgetAllocationType};
 
 const PaymentBudgetAllocationInputType = new GraphQLInputObjectType({
   name: 'PaymentBudgetAllocationInputType',
-  description: 'input type for PaymentBudgetAllocation in accounting',
+  description: 'input type for PaymentBudgetAllocation',
 
   fields: () => ({
     amount: {type: GraphQLFloat},
-    paymentId: {type: GraphQLString},
+    budgetId: {type: GraphQLString},
     budgetItemSeqId: {type: GraphQLString},
-    budgetId: {type: GraphQLString}
+    paymentId: {type: GraphQLString}
   })
 });
 

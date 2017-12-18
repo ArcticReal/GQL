@@ -47,13 +47,13 @@ export {WebSiteContentTypeType};
 
 const WebSiteContentTypeInputType = new GraphQLInputObjectType({
   name: 'WebSiteContentTypeInputType',
-  description: 'input type for WebSiteContentType in content',
+  description: 'input type for WebSiteContentType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    webSiteContentTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    webSiteContentTypeId: {type: GraphQLString}
   })
 });
 

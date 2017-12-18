@@ -42,13 +42,13 @@ export {ProductCategoryRollupType};
 
 const ProductCategoryRollupInputType = new GraphQLInputObjectType({
   name: 'ProductCategoryRollupInputType',
-  description: 'input type for ProductCategoryRollup in product',
+  description: 'input type for ProductCategoryRollup',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
+    parentProductCategoryId: {type: GraphQLString},
     productCategoryId: {type: GraphQLString},
     sequenceNum: {type: GraphQLInt},
-    parentProductCategoryId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

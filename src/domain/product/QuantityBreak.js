@@ -43,13 +43,13 @@ export {QuantityBreakType};
 
 const QuantityBreakInputType = new GraphQLInputObjectType({
   name: 'QuantityBreakInputType',
-  description: 'input type for QuantityBreak in product',
+  description: 'input type for QuantityBreak',
 
   fields: () => ({
-    thruQuantity: {type: GraphQLFloat},
-    quantityBreakTypeId: {type: GraphQLString},
     fromQuantity: {type: GraphQLFloat},
-    quantityBreakId: {type: GraphQLString}
+    quantityBreakId: {type: GraphQLString},
+    quantityBreakTypeId: {type: GraphQLString},
+    thruQuantity: {type: GraphQLFloat}
   })
 });
 

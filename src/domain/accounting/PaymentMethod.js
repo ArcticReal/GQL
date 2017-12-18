@@ -127,16 +127,16 @@ export {PaymentMethodType};
 
 const PaymentMethodInputType = new GraphQLInputObjectType({
   name: 'PaymentMethodInputType',
-  description: 'input type for PaymentMethod in accounting',
+  description: 'input type for PaymentMethod',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    finAccountId: {type: GraphQLString},
-    paymentMethodId: {type: GraphQLString},
-    glAccountId: {type: GraphQLString},
     description: {type: GraphQLString},
-    paymentMethodTypeId: {type: GraphQLString},
+    finAccountId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    glAccountId: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    paymentMethodId: {type: GraphQLString},
+    paymentMethodTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

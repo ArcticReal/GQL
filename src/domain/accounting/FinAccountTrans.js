@@ -100,24 +100,24 @@ export {FinAccountTransType};
 
 const FinAccountTransInputType = new GraphQLInputObjectType({
   name: 'FinAccountTransInputType',
-  description: 'input type for FinAccountTrans in accounting',
+  description: 'input type for FinAccountTrans',
 
   fields: () => ({
-    finAccountTransId: {type: GraphQLString},
-    orderItemSeqId: {type: GraphQLString},
     amount: {type: GraphQLFloat},
     comments: {type: GraphQLString},
     entryDate: {type: GraphQLString},
-    orderId: {type: GraphQLString},
-    glReconciliationId: {type: GraphQLString},
-    transactionDate: {type: GraphQLString},
     finAccountId: {type: GraphQLString},
+    finAccountTransId: {type: GraphQLString},
     finAccountTransTypeId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    glReconciliationId: {type: GraphQLString},
+    orderId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
+    partyId: {type: GraphQLString},
     paymentId: {type: GraphQLString},
     performedByPartyId: {type: GraphQLString},
     reasonEnumId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    statusId: {type: GraphQLString},
+    transactionDate: {type: GraphQLString}
   })
 });
 

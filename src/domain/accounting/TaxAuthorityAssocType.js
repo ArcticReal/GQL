@@ -36,11 +36,11 @@ export {TaxAuthorityAssocTypeType};
 
 const TaxAuthorityAssocTypeInputType = new GraphQLInputObjectType({
   name: 'TaxAuthorityAssocTypeInputType',
-  description: 'input type for TaxAuthorityAssocType in accounting',
+  description: 'input type for TaxAuthorityAssocType',
 
   fields: () => ({
-    taxAuthorityAssocTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    taxAuthorityAssocTypeId: {type: GraphQLString}
   })
 });
 

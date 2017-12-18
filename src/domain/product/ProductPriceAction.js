@@ -49,7 +49,7 @@ export {ProductPriceActionType};
 
 const ProductPriceActionInputType = new GraphQLInputObjectType({
   name: 'ProductPriceActionInputType',
-  description: 'input type for ProductPriceAction in product',
+  description: 'input type for ProductPriceAction',
 
   fields: () => ({
     amount: {type: GraphQLFloat},

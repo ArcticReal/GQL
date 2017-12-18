@@ -40,11 +40,11 @@ export {WorkEffortInventoryProducedType};
 
 const WorkEffortInventoryProducedInputType = new GraphQLInputObjectType({
   name: 'WorkEffortInventoryProducedInputType',
-  description: 'input type for WorkEffortInventoryProduced in workeffort',
+  description: 'input type for WorkEffortInventoryProduced',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    inventoryItemId: {type: GraphQLString}
+    inventoryItemId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

@@ -42,12 +42,12 @@ export {GlAccountCategoryType};
 
 const GlAccountCategoryInputType = new GraphQLInputObjectType({
   name: 'GlAccountCategoryInputType',
-  description: 'input type for GlAccountCategory in accounting',
+  description: 'input type for GlAccountCategory',
 
   fields: () => ({
-    glAccountCategoryTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     glAccountCategoryId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    glAccountCategoryTypeId: {type: GraphQLString}
   })
 });
 

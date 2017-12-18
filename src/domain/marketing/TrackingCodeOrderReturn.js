@@ -57,18 +57,18 @@ export {TrackingCodeOrderReturnType};
 
 const TrackingCodeOrderReturnInputType = new GraphQLInputObjectType({
   name: 'TrackingCodeOrderReturnInputType',
-  description: 'input type for TrackingCodeOrderReturn in marketing',
+  description: 'input type for TrackingCodeOrderReturn',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    trackingCodeId: {type: GraphQLString},
+    affiliateReferredTimeStamp: {type: GraphQLString},
+    hasExported: {type: GraphQLBoolean},
+    isBillable: {type: GraphQLBoolean},
     orderId: {type: GraphQLString},
-    trackingCodeTypeId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
     returnId: {type: GraphQLString},
     siteId: {type: GraphQLString},
-    hasExported: {type: GraphQLBoolean},
-    affiliateReferredTimeStamp: {type: GraphQLString},
-    isBillable: {type: GraphQLBoolean}
+    trackingCodeId: {type: GraphQLString},
+    trackingCodeTypeId: {type: GraphQLString}
   })
 });
 

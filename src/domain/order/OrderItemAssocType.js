@@ -47,13 +47,13 @@ export {OrderItemAssocTypeType};
 
 const OrderItemAssocTypeInputType = new GraphQLInputObjectType({
   name: 'OrderItemAssocTypeInputType',
-  description: 'input type for OrderItemAssocType in order',
+  description: 'input type for OrderItemAssocType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
-    orderItemAssocTypeId: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    orderItemAssocTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

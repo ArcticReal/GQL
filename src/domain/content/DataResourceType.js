@@ -53,13 +53,13 @@ export {DataResourceTypeType};
 
 const DataResourceTypeInputType = new GraphQLInputObjectType({
   name: 'DataResourceTypeInputType',
-  description: 'input type for DataResourceType in content',
+  description: 'input type for DataResourceType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
+    dataResourceTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    dataResourceTypeId: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

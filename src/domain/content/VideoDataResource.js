@@ -35,11 +35,11 @@ export {VideoDataResourceType};
 
 const VideoDataResourceInputType = new GraphQLInputObjectType({
   name: 'VideoDataResourceInputType',
-  description: 'input type for VideoDataResource in content',
+  description: 'input type for VideoDataResource',
 
   fields: () => ({
     dataResourceId: {type: GraphQLString},
-    videoData: {type: GraphQLString/*this was a byte Array TODO find a solution*/}
+    videoData: {type: new GraphQLList(GraphQLString)}
   })
 });
 

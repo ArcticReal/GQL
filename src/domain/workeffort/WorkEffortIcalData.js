@@ -35,11 +35,11 @@ export {WorkEffortIcalDataType};
 
 const WorkEffortIcalDataInputType = new GraphQLInputObjectType({
   name: 'WorkEffortIcalDataInputType',
-  description: 'input type for WorkEffortIcalData in workeffort',
+  description: 'input type for WorkEffortIcalData',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    icalData: {type: GraphQLString}
+    icalData: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

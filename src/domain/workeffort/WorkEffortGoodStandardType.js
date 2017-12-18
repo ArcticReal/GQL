@@ -47,13 +47,13 @@ export {WorkEffortGoodStandardTypeType};
 
 const WorkEffortGoodStandardTypeInputType = new GraphQLInputObjectType({
   name: 'WorkEffortGoodStandardTypeInputType',
-  description: 'input type for WorkEffortGoodStandardType in workeffort',
+  description: 'input type for WorkEffortGoodStandardType',
 
   fields: () => ({
-    workEffortGoodStdTypeId: {type: GraphQLString},
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    workEffortGoodStdTypeId: {type: GraphQLString}
   })
 });
 

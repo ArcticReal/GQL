@@ -43,14 +43,14 @@ export {WorkEffortFixedAssetStdType};
 
 const WorkEffortFixedAssetStdInputType = new GraphQLInputObjectType({
   name: 'WorkEffortFixedAssetStdInputType',
-  description: 'input type for WorkEffortFixedAssetStd in workeffort',
+  description: 'input type for WorkEffortFixedAssetStd',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    fixedAssetTypeId: {type: GraphQLString},
-    estimatedQuantity: {type: GraphQLFloat},
     estimatedCost: {type: GraphQLFloat},
-    estimatedDuration: {type: GraphQLFloat}
+    estimatedDuration: {type: GraphQLFloat},
+    estimatedQuantity: {type: GraphQLFloat},
+    fixedAssetTypeId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

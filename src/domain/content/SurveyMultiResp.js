@@ -42,12 +42,12 @@ export {SurveyMultiRespType};
 
 const SurveyMultiRespInputType = new GraphQLInputObjectType({
   name: 'SurveyMultiRespInputType',
-  description: 'input type for SurveyMultiResp in content',
+  description: 'input type for SurveyMultiResp',
 
   fields: () => ({
+    multiRespTitle: {type: GraphQLString},
     surveyId: {type: GraphQLString},
-    surveyMultiRespId: {type: GraphQLString},
-    multiRespTitle: {type: GraphQLString}
+    surveyMultiRespId: {type: GraphQLString}
   })
 });
 

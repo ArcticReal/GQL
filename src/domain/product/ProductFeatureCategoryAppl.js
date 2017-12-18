@@ -42,7 +42,7 @@ export {ProductFeatureCategoryApplType};
 
 const ProductFeatureCategoryApplInputType = new GraphQLInputObjectType({
   name: 'ProductFeatureCategoryApplInputType',
-  description: 'input type for ProductFeatureCategoryAppl in product',
+  description: 'input type for ProductFeatureCategoryAppl',
 
   fields: () => ({
     fromDate: {type: GraphQLString},

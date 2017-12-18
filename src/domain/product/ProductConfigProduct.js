@@ -49,14 +49,14 @@ export {ProductConfigProductType};
 
 const ProductConfigProductInputType = new GraphQLInputObjectType({
   name: 'ProductConfigProductInputType',
-  description: 'input type for ProductConfigProduct in product',
+  description: 'input type for ProductConfigProduct',
 
   fields: () => ({
     configItemId: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
+    configOptionId: {type: GraphQLString},
     productId: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
-    configOptionId: {type: GraphQLString}
+    quantity: {type: GraphQLFloat},
+    sequenceNum: {type: GraphQLInt}
   })
 });
 

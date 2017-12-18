@@ -51,17 +51,17 @@ export {MrpEventType};
 
 const MrpEventInputType = new GraphQLInputObjectType({
   name: 'MrpEventInputType',
-  description: 'input type for MrpEvent in manufacturing',
+  description: 'input type for MrpEvent',
 
   fields: () => ({
+    eventDate: {type: GraphQLString},
+    eventName: {type: GraphQLString},
+    facilityId: {type: GraphQLString},
+    isLate: {type: GraphQLBoolean},
     mrpEventTypeId: {type: GraphQLString},
     mrpId: {type: GraphQLString},
-    facilityId: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
     productId: {type: GraphQLString},
-    isLate: {type: GraphQLBoolean},
-    eventName: {type: GraphQLString},
-    eventDate: {type: GraphQLString}
+    quantity: {type: GraphQLFloat}
   })
 });
 

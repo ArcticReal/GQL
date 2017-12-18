@@ -48,11 +48,11 @@ export {TrackingCodeTypeType};
 
 const TrackingCodeTypeInputType = new GraphQLInputObjectType({
   name: 'TrackingCodeTypeInputType',
-  description: 'input type for TrackingCodeType in marketing',
+  description: 'input type for TrackingCodeType',
 
   fields: () => ({
-    trackingCodeTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    trackingCodeTypeId: {type: GraphQLString}
   })
 });
 

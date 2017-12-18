@@ -41,12 +41,12 @@ export {AgreementWorkEffortApplicType};
 
 const AgreementWorkEffortApplicInputType = new GraphQLInputObjectType({
   name: 'AgreementWorkEffortApplicInputType',
-  description: 'input type for AgreementWorkEffortApplic in party',
+  description: 'input type for AgreementWorkEffortApplic',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
     agreementId: {type: GraphQLString},
-    agreementItemSeqId: {type: GraphQLString}
+    agreementItemSeqId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

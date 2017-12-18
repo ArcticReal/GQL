@@ -42,12 +42,12 @@ export {GlAccountGroupType};
 
 const GlAccountGroupInputType = new GraphQLInputObjectType({
   name: 'GlAccountGroupInputType',
-  description: 'input type for GlAccountGroup in accounting',
+  description: 'input type for GlAccountGroup',
 
   fields: () => ({
-    glAccountGroupTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    glAccountGroupId: {type: GraphQLString}
+    glAccountGroupId: {type: GraphQLString},
+    glAccountGroupTypeId: {type: GraphQLString}
   })
 });
 

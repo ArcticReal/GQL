@@ -48,7 +48,7 @@ export {ProductPricePurposeType};
 
 const ProductPricePurposeInputType = new GraphQLInputObjectType({
   name: 'ProductPricePurposeInputType',
-  description: 'input type for ProductPricePurpose in product',
+  description: 'input type for ProductPricePurpose',
 
   fields: () => ({
     description: {type: GraphQLString},

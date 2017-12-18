@@ -52,17 +52,17 @@ export {QuoteTermType};
 
 const QuoteTermInputType = new GraphQLInputObjectType({
   name: 'QuoteTermInputType',
-  description: 'input type for QuoteTerm in order',
+  description: 'input type for QuoteTerm',
 
   fields: () => ({
-    textValue: {type: GraphQLString},
-    termDays: {type: GraphQLInt},
-    quoteItemSeqId: {type: GraphQLString},
-    termTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    uomId: {type: GraphQLString},
+    quoteId: {type: GraphQLString},
+    quoteItemSeqId: {type: GraphQLString},
+    termDays: {type: GraphQLInt},
+    termTypeId: {type: GraphQLString},
     termValue: {type: GraphQLInt},
-    quoteId: {type: GraphQLString}
+    textValue: {type: GraphQLString},
+    uomId: {type: GraphQLString}
   })
 });
 

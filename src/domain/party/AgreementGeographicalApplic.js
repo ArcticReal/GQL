@@ -36,12 +36,12 @@ export {AgreementGeographicalApplicType};
 
 const AgreementGeographicalApplicInputType = new GraphQLInputObjectType({
   name: 'AgreementGeographicalApplicInputType',
-  description: 'input type for AgreementGeographicalApplic in party',
+  description: 'input type for AgreementGeographicalApplic',
 
   fields: () => ({
-    geoId: {type: GraphQLString},
     agreementId: {type: GraphQLString},
-    agreementItemSeqId: {type: GraphQLString}
+    agreementItemSeqId: {type: GraphQLString},
+    geoId: {type: GraphQLString}
   })
 });
 

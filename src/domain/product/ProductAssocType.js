@@ -47,12 +47,12 @@ export {ProductAssocTypeType};
 
 const ProductAssocTypeInputType = new GraphQLInputObjectType({
   name: 'ProductAssocTypeInputType',
-  description: 'input type for ProductAssocType in product',
+  description: 'input type for ProductAssocType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString},
     productAssocTypeId: {type: GraphQLString}
   })
 });

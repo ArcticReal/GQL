@@ -46,17 +46,17 @@ export {OrderItemPriceInfoType};
 
 const OrderItemPriceInfoInputType = new GraphQLInputObjectType({
   name: 'OrderItemPriceInfoInputType',
-  description: 'input type for OrderItemPriceInfo in order',
+  description: 'input type for OrderItemPriceInfo',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    orderId: {type: GraphQLString},
-    productPriceActionSeqId: {type: GraphQLString},
-    modifyAmount: {type: GraphQLFloat},
     description: {type: GraphQLString},
+    modifyAmount: {type: GraphQLFloat},
+    orderId: {type: GraphQLString},
+    orderItemPriceInfoId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
+    productPriceActionSeqId: {type: GraphQLString},
     productPriceRuleId: {type: GraphQLString},
-    rateCode: {type: GraphQLString},
-    orderItemPriceInfoId: {type: GraphQLString}
+    rateCode: {type: GraphQLString}
   })
 });
 

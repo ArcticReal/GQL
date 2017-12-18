@@ -43,14 +43,14 @@ export {WebSiteContentType};
 
 const WebSiteContentInputType = new GraphQLInputObjectType({
   name: 'WebSiteContentInputType',
-  description: 'input type for WebSiteContent in content',
+  description: 'input type for WebSiteContent',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    webSiteContentTypeId: {type: GraphQLString},
     contentId: {type: GraphQLString},
-    webSiteId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    fromDate: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    webSiteContentTypeId: {type: GraphQLString},
+    webSiteId: {type: GraphQLString}
   })
 });
 

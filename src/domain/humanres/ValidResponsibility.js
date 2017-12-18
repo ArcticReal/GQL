@@ -43,13 +43,13 @@ export {ValidResponsibilityType};
 
 const ValidResponsibilityInputType = new GraphQLInputObjectType({
   name: 'ValidResponsibilityInputType',
-  description: 'input type for ValidResponsibility in humanres',
+  description: 'input type for ValidResponsibility',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     comments: {type: GraphQLString},
-    responsibilityTypeId: {type: GraphQLString},
     emplPositionTypeId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    responsibilityTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

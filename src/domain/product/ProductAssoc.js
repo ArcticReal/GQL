@@ -60,22 +60,22 @@ export {ProductAssocType};
 
 const ProductAssocInputType = new GraphQLInputObjectType({
   name: 'ProductAssocInputType',
-  description: 'input type for ProductAssoc in product',
+  description: 'input type for ProductAssoc',
 
   fields: () => ({
-    reason: {type: GraphQLString},
-    scrapFactor: {type: GraphQLFloat},
-    quantity: {type: GraphQLFloat},
-    recurrenceInfoId: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
     estimateCalcMethod: {type: GraphQLString},
-    thruDate: {type: GraphQLString},
     fromDate: {type: GraphQLString},
     instruction: {type: GraphQLString},
-    productIdTo: {type: GraphQLString},
     productAssocTypeId: {type: GraphQLString},
-    routingWorkEffortId: {type: GraphQLString}
+    productId: {type: GraphQLString},
+    productIdTo: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
+    reason: {type: GraphQLString},
+    recurrenceInfoId: {type: GraphQLString},
+    routingWorkEffortId: {type: GraphQLString},
+    scrapFactor: {type: GraphQLFloat},
+    sequenceNum: {type: GraphQLInt},
+    thruDate: {type: GraphQLString}
   })
 });
 

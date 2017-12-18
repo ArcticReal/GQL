@@ -41,12 +41,12 @@ export {CommunicationEventWorkEffType};
 
 const CommunicationEventWorkEffInputType = new GraphQLInputObjectType({
   name: 'CommunicationEventWorkEffInputType',
-  description: 'input type for CommunicationEventWorkEff in workeffort',
+  description: 'input type for CommunicationEventWorkEff',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
     communicationEventId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

@@ -36,12 +36,12 @@ export {CustRequestTypeAttrType};
 
 const CustRequestTypeAttrInputType = new GraphQLInputObjectType({
   name: 'CustRequestTypeAttrInputType',
-  description: 'input type for CustRequestTypeAttr in order',
+  description: 'input type for CustRequestTypeAttr',
 
   fields: () => ({
-    description: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     custRequestTypeId: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    description: {type: GraphQLString}
   })
 });
 

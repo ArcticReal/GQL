@@ -39,15 +39,15 @@ export {AddendumType};
 
 const AddendumInputType = new GraphQLInputObjectType({
   name: 'AddendumInputType',
-  description: 'input type for Addendum in party',
+  description: 'input type for Addendum',
 
   fields: () => ({
-    addendumEffectiveDate: {type: GraphQLString},
-    agreementId: {type: GraphQLString},
     addendumCreationDate: {type: GraphQLString},
-    agreementItemSeqId: {type: GraphQLString},
+    addendumEffectiveDate: {type: GraphQLString},
     addendumId: {type: GraphQLString},
-    addendumText: {type: GraphQLString}
+    addendumText: {type: GraphQLString},
+    agreementId: {type: GraphQLString},
+    agreementItemSeqId: {type: GraphQLString}
   })
 });
 

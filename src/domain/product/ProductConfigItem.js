@@ -70,15 +70,15 @@ export {ProductConfigItemType};
 
 const ProductConfigItemInputType = new GraphQLInputObjectType({
   name: 'ProductConfigItemInputType',
-  description: 'input type for ProductConfigItem in product',
+  description: 'input type for ProductConfigItem',
 
   fields: () => ({
     configItemId: {type: GraphQLString},
-    longDescription: {type: GraphQLString},
-    imageUrl: {type: GraphQLString},
     configItemName: {type: GraphQLString},
     configItemTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    imageUrl: {type: GraphQLString},
+    longDescription: {type: GraphQLString}
   })
 });
 

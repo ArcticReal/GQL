@@ -36,12 +36,12 @@ export {OrderHeaderNoteType};
 
 const OrderHeaderNoteInputType = new GraphQLInputObjectType({
   name: 'OrderHeaderNoteInputType',
-  description: 'input type for OrderHeaderNote in order',
+  description: 'input type for OrderHeaderNote',
 
   fields: () => ({
-    orderId: {type: GraphQLString},
     internalNote: {type: GraphQLBoolean},
-    noteId: {type: GraphQLString}
+    noteId: {type: GraphQLString},
+    orderId: {type: GraphQLString}
   })
 });
 

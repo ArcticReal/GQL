@@ -48,12 +48,12 @@ export {ProductPromoContentType};
 
 const ProductPromoContentInputType = new GraphQLInputObjectType({
   name: 'ProductPromoContentInputType',
-  description: 'input type for ProductPromoContent in product',
+  description: 'input type for ProductPromoContent',
 
   fields: () => ({
+    contentId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
     productPromoContentTypeId: {type: GraphQLString},
-    contentId: {type: GraphQLString},
     productPromoId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })

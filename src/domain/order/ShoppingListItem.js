@@ -54,19 +54,19 @@ export {ShoppingListItemType};
 
 const ShoppingListItemInputType = new GraphQLInputObjectType({
   name: 'ShoppingListItemInputType',
-  description: 'input type for ShoppingListItem in order',
+  description: 'input type for ShoppingListItem',
 
   fields: () => ({
-    quantity: {type: GraphQLFloat},
-    reservLength: {type: GraphQLFloat},
-    shoppingListId: {type: GraphQLString},
+    configId: {type: GraphQLString},
+    modifiedPrice: {type: GraphQLFloat},
     productId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
+    quantityPurchased: {type: GraphQLFloat},
+    reservLength: {type: GraphQLFloat},
     reservPersons: {type: GraphQLFloat},
     reservStart: {type: GraphQLString},
-    configId: {type: GraphQLString},
-    quantityPurchased: {type: GraphQLFloat},
-    shoppingListItemSeqId: {type: GraphQLString},
-    modifiedPrice: {type: GraphQLFloat}
+    shoppingListId: {type: GraphQLString},
+    shoppingListItemSeqId: {type: GraphQLString}
   })
 });
 

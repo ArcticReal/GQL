@@ -50,15 +50,15 @@ export {BillingAccountTermType};
 
 const BillingAccountTermInputType = new GraphQLInputObjectType({
   name: 'BillingAccountTermInputType',
-  description: 'input type for BillingAccountTerm in accounting',
+  description: 'input type for BillingAccountTerm',
 
   fields: () => ({
+    billingAccountId: {type: GraphQLString},
     billingAccountTermId: {type: GraphQLString},
     termDays: {type: GraphQLInt},
     termTypeId: {type: GraphQLString},
-    billingAccountId: {type: GraphQLString},
-    uomId: {type: GraphQLString},
-    termValue: {type: GraphQLFloat}
+    termValue: {type: GraphQLFloat},
+    uomId: {type: GraphQLString}
   })
 });
 

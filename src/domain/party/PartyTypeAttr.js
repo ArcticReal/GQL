@@ -36,12 +36,12 @@ export {PartyTypeAttrType};
 
 const PartyTypeAttrInputType = new GraphQLInputObjectType({
   name: 'PartyTypeAttrInputType',
-  description: 'input type for PartyTypeAttr in party',
+  description: 'input type for PartyTypeAttr',
 
   fields: () => ({
-    partyTypeId: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     description: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    partyTypeId: {type: GraphQLString}
   })
 });
 

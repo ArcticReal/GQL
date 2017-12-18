@@ -141,24 +141,24 @@ export {ProductPromoType};
 
 const ProductPromoInputType = new GraphQLInputObjectType({
   name: 'ProductPromoInputType',
-  description: 'input type for ProductPromo in product',
+  description: 'input type for ProductPromo',
 
   fields: () => ({
-    showToCustomer: {type: GraphQLBoolean},
+    billbackFactor: {type: GraphQLFloat},
+    createdByUserLogin: {type: GraphQLString},
+    createdDate: {type: GraphQLString},
+    lastModifiedByUserLogin: {type: GraphQLString},
     lastModifiedDate: {type: GraphQLString},
-    requireCode: {type: GraphQLBoolean},
     overrideOrgPartyId: {type: GraphQLString},
     productPromoId: {type: GraphQLString},
+    promoName: {type: GraphQLString},
+    promoText: {type: GraphQLString},
+    requireCode: {type: GraphQLBoolean},
+    showToCustomer: {type: GraphQLBoolean},
     useLimitPerCustomer: {type: GraphQLInt},
     useLimitPerOrder: {type: GraphQLInt},
     useLimitPerPromotion: {type: GraphQLInt},
-    promoName: {type: GraphQLString},
-    promoText: {type: GraphQLString},
-    userEntered: {type: GraphQLBoolean},
-    lastModifiedByUserLogin: {type: GraphQLString},
-    createdDate: {type: GraphQLString},
-    billbackFactor: {type: GraphQLFloat},
-    createdByUserLogin: {type: GraphQLString}
+    userEntered: {type: GraphQLBoolean}
   })
 });
 

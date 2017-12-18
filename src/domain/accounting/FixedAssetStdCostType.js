@@ -47,13 +47,13 @@ export {FixedAssetStdCostTypeType};
 
 const FixedAssetStdCostTypeInputType = new GraphQLInputObjectType({
   name: 'FixedAssetStdCostTypeInputType',
-  description: 'input type for FixedAssetStdCostType in accounting',
+  description: 'input type for FixedAssetStdCostType',
 
   fields: () => ({
+    description: {type: GraphQLString},
     fixedAssetStdCostTypeId: {type: GraphQLString},
-    parentTypeId: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString}
   })
 });
 

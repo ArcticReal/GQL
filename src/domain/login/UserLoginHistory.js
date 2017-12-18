@@ -39,15 +39,15 @@ export {UserLoginHistoryType};
 
 const UserLoginHistoryInputType = new GraphQLInputObjectType({
   name: 'UserLoginHistoryInputType',
-  description: 'input type for UserLoginHistory in login',
+  description: 'input type for UserLoginHistory',
 
   fields: () => ({
-    userLoginId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
-    visitId: {type: GraphQLString},
     passwordUsed: {type: GraphQLString},
     successfulLogin: {type: GraphQLBoolean},
-    thruDate: {type: GraphQLString}
+    thruDate: {type: GraphQLString},
+    userLoginId: {type: GraphQLString},
+    visitId: {type: GraphQLString}
   })
 });
 

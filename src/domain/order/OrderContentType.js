@@ -47,13 +47,13 @@ export {OrderContentTypeType};
 
 const OrderContentTypeInputType = new GraphQLInputObjectType({
   name: 'OrderContentTypeInputType',
-  description: 'input type for OrderContentType in order',
+  description: 'input type for OrderContentType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
-    orderContentTypeId: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    orderContentTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

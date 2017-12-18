@@ -46,17 +46,17 @@ export {ProductPromoCategoryType};
 
 const ProductPromoCategoryInputType = new GraphQLInputObjectType({
   name: 'ProductPromoCategoryInputType',
-  description: 'input type for ProductPromoCategory in product',
+  description: 'input type for ProductPromoCategory',
 
   fields: () => ({
-    productCategoryId: {type: GraphQLString},
     andGroupId: {type: GraphQLString},
-    productPromoActionSeqId: {type: GraphQLString},
-    productPromoRuleId: {type: GraphQLString},
     includeSubCategories: {type: GraphQLBoolean},
+    productCategoryId: {type: GraphQLString},
+    productPromoActionSeqId: {type: GraphQLString},
     productPromoApplEnumId: {type: GraphQLString},
+    productPromoCondSeqId: {type: GraphQLString},
     productPromoId: {type: GraphQLString},
-    productPromoCondSeqId: {type: GraphQLString}
+    productPromoRuleId: {type: GraphQLString}
   })
 });
 

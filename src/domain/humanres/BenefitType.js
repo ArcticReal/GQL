@@ -49,15 +49,15 @@ export {BenefitTypeType};
 
 const BenefitTypeInputType = new GraphQLInputObjectType({
   name: 'BenefitTypeInputType',
-  description: 'input type for BenefitType in humanres',
+  description: 'input type for BenefitType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    employerPaidPercentage: {type: GraphQLFloat},
-    hasTable: {type: GraphQLBoolean},
     benefitName: {type: GraphQLString},
     benefitTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    employerPaidPercentage: {type: GraphQLFloat},
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

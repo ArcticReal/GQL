@@ -36,7 +36,7 @@ export {ContentOperationType};
 
 const ContentOperationInputType = new GraphQLInputObjectType({
   name: 'ContentOperationInputType',
-  description: 'input type for ContentOperation in content',
+  description: 'input type for ContentOperation',
 
   fields: () => ({
     contentOperationId: {type: GraphQLString},

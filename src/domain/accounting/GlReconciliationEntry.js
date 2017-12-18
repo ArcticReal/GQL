@@ -42,13 +42,13 @@ export {GlReconciliationEntryType};
 
 const GlReconciliationEntryInputType = new GraphQLInputObjectType({
   name: 'GlReconciliationEntryInputType',
-  description: 'input type for GlReconciliationEntry in accounting',
+  description: 'input type for GlReconciliationEntry',
 
   fields: () => ({
-    glReconciliationId: {type: GraphQLString},
-    reconciledAmount: {type: GraphQLFloat},
     acctgTransEntrySeqId: {type: GraphQLString},
-    acctgTransId: {type: GraphQLString}
+    acctgTransId: {type: GraphQLString},
+    glReconciliationId: {type: GraphQLString},
+    reconciledAmount: {type: GraphQLFloat}
   })
 });
 

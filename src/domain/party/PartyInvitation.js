@@ -52,16 +52,16 @@ export {PartyInvitationType};
 
 const PartyInvitationInputType = new GraphQLInputObjectType({
   name: 'PartyInvitationInputType',
-  description: 'input type for PartyInvitation in party',
+  description: 'input type for PartyInvitation',
 
   fields: () => ({
-    partyIdFrom: {type: GraphQLString},
     emailAddress: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    toName: {type: GraphQLString},
     lastInviteDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    partyInvitationId: {type: GraphQLString}
+    partyIdFrom: {type: GraphQLString},
+    partyInvitationId: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    toName: {type: GraphQLString}
   })
 });
 

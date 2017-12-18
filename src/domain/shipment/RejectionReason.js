@@ -36,11 +36,11 @@ export {RejectionReasonType};
 
 const RejectionReasonInputType = new GraphQLInputObjectType({
   name: 'RejectionReasonInputType',
-  description: 'input type for RejectionReason in shipment',
+  description: 'input type for RejectionReason',
 
   fields: () => ({
-    rejectionId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    rejectionId: {type: GraphQLString}
   })
 });
 

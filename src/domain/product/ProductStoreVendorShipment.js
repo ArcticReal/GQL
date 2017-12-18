@@ -51,7 +51,7 @@ export {ProductStoreVendorShipmentType};
 
 const ProductStoreVendorShipmentInputType = new GraphQLInputObjectType({
   name: 'ProductStoreVendorShipmentInputType',
-  description: 'input type for ProductStoreVendorShipment in product',
+  description: 'input type for ProductStoreVendorShipment',
 
   fields: () => ({
     carrierPartyId: {type: GraphQLString},

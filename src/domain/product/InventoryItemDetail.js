@@ -80,31 +80,31 @@ export {InventoryItemDetailType};
 
 const InventoryItemDetailInputType = new GraphQLInputObjectType({
   name: 'InventoryItemDetailInputType',
-  description: 'input type for InventoryItemDetail in product',
+  description: 'input type for InventoryItemDetail',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    workEffortId: {type: GraphQLString},
-    orderId: {type: GraphQLString},
+    accountingQuantityDiff: {type: GraphQLFloat},
+    availableToPromiseDiff: {type: GraphQLFloat},
     description: {type: GraphQLString},
-    maintHistSeqId: {type: GraphQLString},
-    shipmentItemSeqId: {type: GraphQLString},
-    shipGroupSeqId: {type: GraphQLString},
+    effectiveDate: {type: GraphQLString},
+    fixedAssetId: {type: GraphQLString},
     inventoryItemDetailSeqId: {type: GraphQLString},
     inventoryItemId: {type: GraphQLString},
-    accountingQuantityDiff: {type: GraphQLFloat},
-    physicalInventoryId: {type: GraphQLString},
-    availableToPromiseDiff: {type: GraphQLFloat},
-    shipmentId: {type: GraphQLString},
     itemIssuanceId: {type: GraphQLString},
-    unitCost: {type: GraphQLFloat},
-    returnId: {type: GraphQLString},
-    returnItemSeqId: {type: GraphQLString},
-    fixedAssetId: {type: GraphQLString},
+    maintHistSeqId: {type: GraphQLString},
+    orderId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
+    physicalInventoryId: {type: GraphQLString},
+    quantityOnHandDiff: {type: GraphQLFloat},
     reasonEnumId: {type: GraphQLString},
     receiptId: {type: GraphQLString},
-    effectiveDate: {type: GraphQLString},
-    quantityOnHandDiff: {type: GraphQLFloat}
+    returnId: {type: GraphQLString},
+    returnItemSeqId: {type: GraphQLString},
+    shipGroupSeqId: {type: GraphQLString},
+    shipmentId: {type: GraphQLString},
+    shipmentItemSeqId: {type: GraphQLString},
+    unitCost: {type: GraphQLFloat},
+    workEffortId: {type: GraphQLString}
   })
 });
 

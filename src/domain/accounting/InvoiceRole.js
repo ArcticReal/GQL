@@ -43,14 +43,14 @@ export {InvoiceRoleType};
 
 const InvoiceRoleInputType = new GraphQLInputObjectType({
   name: 'InvoiceRoleInputType',
-  description: 'input type for InvoiceRole in accounting',
+  description: 'input type for InvoiceRole',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
     datetimePerformed: {type: GraphQLString},
-    percentage: {type: GraphQLFloat},
     invoiceId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    percentage: {type: GraphQLFloat},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

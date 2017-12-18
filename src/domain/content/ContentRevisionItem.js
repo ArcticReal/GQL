@@ -47,14 +47,14 @@ export {ContentRevisionItemType};
 
 const ContentRevisionItemInputType = new GraphQLInputObjectType({
   name: 'ContentRevisionItemInputType',
-  description: 'input type for ContentRevisionItem in content',
+  description: 'input type for ContentRevisionItem',
 
   fields: () => ({
-    oldDataResourceId: {type: GraphQLString},
     contentId: {type: GraphQLString},
-    newDataResourceId: {type: GraphQLString},
     contentRevisionSeqId: {type: GraphQLString},
-    itemContentId: {type: GraphQLString}
+    itemContentId: {type: GraphQLString},
+    newDataResourceId: {type: GraphQLString},
+    oldDataResourceId: {type: GraphQLString}
   })
 });
 

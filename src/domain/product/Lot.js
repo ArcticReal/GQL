@@ -38,13 +38,13 @@ export {LotType};
 
 const LotInputType = new GraphQLInputObjectType({
   name: 'LotInputType',
-  description: 'input type for Lot in product',
+  description: 'input type for Lot',
 
   fields: () => ({
-    quantity: {type: GraphQLFloat},
-    lotId: {type: GraphQLString},
     creationDate: {type: GraphQLString},
-    expirationDate: {type: GraphQLString}
+    expirationDate: {type: GraphQLString},
+    lotId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat}
   })
 });
 

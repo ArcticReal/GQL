@@ -36,12 +36,12 @@ export {WorkEffortAssocTypeAttrType};
 
 const WorkEffortAssocTypeAttrInputType = new GraphQLInputObjectType({
   name: 'WorkEffortAssocTypeAttrInputType',
-  description: 'input type for WorkEffortAssocTypeAttr in workeffort',
+  description: 'input type for WorkEffortAssocTypeAttr',
 
   fields: () => ({
+    attrName: {type: GraphQLString},
     description: {type: GraphQLString},
-    workEffortAssocTypeId: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    workEffortAssocTypeId: {type: GraphQLString}
   })
 });
 

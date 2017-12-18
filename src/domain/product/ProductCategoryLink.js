@@ -46,22 +46,22 @@ export {ProductCategoryLinkType};
 
 const ProductCategoryLinkInputType = new GraphQLInputObjectType({
   name: 'ProductCategoryLinkInputType',
-  description: 'input type for ProductCategoryLink in product',
+  description: 'input type for ProductCategoryLink',
 
   fields: () => ({
-    linkInfo: {type: GraphQLString},
     comments: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
-    detailText: {type: GraphQLString},
-    thruDate: {type: GraphQLString},
     detailSubScreen: {type: GraphQLString},
+    detailText: {type: GraphQLString},
     fromDate: {type: GraphQLString},
-    productCategoryId: {type: GraphQLString},
-    titleText: {type: GraphQLString},
-    imageUrl: {type: GraphQLString},
     imageTwoUrl: {type: GraphQLString},
+    imageUrl: {type: GraphQLString},
+    linkInfo: {type: GraphQLString},
+    linkSeqId: {type: GraphQLString},
     linkTypeEnumId: {type: GraphQLString},
-    linkSeqId: {type: GraphQLString}
+    productCategoryId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
+    thruDate: {type: GraphQLString},
+    titleText: {type: GraphQLString}
   })
 });
 

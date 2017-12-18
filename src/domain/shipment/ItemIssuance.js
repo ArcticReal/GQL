@@ -90,22 +90,22 @@ export {ItemIssuanceType};
 
 const ItemIssuanceInputType = new GraphQLInputObjectType({
   name: 'ItemIssuanceInputType',
-  description: 'input type for ItemIssuance in shipment',
+  description: 'input type for ItemIssuance',
 
   fields: () => ({
+    cancelQuantity: {type: GraphQLFloat},
+    fixedAssetId: {type: GraphQLString},
+    inventoryItemId: {type: GraphQLString},
+    issuedByUserLoginId: {type: GraphQLString},
+    issuedDateTime: {type: GraphQLString},
+    itemIssuanceId: {type: GraphQLString},
+    maintHistSeqId: {type: GraphQLString},
+    orderId: {type: GraphQLString},
     orderItemSeqId: {type: GraphQLString},
     quantity: {type: GraphQLFloat},
-    orderId: {type: GraphQLString},
-    maintHistSeqId: {type: GraphQLString},
-    shipmentItemSeqId: {type: GraphQLString},
     shipGroupSeqId: {type: GraphQLString},
-    cancelQuantity: {type: GraphQLFloat},
-    inventoryItemId: {type: GraphQLString},
-    itemIssuanceId: {type: GraphQLString},
     shipmentId: {type: GraphQLString},
-    issuedDateTime: {type: GraphQLString},
-    fixedAssetId: {type: GraphQLString},
-    issuedByUserLoginId: {type: GraphQLString}
+    shipmentItemSeqId: {type: GraphQLString}
   })
 });
 

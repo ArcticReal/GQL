@@ -60,12 +60,12 @@ export {SegmentGroupType};
 
 const SegmentGroupInputType = new GraphQLInputObjectType({
   name: 'SegmentGroupInputType',
-  description: 'input type for SegmentGroup in marketing',
+  description: 'input type for SegmentGroup',
 
   fields: () => ({
     description: {type: GraphQLString},
-    segmentGroupId: {type: GraphQLString},
     productStoreId: {type: GraphQLString},
+    segmentGroupId: {type: GraphQLString},
     segmentGroupTypeId: {type: GraphQLString}
   })
 });

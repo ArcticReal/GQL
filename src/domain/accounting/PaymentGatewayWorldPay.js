@@ -44,19 +44,19 @@ export {PaymentGatewayWorldPayType};
 
 const PaymentGatewayWorldPayInputType = new GraphQLInputObjectType({
   name: 'PaymentGatewayWorldPayInputType',
-  description: 'input type for PaymentGatewayWorldPay in accounting',
+  description: 'input type for PaymentGatewayWorldPay',
 
   fields: () => ({
     authMode: {type: GraphQLBoolean},
-    instId: {type: GraphQLString},
-    redirectUrl: {type: GraphQLString},
-    paymentGatewayConfigId: {type: GraphQLString},
-    hideContact: {type: GraphQLBoolean},
-    testMode: {type: GraphQLInt},
     fixContact: {type: GraphQLBoolean},
-    langId: {type: GraphQLString},
+    hideContact: {type: GraphQLBoolean},
     hideCurrency: {type: GraphQLBoolean},
+    instId: {type: GraphQLString},
+    langId: {type: GraphQLString},
     noLanguageMenu: {type: GraphQLBoolean},
+    paymentGatewayConfigId: {type: GraphQLString},
+    redirectUrl: {type: GraphQLString},
+    testMode: {type: GraphQLInt},
     withDelivery: {type: GraphQLBoolean}
   })
 });

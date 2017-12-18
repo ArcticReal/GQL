@@ -47,12 +47,12 @@ export {FacilityCarrierShipmentType};
 
 const FacilityCarrierShipmentInputType = new GraphQLInputObjectType({
   name: 'FacilityCarrierShipmentInputType',
-  description: 'input type for FacilityCarrierShipment in product',
+  description: 'input type for FacilityCarrierShipment',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
     facilityId: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
     shipmentMethodTypeId: {type: GraphQLString}
   })
 });

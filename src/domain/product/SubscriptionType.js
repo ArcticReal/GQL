@@ -53,12 +53,12 @@ export {SubscriptionTypeType};
 
 const SubscriptionTypeInputType = new GraphQLInputObjectType({
   name: 'SubscriptionTypeInputType',
-  description: 'input type for SubscriptionType in product',
+  description: 'input type for SubscriptionType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString},
     subscriptionTypeId: {type: GraphQLString}
   })
 });

@@ -42,13 +42,13 @@ export {WorkEffortBillingType};
 
 const WorkEffortBillingInputType = new GraphQLInputObjectType({
   name: 'WorkEffortBillingInputType',
-  description: 'input type for WorkEffortBilling in workeffort',
+  description: 'input type for WorkEffortBilling',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    percentage: {type: GraphQLFloat},
     invoiceId: {type: GraphQLString},
-    invoiceItemSeqId: {type: GraphQLString}
+    invoiceItemSeqId: {type: GraphQLString},
+    percentage: {type: GraphQLFloat},
+    workEffortId: {type: GraphQLString}
   })
 });
 

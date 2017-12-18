@@ -37,13 +37,13 @@ export {FacilityAttributeType};
 
 const FacilityAttributeInputType = new GraphQLInputObjectType({
   name: 'FacilityAttributeInputType',
-  description: 'input type for FacilityAttribute in product',
+  description: 'input type for FacilityAttribute',
 
   fields: () => ({
-    facilityId: {type: GraphQLString},
     attrDescription: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     attrValue: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    facilityId: {type: GraphQLString}
   })
 });
 

@@ -36,12 +36,12 @@ export {ContentTypeAttrType};
 
 const ContentTypeAttrInputType = new GraphQLInputObjectType({
   name: 'ContentTypeAttrInputType',
-  description: 'input type for ContentTypeAttr in content',
+  description: 'input type for ContentTypeAttr',
 
   fields: () => ({
+    attrName: {type: GraphQLString},
     contentTypeId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    description: {type: GraphQLString}
   })
 });
 

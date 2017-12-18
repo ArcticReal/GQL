@@ -82,22 +82,22 @@ export {CostComponentType};
 
 const CostComponentInputType = new GraphQLInputObjectType({
   name: 'CostComponentInputType',
-  description: 'input type for CostComponent in product',
+  description: 'input type for CostComponent',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    costComponentTypeId: {type: GraphQLString},
     cost: {type: GraphQLFloat},
-    productId: {type: GraphQLString},
-    productFeatureId: {type: GraphQLString},
-    costComponentId: {type: GraphQLString},
     costComponentCalcId: {type: GraphQLString},
-    thruDate: {type: GraphQLString},
+    costComponentId: {type: GraphQLString},
+    costComponentTypeId: {type: GraphQLString},
+    costUomId: {type: GraphQLString},
+    fixedAssetId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
     geoId: {type: GraphQLString},
-    fixedAssetId: {type: GraphQLString},
-    costUomId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    productFeatureId: {type: GraphQLString},
+    productId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

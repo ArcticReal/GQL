@@ -41,12 +41,12 @@ export {ItemIssuanceRoleType};
 
 const ItemIssuanceRoleInputType = new GraphQLInputObjectType({
   name: 'ItemIssuanceRoleInputType',
-  description: 'input type for ItemIssuanceRole in shipment',
+  description: 'input type for ItemIssuanceRole',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
     itemIssuanceId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

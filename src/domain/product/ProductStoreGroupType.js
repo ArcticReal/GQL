@@ -36,11 +36,11 @@ export {ProductStoreGroupTypeType};
 
 const ProductStoreGroupTypeInputType = new GraphQLInputObjectType({
   name: 'ProductStoreGroupTypeInputType',
-  description: 'input type for ProductStoreGroupType in product',
+  description: 'input type for ProductStoreGroupType',
 
   fields: () => ({
-    productStoreGroupTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    productStoreGroupTypeId: {type: GraphQLString}
   })
 });
 

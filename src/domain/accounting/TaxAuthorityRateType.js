@@ -36,7 +36,7 @@ export {TaxAuthorityRateTypeType};
 
 const TaxAuthorityRateTypeInputType = new GraphQLInputObjectType({
   name: 'TaxAuthorityRateTypeInputType',
-  description: 'input type for TaxAuthorityRateType in accounting',
+  description: 'input type for TaxAuthorityRateType',
 
   fields: () => ({
     description: {type: GraphQLString},

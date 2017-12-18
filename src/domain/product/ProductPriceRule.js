@@ -52,14 +52,14 @@ export {ProductPriceRuleType};
 
 const ProductPriceRuleInputType = new GraphQLInputObjectType({
   name: 'ProductPriceRuleInputType',
-  description: 'input type for ProductPriceRule in product',
+  description: 'input type for ProductPriceRule',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    ruleName: {type: GraphQLString},
     description: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     isSale: {type: GraphQLBoolean},
     productPriceRuleId: {type: GraphQLString},
+    ruleName: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

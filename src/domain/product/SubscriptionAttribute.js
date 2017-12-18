@@ -37,13 +37,13 @@ export {SubscriptionAttributeType};
 
 const SubscriptionAttributeInputType = new GraphQLInputObjectType({
   name: 'SubscriptionAttributeInputType',
-  description: 'input type for SubscriptionAttribute in product',
+  description: 'input type for SubscriptionAttribute',
 
   fields: () => ({
     attrDescription: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     attrValue: {type: GraphQLString},
-    subscriptionId: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    subscriptionId: {type: GraphQLString}
   })
 });
 

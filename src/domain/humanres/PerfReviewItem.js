@@ -50,16 +50,16 @@ export {PerfReviewItemType};
 
 const PerfReviewItemInputType = new GraphQLInputObjectType({
   name: 'PerfReviewItemInputType',
-  description: 'input type for PerfReviewItem in humanres',
+  description: 'input type for PerfReviewItem',
 
   fields: () => ({
-    perfReviewItemTypeId: {type: GraphQLString},
-    employeeRoleTypeId: {type: GraphQLString},
-    perfReviewItemSeqId: {type: GraphQLString},
-    perfRatingTypeId: {type: GraphQLString},
-    employeePartyId: {type: GraphQLString},
     comments: {type: GraphQLString},
-    perfReviewId: {type: GraphQLString}
+    employeePartyId: {type: GraphQLString},
+    employeeRoleTypeId: {type: GraphQLString},
+    perfRatingTypeId: {type: GraphQLString},
+    perfReviewId: {type: GraphQLString},
+    perfReviewItemSeqId: {type: GraphQLString},
+    perfReviewItemTypeId: {type: GraphQLString}
   })
 });
 

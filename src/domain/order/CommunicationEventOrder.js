@@ -40,11 +40,11 @@ export {CommunicationEventOrderType};
 
 const CommunicationEventOrderInputType = new GraphQLInputObjectType({
   name: 'CommunicationEventOrderInputType',
-  description: 'input type for CommunicationEventOrder in order',
+  description: 'input type for CommunicationEventOrder',
 
   fields: () => ({
-    orderId: {type: GraphQLString},
-    communicationEventId: {type: GraphQLString}
+    communicationEventId: {type: GraphQLString},
+    orderId: {type: GraphQLString}
   })
 });
 

@@ -44,20 +44,20 @@ export {ContentSearchConstraintType};
 
 const ContentSearchConstraintInputType = new GraphQLInputObjectType({
   name: 'ContentSearchConstraintInputType',
-  description: 'input type for ContentSearchConstraint in content',
+  description: 'input type for ContentSearchConstraint',
 
   fields: () => ({
-    isAnd: {type: GraphQLBoolean},
-    removeStems: {type: GraphQLBoolean},
-    lowValue: {type: GraphQLString},
-    constraintSeqId: {type: GraphQLString},
-    infoString: {type: GraphQLString},
-    contentSearchResultId: {type: GraphQLString},
     anyPrefix: {type: GraphQLBoolean},
+    anySuffix: {type: GraphQLBoolean},
+    constraintName: {type: GraphQLString},
+    constraintSeqId: {type: GraphQLString},
+    contentSearchResultId: {type: GraphQLString},
     highValue: {type: GraphQLString},
     includeSubCategories: {type: GraphQLBoolean},
-    anySuffix: {type: GraphQLBoolean},
-    constraintName: {type: GraphQLString}
+    infoString: {type: GraphQLString},
+    isAnd: {type: GraphQLBoolean},
+    lowValue: {type: GraphQLString},
+    removeStems: {type: GraphQLBoolean}
   })
 });
 

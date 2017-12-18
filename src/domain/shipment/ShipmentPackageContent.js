@@ -44,15 +44,15 @@ export {ShipmentPackageContentType};
 
 const ShipmentPackageContentInputType = new GraphQLInputObjectType({
   name: 'ShipmentPackageContentInputType',
-  description: 'input type for ShipmentPackageContent in shipment',
+  description: 'input type for ShipmentPackageContent',
 
   fields: () => ({
     quantity: {type: GraphQLFloat},
     shipmentId: {type: GraphQLString},
-    subProductQuantity: {type: GraphQLFloat},
+    shipmentItemSeqId: {type: GraphQLString},
     shipmentPackageSeqId: {type: GraphQLString},
     subProductId: {type: GraphQLString},
-    shipmentItemSeqId: {type: GraphQLString}
+    subProductQuantity: {type: GraphQLFloat}
   })
 });
 

@@ -42,12 +42,12 @@ export {OrderRequirementCommitmentType};
 
 const OrderRequirementCommitmentInputType = new GraphQLInputObjectType({
   name: 'OrderRequirementCommitmentInputType',
-  description: 'input type for OrderRequirementCommitment in order',
+  description: 'input type for OrderRequirementCommitment',
 
   fields: () => ({
+    orderId: {type: GraphQLString},
     orderItemSeqId: {type: GraphQLString},
     quantity: {type: GraphQLFloat},
-    orderId: {type: GraphQLString},
     requirementId: {type: GraphQLString}
   })
 });

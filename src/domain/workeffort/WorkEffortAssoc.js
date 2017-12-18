@@ -54,15 +54,15 @@ export {WorkEffortAssocType};
 
 const WorkEffortAssocInputType = new GraphQLInputObjectType({
   name: 'WorkEffortAssocInputType',
-  description: 'input type for WorkEffortAssoc in workeffort',
+  description: 'input type for WorkEffortAssoc',
 
   fields: () => ({
-    workEffortIdTo: {type: GraphQLString},
     fromDate: {type: GraphQLString},
-    workEffortIdFrom: {type: GraphQLString},
     sequenceNum: {type: GraphQLInt},
+    thruDate: {type: GraphQLString},
     workEffortAssocTypeId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    workEffortIdFrom: {type: GraphQLString},
+    workEffortIdTo: {type: GraphQLString}
   })
 });
 

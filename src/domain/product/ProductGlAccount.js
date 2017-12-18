@@ -52,13 +52,13 @@ export {ProductGlAccountType};
 
 const ProductGlAccountInputType = new GraphQLInputObjectType({
   name: 'ProductGlAccountInputType',
-  description: 'input type for ProductGlAccount in product',
+  description: 'input type for ProductGlAccount',
 
   fields: () => ({
-    productId: {type: GraphQLString},
-    glAccountTypeId: {type: GraphQLString},
     glAccountId: {type: GraphQLString},
-    organizationPartyId: {type: GraphQLString}
+    glAccountTypeId: {type: GraphQLString},
+    organizationPartyId: {type: GraphQLString},
+    productId: {type: GraphQLString}
   })
 });
 

@@ -39,15 +39,15 @@ export {ProductStoreKeywordOvrdType};
 
 const ProductStoreKeywordOvrdInputType = new GraphQLInputObjectType({
   name: 'ProductStoreKeywordOvrdInputType',
-  description: 'input type for ProductStoreKeywordOvrd in product',
+  description: 'input type for ProductStoreKeywordOvrd',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
-    productStoreId: {type: GraphQLString},
-    targetTypeEnumId: {type: GraphQLString},
     keyword: {type: GraphQLString},
-    thruDate: {type: GraphQLString},
-    target: {type: GraphQLString}
+    productStoreId: {type: GraphQLString},
+    target: {type: GraphQLString},
+    targetTypeEnumId: {type: GraphQLString},
+    thruDate: {type: GraphQLString}
   })
 });
 

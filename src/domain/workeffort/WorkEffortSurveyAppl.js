@@ -42,13 +42,13 @@ export {WorkEffortSurveyApplType};
 
 const WorkEffortSurveyApplInputType = new GraphQLInputObjectType({
   name: 'WorkEffortSurveyApplInputType',
-  description: 'input type for WorkEffortSurveyAppl in workeffort',
+  description: 'input type for WorkEffortSurveyAppl',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
     surveyId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    thruDate: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

@@ -50,16 +50,16 @@ export {OrderItemAssocType};
 
 const OrderItemAssocInputType = new GraphQLInputObjectType({
   name: 'OrderItemAssocInputType',
-  description: 'input type for OrderItemAssoc in order',
+  description: 'input type for OrderItemAssoc',
 
   fields: () => ({
+    orderId: {type: GraphQLString},
+    orderItemAssocTypeId: {type: GraphQLString},
     orderItemSeqId: {type: GraphQLString},
     quantity: {type: GraphQLFloat},
-    toOrderId: {type: GraphQLString},
-    orderId: {type: GraphQLString},
-    toOrderItemSeqId: {type: GraphQLString},
-    orderItemAssocTypeId: {type: GraphQLString},
     shipGroupSeqId: {type: GraphQLString},
+    toOrderId: {type: GraphQLString},
+    toOrderItemSeqId: {type: GraphQLString},
     toShipGroupSeqId: {type: GraphQLString}
   })
 });

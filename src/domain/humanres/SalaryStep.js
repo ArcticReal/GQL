@@ -41,16 +41,16 @@ export {SalaryStepType};
 
 const SalaryStepInputType = new GraphQLInputObjectType({
   name: 'SalaryStepInputType',
-  description: 'input type for SalaryStep in humanres',
+  description: 'input type for SalaryStep',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     amount: {type: GraphQLFloat},
-    lastModifiedByUserLogin: {type: GraphQLString},
-    salaryStepSeqId: {type: GraphQLString},
-    dateModified: {type: GraphQLString},
-    payGradeId: {type: GraphQLString},
     createdByUserLogin: {type: GraphQLString},
+    dateModified: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    lastModifiedByUserLogin: {type: GraphQLString},
+    payGradeId: {type: GraphQLString},
+    salaryStepSeqId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

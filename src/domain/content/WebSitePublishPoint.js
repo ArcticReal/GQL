@@ -43,19 +43,19 @@ export {WebSitePublishPointType};
 
 const WebSitePublishPointInputType = new GraphQLInputObjectType({
   name: 'WebSitePublishPointInputType',
-  description: 'input type for WebSitePublishPoint in content',
+  description: 'input type for WebSitePublishPoint',
 
   fields: () => ({
-    styleSheetFile: {type: GraphQLString},
-    leftBarId: {type: GraphQLString},
     aboutContentId: {type: GraphQLString},
-    contentId: {type: GraphQLString},
     contentDept: {type: GraphQLString},
-    logo: {type: GraphQLString},
+    contentId: {type: GraphQLString},
+    leftBarId: {type: GraphQLString},
     lineLogo: {type: GraphQLString},
-    templateTitle: {type: GraphQLString},
+    logo: {type: GraphQLString},
+    medallionLogo: {type: GraphQLString},
     rightBarId: {type: GraphQLString},
-    medallionLogo: {type: GraphQLString}
+    styleSheetFile: {type: GraphQLString},
+    templateTitle: {type: GraphQLString}
   })
 });
 

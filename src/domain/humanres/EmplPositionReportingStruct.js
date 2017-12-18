@@ -43,13 +43,13 @@ export {EmplPositionReportingStructType};
 
 const EmplPositionReportingStructInputType = new GraphQLInputObjectType({
   name: 'EmplPositionReportingStructInputType',
-  description: 'input type for EmplPositionReportingStruct in humanres',
+  description: 'input type for EmplPositionReportingStruct',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     comments: {type: GraphQLString},
     emplPositionIdManagedBy: {type: GraphQLString},
     emplPositionIdReportingTo: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     primaryFlag: {type: GraphQLBoolean},
     thruDate: {type: GraphQLString}
   })

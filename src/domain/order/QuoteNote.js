@@ -35,7 +35,7 @@ export {QuoteNoteType};
 
 const QuoteNoteInputType = new GraphQLInputObjectType({
   name: 'QuoteNoteInputType',
-  description: 'input type for QuoteNote in order',
+  description: 'input type for QuoteNote',
 
   fields: () => ({
     noteId: {type: GraphQLString},

@@ -42,11 +42,11 @@ export {CarrierShipmentBoxTypeType};
 
 const CarrierShipmentBoxTypeInputType = new GraphQLInputObjectType({
   name: 'CarrierShipmentBoxTypeInputType',
-  description: 'input type for CarrierShipmentBoxType in shipment',
+  description: 'input type for CarrierShipmentBoxType',
 
   fields: () => ({
-    packagingTypeCode: {type: GraphQLString},
     oversizeCode: {type: GraphQLString},
+    packagingTypeCode: {type: GraphQLString},
     partyId: {type: GraphQLString},
     shipmentBoxTypeId: {type: GraphQLString}
   })

@@ -53,13 +53,13 @@ export {AcctgTransTypeType};
 
 const AcctgTransTypeInputType = new GraphQLInputObjectType({
   name: 'AcctgTransTypeInputType',
-  description: 'input type for AcctgTransType in accounting',
+  description: 'input type for AcctgTransType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
     acctgTransTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString}
   })
 });
 

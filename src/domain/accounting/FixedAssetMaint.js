@@ -87,19 +87,19 @@ export {FixedAssetMaintType};
 
 const FixedAssetMaintInputType = new GraphQLInputObjectType({
   name: 'FixedAssetMaintInputType',
-  description: 'input type for FixedAssetMaint in accounting',
+  description: 'input type for FixedAssetMaint',
 
   fields: () => ({
+    fixedAssetId: {type: GraphQLString},
+    intervalMeterTypeId: {type: GraphQLString},
+    intervalQuantity: {type: GraphQLFloat},
     intervalUomId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    maintHistSeqId: {type: GraphQLString},
+    productMaintSeqId: {type: GraphQLString},
+    productMaintTypeId: {type: GraphQLString},
     purchaseOrderId: {type: GraphQLString},
     scheduleWorkEffortId: {type: GraphQLString},
-    intervalQuantity: {type: GraphQLFloat},
-    fixedAssetId: {type: GraphQLString},
-    maintHistSeqId: {type: GraphQLString},
-    productMaintTypeId: {type: GraphQLString},
-    intervalMeterTypeId: {type: GraphQLString},
-    productMaintSeqId: {type: GraphQLString}
+    statusId: {type: GraphQLString}
   })
 });
 

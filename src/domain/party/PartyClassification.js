@@ -42,7 +42,7 @@ export {PartyClassificationType};
 
 const PartyClassificationInputType = new GraphQLInputObjectType({
   name: 'PartyClassificationInputType',
-  description: 'input type for PartyClassification in party',
+  description: 'input type for PartyClassification',
 
   fields: () => ({
     fromDate: {type: GraphQLString},

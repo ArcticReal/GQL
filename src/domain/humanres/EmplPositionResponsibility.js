@@ -43,13 +43,13 @@ export {EmplPositionResponsibilityType};
 
 const EmplPositionResponsibilityInputType = new GraphQLInputObjectType({
   name: 'EmplPositionResponsibilityInputType',
-  description: 'input type for EmplPositionResponsibility in humanres',
+  description: 'input type for EmplPositionResponsibility',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     comments: {type: GraphQLString},
-    responsibilityTypeId: {type: GraphQLString},
     emplPositionId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    responsibilityTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

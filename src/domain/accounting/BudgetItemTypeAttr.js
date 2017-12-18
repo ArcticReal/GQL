@@ -36,12 +36,12 @@ export {BudgetItemTypeAttrType};
 
 const BudgetItemTypeAttrInputType = new GraphQLInputObjectType({
   name: 'BudgetItemTypeAttrInputType',
-  description: 'input type for BudgetItemTypeAttr in accounting',
+  description: 'input type for BudgetItemTypeAttr',
 
   fields: () => ({
-    description: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     budgetItemTypeId: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    description: {type: GraphQLString}
   })
 });
 

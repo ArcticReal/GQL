@@ -267,27 +267,27 @@ export {FacilityType};
 
 const FacilityInputType = new GraphQLInputObjectType({
   name: 'FacilityInputType',
-  description: 'input type for Facility in product',
+  description: 'input type for Facility',
 
   fields: () => ({
-    facilityId: {type: GraphQLString},
-    defaultInventoryItemTypeId: {type: GraphQLString},
-    parentFacilityId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    defaultWeightUomId: {type: GraphQLString},
-    primaryFacilityGroupId: {type: GraphQLString},
-    openedDate: {type: GraphQLString},
-    ownerPartyId: {type: GraphQLString},
-    facilitySize: {type: GraphQLFloat},
-    facilitySizeUomId: {type: GraphQLString},
     closedDate: {type: GraphQLString},
-    facilityTypeId: {type: GraphQLString},
     defaultDaysToShip: {type: GraphQLInt},
     defaultDimensionUomId: {type: GraphQLString},
+    defaultInventoryItemTypeId: {type: GraphQLString},
+    defaultWeightUomId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    facilityId: {type: GraphQLString},
     facilityName: {type: GraphQLString},
-    productStoreId: {type: GraphQLString},
+    facilitySize: {type: GraphQLFloat},
+    facilitySizeUomId: {type: GraphQLString},
+    facilityTypeId: {type: GraphQLString},
     geoPointId: {type: GraphQLString},
-    oldSquareFootage: {type: GraphQLInt}
+    oldSquareFootage: {type: GraphQLInt},
+    openedDate: {type: GraphQLString},
+    ownerPartyId: {type: GraphQLString},
+    parentFacilityId: {type: GraphQLString},
+    primaryFacilityGroupId: {type: GraphQLString},
+    productStoreId: {type: GraphQLString}
   })
 });
 

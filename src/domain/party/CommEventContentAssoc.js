@@ -49,14 +49,14 @@ export {CommEventContentAssocType};
 
 const CommEventContentAssocInputType = new GraphQLInputObjectType({
   name: 'CommEventContentAssocInputType',
-  description: 'input type for CommEventContentAssoc in party',
+  description: 'input type for CommEventContentAssoc',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
-    contentId: {type: GraphQLString},
     commContentAssocTypeId: {type: GraphQLString},
     communicationEventId: {type: GraphQLString},
+    contentId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}
   })
 });

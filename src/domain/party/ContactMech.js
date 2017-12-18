@@ -234,12 +234,12 @@ export {ContactMechType};
 
 const ContactMechInputType = new GraphQLInputObjectType({
   name: 'ContactMechInputType',
-  description: 'input type for ContactMech in party',
+  description: 'input type for ContactMech',
 
   fields: () => ({
-    infoString: {type: GraphQLString},
+    contactMechId: {type: GraphQLString},
     contactMechTypeId: {type: GraphQLString},
-    contactMechId: {type: GraphQLString}
+    infoString: {type: GraphQLString}
   })
 });
 

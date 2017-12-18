@@ -270,32 +270,32 @@ export {ContentType};
 
 const ContentInputType = new GraphQLInputObjectType({
   name: 'ContentInputType',
-  description: 'input type for Content in content',
+  description: 'input type for Content',
 
   fields: () => ({
-    ownerContentId: {type: GraphQLString},
-    templateDataResourceId: {type: GraphQLString},
-    lastModifiedDate: {type: GraphQLString},
-    instanceOfContentId: {type: GraphQLString},
-    contentId: {type: GraphQLString},
-    contentTypeId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    mimeTypeId: {type: GraphQLString},
-    childLeafCount: {type: GraphQLInt},
-    serviceName: {type: GraphQLString},
-    customMethodId: {type: GraphQLString},
     characterSetId: {type: GraphQLString},
+    childBranchCount: {type: GraphQLInt},
+    childLeafCount: {type: GraphQLInt},
+    contentId: {type: GraphQLString},
     contentName: {type: GraphQLString},
-    privilegeEnumId: {type: GraphQLString},
-    dataSourceId: {type: GraphQLString},
-    lastModifiedByUserLogin: {type: GraphQLString},
-    createdDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    localeString: {type: GraphQLString},
-    dataResourceId: {type: GraphQLString},
-    decoratorContentId: {type: GraphQLString},
+    contentTypeId: {type: GraphQLString},
     createdByUserLogin: {type: GraphQLString},
-    childBranchCount: {type: GraphQLInt}
+    createdDate: {type: GraphQLString},
+    customMethodId: {type: GraphQLString},
+    dataResourceId: {type: GraphQLString},
+    dataSourceId: {type: GraphQLString},
+    decoratorContentId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    instanceOfContentId: {type: GraphQLString},
+    lastModifiedByUserLogin: {type: GraphQLString},
+    lastModifiedDate: {type: GraphQLString},
+    localeString: {type: GraphQLString},
+    mimeTypeId: {type: GraphQLString},
+    ownerContentId: {type: GraphQLString},
+    privilegeEnumId: {type: GraphQLString},
+    serviceName: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    templateDataResourceId: {type: GraphQLString}
   })
 });
 

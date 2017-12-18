@@ -44,15 +44,15 @@ export {CustRequestStatusType};
 
 const CustRequestStatusInputType = new GraphQLInputObjectType({
   name: 'CustRequestStatusInputType',
-  description: 'input type for CustRequestStatus in order',
+  description: 'input type for CustRequestStatus',
 
   fields: () => ({
-    statusDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    custRequestId: {type: GraphQLString},
-    custRequestStatusId: {type: GraphQLString},
     changeByUserLoginId: {type: GraphQLString},
-    custRequestItemSeqId: {type: GraphQLString}
+    custRequestId: {type: GraphQLString},
+    custRequestItemSeqId: {type: GraphQLString},
+    custRequestStatusId: {type: GraphQLString},
+    statusDate: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

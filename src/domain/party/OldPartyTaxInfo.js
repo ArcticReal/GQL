@@ -39,14 +39,14 @@ export {OldPartyTaxInfoType};
 
 const OldPartyTaxInfoInputType = new GraphQLInputObjectType({
   name: 'OldPartyTaxInfoInputType',
-  description: 'input type for OldPartyTaxInfo in party',
+  description: 'input type for OldPartyTaxInfo',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
-    partyTaxId: {type: GraphQLString},
     geoId: {type: GraphQLString},
     isExempt: {type: GraphQLBoolean},
     partyId: {type: GraphQLString},
+    partyTaxId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

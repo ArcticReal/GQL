@@ -71,24 +71,24 @@ export {ContentAssocType};
 
 const ContentAssocInputType = new GraphQLInputObjectType({
   name: 'ContentAssocInputType',
-  description: 'input type for ContentAssoc in content',
+  description: 'input type for ContentAssoc',
 
   fields: () => ({
-    sequenceNum: {type: GraphQLInt},
-    lastModifiedDate: {type: GraphQLString},
-    contentIdTo: {type: GraphQLString},
-    upperCoordinate: {type: GraphQLInt},
-    leftCoordinate: {type: GraphQLInt},
-    contentId: {type: GraphQLString},
-    mapKey: {type: GraphQLString},
-    thruDate: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
     contentAssocPredicateId: {type: GraphQLString},
-    dataSourceId: {type: GraphQLString},
-    lastModifiedByUserLogin: {type: GraphQLString},
-    createdDate: {type: GraphQLString},
     contentAssocTypeId: {type: GraphQLString},
-    createdByUserLogin: {type: GraphQLString}
+    contentId: {type: GraphQLString},
+    contentIdTo: {type: GraphQLString},
+    createdByUserLogin: {type: GraphQLString},
+    createdDate: {type: GraphQLString},
+    dataSourceId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    lastModifiedByUserLogin: {type: GraphQLString},
+    lastModifiedDate: {type: GraphQLString},
+    leftCoordinate: {type: GraphQLInt},
+    mapKey: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
+    thruDate: {type: GraphQLString},
+    upperCoordinate: {type: GraphQLInt}
   })
 });
 

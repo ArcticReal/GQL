@@ -50,21 +50,21 @@ export {OrderItemChangeType};
 
 const OrderItemChangeInputType = new GraphQLInputObjectType({
   name: 'OrderItemChangeInputType',
-  description: 'input type for OrderItemChange in order',
+  description: 'input type for OrderItemChange',
 
   fields: () => ({
-    orderItemChangeId: {type: GraphQLString},
-    orderItemSeqId: {type: GraphQLString},
-    unitPrice: {type: GraphQLFloat},
+    cancelQuantity: {type: GraphQLFloat},
+    changeComments: {type: GraphQLString},
+    changeDatetime: {type: GraphQLString},
     changeTypeEnumId: {type: GraphQLString},
     changeUserLogin: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
-    orderId: {type: GraphQLString},
-    changeComments: {type: GraphQLString},
     itemDescription: {type: GraphQLString},
+    orderId: {type: GraphQLString},
+    orderItemChangeId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
     reasonEnumId: {type: GraphQLString},
-    cancelQuantity: {type: GraphQLFloat},
-    changeDatetime: {type: GraphQLString}
+    unitPrice: {type: GraphQLFloat}
   })
 });
 

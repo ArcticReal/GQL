@@ -96,24 +96,24 @@ export {ReturnItemType};
 
 const ReturnItemInputType = new GraphQLInputObjectType({
   name: 'ReturnItemInputType',
-  description: 'input type for ReturnItem in order',
+  description: 'input type for ReturnItem',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    returnQuantity: {type: GraphQLFloat},
-    productId: {type: GraphQLString},
-    orderId: {type: GraphQLString},
-    returnTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    returnPrice: {type: GraphQLFloat},
-    returnItemResponseId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    returnReasonId: {type: GraphQLString},
-    returnItemTypeId: {type: GraphQLString},
+    expectedItemStatus: {type: GraphQLString},
+    orderId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
+    productId: {type: GraphQLString},
     receivedQuantity: {type: GraphQLFloat},
     returnId: {type: GraphQLString},
+    returnItemResponseId: {type: GraphQLString},
     returnItemSeqId: {type: GraphQLString},
-    expectedItemStatus: {type: GraphQLString}
+    returnItemTypeId: {type: GraphQLString},
+    returnPrice: {type: GraphQLFloat},
+    returnQuantity: {type: GraphQLFloat},
+    returnReasonId: {type: GraphQLString},
+    returnTypeId: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

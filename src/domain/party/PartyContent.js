@@ -48,12 +48,12 @@ export {PartyContentType};
 
 const PartyContentInputType = new GraphQLInputObjectType({
   name: 'PartyContentInputType',
-  description: 'input type for PartyContent in party',
+  description: 'input type for PartyContent',
 
   fields: () => ({
+    contentId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
     partyContentTypeId: {type: GraphQLString},
-    contentId: {type: GraphQLString},
     partyId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })

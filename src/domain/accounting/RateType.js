@@ -48,11 +48,11 @@ export {RateTypeType};
 
 const RateTypeInputType = new GraphQLInputObjectType({
   name: 'RateTypeInputType',
-  description: 'input type for RateType in accounting',
+  description: 'input type for RateType',
 
   fields: () => ({
-    rateTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    rateTypeId: {type: GraphQLString}
   })
 });
 

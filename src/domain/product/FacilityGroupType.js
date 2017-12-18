@@ -36,11 +36,11 @@ export {FacilityGroupTypeType};
 
 const FacilityGroupTypeInputType = new GraphQLInputObjectType({
   name: 'FacilityGroupTypeInputType',
-  description: 'input type for FacilityGroupType in product',
+  description: 'input type for FacilityGroupType',
 
   fields: () => ({
-    facilityGroupTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    facilityGroupTypeId: {type: GraphQLString}
   })
 });
 

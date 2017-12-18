@@ -78,23 +78,23 @@ export {SalesOpportunityType};
 
 const SalesOpportunityInputType = new GraphQLInputObjectType({
   name: 'SalesOpportunityInputType',
-  description: 'input type for SalesOpportunity in marketing',
+  description: 'input type for SalesOpportunity',
 
   fields: () => ({
-    estimatedProbability: {type: GraphQLFloat},
-    opportunityName: {type: GraphQLString},
-    marketingCampaignId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    opportunityStageId: {type: GraphQLString},
-    typeEnumId: {type: GraphQLString},
-    estimatedCloseDate: {type: GraphQLString},
-    dataSourceId: {type: GraphQLString},
+    createdByUserLogin: {type: GraphQLString},
     currencyUomId: {type: GraphQLString},
+    dataSourceId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    estimatedAmount: {type: GraphQLFloat},
+    estimatedCloseDate: {type: GraphQLString},
+    estimatedProbability: {type: GraphQLFloat},
+    marketingCampaignId: {type: GraphQLString},
     nextStep: {type: GraphQLString},
     nextStepDate: {type: GraphQLString},
-    estimatedAmount: {type: GraphQLFloat},
-    createdByUserLogin: {type: GraphQLString},
-    salesOpportunityId: {type: GraphQLString}
+    opportunityName: {type: GraphQLString},
+    opportunityStageId: {type: GraphQLString},
+    salesOpportunityId: {type: GraphQLString},
+    typeEnumId: {type: GraphQLString}
   })
 });
 

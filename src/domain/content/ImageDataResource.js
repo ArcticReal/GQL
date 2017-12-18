@@ -35,11 +35,11 @@ export {ImageDataResourceType};
 
 const ImageDataResourceInputType = new GraphQLInputObjectType({
   name: 'ImageDataResourceInputType',
-  description: 'input type for ImageDataResource in content',
+  description: 'input type for ImageDataResource',
 
   fields: () => ({
-    imageData: {type: GraphQLString/*this was a byte Array TODO find a solution*/},
-    dataResourceId: {type: GraphQLString}
+    dataResourceId: {type: GraphQLString},
+    imageData: {type: new GraphQLList(GraphQLString)}
   })
 });
 

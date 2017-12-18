@@ -48,7 +48,7 @@ export {ContentPurposeTypeType};
 
 const ContentPurposeTypeInputType = new GraphQLInputObjectType({
   name: 'ContentPurposeTypeInputType',
-  description: 'input type for ContentPurposeType in content',
+  description: 'input type for ContentPurposeType',
 
   fields: () => ({
     contentPurposeTypeId: {type: GraphQLString},

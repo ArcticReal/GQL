@@ -55,21 +55,21 @@ export {SurveyQuestionApplType};
 
 const SurveyQuestionApplInputType = new GraphQLInputObjectType({
   name: 'SurveyQuestionApplInputType',
-  description: 'input type for SurveyQuestionAppl in content',
+  description: 'input type for SurveyQuestionAppl',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    withSurveyOptionSeqId: {type: GraphQLString},
-    surveyQuestionId: {type: GraphQLString},
     externalFieldRef: {type: GraphQLString},
-    surveyId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     requiredField: {type: GraphQLBoolean},
     sequenceNum: {type: GraphQLInt},
-    withSurveyQuestionId: {type: GraphQLString},
-    surveyPageSeqId: {type: GraphQLString},
-    surveyMultiRespId: {type: GraphQLString},
+    surveyId: {type: GraphQLString},
     surveyMultiRespColId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    surveyMultiRespId: {type: GraphQLString},
+    surveyPageSeqId: {type: GraphQLString},
+    surveyQuestionId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    withSurveyOptionSeqId: {type: GraphQLString},
+    withSurveyQuestionId: {type: GraphQLString}
   })
 });
 

@@ -42,18 +42,18 @@ export {AffiliateType};
 
 const AffiliateInputType = new GraphQLInputObjectType({
   name: 'AffiliateInputType',
-  description: 'input type for Affiliate in party',
+  description: 'input type for Affiliate',
 
   fields: () => ({
-    affiliateName: {type: GraphQLString},
-    dateTimeCreated: {type: GraphQLString},
-    yearEstablished: {type: GraphQLString},
     affiliateDescription: {type: GraphQLString},
-    sitePageViews: {type: GraphQLString},
+    affiliateName: {type: GraphQLString},
     dateTimeApproved: {type: GraphQLString},
+    dateTimeCreated: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    sitePageViews: {type: GraphQLString},
+    siteType: {type: GraphQLString},
     siteVisitors: {type: GraphQLString},
-    siteType: {type: GraphQLString}
+    yearEstablished: {type: GraphQLString}
   })
 });
 

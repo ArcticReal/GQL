@@ -44,20 +44,20 @@ export {ShipmentGatewayDhlType};
 
 const ShipmentGatewayDhlInputType = new GraphQLInputObjectType({
   name: 'ShipmentGatewayDhlInputType',
-  description: 'input type for ShipmentGatewayDhl in shipment',
+  description: 'input type for ShipmentGatewayDhl',
 
   fields: () => ({
-    connectUrl: {type: GraphQLString},
-    accessUserId: {type: GraphQLString},
-    accessShippingKey: {type: GraphQLString},
-    shipmentGatewayConfigId: {type: GraphQLString},
-    rateEstimateTemplate: {type: GraphQLString},
-    connectTimeout: {type: GraphQLInt},
     accessAccountNbr: {type: GraphQLString},
-    labelImageFormat: {type: GraphQLString},
-    headVersion: {type: GraphQLString},
+    accessPassword: {type: GraphQLString},
+    accessShippingKey: {type: GraphQLString},
+    accessUserId: {type: GraphQLString},
+    connectTimeout: {type: GraphQLInt},
+    connectUrl: {type: GraphQLString},
     headAction: {type: GraphQLString},
-    accessPassword: {type: GraphQLString}
+    headVersion: {type: GraphQLString},
+    labelImageFormat: {type: GraphQLString},
+    rateEstimateTemplate: {type: GraphQLString},
+    shipmentGatewayConfigId: {type: GraphQLString}
   })
 });
 

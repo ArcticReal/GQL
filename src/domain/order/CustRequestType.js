@@ -71,13 +71,13 @@ export {CustRequestTypeType};
 
 const CustRequestTypeInputType = new GraphQLInputObjectType({
   name: 'CustRequestTypeInputType',
-  description: 'input type for CustRequestType in order',
+  description: 'input type for CustRequestType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString},
     custRequestTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString},
     partyId: {type: GraphQLString}
   })
 });

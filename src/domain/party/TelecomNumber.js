@@ -56,14 +56,14 @@ export {TelecomNumberType};
 
 const TelecomNumberInputType = new GraphQLInputObjectType({
   name: 'TelecomNumberInputType',
-  description: 'input type for TelecomNumber in party',
+  description: 'input type for TelecomNumber',
 
   fields: () => ({
     areaCode: {type: GraphQLString},
     askForName: {type: GraphQLString},
-    countryCode: {type: GraphQLString},
+    contactMechId: {type: GraphQLString},
     contactNumber: {type: GraphQLString},
-    contactMechId: {type: GraphQLString}
+    countryCode: {type: GraphQLString}
   })
 });
 

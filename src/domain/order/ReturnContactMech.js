@@ -46,12 +46,12 @@ export {ReturnContactMechType};
 
 const ReturnContactMechInputType = new GraphQLInputObjectType({
   name: 'ReturnContactMechInputType',
-  description: 'input type for ReturnContactMech in order',
+  description: 'input type for ReturnContactMech',
 
   fields: () => ({
+    contactMechId: {type: GraphQLString},
     contactMechPurposeTypeId: {type: GraphQLString},
-    returnId: {type: GraphQLString},
-    contactMechId: {type: GraphQLString}
+    returnId: {type: GraphQLString}
   })
 });
 

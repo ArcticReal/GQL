@@ -51,17 +51,17 @@ export {ProductStorePaymentSettingType};
 
 const ProductStorePaymentSettingInputType = new GraphQLInputObjectType({
   name: 'ProductStorePaymentSettingInputType',
-  description: 'input type for ProductStorePaymentSetting in product',
+  description: 'input type for ProductStorePaymentSetting',
 
   fields: () => ({
-    paymentGatewayConfigId: {type: GraphQLString},
-    paymentService: {type: GraphQLString},
-    paymentPropertiesPath: {type: GraphQLString},
-    paymentServiceTypeEnumId: {type: GraphQLString},
     applyToAllProducts: {type: GraphQLBoolean},
-    productStoreId: {type: GraphQLString},
+    paymentCustomMethodId: {type: GraphQLString},
+    paymentGatewayConfigId: {type: GraphQLString},
     paymentMethodTypeId: {type: GraphQLString},
-    paymentCustomMethodId: {type: GraphQLString}
+    paymentPropertiesPath: {type: GraphQLString},
+    paymentService: {type: GraphQLString},
+    paymentServiceTypeEnumId: {type: GraphQLString},
+    productStoreId: {type: GraphQLString}
   })
 });
 

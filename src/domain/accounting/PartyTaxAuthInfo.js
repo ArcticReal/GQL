@@ -46,16 +46,16 @@ export {PartyTaxAuthInfoType};
 
 const PartyTaxAuthInfoInputType = new GraphQLInputObjectType({
   name: 'PartyTaxAuthInfoInputType',
-  description: 'input type for PartyTaxAuthInfo in accounting',
+  description: 'input type for PartyTaxAuthInfo',
 
   fields: () => ({
-    taxAuthPartyId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
-    partyTaxId: {type: GraphQLString},
-    isNexus: {type: GraphQLBoolean},
-    taxAuthGeoId: {type: GraphQLString},
     isExempt: {type: GraphQLBoolean},
+    isNexus: {type: GraphQLBoolean},
     partyId: {type: GraphQLString},
+    partyTaxId: {type: GraphQLString},
+    taxAuthGeoId: {type: GraphQLString},
+    taxAuthPartyId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

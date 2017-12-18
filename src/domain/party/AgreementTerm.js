@@ -62,22 +62,22 @@ export {AgreementTermType};
 
 const AgreementTermInputType = new GraphQLInputObjectType({
   name: 'AgreementTermInputType',
-  description: 'input type for AgreementTerm in party',
+  description: 'input type for AgreementTerm',
 
   fields: () => ({
-    textValue: {type: GraphQLString},
-    termDays: {type: GraphQLInt},
-    maxQuantity: {type: GraphQLFloat},
-    termTypeId: {type: GraphQLString},
+    agreementId: {type: GraphQLString},
     agreementItemSeqId: {type: GraphQLString},
-    description: {type: GraphQLString},
     agreementTermId: {type: GraphQLString},
-    termValue: {type: GraphQLFloat},
-    invoiceItemTypeId: {type: GraphQLString},
-    thruDate: {type: GraphQLString},
+    description: {type: GraphQLString},
     fromDate: {type: GraphQLString},
+    invoiceItemTypeId: {type: GraphQLString},
+    maxQuantity: {type: GraphQLFloat},
     minQuantity: {type: GraphQLFloat},
-    agreementId: {type: GraphQLString}
+    termDays: {type: GraphQLInt},
+    termTypeId: {type: GraphQLString},
+    termValue: {type: GraphQLFloat},
+    textValue: {type: GraphQLString},
+    thruDate: {type: GraphQLString}
   })
 });
 

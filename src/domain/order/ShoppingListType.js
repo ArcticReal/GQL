@@ -36,7 +36,7 @@ export {ShoppingListTypeType};
 
 const ShoppingListTypeInputType = new GraphQLInputObjectType({
   name: 'ShoppingListTypeInputType',
-  description: 'input type for ShoppingListType in order',
+  description: 'input type for ShoppingListType',
 
   fields: () => ({
     description: {type: GraphQLString},

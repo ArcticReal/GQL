@@ -41,12 +41,12 @@ export {TaxAuthorityCategoryType};
 
 const TaxAuthorityCategoryInputType = new GraphQLInputObjectType({
   name: 'TaxAuthorityCategoryInputType',
-  description: 'input type for TaxAuthorityCategory in accounting',
+  description: 'input type for TaxAuthorityCategory',
 
   fields: () => ({
-    taxAuthPartyId: {type: GraphQLString},
     productCategoryId: {type: GraphQLString},
-    taxAuthGeoId: {type: GraphQLString}
+    taxAuthGeoId: {type: GraphQLString},
+    taxAuthPartyId: {type: GraphQLString}
   })
 });
 

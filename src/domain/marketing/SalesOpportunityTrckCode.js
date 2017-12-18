@@ -36,12 +36,12 @@ export {SalesOpportunityTrckCodeType};
 
 const SalesOpportunityTrckCodeInputType = new GraphQLInputObjectType({
   name: 'SalesOpportunityTrckCodeInputType',
-  description: 'input type for SalesOpportunityTrckCode in marketing',
+  description: 'input type for SalesOpportunityTrckCode',
 
   fields: () => ({
-    trackingCodeId: {type: GraphQLString},
     receivedDate: {type: GraphQLString},
-    salesOpportunityId: {type: GraphQLString}
+    salesOpportunityId: {type: GraphQLString},
+    trackingCodeId: {type: GraphQLString}
   })
 });
 

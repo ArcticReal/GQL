@@ -46,12 +46,12 @@ export {DataCategoryType};
 
 const DataCategoryInputType = new GraphQLInputObjectType({
   name: 'DataCategoryInputType',
-  description: 'input type for DataCategory in content',
+  description: 'input type for DataCategory',
 
   fields: () => ({
-    parentCategoryId: {type: GraphQLString},
+    categoryName: {type: GraphQLString},
     dataCategoryId: {type: GraphQLString},
-    categoryName: {type: GraphQLString}
+    parentCategoryId: {type: GraphQLString}
   })
 });
 

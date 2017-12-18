@@ -36,12 +36,12 @@ export {CustRequestItemNoteType};
 
 const CustRequestItemNoteInputType = new GraphQLInputObjectType({
   name: 'CustRequestItemNoteInputType',
-  description: 'input type for CustRequestItemNote in order',
+  description: 'input type for CustRequestItemNote',
 
   fields: () => ({
     custRequestId: {type: GraphQLString},
-    noteId: {type: GraphQLString},
-    custRequestItemSeqId: {type: GraphQLString}
+    custRequestItemSeqId: {type: GraphQLString},
+    noteId: {type: GraphQLString}
   })
 });
 

@@ -56,25 +56,25 @@ export {TechDataCalendarWeekType};
 
 const TechDataCalendarWeekInputType = new GraphQLInputObjectType({
   name: 'TechDataCalendarWeekInputType',
-  description: 'input type for TechDataCalendarWeek in manufacturing',
+  description: 'input type for TechDataCalendarWeek',
 
   fields: () => ({
     calendarWeekId: {type: GraphQLString},
-    sundayCapacity: {type: GraphQLFloat},
-    wednesdayStartTime: {type: GraphQLString},
-    thursdayCapacity: {type: GraphQLFloat},
-    tuesdayStartTime: {type: GraphQLString},
-    wednesdayCapacity: {type: GraphQLFloat},
-    fridayStartTime: {type: GraphQLString},
     description: {type: GraphQLString},
-    saturdayCapacity: {type: GraphQLFloat},
+    fridayCapacity: {type: GraphQLFloat},
+    fridayStartTime: {type: GraphQLString},
     mondayCapacity: {type: GraphQLFloat},
     mondayStartTime: {type: GraphQLString},
+    saturdayCapacity: {type: GraphQLFloat},
     saturdayStartTime: {type: GraphQLString},
-    thursdayStartTime: {type: GraphQLString},
+    sundayCapacity: {type: GraphQLFloat},
     sundayStartTime: {type: GraphQLString},
-    fridayCapacity: {type: GraphQLFloat},
-    tuesdayCapacity: {type: GraphQLFloat}
+    thursdayCapacity: {type: GraphQLFloat},
+    thursdayStartTime: {type: GraphQLString},
+    tuesdayCapacity: {type: GraphQLFloat},
+    tuesdayStartTime: {type: GraphQLString},
+    wednesdayCapacity: {type: GraphQLFloat},
+    wednesdayStartTime: {type: GraphQLString}
   })
 });
 

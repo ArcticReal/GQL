@@ -35,11 +35,11 @@ export {ElectronicTextType};
 
 const ElectronicTextInputType = new GraphQLInputObjectType({
   name: 'ElectronicTextInputType',
-  description: 'input type for ElectronicText in content',
+  description: 'input type for ElectronicText',
 
   fields: () => ({
-    textData: {type: GraphQLString},
-    dataResourceId: {type: GraphQLString}
+    dataResourceId: {type: GraphQLString},
+    textData: {type: GraphQLString}
   })
 });
 

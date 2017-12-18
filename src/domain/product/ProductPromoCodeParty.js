@@ -40,11 +40,11 @@ export {ProductPromoCodePartyType};
 
 const ProductPromoCodePartyInputType = new GraphQLInputObjectType({
   name: 'ProductPromoCodePartyInputType',
-  description: 'input type for ProductPromoCodeParty in product',
+  description: 'input type for ProductPromoCodeParty',
 
   fields: () => ({
-    productPromoCodeId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    productPromoCodeId: {type: GraphQLString}
   })
 });
 

@@ -45,16 +45,16 @@ export {FixedAssetMeterType};
 
 const FixedAssetMeterInputType = new GraphQLInputObjectType({
   name: 'FixedAssetMeterInputType',
-  description: 'input type for FixedAssetMeter in accounting',
+  description: 'input type for FixedAssetMeter',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    readingReasonEnumId: {type: GraphQLString},
-    productMeterTypeId: {type: GraphQLString},
     fixedAssetId: {type: GraphQLString},
     maintHistSeqId: {type: GraphQLString},
     meterValue: {type: GraphQLFloat},
-    readingDate: {type: GraphQLString}
+    productMeterTypeId: {type: GraphQLString},
+    readingDate: {type: GraphQLString},
+    readingReasonEnumId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

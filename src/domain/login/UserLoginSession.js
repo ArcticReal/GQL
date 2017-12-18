@@ -36,12 +36,12 @@ export {UserLoginSessionType};
 
 const UserLoginSessionInputType = new GraphQLInputObjectType({
   name: 'UserLoginSessionInputType',
-  description: 'input type for UserLoginSession in login',
+  description: 'input type for UserLoginSession',
 
   fields: () => ({
-    userLoginId: {type: GraphQLString},
+    savedDate: {type: GraphQLString},
     sessionData: {type: GraphQLString},
-    savedDate: {type: GraphQLString}
+    userLoginId: {type: GraphQLString}
   })
 });
 

@@ -59,20 +59,20 @@ export {DeliveryType};
 
 const DeliveryInputType = new GraphQLInputObjectType({
   name: 'DeliveryInputType',
-  description: 'input type for Delivery in shipment',
+  description: 'input type for Delivery',
 
   fields: () => ({
-    originFacilityId: {type: GraphQLString},
-    destFacilityId: {type: GraphQLString},
     actualArrivalDate: {type: GraphQLString},
-    deliveryId: {type: GraphQLString},
-    estimatedStartDate: {type: GraphQLString},
-    fuelUsed: {type: GraphQLFloat},
     actualStartDate: {type: GraphQLString},
-    fixedAssetId: {type: GraphQLString},
-    startMileage: {type: GraphQLFloat},
+    deliveryId: {type: GraphQLString},
+    destFacilityId: {type: GraphQLString},
+    endMileage: {type: GraphQLFloat},
     estimatedArrivalDate: {type: GraphQLString},
-    endMileage: {type: GraphQLFloat}
+    estimatedStartDate: {type: GraphQLString},
+    fixedAssetId: {type: GraphQLString},
+    fuelUsed: {type: GraphQLFloat},
+    originFacilityId: {type: GraphQLString},
+    startMileage: {type: GraphQLFloat}
   })
 });
 

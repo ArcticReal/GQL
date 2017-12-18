@@ -42,11 +42,11 @@ export {MetaDataPredicateType};
 
 const MetaDataPredicateInputType = new GraphQLInputObjectType({
   name: 'MetaDataPredicateInputType',
-  description: 'input type for MetaDataPredicate in content',
+  description: 'input type for MetaDataPredicate',
 
   fields: () => ({
-    metaDataPredicateId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    metaDataPredicateId: {type: GraphQLString}
   })
 });
 

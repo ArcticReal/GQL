@@ -36,11 +36,11 @@ export {WorkEffortTransBoxType};
 
 const WorkEffortTransBoxInputType = new GraphQLInputObjectType({
   name: 'WorkEffortTransBoxInputType',
-  description: 'input type for WorkEffortTransBox in workeffort',
+  description: 'input type for WorkEffortTransBox',
 
   fields: () => ({
-    toActivityId: {type: GraphQLString},
     processWorkEffortId: {type: GraphQLString},
+    toActivityId: {type: GraphQLString},
     transitionId: {type: GraphQLString}
   })
 });

@@ -44,14 +44,14 @@ export {PartyRateType};
 
 const PartyRateInputType = new GraphQLInputObjectType({
   name: 'PartyRateInputType',
-  description: 'input type for PartyRate in accounting',
+  description: 'input type for PartyRate',
 
   fields: () => ({
-    percentageUsed: {type: GraphQLFloat},
-    fromDate: {type: GraphQLString},
-    rateTypeId: {type: GraphQLString},
     defaultRate: {type: GraphQLBoolean},
+    fromDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    percentageUsed: {type: GraphQLFloat},
+    rateTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

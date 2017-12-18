@@ -35,7 +35,7 @@ export {InvoiceNoteType};
 
 const InvoiceNoteInputType = new GraphQLInputObjectType({
   name: 'InvoiceNoteInputType',
-  description: 'input type for InvoiceNote in accounting',
+  description: 'input type for InvoiceNote',
 
   fields: () => ({
     invoiceId: {type: GraphQLString},

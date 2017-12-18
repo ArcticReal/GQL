@@ -36,12 +36,12 @@ export {DataResourceTypeAttrType};
 
 const DataResourceTypeAttrInputType = new GraphQLInputObjectType({
   name: 'DataResourceTypeAttrInputType',
-  description: 'input type for DataResourceTypeAttr in content',
+  description: 'input type for DataResourceTypeAttr',
 
   fields: () => ({
-    description: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     dataResourceTypeId: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    description: {type: GraphQLString}
   })
 });
 

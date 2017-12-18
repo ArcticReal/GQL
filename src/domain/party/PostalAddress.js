@@ -111,27 +111,28 @@ export {PostalAddressType};
 
 const PostalAddressInputType = new GraphQLInputObjectType({
   name: 'PostalAddressInputType',
-  description: 'input type for PostalAddress in party',
+  description: 'input type for PostalAddress',
 
   fields: () => ({
-    countryGeoId: {type: GraphQLString},
-    houseNumberExt: {type: GraphQLString},
-    address2: {type: GraphQLString},
-    city: {type: GraphQLString},
     address1: {type: GraphQLString},
-    postalCode: {type: GraphQLString},
-    postalCodeGeoId: {type: GraphQLString},
-    houseNumber: {type: GraphQLInt},
-    postalCodeExt: {type: GraphQLString},
-    contactMechId: {type: GraphQLString},
+    address2: {type: GraphQLString},
     attnName: {type: GraphQLString},
-    directions: {type: GraphQLString},
-    countyGeoId: {type: GraphQLString},
-    toName: {type: GraphQLString},
+    city: {type: GraphQLString},
     cityGeoId: {type: GraphQLString},
+    contactMechId: {type: GraphQLString},
+    countryGeoId: {type: GraphQLString},
+    countyGeoId: {type: GraphQLString},
+    directions: {type: GraphQLString},
+    geoPointId: {type: GraphQLString},
+    houseNumber: {type: GraphQLInt},
+    houseNumberExt: {type: GraphQLString},
     municipalityGeoId: {type: GraphQLString},
+    postalCode: {type: GraphQLString},
+    postalCodeExt: {type: GraphQLString},
+    postalCodeGeoId: {type: GraphQLString},
     stateProvinceGeoId: {type: GraphQLString},
-    geoPointId: {type: GraphQLString}
+    toName: {type: GraphQLString},
+    valid: {type: GraphQLBoolean}
   })
 });
 

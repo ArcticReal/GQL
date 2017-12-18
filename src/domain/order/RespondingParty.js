@@ -48,14 +48,14 @@ export {RespondingPartyType};
 
 const RespondingPartyInputType = new GraphQLInputObjectType({
   name: 'RespondingPartyInputType',
-  description: 'input type for RespondingParty in order',
+  description: 'input type for RespondingParty',
 
   fields: () => ({
-    respondingPartySeqId: {type: GraphQLString},
+    contactMechId: {type: GraphQLString},
     custRequestId: {type: GraphQLString},
-    partyId: {type: GraphQLString},
     dateSent: {type: GraphQLString},
-    contactMechId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    respondingPartySeqId: {type: GraphQLString}
   })
 });
 

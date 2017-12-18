@@ -42,13 +42,13 @@ export {PartyCarrierAccountType};
 
 const PartyCarrierAccountInputType = new GraphQLInputObjectType({
   name: 'PartyCarrierAccountInputType',
-  description: 'input type for PartyCarrierAccount in party',
+  description: 'input type for PartyCarrierAccount',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    carrierPartyId: {type: GraphQLString},
-    partyId: {type: GraphQLString},
     accountNumber: {type: GraphQLString},
+    carrierPartyId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    partyId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

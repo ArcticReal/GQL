@@ -55,16 +55,16 @@ export {ProductPromoUseType};
 
 const ProductPromoUseInputType = new GraphQLInputObjectType({
   name: 'ProductPromoUseInputType',
-  description: 'input type for ProductPromoUse in product',
+  description: 'input type for ProductPromoUse',
 
   fields: () => ({
-    quantityLeftInActions: {type: GraphQLFloat},
     orderId: {type: GraphQLString},
-    totalDiscountAmount: {type: GraphQLFloat},
+    partyId: {type: GraphQLString},
     productPromoCodeId: {type: GraphQLString},
-    promoSequenceId: {type: GraphQLString},
     productPromoId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    promoSequenceId: {type: GraphQLString},
+    quantityLeftInActions: {type: GraphQLFloat},
+    totalDiscountAmount: {type: GraphQLFloat}
   })
 });
 

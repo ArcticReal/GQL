@@ -39,15 +39,15 @@ export {WebSiteRoleType};
 
 const WebSiteRoleInputType = new GraphQLInputObjectType({
   name: 'WebSiteRoleInputType',
-  description: 'input type for WebSiteRole in content',
+  description: 'input type for WebSiteRole',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
+    partyId: {type: GraphQLString},
     roleTypeId: {type: GraphQLString},
     sequenceNum: {type: GraphQLInt},
-    partyId: {type: GraphQLString},
-    webSiteId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    thruDate: {type: GraphQLString},
+    webSiteId: {type: GraphQLString}
   })
 });
 

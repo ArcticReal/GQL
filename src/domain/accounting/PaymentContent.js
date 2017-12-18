@@ -48,13 +48,13 @@ export {PaymentContentType};
 
 const PaymentContentInputType = new GraphQLInputObjectType({
   name: 'PaymentContentInputType',
-  description: 'input type for PaymentContent in accounting',
+  description: 'input type for PaymentContent',
 
   fields: () => ({
+    contentId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
     paymentContentTypeId: {type: GraphQLString},
     paymentId: {type: GraphQLString},
-    contentId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

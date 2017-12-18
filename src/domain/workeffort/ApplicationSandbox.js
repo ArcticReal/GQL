@@ -39,15 +39,15 @@ export {ApplicationSandboxType};
 
 const ApplicationSandboxInputType = new GraphQLInputObjectType({
   name: 'ApplicationSandboxInputType',
-  description: 'input type for ApplicationSandbox in workeffort',
+  description: 'input type for ApplicationSandbox',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     applicationId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    runtimeDataId: {type: GraphQLString}
+    roleTypeId: {type: GraphQLString},
+    runtimeDataId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

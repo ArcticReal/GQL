@@ -45,16 +45,16 @@ export {GlAccountHistoryType};
 
 const GlAccountHistoryInputType = new GraphQLInputObjectType({
   name: 'GlAccountHistoryInputType',
-  description: 'input type for GlAccountHistory in accounting',
+  description: 'input type for GlAccountHistory',
 
   fields: () => ({
-    postedCredits: {type: GraphQLFloat},
-    glAccountId: {type: GraphQLString},
-    postedDebits: {type: GraphQLFloat},
-    endingBalance: {type: GraphQLFloat},
-    organizationPartyId: {type: GraphQLString},
     customTimePeriodId: {type: GraphQLString},
-    openingBalance: {type: GraphQLFloat}
+    endingBalance: {type: GraphQLFloat},
+    glAccountId: {type: GraphQLString},
+    openingBalance: {type: GraphQLFloat},
+    organizationPartyId: {type: GraphQLString},
+    postedCredits: {type: GraphQLFloat},
+    postedDebits: {type: GraphQLFloat}
   })
 });
 

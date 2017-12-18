@@ -37,12 +37,12 @@ export {PartyGeoPointType};
 
 const PartyGeoPointInputType = new GraphQLInputObjectType({
   name: 'PartyGeoPointInputType',
-  description: 'input type for PartyGeoPoint in party',
+  description: 'input type for PartyGeoPoint',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
-    partyId: {type: GraphQLString},
     geoPointId: {type: GraphQLString},
+    partyId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

@@ -60,13 +60,13 @@ export {ContainerType};
 
 const ContainerInputType = new GraphQLInputObjectType({
   name: 'ContainerInputType',
-  description: 'input type for Container in product',
+  description: 'input type for Container',
 
   fields: () => ({
-    facilityId: {type: GraphQLString},
+    containerId: {type: GraphQLString},
     containerTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    containerId: {type: GraphQLString}
+    facilityId: {type: GraphQLString}
   })
 });
 

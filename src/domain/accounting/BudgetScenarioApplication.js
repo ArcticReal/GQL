@@ -44,15 +44,15 @@ export {BudgetScenarioApplicationType};
 
 const BudgetScenarioApplicationInputType = new GraphQLInputObjectType({
   name: 'BudgetScenarioApplicationInputType',
-  description: 'input type for BudgetScenarioApplication in accounting',
+  description: 'input type for BudgetScenarioApplication',
 
   fields: () => ({
     amountChange: {type: GraphQLFloat},
-    percentageChange: {type: GraphQLFloat},
+    budgetId: {type: GraphQLString},
+    budgetItemSeqId: {type: GraphQLString},
     budgetScenarioApplicId: {type: GraphQLString},
     budgetScenarioId: {type: GraphQLString},
-    budgetItemSeqId: {type: GraphQLString},
-    budgetId: {type: GraphQLString}
+    percentageChange: {type: GraphQLFloat}
   })
 });
 

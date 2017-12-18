@@ -48,13 +48,13 @@ export {FacilityPartyType};
 
 const FacilityPartyInputType = new GraphQLInputObjectType({
   name: 'FacilityPartyInputType',
-  description: 'input type for FacilityParty in product',
+  description: 'input type for FacilityParty',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     facilityId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

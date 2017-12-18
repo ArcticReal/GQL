@@ -44,15 +44,15 @@ export {PartySkillType};
 
 const PartySkillInputType = new GraphQLInputObjectType({
   name: 'PartySkillInputType',
-  description: 'input type for PartySkill in humanres',
+  description: 'input type for PartySkill',
 
   fields: () => ({
-    skillTypeId: {type: GraphQLString},
-    rating: {type: GraphQLInt},
-    yearsExperience: {type: GraphQLInt},
     partyId: {type: GraphQLString},
+    rating: {type: GraphQLInt},
+    skillLevel: {type: GraphQLInt},
+    skillTypeId: {type: GraphQLString},
     startedUsingDate: {type: GraphQLString},
-    skillLevel: {type: GraphQLInt}
+    yearsExperience: {type: GraphQLInt}
   })
 });
 

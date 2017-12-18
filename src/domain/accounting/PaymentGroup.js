@@ -42,7 +42,7 @@ export {PaymentGroupType};
 
 const PaymentGroupInputType = new GraphQLInputObjectType({
   name: 'PaymentGroupInputType',
-  description: 'input type for PaymentGroup in accounting',
+  description: 'input type for PaymentGroup',
 
   fields: () => ({
     paymentGroupId: {type: GraphQLString},

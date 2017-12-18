@@ -48,12 +48,12 @@ export {ProductPromoRuleType};
 
 const ProductPromoRuleInputType = new GraphQLInputObjectType({
   name: 'ProductPromoRuleInputType',
-  description: 'input type for ProductPromoRule in product',
+  description: 'input type for ProductPromoRule',
 
   fields: () => ({
+    productPromoId: {type: GraphQLString},
     productPromoRuleId: {type: GraphQLString},
-    ruleName: {type: GraphQLString},
-    productPromoId: {type: GraphQLString}
+    ruleName: {type: GraphQLString}
   })
 });
 

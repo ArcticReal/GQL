@@ -41,13 +41,13 @@ export {PerfRatingTypeType};
 
 const PerfRatingTypeInputType = new GraphQLInputObjectType({
   name: 'PerfRatingTypeInputType',
-  description: 'input type for PerfRatingType in humanres',
+  description: 'input type for PerfRatingType',
 
   fields: () => ({
-    perfRatingTypeId: {type: GraphQLString},
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    perfRatingTypeId: {type: GraphQLString}
   })
 });
 

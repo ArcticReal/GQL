@@ -36,11 +36,11 @@ export {GlResourceTypeType};
 
 const GlResourceTypeInputType = new GraphQLInputObjectType({
   name: 'GlResourceTypeInputType',
-  description: 'input type for GlResourceType in accounting',
+  description: 'input type for GlResourceType',
 
   fields: () => ({
-    glResourceTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    glResourceTypeId: {type: GraphQLString}
   })
 });
 

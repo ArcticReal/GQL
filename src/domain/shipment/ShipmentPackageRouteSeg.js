@@ -49,25 +49,25 @@ export {ShipmentPackageRouteSegType};
 
 const ShipmentPackageRouteSegInputType = new GraphQLInputObjectType({
   name: 'ShipmentPackageRouteSegInputType',
-  description: 'input type for ShipmentPackageRouteSeg in shipment',
+  description: 'input type for ShipmentPackageRouteSeg',
 
   fields: () => ({
-    labelIntlSignImage: {type: GraphQLString/*this was a byte Array TODO find a solution*/},
-    shipmentPackageSeqId: {type: GraphQLString},
-    trackingCode: {type: GraphQLString},
     boxNumber: {type: GraphQLString},
-    packageServiceCost: {type: GraphQLFloat},
-    packageOtherCost: {type: GraphQLFloat},
-    shipmentRouteSegmentId: {type: GraphQLString},
-    labelImage: {type: GraphQLString/*this was a byte Array TODO find a solution*/},
-    labelPrinted: {type: GraphQLBoolean},
+    codAmount: {type: GraphQLFloat},
     currencyUomId: {type: GraphQLString},
-    internationalInvoice: {type: GraphQLString/*this was a byte Array TODO find a solution*/},
+    insuredAmount: {type: GraphQLFloat},
+    internationalInvoice: {type: new GraphQLList(GraphQLString)},
+    labelHtml: {type: GraphQLString},
+    labelImage: {type: new GraphQLList(GraphQLString)},
+    labelIntlSignImage: {type: new GraphQLList(GraphQLString)},
+    labelPrinted: {type: GraphQLBoolean},
+    packageOtherCost: {type: GraphQLFloat},
+    packageServiceCost: {type: GraphQLFloat},
     packageTransportCost: {type: GraphQLFloat},
     shipmentId: {type: GraphQLString},
-    codAmount: {type: GraphQLFloat},
-    insuredAmount: {type: GraphQLFloat},
-    labelHtml: {type: GraphQLString}
+    shipmentPackageSeqId: {type: GraphQLString},
+    shipmentRouteSegmentId: {type: GraphQLString},
+    trackingCode: {type: GraphQLString}
   })
 });
 

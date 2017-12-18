@@ -53,13 +53,13 @@ export {AgreementItemTypeType};
 
 const AgreementItemTypeInputType = new GraphQLInputObjectType({
   name: 'AgreementItemTypeInputType',
-  description: 'input type for AgreementItemType in party',
+  description: 'input type for AgreementItemType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
+    agreementItemTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    agreementItemTypeId: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

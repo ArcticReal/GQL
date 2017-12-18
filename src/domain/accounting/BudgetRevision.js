@@ -42,12 +42,12 @@ export {BudgetRevisionType};
 
 const BudgetRevisionInputType = new GraphQLInputObjectType({
   name: 'BudgetRevisionInputType',
-  description: 'input type for BudgetRevision in accounting',
+  description: 'input type for BudgetRevision',
 
   fields: () => ({
-    revisionSeqId: {type: GraphQLString},
+    budgetId: {type: GraphQLString},
     dateRevised: {type: GraphQLString},
-    budgetId: {type: GraphQLString}
+    revisionSeqId: {type: GraphQLString}
   })
 });
 

@@ -43,13 +43,13 @@ export {GlAccountCategoryMemberType};
 
 const GlAccountCategoryMemberInputType = new GraphQLInputObjectType({
   name: 'GlAccountCategoryMemberInputType',
-  description: 'input type for GlAccountCategoryMember in accounting',
+  description: 'input type for GlAccountCategoryMember',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     amountPercentage: {type: GraphQLFloat},
-    glAccountId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     glAccountCategoryId: {type: GraphQLString},
+    glAccountId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

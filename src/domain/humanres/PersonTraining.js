@@ -62,18 +62,18 @@ export {PersonTrainingType};
 
 const PersonTrainingInputType = new GraphQLInputObjectType({
   name: 'PersonTrainingInputType',
-  description: 'input type for PersonTraining in humanres',
+  description: 'input type for PersonTraining',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
     approvalStatus: {type: GraphQLString},
-    reason: {type: GraphQLString},
-    trainingRequestId: {type: GraphQLString},
     approverId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    reason: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
     trainingClassTypeId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    trainingRequestId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

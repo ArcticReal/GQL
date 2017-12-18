@@ -53,14 +53,14 @@ export {CommunicationEventTypeType};
 
 const CommunicationEventTypeInputType = new GraphQLInputObjectType({
   name: 'CommunicationEventTypeInputType',
-  description: 'input type for CommunicationEventType in party',
+  description: 'input type for CommunicationEventType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString},
+    communicationEventTypeId: {type: GraphQLString},
     contactMechTypeId: {type: GraphQLString},
-    communicationEventTypeId: {type: GraphQLString}
+    description: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

@@ -66,14 +66,14 @@ function postToUrl(relativeURL, body, req){
         .catch((err) => {throw err;});
 }
 
-function putToUrl(relativeURL, body, cookie){
+function putToUrl(relativeURL, body, req){
   console.log('put to URL: ' + relativeURL);
   return fetch(`${BASE_URL}${relativeURL}`, {method: 'PUT', body: body, headers: {'Cookie': getCookie(req)}})
         .then(res => {return res.json();})
         .catch(err => {});
 }
 
-function deleteToUrl(relativeURL, body, cookie){
+function deleteToUrl(relativeURL, body, req){
   console.log('put to URL: ' + relativeURL);
   return fetch(`${BASE_URL}${relativeURL}`, {method: 'DELETE', body: body, headers: {'Cookie': getCookie(req)}})
         .then(res => {return res.json();})

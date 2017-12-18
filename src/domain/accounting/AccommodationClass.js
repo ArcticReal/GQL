@@ -52,12 +52,12 @@ export {AccommodationClassType};
 
 const AccommodationClassInputType = new GraphQLInputObjectType({
   name: 'AccommodationClassInputType',
-  description: 'input type for AccommodationClass in accounting',
+  description: 'input type for AccommodationClass',
 
   fields: () => ({
-    parentClassId: {type: GraphQLString},
+    accommodationClassId: {type: GraphQLString},
     description: {type: GraphQLString},
-    accommodationClassId: {type: GraphQLString}
+    parentClassId: {type: GraphQLString}
   })
 });
 

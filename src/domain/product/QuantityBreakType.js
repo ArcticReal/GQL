@@ -36,11 +36,11 @@ export {QuantityBreakTypeType};
 
 const QuantityBreakTypeInputType = new GraphQLInputObjectType({
   name: 'QuantityBreakTypeInputType',
-  description: 'input type for QuantityBreakType in product',
+  description: 'input type for QuantityBreakType',
 
   fields: () => ({
-    quantityBreakTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    quantityBreakTypeId: {type: GraphQLString}
   })
 });
 

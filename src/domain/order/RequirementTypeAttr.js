@@ -36,12 +36,12 @@ export {RequirementTypeAttrType};
 
 const RequirementTypeAttrInputType = new GraphQLInputObjectType({
   name: 'RequirementTypeAttrInputType',
-  description: 'input type for RequirementTypeAttr in order',
+  description: 'input type for RequirementTypeAttr',
 
   fields: () => ({
-    requirementTypeId: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     description: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    requirementTypeId: {type: GraphQLString}
   })
 });
 

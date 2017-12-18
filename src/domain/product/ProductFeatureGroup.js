@@ -42,7 +42,7 @@ export {ProductFeatureGroupType};
 
 const ProductFeatureGroupInputType = new GraphQLInputObjectType({
   name: 'ProductFeatureGroupInputType',
-  description: 'input type for ProductFeatureGroup in product',
+  description: 'input type for ProductFeatureGroup',
 
   fields: () => ({
     description: {type: GraphQLString},

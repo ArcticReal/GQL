@@ -45,16 +45,16 @@ export {WorkEffortReviewType};
 
 const WorkEffortReviewInputType = new GraphQLInputObjectType({
   name: 'WorkEffortReviewInputType',
-  description: 'input type for WorkEffortReview in workeffort',
+  description: 'input type for WorkEffortReview',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    userLoginId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    reviewDate: {type: GraphQLString},
-    rating: {type: GraphQLFloat},
     postedAnonymous: {type: GraphQLBoolean},
-    reviewText: {type: GraphQLString}
+    rating: {type: GraphQLFloat},
+    reviewDate: {type: GraphQLString},
+    reviewText: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    userLoginId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

@@ -62,17 +62,17 @@ export {FixedAssetTypeGlAccountType};
 
 const FixedAssetTypeGlAccountInputType = new GraphQLInputObjectType({
   name: 'FixedAssetTypeGlAccountInputType',
-  description: 'input type for FixedAssetTypeGlAccount in accounting',
+  description: 'input type for FixedAssetTypeGlAccount',
 
   fields: () => ({
-    fixedAssetTypeId: {type: GraphQLString},
-    depGlAccountId: {type: GraphQLString},
-    profitGlAccountId: {type: GraphQLString},
-    fixedAssetId: {type: GraphQLString},
-    organizationPartyId: {type: GraphQLString},
-    lossGlAccountId: {type: GraphQLString},
     accDepGlAccountId: {type: GraphQLString},
-    assetGlAccountId: {type: GraphQLString}
+    assetGlAccountId: {type: GraphQLString},
+    depGlAccountId: {type: GraphQLString},
+    fixedAssetId: {type: GraphQLString},
+    fixedAssetTypeId: {type: GraphQLString},
+    lossGlAccountId: {type: GraphQLString},
+    organizationPartyId: {type: GraphQLString},
+    profitGlAccountId: {type: GraphQLString}
   })
 });
 

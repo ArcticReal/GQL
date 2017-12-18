@@ -83,13 +83,13 @@ export {ContactMechTypeType};
 
 const ContactMechTypeInputType = new GraphQLInputObjectType({
   name: 'ContactMechTypeInputType',
-  description: 'input type for ContactMechType in party',
+  description: 'input type for ContactMechType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
+    contactMechTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
-    contactMechTypeId: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

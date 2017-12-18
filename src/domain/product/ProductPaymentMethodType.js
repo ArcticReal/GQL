@@ -49,14 +49,14 @@ export {ProductPaymentMethodTypeType};
 
 const ProductPaymentMethodTypeInputType = new GraphQLInputObjectType({
   name: 'ProductPaymentMethodTypeInputType',
-  description: 'input type for ProductPaymentMethodType in product',
+  description: 'input type for ProductPaymentMethodType',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
     paymentMethodTypeId: {type: GraphQLString},
+    productId: {type: GraphQLString},
     productPricePurposeId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}
   })
 });

@@ -37,12 +37,12 @@ export {SubscriptionActivityType};
 
 const SubscriptionActivityInputType = new GraphQLInputObjectType({
   name: 'SubscriptionActivityInputType',
-  description: 'input type for SubscriptionActivity in product',
+  description: 'input type for SubscriptionActivity',
 
   fields: () => ({
     comments: {type: GraphQLString},
-    subscriptionActivityId: {type: GraphQLString},
-    dateSent: {type: GraphQLString}
+    dateSent: {type: GraphQLString},
+    subscriptionActivityId: {type: GraphQLString}
   })
 });
 

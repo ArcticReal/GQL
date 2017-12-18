@@ -36,7 +36,7 @@ export {GlXbrlClassType};
 
 const GlXbrlClassInputType = new GraphQLInputObjectType({
   name: 'GlXbrlClassInputType',
-  description: 'input type for GlXbrlClass in accounting',
+  description: 'input type for GlXbrlClass',
 
   fields: () => ({
     description: {type: GraphQLString},

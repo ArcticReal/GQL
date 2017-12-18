@@ -47,13 +47,13 @@ export {InventoryItemLabelApplType};
 
 const InventoryItemLabelApplInputType = new GraphQLInputObjectType({
   name: 'InventoryItemLabelApplInputType',
-  description: 'input type for InventoryItemLabelAppl in product',
+  description: 'input type for InventoryItemLabelAppl',
 
   fields: () => ({
     inventoryItemId: {type: GraphQLString},
     inventoryItemLabelId: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
-    inventoryItemLabelTypeId: {type: GraphQLString}
+    inventoryItemLabelTypeId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt}
   })
 });
 

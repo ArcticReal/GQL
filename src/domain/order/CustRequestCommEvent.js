@@ -40,11 +40,11 @@ export {CustRequestCommEventType};
 
 const CustRequestCommEventInputType = new GraphQLInputObjectType({
   name: 'CustRequestCommEventInputType',
-  description: 'input type for CustRequestCommEvent in order',
+  description: 'input type for CustRequestCommEvent',
 
   fields: () => ({
-    custRequestId: {type: GraphQLString},
-    communicationEventId: {type: GraphQLString}
+    communicationEventId: {type: GraphQLString},
+    custRequestId: {type: GraphQLString}
   })
 });
 

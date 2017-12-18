@@ -43,14 +43,14 @@ export {BudgetStatusType};
 
 const BudgetStatusInputType = new GraphQLInputObjectType({
   name: 'BudgetStatusInputType',
-  description: 'input type for BudgetStatus in accounting',
+  description: 'input type for BudgetStatus',
 
   fields: () => ({
-    statusDate: {type: GraphQLString},
-    comments: {type: GraphQLString},
-    statusId: {type: GraphQLString},
     budgetId: {type: GraphQLString},
-    changeByUserLoginId: {type: GraphQLString}
+    changeByUserLoginId: {type: GraphQLString},
+    comments: {type: GraphQLString},
+    statusDate: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

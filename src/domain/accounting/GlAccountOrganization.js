@@ -49,13 +49,13 @@ export {GlAccountOrganizationType};
 
 const GlAccountOrganizationInputType = new GraphQLInputObjectType({
   name: 'GlAccountOrganizationInputType',
-  description: 'input type for GlAccountOrganization in accounting',
+  description: 'input type for GlAccountOrganization',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     glAccountId: {type: GraphQLString},
     organizationPartyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

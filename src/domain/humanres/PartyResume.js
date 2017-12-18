@@ -43,14 +43,14 @@ export {PartyResumeType};
 
 const PartyResumeInputType = new GraphQLInputObjectType({
   name: 'PartyResumeInputType',
-  description: 'input type for PartyResume in humanres',
+  description: 'input type for PartyResume',
 
   fields: () => ({
-    resumeText: {type: GraphQLString},
-    resumeId: {type: GraphQLString},
     contentId: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    resumeDate: {type: GraphQLString}
+    resumeDate: {type: GraphQLString},
+    resumeId: {type: GraphQLString},
+    resumeText: {type: GraphQLString}
   })
 });
 

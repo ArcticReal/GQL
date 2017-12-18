@@ -48,11 +48,11 @@ export {MimeTypeType};
 
 const MimeTypeInputType = new GraphQLInputObjectType({
   name: 'MimeTypeInputType',
-  description: 'input type for MimeType in content',
+  description: 'input type for MimeType',
 
   fields: () => ({
-    mimeTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    mimeTypeId: {type: GraphQLString}
   })
 });
 

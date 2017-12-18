@@ -46,12 +46,12 @@ export {PaymentGlAccountTypeMapType};
 
 const PaymentGlAccountTypeMapInputType = new GraphQLInputObjectType({
   name: 'PaymentGlAccountTypeMapInputType',
-  description: 'input type for PaymentGlAccountTypeMap in accounting',
+  description: 'input type for PaymentGlAccountTypeMap',
 
   fields: () => ({
-    paymentTypeId: {type: GraphQLString},
     glAccountTypeId: {type: GraphQLString},
-    organizationPartyId: {type: GraphQLString}
+    organizationPartyId: {type: GraphQLString},
+    paymentTypeId: {type: GraphQLString}
   })
 });
 

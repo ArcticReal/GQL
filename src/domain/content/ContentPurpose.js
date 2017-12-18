@@ -41,12 +41,12 @@ export {ContentPurposeType};
 
 const ContentPurposeInputType = new GraphQLInputObjectType({
   name: 'ContentPurposeInputType',
-  description: 'input type for ContentPurpose in content',
+  description: 'input type for ContentPurpose',
 
   fields: () => ({
+    contentId: {type: GraphQLString},
     contentPurposeTypeId: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
-    contentId: {type: GraphQLString}
+    sequenceNum: {type: GraphQLInt}
   })
 });
 

@@ -42,11 +42,11 @@ export {NeedTypeType};
 
 const NeedTypeInputType = new GraphQLInputObjectType({
   name: 'NeedTypeInputType',
-  description: 'input type for NeedType in party',
+  description: 'input type for NeedType',
 
   fields: () => ({
-    needTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    needTypeId: {type: GraphQLString}
   })
 });
 

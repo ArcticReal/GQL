@@ -52,17 +52,17 @@ export {OrderTermType};
 
 const OrderTermInputType = new GraphQLInputObjectType({
   name: 'OrderTermInputType',
-  description: 'input type for OrderTerm in order',
+  description: 'input type for OrderTerm',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    textValue: {type: GraphQLString},
+    description: {type: GraphQLString},
     orderId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
     termDays: {type: GraphQLInt},
     termTypeId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    uomId: {type: GraphQLString},
-    termValue: {type: GraphQLFloat}
+    termValue: {type: GraphQLFloat},
+    textValue: {type: GraphQLString},
+    uomId: {type: GraphQLString}
   })
 });
 

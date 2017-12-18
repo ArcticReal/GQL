@@ -43,13 +43,13 @@ export {RequirementRoleType};
 
 const RequirementRoleInputType = new GraphQLInputObjectType({
   name: 'RequirementRoleInputType',
-  description: 'input type for RequirementRole in order',
+  description: 'input type for RequirementRole',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
-    requirementId: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    requirementId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

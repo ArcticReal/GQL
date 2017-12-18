@@ -48,18 +48,18 @@ export {ProductConfigType};
 
 const ProductConfigInputType = new GraphQLInputObjectType({
   name: 'ProductConfigInputType',
-  description: 'input type for ProductConfig in product',
+  description: 'input type for ProductConfig',
 
   fields: () => ({
     configItemId: {type: GraphQLString},
+    configTypeId: {type: GraphQLString},
+    defaultConfigOptionId: {type: GraphQLString},
+    description: {type: GraphQLString},
     fromDate: {type: GraphQLString},
+    isMandatory: {type: GraphQLBoolean},
     longDescription: {type: GraphQLString},
     productId: {type: GraphQLString},
     sequenceNum: {type: GraphQLInt},
-    defaultConfigOptionId: {type: GraphQLString},
-    configTypeId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    isMandatory: {type: GraphQLBoolean},
     thruDate: {type: GraphQLString}
   })
 });

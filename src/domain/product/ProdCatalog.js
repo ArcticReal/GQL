@@ -67,18 +67,18 @@ export {ProdCatalogType};
 
 const ProdCatalogInputType = new GraphQLInputObjectType({
   name: 'ProdCatalogInputType',
-  description: 'input type for ProdCatalog in product',
+  description: 'input type for ProdCatalog',
 
   fields: () => ({
     catalogName: {type: GraphQLString},
+    contentPathPrefix: {type: GraphQLString},
     headerLogo: {type: GraphQLString},
+    prodCatalogId: {type: GraphQLString},
+    purchaseAllowPermReqd: {type: GraphQLBoolean},
     styleSheet: {type: GraphQLString},
     templatePathPrefix: {type: GraphQLString},
     useQuickAdd: {type: GraphQLBoolean},
-    contentPathPrefix: {type: GraphQLString},
-    viewAllowPermReqd: {type: GraphQLBoolean},
-    prodCatalogId: {type: GraphQLString},
-    purchaseAllowPermReqd: {type: GraphQLBoolean}
+    viewAllowPermReqd: {type: GraphQLBoolean}
   })
 });
 

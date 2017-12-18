@@ -155,28 +155,28 @@ export {PaymentType};
 
 const PaymentInputType = new GraphQLInputObjectType({
   name: 'PaymentInputType',
-  description: 'input type for Payment in accounting',
+  description: 'input type for Payment',
 
   fields: () => ({
-    roleTypeIdTo: {type: GraphQLString},
-    finAccountTransId: {type: GraphQLString},
-    partyIdFrom: {type: GraphQLString},
-    amount: {type: GraphQLFloat},
-    paymentPreferenceId: {type: GraphQLString},
-    comments: {type: GraphQLString},
     actualCurrencyAmount: {type: GraphQLFloat},
-    overrideGlAccountId: {type: GraphQLString},
-    paymentMethodTypeId: {type: GraphQLString},
     actualCurrencyUomId: {type: GraphQLString},
-    paymentTypeId: {type: GraphQLString},
+    amount: {type: GraphQLFloat},
+    comments: {type: GraphQLString},
     currencyUomId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    effectiveDate: {type: GraphQLString},
+    finAccountTransId: {type: GraphQLString},
+    overrideGlAccountId: {type: GraphQLString},
+    partyIdFrom: {type: GraphQLString},
+    partyIdTo: {type: GraphQLString},
+    paymentGatewayResponseId: {type: GraphQLString},
     paymentId: {type: GraphQLString},
     paymentMethodId: {type: GraphQLString},
-    paymentGatewayResponseId: {type: GraphQLString},
+    paymentMethodTypeId: {type: GraphQLString},
+    paymentPreferenceId: {type: GraphQLString},
     paymentRefNum: {type: GraphQLString},
-    partyIdTo: {type: GraphQLString},
-    effectiveDate: {type: GraphQLString}
+    paymentTypeId: {type: GraphQLString},
+    roleTypeIdTo: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

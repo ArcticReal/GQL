@@ -42,13 +42,13 @@ export {ProductMeterType};
 
 const ProductMeterInputType = new GraphQLInputObjectType({
   name: 'ProductMeterInputType',
-  description: 'input type for ProductMeter in product',
+  description: 'input type for ProductMeter',
 
   fields: () => ({
-    productId: {type: GraphQLString},
-    productMeterTypeId: {type: GraphQLString},
     meterName: {type: GraphQLString},
-    meterUomId: {type: GraphQLString}
+    meterUomId: {type: GraphQLString},
+    productId: {type: GraphQLString},
+    productMeterTypeId: {type: GraphQLString}
   })
 });
 

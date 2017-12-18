@@ -41,17 +41,17 @@ export {ShipmentGatewayUspsType};
 
 const ShipmentGatewayUspsInputType = new GraphQLInputObjectType({
   name: 'ShipmentGatewayUspsInputType',
-  description: 'input type for ShipmentGatewayUsps in shipment',
+  description: 'input type for ShipmentGatewayUsps',
 
   fields: () => ({
-    connectUrl: {type: GraphQLString},
-    accessUserId: {type: GraphQLString},
-    test: {type: GraphQLString},
-    shipmentGatewayConfigId: {type: GraphQLString},
-    connectTimeout: {type: GraphQLInt},
-    connectUrlLabels: {type: GraphQLString},
     accessPassword: {type: GraphQLString},
-    maxEstimateWeight: {type: GraphQLInt}
+    accessUserId: {type: GraphQLString},
+    connectTimeout: {type: GraphQLInt},
+    connectUrl: {type: GraphQLString},
+    connectUrlLabels: {type: GraphQLString},
+    maxEstimateWeight: {type: GraphQLInt},
+    shipmentGatewayConfigId: {type: GraphQLString},
+    test: {type: GraphQLString}
   })
 });
 

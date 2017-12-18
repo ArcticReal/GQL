@@ -37,11 +37,11 @@ export {BudgetReviewResultTypeType};
 
 const BudgetReviewResultTypeInputType = new GraphQLInputObjectType({
   name: 'BudgetReviewResultTypeInputType',
-  description: 'input type for BudgetReviewResultType in accounting',
+  description: 'input type for BudgetReviewResultType',
 
   fields: () => ({
-    comments: {type: GraphQLString},
     budgetReviewResultTypeId: {type: GraphQLString},
+    comments: {type: GraphQLString},
     description: {type: GraphQLString}
   })
 });

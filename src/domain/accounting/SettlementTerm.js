@@ -38,13 +38,13 @@ export {SettlementTermType};
 
 const SettlementTermInputType = new GraphQLInputObjectType({
   name: 'SettlementTermInputType',
-  description: 'input type for SettlementTerm in accounting',
+  description: 'input type for SettlementTerm',
 
   fields: () => ({
     settlementTermId: {type: GraphQLString},
-    uomId: {type: GraphQLString},
     termName: {type: GraphQLString},
-    termValue: {type: GraphQLInt}
+    termValue: {type: GraphQLInt},
+    uomId: {type: GraphQLString}
   })
 });
 

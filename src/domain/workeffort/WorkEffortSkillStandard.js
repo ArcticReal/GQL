@@ -43,14 +43,14 @@ export {WorkEffortSkillStandardType};
 
 const WorkEffortSkillStandardInputType = new GraphQLInputObjectType({
   name: 'WorkEffortSkillStandardInputType',
-  description: 'input type for WorkEffortSkillStandard in workeffort',
+  description: 'input type for WorkEffortSkillStandard',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    skillTypeId: {type: GraphQLString},
-    estimatedNumPeople: {type: GraphQLFloat},
     estimatedCost: {type: GraphQLFloat},
-    estimatedDuration: {type: GraphQLFloat}
+    estimatedDuration: {type: GraphQLFloat},
+    estimatedNumPeople: {type: GraphQLFloat},
+    skillTypeId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

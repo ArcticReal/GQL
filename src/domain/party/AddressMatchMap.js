@@ -31,12 +31,12 @@ export {AddressMatchMapType};
 
 const AddressMatchMapInputType = new GraphQLInputObjectType({
   name: 'AddressMatchMapInputType',
-  description: 'input type for AddressMatchMap in party',
+  description: 'input type for AddressMatchMap',
 
   fields: () => ({
+    mapKey: {type: GraphQLString},
     mapValue: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
-    mapKey: {type: GraphQLString}
+    sequenceNum: {type: GraphQLInt}
   })
 });
 

@@ -67,17 +67,17 @@ export {ReturnItemResponseType};
 
 const ReturnItemResponseInputType = new GraphQLInputObjectType({
   name: 'ReturnItemResponseInputType',
-  description: 'input type for ReturnItemResponse in order',
+  description: 'input type for ReturnItemResponse',
 
   fields: () => ({
-    replacementOrderId: {type: GraphQLString},
-    finAccountTransId: {type: GraphQLString},
-    returnItemResponseId: {type: GraphQLString},
-    orderPaymentPreferenceId: {type: GraphQLString},
-    responseAmount: {type: GraphQLFloat},
-    paymentId: {type: GraphQLString},
     billingAccountId: {type: GraphQLString},
-    responseDate: {type: GraphQLString}
+    finAccountTransId: {type: GraphQLString},
+    orderPaymentPreferenceId: {type: GraphQLString},
+    paymentId: {type: GraphQLString},
+    replacementOrderId: {type: GraphQLString},
+    responseAmount: {type: GraphQLFloat},
+    responseDate: {type: GraphQLString},
+    returnItemResponseId: {type: GraphQLString}
   })
 });
 

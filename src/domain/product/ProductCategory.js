@@ -161,20 +161,20 @@ export {ProductCategoryType};
 
 const ProductCategoryInputType = new GraphQLInputObjectType({
   name: 'ProductCategoryInputType',
-  description: 'input type for ProductCategory in product',
+  description: 'input type for ProductCategory',
 
   fields: () => ({
-    longDescription: {type: GraphQLString},
-    productCategoryTypeId: {type: GraphQLString},
-    productCategoryId: {type: GraphQLString},
-    linkOneImageUrl: {type: GraphQLString},
-    detailScreen: {type: GraphQLString},
-    primaryParentCategoryId: {type: GraphQLString},
     categoryImageUrl: {type: GraphQLString},
+    categoryName: {type: GraphQLString},
     description: {type: GraphQLString},
-    showInSelect: {type: GraphQLBoolean},
+    detailScreen: {type: GraphQLString},
+    linkOneImageUrl: {type: GraphQLString},
     linkTwoImageUrl: {type: GraphQLString},
-    categoryName: {type: GraphQLString}
+    longDescription: {type: GraphQLString},
+    primaryParentCategoryId: {type: GraphQLString},
+    productCategoryId: {type: GraphQLString},
+    productCategoryTypeId: {type: GraphQLString},
+    showInSelect: {type: GraphQLBoolean}
   })
 });
 

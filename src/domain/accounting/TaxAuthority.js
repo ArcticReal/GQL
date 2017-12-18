@@ -92,13 +92,13 @@ export {TaxAuthorityType};
 
 const TaxAuthorityInputType = new GraphQLInputObjectType({
   name: 'TaxAuthorityInputType',
-  description: 'input type for TaxAuthority in accounting',
+  description: 'input type for TaxAuthority',
 
   fields: () => ({
-    taxAuthPartyId: {type: GraphQLString},
-    requireTaxIdForExemption: {type: GraphQLBoolean},
     includeTaxInPrice: {type: GraphQLBoolean},
+    requireTaxIdForExemption: {type: GraphQLBoolean},
     taxAuthGeoId: {type: GraphQLString},
+    taxAuthPartyId: {type: GraphQLString},
     taxIdFormatPattern: {type: GraphQLString}
   })
 });

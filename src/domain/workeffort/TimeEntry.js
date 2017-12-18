@@ -64,20 +64,20 @@ export {TimeEntryType};
 
 const TimeEntryInputType = new GraphQLInputObjectType({
   name: 'TimeEntryInputType',
-  description: 'input type for TimeEntry in workeffort',
+  description: 'input type for TimeEntry',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    workEffortId: {type: GraphQLString},
-    timesheetId: {type: GraphQLString},
-    rateTypeId: {type: GraphQLString},
-    hours: {type: GraphQLFloat},
     comments: {type: GraphQLString},
-    timeEntryId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    hours: {type: GraphQLFloat},
     invoiceId: {type: GraphQLString},
     invoiceItemSeqId: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    rateTypeId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    timeEntryId: {type: GraphQLString},
+    timesheetId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

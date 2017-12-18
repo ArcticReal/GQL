@@ -42,11 +42,11 @@ export {CharacterSetType};
 
 const CharacterSetInputType = new GraphQLInputObjectType({
   name: 'CharacterSetInputType',
-  description: 'input type for CharacterSet in content',
+  description: 'input type for CharacterSet',
 
   fields: () => ({
-    description: {type: GraphQLString},
-    characterSetId: {type: GraphQLString}
+    characterSetId: {type: GraphQLString},
+    description: {type: GraphQLString}
   })
 });
 

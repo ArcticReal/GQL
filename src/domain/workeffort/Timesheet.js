@@ -62,17 +62,17 @@ export {TimesheetType};
 
 const TimesheetInputType = new GraphQLInputObjectType({
   name: 'TimesheetInputType',
-  description: 'input type for Timesheet in workeffort',
+  description: 'input type for Timesheet',
 
   fields: () => ({
-    timesheetId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    comments: {type: GraphQLString},
-    statusId: {type: GraphQLString},
     approvedByUserLoginId: {type: GraphQLString},
-    partyId: {type: GraphQLString},
     clientPartyId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    comments: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    partyId: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    timesheetId: {type: GraphQLString}
   })
 });
 

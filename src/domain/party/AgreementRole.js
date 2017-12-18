@@ -41,12 +41,12 @@ export {AgreementRoleType};
 
 const AgreementRoleInputType = new GraphQLInputObjectType({
   name: 'AgreementRoleInputType',
-  description: 'input type for AgreementRole in party',
+  description: 'input type for AgreementRole',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
     agreementId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

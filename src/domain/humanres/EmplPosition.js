@@ -75,23 +75,23 @@ export {EmplPositionType};
 
 const EmplPositionInputType = new GraphQLInputObjectType({
   name: 'EmplPositionInputType',
-  description: 'input type for EmplPosition in humanres',
+  description: 'input type for EmplPosition',
 
   fields: () => ({
-    estimatedThruDate: {type: GraphQLString},
-    actualThruDate: {type: GraphQLString},
-    exemptFlag: {type: GraphQLBoolean},
-    temporaryFlag: {type: GraphQLBoolean},
-    fulltimeFlag: {type: GraphQLBoolean},
-    emplPositionId: {type: GraphQLString},
     actualFromDate: {type: GraphQLString},
-    budgetItemSeqId: {type: GraphQLString},
+    actualThruDate: {type: GraphQLString},
     budgetId: {type: GraphQLString},
+    budgetItemSeqId: {type: GraphQLString},
+    emplPositionId: {type: GraphQLString},
+    emplPositionTypeId: {type: GraphQLString},
+    estimatedFromDate: {type: GraphQLString},
+    estimatedThruDate: {type: GraphQLString},
+    exemptFlag: {type: GraphQLBoolean},
+    fulltimeFlag: {type: GraphQLBoolean},
+    partyId: {type: GraphQLString},
     salaryFlag: {type: GraphQLBoolean},
     statusId: {type: GraphQLString},
-    estimatedFromDate: {type: GraphQLString},
-    emplPositionTypeId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    temporaryFlag: {type: GraphQLBoolean}
   })
 });
 

@@ -67,14 +67,14 @@ export {CarrierShipmentMethodType};
 
 const CarrierShipmentMethodInputType = new GraphQLInputObjectType({
   name: 'CarrierShipmentMethodInputType',
-  description: 'input type for CarrierShipmentMethod in shipment',
+  description: 'input type for CarrierShipmentMethod',
 
   fields: () => ({
-    sequenceNumber: {type: GraphQLInt},
-    roleTypeId: {type: GraphQLString},
+    carrierServiceCode: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    shipmentMethodTypeId: {type: GraphQLString},
-    carrierServiceCode: {type: GraphQLString}
+    roleTypeId: {type: GraphQLString},
+    sequenceNumber: {type: GraphQLInt},
+    shipmentMethodTypeId: {type: GraphQLString}
   })
 });
 

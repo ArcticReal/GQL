@@ -38,14 +38,14 @@ export {SurveyMultiRespColumnType};
 
 const SurveyMultiRespColumnInputType = new GraphQLInputObjectType({
   name: 'SurveyMultiRespColumnInputType',
-  description: 'input type for SurveyMultiRespColumn in content',
+  description: 'input type for SurveyMultiRespColumn',
 
   fields: () => ({
-    surveyId: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
     columnTitle: {type: GraphQLString},
-    surveyMultiRespId: {type: GraphQLString},
-    surveyMultiRespColId: {type: GraphQLString}
+    sequenceNum: {type: GraphQLInt},
+    surveyId: {type: GraphQLString},
+    surveyMultiRespColId: {type: GraphQLString},
+    surveyMultiRespId: {type: GraphQLString}
   })
 });
 

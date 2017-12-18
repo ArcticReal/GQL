@@ -65,18 +65,18 @@ export {EmploymentAppType};
 
 const EmploymentAppInputType = new GraphQLInputObjectType({
   name: 'EmploymentAppInputType',
-  description: 'input type for EmploymentApp in humanres',
+  description: 'input type for EmploymentApp',
 
   fields: () => ({
-    applyingPartyId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    approverPartyId: {type: GraphQLString},
-    employmentAppSourceTypeId: {type: GraphQLString},
-    emplPositionId: {type: GraphQLString},
+    applicationDate: {type: GraphQLString},
     applicationId: {type: GraphQLString},
-    referredByPartyId: {type: GraphQLString},
+    applyingPartyId: {type: GraphQLString},
+    approverPartyId: {type: GraphQLString},
+    emplPositionId: {type: GraphQLString},
+    employmentAppSourceTypeId: {type: GraphQLString},
     jobRequisitionId: {type: GraphQLString},
-    applicationDate: {type: GraphQLString}
+    referredByPartyId: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

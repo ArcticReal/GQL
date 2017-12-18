@@ -41,12 +41,12 @@ export {FixedAssetIdentType};
 
 const FixedAssetIdentInputType = new GraphQLInputObjectType({
   name: 'FixedAssetIdentInputType',
-  description: 'input type for FixedAssetIdent in accounting',
+  description: 'input type for FixedAssetIdent',
 
   fields: () => ({
     fixedAssetId: {type: GraphQLString},
-    idValue: {type: GraphQLString},
-    fixedAssetIdentTypeId: {type: GraphQLString}
+    fixedAssetIdentTypeId: {type: GraphQLString},
+    idValue: {type: GraphQLString}
   })
 });
 

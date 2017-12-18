@@ -42,13 +42,13 @@ export {FacilityGroupRollupType};
 
 const FacilityGroupRollupInputType = new GraphQLInputObjectType({
   name: 'FacilityGroupRollupInputType',
-  description: 'input type for FacilityGroupRollup in product',
+  description: 'input type for FacilityGroupRollup',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
     facilityGroupId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     parentFacilityGroupId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}
   })
 });

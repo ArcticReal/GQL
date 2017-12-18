@@ -35,11 +35,11 @@ export {OrderBlacklistType};
 
 const OrderBlacklistInputType = new GraphQLInputObjectType({
   name: 'OrderBlacklistInputType',
-  description: 'input type for OrderBlacklist in order',
+  description: 'input type for OrderBlacklist',
 
   fields: () => ({
-    orderBlacklistTypeId: {type: GraphQLString},
-    blacklistString: {type: GraphQLString}
+    blacklistString: {type: GraphQLString},
+    orderBlacklistTypeId: {type: GraphQLString}
   })
 });
 

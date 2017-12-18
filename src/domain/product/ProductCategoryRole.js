@@ -44,14 +44,14 @@ export {ProductCategoryRoleType};
 
 const ProductCategoryRoleInputType = new GraphQLInputObjectType({
   name: 'ProductCategoryRoleInputType',
-  description: 'input type for ProductCategoryRole in product',
+  description: 'input type for ProductCategoryRole',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
-    productCategoryId: {type: GraphQLString},
     comments: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    productCategoryId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

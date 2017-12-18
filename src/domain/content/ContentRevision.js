@@ -48,13 +48,13 @@ export {ContentRevisionType};
 
 const ContentRevisionInputType = new GraphQLInputObjectType({
   name: 'ContentRevisionInputType',
-  description: 'input type for ContentRevision in content',
+  description: 'input type for ContentRevision',
 
   fields: () => ({
     comments: {type: GraphQLString},
+    committedByPartyId: {type: GraphQLString},
     contentId: {type: GraphQLString},
-    contentRevisionSeqId: {type: GraphQLString},
-    committedByPartyId: {type: GraphQLString}
+    contentRevisionSeqId: {type: GraphQLString}
   })
 });
 

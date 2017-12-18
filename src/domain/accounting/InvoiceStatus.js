@@ -42,13 +42,13 @@ export {InvoiceStatusType};
 
 const InvoiceStatusInputType = new GraphQLInputObjectType({
   name: 'InvoiceStatusInputType',
-  description: 'input type for InvoiceStatus in accounting',
+  description: 'input type for InvoiceStatus',
 
   fields: () => ({
-    statusDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    changeByUserLoginId: {type: GraphQLString},
     invoiceId: {type: GraphQLString},
-    changeByUserLoginId: {type: GraphQLString}
+    statusDate: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

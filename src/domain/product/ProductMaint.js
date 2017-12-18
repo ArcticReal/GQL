@@ -57,17 +57,17 @@ export {ProductMaintType};
 
 const ProductMaintInputType = new GraphQLInputObjectType({
   name: 'ProductMaintInputType',
-  description: 'input type for ProductMaint in product',
+  description: 'input type for ProductMaint',
 
   fields: () => ({
-    intervalUomId: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    maintTemplateWorkEffortId: {type: GraphQLString},
-    maintName: {type: GraphQLString},
-    intervalQuantity: {type: GraphQLFloat},
-    productMaintTypeId: {type: GraphQLString},
     intervalMeterTypeId: {type: GraphQLString},
+    intervalQuantity: {type: GraphQLFloat},
+    intervalUomId: {type: GraphQLString},
+    maintName: {type: GraphQLString},
+    maintTemplateWorkEffortId: {type: GraphQLString},
+    productId: {type: GraphQLString},
     productMaintSeqId: {type: GraphQLString},
+    productMaintTypeId: {type: GraphQLString},
     repeatCount: {type: GraphQLInt}
   })
 });

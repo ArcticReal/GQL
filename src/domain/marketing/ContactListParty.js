@@ -55,14 +55,14 @@ export {ContactListPartyType};
 
 const ContactListPartyInputType = new GraphQLInputObjectType({
   name: 'ContactListPartyInputType',
-  description: 'input type for ContactListParty in marketing',
+  description: 'input type for ContactListParty',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
     contactListId: {type: GraphQLString},
-    preferredContactMechId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    preferredContactMechId: {type: GraphQLString},
+    statusId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

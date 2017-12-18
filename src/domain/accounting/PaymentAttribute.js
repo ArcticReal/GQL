@@ -37,13 +37,13 @@ export {PaymentAttributeType};
 
 const PaymentAttributeInputType = new GraphQLInputObjectType({
   name: 'PaymentAttributeInputType',
-  description: 'input type for PaymentAttribute in accounting',
+  description: 'input type for PaymentAttribute',
 
   fields: () => ({
-    paymentId: {type: GraphQLString},
     attrDescription: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     attrValue: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    paymentId: {type: GraphQLString}
   })
 });
 

@@ -42,7 +42,7 @@ export {SurveyApplTypeType};
 
 const SurveyApplTypeInputType = new GraphQLInputObjectType({
   name: 'SurveyApplTypeInputType',
-  description: 'input type for SurveyApplType in content',
+  description: 'input type for SurveyApplType',
 
   fields: () => ({
     description: {type: GraphQLString},

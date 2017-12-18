@@ -48,14 +48,14 @@ export {WorkEffortContentType};
 
 const WorkEffortContentInputType = new GraphQLInputObjectType({
   name: 'WorkEffortContentInputType',
-  description: 'input type for WorkEffortContent in workeffort',
+  description: 'input type for WorkEffortContent',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    workEffortContentTypeId: {type: GraphQLString},
     contentId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    fromDate: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    workEffortContentTypeId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

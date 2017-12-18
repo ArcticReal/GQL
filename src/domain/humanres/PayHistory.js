@@ -54,19 +54,19 @@ export {PayHistoryType};
 
 const PayHistoryInputType = new GraphQLInputObjectType({
   name: 'PayHistoryInputType',
-  description: 'input type for PayHistory in humanres',
+  description: 'input type for PayHistory',
 
   fields: () => ({
-    roleTypeIdTo: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    partyIdFrom: {type: GraphQLString},
     amount: {type: GraphQLFloat},
     comments: {type: GraphQLString},
-    salaryStepSeqId: {type: GraphQLString},
-    periodTypeId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    partyIdFrom: {type: GraphQLString},
     partyIdTo: {type: GraphQLString},
-    roleTypeIdFrom: {type: GraphQLString},
     payGradeId: {type: GraphQLString},
+    periodTypeId: {type: GraphQLString},
+    roleTypeIdFrom: {type: GraphQLString},
+    roleTypeIdTo: {type: GraphQLString},
+    salaryStepSeqId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

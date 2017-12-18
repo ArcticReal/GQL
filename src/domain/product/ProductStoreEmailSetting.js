@@ -42,18 +42,18 @@ export {ProductStoreEmailSettingType};
 
 const ProductStoreEmailSettingInputType = new GraphQLInputObjectType({
   name: 'ProductStoreEmailSettingInputType',
-  description: 'input type for ProductStoreEmailSetting in product',
+  description: 'input type for ProductStoreEmailSetting',
 
   fields: () => ({
-    xslfoAttachScreenLocation: {type: GraphQLString},
-    emailType: {type: GraphQLString},
-    bodyScreenLocation: {type: GraphQLString},
-    subject: {type: GraphQLString},
-    fromAddress: {type: GraphQLString},
     bccAddress: {type: GraphQLString},
-    productStoreId: {type: GraphQLString},
+    bodyScreenLocation: {type: GraphQLString},
+    ccAddress: {type: GraphQLString},
     contentType: {type: GraphQLString},
-    ccAddress: {type: GraphQLString}
+    emailType: {type: GraphQLString},
+    fromAddress: {type: GraphQLString},
+    productStoreId: {type: GraphQLString},
+    subject: {type: GraphQLString},
+    xslfoAttachScreenLocation: {type: GraphQLString}
   })
 });
 

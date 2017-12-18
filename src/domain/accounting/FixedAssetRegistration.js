@@ -45,15 +45,15 @@ export {FixedAssetRegistrationType};
 
 const FixedAssetRegistrationInputType = new GraphQLInputObjectType({
   name: 'FixedAssetRegistrationInputType',
-  description: 'input type for FixedAssetRegistration in accounting',
+  description: 'input type for FixedAssetRegistration',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    registrationNumber: {type: GraphQLString},
-    registrationDate: {type: GraphQLString},
     fixedAssetId: {type: GraphQLString},
-    licenseNumber: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     govAgencyPartyId: {type: GraphQLString},
+    licenseNumber: {type: GraphQLString},
+    registrationDate: {type: GraphQLString},
+    registrationNumber: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

@@ -39,15 +39,15 @@ export {BudgetRevisionImpactType};
 
 const BudgetRevisionImpactInputType = new GraphQLInputObjectType({
   name: 'BudgetRevisionImpactInputType',
-  description: 'input type for BudgetRevisionImpact in accounting',
+  description: 'input type for BudgetRevisionImpact',
 
   fields: () => ({
     addDeleteFlag: {type: GraphQLBoolean},
-    revisionReason: {type: GraphQLString},
-    revisionSeqId: {type: GraphQLString},
-    budgetItemSeqId: {type: GraphQLString},
     budgetId: {type: GraphQLString},
-    revisedAmount: {type: GraphQLFloat}
+    budgetItemSeqId: {type: GraphQLString},
+    revisedAmount: {type: GraphQLFloat},
+    revisionReason: {type: GraphQLString},
+    revisionSeqId: {type: GraphQLString}
   })
 });
 

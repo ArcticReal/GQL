@@ -59,16 +59,16 @@ export {PartyRelationshipTypeType};
 
 const PartyRelationshipTypeInputType = new GraphQLInputObjectType({
   name: 'PartyRelationshipTypeInputType',
-  description: 'input type for PartyRelationshipType in party',
+  description: 'input type for PartyRelationshipType',
 
   fields: () => ({
+    description: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString},
     partyRelationshipName: {type: GraphQLString},
-    roleTypeIdValidTo: {type: GraphQLString},
     partyRelationshipTypeId: {type: GraphQLString},
     roleTypeIdValidFrom: {type: GraphQLString},
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    roleTypeIdValidTo: {type: GraphQLString}
   })
 });
 

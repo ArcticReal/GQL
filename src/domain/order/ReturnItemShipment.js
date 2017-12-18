@@ -43,13 +43,13 @@ export {ReturnItemShipmentType};
 
 const ReturnItemShipmentInputType = new GraphQLInputObjectType({
   name: 'ReturnItemShipmentInputType',
-  description: 'input type for ReturnItemShipment in order',
+  description: 'input type for ReturnItemShipment',
 
   fields: () => ({
     quantity: {type: GraphQLFloat},
-    shipmentId: {type: GraphQLString},
     returnId: {type: GraphQLString},
     returnItemSeqId: {type: GraphQLString},
+    shipmentId: {type: GraphQLString},
     shipmentItemSeqId: {type: GraphQLString}
   })
 });

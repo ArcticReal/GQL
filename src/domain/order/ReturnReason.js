@@ -37,11 +37,11 @@ export {ReturnReasonType};
 
 const ReturnReasonInputType = new GraphQLInputObjectType({
   name: 'ReturnReasonInputType',
-  description: 'input type for ReturnReason in order',
+  description: 'input type for ReturnReason',
 
   fields: () => ({
-    returnReasonId: {type: GraphQLString},
     description: {type: GraphQLString},
+    returnReasonId: {type: GraphQLString},
     sequenceId: {type: GraphQLString}
   })
 });

@@ -136,32 +136,32 @@ export {CustRequestType};
 
 const CustRequestInputType = new GraphQLInputObjectType({
   name: 'CustRequestInputType',
-  description: 'input type for CustRequest in order',
+  description: 'input type for CustRequest',
 
   fields: () => ({
-    reason: {type: GraphQLString},
-    fromPartyId: {type: GraphQLString},
-    custRequestName: {type: GraphQLString},
-    responseRequiredDate: {type: GraphQLString},
-    salesChannelEnumId: {type: GraphQLString},
-    lastModifiedDate: {type: GraphQLString},
-    fulfillContactMechId: {type: GraphQLString},
-    description: {type: GraphQLString},
+    closedDateTime: {type: GraphQLString},
+    createdByUserLogin: {type: GraphQLString},
+    createdDate: {type: GraphQLString},
+    currencyUomId: {type: GraphQLString},
+    custRequestCategoryId: {type: GraphQLString},
     custRequestDate: {type: GraphQLString},
-    priority: {type: GraphQLInt},
-    maximumAmountUomId: {type: GraphQLString},
-    openDateTime: {type: GraphQLString},
+    custRequestId: {type: GraphQLString},
+    custRequestName: {type: GraphQLString},
+    custRequestTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    fromPartyId: {type: GraphQLString},
+    fulfillContactMechId: {type: GraphQLString},
     internalComment: {type: GraphQLString},
     lastModifiedByUserLogin: {type: GraphQLString},
-    currencyUomId: {type: GraphQLString},
-    createdDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    custRequestId: {type: GraphQLString},
-    custRequestTypeId: {type: GraphQLString},
+    lastModifiedDate: {type: GraphQLString},
+    maximumAmountUomId: {type: GraphQLString},
+    openDateTime: {type: GraphQLString},
+    priority: {type: GraphQLInt},
     productStoreId: {type: GraphQLString},
-    custRequestCategoryId: {type: GraphQLString},
-    createdByUserLogin: {type: GraphQLString},
-    closedDateTime: {type: GraphQLString}
+    reason: {type: GraphQLString},
+    responseRequiredDate: {type: GraphQLString},
+    salesChannelEnumId: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

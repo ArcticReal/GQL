@@ -36,12 +36,12 @@ export {RoleTypeAttrType};
 
 const RoleTypeAttrInputType = new GraphQLInputObjectType({
   name: 'RoleTypeAttrInputType',
-  description: 'input type for RoleTypeAttr in party',
+  description: 'input type for RoleTypeAttr',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     description: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    roleTypeId: {type: GraphQLString}
   })
 });
 

@@ -55,14 +55,14 @@ export {PicklistBinType};
 
 const PicklistBinInputType = new GraphQLInputObjectType({
   name: 'PicklistBinInputType',
-  description: 'input type for PicklistBin in shipment',
+  description: 'input type for PicklistBin',
 
   fields: () => ({
+    binLocationNumber: {type: GraphQLInt},
+    picklistBinId: {type: GraphQLString},
     picklistId: {type: GraphQLString},
     primaryOrderId: {type: GraphQLString},
-    picklistBinId: {type: GraphQLString},
-    primaryShipGroupSeqId: {type: GraphQLString},
-    binLocationNumber: {type: GraphQLInt}
+    primaryShipGroupSeqId: {type: GraphQLString}
   })
 });
 

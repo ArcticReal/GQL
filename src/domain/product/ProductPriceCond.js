@@ -38,14 +38,14 @@ export {ProductPriceCondType};
 
 const ProductPriceCondInputType = new GraphQLInputObjectType({
   name: 'ProductPriceCondInputType',
-  description: 'input type for ProductPriceCond in product',
+  description: 'input type for ProductPriceCond',
 
   fields: () => ({
-    productPriceCondSeqId: {type: GraphQLString},
-    inputParamEnumId: {type: GraphQLString},
     condValue: {type: GraphQLString},
-    productPriceRuleId: {type: GraphQLString},
-    operatorEnumId: {type: GraphQLString}
+    inputParamEnumId: {type: GraphQLString},
+    operatorEnumId: {type: GraphQLString},
+    productPriceCondSeqId: {type: GraphQLString},
+    productPriceRuleId: {type: GraphQLString}
   })
 });
 

@@ -48,14 +48,14 @@ export {ContentPurposeOperationType};
 
 const ContentPurposeOperationInputType = new GraphQLInputObjectType({
   name: 'ContentPurposeOperationInputType',
-  description: 'input type for ContentPurposeOperation in content',
+  description: 'input type for ContentPurposeOperation',
 
   fields: () => ({
+    contentOperationId: {type: GraphQLString},
     contentPurposeTypeId: {type: GraphQLString},
     privilegeEnumId: {type: GraphQLString},
     roleTypeId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    contentOperationId: {type: GraphQLString}
+    statusId: {type: GraphQLString}
   })
 });
 

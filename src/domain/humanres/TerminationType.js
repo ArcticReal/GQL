@@ -41,13 +41,13 @@ export {TerminationTypeType};
 
 const TerminationTypeInputType = new GraphQLInputObjectType({
   name: 'TerminationTypeInputType',
-  description: 'input type for TerminationType in humanres',
+  description: 'input type for TerminationType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    terminationTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    terminationTypeId: {type: GraphQLString}
   })
 });
 

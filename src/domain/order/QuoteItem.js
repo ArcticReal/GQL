@@ -90,30 +90,30 @@ export {QuoteItemType};
 
 const QuoteItemInputType = new GraphQLInputObjectType({
   name: 'QuoteItemInputType',
-  description: 'input type for QuoteItem in order',
+  description: 'input type for QuoteItem',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
-    reservLength: {type: GraphQLFloat},
     comments: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    reservPersons: {type: GraphQLFloat},
-    deliverableTypeId: {type: GraphQLString},
-    quoteItemSeqId: {type: GraphQLString},
-    productFeatureId: {type: GraphQLString},
-    quoteUnitPrice: {type: GraphQLFloat},
-    uomId: {type: GraphQLString},
-    estimatedDeliveryDate: {type: GraphQLString},
-    isPromo: {type: GraphQLBoolean},
-    quoteId: {type: GraphQLString},
-    custRequestItemSeqId: {type: GraphQLString},
-    skillTypeId: {type: GraphQLString},
-    reservStart: {type: GraphQLString},
     configId: {type: GraphQLString},
     custRequestId: {type: GraphQLString},
+    custRequestItemSeqId: {type: GraphQLString},
+    deliverableTypeId: {type: GraphQLString},
+    estimatedDeliveryDate: {type: GraphQLString},
+    isPromo: {type: GraphQLBoolean},
     leadTimeDays: {type: GraphQLInt},
-    selectedAmount: {type: GraphQLFloat}
+    productFeatureId: {type: GraphQLString},
+    productId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
+    quoteId: {type: GraphQLString},
+    quoteItemSeqId: {type: GraphQLString},
+    quoteUnitPrice: {type: GraphQLFloat},
+    reservLength: {type: GraphQLFloat},
+    reservPersons: {type: GraphQLFloat},
+    reservStart: {type: GraphQLString},
+    selectedAmount: {type: GraphQLFloat},
+    skillTypeId: {type: GraphQLString},
+    uomId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

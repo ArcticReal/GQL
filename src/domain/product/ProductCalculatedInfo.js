@@ -37,13 +37,13 @@ export {ProductCalculatedInfoType};
 
 const ProductCalculatedInfoInputType = new GraphQLInputObjectType({
   name: 'ProductCalculatedInfoInputType',
-  description: 'input type for ProductCalculatedInfo in product',
+  description: 'input type for ProductCalculatedInfo',
 
   fields: () => ({
     averageCustomerRating: {type: GraphQLFloat},
     productId: {type: GraphQLString},
-    totalTimesViewed: {type: GraphQLInt},
-    totalQuantityOrdered: {type: GraphQLFloat}
+    totalQuantityOrdered: {type: GraphQLFloat},
+    totalTimesViewed: {type: GraphQLInt}
   })
 });
 

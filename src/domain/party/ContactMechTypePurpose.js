@@ -40,7 +40,7 @@ export {ContactMechTypePurposeType};
 
 const ContactMechTypePurposeInputType = new GraphQLInputObjectType({
   name: 'ContactMechTypePurposeInputType',
-  description: 'input type for ContactMechTypePurpose in party',
+  description: 'input type for ContactMechTypePurpose',
 
   fields: () => ({
     contactMechPurposeTypeId: {type: GraphQLString},

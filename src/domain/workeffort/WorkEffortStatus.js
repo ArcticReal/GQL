@@ -43,14 +43,14 @@ export {WorkEffortStatusType};
 
 const WorkEffortStatusInputType = new GraphQLInputObjectType({
   name: 'WorkEffortStatusInputType',
-  description: 'input type for WorkEffortStatus in workeffort',
+  description: 'input type for WorkEffortStatus',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
     reason: {type: GraphQLString},
-    statusId: {type: GraphQLString},
     setByUserLogin: {type: GraphQLString},
-    statusDatetime: {type: GraphQLString}
+    statusDatetime: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

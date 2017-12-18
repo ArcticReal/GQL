@@ -36,7 +36,7 @@ export {CommContentAssocTypeType};
 
 const CommContentAssocTypeInputType = new GraphQLInputObjectType({
   name: 'CommContentAssocTypeInputType',
-  description: 'input type for CommContentAssocType in party',
+  description: 'input type for CommContentAssocType',
 
   fields: () => ({
     commContentAssocTypeId: {type: GraphQLString},

@@ -158,28 +158,28 @@ export {DataResourceType};
 
 const DataResourceInputType = new GraphQLInputObjectType({
   name: 'DataResourceInputType',
-  description: 'input type for DataResource in content',
+  description: 'input type for DataResource',
 
   fields: () => ({
-    dataResourceName: {type: GraphQLString},
-    surveyId: {type: GraphQLString},
-    dataTemplateTypeId: {type: GraphQLString},
-    lastModifiedDate: {type: GraphQLString},
-    mimeTypeId: {type: GraphQLString},
-    dataCategoryId: {type: GraphQLString},
-    surveyResponseId: {type: GraphQLString},
     characterSetId: {type: GraphQLString},
-    dataSourceId: {type: GraphQLString},
-    lastModifiedByUserLogin: {type: GraphQLString},
+    createdByUserLogin: {type: GraphQLString},
     createdDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    localeString: {type: GraphQLString},
-    relatedDetailId: {type: GraphQLString},
+    dataCategoryId: {type: GraphQLString},
     dataResourceId: {type: GraphQLString},
-    isPublic: {type: GraphQLBoolean},
-    objectInfo: {type: GraphQLString},
+    dataResourceName: {type: GraphQLString},
     dataResourceTypeId: {type: GraphQLString},
-    createdByUserLogin: {type: GraphQLString}
+    dataSourceId: {type: GraphQLString},
+    dataTemplateTypeId: {type: GraphQLString},
+    isPublic: {type: GraphQLBoolean},
+    lastModifiedByUserLogin: {type: GraphQLString},
+    lastModifiedDate: {type: GraphQLString},
+    localeString: {type: GraphQLString},
+    mimeTypeId: {type: GraphQLString},
+    objectInfo: {type: GraphQLString},
+    relatedDetailId: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    surveyId: {type: GraphQLString},
+    surveyResponseId: {type: GraphQLString}
   })
 });
 

@@ -36,11 +36,11 @@ export {WebPreferenceTypeType};
 
 const WebPreferenceTypeInputType = new GraphQLInputObjectType({
   name: 'WebPreferenceTypeInputType',
-  description: 'input type for WebPreferenceType in content',
+  description: 'input type for WebPreferenceType',
 
   fields: () => ({
-    webPreferenceTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    webPreferenceTypeId: {type: GraphQLString}
   })
 });
 

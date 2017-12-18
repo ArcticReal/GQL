@@ -46,7 +46,7 @@ export {PaymentMethodTypeGlAccountType};
 
 const PaymentMethodTypeGlAccountInputType = new GraphQLInputObjectType({
   name: 'PaymentMethodTypeGlAccountInputType',
-  description: 'input type for PaymentMethodTypeGlAccount in accounting',
+  description: 'input type for PaymentMethodTypeGlAccount',
 
   fields: () => ({
     glAccountId: {type: GraphQLString},

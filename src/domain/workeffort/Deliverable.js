@@ -49,13 +49,13 @@ export {DeliverableType};
 
 const DeliverableInputType = new GraphQLInputObjectType({
   name: 'DeliverableInputType',
-  description: 'input type for Deliverable in workeffort',
+  description: 'input type for Deliverable',
 
   fields: () => ({
+    deliverableId: {type: GraphQLString},
     deliverableName: {type: GraphQLString},
     deliverableTypeId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    deliverableId: {type: GraphQLString}
+    description: {type: GraphQLString}
   })
 });
 

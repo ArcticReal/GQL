@@ -41,16 +41,16 @@ export {WorkEffortSearchResultType};
 
 const WorkEffortSearchResultInputType = new GraphQLInputObjectType({
   name: 'WorkEffortSearchResultInputType',
-  description: 'input type for WorkEffortSearchResult in workeffort',
+  description: 'input type for WorkEffortSearchResult',
 
   fields: () => ({
-    workEffortSearchResultId: {type: GraphQLString},
-    visitId: {type: GraphQLString},
-    orderByName: {type: GraphQLString},
+    isAscending: {type: GraphQLBoolean},
     numResults: {type: GraphQLInt},
-    secondsTotal: {type: GraphQLFloat},
+    orderByName: {type: GraphQLString},
     searchDate: {type: GraphQLString},
-    isAscending: {type: GraphQLBoolean}
+    secondsTotal: {type: GraphQLFloat},
+    visitId: {type: GraphQLString},
+    workEffortSearchResultId: {type: GraphQLString}
   })
 });
 

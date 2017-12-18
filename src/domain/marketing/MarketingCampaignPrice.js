@@ -40,7 +40,7 @@ export {MarketingCampaignPriceType};
 
 const MarketingCampaignPriceInputType = new GraphQLInputObjectType({
   name: 'MarketingCampaignPriceInputType',
-  description: 'input type for MarketingCampaignPrice in marketing',
+  description: 'input type for MarketingCampaignPrice',
 
   fields: () => ({
     marketingCampaignId: {type: GraphQLString},

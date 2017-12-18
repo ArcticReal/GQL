@@ -40,7 +40,7 @@ export {SegmentGroupClassificationType};
 
 const SegmentGroupClassificationInputType = new GraphQLInputObjectType({
   name: 'SegmentGroupClassificationInputType',
-  description: 'input type for SegmentGroupClassification in marketing',
+  description: 'input type for SegmentGroupClassification',
 
   fields: () => ({
     partyClassificationGroupId: {type: GraphQLString},

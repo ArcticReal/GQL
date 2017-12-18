@@ -41,16 +41,16 @@ export {ProductSearchResultType};
 
 const ProductSearchResultInputType = new GraphQLInputObjectType({
   name: 'ProductSearchResultInputType',
-  description: 'input type for ProductSearchResult in product',
+  description: 'input type for ProductSearchResult',
 
   fields: () => ({
-    productSearchResultId: {type: GraphQLString},
-    visitId: {type: GraphQLString},
-    orderByName: {type: GraphQLString},
+    isAscending: {type: GraphQLBoolean},
     numResults: {type: GraphQLInt},
-    secondsTotal: {type: GraphQLFloat},
+    orderByName: {type: GraphQLString},
+    productSearchResultId: {type: GraphQLString},
     searchDate: {type: GraphQLString},
-    isAscending: {type: GraphQLBoolean}
+    secondsTotal: {type: GraphQLFloat},
+    visitId: {type: GraphQLString}
   })
 });
 

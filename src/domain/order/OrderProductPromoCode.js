@@ -40,7 +40,7 @@ export {OrderProductPromoCodeType};
 
 const OrderProductPromoCodeInputType = new GraphQLInputObjectType({
   name: 'OrderProductPromoCodeInputType',
-  description: 'input type for OrderProductPromoCode in order',
+  description: 'input type for OrderProductPromoCode',
 
   fields: () => ({
     orderId: {type: GraphQLString},

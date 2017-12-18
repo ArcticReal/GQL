@@ -66,12 +66,12 @@ export {ShipmentGatewayConfigType};
 
 const ShipmentGatewayConfigInputType = new GraphQLInputObjectType({
   name: 'ShipmentGatewayConfigInputType',
-  description: 'input type for ShipmentGatewayConfig in shipment',
+  description: 'input type for ShipmentGatewayConfig',
 
   fields: () => ({
-    shipmentGatewayConfigId: {type: GraphQLString},
     description: {type: GraphQLString},
-    shipmentGatewayConfTypeId: {type: GraphQLString}
+    shipmentGatewayConfTypeId: {type: GraphQLString},
+    shipmentGatewayConfigId: {type: GraphQLString}
   })
 });
 

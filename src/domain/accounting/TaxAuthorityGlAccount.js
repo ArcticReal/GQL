@@ -47,13 +47,13 @@ export {TaxAuthorityGlAccountType};
 
 const TaxAuthorityGlAccountInputType = new GraphQLInputObjectType({
   name: 'TaxAuthorityGlAccountInputType',
-  description: 'input type for TaxAuthorityGlAccount in accounting',
+  description: 'input type for TaxAuthorityGlAccount',
 
   fields: () => ({
-    taxAuthPartyId: {type: GraphQLString},
     glAccountId: {type: GraphQLString},
+    organizationPartyId: {type: GraphQLString},
     taxAuthGeoId: {type: GraphQLString},
-    organizationPartyId: {type: GraphQLString}
+    taxAuthPartyId: {type: GraphQLString}
   })
 });
 

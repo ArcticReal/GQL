@@ -52,23 +52,23 @@ export {OrderItemShipGrpInvResType};
 
 const OrderItemShipGrpInvResInputType = new GraphQLInputObjectType({
   name: 'OrderItemShipGrpInvResInputType',
-  description: 'input type for OrderItemShipGrpInvRes in order',
+  description: 'input type for OrderItemShipGrpInvRes',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
-    orderId: {type: GraphQLString},
-    promisedDatetime: {type: GraphQLString},
-    priority: {type: GraphQLBoolean},
-    shipGroupSeqId: {type: GraphQLString},
-    sequenceId: {type: GraphQLInt},
-    oldPickStartDate: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
+    createdDatetime: {type: GraphQLString},
     currentPromisedDate: {type: GraphQLString},
     inventoryItemId: {type: GraphQLString},
+    oldPickStartDate: {type: GraphQLString},
+    orderId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
+    priority: {type: GraphQLBoolean},
+    promisedDatetime: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
     quantityNotAvailable: {type: GraphQLFloat},
-    createdDatetime: {type: GraphQLString},
     reserveOrderEnumId: {type: GraphQLString},
-    reservedDatetime: {type: GraphQLString}
+    reservedDatetime: {type: GraphQLString},
+    sequenceId: {type: GraphQLInt},
+    shipGroupSeqId: {type: GraphQLString}
   })
 });
 

@@ -54,18 +54,18 @@ export {PartyGroupType};
 
 const PartyGroupInputType = new GraphQLInputObjectType({
   name: 'PartyGroupInputType',
-  description: 'input type for PartyGroup in party',
+  description: 'input type for PartyGroup',
 
   fields: () => ({
+    annualRevenue: {type: GraphQLFloat},
+    comments: {type: GraphQLString},
     groupName: {type: GraphQLString},
     groupNameLocal: {type: GraphQLString},
-    comments: {type: GraphQLString},
+    logoImageUrl: {type: GraphQLString},
     numEmployees: {type: GraphQLInt},
-    tickerSymbol: {type: GraphQLString},
-    partyId: {type: GraphQLString},
     officeSiteName: {type: GraphQLString},
-    annualRevenue: {type: GraphQLFloat},
-    logoImageUrl: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    tickerSymbol: {type: GraphQLString}
   })
 });
 

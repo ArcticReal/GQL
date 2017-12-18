@@ -44,20 +44,20 @@ export {ProductSearchConstraintType};
 
 const ProductSearchConstraintInputType = new GraphQLInputObjectType({
   name: 'ProductSearchConstraintInputType',
-  description: 'input type for ProductSearchConstraint in product',
+  description: 'input type for ProductSearchConstraint',
 
   fields: () => ({
-    isAnd: {type: GraphQLBoolean},
-    removeStems: {type: GraphQLBoolean},
-    lowValue: {type: GraphQLString},
-    productSearchResultId: {type: GraphQLString},
-    constraintSeqId: {type: GraphQLString},
-    infoString: {type: GraphQLString},
     anyPrefix: {type: GraphQLBoolean},
+    anySuffix: {type: GraphQLBoolean},
+    constraintName: {type: GraphQLString},
+    constraintSeqId: {type: GraphQLString},
     highValue: {type: GraphQLString},
     includeSubCategories: {type: GraphQLBoolean},
-    anySuffix: {type: GraphQLBoolean},
-    constraintName: {type: GraphQLString}
+    infoString: {type: GraphQLString},
+    isAnd: {type: GraphQLBoolean},
+    lowValue: {type: GraphQLString},
+    productSearchResultId: {type: GraphQLString},
+    removeStems: {type: GraphQLBoolean}
   })
 });
 

@@ -38,14 +38,14 @@ export {ProductKeywordType};
 
 const ProductKeywordInputType = new GraphQLInputObjectType({
   name: 'ProductKeywordInputType',
-  description: 'input type for ProductKeyword in product',
+  description: 'input type for ProductKeyword',
 
   fields: () => ({
-    relevancyWeight: {type: GraphQLInt},
-    productId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    keyword: {type: GraphQLString},
     keywordTypeId: {type: GraphQLString},
-    keyword: {type: GraphQLString}
+    productId: {type: GraphQLString},
+    relevancyWeight: {type: GraphQLInt},
+    statusId: {type: GraphQLString}
   })
 });
 

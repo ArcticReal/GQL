@@ -42,13 +42,13 @@ export {WorkOrderItemFulfillmentType};
 
 const WorkOrderItemFulfillmentInputType = new GraphQLInputObjectType({
   name: 'WorkOrderItemFulfillmentInputType',
-  description: 'input type for WorkOrderItemFulfillment in order',
+  description: 'input type for WorkOrderItemFulfillment',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    orderItemSeqId: {type: GraphQLString},
     orderId: {type: GraphQLString},
-    shipGroupSeqId: {type: GraphQLString}
+    orderItemSeqId: {type: GraphQLString},
+    shipGroupSeqId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

@@ -40,11 +40,11 @@ export {CustRequestWorkEffortType};
 
 const CustRequestWorkEffortInputType = new GraphQLInputObjectType({
   name: 'CustRequestWorkEffortInputType',
-  description: 'input type for CustRequestWorkEffort in order',
+  description: 'input type for CustRequestWorkEffort',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    custRequestId: {type: GraphQLString}
+    custRequestId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

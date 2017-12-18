@@ -47,13 +47,13 @@ export {ProductStoreVendorPaymentType};
 
 const ProductStoreVendorPaymentInputType = new GraphQLInputObjectType({
   name: 'ProductStoreVendorPaymentInputType',
-  description: 'input type for ProductStoreVendorPayment in product',
+  description: 'input type for ProductStoreVendorPayment',
 
   fields: () => ({
-    productStoreId: {type: GraphQLString},
+    creditCardEnumId: {type: GraphQLString},
     paymentMethodTypeId: {type: GraphQLString},
-    vendorPartyId: {type: GraphQLString},
-    creditCardEnumId: {type: GraphQLString}
+    productStoreId: {type: GraphQLString},
+    vendorPartyId: {type: GraphQLString}
   })
 });
 

@@ -54,15 +54,15 @@ export {PicklistRoleType};
 
 const PicklistRoleInputType = new GraphQLInputObjectType({
   name: 'PicklistRoleInputType',
-  description: 'input type for PicklistRole in shipment',
+  description: 'input type for PicklistRole',
 
   fields: () => ({
+    createdByUserLogin: {type: GraphQLString},
     fromDate: {type: GraphQLString},
-    picklistId: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     lastModifiedByUserLogin: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    createdByUserLogin: {type: GraphQLString},
+    picklistId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

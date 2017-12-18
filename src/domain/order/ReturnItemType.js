@@ -46,12 +46,12 @@ export {ReturnItemTypeType};
 
 const ReturnItemTypeInputType = new GraphQLInputObjectType({
   name: 'ReturnItemTypeInputType',
-  description: 'input type for ReturnItemType in order',
+  description: 'input type for ReturnItemType',
 
   fields: () => ({
+    description: {type: GraphQLString},
     parentTypeId: {type: GraphQLString},
-    returnItemTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    returnItemTypeId: {type: GraphQLString}
   })
 });
 

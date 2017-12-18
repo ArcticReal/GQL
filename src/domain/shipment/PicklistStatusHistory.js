@@ -43,14 +43,14 @@ export {PicklistStatusHistoryType};
 
 const PicklistStatusHistoryInputType = new GraphQLInputObjectType({
   name: 'PicklistStatusHistoryInputType',
-  description: 'input type for PicklistStatusHistory in shipment',
+  description: 'input type for PicklistStatusHistory',
 
   fields: () => ({
+    changeDate: {type: GraphQLString},
+    changeUserLoginId: {type: GraphQLString},
     picklistId: {type: GraphQLString},
     statusId: {type: GraphQLString},
-    changeDate: {type: GraphQLString},
-    statusIdTo: {type: GraphQLString},
-    changeUserLoginId: {type: GraphQLString}
+    statusIdTo: {type: GraphQLString}
   })
 });
 

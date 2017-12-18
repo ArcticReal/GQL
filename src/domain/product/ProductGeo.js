@@ -37,13 +37,13 @@ export {ProductGeoType};
 
 const ProductGeoInputType = new GraphQLInputObjectType({
   name: 'ProductGeoInputType',
-  description: 'input type for ProductGeo in product',
+  description: 'input type for ProductGeo',
 
   fields: () => ({
-    productId: {type: GraphQLString},
-    geoId: {type: GraphQLString},
     description: {type: GraphQLString},
-    productGeoEnumId: {type: GraphQLString}
+    geoId: {type: GraphQLString},
+    productGeoEnumId: {type: GraphQLString},
+    productId: {type: GraphQLString}
   })
 });
 

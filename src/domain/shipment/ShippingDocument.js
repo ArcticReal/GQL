@@ -43,14 +43,14 @@ export {ShippingDocumentType};
 
 const ShippingDocumentInputType = new GraphQLInputObjectType({
   name: 'ShippingDocumentInputType',
-  description: 'input type for ShippingDocument in shipment',
+  description: 'input type for ShippingDocument',
 
   fields: () => ({
-    shipmentId: {type: GraphQLString},
     description: {type: GraphQLString},
     documentId: {type: GraphQLString},
-    shipmentPackageSeqId: {type: GraphQLString},
-    shipmentItemSeqId: {type: GraphQLString}
+    shipmentId: {type: GraphQLString},
+    shipmentItemSeqId: {type: GraphQLString},
+    shipmentPackageSeqId: {type: GraphQLString}
   })
 });
 

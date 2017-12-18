@@ -42,7 +42,7 @@ export {DesiredFeatureType};
 
 const DesiredFeatureInputType = new GraphQLInputObjectType({
   name: 'DesiredFeatureInputType',
-  description: 'input type for DesiredFeature in order',
+  description: 'input type for DesiredFeature',
 
   fields: () => ({
     desiredFeatureId: {type: GraphQLString},

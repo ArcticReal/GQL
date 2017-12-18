@@ -42,12 +42,12 @@ export {FacilityContentType};
 
 const FacilityContentInputType = new GraphQLInputObjectType({
   name: 'FacilityContentInputType',
-  description: 'input type for FacilityContent in product',
+  description: 'input type for FacilityContent',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    facilityId: {type: GraphQLString},
     contentId: {type: GraphQLString},
+    facilityId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

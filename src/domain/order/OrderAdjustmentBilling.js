@@ -42,7 +42,7 @@ export {OrderAdjustmentBillingType};
 
 const OrderAdjustmentBillingInputType = new GraphQLInputObjectType({
   name: 'OrderAdjustmentBillingInputType',
-  description: 'input type for OrderAdjustmentBilling in order',
+  description: 'input type for OrderAdjustmentBilling',
 
   fields: () => ({
     amount: {type: GraphQLFloat},

@@ -36,7 +36,7 @@ export {SupplierPrefOrderType};
 
 const SupplierPrefOrderInputType = new GraphQLInputObjectType({
   name: 'SupplierPrefOrderInputType',
-  description: 'input type for SupplierPrefOrder in product',
+  description: 'input type for SupplierPrefOrder',
 
   fields: () => ({
     description: {type: GraphQLString},

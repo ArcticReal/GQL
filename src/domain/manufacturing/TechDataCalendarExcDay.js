@@ -38,14 +38,14 @@ export {TechDataCalendarExcDayType};
 
 const TechDataCalendarExcDayInputType = new GraphQLInputObjectType({
   name: 'TechDataCalendarExcDayInputType',
-  description: 'input type for TechDataCalendarExcDay in manufacturing',
+  description: 'input type for TechDataCalendarExcDay',
 
   fields: () => ({
-    exceptionDateStartTime: {type: GraphQLString},
     calendarId: {type: GraphQLString},
+    description: {type: GraphQLString},
     exceptionCapacity: {type: GraphQLFloat},
-    usedCapacity: {type: GraphQLFloat},
-    description: {type: GraphQLString}
+    exceptionDateStartTime: {type: GraphQLString},
+    usedCapacity: {type: GraphQLFloat}
   })
 });
 

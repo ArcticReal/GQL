@@ -36,12 +36,12 @@ export {BillingAccountTermAttrType};
 
 const BillingAccountTermAttrInputType = new GraphQLInputObjectType({
   name: 'BillingAccountTermAttrInputType',
-  description: 'input type for BillingAccountTermAttr in accounting',
+  description: 'input type for BillingAccountTermAttr',
 
   fields: () => ({
-    billingAccountTermId: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     attrValue: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    billingAccountTermId: {type: GraphQLString}
   })
 });
 

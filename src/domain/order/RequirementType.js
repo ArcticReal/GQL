@@ -53,13 +53,13 @@ export {RequirementTypeType};
 
 const RequirementTypeInputType = new GraphQLInputObjectType({
   name: 'RequirementTypeInputType',
-  description: 'input type for RequirementType in order',
+  description: 'input type for RequirementType',
 
   fields: () => ({
-    requirementTypeId: {type: GraphQLString},
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    requirementTypeId: {type: GraphQLString}
   })
 });
 

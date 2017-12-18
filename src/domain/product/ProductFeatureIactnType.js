@@ -47,13 +47,13 @@ export {ProductFeatureIactnTypeType};
 
 const ProductFeatureIactnTypeInputType = new GraphQLInputObjectType({
   name: 'ProductFeatureIactnTypeInputType',
-  description: 'input type for ProductFeatureIactnType in product',
+  description: 'input type for ProductFeatureIactnType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    productFeatureIactnTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    productFeatureIactnTypeId: {type: GraphQLString}
   })
 });
 

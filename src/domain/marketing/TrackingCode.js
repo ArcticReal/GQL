@@ -75,28 +75,28 @@ export {TrackingCodeType};
 
 const TrackingCodeInputType = new GraphQLInputObjectType({
   name: 'TrackingCodeInputType',
-  description: 'input type for TrackingCode in marketing',
+  description: 'input type for TrackingCode',
 
   fields: () => ({
-    trackingCodeId: {type: GraphQLString},
-    trackableLifetime: {type: GraphQLInt},
-    redirectUrl: {type: GraphQLString},
-    comments: {type: GraphQLString},
-    marketingCampaignId: {type: GraphQLString},
-    lastModifiedDate: {type: GraphQLString},
-    overrideLogo: {type: GraphQLString},
-    groupId: {type: GraphQLString},
-    description: {type: GraphQLString},
     billableLifetime: {type: GraphQLInt},
-    thruDate: {type: GraphQLString},
-    subgroupId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    lastModifiedByUserLogin: {type: GraphQLString},
-    createdDate: {type: GraphQLString},
-    trackingCodeTypeId: {type: GraphQLString},
-    overrideCss: {type: GraphQLString},
+    comments: {type: GraphQLString},
     createdByUserLogin: {type: GraphQLString},
-    prodCatalogId: {type: GraphQLString}
+    createdDate: {type: GraphQLString},
+    description: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    groupId: {type: GraphQLString},
+    lastModifiedByUserLogin: {type: GraphQLString},
+    lastModifiedDate: {type: GraphQLString},
+    marketingCampaignId: {type: GraphQLString},
+    overrideCss: {type: GraphQLString},
+    overrideLogo: {type: GraphQLString},
+    prodCatalogId: {type: GraphQLString},
+    redirectUrl: {type: GraphQLString},
+    subgroupId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    trackableLifetime: {type: GraphQLInt},
+    trackingCodeId: {type: GraphQLString},
+    trackingCodeTypeId: {type: GraphQLString}
   })
 });
 

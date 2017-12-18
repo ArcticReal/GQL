@@ -46,12 +46,12 @@ export {WorkEffortPurposeTypeType};
 
 const WorkEffortPurposeTypeInputType = new GraphQLInputObjectType({
   name: 'WorkEffortPurposeTypeInputType',
-  description: 'input type for WorkEffortPurposeType in workeffort',
+  description: 'input type for WorkEffortPurposeType',
 
   fields: () => ({
+    description: {type: GraphQLString},
     parentTypeId: {type: GraphQLString},
-    workEffortPurposeTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    workEffortPurposeTypeId: {type: GraphQLString}
   })
 });
 

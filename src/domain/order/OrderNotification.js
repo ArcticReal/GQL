@@ -38,14 +38,14 @@ export {OrderNotificationType};
 
 const OrderNotificationInputType = new GraphQLInputObjectType({
   name: 'OrderNotificationInputType',
-  description: 'input type for OrderNotification in order',
+  description: 'input type for OrderNotification',
 
   fields: () => ({
-    orderNotificationId: {type: GraphQLString},
     comments: {type: GraphQLString},
-    orderId: {type: GraphQLString},
     emailType: {type: GraphQLString},
-    notificationDate: {type: GraphQLString}
+    notificationDate: {type: GraphQLString},
+    orderId: {type: GraphQLString},
+    orderNotificationId: {type: GraphQLString}
   })
 });
 

@@ -41,12 +41,12 @@ export {AgreementFacilityApplType};
 
 const AgreementFacilityApplInputType = new GraphQLInputObjectType({
   name: 'AgreementFacilityApplInputType',
-  description: 'input type for AgreementFacilityAppl in party',
+  description: 'input type for AgreementFacilityAppl',
 
   fields: () => ({
-    facilityId: {type: GraphQLString},
     agreementId: {type: GraphQLString},
-    agreementItemSeqId: {type: GraphQLString}
+    agreementItemSeqId: {type: GraphQLString},
+    facilityId: {type: GraphQLString}
   })
 });
 

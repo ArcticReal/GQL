@@ -49,16 +49,16 @@ export {TaxAuthorityAssocType};
 
 const TaxAuthorityAssocInputType = new GraphQLInputObjectType({
   name: 'TaxAuthorityAssocInputType',
-  description: 'input type for TaxAuthorityAssoc in accounting',
+  description: 'input type for TaxAuthorityAssoc',
 
   fields: () => ({
-    taxAuthPartyId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
-    taxAuthorityAssocTypeId: {type: GraphQLString},
     taxAuthGeoId: {type: GraphQLString},
-    toTaxAuthPartyId: {type: GraphQLString},
+    taxAuthPartyId: {type: GraphQLString},
+    taxAuthorityAssocTypeId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
     toTaxAuthGeoId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    toTaxAuthPartyId: {type: GraphQLString}
   })
 });
 

@@ -65,31 +65,31 @@ export {PartyAcctgPreferenceType};
 
 const PartyAcctgPreferenceInputType = new GraphQLInputObjectType({
   name: 'PartyAcctgPreferenceInputType',
-  description: 'input type for PartyAcctgPreference in accounting',
+  description: 'input type for PartyAcctgPreference',
 
   fields: () => ({
-    cogsMethodId: {type: GraphQLString},
-    oldInvoiceSequenceEnumId: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
     baseCurrencyUomId: {type: GraphQLString},
-    lastInvoiceRestartDate: {type: GraphQLString},
-    quoteSeqCustMethId: {type: GraphQLString},
-    lastQuoteNumber: {type: GraphQLInt},
+    cogsMethodId: {type: GraphQLString},
     errorGlJournalId: {type: GraphQLString},
-    orderIdPrefix: {type: GraphQLString},
     fiscalYearStartDay: {type: GraphQLInt},
-    oldQuoteSequenceEnumId: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
-    lastInvoiceNumber: {type: GraphQLInt},
-    taxFormId: {type: GraphQLString},
-    refundPaymentMethodId: {type: GraphQLString},
-    useInvoiceIdForReturns: {type: GraphQLBoolean},
-    invoiceIdPrefix: {type: GraphQLString},
-    lastOrderNumber: {type: GraphQLInt},
-    orderSeqCustMethId: {type: GraphQLString},
     fiscalYearStartMonth: {type: GraphQLInt},
+    invoiceIdPrefix: {type: GraphQLString},
+    invoiceSeqCustMethId: {type: GraphQLString},
+    lastInvoiceNumber: {type: GraphQLInt},
+    lastInvoiceRestartDate: {type: GraphQLString},
+    lastOrderNumber: {type: GraphQLInt},
+    lastQuoteNumber: {type: GraphQLInt},
+    oldInvoiceSequenceEnumId: {type: GraphQLString},
+    oldOrderSequenceEnumId: {type: GraphQLString},
+    oldQuoteSequenceEnumId: {type: GraphQLString},
+    orderIdPrefix: {type: GraphQLString},
+    orderSeqCustMethId: {type: GraphQLString},
     partyId: {type: GraphQLString},
     quoteIdPrefix: {type: GraphQLString},
-    oldOrderSequenceEnumId: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},
-    invoiceSeqCustMethId: {type: GraphQLString}
+    quoteSeqCustMethId: {type: GraphQLString},
+    refundPaymentMethodId: {type: GraphQLString},
+    taxFormId: {type: GraphQLString},
+    useInvoiceIdForReturns: {type: GraphQLBoolean}
   })
 });
 

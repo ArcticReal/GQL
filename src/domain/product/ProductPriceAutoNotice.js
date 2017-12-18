@@ -33,13 +33,13 @@ export {ProductPriceAutoNoticeType};
 
 const ProductPriceAutoNoticeInputType = new GraphQLInputObjectType({
   name: 'ProductPriceAutoNoticeInputType',
-  description: 'input type for ProductPriceAutoNotice in product',
+  description: 'input type for ProductPriceAutoNotice',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    runDate: {type: GraphQLString},
     facilityId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     productPriceNoticeId: {type: GraphQLString},
+    runDate: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

@@ -40,16 +40,16 @@ export {WebSitePathAliasType};
 
 const WebSitePathAliasInputType = new GraphQLInputObjectType({
   name: 'WebSitePathAliasInputType',
-  description: 'input type for WebSitePathAlias in content',
+  description: 'input type for WebSitePathAlias',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     aliasTo: {type: GraphQLString},
     contentId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     mapKey: {type: GraphQLString},
-    webSiteId: {type: GraphQLString},
     pathAlias: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    thruDate: {type: GraphQLString},
+    webSiteId: {type: GraphQLString}
   })
 });
 

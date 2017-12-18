@@ -43,14 +43,14 @@ export {WorkEffortContactMechType};
 
 const WorkEffortContactMechInputType = new GraphQLInputObjectType({
   name: 'WorkEffortContactMechInputType',
-  description: 'input type for WorkEffortContactMech in workeffort',
+  description: 'input type for WorkEffortContactMech',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
     comments: {type: GraphQLString},
     contactMechId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    fromDate: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

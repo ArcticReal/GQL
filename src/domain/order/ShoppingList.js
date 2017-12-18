@@ -116,28 +116,28 @@ export {ShoppingListType};
 
 const ShoppingListInputType = new GraphQLInputObjectType({
   name: 'ShoppingListInputType',
-  description: 'input type for ShoppingList in order',
+  description: 'input type for ShoppingList',
 
   fields: () => ({
-    recurrenceInfoId: {type: GraphQLString},
-    parentShoppingListId: {type: GraphQLString},
-    productPromoCodeId: {type: GraphQLString},
+    carrierPartyId: {type: GraphQLString},
+    carrierRoleTypeId: {type: GraphQLString},
+    contactMechId: {type: GraphQLString},
+    currencyUom: {type: GraphQLString},
     description: {type: GraphQLString},
     isActive: {type: GraphQLBoolean},
-    shoppingListTypeId: {type: GraphQLString},
-    contactMechId: {type: GraphQLString},
-    carrierPartyId: {type: GraphQLString},
-    shoppingListId: {type: GraphQLString},
-    currencyUom: {type: GraphQLString},
-    lastOrderedDate: {type: GraphQLString},
-    carrierRoleTypeId: {type: GraphQLString},
-    paymentMethodId: {type: GraphQLString},
     isPublic: {type: GraphQLBoolean},
-    productStoreId: {type: GraphQLString},
-    listName: {type: GraphQLString},
     lastAdminModified: {type: GraphQLString},
+    lastOrderedDate: {type: GraphQLString},
+    listName: {type: GraphQLString},
+    parentShoppingListId: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    paymentMethodId: {type: GraphQLString},
+    productPromoCodeId: {type: GraphQLString},
+    productStoreId: {type: GraphQLString},
+    recurrenceInfoId: {type: GraphQLString},
     shipmentMethodTypeId: {type: GraphQLString},
+    shoppingListId: {type: GraphQLString},
+    shoppingListTypeId: {type: GraphQLString},
     visitorId: {type: GraphQLString}
   })
 });

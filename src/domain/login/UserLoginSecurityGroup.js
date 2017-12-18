@@ -42,13 +42,13 @@ export {UserLoginSecurityGroupType};
 
 const UserLoginSecurityGroupInputType = new GraphQLInputObjectType({
   name: 'UserLoginSecurityGroupInputType',
-  description: 'input type for UserLoginSecurityGroup in login',
+  description: 'input type for UserLoginSecurityGroup',
 
   fields: () => ({
-    userLoginId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
     groupId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    thruDate: {type: GraphQLString},
+    userLoginId: {type: GraphQLString}
   })
 });
 

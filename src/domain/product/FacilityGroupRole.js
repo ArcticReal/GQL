@@ -41,12 +41,12 @@ export {FacilityGroupRoleType};
 
 const FacilityGroupRoleInputType = new GraphQLInputObjectType({
   name: 'FacilityGroupRoleInputType',
-  description: 'input type for FacilityGroupRole in product',
+  description: 'input type for FacilityGroupRole',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
     facilityGroupId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

@@ -50,13 +50,13 @@ export {PhysicalInventoryType};
 
 const PhysicalInventoryInputType = new GraphQLInputObjectType({
   name: 'PhysicalInventoryInputType',
-  description: 'input type for PhysicalInventory in product',
+  description: 'input type for PhysicalInventory',
 
   fields: () => ({
-    physicalInventoryId: {type: GraphQLString},
-    physicalInventoryDate: {type: GraphQLString},
     generalComments: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    physicalInventoryDate: {type: GraphQLString},
+    physicalInventoryId: {type: GraphQLString}
   })
 });
 

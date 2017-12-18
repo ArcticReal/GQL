@@ -44,14 +44,14 @@ export {FixedAssetStdCostType};
 
 const FixedAssetStdCostInputType = new GraphQLInputObjectType({
   name: 'FixedAssetStdCostInputType',
-  description: 'input type for FixedAssetStdCost in accounting',
+  description: 'input type for FixedAssetStdCost',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    amountUomId: {type: GraphQLString},
     amount: {type: GraphQLFloat},
-    fixedAssetStdCostTypeId: {type: GraphQLString},
+    amountUomId: {type: GraphQLString},
     fixedAssetId: {type: GraphQLString},
+    fixedAssetStdCostTypeId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

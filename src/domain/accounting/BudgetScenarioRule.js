@@ -42,13 +42,13 @@ export {BudgetScenarioRuleType};
 
 const BudgetScenarioRuleInputType = new GraphQLInputObjectType({
   name: 'BudgetScenarioRuleInputType',
-  description: 'input type for BudgetScenarioRule in accounting',
+  description: 'input type for BudgetScenarioRule',
 
   fields: () => ({
     amountChange: {type: GraphQLFloat},
-    percentageChange: {type: GraphQLFloat},
+    budgetItemTypeId: {type: GraphQLString},
     budgetScenarioId: {type: GraphQLString},
-    budgetItemTypeId: {type: GraphQLString}
+    percentageChange: {type: GraphQLFloat}
   })
 });
 

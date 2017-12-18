@@ -43,19 +43,19 @@ export {UnemploymentClaimType};
 
 const UnemploymentClaimInputType = new GraphQLInputObjectType({
   name: 'UnemploymentClaimInputType',
-  description: 'input type for UnemploymentClaim in humanres',
+  description: 'input type for UnemploymentClaim',
 
   fields: () => ({
-    roleTypeIdTo: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    unemploymentClaimId: {type: GraphQLString},
-    partyIdFrom: {type: GraphQLString},
-    statusId: {type: GraphQLString},
     description: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    partyIdFrom: {type: GraphQLString},
     partyIdTo: {type: GraphQLString},
     roleTypeIdFrom: {type: GraphQLString},
+    roleTypeIdTo: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
     unemploymentClaimDate: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    unemploymentClaimId: {type: GraphQLString}
   })
 });
 

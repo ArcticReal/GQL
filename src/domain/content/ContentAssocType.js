@@ -36,7 +36,7 @@ export {ContentAssocTypeType};
 
 const ContentAssocTypeInputType = new GraphQLInputObjectType({
   name: 'ContentAssocTypeInputType',
-  description: 'input type for ContentAssocType in content',
+  description: 'input type for ContentAssocType',
 
   fields: () => ({
     contentAssocTypeId: {type: GraphQLString},

@@ -30,11 +30,11 @@ export {SaleTypeType};
 
 const SaleTypeInputType = new GraphQLInputObjectType({
   name: 'SaleTypeInputType',
-  description: 'input type for SaleType in product',
+  description: 'input type for SaleType',
 
   fields: () => ({
-    saleTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    saleTypeId: {type: GraphQLString}
   })
 });
 

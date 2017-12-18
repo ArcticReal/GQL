@@ -83,30 +83,30 @@ export {ProductPriceType};
 
 const ProductPriceInputType = new GraphQLInputObjectType({
   name: 'ProductPriceInputType',
-  description: 'input type for ProductPrice in product',
+  description: 'input type for ProductPrice',
 
   fields: () => ({
-    taxInPrice: {type: GraphQLBoolean},
-    termUomId: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    lastModifiedDate: {type: GraphQLString},
-    priceWithTax: {type: GraphQLFloat},
-    taxPercentage: {type: GraphQLFloat},
-    productStoreGroupId: {type: GraphQLString},
-    thruDate: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    taxAuthPartyId: {type: GraphQLString},
-    lastModifiedByUserLogin: {type: GraphQLString},
-    currencyUomId: {type: GraphQLString},
-    createdDate: {type: GraphQLString},
-    customPriceCalcService: {type: GraphQLString},
-    price: {type: GraphQLFloat},
-    priceWithoutTax: {type: GraphQLFloat},
-    taxAuthGeoId: {type: GraphQLString},
-    productPricePurposeId: {type: GraphQLString},
-    taxAmount: {type: GraphQLFloat},
     createdByUserLogin: {type: GraphQLString},
-    productPriceTypeId: {type: GraphQLString}
+    createdDate: {type: GraphQLString},
+    currencyUomId: {type: GraphQLString},
+    customPriceCalcService: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    lastModifiedByUserLogin: {type: GraphQLString},
+    lastModifiedDate: {type: GraphQLString},
+    price: {type: GraphQLFloat},
+    priceWithTax: {type: GraphQLFloat},
+    priceWithoutTax: {type: GraphQLFloat},
+    productId: {type: GraphQLString},
+    productPricePurposeId: {type: GraphQLString},
+    productPriceTypeId: {type: GraphQLString},
+    productStoreGroupId: {type: GraphQLString},
+    taxAmount: {type: GraphQLFloat},
+    taxAuthGeoId: {type: GraphQLString},
+    taxAuthPartyId: {type: GraphQLString},
+    taxInPrice: {type: GraphQLBoolean},
+    taxPercentage: {type: GraphQLFloat},
+    termUomId: {type: GraphQLString},
+    thruDate: {type: GraphQLString}
   })
 });
 

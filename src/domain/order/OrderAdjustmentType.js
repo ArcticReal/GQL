@@ -65,13 +65,13 @@ export {OrderAdjustmentTypeType};
 
 const OrderAdjustmentTypeInputType = new GraphQLInputObjectType({
   name: 'OrderAdjustmentTypeInputType',
-  description: 'input type for OrderAdjustmentType in order',
+  description: 'input type for OrderAdjustmentType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
     orderAdjustmentTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString}
   })
 });
 

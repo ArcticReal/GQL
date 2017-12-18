@@ -36,12 +36,12 @@ export {ContactMechTypeAttrType};
 
 const ContactMechTypeAttrInputType = new GraphQLInputObjectType({
   name: 'ContactMechTypeAttrInputType',
-  description: 'input type for ContactMechTypeAttr in party',
+  description: 'input type for ContactMechTypeAttr',
 
   fields: () => ({
-    description: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     contactMechTypeId: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    description: {type: GraphQLString}
   })
 });
 

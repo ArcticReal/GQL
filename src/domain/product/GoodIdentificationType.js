@@ -47,13 +47,13 @@ export {GoodIdentificationTypeType};
 
 const GoodIdentificationTypeInputType = new GraphQLInputObjectType({
   name: 'GoodIdentificationTypeInputType',
-  description: 'input type for GoodIdentificationType in product',
+  description: 'input type for GoodIdentificationType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
     goodIdentificationTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

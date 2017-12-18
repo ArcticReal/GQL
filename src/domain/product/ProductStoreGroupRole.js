@@ -41,12 +41,12 @@ export {ProductStoreGroupRoleType};
 
 const ProductStoreGroupRoleInputType = new GraphQLInputObjectType({
   name: 'ProductStoreGroupRoleInputType',
-  description: 'input type for ProductStoreGroupRole in product',
+  description: 'input type for ProductStoreGroupRole',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    productStoreGroupId: {type: GraphQLString}
+    productStoreGroupId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

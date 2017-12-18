@@ -42,13 +42,13 @@ export {DeductionType};
 
 const DeductionInputType = new GraphQLInputObjectType({
   name: 'DeductionInputType',
-  description: 'input type for Deduction in accounting',
+  description: 'input type for Deduction',
 
   fields: () => ({
     amount: {type: GraphQLFloat},
-    paymentId: {type: GraphQLString},
+    deductionId: {type: GraphQLString},
     deductionTypeId: {type: GraphQLString},
-    deductionId: {type: GraphQLString}
+    paymentId: {type: GraphQLString}
   })
 });
 

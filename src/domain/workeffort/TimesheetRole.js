@@ -41,12 +41,12 @@ export {TimesheetRoleType};
 
 const TimesheetRoleInputType = new GraphQLInputObjectType({
   name: 'TimesheetRoleInputType',
-  description: 'input type for TimesheetRole in workeffort',
+  description: 'input type for TimesheetRole',
 
   fields: () => ({
-    timesheetId: {type: GraphQLString},
+    partyId: {type: GraphQLString},
     roleTypeId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    timesheetId: {type: GraphQLString}
   })
 });
 

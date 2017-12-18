@@ -51,27 +51,27 @@ export {PaymentGatewayCyberSourceType};
 
 const PaymentGatewayCyberSourceInputType = new GraphQLInputObjectType({
   name: 'PaymentGatewayCyberSourceInputType',
-  description: 'input type for PaymentGatewayCyberSource in accounting',
+  description: 'input type for PaymentGatewayCyberSource',
 
   fields: () => ({
-    fraudScore: {type: GraphQLBoolean},
-    paymentGatewayConfigId: {type: GraphQLString},
-    production: {type: GraphQLString},
-    keysDir: {type: GraphQLString},
-    merchantContact: {type: GraphQLString},
-    autoBill: {type: GraphQLString},
-    enableDav: {type: GraphQLBoolean},
     apiVersion: {type: GraphQLString},
+    autoBill: {type: GraphQLString},
+    avsDeclineCodes: {type: GraphQLString},
+    disableBillAvs: {type: GraphQLBoolean},
+    enableDav: {type: GraphQLBoolean},
+    fraudScore: {type: GraphQLBoolean},
+    ignoreAvs: {type: GraphQLString},
+    keysDir: {type: GraphQLString},
     keysFile: {type: GraphQLString},
-    merchantDescr: {type: GraphQLString},
+    logDir: {type: GraphQLString},
     logEnabled: {type: GraphQLString},
-    merchantId: {type: GraphQLString},
     logFile: {type: GraphQLString},
     logSize: {type: GraphQLInt},
-    ignoreAvs: {type: GraphQLString},
-    disableBillAvs: {type: GraphQLBoolean},
-    logDir: {type: GraphQLString},
-    avsDeclineCodes: {type: GraphQLString}
+    merchantContact: {type: GraphQLString},
+    merchantDescr: {type: GraphQLString},
+    merchantId: {type: GraphQLString},
+    paymentGatewayConfigId: {type: GraphQLString},
+    production: {type: GraphQLString}
   })
 });
 

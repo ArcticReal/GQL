@@ -60,14 +60,14 @@ export {SubscriptionResourceType};
 
 const SubscriptionResourceInputType = new GraphQLInputObjectType({
   name: 'SubscriptionResourceInputType',
-  description: 'input type for SubscriptionResource in product',
+  description: 'input type for SubscriptionResource',
 
   fields: () => ({
-    serviceNameOnExpiry: {type: GraphQLString},
-    subscriptionResourceId: {type: GraphQLString},
     contentId: {type: GraphQLString},
     description: {type: GraphQLString},
     parentResourceId: {type: GraphQLString},
+    serviceNameOnExpiry: {type: GraphQLString},
+    subscriptionResourceId: {type: GraphQLString},
     webSiteId: {type: GraphQLString}
   })
 });

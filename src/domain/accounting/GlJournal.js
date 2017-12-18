@@ -50,13 +50,13 @@ export {GlJournalType};
 
 const GlJournalInputType = new GraphQLInputObjectType({
   name: 'GlJournalInputType',
-  description: 'input type for GlJournal in accounting',
+  description: 'input type for GlJournal',
 
   fields: () => ({
-    isPosted: {type: GraphQLBoolean},
-    glJournalName: {type: GraphQLString},
-    organizationPartyId: {type: GraphQLString},
     glJournalId: {type: GraphQLString},
+    glJournalName: {type: GraphQLString},
+    isPosted: {type: GraphQLBoolean},
+    organizationPartyId: {type: GraphQLString},
     postedDate: {type: GraphQLString}
   })
 });

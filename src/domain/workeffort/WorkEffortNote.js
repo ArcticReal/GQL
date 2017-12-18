@@ -36,12 +36,12 @@ export {WorkEffortNoteType};
 
 const WorkEffortNoteInputType = new GraphQLInputObjectType({
   name: 'WorkEffortNoteInputType',
-  description: 'input type for WorkEffortNote in workeffort',
+  description: 'input type for WorkEffortNote',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
     internalNote: {type: GraphQLBoolean},
-    noteId: {type: GraphQLString}
+    noteId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

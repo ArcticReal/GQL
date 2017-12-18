@@ -36,12 +36,12 @@ export {ProductCategoryTypeAttrType};
 
 const ProductCategoryTypeAttrInputType = new GraphQLInputObjectType({
   name: 'ProductCategoryTypeAttrInputType',
-  description: 'input type for ProductCategoryTypeAttr in product',
+  description: 'input type for ProductCategoryTypeAttr',
 
   fields: () => ({
-    productCategoryTypeId: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     description: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    productCategoryTypeId: {type: GraphQLString}
   })
 });
 

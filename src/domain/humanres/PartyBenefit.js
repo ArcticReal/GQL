@@ -53,19 +53,19 @@ export {PartyBenefitType};
 
 const PartyBenefitInputType = new GraphQLInputObjectType({
   name: 'PartyBenefitInputType',
-  description: 'input type for PartyBenefit in humanres',
+  description: 'input type for PartyBenefit',
 
   fields: () => ({
-    roleTypeIdTo: {type: GraphQLString},
+    actualEmployerPaidPercent: {type: GraphQLFloat},
+    availableTime: {type: GraphQLInt},
+    benefitTypeId: {type: GraphQLString},
+    cost: {type: GraphQLFloat},
     fromDate: {type: GraphQLString},
     partyIdFrom: {type: GraphQLString},
-    availableTime: {type: GraphQLInt},
-    cost: {type: GraphQLFloat},
-    actualEmployerPaidPercent: {type: GraphQLFloat},
-    benefitTypeId: {type: GraphQLString},
-    periodTypeId: {type: GraphQLString},
     partyIdTo: {type: GraphQLString},
+    periodTypeId: {type: GraphQLString},
     roleTypeIdFrom: {type: GraphQLString},
+    roleTypeIdTo: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

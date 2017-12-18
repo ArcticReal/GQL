@@ -41,12 +41,12 @@ export {OrderItemGroupOrderType};
 
 const OrderItemGroupOrderInputType = new GraphQLInputObjectType({
   name: 'OrderItemGroupOrderInputType',
-  description: 'input type for OrderItemGroupOrder in order',
+  description: 'input type for OrderItemGroupOrder',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
     groupOrderId: {type: GraphQLString},
-    orderId: {type: GraphQLString}
+    orderId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString}
   })
 });
 

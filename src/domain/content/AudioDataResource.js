@@ -35,10 +35,10 @@ export {AudioDataResourceType};
 
 const AudioDataResourceInputType = new GraphQLInputObjectType({
   name: 'AudioDataResourceInputType',
-  description: 'input type for AudioDataResource in content',
+  description: 'input type for AudioDataResource',
 
   fields: () => ({
-    audioData: {type: GraphQLString/*this was a byte Array TODO find a solution*/},
+    audioData: {type: new GraphQLList(GraphQLString)},
     dataResourceId: {type: GraphQLString}
   })
 });

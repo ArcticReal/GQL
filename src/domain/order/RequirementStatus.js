@@ -42,13 +42,13 @@ export {RequirementStatusType};
 
 const RequirementStatusInputType = new GraphQLInputObjectType({
   name: 'RequirementStatusInputType',
-  description: 'input type for RequirementStatus in order',
+  description: 'input type for RequirementStatus',
 
   fields: () => ({
-    statusDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    changeByUserLoginId: {type: GraphQLString},
     requirementId: {type: GraphQLString},
-    changeByUserLoginId: {type: GraphQLString}
+    statusDate: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

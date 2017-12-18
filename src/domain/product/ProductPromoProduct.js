@@ -44,15 +44,15 @@ export {ProductPromoProductType};
 
 const ProductPromoProductInputType = new GraphQLInputObjectType({
   name: 'ProductPromoProductInputType',
-  description: 'input type for ProductPromoProduct in product',
+  description: 'input type for ProductPromoProduct',
 
   fields: () => ({
     productId: {type: GraphQLString},
     productPromoActionSeqId: {type: GraphQLString},
-    productPromoRuleId: {type: GraphQLString},
     productPromoApplEnumId: {type: GraphQLString},
+    productPromoCondSeqId: {type: GraphQLString},
     productPromoId: {type: GraphQLString},
-    productPromoCondSeqId: {type: GraphQLString}
+    productPromoRuleId: {type: GraphQLString}
   })
 });
 

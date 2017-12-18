@@ -41,12 +41,12 @@ export {RequirementCustRequestType};
 
 const RequirementCustRequestInputType = new GraphQLInputObjectType({
   name: 'RequirementCustRequestInputType',
-  description: 'input type for RequirementCustRequest in order',
+  description: 'input type for RequirementCustRequest',
 
   fields: () => ({
     custRequestId: {type: GraphQLString},
-    requirementId: {type: GraphQLString},
-    custRequestItemSeqId: {type: GraphQLString}
+    custRequestItemSeqId: {type: GraphQLString},
+    requirementId: {type: GraphQLString}
   })
 });
 

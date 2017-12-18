@@ -109,25 +109,25 @@ export {ShipmentReceiptType};
 
 const ShipmentReceiptInputType = new GraphQLInputObjectType({
   name: 'ShipmentReceiptInputType',
-  description: 'input type for ShipmentReceipt in shipment',
+  description: 'input type for ShipmentReceipt',
 
   fields: () => ({
+    datetimeReceived: {type: GraphQLString},
+    inventoryItemId: {type: GraphQLString},
+    itemDescription: {type: GraphQLString},
+    orderId: {type: GraphQLString},
     orderItemSeqId: {type: GraphQLString},
     productId: {type: GraphQLString},
-    orderId: {type: GraphQLString},
     quantityAccepted: {type: GraphQLFloat},
-    shipmentPackageSeqId: {type: GraphQLString},
-    shipmentItemSeqId: {type: GraphQLString},
     quantityRejected: {type: GraphQLFloat},
-    inventoryItemId: {type: GraphQLString},
-    rejectionId: {type: GraphQLString},
-    shipmentId: {type: GraphQLString},
+    receiptId: {type: GraphQLString},
     receivedByUserLoginId: {type: GraphQLString},
+    rejectionId: {type: GraphQLString},
     returnId: {type: GraphQLString},
     returnItemSeqId: {type: GraphQLString},
-    datetimeReceived: {type: GraphQLString},
-    itemDescription: {type: GraphQLString},
-    receiptId: {type: GraphQLString}
+    shipmentId: {type: GraphQLString},
+    shipmentItemSeqId: {type: GraphQLString},
+    shipmentPackageSeqId: {type: GraphQLString}
   })
 });
 

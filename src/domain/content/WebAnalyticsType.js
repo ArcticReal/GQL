@@ -41,12 +41,12 @@ export {WebAnalyticsTypeType};
 
 const WebAnalyticsTypeInputType = new GraphQLInputObjectType({
   name: 'WebAnalyticsTypeInputType',
-  description: 'input type for WebAnalyticsType in content',
+  description: 'input type for WebAnalyticsType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString},
     webAnalyticsTypeId: {type: GraphQLString}
   })
 });

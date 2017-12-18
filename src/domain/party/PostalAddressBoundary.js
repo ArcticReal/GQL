@@ -35,11 +35,11 @@ export {PostalAddressBoundaryType};
 
 const PostalAddressBoundaryInputType = new GraphQLInputObjectType({
   name: 'PostalAddressBoundaryInputType',
-  description: 'input type for PostalAddressBoundary in party',
+  description: 'input type for PostalAddressBoundary',
 
   fields: () => ({
-    geoId: {type: GraphQLString},
-    contactMechId: {type: GraphQLString}
+    contactMechId: {type: GraphQLString},
+    geoId: {type: GraphQLString}
   })
 });
 

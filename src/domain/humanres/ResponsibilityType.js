@@ -53,13 +53,13 @@ export {ResponsibilityTypeType};
 
 const ResponsibilityTypeInputType = new GraphQLInputObjectType({
   name: 'ResponsibilityTypeInputType',
-  description: 'input type for ResponsibilityType in humanres',
+  description: 'input type for ResponsibilityType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    responsibilityTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    responsibilityTypeId: {type: GraphQLString}
   })
 });
 

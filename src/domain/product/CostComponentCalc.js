@@ -64,18 +64,18 @@ export {CostComponentCalcType};
 
 const CostComponentCalcInputType = new GraphQLInputObjectType({
   name: 'CostComponentCalcInputType',
-  description: 'input type for CostComponentCalc in product',
+  description: 'input type for CostComponentCalc',
 
   fields: () => ({
+    costComponentCalcId: {type: GraphQLString},
     costCustomMethodId: {type: GraphQLString},
-    currencyUomId: {type: GraphQLString},
-    variableCost: {type: GraphQLFloat},
     costGlAccountTypeId: {type: GraphQLString},
-    fixedCost: {type: GraphQLFloat},
+    currencyUomId: {type: GraphQLString},
     description: {type: GraphQLString},
+    fixedCost: {type: GraphQLFloat},
     offsettingGlAccountTypeId: {type: GraphQLString},
     perMilliSecond: {type: GraphQLInt},
-    costComponentCalcId: {type: GraphQLString}
+    variableCost: {type: GraphQLFloat}
   })
 });
 

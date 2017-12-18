@@ -77,14 +77,14 @@ export {InvoiceItemTypeType};
 
 const InvoiceItemTypeInputType = new GraphQLInputObjectType({
   name: 'InvoiceItemTypeInputType',
-  description: 'input type for InvoiceItemType in accounting',
+  description: 'input type for InvoiceItemType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
     defaultGlAccountId: {type: GraphQLString},
     description: {type: GraphQLString},
-    invoiceItemTypeId: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    invoiceItemTypeId: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

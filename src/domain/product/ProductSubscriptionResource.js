@@ -72,33 +72,28 @@ export {ProductSubscriptionResourceType};
 
 const ProductSubscriptionResourceInputType = new GraphQLInputObjectType({
   name: 'ProductSubscriptionResourceInputType',
-  description: 'input type for ProductSubscriptionResource in product',
+  description: 'input type for ProductSubscriptionResource',
 
   fields: () => ({
-    purchaseFromDate: {type: GraphQLString},
-    maxLifeTimeUomId: {type: GraphQLString},
-    useTimeUomId: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    subscriptionResourceId: {type: GraphQLString},
-    canclAutmExtTimeUomId: {type: GraphQLString},
-    useCountLimit: {type: GraphQLInt},
-    availableTimeUomId: {type: GraphQLString},
-    allowProductStoreChange: {type: GraphQLBoolean},
-    thruDate: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    canclAutmExtTime: {type: GraphQLInt},
-    gracePeriodOnExpiryUomId: {type: GraphQLString},
-    isDefault: {type: GraphQLBoolean},
-    availableTime: {type: GraphQLInt},
-    displayMaintenancePage: {type: GraphQLBoolean},
     automaticExtend: {type: GraphQLBoolean},
-    useRoleTypeId: {type: GraphQLString},
-    maxLifeTime: {type: GraphQLInt},
-    useTime: {type: GraphQLInt},
-    purchaseThruDate: {type: GraphQLString},
-    productStoreId: {type: GraphQLString},
+    availableTime: {type: GraphQLInt},
+    availableTimeUomId: {type: GraphQLString},
+    canclAutmExtTime: {type: GraphQLInt},
+    canclAutmExtTimeUomId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     gracePeriodOnExpiry: {type: GraphQLInt},
-    hostedPathAlias: {type: GraphQLString}
+    gracePeriodOnExpiryUomId: {type: GraphQLString},
+    maxLifeTime: {type: GraphQLInt},
+    maxLifeTimeUomId: {type: GraphQLString},
+    productId: {type: GraphQLString},
+    purchaseFromDate: {type: GraphQLString},
+    purchaseThruDate: {type: GraphQLString},
+    subscriptionResourceId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    useCountLimit: {type: GraphQLInt},
+    useRoleTypeId: {type: GraphQLString},
+    useTime: {type: GraphQLInt},
+    useTimeUomId: {type: GraphQLString}
   })
 });
 

@@ -38,14 +38,14 @@ export {ProductAttributeType};
 
 const ProductAttributeInputType = new GraphQLInputObjectType({
   name: 'ProductAttributeInputType',
-  description: 'input type for ProductAttribute in product',
+  description: 'input type for ProductAttribute',
 
   fields: () => ({
-    productId: {type: GraphQLString},
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString},
-    attrType: {type: GraphQLString}
+    attrType: {type: GraphQLString},
+    attrValue: {type: GraphQLString},
+    productId: {type: GraphQLString}
   })
 });
 

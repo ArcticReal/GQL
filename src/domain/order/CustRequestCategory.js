@@ -42,12 +42,12 @@ export {CustRequestCategoryType};
 
 const CustRequestCategoryInputType = new GraphQLInputObjectType({
   name: 'CustRequestCategoryInputType',
-  description: 'input type for CustRequestCategory in order',
+  description: 'input type for CustRequestCategory',
 
   fields: () => ({
-    description: {type: GraphQLString},
+    custRequestCategoryId: {type: GraphQLString},
     custRequestTypeId: {type: GraphQLString},
-    custRequestCategoryId: {type: GraphQLString}
+    description: {type: GraphQLString}
   })
 });
 

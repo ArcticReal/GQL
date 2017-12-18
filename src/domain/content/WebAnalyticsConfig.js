@@ -31,7 +31,7 @@ export {WebAnalyticsConfigType};
 
 const WebAnalyticsConfigInputType = new GraphQLInputObjectType({
   name: 'WebAnalyticsConfigInputType',
-  description: 'input type for WebAnalyticsConfig in content',
+  description: 'input type for WebAnalyticsConfig',
 
   fields: () => ({
     webAnalyticsCode: {type: GraphQLString},

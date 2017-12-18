@@ -36,11 +36,11 @@ export {QuoteCoefficientType};
 
 const QuoteCoefficientInputType = new GraphQLInputObjectType({
   name: 'QuoteCoefficientInputType',
-  description: 'input type for QuoteCoefficient in order',
+  description: 'input type for QuoteCoefficient',
 
   fields: () => ({
-    coeffValue: {type: GraphQLFloat},
     coeffName: {type: GraphQLString},
+    coeffValue: {type: GraphQLFloat},
     quoteId: {type: GraphQLString}
   })
 });

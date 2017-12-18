@@ -36,12 +36,12 @@ export {OrderAdjustmentTypeAttrType};
 
 const OrderAdjustmentTypeAttrInputType = new GraphQLInputObjectType({
   name: 'OrderAdjustmentTypeAttrInputType',
-  description: 'input type for OrderAdjustmentTypeAttr in order',
+  description: 'input type for OrderAdjustmentTypeAttr',
 
   fields: () => ({
-    orderAdjustmentTypeId: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     description: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    orderAdjustmentTypeId: {type: GraphQLString}
   })
 });
 

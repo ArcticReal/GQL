@@ -60,16 +60,16 @@ export {ContactListCommStatusType};
 
 const ContactListCommStatusInputType = new GraphQLInputObjectType({
   name: 'ContactListCommStatusInputType',
-  description: 'input type for ContactListCommStatus in marketing',
+  description: 'input type for ContactListCommStatus',
 
   fields: () => ({
-    statusId: {type: GraphQLString},
-    contactListId: {type: GraphQLString},
+    changeByUserLoginId: {type: GraphQLString},
     communicationEventId: {type: GraphQLString},
+    contactListId: {type: GraphQLString},
+    contactMechId: {type: GraphQLString},
     messageId: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    contactMechId: {type: GraphQLString},
-    changeByUserLoginId: {type: GraphQLString}
+    statusId: {type: GraphQLString}
   })
 });
 

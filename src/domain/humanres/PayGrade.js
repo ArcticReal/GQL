@@ -43,12 +43,12 @@ export {PayGradeType};
 
 const PayGradeInputType = new GraphQLInputObjectType({
   name: 'PayGradeInputType',
-  description: 'input type for PayGrade in humanres',
+  description: 'input type for PayGrade',
 
   fields: () => ({
     comments: {type: GraphQLString},
-    payGradeName: {type: GraphQLString},
-    payGradeId: {type: GraphQLString}
+    payGradeId: {type: GraphQLString},
+    payGradeName: {type: GraphQLString}
   })
 });
 

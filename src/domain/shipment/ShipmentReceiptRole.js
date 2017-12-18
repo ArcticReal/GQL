@@ -41,12 +41,12 @@ export {ShipmentReceiptRoleType};
 
 const ShipmentReceiptRoleInputType = new GraphQLInputObjectType({
   name: 'ShipmentReceiptRoleInputType',
-  description: 'input type for ShipmentReceiptRole in shipment',
+  description: 'input type for ShipmentReceiptRole',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    receiptId: {type: GraphQLString}
+    receiptId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

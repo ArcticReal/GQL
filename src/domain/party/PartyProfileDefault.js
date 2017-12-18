@@ -44,15 +44,15 @@ export {PartyProfileDefaultType};
 
 const PartyProfileDefaultInputType = new GraphQLInputObjectType({
   name: 'PartyProfileDefaultInputType',
-  description: 'input type for PartyProfileDefault in party',
+  description: 'input type for PartyProfileDefault',
 
   fields: () => ({
+    defaultBillAddr: {type: GraphQLString},
     defaultPayMeth: {type: GraphQLString},
     defaultShipAddr: {type: GraphQLString},
     defaultShipMeth: {type: GraphQLString},
-    productStoreId: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    defaultBillAddr: {type: GraphQLString}
+    productStoreId: {type: GraphQLString}
   })
 });
 

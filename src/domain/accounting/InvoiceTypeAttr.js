@@ -36,12 +36,12 @@ export {InvoiceTypeAttrType};
 
 const InvoiceTypeAttrInputType = new GraphQLInputObjectType({
   name: 'InvoiceTypeAttrInputType',
-  description: 'input type for InvoiceTypeAttr in accounting',
+  description: 'input type for InvoiceTypeAttr',
 
   fields: () => ({
-    invoiceTypeId: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     description: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    invoiceTypeId: {type: GraphQLString}
   })
 });
 

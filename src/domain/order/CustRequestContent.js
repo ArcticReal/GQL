@@ -42,12 +42,12 @@ export {CustRequestContentType};
 
 const CustRequestContentInputType = new GraphQLInputObjectType({
   name: 'CustRequestContentInputType',
-  description: 'input type for CustRequestContent in order',
+  description: 'input type for CustRequestContent',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     contentId: {type: GraphQLString},
     custRequestId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

@@ -47,13 +47,13 @@ export {EmplLeaveReasonTypeType};
 
 const EmplLeaveReasonTypeInputType = new GraphQLInputObjectType({
   name: 'EmplLeaveReasonTypeInputType',
-  description: 'input type for EmplLeaveReasonType in humanres',
+  description: 'input type for EmplLeaveReasonType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     emplLeaveReasonTypeId: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString}
   })
 });
 

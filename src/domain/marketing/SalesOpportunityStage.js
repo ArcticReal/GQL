@@ -32,13 +32,13 @@ export {SalesOpportunityStageType};
 
 const SalesOpportunityStageInputType = new GraphQLInputObjectType({
   name: 'SalesOpportunityStageInputType',
-  description: 'input type for SalesOpportunityStage in marketing',
+  description: 'input type for SalesOpportunityStage',
 
   fields: () => ({
-    sequenceNum: {type: GraphQLInt},
     defaultProbability: {type: GraphQLFloat},
     description: {type: GraphQLString},
-    opportunityStageId: {type: GraphQLString}
+    opportunityStageId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt}
   })
 });
 

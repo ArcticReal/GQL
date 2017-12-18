@@ -52,11 +52,11 @@ export {ProductMaintTypeType};
 
 const ProductMaintTypeInputType = new GraphQLInputObjectType({
   name: 'ProductMaintTypeInputType',
-  description: 'input type for ProductMaintType in product',
+  description: 'input type for ProductMaintType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
     productMaintTypeId: {type: GraphQLString}
   })
 });

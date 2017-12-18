@@ -52,11 +52,11 @@ export {ReturnHeaderTypeType};
 
 const ReturnHeaderTypeInputType = new GraphQLInputObjectType({
   name: 'ReturnHeaderTypeInputType',
-  description: 'input type for ReturnHeaderType in order',
+  description: 'input type for ReturnHeaderType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
+    parentTypeId: {type: GraphQLString},
     returnHeaderTypeId: {type: GraphQLString}
   })
 });

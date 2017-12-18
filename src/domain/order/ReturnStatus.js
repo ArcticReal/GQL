@@ -44,15 +44,15 @@ export {ReturnStatusType};
 
 const ReturnStatusInputType = new GraphQLInputObjectType({
   name: 'ReturnStatusInputType',
-  description: 'input type for ReturnStatus in order',
+  description: 'input type for ReturnStatus',
 
   fields: () => ({
-    statusId: {type: GraphQLString},
-    returnStatusId: {type: GraphQLString},
+    changeByUserLoginId: {type: GraphQLString},
     returnId: {type: GraphQLString},
     returnItemSeqId: {type: GraphQLString},
-    changeByUserLoginId: {type: GraphQLString},
-    statusDatetime: {type: GraphQLString}
+    returnStatusId: {type: GraphQLString},
+    statusDatetime: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

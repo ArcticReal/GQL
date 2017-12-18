@@ -36,7 +36,7 @@ export {PaymentGatewayRespMsgType};
 
 const PaymentGatewayRespMsgInputType = new GraphQLInputObjectType({
   name: 'PaymentGatewayRespMsgInputType',
-  description: 'input type for PaymentGatewayRespMsg in accounting',
+  description: 'input type for PaymentGatewayRespMsg',
 
   fields: () => ({
     paymentGatewayRespMsgId: {type: GraphQLString},

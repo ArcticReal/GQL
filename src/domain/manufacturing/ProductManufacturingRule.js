@@ -62,20 +62,20 @@ export {ProductManufacturingRuleType};
 
 const ProductManufacturingRuleInputType = new GraphQLInputObjectType({
   name: 'ProductManufacturingRuleInputType',
-  description: 'input type for ProductManufacturingRule in manufacturing',
+  description: 'input type for ProductManufacturingRule',
 
   fields: () => ({
-    ruleSeqId: {type: GraphQLString},
+    description: {type: GraphQLString},
     fromDate: {type: GraphQLString},
-    ruleOperator: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
+    productFeature: {type: GraphQLString},
     productId: {type: GraphQLString},
     productIdFor: {type: GraphQLString},
-    productIdInSubst: {type: GraphQLString},
-    description: {type: GraphQLString},
-    ruleId: {type: GraphQLString},
     productIdIn: {type: GraphQLString},
-    productFeature: {type: GraphQLString},
+    productIdInSubst: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
+    ruleId: {type: GraphQLString},
+    ruleOperator: {type: GraphQLString},
+    ruleSeqId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

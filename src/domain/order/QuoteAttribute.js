@@ -37,13 +37,13 @@ export {QuoteAttributeType};
 
 const QuoteAttributeInputType = new GraphQLInputObjectType({
   name: 'QuoteAttributeInputType',
-  description: 'input type for QuoteAttribute in order',
+  description: 'input type for QuoteAttribute',
 
   fields: () => ({
     attrDescription: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     attrValue: {type: GraphQLString},
-    quoteId: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    quoteId: {type: GraphQLString}
   })
 });
 

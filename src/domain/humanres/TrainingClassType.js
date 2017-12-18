@@ -47,12 +47,12 @@ export {TrainingClassTypeType};
 
 const TrainingClassTypeInputType = new GraphQLInputObjectType({
   name: 'TrainingClassTypeInputType',
-  description: 'input type for TrainingClassType in humanres',
+  description: 'input type for TrainingClassType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString},
     trainingClassTypeId: {type: GraphQLString}
   })
 });

@@ -43,14 +43,14 @@ export {GiftCardType};
 
 const GiftCardInputType = new GraphQLInputObjectType({
   name: 'GiftCardInputType',
-  description: 'input type for GiftCard in accounting',
+  description: 'input type for GiftCard',
 
   fields: () => ({
-    paymentMethodId: {type: GraphQLString},
-    pinNumber: {type: GraphQLString},
-    expireDate: {type: GraphQLString},
     cardNumber: {type: GraphQLString},
-    contactMechId: {type: GraphQLString}
+    contactMechId: {type: GraphQLString},
+    expireDate: {type: GraphQLString},
+    paymentMethodId: {type: GraphQLString},
+    pinNumber: {type: GraphQLString}
   })
 });
 

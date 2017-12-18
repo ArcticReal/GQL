@@ -35,7 +35,7 @@ export {TrainingRequestType};
 
 const TrainingRequestInputType = new GraphQLInputObjectType({
   name: 'TrainingRequestInputType',
-  description: 'input type for TrainingRequest in humanres',
+  description: 'input type for TrainingRequest',
 
   fields: () => ({
     trainingRequestId: {type: GraphQLString}

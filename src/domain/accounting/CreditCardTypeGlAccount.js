@@ -31,7 +31,7 @@ export {CreditCardTypeGlAccountType};
 
 const CreditCardTypeGlAccountInputType = new GraphQLInputObjectType({
   name: 'CreditCardTypeGlAccountInputType',
-  description: 'input type for CreditCardTypeGlAccount in accounting',
+  description: 'input type for CreditCardTypeGlAccount',
 
   fields: () => ({
     cardType: {type: GraphQLString},

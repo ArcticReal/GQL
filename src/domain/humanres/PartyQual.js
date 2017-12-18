@@ -46,17 +46,17 @@ export {PartyQualType};
 
 const PartyQualInputType = new GraphQLInputObjectType({
   name: 'PartyQualInputType',
-  description: 'input type for PartyQual in humanres',
+  description: 'input type for PartyQual',
 
   fields: () => ({
-    qualificationDesc: {type: GraphQLString},
     fromDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    verifStatusId: {type: GraphQLString},
-    partyQualTypeId: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    partyQualTypeId: {type: GraphQLString},
+    qualificationDesc: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
     title: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    verifStatusId: {type: GraphQLString}
   })
 });
 

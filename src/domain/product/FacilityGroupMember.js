@@ -43,13 +43,13 @@ export {FacilityGroupMemberType};
 
 const FacilityGroupMemberInputType = new GraphQLInputObjectType({
   name: 'FacilityGroupMemberInputType',
-  description: 'input type for FacilityGroupMember in product',
+  description: 'input type for FacilityGroupMember',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    facilityId: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
     facilityGroupId: {type: GraphQLString},
+    facilityId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}
   })
 });

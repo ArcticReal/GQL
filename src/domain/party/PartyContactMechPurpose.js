@@ -48,13 +48,13 @@ export {PartyContactMechPurposeType};
 
 const PartyContactMechPurposeInputType = new GraphQLInputObjectType({
   name: 'PartyContactMechPurposeInputType',
-  description: 'input type for PartyContactMechPurpose in party',
+  description: 'input type for PartyContactMechPurpose',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    contactMechPurposeTypeId: {type: GraphQLString},
-    partyId: {type: GraphQLString},
     contactMechId: {type: GraphQLString},
+    contactMechPurposeTypeId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    partyId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

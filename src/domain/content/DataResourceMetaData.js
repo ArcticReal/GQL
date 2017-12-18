@@ -42,13 +42,13 @@ export {DataResourceMetaDataType};
 
 const DataResourceMetaDataInputType = new GraphQLInputObjectType({
   name: 'DataResourceMetaDataInputType',
-  description: 'input type for DataResourceMetaData in content',
+  description: 'input type for DataResourceMetaData',
 
   fields: () => ({
+    dataResourceId: {type: GraphQLString},
     dataSourceId: {type: GraphQLString},
-    metaDataValue: {type: GraphQLString},
     metaDataPredicateId: {type: GraphQLString},
-    dataResourceId: {type: GraphQLString}
+    metaDataValue: {type: GraphQLString}
   })
 });
 

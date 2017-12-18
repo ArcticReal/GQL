@@ -44,15 +44,15 @@ export {ProductFacilityType};
 
 const ProductFacilityInputType = new GraphQLInputObjectType({
   name: 'ProductFacilityInputType',
-  description: 'input type for ProductFacility in product',
+  description: 'input type for ProductFacility',
 
   fields: () => ({
-    lastInventoryCount: {type: GraphQLFloat},
+    daysToShip: {type: GraphQLInt},
     facilityId: {type: GraphQLString},
-    productId: {type: GraphQLString},
+    lastInventoryCount: {type: GraphQLFloat},
     minimumStock: {type: GraphQLFloat},
-    reorderQuantity: {type: GraphQLFloat},
-    daysToShip: {type: GraphQLInt}
+    productId: {type: GraphQLString},
+    reorderQuantity: {type: GraphQLFloat}
   })
 });
 

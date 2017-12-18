@@ -55,15 +55,15 @@ export {InventoryItemVarianceType};
 
 const InventoryItemVarianceInputType = new GraphQLInputObjectType({
   name: 'InventoryItemVarianceInputType',
-  description: 'input type for InventoryItemVariance in product',
+  description: 'input type for InventoryItemVariance',
 
   fields: () => ({
-    inventoryItemId: {type: GraphQLString},
-    varianceReasonId: {type: GraphQLString},
-    physicalInventoryId: {type: GraphQLString},
+    availableToPromiseVar: {type: GraphQLFloat},
     comments: {type: GraphQLString},
+    inventoryItemId: {type: GraphQLString},
+    physicalInventoryId: {type: GraphQLString},
     quantityOnHandVar: {type: GraphQLFloat},
-    availableToPromiseVar: {type: GraphQLFloat}
+    varianceReasonId: {type: GraphQLString}
   })
 });
 

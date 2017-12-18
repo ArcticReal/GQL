@@ -40,7 +40,7 @@ export {SalesOpportunityQuoteType};
 
 const SalesOpportunityQuoteInputType = new GraphQLInputObjectType({
   name: 'SalesOpportunityQuoteInputType',
-  description: 'input type for SalesOpportunityQuote in marketing',
+  description: 'input type for SalesOpportunityQuote',
 
   fields: () => ({
     quoteId: {type: GraphQLString},

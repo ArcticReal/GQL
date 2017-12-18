@@ -37,13 +37,13 @@ export {FinAccountTypeAttrType};
 
 const FinAccountTypeAttrInputType = new GraphQLInputObjectType({
   name: 'FinAccountTypeAttrInputType',
-  description: 'input type for FinAccountTypeAttr in accounting',
+  description: 'input type for FinAccountTypeAttr',
 
   fields: () => ({
-    description: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     attrValue: {type: GraphQLString},
-    finAccountTypeId: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    description: {type: GraphQLString},
+    finAccountTypeId: {type: GraphQLString}
   })
 });
 

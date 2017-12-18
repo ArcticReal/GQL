@@ -40,11 +40,11 @@ export {WorkEffortDeliverableProdType};
 
 const WorkEffortDeliverableProdInputType = new GraphQLInputObjectType({
   name: 'WorkEffortDeliverableProdInputType',
-  description: 'input type for WorkEffortDeliverableProd in workeffort',
+  description: 'input type for WorkEffortDeliverableProd',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    deliverableId: {type: GraphQLString}
+    deliverableId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

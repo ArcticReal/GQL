@@ -53,19 +53,19 @@ export {InvoiceItemAssocType};
 
 const InvoiceItemAssocInputType = new GraphQLInputObjectType({
   name: 'InvoiceItemAssocInputType',
-  description: 'input type for InvoiceItemAssoc in accounting',
+  description: 'input type for InvoiceItemAssoc',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    partyIdFrom: {type: GraphQLString},
     amount: {type: GraphQLFloat},
-    quantity: {type: GraphQLFloat},
-    invoiceItemSeqIdFrom: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     invoiceIdFrom: {type: GraphQLString},
-    invoiceItemSeqIdTo: {type: GraphQLString},
-    invoiceItemAssocTypeId: {type: GraphQLString},
     invoiceIdTo: {type: GraphQLString},
+    invoiceItemAssocTypeId: {type: GraphQLString},
+    invoiceItemSeqIdFrom: {type: GraphQLString},
+    invoiceItemSeqIdTo: {type: GraphQLString},
+    partyIdFrom: {type: GraphQLString},
     partyIdTo: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
     thruDate: {type: GraphQLString}
   })
 });

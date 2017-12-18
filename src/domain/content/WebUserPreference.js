@@ -48,14 +48,14 @@ export {WebUserPreferenceType};
 
 const WebUserPreferenceInputType = new GraphQLInputObjectType({
   name: 'WebUserPreferenceInputType',
-  description: 'input type for WebUserPreference in content',
+  description: 'input type for WebUserPreference',
 
   fields: () => ({
+    partyId: {type: GraphQLString},
     userLoginId: {type: GraphQLString},
-    webPreferenceTypeId: {type: GraphQLString},
     visitId: {type: GraphQLString},
-    webPreferenceValue: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    webPreferenceTypeId: {type: GraphQLString},
+    webPreferenceValue: {type: GraphQLString}
   })
 });
 

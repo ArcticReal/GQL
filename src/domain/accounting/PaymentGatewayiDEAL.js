@@ -45,21 +45,21 @@ export {PaymentGatewayiDEALType};
 
 const PaymentGatewayiDEALInputType = new GraphQLInputObjectType({
   name: 'PaymentGatewayiDEALInputType',
-  description: 'input type for PaymentGatewayiDEAL in accounting',
+  description: 'input type for PaymentGatewayiDEAL',
 
   fields: () => ({
-    expirationPeriod: {type: GraphQLString},
-    merchantReturnURL: {type: GraphQLString},
-    paymentGatewayConfigId: {type: GraphQLString},
-    merchantId: {type: GraphQLString},
     acquirerKeyStoreFilename: {type: GraphQLString},
-    merchantSubId: {type: GraphQLString},
-    merchantKeyStorePassword: {type: GraphQLString},
-    acquirerURL: {type: GraphQLString},
-    acquirerTimeout: {type: GraphQLString},
-    privateCert: {type: GraphQLString},
     acquirerKeyStorePassword: {type: GraphQLString},
-    merchantKeyStoreFilename: {type: GraphQLString}
+    acquirerTimeout: {type: GraphQLString},
+    acquirerURL: {type: GraphQLString},
+    expirationPeriod: {type: GraphQLString},
+    merchantId: {type: GraphQLString},
+    merchantKeyStoreFilename: {type: GraphQLString},
+    merchantKeyStorePassword: {type: GraphQLString},
+    merchantReturnURL: {type: GraphQLString},
+    merchantSubId: {type: GraphQLString},
+    paymentGatewayConfigId: {type: GraphQLString},
+    privateCert: {type: GraphQLString}
   })
 });
 

@@ -41,7 +41,7 @@ export {ShoppingListItemSurveyType};
 
 const ShoppingListItemSurveyInputType = new GraphQLInputObjectType({
   name: 'ShoppingListItemSurveyInputType',
-  description: 'input type for ShoppingListItemSurvey in order',
+  description: 'input type for ShoppingListItemSurvey',
 
   fields: () => ({
     shoppingListId: {type: GraphQLString},

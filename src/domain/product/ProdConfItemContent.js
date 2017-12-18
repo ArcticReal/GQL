@@ -48,13 +48,13 @@ export {ProdConfItemContentType};
 
 const ProdConfItemContentInputType = new GraphQLInputObjectType({
   name: 'ProdConfItemContentInputType',
-  description: 'input type for ProdConfItemContent in product',
+  description: 'input type for ProdConfItemContent',
 
   fields: () => ({
-    configItemId: {type: GraphQLString},
     confItemContentTypeId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
+    configItemId: {type: GraphQLString},
     contentId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

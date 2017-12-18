@@ -40,7 +40,7 @@ export {PartyInvitationGroupAssocType};
 
 const PartyInvitationGroupAssocInputType = new GraphQLInputObjectType({
   name: 'PartyInvitationGroupAssocInputType',
-  description: 'input type for PartyInvitationGroupAssoc in party',
+  description: 'input type for PartyInvitationGroupAssoc',
 
   fields: () => ({
     partyIdTo: {type: GraphQLString},

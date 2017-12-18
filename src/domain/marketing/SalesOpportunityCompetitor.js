@@ -38,14 +38,14 @@ export {SalesOpportunityCompetitorType};
 
 const SalesOpportunityCompetitorInputType = new GraphQLInputObjectType({
   name: 'SalesOpportunityCompetitorInputType',
-  description: 'input type for SalesOpportunityCompetitor in marketing',
+  description: 'input type for SalesOpportunityCompetitor',
 
   fields: () => ({
     competitorPartyId: {type: GraphQLString},
-    strengths: {type: GraphQLString},
-    weaknesses: {type: GraphQLString},
     positionEnumId: {type: GraphQLString},
-    salesOpportunityId: {type: GraphQLString}
+    salesOpportunityId: {type: GraphQLString},
+    strengths: {type: GraphQLString},
+    weaknesses: {type: GraphQLString}
   })
 });
 

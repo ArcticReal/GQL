@@ -42,12 +42,12 @@ export {MarketInterestType};
 
 const MarketInterestInputType = new GraphQLInputObjectType({
   name: 'MarketInterestInputType',
-  description: 'input type for MarketInterest in product',
+  description: 'input type for MarketInterest',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
-    productCategoryId: {type: GraphQLString},
     partyClassificationGroupId: {type: GraphQLString},
+    productCategoryId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

@@ -52,12 +52,12 @@ export {ProductFeatureCategoryType};
 
 const ProductFeatureCategoryInputType = new GraphQLInputObjectType({
   name: 'ProductFeatureCategoryInputType',
-  description: 'input type for ProductFeatureCategory in product',
+  description: 'input type for ProductFeatureCategory',
 
   fields: () => ({
-    productFeatureCategoryId: {type: GraphQLString},
     description: {type: GraphQLString},
-    parentCategoryId: {type: GraphQLString}
+    parentCategoryId: {type: GraphQLString},
+    productFeatureCategoryId: {type: GraphQLString}
   })
 });
 

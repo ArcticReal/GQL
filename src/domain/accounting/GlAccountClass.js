@@ -47,13 +47,13 @@ export {GlAccountClassType};
 
 const GlAccountClassInputType = new GraphQLInputObjectType({
   name: 'GlAccountClassInputType',
-  description: 'input type for GlAccountClass in accounting',
+  description: 'input type for GlAccountClass',
 
   fields: () => ({
-    parentClassId: {type: GraphQLString},
-    glAccountClassId: {type: GraphQLString},
     description: {type: GraphQLString},
-    isAssetClass: {type: GraphQLBoolean}
+    glAccountClassId: {type: GraphQLString},
+    isAssetClass: {type: GraphQLBoolean},
+    parentClassId: {type: GraphQLString}
   })
 });
 

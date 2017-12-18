@@ -41,12 +41,12 @@ export {InvoiceItemTypeMapType};
 
 const InvoiceItemTypeMapInputType = new GraphQLInputObjectType({
   name: 'InvoiceItemTypeMapInputType',
-  description: 'input type for InvoiceItemTypeMap in accounting',
+  description: 'input type for InvoiceItemTypeMap',
 
   fields: () => ({
     invoiceItemMapKey: {type: GraphQLString},
-    invoiceTypeId: {type: GraphQLString},
-    invoiceItemTypeId: {type: GraphQLString}
+    invoiceItemTypeId: {type: GraphQLString},
+    invoiceTypeId: {type: GraphQLString}
   })
 });
 

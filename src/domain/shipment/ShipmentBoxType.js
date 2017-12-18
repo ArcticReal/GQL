@@ -54,17 +54,17 @@ export {ShipmentBoxTypeType};
 
 const ShipmentBoxTypeInputType = new GraphQLInputObjectType({
   name: 'ShipmentBoxTypeInputType',
-  description: 'input type for ShipmentBoxType in shipment',
+  description: 'input type for ShipmentBoxType',
 
   fields: () => ({
+    boxHeight: {type: GraphQLFloat},
     boxLength: {type: GraphQLFloat},
     boxWeight: {type: GraphQLFloat},
-    dimensionUomId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    weightUomId: {type: GraphQLString},
     boxWidth: {type: GraphQLFloat},
-    boxHeight: {type: GraphQLFloat},
-    shipmentBoxTypeId: {type: GraphQLString}
+    description: {type: GraphQLString},
+    dimensionUomId: {type: GraphQLString},
+    shipmentBoxTypeId: {type: GraphQLString},
+    weightUomId: {type: GraphQLString}
   })
 });
 

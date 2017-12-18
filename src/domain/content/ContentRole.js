@@ -43,13 +43,13 @@ export {ContentRoleType};
 
 const ContentRoleInputType = new GraphQLInputObjectType({
   name: 'ContentRoleInputType',
-  description: 'input type for ContentRole in content',
+  description: 'input type for ContentRole',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     contentId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

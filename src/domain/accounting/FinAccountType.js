@@ -61,15 +61,15 @@ export {FinAccountTypeType};
 
 const FinAccountTypeInputType = new GraphQLInputObjectType({
   name: 'FinAccountTypeInputType',
-  description: 'input type for FinAccountType in accounting',
+  description: 'input type for FinAccountType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    replenishEnumId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
     finAccountTypeId: {type: GraphQLString},
-    isRefundable: {type: GraphQLBoolean}
+    hasTable: {type: GraphQLBoolean},
+    isRefundable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString},
+    replenishEnumId: {type: GraphQLString}
   })
 });
 

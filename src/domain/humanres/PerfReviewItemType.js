@@ -41,13 +41,13 @@ export {PerfReviewItemTypeType};
 
 const PerfReviewItemTypeInputType = new GraphQLInputObjectType({
   name: 'PerfReviewItemTypeInputType',
-  description: 'input type for PerfReviewItemType in humanres',
+  description: 'input type for PerfReviewItemType',
 
   fields: () => ({
-    perfReviewItemTypeId: {type: GraphQLString},
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    perfReviewItemTypeId: {type: GraphQLString}
   })
 });
 

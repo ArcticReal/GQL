@@ -36,7 +36,7 @@ export {OrderBlacklistTypeType};
 
 const OrderBlacklistTypeInputType = new GraphQLInputObjectType({
   name: 'OrderBlacklistTypeInputType',
-  description: 'input type for OrderBlacklistType in order',
+  description: 'input type for OrderBlacklistType',
 
   fields: () => ({
     description: {type: GraphQLString},

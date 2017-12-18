@@ -43,14 +43,14 @@ export {InventoryItemTempResType};
 
 const InventoryItemTempResInputType = new GraphQLInputObjectType({
   name: 'InventoryItemTempResInputType',
-  description: 'input type for InventoryItemTempRes in product',
+  description: 'input type for InventoryItemTempRes',
 
   fields: () => ({
-    reservedDate: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
-    visitId: {type: GraphQLString},
     productId: {type: GraphQLString},
-    productStoreId: {type: GraphQLString}
+    productStoreId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
+    reservedDate: {type: GraphQLString},
+    visitId: {type: GraphQLString}
   })
 });
 

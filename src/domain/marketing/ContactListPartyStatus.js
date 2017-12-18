@@ -40,16 +40,16 @@ export {ContactListPartyStatusType};
 
 const ContactListPartyStatusInputType = new GraphQLInputObjectType({
   name: 'ContactListPartyStatusInputType',
-  description: 'input type for ContactListPartyStatus in marketing',
+  description: 'input type for ContactListPartyStatus',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    statusDate: {type: GraphQLString},
-    optInVerifyCode: {type: GraphQLString},
-    statusId: {type: GraphQLString},
     contactListId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    optInVerifyCode: {type: GraphQLString},
+    partyId: {type: GraphQLString},
     setByUserLoginId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    statusDate: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

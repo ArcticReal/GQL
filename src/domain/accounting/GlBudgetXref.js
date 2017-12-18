@@ -43,13 +43,13 @@ export {GlBudgetXrefType};
 
 const GlBudgetXrefInputType = new GraphQLInputObjectType({
   name: 'GlBudgetXrefInputType',
-  description: 'input type for GlBudgetXref in accounting',
+  description: 'input type for GlBudgetXref',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     allocationPercentage: {type: GraphQLFloat},
-    glAccountId: {type: GraphQLString},
     budgetItemTypeId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    glAccountId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

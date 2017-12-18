@@ -45,14 +45,14 @@ export {ProductCategoryMemberType};
 
 const ProductCategoryMemberInputType = new GraphQLInputObjectType({
   name: 'ProductCategoryMemberInputType',
-  description: 'input type for ProductCategoryMember in product',
+  description: 'input type for ProductCategoryMember',
 
   fields: () => ({
+    comments: {type: GraphQLString},
     fromDate: {type: GraphQLString},
     productCategoryId: {type: GraphQLString},
-    comments: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
     productId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
     sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}
   })

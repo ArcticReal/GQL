@@ -50,15 +50,15 @@ export {ReturnItemBillingType};
 
 const ReturnItemBillingInputType = new GraphQLInputObjectType({
   name: 'ReturnItemBillingInputType',
-  description: 'input type for ReturnItemBilling in order',
+  description: 'input type for ReturnItemBilling',
 
   fields: () => ({
     amount: {type: GraphQLFloat},
+    invoiceId: {type: GraphQLString},
+    invoiceItemSeqId: {type: GraphQLString},
     quantity: {type: GraphQLFloat},
     returnId: {type: GraphQLString},
     returnItemSeqId: {type: GraphQLString},
-    invoiceId: {type: GraphQLString},
-    invoiceItemSeqId: {type: GraphQLString},
     shipmentReceiptId: {type: GraphQLString}
   })
 });

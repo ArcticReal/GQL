@@ -45,16 +45,16 @@ export {InventoryItemStatusType};
 
 const InventoryItemStatusInputType = new GraphQLInputObjectType({
   name: 'InventoryItemStatusInputType',
-  description: 'input type for InventoryItemStatus in product',
+  description: 'input type for InventoryItemStatus',
 
   fields: () => ({
+    changeByUserLoginId: {type: GraphQLString},
     inventoryItemId: {type: GraphQLString},
     ownerPartyId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
     productId: {type: GraphQLString},
     statusDatetime: {type: GraphQLString},
-    changeByUserLoginId: {type: GraphQLString},
-    statusEndDatetime: {type: GraphQLString}
+    statusEndDatetime: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

@@ -54,18 +54,18 @@ export {FacilityLocationType};
 
 const FacilityLocationInputType = new GraphQLInputObjectType({
   name: 'FacilityLocationInputType',
-  description: 'input type for FacilityLocation in product',
+  description: 'input type for FacilityLocation',
 
   fields: () => ({
-    facilityId: {type: GraphQLString},
+    aisleId: {type: GraphQLString},
     areaId: {type: GraphQLString},
-    positionId: {type: GraphQLString},
-    levelId: {type: GraphQLString},
-    sectionId: {type: GraphQLString},
+    facilityId: {type: GraphQLString},
     geoPointId: {type: GraphQLString},
-    locationTypeEnumId: {type: GraphQLString},
+    levelId: {type: GraphQLString},
     locationSeqId: {type: GraphQLString},
-    aisleId: {type: GraphQLString}
+    locationTypeEnumId: {type: GraphQLString},
+    positionId: {type: GraphQLString},
+    sectionId: {type: GraphQLString}
   })
 });
 

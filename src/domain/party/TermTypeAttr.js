@@ -36,12 +36,12 @@ export {TermTypeAttrType};
 
 const TermTypeAttrInputType = new GraphQLInputObjectType({
   name: 'TermTypeAttrInputType',
-  description: 'input type for TermTypeAttr in party',
+  description: 'input type for TermTypeAttr',
 
   fields: () => ({
-    termTypeId: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     description: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    termTypeId: {type: GraphQLString}
   })
 });
 

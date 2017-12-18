@@ -56,22 +56,22 @@ export {PayrollPreferenceType};
 
 const PayrollPreferenceInputType = new GraphQLInputObjectType({
   name: 'PayrollPreferenceInputType',
-  description: 'input type for PayrollPreference in humanres',
+  description: 'input type for PayrollPreference',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
-    periodTypeId: {type: GraphQLString},
-    bankName: {type: GraphQLString},
-    paymentMethodTypeId: {type: GraphQLString},
     accountNumber: {type: GraphQLString},
-    thruDate: {type: GraphQLString},
-    payrollPreferenceSeqId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    routingNumber: {type: GraphQLString},
-    flatAmount: {type: GraphQLFloat},
-    percentage: {type: GraphQLFloat},
+    bankName: {type: GraphQLString},
     deductionTypeId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    flatAmount: {type: GraphQLFloat},
+    fromDate: {type: GraphQLString},
+    partyId: {type: GraphQLString},
+    paymentMethodTypeId: {type: GraphQLString},
+    payrollPreferenceSeqId: {type: GraphQLString},
+    percentage: {type: GraphQLFloat},
+    periodTypeId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
+    routingNumber: {type: GraphQLString},
+    thruDate: {type: GraphQLString}
   })
 });
 

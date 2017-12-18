@@ -44,20 +44,20 @@ export {OrderDeliveryScheduleType};
 
 const OrderDeliveryScheduleInputType = new GraphQLInputObjectType({
   name: 'OrderDeliveryScheduleInputType',
-  description: 'input type for OrderDeliverySchedule in order',
+  description: 'input type for OrderDeliverySchedule',
 
   fields: () => ({
+    cartons: {type: GraphQLInt},
+    estimatedReadyDate: {type: GraphQLString},
+    orderId: {type: GraphQLString},
     orderItemSeqId: {type: GraphQLString},
     skidsPallets: {type: GraphQLInt},
-    unitsPieces: {type: GraphQLFloat},
     statusId: {type: GraphQLString},
-    orderId: {type: GraphQLString},
-    totalWeight: {type: GraphQLFloat},
     totalCubicSize: {type: GraphQLFloat},
-    totalWeightUomId: {type: GraphQLString},
-    estimatedReadyDate: {type: GraphQLString},
     totalCubicUomId: {type: GraphQLString},
-    cartons: {type: GraphQLInt}
+    totalWeight: {type: GraphQLFloat},
+    totalWeightUomId: {type: GraphQLString},
+    unitsPieces: {type: GraphQLFloat}
   })
 });
 

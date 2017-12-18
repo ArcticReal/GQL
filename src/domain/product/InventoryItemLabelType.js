@@ -53,13 +53,13 @@ export {InventoryItemLabelTypeType};
 
 const InventoryItemLabelTypeInputType = new GraphQLInputObjectType({
   name: 'InventoryItemLabelTypeInputType',
-  description: 'input type for InventoryItemLabelType in product',
+  description: 'input type for InventoryItemLabelType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
     inventoryItemLabelTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString}
   })
 });
 

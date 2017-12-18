@@ -41,13 +41,13 @@ export {PartyNameHistoryType};
 
 const PartyNameHistoryInputType = new GraphQLInputObjectType({
   name: 'PartyNameHistoryInputType',
-  description: 'input type for PartyNameHistory in party',
+  description: 'input type for PartyNameHistory',
 
   fields: () => ({
-    firstName: {type: GraphQLString},
-    lastName: {type: GraphQLString},
-    groupName: {type: GraphQLString},
     changeDate: {type: GraphQLString},
+    firstName: {type: GraphQLString},
+    groupName: {type: GraphQLString},
+    lastName: {type: GraphQLString},
     middleName: {type: GraphQLString},
     partyId: {type: GraphQLString},
     personalTitle: {type: GraphQLString},

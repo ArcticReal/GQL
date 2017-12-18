@@ -65,18 +65,18 @@ export {SurveyQuestionType};
 
 const SurveyQuestionInputType = new GraphQLInputObjectType({
   name: 'SurveyQuestionInputType',
-  description: 'input type for SurveyQuestion in content',
+  description: 'input type for SurveyQuestion',
 
   fields: () => ({
-    surveyQuestionTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     enumTypeId: {type: GraphQLString},
     formatString: {type: GraphQLString},
-    surveyQuestionId: {type: GraphQLString},
-    surveyQuestionCategoryId: {type: GraphQLString},
-    question: {type: GraphQLString},
-    hint: {type: GraphQLString},
     geoId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    hint: {type: GraphQLString},
+    question: {type: GraphQLString},
+    surveyQuestionCategoryId: {type: GraphQLString},
+    surveyQuestionId: {type: GraphQLString},
+    surveyQuestionTypeId: {type: GraphQLString}
   })
 });
 

@@ -36,11 +36,11 @@ export {WorkReqFulfTypeType};
 
 const WorkReqFulfTypeInputType = new GraphQLInputObjectType({
   name: 'WorkReqFulfTypeInputType',
-  description: 'input type for WorkReqFulfType in order',
+  description: 'input type for WorkReqFulfType',
 
   fields: () => ({
-    workReqFulfTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    workReqFulfTypeId: {type: GraphQLString}
   })
 });
 

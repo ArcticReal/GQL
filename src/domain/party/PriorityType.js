@@ -36,11 +36,11 @@ export {PriorityTypeType};
 
 const PriorityTypeInputType = new GraphQLInputObjectType({
   name: 'PriorityTypeInputType',
-  description: 'input type for PriorityType in party',
+  description: 'input type for PriorityType',
 
   fields: () => ({
-    priorityTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    priorityTypeId: {type: GraphQLString}
   })
 });
 

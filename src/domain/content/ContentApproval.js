@@ -52,18 +52,18 @@ export {ContentApprovalType};
 
 const ContentApprovalInputType = new GraphQLInputObjectType({
   name: 'ContentApprovalInputType',
-  description: 'input type for ContentApproval in content',
+  description: 'input type for ContentApproval',
 
   fields: () => ({
-    contentApprovalId: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     approvalDate: {type: GraphQLString},
+    approvalStatusId: {type: GraphQLString},
     comments: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
+    contentApprovalId: {type: GraphQLString},
     contentId: {type: GraphQLString},
     contentRevisionSeqId: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    approvalStatusId: {type: GraphQLString}
+    roleTypeId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt}
   })
 });
 

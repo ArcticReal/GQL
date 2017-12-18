@@ -40,11 +40,11 @@ export {ValidContactMechRoleType};
 
 const ValidContactMechRoleInputType = new GraphQLInputObjectType({
   name: 'ValidContactMechRoleInputType',
-  description: 'input type for ValidContactMechRole in party',
+  description: 'input type for ValidContactMechRole',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
-    contactMechTypeId: {type: GraphQLString}
+    contactMechTypeId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

@@ -35,7 +35,7 @@ export {ProductPromoCodeEmailType};
 
 const ProductPromoCodeEmailInputType = new GraphQLInputObjectType({
   name: 'ProductPromoCodeEmailInputType',
-  description: 'input type for ProductPromoCodeEmail in product',
+  description: 'input type for ProductPromoCodeEmail',
 
   fields: () => ({
     emailAddress: {type: GraphQLString},

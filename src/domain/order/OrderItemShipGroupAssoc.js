@@ -38,14 +38,14 @@ export {OrderItemShipGroupAssocType};
 
 const OrderItemShipGroupAssocInputType = new GraphQLInputObjectType({
   name: 'OrderItemShipGroupAssocInputType',
-  description: 'input type for OrderItemShipGroupAssoc in order',
+  description: 'input type for OrderItemShipGroupAssoc',
 
   fields: () => ({
+    cancelQuantity: {type: GraphQLFloat},
+    orderId: {type: GraphQLString},
     orderItemSeqId: {type: GraphQLString},
     quantity: {type: GraphQLFloat},
-    orderId: {type: GraphQLString},
-    shipGroupSeqId: {type: GraphQLString},
-    cancelQuantity: {type: GraphQLFloat}
+    shipGroupSeqId: {type: GraphQLString}
   })
 });
 

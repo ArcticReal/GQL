@@ -54,20 +54,20 @@ export {PartyContactMechType};
 
 const PartyContactMechInputType = new GraphQLInputObjectType({
   name: 'PartyContactMechInputType',
-  description: 'input type for PartyContactMech in party',
+  description: 'input type for PartyContactMech',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     allowSolicitation: {type: GraphQLBoolean},
-    extension: {type: GraphQLString},
     comments: {type: GraphQLString},
-    yearsWithContactMech: {type: GraphQLInt},
-    verified: {type: GraphQLBoolean},
+    contactMechId: {type: GraphQLString},
+    extension: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     monthsWithContactMech: {type: GraphQLInt},
     partyId: {type: GraphQLString},
-    contactMechId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    roleTypeId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    verified: {type: GraphQLBoolean},
+    yearsWithContactMech: {type: GraphQLInt}
   })
 });
 

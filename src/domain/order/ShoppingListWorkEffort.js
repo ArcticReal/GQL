@@ -40,11 +40,11 @@ export {ShoppingListWorkEffortType};
 
 const ShoppingListWorkEffortInputType = new GraphQLInputObjectType({
   name: 'ShoppingListWorkEffortInputType',
-  description: 'input type for ShoppingListWorkEffort in order',
+  description: 'input type for ShoppingListWorkEffort',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    shoppingListId: {type: GraphQLString}
+    shoppingListId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

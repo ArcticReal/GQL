@@ -46,16 +46,16 @@ export {PartyFixedAssetAssignmentType};
 
 const PartyFixedAssetAssignmentInputType = new GraphQLInputObjectType({
   name: 'PartyFixedAssetAssignmentInputType',
-  description: 'input type for PartyFixedAssetAssignment in accounting',
+  description: 'input type for PartyFixedAssetAssignment',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
-    comments: {type: GraphQLString},
     allocatedDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    comments: {type: GraphQLString},
     fixedAssetId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
+    statusId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

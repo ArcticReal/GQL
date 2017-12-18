@@ -43,13 +43,13 @@ export {QuoteRoleType};
 
 const QuoteRoleInputType = new GraphQLInputObjectType({
   name: 'QuoteRoleInputType',
-  description: 'input type for QuoteRole in order',
+  description: 'input type for QuoteRole',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     partyId: {type: GraphQLString},
     quoteId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

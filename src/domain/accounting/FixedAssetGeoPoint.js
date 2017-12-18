@@ -37,11 +37,11 @@ export {FixedAssetGeoPointType};
 
 const FixedAssetGeoPointInputType = new GraphQLInputObjectType({
   name: 'FixedAssetGeoPointInputType',
-  description: 'input type for FixedAssetGeoPoint in accounting',
+  description: 'input type for FixedAssetGeoPoint',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     fixedAssetId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     geoPointId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })

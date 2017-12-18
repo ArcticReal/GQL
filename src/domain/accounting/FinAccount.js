@@ -116,26 +116,26 @@ export {FinAccountType};
 
 const FinAccountInputType = new GraphQLInputObjectType({
   name: 'FinAccountInputType',
-  description: 'input type for FinAccount in accounting',
+  description: 'input type for FinAccount',
 
   fields: () => ({
-    finAccountTypeId: {type: GraphQLString},
-    thruDate: {type: GraphQLString},
-    isRefundable: {type: GraphQLBoolean},
+    actualBalance: {type: GraphQLFloat},
     availableBalance: {type: GraphQLFloat},
-    fromDate: {type: GraphQLString},
-    ownerPartyId: {type: GraphQLString},
-    finAccountId: {type: GraphQLString},
-    postToGlAccountId: {type: GraphQLString},
     currencyUomId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    finAccountCode: {type: GraphQLString},
+    finAccountId: {type: GraphQLString},
     finAccountName: {type: GraphQLString},
     finAccountPin: {type: GraphQLString},
-    actualBalance: {type: GraphQLFloat},
+    finAccountTypeId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    isRefundable: {type: GraphQLBoolean},
+    organizationPartyId: {type: GraphQLString},
+    ownerPartyId: {type: GraphQLString},
+    postToGlAccountId: {type: GraphQLString},
     replenishLevel: {type: GraphQLFloat},
     replenishPaymentId: {type: GraphQLString},
-    organizationPartyId: {type: GraphQLString},
-    finAccountCode: {type: GraphQLString}
+    statusId: {type: GraphQLString},
+    thruDate: {type: GraphQLString}
   })
 });
 

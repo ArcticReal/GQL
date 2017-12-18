@@ -36,11 +36,11 @@ export {AccommodationMapTypeType};
 
 const AccommodationMapTypeInputType = new GraphQLInputObjectType({
   name: 'AccommodationMapTypeInputType',
-  description: 'input type for AccommodationMapType in accounting',
+  description: 'input type for AccommodationMapType',
 
   fields: () => ({
-    description: {type: GraphQLString},
-    accommodationMapTypeId: {type: GraphQLString}
+    accommodationMapTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
   })
 });
 

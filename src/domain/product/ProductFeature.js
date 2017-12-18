@@ -114,19 +114,19 @@ export {ProductFeatureType};
 
 const ProductFeatureInputType = new GraphQLInputObjectType({
   name: 'ProductFeatureInputType',
-  description: 'input type for ProductFeature in product',
+  description: 'input type for ProductFeature',
 
   fields: () => ({
-    productFeatureTypeId: {type: GraphQLString},
-    defaultSequenceNum: {type: GraphQLInt},
+    abbrev: {type: GraphQLString},
     defaultAmount: {type: GraphQLFloat},
+    defaultSequenceNum: {type: GraphQLInt},
+    description: {type: GraphQLString},
     idCode: {type: GraphQLString},
-    productFeatureId: {type: GraphQLString},
     numberSpecified: {type: GraphQLFloat},
     productFeatureCategoryId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    uomId: {type: GraphQLString},
-    abbrev: {type: GraphQLString}
+    productFeatureId: {type: GraphQLString},
+    productFeatureTypeId: {type: GraphQLString},
+    uomId: {type: GraphQLString}
   })
 });
 

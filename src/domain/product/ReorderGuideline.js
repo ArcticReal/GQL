@@ -53,18 +53,18 @@ export {ReorderGuidelineType};
 
 const ReorderGuidelineInputType = new GraphQLInputObjectType({
   name: 'ReorderGuidelineInputType',
-  description: 'input type for ReorderGuideline in product',
+  description: 'input type for ReorderGuideline',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    reorderLevel: {type: GraphQLFloat},
-    reorderGuidelineId: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     facilityId: {type: GraphQLString},
-    productId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     geoId: {type: GraphQLString},
-    reorderQuantity: {type: GraphQLFloat},
     partyId: {type: GraphQLString},
+    productId: {type: GraphQLString},
+    reorderGuidelineId: {type: GraphQLString},
+    reorderLevel: {type: GraphQLFloat},
+    reorderQuantity: {type: GraphQLFloat},
+    roleTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

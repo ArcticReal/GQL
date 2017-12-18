@@ -39,14 +39,14 @@ export {PerformanceNoteType};
 
 const PerformanceNoteInputType = new GraphQLInputObjectType({
   name: 'PerformanceNoteInputType',
-  description: 'input type for PerformanceNote in humanres',
+  description: 'input type for PerformanceNote',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     comments: {type: GraphQLString},
     communicationDate: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

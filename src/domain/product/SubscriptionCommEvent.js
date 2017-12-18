@@ -40,7 +40,7 @@ export {SubscriptionCommEventType};
 
 const SubscriptionCommEventInputType = new GraphQLInputObjectType({
   name: 'SubscriptionCommEventInputType',
-  description: 'input type for SubscriptionCommEvent in product',
+  description: 'input type for SubscriptionCommEvent',
 
   fields: () => ({
     communicationEventId: {type: GraphQLString},

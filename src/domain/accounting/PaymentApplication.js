@@ -61,18 +61,18 @@ export {PaymentApplicationType};
 
 const PaymentApplicationInputType = new GraphQLInputObjectType({
   name: 'PaymentApplicationInputType',
-  description: 'input type for PaymentApplication in accounting',
+  description: 'input type for PaymentApplication',
 
   fields: () => ({
-    toPaymentId: {type: GraphQLString},
-    paymentId: {type: GraphQLString},
     amountApplied: {type: GraphQLFloat},
-    overrideGlAccountId: {type: GraphQLString},
-    taxAuthGeoId: {type: GraphQLString},
+    billingAccountId: {type: GraphQLString},
     invoiceId: {type: GraphQLString},
     invoiceItemSeqId: {type: GraphQLString},
-    billingAccountId: {type: GraphQLString},
-    paymentApplicationId: {type: GraphQLString}
+    overrideGlAccountId: {type: GraphQLString},
+    paymentApplicationId: {type: GraphQLString},
+    paymentId: {type: GraphQLString},
+    taxAuthGeoId: {type: GraphQLString},
+    toPaymentId: {type: GraphQLString}
   })
 });
 

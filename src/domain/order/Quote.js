@@ -109,21 +109,21 @@ export {QuoteType};
 
 const QuoteInputType = new GraphQLInputObjectType({
   name: 'QuoteInputType',
-  description: 'input type for Quote in order',
+  description: 'input type for Quote',
 
   fields: () => ({
-    quoteTypeId: {type: GraphQLString},
     currencyUomId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    issueDate: {type: GraphQLString},
+    partyId: {type: GraphQLString},
+    productStoreId: {type: GraphQLString},
+    quoteId: {type: GraphQLString},
+    quoteName: {type: GraphQLString},
+    quoteTypeId: {type: GraphQLString},
     salesChannelEnumId: {type: GraphQLString},
     statusId: {type: GraphQLString},
     validFromDate: {type: GraphQLString},
-    description: {type: GraphQLString},
-    productStoreId: {type: GraphQLString},
-    partyId: {type: GraphQLString},
-    issueDate: {type: GraphQLString},
-    quoteId: {type: GraphQLString},
-    validThruDate: {type: GraphQLString},
-    quoteName: {type: GraphQLString}
+    validThruDate: {type: GraphQLString}
   })
 });
 

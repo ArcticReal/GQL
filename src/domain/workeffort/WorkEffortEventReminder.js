@@ -54,20 +54,20 @@ export {WorkEffortEventReminderType};
 
 const WorkEffortEventReminderInputType = new GraphQLInputObjectType({
   name: 'WorkEffortEventReminderInputType',
-  description: 'input type for WorkEffortEventReminder in workeffort',
+  description: 'input type for WorkEffortEventReminder',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    timeZoneId: {type: GraphQLString},
-    currentCount: {type: GraphQLInt},
-    reminderDateTime: {type: GraphQLString},
-    repeatInterval: {type: GraphQLInt},
-    partyId: {type: GraphQLString},
-    reminderOffset: {type: GraphQLInt},
-    sequenceId: {type: GraphQLString},
     contactMechId: {type: GraphQLString},
+    currentCount: {type: GraphQLInt},
     localeId: {type: GraphQLString},
-    repeatCount: {type: GraphQLInt}
+    partyId: {type: GraphQLString},
+    reminderDateTime: {type: GraphQLString},
+    reminderOffset: {type: GraphQLInt},
+    repeatCount: {type: GraphQLInt},
+    repeatInterval: {type: GraphQLInt},
+    sequenceId: {type: GraphQLString},
+    timeZoneId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

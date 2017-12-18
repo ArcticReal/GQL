@@ -36,11 +36,11 @@ export {ContactListTypeType};
 
 const ContactListTypeInputType = new GraphQLInputObjectType({
   name: 'ContactListTypeInputType',
-  description: 'input type for ContactListType in marketing',
+  description: 'input type for ContactListType',
 
   fields: () => ({
-    description: {type: GraphQLString},
-    contactListTypeId: {type: GraphQLString}
+    contactListTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
   })
 });
 

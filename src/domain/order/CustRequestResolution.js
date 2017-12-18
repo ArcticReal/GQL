@@ -42,12 +42,12 @@ export {CustRequestResolutionType};
 
 const CustRequestResolutionInputType = new GraphQLInputObjectType({
   name: 'CustRequestResolutionInputType',
-  description: 'input type for CustRequestResolution in order',
+  description: 'input type for CustRequestResolution',
 
   fields: () => ({
     custRequestResolutionId: {type: GraphQLString},
-    description: {type: GraphQLString},
-    custRequestTypeId: {type: GraphQLString}
+    custRequestTypeId: {type: GraphQLString},
+    description: {type: GraphQLString}
   })
 });
 

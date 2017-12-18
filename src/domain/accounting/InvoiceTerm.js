@@ -53,18 +53,18 @@ export {InvoiceTermType};
 
 const InvoiceTermInputType = new GraphQLInputObjectType({
   name: 'InvoiceTermInputType',
-  description: 'input type for InvoiceTerm in accounting',
+  description: 'input type for InvoiceTerm',
 
   fields: () => ({
-    textValue: {type: GraphQLString},
-    termDays: {type: GraphQLInt},
-    invoiceTermId: {type: GraphQLString},
-    termTypeId: {type: GraphQLString},
     description: {type: GraphQLString},
     invoiceId: {type: GraphQLString},
     invoiceItemSeqId: {type: GraphQLString},
-    uomId: {type: GraphQLString},
-    termValue: {type: GraphQLFloat}
+    invoiceTermId: {type: GraphQLString},
+    termDays: {type: GraphQLInt},
+    termTypeId: {type: GraphQLString},
+    termValue: {type: GraphQLFloat},
+    textValue: {type: GraphQLString},
+    uomId: {type: GraphQLString}
   })
 });
 

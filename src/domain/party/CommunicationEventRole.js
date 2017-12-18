@@ -48,14 +48,14 @@ export {CommunicationEventRoleType};
 
 const CommunicationEventRoleInputType = new GraphQLInputObjectType({
   name: 'CommunicationEventRoleInputType',
-  description: 'input type for CommunicationEventRole in party',
+  description: 'input type for CommunicationEventRole',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
     communicationEventId: {type: GraphQLString},
+    contactMechId: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    contactMechId: {type: GraphQLString}
+    roleTypeId: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

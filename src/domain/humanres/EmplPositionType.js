@@ -65,13 +65,13 @@ export {EmplPositionTypeType};
 
 const EmplPositionTypeInputType = new GraphQLInputObjectType({
   name: 'EmplPositionTypeInputType',
-  description: 'input type for EmplPositionType in humanres',
+  description: 'input type for EmplPositionType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
     emplPositionTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

@@ -43,13 +43,13 @@ export {PaymentGroupMemberType};
 
 const PaymentGroupMemberInputType = new GraphQLInputObjectType({
   name: 'PaymentGroupMemberInputType',
-  description: 'input type for PaymentGroupMember in accounting',
+  description: 'input type for PaymentGroupMember',
 
   fields: () => ({
-    paymentGroupId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
+    paymentGroupId: {type: GraphQLString},
     paymentId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}
   })
 });

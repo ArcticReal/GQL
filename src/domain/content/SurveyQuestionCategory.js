@@ -46,12 +46,12 @@ export {SurveyQuestionCategoryType};
 
 const SurveyQuestionCategoryInputType = new GraphQLInputObjectType({
   name: 'SurveyQuestionCategoryInputType',
-  description: 'input type for SurveyQuestionCategory in content',
+  description: 'input type for SurveyQuestionCategory',
 
   fields: () => ({
-    surveyQuestionCategoryId: {type: GraphQLString},
     description: {type: GraphQLString},
-    parentCategoryId: {type: GraphQLString}
+    parentCategoryId: {type: GraphQLString},
+    surveyQuestionCategoryId: {type: GraphQLString}
   })
 });
 

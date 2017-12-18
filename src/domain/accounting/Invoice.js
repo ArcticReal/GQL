@@ -133,25 +133,25 @@ export {InvoiceType};
 
 const InvoiceInputType = new GraphQLInputObjectType({
   name: 'InvoiceInputType',
-  description: 'input type for Invoice in accounting',
+  description: 'input type for Invoice',
 
   fields: () => ({
-    partyIdFrom: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
-    recurrenceInfoId: {type: GraphQLString},
-    invoiceTypeId: {type: GraphQLString},
-    dueDate: {type: GraphQLString},
-    description: {type: GraphQLString},
     billingAccountId: {type: GraphQLString},
-    invoiceDate: {type: GraphQLString},
     contactMechId: {type: GraphQLString},
     currencyUomId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    paidDate: {type: GraphQLString},
-    referenceNumber: {type: GraphQLString},
+    description: {type: GraphQLString},
+    dueDate: {type: GraphQLString},
+    invoiceDate: {type: GraphQLString},
     invoiceId: {type: GraphQLString},
     invoiceMessage: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    invoiceTypeId: {type: GraphQLString},
+    paidDate: {type: GraphQLString},
+    partyId: {type: GraphQLString},
+    partyIdFrom: {type: GraphQLString},
+    recurrenceInfoId: {type: GraphQLString},
+    referenceNumber: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

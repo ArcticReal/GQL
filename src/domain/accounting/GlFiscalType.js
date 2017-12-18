@@ -36,11 +36,11 @@ export {GlFiscalTypeType};
 
 const GlFiscalTypeInputType = new GraphQLInputObjectType({
   name: 'GlFiscalTypeInputType',
-  description: 'input type for GlFiscalType in accounting',
+  description: 'input type for GlFiscalType',
 
   fields: () => ({
-    glFiscalTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    glFiscalTypeId: {type: GraphQLString}
   })
 });
 

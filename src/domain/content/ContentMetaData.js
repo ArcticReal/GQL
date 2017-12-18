@@ -42,13 +42,13 @@ export {ContentMetaDataType};
 
 const ContentMetaDataInputType = new GraphQLInputObjectType({
   name: 'ContentMetaDataInputType',
-  description: 'input type for ContentMetaData in content',
+  description: 'input type for ContentMetaData',
 
   fields: () => ({
+    contentId: {type: GraphQLString},
     dataSourceId: {type: GraphQLString},
-    metaDataValue: {type: GraphQLString},
     metaDataPredicateId: {type: GraphQLString},
-    contentId: {type: GraphQLString}
+    metaDataValue: {type: GraphQLString}
   })
 });
 

@@ -41,7 +41,7 @@ export {AgreementPartyApplicType};
 
 const AgreementPartyApplicInputType = new GraphQLInputObjectType({
   name: 'AgreementPartyApplicInputType',
-  description: 'input type for AgreementPartyApplic in party',
+  description: 'input type for AgreementPartyApplic',
 
   fields: () => ({
     agreementId: {type: GraphQLString},

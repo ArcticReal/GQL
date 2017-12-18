@@ -49,14 +49,14 @@ export {ProdCatalogCategoryType};
 
 const ProdCatalogCategoryInputType = new GraphQLInputObjectType({
   name: 'ProdCatalogCategoryInputType',
-  description: 'input type for ProdCatalogCategory in product',
+  description: 'input type for ProdCatalogCategory',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
     prodCatalogCategoryTypeId: {type: GraphQLString},
+    prodCatalogId: {type: GraphQLString},
     productCategoryId: {type: GraphQLString},
     sequenceNum: {type: GraphQLInt},
-    prodCatalogId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

@@ -73,11 +73,11 @@ export {ShipmentMethodTypeType};
 
 const ShipmentMethodTypeInputType = new GraphQLInputObjectType({
   name: 'ShipmentMethodTypeInputType',
-  description: 'input type for ShipmentMethodType in shipment',
+  description: 'input type for ShipmentMethodType',
 
   fields: () => ({
-    sequenceNum: {type: GraphQLInt},
     description: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
     shipmentMethodTypeId: {type: GraphQLString}
   })
 });

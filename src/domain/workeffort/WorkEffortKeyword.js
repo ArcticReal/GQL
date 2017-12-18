@@ -36,12 +36,12 @@ export {WorkEffortKeywordType};
 
 const WorkEffortKeywordInputType = new GraphQLInputObjectType({
   name: 'WorkEffortKeywordInputType',
-  description: 'input type for WorkEffortKeyword in workeffort',
+  description: 'input type for WorkEffortKeyword',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
+    keyword: {type: GraphQLString},
     relevancyWeight: {type: GraphQLInt},
-    keyword: {type: GraphQLString}
+    workEffortId: {type: GraphQLString}
   })
 });
 

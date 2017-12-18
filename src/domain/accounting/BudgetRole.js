@@ -41,12 +41,12 @@ export {BudgetRoleType};
 
 const BudgetRoleInputType = new GraphQLInputObjectType({
   name: 'BudgetRoleInputType',
-  description: 'input type for BudgetRole in accounting',
+  description: 'input type for BudgetRole',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
     budgetId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

@@ -71,14 +71,14 @@ export {FacilityGroupType};
 
 const FacilityGroupInputType = new GraphQLInputObjectType({
   name: 'FacilityGroupInputType',
-  description: 'input type for FacilityGroup in product',
+  description: 'input type for FacilityGroup',
 
   fields: () => ({
-    primaryParentGroupId: {type: GraphQLString},
-    facilityGroupTypeId: {type: GraphQLString},
-    facilityGroupId: {type: GraphQLString},
     description: {type: GraphQLString},
-    facilityGroupName: {type: GraphQLString}
+    facilityGroupId: {type: GraphQLString},
+    facilityGroupName: {type: GraphQLString},
+    facilityGroupTypeId: {type: GraphQLString},
+    primaryParentGroupId: {type: GraphQLString}
   })
 });
 

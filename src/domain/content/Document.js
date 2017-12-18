@@ -52,16 +52,16 @@ export {DocumentType};
 
 const DocumentInputType = new GraphQLInputObjectType({
   name: 'DocumentInputType',
-  description: 'input type for Document in content',
+  description: 'input type for Document',
 
   fields: () => ({
-    dateCreated: {type: GraphQLString},
     comments: {type: GraphQLString},
-    imageData: {type: GraphQLString/*this was an Object TODO find a solution*/},
-    documentTypeId: {type: GraphQLString},
-    documentText: {type: GraphQLString},
+    dateCreated: {type: GraphQLString},
     documentId: {type: GraphQLString},
-    documentLocation: {type: GraphQLString}
+    documentLocation: {type: GraphQLString},
+    documentText: {type: GraphQLString},
+    documentTypeId: {type: GraphQLString},
+    imageData: {type: GraphQLString}
   })
 });
 

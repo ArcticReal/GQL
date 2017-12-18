@@ -55,15 +55,15 @@ export {ProductAverageCostType};
 
 const ProductAverageCostInputType = new GraphQLInputObjectType({
   name: 'ProductAverageCostInputType',
-  description: 'input type for ProductAverageCost in accounting',
+  description: 'input type for ProductAverageCost',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    facilityId: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    productAverageCostTypeId: {type: GraphQLString},
-    organizationPartyId: {type: GraphQLString},
     averageCost: {type: GraphQLFloat},
+    facilityId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    organizationPartyId: {type: GraphQLString},
+    productAverageCostTypeId: {type: GraphQLString},
+    productId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

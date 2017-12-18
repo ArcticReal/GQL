@@ -83,16 +83,16 @@ export {BillingAccountType};
 
 const BillingAccountInputType = new GraphQLInputObjectType({
   name: 'BillingAccountInputType',
-  description: 'input type for BillingAccount in accounting',
+  description: 'input type for BillingAccount',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    accountLimit: {type: GraphQLFloat},
-    externalAccountId: {type: GraphQLString},
     accountCurrencyUomId: {type: GraphQLString},
-    description: {type: GraphQLString},
+    accountLimit: {type: GraphQLFloat},
     billingAccountId: {type: GraphQLString},
     contactMechId: {type: GraphQLString},
+    description: {type: GraphQLString},
+    externalAccountId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

@@ -47,18 +47,18 @@ export {CheckAccountType};
 
 const CheckAccountInputType = new GraphQLInputObjectType({
   name: 'CheckAccountInputType',
-  description: 'input type for CheckAccount in accounting',
+  description: 'input type for CheckAccount',
 
   fields: () => ({
-    companyNameOnAccount: {type: GraphQLString},
-    branchCode: {type: GraphQLString},
-    routingNumber: {type: GraphQLString},
-    nameOnAccount: {type: GraphQLString},
-    paymentMethodId: {type: GraphQLString},
+    accountNumber: {type: GraphQLString},
     accountType: {type: GraphQLString},
     bankName: {type: GraphQLString},
-    accountNumber: {type: GraphQLString},
-    contactMechId: {type: GraphQLString}
+    branchCode: {type: GraphQLString},
+    companyNameOnAccount: {type: GraphQLString},
+    contactMechId: {type: GraphQLString},
+    nameOnAccount: {type: GraphQLString},
+    paymentMethodId: {type: GraphQLString},
+    routingNumber: {type: GraphQLString}
   })
 });
 

@@ -37,12 +37,12 @@ export {DataTemplateTypeType};
 
 const DataTemplateTypeInputType = new GraphQLInputObjectType({
   name: 'DataTemplateTypeInputType',
-  description: 'input type for DataTemplateType in content',
+  description: 'input type for DataTemplateType',
 
   fields: () => ({
-    extension: {type: GraphQLString},
     dataTemplateTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    extension: {type: GraphQLString}
   })
 });
 

@@ -50,16 +50,16 @@ export {TrackingCodeOrderType};
 
 const TrackingCodeOrderInputType = new GraphQLInputObjectType({
   name: 'TrackingCodeOrderInputType',
-  description: 'input type for TrackingCodeOrder in marketing',
+  description: 'input type for TrackingCodeOrder',
 
   fields: () => ({
-    trackingCodeId: {type: GraphQLString},
-    orderId: {type: GraphQLString},
-    trackingCodeTypeId: {type: GraphQLString},
-    siteId: {type: GraphQLString},
-    hasExported: {type: GraphQLBoolean},
     affiliateReferredTimeStamp: {type: GraphQLString},
-    isBillable: {type: GraphQLBoolean}
+    hasExported: {type: GraphQLBoolean},
+    isBillable: {type: GraphQLBoolean},
+    orderId: {type: GraphQLString},
+    siteId: {type: GraphQLString},
+    trackingCodeId: {type: GraphQLString},
+    trackingCodeTypeId: {type: GraphQLString}
   })
 });
 

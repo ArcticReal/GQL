@@ -49,14 +49,14 @@ export {ProductCostComponentCalcType};
 
 const ProductCostComponentCalcInputType = new GraphQLInputObjectType({
   name: 'ProductCostComponentCalcInputType',
-  description: 'input type for ProductCostComponentCalc in product',
+  description: 'input type for ProductCostComponentCalc',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
+    costComponentCalcId: {type: GraphQLString},
     costComponentTypeId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     productId: {type: GraphQLString},
     sequenceNum: {type: GraphQLInt},
-    costComponentCalcId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

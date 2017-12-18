@@ -37,11 +37,11 @@ export {ContainerGeoPointType};
 
 const ContainerGeoPointInputType = new GraphQLInputObjectType({
   name: 'ContainerGeoPointInputType',
-  description: 'input type for ContainerGeoPoint in product',
+  description: 'input type for ContainerGeoPoint',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     containerId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     geoPointId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })

@@ -47,13 +47,13 @@ export {PaymentGatewayConfigTypeType};
 
 const PaymentGatewayConfigTypeInputType = new GraphQLInputObjectType({
   name: 'PaymentGatewayConfigTypeInputType',
-  description: 'input type for PaymentGatewayConfigType in accounting',
+  description: 'input type for PaymentGatewayConfigType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    paymentGatewayConfigTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    paymentGatewayConfigTypeId: {type: GraphQLString}
   })
 });
 

@@ -35,11 +35,11 @@ export {SecurityGroupPermissionType};
 
 const SecurityGroupPermissionInputType = new GraphQLInputObjectType({
   name: 'SecurityGroupPermissionInputType',
-  description: 'input type for SecurityGroupPermission in login',
+  description: 'input type for SecurityGroupPermission',
 
   fields: () => ({
-    permissionId: {type: GraphQLString},
-    groupId: {type: GraphQLString}
+    groupId: {type: GraphQLString},
+    permissionId: {type: GraphQLString}
   })
 });
 

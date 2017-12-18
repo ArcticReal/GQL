@@ -42,12 +42,12 @@ export {SurveyTriggerType};
 
 const SurveyTriggerInputType = new GraphQLInputObjectType({
   name: 'SurveyTriggerInputType',
-  description: 'input type for SurveyTrigger in content',
+  description: 'input type for SurveyTrigger',
 
   fields: () => ({
     fromDate: {type: GraphQLString},
-    surveyId: {type: GraphQLString},
     surveyApplTypeId: {type: GraphQLString},
+    surveyId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

@@ -40,11 +40,11 @@ export {OrderHeaderWorkEffortType};
 
 const OrderHeaderWorkEffortInputType = new GraphQLInputObjectType({
   name: 'OrderHeaderWorkEffortInputType',
-  description: 'input type for OrderHeaderWorkEffort in order',
+  description: 'input type for OrderHeaderWorkEffort',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    orderId: {type: GraphQLString}
+    orderId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

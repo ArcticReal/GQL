@@ -35,10 +35,10 @@ export {OtherDataResourceType};
 
 const OtherDataResourceInputType = new GraphQLInputObjectType({
   name: 'OtherDataResourceInputType',
-  description: 'input type for OtherDataResource in content',
+  description: 'input type for OtherDataResource',
 
   fields: () => ({
-    dataResourceContent: {type: GraphQLString/*this was a byte Array TODO find a solution*/},
+    dataResourceContent: {type: new GraphQLList(GraphQLString)},
     dataResourceId: {type: GraphQLString}
   })
 });

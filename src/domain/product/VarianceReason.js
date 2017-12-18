@@ -42,11 +42,11 @@ export {VarianceReasonType};
 
 const VarianceReasonInputType = new GraphQLInputObjectType({
   name: 'VarianceReasonInputType',
-  description: 'input type for VarianceReason in product',
+  description: 'input type for VarianceReason',
 
   fields: () => ({
-    varianceReasonId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    varianceReasonId: {type: GraphQLString}
   })
 });
 

@@ -42,13 +42,13 @@ export {WorkEffortInventoryAssignType};
 
 const WorkEffortInventoryAssignInputType = new GraphQLInputObjectType({
   name: 'WorkEffortInventoryAssignInputType',
-  description: 'input type for WorkEffortInventoryAssign in workeffort',
+  description: 'input type for WorkEffortInventoryAssign',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
     inventoryItemId: {type: GraphQLString},
     quantity: {type: GraphQLFloat},
-    statusId: {type: GraphQLString}
+    statusId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

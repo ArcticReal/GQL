@@ -55,26 +55,26 @@ export {CreditCardType};
 
 const CreditCardInputType = new GraphQLInputObjectType({
   name: 'CreditCardInputType',
-  description: 'input type for CreditCard in accounting',
+  description: 'input type for CreditCard',
 
   fields: () => ({
-    firstNameOnCard: {type: GraphQLString},
-    issueNumber: {type: GraphQLString},
+    cardNumber: {type: GraphQLString},
     cardType: {type: GraphQLString},
-    lastFailedAuthDate: {type: GraphQLString},
+    companyNameOnCard: {type: GraphQLString},
+    consecutiveFailedAuths: {type: GraphQLInt},
     consecutiveFailedNsf: {type: GraphQLInt},
     contactMechId: {type: GraphQLString},
-    companyNameOnCard: {type: GraphQLString},
-    titleOnCard: {type: GraphQLString},
-    lastNameOnCard: {type: GraphQLString},
-    paymentMethodId: {type: GraphQLString},
-    middleNameOnCard: {type: GraphQLString},
-    validFromDate: {type: GraphQLString},
     expireDate: {type: GraphQLString},
-    consecutiveFailedAuths: {type: GraphQLInt},
+    firstNameOnCard: {type: GraphQLString},
+    issueNumber: {type: GraphQLString},
+    lastFailedAuthDate: {type: GraphQLString},
     lastFailedNsfDate: {type: GraphQLString},
-    cardNumber: {type: GraphQLString},
-    suffixOnCard: {type: GraphQLString}
+    lastNameOnCard: {type: GraphQLString},
+    middleNameOnCard: {type: GraphQLString},
+    paymentMethodId: {type: GraphQLString},
+    suffixOnCard: {type: GraphQLString},
+    titleOnCard: {type: GraphQLString},
+    validFromDate: {type: GraphQLString}
   })
 });
 

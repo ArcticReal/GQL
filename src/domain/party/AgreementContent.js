@@ -49,14 +49,14 @@ export {AgreementContentType};
 
 const AgreementContentInputType = new GraphQLInputObjectType({
   name: 'AgreementContentInputType',
-  description: 'input type for AgreementContent in party',
+  description: 'input type for AgreementContent',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    agreementId: {type: GraphQLString},
-    contentId: {type: GraphQLString},
-    agreementItemSeqId: {type: GraphQLString},
     agreementContentTypeId: {type: GraphQLString},
+    agreementId: {type: GraphQLString},
+    agreementItemSeqId: {type: GraphQLString},
+    contentId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

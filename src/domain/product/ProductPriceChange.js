@@ -45,20 +45,20 @@ export {ProductPriceChangeType};
 
 const ProductPriceChangeInputType = new GraphQLInputObjectType({
   name: 'ProductPriceChangeInputType',
-  description: 'input type for ProductPriceChange in product',
+  description: 'input type for ProductPriceChange',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
+    changedByUserLogin: {type: GraphQLString},
     changedDate: {type: GraphQLString},
     currencyUomId: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    price: {type: GraphQLFloat},
+    fromDate: {type: GraphQLString},
     oldPrice: {type: GraphQLFloat},
-    changedByUserLogin: {type: GraphQLString},
+    price: {type: GraphQLFloat},
+    productId: {type: GraphQLString},
     productPriceChangeId: {type: GraphQLString},
     productPricePurposeId: {type: GraphQLString},
-    productStoreGroupId: {type: GraphQLString},
     productPriceTypeId: {type: GraphQLString},
+    productStoreGroupId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

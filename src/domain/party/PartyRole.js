@@ -292,11 +292,11 @@ export {PartyRoleType};
 
 const PartyRoleInputType = new GraphQLInputObjectType({
   name: 'PartyRoleInputType',
-  description: 'input type for PartyRole in party',
+  description: 'input type for PartyRole',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

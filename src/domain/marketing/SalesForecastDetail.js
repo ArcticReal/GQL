@@ -50,16 +50,16 @@ export {SalesForecastDetailType};
 
 const SalesForecastDetailInputType = new GraphQLInputObjectType({
   name: 'SalesForecastDetailInputType',
-  description: 'input type for SalesForecastDetail in marketing',
+  description: 'input type for SalesForecastDetail',
 
   fields: () => ({
     amount: {type: GraphQLFloat},
-    quantity: {type: GraphQLFloat},
     productCategoryId: {type: GraphQLString},
     productId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
     quantityUomId: {type: GraphQLString},
-    salesForecastId: {type: GraphQLString},
-    salesForecastDetailId: {type: GraphQLString}
+    salesForecastDetailId: {type: GraphQLString},
+    salesForecastId: {type: GraphQLString}
   })
 });
 

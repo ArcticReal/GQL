@@ -52,18 +52,18 @@ export {ProductCategoryContentType};
 
 const ProductCategoryContentInputType = new GraphQLInputObjectType({
   name: 'ProductCategoryContentInputType',
-  description: 'input type for ProductCategoryContent in product',
+  description: 'input type for ProductCategoryContent',
 
   fields: () => ({
+    contentId: {type: GraphQLString},
     fromDate: {type: GraphQLString},
     prodCatContentTypeId: {type: GraphQLString},
-    purchaseFromDate: {type: GraphQLString},
     productCategoryId: {type: GraphQLString},
-    contentId: {type: GraphQLString},
-    useDaysLimit: {type: GraphQLFloat},
+    purchaseFromDate: {type: GraphQLString},
     purchaseThruDate: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
     useCountLimit: {type: GraphQLInt},
-    thruDate: {type: GraphQLString}
+    useDaysLimit: {type: GraphQLFloat}
   })
 });
 

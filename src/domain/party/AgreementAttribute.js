@@ -37,13 +37,13 @@ export {AgreementAttributeType};
 
 const AgreementAttributeInputType = new GraphQLInputObjectType({
   name: 'AgreementAttributeInputType',
-  description: 'input type for AgreementAttribute in party',
+  description: 'input type for AgreementAttribute',
 
   fields: () => ({
-    attrDescription: {type: GraphQLString},
     agreementId: {type: GraphQLString},
-    attrValue: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    attrDescription: {type: GraphQLString},
+    attrName: {type: GraphQLString},
+    attrValue: {type: GraphQLString}
   })
 });
 

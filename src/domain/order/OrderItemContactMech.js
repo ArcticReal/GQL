@@ -47,13 +47,13 @@ export {OrderItemContactMechType};
 
 const OrderItemContactMechInputType = new GraphQLInputObjectType({
   name: 'OrderItemContactMechInputType',
-  description: 'input type for OrderItemContactMech in order',
+  description: 'input type for OrderItemContactMech',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
+    contactMechId: {type: GraphQLString},
     contactMechPurposeTypeId: {type: GraphQLString},
     orderId: {type: GraphQLString},
-    contactMechId: {type: GraphQLString}
+    orderItemSeqId: {type: GraphQLString}
   })
 });
 

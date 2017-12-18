@@ -40,15 +40,15 @@ export {FinAccountAuthType};
 
 const FinAccountAuthInputType = new GraphQLInputObjectType({
   name: 'FinAccountAuthInputType',
-  description: 'input type for FinAccountAuth in accounting',
+  description: 'input type for FinAccountAuth',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
+    amount: {type: GraphQLFloat},
+    authorizationDate: {type: GraphQLString},
+    currencyUomId: {type: GraphQLString},
     finAccountAuthId: {type: GraphQLString},
     finAccountId: {type: GraphQLString},
-    amount: {type: GraphQLFloat},
-    currencyUomId: {type: GraphQLString},
-    authorizationDate: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

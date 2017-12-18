@@ -42,12 +42,12 @@ export {ShipmentItemBillingType};
 
 const ShipmentItemBillingInputType = new GraphQLInputObjectType({
   name: 'ShipmentItemBillingInputType',
-  description: 'input type for ShipmentItemBilling in shipment',
+  description: 'input type for ShipmentItemBilling',
 
   fields: () => ({
-    shipmentId: {type: GraphQLString},
     invoiceId: {type: GraphQLString},
     invoiceItemSeqId: {type: GraphQLString},
+    shipmentId: {type: GraphQLString},
     shipmentItemSeqId: {type: GraphQLString}
   })
 });

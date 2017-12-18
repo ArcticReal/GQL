@@ -57,33 +57,33 @@ export {PaymentGatewayPayflowProType};
 
 const PaymentGatewayPayflowProInputType = new GraphQLInputObjectType({
   name: 'PaymentGatewayPayflowProInputType',
-  description: 'input type for PaymentGatewayPayflowPro in accounting',
+  description: 'input type for PaymentGatewayPayflowPro',
 
   fields: () => ({
-    redirectUrl: {type: GraphQLString},
-    paymentGatewayConfigId: {type: GraphQLString},
-    proxyPassword: {type: GraphQLString},
     cancelReturnUrl: {type: GraphQLString},
-    enableTransmit: {type: GraphQLString},
-    checkAvs: {type: GraphQLBoolean},
-    stackTraceOn: {type: GraphQLBoolean},
-    userId: {type: GraphQLString},
-    checkCvv2: {type: GraphQLBoolean},
-    timeout: {type: GraphQLInt},
-    proxyPort: {type: GraphQLInt},
-    proxyLogon: {type: GraphQLString},
     certsPath: {type: GraphQLString},
-    partner: {type: GraphQLString},
-    vendor: {type: GraphQLString},
-    logFileName: {type: GraphQLString},
-    hostPort: {type: GraphQLInt},
+    checkAvs: {type: GraphQLBoolean},
+    checkCvv2: {type: GraphQLBoolean},
+    enableTransmit: {type: GraphQLString},
     hostAddress: {type: GraphQLString},
+    hostPort: {type: GraphQLInt},
+    logFileName: {type: GraphQLString},
+    loggingLevel: {type: GraphQLInt},
+    maxLogFileSize: {type: GraphQLInt},
+    partner: {type: GraphQLString},
+    paymentGatewayConfigId: {type: GraphQLString},
     preAuth: {type: GraphQLBoolean},
     proxyAddress: {type: GraphQLString},
+    proxyLogon: {type: GraphQLString},
+    proxyPassword: {type: GraphQLString},
+    proxyPort: {type: GraphQLInt},
     pwd: {type: GraphQLString},
+    redirectUrl: {type: GraphQLString},
     returnUrl: {type: GraphQLString},
-    loggingLevel: {type: GraphQLInt},
-    maxLogFileSize: {type: GraphQLInt}
+    stackTraceOn: {type: GraphQLBoolean},
+    timeout: {type: GraphQLInt},
+    userId: {type: GraphQLString},
+    vendor: {type: GraphQLString}
   })
 });
 

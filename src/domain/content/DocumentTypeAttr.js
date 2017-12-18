@@ -36,12 +36,12 @@ export {DocumentTypeAttrType};
 
 const DocumentTypeAttrInputType = new GraphQLInputObjectType({
   name: 'DocumentTypeAttrInputType',
-  description: 'input type for DocumentTypeAttr in content',
+  description: 'input type for DocumentTypeAttr',
 
   fields: () => ({
-    documentTypeId: {type: GraphQLString},
+    attrName: {type: GraphQLString},
     description: {type: GraphQLString},
-    attrName: {type: GraphQLString}
+    documentTypeId: {type: GraphQLString}
   })
 });
 

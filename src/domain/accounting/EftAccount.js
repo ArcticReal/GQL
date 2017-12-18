@@ -47,18 +47,18 @@ export {EftAccountType};
 
 const EftAccountInputType = new GraphQLInputObjectType({
   name: 'EftAccountInputType',
-  description: 'input type for EftAccount in accounting',
+  description: 'input type for EftAccount',
 
   fields: () => ({
-    companyNameOnAccount: {type: GraphQLString},
-    routingNumber: {type: GraphQLString},
-    nameOnAccount: {type: GraphQLString},
-    paymentMethodId: {type: GraphQLString},
+    accountNumber: {type: GraphQLString},
     accountType: {type: GraphQLString},
     bankName: {type: GraphQLString},
-    yearsAtBank: {type: GraphQLInt},
-    accountNumber: {type: GraphQLString},
-    contactMechId: {type: GraphQLString}
+    companyNameOnAccount: {type: GraphQLString},
+    contactMechId: {type: GraphQLString},
+    nameOnAccount: {type: GraphQLString},
+    paymentMethodId: {type: GraphQLString},
+    routingNumber: {type: GraphQLString},
+    yearsAtBank: {type: GraphQLInt}
   })
 });
 

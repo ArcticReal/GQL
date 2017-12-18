@@ -40,11 +40,11 @@ export {QuoteWorkEffortType};
 
 const QuoteWorkEffortInputType = new GraphQLInputObjectType({
   name: 'QuoteWorkEffortInputType',
-  description: 'input type for QuoteWorkEffort in order',
+  description: 'input type for QuoteWorkEffort',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    quoteId: {type: GraphQLString}
+    quoteId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

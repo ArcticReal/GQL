@@ -53,12 +53,12 @@ export {ShipmentTypeType};
 
 const ShipmentTypeInputType = new GraphQLInputObjectType({
   name: 'ShipmentTypeInputType',
-  description: 'input type for ShipmentType in shipment',
+  description: 'input type for ShipmentType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
     description: {type: GraphQLString},
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString},
     shipmentTypeId: {type: GraphQLString}
   })
 });

@@ -43,13 +43,13 @@ export {CustRequestPartyType};
 
 const CustRequestPartyInputType = new GraphQLInputObjectType({
   name: 'CustRequestPartyInputType',
-  description: 'input type for CustRequestParty in order',
+  description: 'input type for CustRequestParty',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     custRequestId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

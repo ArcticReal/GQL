@@ -52,18 +52,18 @@ export {ProductReviewType};
 
 const ProductReviewInputType = new GraphQLInputObjectType({
   name: 'ProductReviewInputType',
-  description: 'input type for ProductReview in product',
+  description: 'input type for ProductReview',
 
   fields: () => ({
-    userLoginId: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    postedDateTime: {type: GraphQLString},
-    productStoreId: {type: GraphQLString},
     postedAnonymous: {type: GraphQLBoolean},
-    productReviewId: {type: GraphQLString},
+    postedDateTime: {type: GraphQLString},
+    productId: {type: GraphQLString},
     productRating: {type: GraphQLFloat},
-    productReview: {type: GraphQLString}
+    productReview: {type: GraphQLString},
+    productReviewId: {type: GraphQLString},
+    productStoreId: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    userLoginId: {type: GraphQLString}
   })
 });
 

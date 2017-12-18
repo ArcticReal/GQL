@@ -161,13 +161,13 @@ export {RoleTypeType};
 
 const RoleTypeInputType = new GraphQLInputObjectType({
   name: 'RoleTypeInputType',
-  description: 'input type for RoleType in party',
+  description: 'input type for RoleType',
 
   fields: () => ({
-    roleTypeId: {type: GraphQLString},
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

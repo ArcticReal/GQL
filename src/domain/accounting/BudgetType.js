@@ -53,13 +53,13 @@ export {BudgetTypeType};
 
 const BudgetTypeInputType = new GraphQLInputObjectType({
   name: 'BudgetTypeInputType',
-  description: 'input type for BudgetType in accounting',
+  description: 'input type for BudgetType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
     budgetTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString}
   })
 });
 

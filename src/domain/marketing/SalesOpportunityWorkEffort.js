@@ -40,11 +40,11 @@ export {SalesOpportunityWorkEffortType};
 
 const SalesOpportunityWorkEffortInputType = new GraphQLInputObjectType({
   name: 'SalesOpportunityWorkEffortInputType',
-  description: 'input type for SalesOpportunityWorkEffort in marketing',
+  description: 'input type for SalesOpportunityWorkEffort',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    salesOpportunityId: {type: GraphQLString}
+    salesOpportunityId: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

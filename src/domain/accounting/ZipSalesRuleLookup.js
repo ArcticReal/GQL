@@ -35,16 +35,16 @@ export {ZipSalesRuleLookupType};
 
 const ZipSalesRuleLookupInputType = new GraphQLInputObjectType({
   name: 'ZipSalesRuleLookupInputType',
-  description: 'input type for ZipSalesRuleLookup in accounting',
+  description: 'input type for ZipSalesRuleLookup',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    taxable: {type: GraphQLString},
     city: {type: GraphQLString},
-    idCode: {type: GraphQLString},
     county: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    idCode: {type: GraphQLString},
     shipCond: {type: GraphQLString},
-    stateCode: {type: GraphQLString}
+    stateCode: {type: GraphQLString},
+    taxable: {type: GraphQLString}
   })
 });
 

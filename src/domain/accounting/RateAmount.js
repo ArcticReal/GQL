@@ -57,18 +57,18 @@ export {RateAmountType};
 
 const RateAmountInputType = new GraphQLInputObjectType({
   name: 'RateAmountInputType',
-  description: 'input type for RateAmount in accounting',
+  description: 'input type for RateAmount',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    rateTypeId: {type: GraphQLString},
-    rateAmount: {type: GraphQLFloat},
-    periodTypeId: {type: GraphQLString},
     emplPositionTypeId: {type: GraphQLString},
-    rateCurrencyUomId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    periodTypeId: {type: GraphQLString},
+    rateAmount: {type: GraphQLFloat},
+    rateCurrencyUomId: {type: GraphQLString},
+    rateTypeId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

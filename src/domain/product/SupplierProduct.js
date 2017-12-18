@@ -73,29 +73,29 @@ export {SupplierProductType};
 
 const SupplierProductInputType = new GraphQLInputObjectType({
   name: 'SupplierProductInputType',
-  description: 'input type for SupplierProduct in product',
+  description: 'input type for SupplierProduct',
 
   fields: () => ({
-    supplierProductName: {type: GraphQLString},
-    comments: {type: GraphQLString},
-    productId: {type: GraphQLString},
-    canDropShip: {type: GraphQLBoolean},
-    minimumOrderQuantity: {type: GraphQLFloat},
-    supplierRatingTypeId: {type: GraphQLString},
-    agreementItemSeqId: {type: GraphQLString},
-    quantityUomId: {type: GraphQLString},
-    supplierProductId: {type: GraphQLString},
-    supplierPrefOrderId: {type: GraphQLString},
-    unitsIncluded: {type: GraphQLFloat},
-    orderQtyIncrements: {type: GraphQLFloat},
-    currencyUomId: {type: GraphQLString},
-    availableFromDate: {type: GraphQLString},
-    shippingPrice: {type: GraphQLFloat},
     agreementId: {type: GraphQLString},
+    agreementItemSeqId: {type: GraphQLString},
+    availableFromDate: {type: GraphQLString},
     availableThruDate: {type: GraphQLString},
+    canDropShip: {type: GraphQLBoolean},
+    comments: {type: GraphQLString},
+    currencyUomId: {type: GraphQLString},
+    lastPrice: {type: GraphQLFloat},
+    minimumOrderQuantity: {type: GraphQLFloat},
+    orderQtyIncrements: {type: GraphQLFloat},
     partyId: {type: GraphQLString},
+    productId: {type: GraphQLString},
+    quantityUomId: {type: GraphQLString},
+    shippingPrice: {type: GraphQLFloat},
     standardLeadTimeDays: {type: GraphQLFloat},
-    lastPrice: {type: GraphQLFloat}
+    supplierPrefOrderId: {type: GraphQLString},
+    supplierProductId: {type: GraphQLString},
+    supplierProductName: {type: GraphQLString},
+    supplierRatingTypeId: {type: GraphQLString},
+    unitsIncluded: {type: GraphQLFloat}
   })
 });
 

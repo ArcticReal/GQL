@@ -30,11 +30,11 @@ export {TerminationReasonType};
 
 const TerminationReasonInputType = new GraphQLInputObjectType({
   name: 'TerminationReasonInputType',
-  description: 'input type for TerminationReason in humanres',
+  description: 'input type for TerminationReason',
 
   fields: () => ({
-    terminationReasonId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    terminationReasonId: {type: GraphQLString}
   })
 });
 

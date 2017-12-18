@@ -67,19 +67,19 @@ export {SurveyResponseType};
 
 const SurveyResponseInputType = new GraphQLInputObjectType({
   name: 'SurveyResponseInputType',
-  description: 'input type for SurveyResponse in content',
+  description: 'input type for SurveyResponse',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    surveyId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    generalFeedback: {type: GraphQLString},
     lastModifiedDate: {type: GraphQLString},
     orderId: {type: GraphQLString},
-    generalFeedback: {type: GraphQLString},
-    surveyResponseId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
     partyId: {type: GraphQLString},
+    referenceId: {type: GraphQLString},
     responseDate: {type: GraphQLString},
-    referenceId: {type: GraphQLString}
+    statusId: {type: GraphQLString},
+    surveyId: {type: GraphQLString},
+    surveyResponseId: {type: GraphQLString}
   })
 });
 

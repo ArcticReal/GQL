@@ -77,13 +77,13 @@ export {TermTypeType};
 
 const TermTypeInputType = new GraphQLInputObjectType({
   name: 'TermTypeInputType',
-  description: 'input type for TermType in party',
+  description: 'input type for TermType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
+    description: {type: GraphQLString},
     hasTable: {type: GraphQLBoolean},
-    termTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    parentTypeId: {type: GraphQLString},
+    termTypeId: {type: GraphQLString}
   })
 });
 

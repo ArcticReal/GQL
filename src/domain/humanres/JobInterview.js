@@ -55,16 +55,16 @@ export {JobInterviewType};
 
 const JobInterviewInputType = new GraphQLInputObjectType({
   name: 'JobInterviewInputType',
-  description: 'input type for JobInterview in humanres',
+  description: 'input type for JobInterview',
 
   fields: () => ({
-    jobInterviewId: {type: GraphQLString},
-    jobInterviewTypeId: {type: GraphQLString},
     gradeSecuredEnumId: {type: GraphQLString},
-    jobIntervieweePartyId: {type: GraphQLString},
     jobInterviewDate: {type: GraphQLString},
-    jobInterviewerPartyId: {type: GraphQLString},
+    jobInterviewId: {type: GraphQLString},
     jobInterviewResult: {type: GraphQLString},
+    jobInterviewTypeId: {type: GraphQLString},
+    jobIntervieweePartyId: {type: GraphQLString},
+    jobInterviewerPartyId: {type: GraphQLString},
     jobRequisitionId: {type: GraphQLString}
   })
 });

@@ -42,13 +42,13 @@ export {PartyStatusType};
 
 const PartyStatusInputType = new GraphQLInputObjectType({
   name: 'PartyStatusInputType',
-  description: 'input type for PartyStatus in party',
+  description: 'input type for PartyStatus',
 
   fields: () => ({
-    statusDate: {type: GraphQLString},
-    statusId: {type: GraphQLString},
+    changeByUserLoginId: {type: GraphQLString},
     partyId: {type: GraphQLString},
-    changeByUserLoginId: {type: GraphQLString}
+    statusDate: {type: GraphQLString},
+    statusId: {type: GraphQLString}
   })
 });
 

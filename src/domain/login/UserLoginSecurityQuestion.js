@@ -31,12 +31,12 @@ export {UserLoginSecurityQuestionType};
 
 const UserLoginSecurityQuestionInputType = new GraphQLInputObjectType({
   name: 'UserLoginSecurityQuestionInputType',
-  description: 'input type for UserLoginSecurityQuestion in login',
+  description: 'input type for UserLoginSecurityQuestion',
 
   fields: () => ({
-    userLoginId: {type: GraphQLString},
     questionEnumId: {type: GraphQLString},
-    securityAnswer: {type: GraphQLString}
+    securityAnswer: {type: GraphQLString},
+    userLoginId: {type: GraphQLString}
   })
 });
 

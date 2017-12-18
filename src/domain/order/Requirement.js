@@ -119,27 +119,27 @@ export {RequirementType};
 
 const RequirementInputType = new GraphQLInputObjectType({
   name: 'RequirementInputType',
-  description: 'input type for Requirement in order',
+  description: 'input type for Requirement',
 
   fields: () => ({
-    reason: {type: GraphQLString},
-    facilityId: {type: GraphQLString},
-    quantity: {type: GraphQLFloat},
-    productId: {type: GraphQLString},
-    lastModifiedDate: {type: GraphQLString},
-    estimatedBudget: {type: GraphQLFloat},
+    createdByUserLogin: {type: GraphQLString},
+    createdDate: {type: GraphQLString},
+    deliverableId: {type: GraphQLString},
     description: {type: GraphQLString},
+    estimatedBudget: {type: GraphQLFloat},
+    facilityId: {type: GraphQLString},
+    fixedAssetId: {type: GraphQLString},
+    lastModifiedByUserLogin: {type: GraphQLString},
+    lastModifiedDate: {type: GraphQLString},
+    productId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
+    reason: {type: GraphQLString},
     requiredByDate: {type: GraphQLString},
+    requirementId: {type: GraphQLString},
     requirementStartDate: {type: GraphQLString},
     requirementTypeId: {type: GraphQLString},
-    useCase: {type: GraphQLString},
-    lastModifiedByUserLogin: {type: GraphQLString},
-    createdDate: {type: GraphQLString},
     statusId: {type: GraphQLString},
-    fixedAssetId: {type: GraphQLString},
-    requirementId: {type: GraphQLString},
-    createdByUserLogin: {type: GraphQLString},
-    deliverableId: {type: GraphQLString}
+    useCase: {type: GraphQLString}
   })
 });
 

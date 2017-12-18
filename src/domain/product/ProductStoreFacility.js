@@ -43,13 +43,13 @@ export {ProductStoreFacilityType};
 
 const ProductStoreFacilityInputType = new GraphQLInputObjectType({
   name: 'ProductStoreFacilityInputType',
-  description: 'input type for ProductStoreFacility in product',
+  description: 'input type for ProductStoreFacility',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
     facilityId: {type: GraphQLString},
-    sequenceNum: {type: GraphQLInt},
+    fromDate: {type: GraphQLString},
     productStoreId: {type: GraphQLString},
+    sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}
   })
 });

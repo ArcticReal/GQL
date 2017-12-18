@@ -42,13 +42,13 @@ export {OrderItemRoleType};
 
 const OrderItemRoleInputType = new GraphQLInputObjectType({
   name: 'OrderItemRoleInputType',
-  description: 'input type for OrderItemRole in order',
+  description: 'input type for OrderItemRole',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    roleTypeId: {type: GraphQLString},
     orderId: {type: GraphQLString},
-    partyId: {type: GraphQLString}
+    orderItemSeqId: {type: GraphQLString},
+    partyId: {type: GraphQLString},
+    roleTypeId: {type: GraphQLString}
   })
 });
 

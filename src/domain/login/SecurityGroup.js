@@ -54,11 +54,11 @@ export {SecurityGroupType};
 
 const SecurityGroupInputType = new GraphQLInputObjectType({
   name: 'SecurityGroupInputType',
-  description: 'input type for SecurityGroup in login',
+  description: 'input type for SecurityGroup',
 
   fields: () => ({
-    groupId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    description: {type: GraphQLString},
+    groupId: {type: GraphQLString}
   })
 });
 

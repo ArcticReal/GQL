@@ -46,17 +46,17 @@ export {WorkEffortFixedAssetAssignType};
 
 const WorkEffortFixedAssetAssignInputType = new GraphQLInputObjectType({
   name: 'WorkEffortFixedAssetAssignInputType',
-  description: 'input type for WorkEffortFixedAssetAssign in workeffort',
+  description: 'input type for WorkEffortFixedAssetAssign',
 
   fields: () => ({
-    workEffortId: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    comments: {type: GraphQLString},
-    statusId: {type: GraphQLString},
     allocatedCost: {type: GraphQLFloat},
-    fixedAssetId: {type: GraphQLString},
     availabilityStatusId: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    comments: {type: GraphQLString},
+    fixedAssetId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    thruDate: {type: GraphQLString},
+    workEffortId: {type: GraphQLString}
   })
 });
 

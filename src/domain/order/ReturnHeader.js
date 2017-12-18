@@ -130,24 +130,24 @@ export {ReturnHeaderType};
 
 const ReturnHeaderInputType = new GraphQLInputObjectType({
   name: 'ReturnHeaderInputType',
-  description: 'input type for ReturnHeader in order',
+  description: 'input type for ReturnHeader',
 
   fields: () => ({
-    fromPartyId: {type: GraphQLString},
-    entryDate: {type: GraphQLString},
-    originContactMechId: {type: GraphQLString},
     billingAccountId: {type: GraphQLString},
-    returnHeaderTypeId: {type: GraphQLString},
-    finAccountId: {type: GraphQLString},
-    currencyUomId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
     createdBy: {type: GraphQLString},
-    paymentMethodId: {type: GraphQLString},
-    needsInventoryReceive: {type: GraphQLBoolean},
-    returnId: {type: GraphQLString},
-    toPartyId: {type: GraphQLString},
+    currencyUomId: {type: GraphQLString},
     destinationFacilityId: {type: GraphQLString},
-    supplierRmaId: {type: GraphQLString}
+    entryDate: {type: GraphQLString},
+    finAccountId: {type: GraphQLString},
+    fromPartyId: {type: GraphQLString},
+    needsInventoryReceive: {type: GraphQLBoolean},
+    originContactMechId: {type: GraphQLString},
+    paymentMethodId: {type: GraphQLString},
+    returnHeaderTypeId: {type: GraphQLString},
+    returnId: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    supplierRmaId: {type: GraphQLString},
+    toPartyId: {type: GraphQLString}
   })
 });
 

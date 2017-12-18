@@ -92,28 +92,28 @@ export {MarketingCampaignType};
 
 const MarketingCampaignInputType = new GraphQLInputObjectType({
   name: 'MarketingCampaignInputType',
-  description: 'input type for MarketingCampaign in marketing',
+  description: 'input type for MarketingCampaign',
 
   fields: () => ({
+    actualCost: {type: GraphQLFloat},
+    budgetedCost: {type: GraphQLFloat},
+    campaignName: {type: GraphQLString},
+    campaignSummary: {type: GraphQLString},
+    convertedLeads: {type: GraphQLString},
+    createdByUserLogin: {type: GraphQLString},
+    currencyUomId: {type: GraphQLString},
+    estimatedCost: {type: GraphQLFloat},
     expectedResponsePercent: {type: GraphQLFloat},
     expectedRevenue: {type: GraphQLFloat},
-    convertedLeads: {type: GraphQLString},
-    campaignSummary: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    isActive: {type: GraphQLBoolean},
+    lastModifiedByUserLogin: {type: GraphQLString},
     marketingCampaignId: {type: GraphQLString},
     numSent: {type: GraphQLInt},
     parentCampaignId: {type: GraphQLString},
-    estimatedCost: {type: GraphQLFloat},
-    isActive: {type: GraphQLBoolean},
-    thruDate: {type: GraphQLString},
-    fromDate: {type: GraphQLString},
-    lastModifiedByUserLogin: {type: GraphQLString},
-    currencyUomId: {type: GraphQLString},
-    statusId: {type: GraphQLString},
-    budgetedCost: {type: GraphQLFloat},
-    campaignName: {type: GraphQLString},
-    createdByUserLogin: {type: GraphQLString},
     startDate: {type: GraphQLString},
-    actualCost: {type: GraphQLFloat}
+    statusId: {type: GraphQLString},
+    thruDate: {type: GraphQLString}
   })
 });
 

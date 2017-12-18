@@ -47,14 +47,14 @@ export {ProductOrderItemType};
 
 const ProductOrderItemInputType = new GraphQLInputObjectType({
   name: 'ProductOrderItemInputType',
-  description: 'input type for ProductOrderItem in order',
+  description: 'input type for ProductOrderItem',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
+    engagementId: {type: GraphQLString},
     engagementItemSeqId: {type: GraphQLString},
-    productId: {type: GraphQLString},
     orderId: {type: GraphQLString},
-    engagementId: {type: GraphQLString}
+    orderItemSeqId: {type: GraphQLString},
+    productId: {type: GraphQLString}
   })
 });
 

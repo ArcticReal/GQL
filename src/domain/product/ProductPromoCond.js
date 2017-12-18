@@ -40,16 +40,16 @@ export {ProductPromoCondType};
 
 const ProductPromoCondInputType = new GraphQLInputObjectType({
   name: 'ProductPromoCondInputType',
-  description: 'input type for ProductPromoCond in product',
+  description: 'input type for ProductPromoCond',
 
   fields: () => ({
-    productPromoRuleId: {type: GraphQLString},
-    inputParamEnumId: {type: GraphQLString},
     condValue: {type: GraphQLString},
-    productPromoId: {type: GraphQLString},
+    inputParamEnumId: {type: GraphQLString},
     operatorEnumId: {type: GraphQLString},
     otherValue: {type: GraphQLString},
-    productPromoCondSeqId: {type: GraphQLString}
+    productPromoCondSeqId: {type: GraphQLString},
+    productPromoId: {type: GraphQLString},
+    productPromoRuleId: {type: GraphQLString}
   })
 });
 

@@ -37,12 +37,12 @@ export {CostComponentAttributeType};
 
 const CostComponentAttributeInputType = new GraphQLInputObjectType({
   name: 'CostComponentAttributeInputType',
-  description: 'input type for CostComponentAttribute in product',
+  description: 'input type for CostComponentAttribute',
 
   fields: () => ({
     attrDescription: {type: GraphQLString},
-    attrValue: {type: GraphQLString},
     attrName: {type: GraphQLString},
+    attrValue: {type: GraphQLString},
     costComponentId: {type: GraphQLString}
   })
 });

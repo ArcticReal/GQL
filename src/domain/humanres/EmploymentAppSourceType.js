@@ -41,13 +41,13 @@ export {EmploymentAppSourceTypeType};
 
 const EmploymentAppSourceTypeInputType = new GraphQLInputObjectType({
   name: 'EmploymentAppSourceTypeInputType',
-  description: 'input type for EmploymentAppSourceType in humanres',
+  description: 'input type for EmploymentAppSourceType',
 
   fields: () => ({
-    parentTypeId: {type: GraphQLString},
-    hasTable: {type: GraphQLBoolean},
+    description: {type: GraphQLString},
     employmentAppSourceTypeId: {type: GraphQLString},
-    description: {type: GraphQLString}
+    hasTable: {type: GraphQLBoolean},
+    parentTypeId: {type: GraphQLString}
   })
 });
 

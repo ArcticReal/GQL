@@ -37,12 +37,12 @@ export {FixedAssetDepMethodType};
 
 const FixedAssetDepMethodInputType = new GraphQLInputObjectType({
   name: 'FixedAssetDepMethodInputType',
-  description: 'input type for FixedAssetDepMethod in accounting',
+  description: 'input type for FixedAssetDepMethod',
 
   fields: () => ({
-    fromDate: {type: GraphQLString},
-    fixedAssetId: {type: GraphQLString},
     depreciationCustomMethodId: {type: GraphQLString},
+    fixedAssetId: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
     thruDate: {type: GraphQLString}
   })
 });

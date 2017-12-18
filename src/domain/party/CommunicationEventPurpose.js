@@ -41,11 +41,11 @@ export {CommunicationEventPurposeType};
 
 const CommunicationEventPurposeInputType = new GraphQLInputObjectType({
   name: 'CommunicationEventPurposeInputType',
-  description: 'input type for CommunicationEventPurpose in party',
+  description: 'input type for CommunicationEventPurpose',
 
   fields: () => ({
-    communicationEventPrpTypId: {type: GraphQLString},
     communicationEventId: {type: GraphQLString},
+    communicationEventPrpTypId: {type: GraphQLString},
     description: {type: GraphQLString}
   })
 });

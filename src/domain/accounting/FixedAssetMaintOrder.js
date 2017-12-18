@@ -42,13 +42,13 @@ export {FixedAssetMaintOrderType};
 
 const FixedAssetMaintOrderInputType = new GraphQLInputObjectType({
   name: 'FixedAssetMaintOrderInputType',
-  description: 'input type for FixedAssetMaintOrder in accounting',
+  description: 'input type for FixedAssetMaintOrder',
 
   fields: () => ({
-    orderItemSeqId: {type: GraphQLString},
-    orderId: {type: GraphQLString},
     fixedAssetId: {type: GraphQLString},
-    maintHistSeqId: {type: GraphQLString}
+    maintHistSeqId: {type: GraphQLString},
+    orderId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString}
   })
 });
 

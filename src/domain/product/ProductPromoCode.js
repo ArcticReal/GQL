@@ -84,21 +84,21 @@ export {ProductPromoCodeType};
 
 const ProductPromoCodeInputType = new GraphQLInputObjectType({
   name: 'ProductPromoCodeInputType',
-  description: 'input type for ProductPromoCode in product',
+  description: 'input type for ProductPromoCode',
 
   fields: () => ({
-    useLimitPerCode: {type: GraphQLInt},
-    fromDate: {type: GraphQLString},
-    userEntered: {type: GraphQLBoolean},
-    lastModifiedByUserLogin: {type: GraphQLString},
+    createdByUserLogin: {type: GraphQLString},
     createdDate: {type: GraphQLString},
+    fromDate: {type: GraphQLString},
+    lastModifiedByUserLogin: {type: GraphQLString},
     lastModifiedDate: {type: GraphQLString},
     productPromoCodeId: {type: GraphQLString},
-    requireEmailOrParty: {type: GraphQLBoolean},
     productPromoId: {type: GraphQLString},
+    requireEmailOrParty: {type: GraphQLBoolean},
+    thruDate: {type: GraphQLString},
+    useLimitPerCode: {type: GraphQLInt},
     useLimitPerCustomer: {type: GraphQLInt},
-    createdByUserLogin: {type: GraphQLString},
-    thruDate: {type: GraphQLString}
+    userEntered: {type: GraphQLBoolean}
   })
 });
 
