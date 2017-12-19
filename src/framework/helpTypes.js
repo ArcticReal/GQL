@@ -1,10 +1,10 @@
 import {
   GraphQLList,
   GraphQLString,
-  GraphQLInputType
+  GraphQLInputObjectType
 } from 'graphql';
 
-const KeyValueType = new GraphQLInputType({
+const KeyValueType = new GraphQLInputObjectType({
   name: 'KeyValueType',
   description: 'this is a type to define key-value pairs',
   fields: () => ({

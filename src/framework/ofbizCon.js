@@ -105,4 +105,4 @@ function login(relativeURL, username, password){
 }
 
 export {fetchOneFromUrl, fetchArrayFromUrl};
-export {fetchText, postToUrl, login};
+export {fetchText, postToUrl, putToUrl, deleteToUrl, login};

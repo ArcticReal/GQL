@@ -1,0 +1,67 @@
+import {
+  GraphQLSchema,
+  GraphQLObjectType,
+  GraphQLInputObjectType,
+  GraphQLInt,
+  GraphQLFloat,
+  GraphQLString,
+  GraphQLBoolean,
+  GraphQLList,
+} from 'graphql';
+
+const OrderItemInputType = new GraphQLInputObjectType({
+  name: 'OrderItemInputType',
+  description: 'input type for OrderItem',
+
+  fields: () => ({
+    autoCancelDate: {type: GraphQLString},
+    budgetId: {type: GraphQLString},
+    budgetItemSeqId: {type: GraphQLString},
+    cancelBackOrderDate: {type: GraphQLString},
+    cancelQuantity: {type: GraphQLFloat},
+    changeByUserLoginId: {type: GraphQLString},
+    comments: {type: GraphQLString},
+    correspondingPoId: {type: GraphQLString},
+    deploymentId: {type: GraphQLString},
+    dontCancelSetDate: {type: GraphQLString},
+    dontCancelSetUserLogin: {type: GraphQLString},
+    estimatedDeliveryDate: {type: GraphQLString},
+    estimatedShipDate: {type: GraphQLString},
+    externalId: {type: GraphQLString},
+    fromInventoryItemId: {type: GraphQLString},
+    isItemGroupPrimary: {type: GraphQLBoolean},
+    isModifiedPrice: {type: GraphQLBoolean},
+    isPromo: {type: GraphQLBoolean},
+    itemDescription: {type: GraphQLString},
+    orderId: {type: GraphQLString},
+    orderItemGroupSeqId: {type: GraphQLString},
+    orderItemSeqId: {type: GraphQLString},
+    orderItemTypeId: {type: GraphQLString},
+    overrideGlAccountId: {type: GraphQLString},
+    prodCatalogId: {type: GraphQLString},
+    productCategoryId: {type: GraphQLString},
+    productFeatureId: {type: GraphQLString},
+    productId: {type: GraphQLString},
+    quantity: {type: GraphQLFloat},
+    quoteId: {type: GraphQLString},
+    quoteItemSeqId: {type: GraphQLString},
+    recurringFreqUomId: {type: GraphQLString},
+    salesOpportunityId: {type: GraphQLString},
+    selectedAmount: {type: GraphQLFloat},
+    shipAfterDate: {type: GraphQLString},
+    shipBeforeDate: {type: GraphQLString},
+    shoppingListId: {type: GraphQLString},
+    shoppingListItemSeqId: {type: GraphQLString},
+    statusId: {type: GraphQLString},
+    subscriptionId: {type: GraphQLString},
+    supplierProductId: {type: GraphQLString},
+    syncStatusId: {type: GraphQLString},
+    unitAverageCost: {type: GraphQLFloat},
+    unitListPrice: {type: GraphQLFloat},
+    unitPrice: {type: GraphQLFloat},
+    unitRecurringPrice: {type: GraphQLFloat}
+  })
+});
+
+export {OrderItemInputType};
+    

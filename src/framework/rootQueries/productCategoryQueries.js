@@ -3,7 +3,7 @@ import {
   GraphQLString,
 } from 'graphql';
 
-import {ProductCategoryType} from '../../domain/product/ProductCategory.js';
+import {ProductCategoryType} from '../../domain/product/ProductCategory/ProductCategoryType.js';
 
 const productCategoryQueries = {
   productCategories: {

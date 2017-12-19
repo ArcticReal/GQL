@@ -3,7 +3,7 @@ import {
   GraphQLString,
 } from 'graphql';
 
-import {OrderHeaderType} from '../../domain/order/OrderHeader.js';
+import {OrderHeaderType} from '../../domain/order/OrderHeader/OrderHeaderType.js';
 
 const orderQueries = {
   orders: {

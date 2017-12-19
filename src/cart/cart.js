@@ -1,6 +1,6 @@
 import { GraphQLSchema, GraphQLObjectType, GraphQLList, GraphQLString, GraphQLInt, GraphQLBoolean,
 } from 'graphql';
-import { ProductType } from '../domain/product/Product.js';
+import { ProductType } from '../domain/product/Product/ProductType.js';
 import {fetchOneFromUrl} from '../framework/ofbizCon.js';
 
 const CartPositionType = new GraphQLObjectType({

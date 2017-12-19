@@ -1,0 +1,45 @@
+import {
+  GraphQLSchema,
+  GraphQLObjectType,
+  GraphQLInputObjectType,
+  GraphQLInt,
+  GraphQLFloat,
+  GraphQLString,
+  GraphQLBoolean,
+  GraphQLList,
+} from 'graphql';
+import {PaymentApplicationInputType} from '../../accounting/PaymentApplication/PaymentApplicationInputType.js';
+import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+
+
+const createPaymentApplication = {
+  type: GraphQLString,
+  description: 'mutation for ofbiz createPaymentApplication method',
+  args:{},
+  resolve: (root, args, {req}) => {
+    return postToUrl(`accounting/payment/paymentApplications/add?`, null, req);
+  }
+};
+export {createPaymentApplication};
+
+
+const updatePaymentApplication = {
+  type: GraphQLString,
+  description: 'mutation for ofbiz updatePaymentApplication method',
+  args:{paymentApplicationToBeUpdated: {type: PaymentApplicationInputType},paymentApplicationId: {type: GraphQLString}},
+  resolve: (root, args, {req}) => {
+    return putToUrl(`accounting/payment/paymentApplications/${args.paymentApplicationId}?`, args.paymentApplicationToBeUpdated, req);
+  }
+};
+export {updatePaymentApplication};
+
+
+const deletePaymentApplicationByIdUpdated = {
+  type: GraphQLString,
+  description: 'mutation for ofbiz deletePaymentApplicationByIdUpdated method',
+  args:{paymentApplicationId: {type: GraphQLString}},
+  resolve: (root, args, {req}) => {
+    return deleteToUrl(`accounting/payment/paymentApplications/${args.paymentApplicationId}?`, null, req);
+  }
+};
+export {deletePaymentApplicationByIdUpdated};

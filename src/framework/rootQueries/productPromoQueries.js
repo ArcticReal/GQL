@@ -4,7 +4,7 @@ import {
 } from 'graphql';
 
 
-import { ProductPromoType } from '../../domain/product/ProductPromo.js';
+import { ProductPromoType } from '../../domain/product/ProductPromo/ProductPromoType.js';
 
 const productPromoQueries = {
   promos: {
