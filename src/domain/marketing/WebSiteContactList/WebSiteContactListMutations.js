@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WebSiteContactListInputType} from '../../marketing/WebSiteContactList/WebSiteContactListInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWebSiteContactList = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWebSiteContactList method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWebSiteContactList};
 
 
 const updateWebSiteContactList = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWebSiteContactList method',
   args:{webSiteContactListToBeUpdated: {type: WebSiteContactListInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWebSiteContactList};
 
 
 const deleteWebSiteContactListByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWebSiteContactListByIdUpdated method',
   args:{webSiteContactListId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ValidContactMechRoleInputType} from '../../party/ValidContactMechRole/ValidContactMechRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createValidContactMechRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createValidContactMechRole method',
   args:{validContactMechRoleToBeAdded: {type: ValidContactMechRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createValidContactMechRole};
 
 
 const updateValidContactMechRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateValidContactMechRole method',
   args:{validContactMechRoleToBeUpdated: {type: ValidContactMechRoleInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateValidContactMechRole};
 
 
 const deleteValidContactMechRoleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteValidContactMechRoleByIdUpdated method',
   args:{validContactMechRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

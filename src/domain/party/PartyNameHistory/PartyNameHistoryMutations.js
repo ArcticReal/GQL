@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyNameHistoryInputType} from '../../party/PartyNameHistory/PartyNameHistoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyNameHistory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyNameHistory method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyNameHistory};
 
 
 const updatePartyNameHistory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyNameHistory method',
   args:{partyNameHistoryToBeUpdated: {type: PartyNameHistoryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyNameHistory};
 
 
 const deletePartyNameHistoryByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyNameHistoryByIdUpdated method',
   args:{partyNameHistoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

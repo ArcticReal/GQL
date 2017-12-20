@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {FinAccountTypeInputType} from '../../accounting/FinAccountType/FinAccountTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFinAccountType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountType method',
   args:{finAccountTypeToBeAdded: {type: FinAccountTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createFinAccountType};
 
 
 const updateFinAccountType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccountType method',
   args:{finAccountTypeToBeUpdated: {type: FinAccountTypeInputType},finAccountTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateFinAccountType};
 
 
 const deleteFinAccountTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFinAccountTypeByIdUpdated method',
   args:{finAccountTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

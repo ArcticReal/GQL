@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const migrateAgreementWorkEffortAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz migrateAgreementWorkEffortAppl method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {migrateAgreementWorkEffortAppl};
 
 
 const migrateFixedAssetMaintMeter = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz migrateFixedAssetMaintMeter method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {migrateFixedAssetMaintMeter};
 
 
 const migrateStatusToFinAccountTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz migrateStatusToFinAccountTrans method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {migrateStatusToFinAccountTrans};
 
 
 const migrateStatusToGlReconciliation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz migrateStatusToGlReconciliation method',
   args:{},
   resolve: (root, args, {req}) => {

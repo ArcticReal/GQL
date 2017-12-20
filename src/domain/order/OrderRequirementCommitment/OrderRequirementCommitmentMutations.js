@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {OrderRequirementCommitmentInputType} from '../../order/OrderRequirementCommitment/OrderRequirementCommitmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderRequirementCommitment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderRequirementCommitment method',
   args:{orderRequirementCommitmentToBeAdded: {type: OrderRequirementCommitmentInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createOrderRequirementCommitment};
 
 
 const updateOrderRequirementCommitment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderRequirementCommitment method',
   args:{orderRequirementCommitmentToBeUpdated: {type: OrderRequirementCommitmentInputType},orderItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateOrderRequirementCommitment};
 
 
 const deleteOrderRequirementCommitmentByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderRequirementCommitmentByIdUpdated method',
   args:{orderRequirementCommitmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {CreditCardTypeGlAccountInputType} from '../../accounting/CreditCardTypeGlAccount/CreditCardTypeGlAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCreditCardTypeGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCreditCardTypeGlAccount method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createCreditCardTypeGlAccount};
 
 
 const deleteCreditCardTypeGlAccountByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCreditCardTypeGlAccountByIdUpdated method',
   args:{creditCardTypeGlAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteCreditCardTypeGlAccountByIdUpdated};
 
 
 const updateCreditCardTypeGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCreditCardTypeGlAccount method',
   args:{creditCardTypeGlAccountToBeUpdated: {type: CreditCardTypeGlAccountInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

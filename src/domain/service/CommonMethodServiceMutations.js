@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createCustomMethod = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustomMethod method',
   args:{customMethodTypeId: {type: GraphQLString},customMethodName: {type: GraphQLString},description: {type: GraphQLString},customMethodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createCustomMethod};
 
 
 const createCustomMethodType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustomMethodType method',
   args:{customMethodTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createCustomMethodType};
 
 
 const deleteCustomMethod = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCustomMethod method',
   args:{customMethodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {deleteCustomMethod};
 
 
 const deleteCustomMethodType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCustomMethodType method',
   args:{customMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {deleteCustomMethodType};
 
 
 const updateCustomMethod = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustomMethod method',
   args:{customMethodId: {type: GraphQLString},customMethodTypeId: {type: GraphQLString},customMethodName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {updateCustomMethod};
 
 
 const updateCustomMethodType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustomMethodType method',
   args:{customMethodTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

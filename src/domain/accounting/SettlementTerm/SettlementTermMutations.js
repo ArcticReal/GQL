@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SettlementTermInputType} from '../../accounting/SettlementTerm/SettlementTermInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSettlementTerm = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSettlementTerm method',
   args:{settlementTermToBeAdded: {type: SettlementTermInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSettlementTerm};
 
 
 const updateSettlementTerm = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSettlementTerm method',
   args:{settlementTermToBeUpdated: {type: SettlementTermInputType},settlementTermId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateSettlementTerm};
 
 
 const deleteSettlementTermByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSettlementTermByIdUpdated method',
   args:{settlementTermId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

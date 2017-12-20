@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {FileExtensionInputType} from '../../content/FileExtension/FileExtensionInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFileExtension = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFileExtension method',
   args:{fileExtensionToBeAdded: {type: FileExtensionInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createFileExtension};
 
 
 const updateFileExtension = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFileExtension method',
   args:{fileExtensionToBeUpdated: {type: FileExtensionInputType},fileExtensionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateFileExtension};
 
 
 const deleteFileExtensionByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFileExtensionByIdUpdated method',
   args:{fileExtensionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

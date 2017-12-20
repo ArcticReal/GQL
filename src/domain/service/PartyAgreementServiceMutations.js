@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createAddendum = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAddendum method',
   args:{addendumEffectiveDate: {type: GraphQLString},agreementId: {type: GraphQLString},addendumCreationDate: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},addendumId: {type: GraphQLString},addendumText: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createAddendum};
 
 
 const createAgreementContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAgreementContentType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},agreementContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createAgreementContentType};
 
 
 const createAgreementItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAgreementItemType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},agreementItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createAgreementItemType};
 
 
 const createAgreementTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAgreementTermAttribute method',
   args:{agreementTermId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createAgreementTermAttribute};
 
 
 const createTermType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTermType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},termTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createTermType};
 
 
 const createTermTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTermTypeAttr method',
   args:{termTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createTermTypeAttr};
 
 
 const deleteAddendum = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAddendum method',
   args:{addendumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {deleteAddendum};
 
 
 const deleteAgreementContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAgreementContentType method',
   args:{agreementContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {deleteAgreementContentType};
 
 
 const deleteAgreementItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAgreementItemType method',
   args:{agreementItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {deleteAgreementItemType};
 
 
 const deleteAgreementTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAgreementTermAttribute method',
   args:{agreementTermId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {deleteAgreementTermAttribute};
 
 
 const deleteTermType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTermType method',
   args:{termTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {deleteTermType};
 
 
 const deleteTermTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTermTypeAttr method',
   args:{termTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {deleteTermTypeAttr};
 
 
 const updateAddendum = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAddendum method',
   args:{addendumId: {type: GraphQLString},addendumEffectiveDate: {type: GraphQLString},agreementId: {type: GraphQLString},addendumCreationDate: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},addendumText: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {updateAddendum};
 
 
 const updateAgreementContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAgreementContentType method',
   args:{agreementContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {updateAgreementContentType};
 
 
 const updateAgreementItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAgreementItemType method',
   args:{agreementItemTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {updateAgreementItemType};
 
 
 const updateAgreementTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAgreementTermAttribute method',
   args:{agreementTermId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {updateAgreementTermAttribute};
 
 
 const updateTermType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTermType method',
   args:{termTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {updateTermType};
 
 
 const updateTermTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTermTypeAttr method',
   args:{termTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SalesOpportunityQuoteInputType} from '../../marketing/SalesOpportunityQuote/SalesOpportunityQuoteInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSalesOpportunityQuote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesOpportunityQuote method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSalesOpportunityQuote};
 
 
 const updateSalesOpportunityQuote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSalesOpportunityQuote method',
   args:{salesOpportunityQuoteToBeUpdated: {type: SalesOpportunityQuoteInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateSalesOpportunityQuote};
 
 
 const deleteSalesOpportunityQuoteByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSalesOpportunityQuoteByIdUpdated method',
   args:{salesOpportunityQuoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

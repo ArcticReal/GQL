@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const exampleComponentFormula = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz exampleComponentFormula method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {exampleComponentFormula};
 
 
 const exampleTaskFormula = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz exampleTaskFormula method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {exampleTaskFormula};
 
 
 const interfaceBomFormula = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz interfaceBomFormula method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {interfaceBomFormula};
 
 
 const interfaceTaskFormula = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz interfaceTaskFormula method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {interfaceTaskFormula};
 
 
 const linearComponentFormula = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz linearComponentFormula method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

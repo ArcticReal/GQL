@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {InventoryItemTempResInputType} from '../../product/InventoryItemTempRes/InventoryItemTempResInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInventoryItemTempRes = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInventoryItemTempRes method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createInventoryItemTempRes};
 
 
 const deleteInventoryItemTempResByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInventoryItemTempResByIdUpdated method',
   args:{inventoryItemTempResId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteInventoryItemTempResByIdUpdated};
 
 
 const updateInventoryItemTempRes = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInventoryItemTempRes method',
   args:{inventoryItemTempResToBeUpdated: {type: InventoryItemTempResInputType},visitId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

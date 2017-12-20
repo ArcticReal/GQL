@@ -8,12 +8,12 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {KeyValueType} from '../../framework/helpTypes.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const checkProductStoreGroupRollup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz checkProductStoreGroupRollup method',
   args:{productStoreGroupId: {type: GraphQLString},primaryParentGroupId: {type: GraphQLString},fromDate: {type: GraphQLString},parentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {checkProductStoreGroupRollup};
 
 
 const createProductStore = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStore method',
   args:{storeName: {type: GraphQLString},viewCartOnAdd: {type: GraphQLString},requireCustomerRole: {type: GraphQLString},companyName: {type: GraphQLString},headerDeclinedStatus: {type: GraphQLString},requireInventory: {type: GraphQLString},checkInventory: {type: GraphQLString},autoApproveInvoice: {type: GraphQLString},addToCartRemoveIncompat: {type: GraphQLString},enableAutoSuggestionList: {type: GraphQLString},defaultSalesChannelEnumId: {type: GraphQLString},autoApproveOrder: {type: GraphQLString},allowPassword: {type: GraphQLString},showTaxIsExempt: {type: GraphQLString},oldHeaderLogo: {type: GraphQLString},autoSaveCart: {type: GraphQLString},inventoryFacilityId: {type: GraphQLString},headerApprovedStatus: {type: GraphQLString},oldHeaderMiddleBackground: {type: GraphQLString},defaultTimeZoneString: {type: GraphQLString},prorateTaxes: {type: GraphQLString},showCheckoutGiftOptions: {type: GraphQLString},oldStyleSheet: {type: GraphQLString},manualAuthIsCapture: {type: GraphQLString},itemDeclinedStatus: {type: GraphQLString},visualThemeId: {type: GraphQLString},storeCreditAccountEnumId: {type: GraphQLString},showOutOfStockProducts: {type: GraphQLString},itemApprovedStatus: {type: GraphQLString},allowComment: {type: GraphQLString},storeCreditValidDays: {type: GraphQLInt},splitPayPrefPerShpGrp: {type: GraphQLString},authFraudMessage: {type: GraphQLString},managedByLot: {type: GraphQLString},reqShipAddrForDigItems: {type: GraphQLString},oneInventoryFacility: {type: GraphQLString},orderNumberPrefix: {type: GraphQLString},autoInvoiceDigitalItems: {type: GraphQLString},subtitle: {type: GraphQLString},reserveOrderEnumId: {type: GraphQLString},isDemoStore: {type: GraphQLString},retryFailedAuths: {type: GraphQLString},selectPaymentTypePerItem: {type: GraphQLString},balanceResOnOrderCreation: {type: GraphQLString},autoApproveReviews: {type: GraphQLString},explodeOrderItems: {type: GraphQLString},usePrimaryEmailUsername: {type: GraphQLString},headerCancelStatus: {type: GraphQLString},title: {type: GraphQLString},primaryStoreGroupId: {type: GraphQLString},oldHeaderRightBackground: {type: GraphQLString},enableDigProdUpload: {type: GraphQLString},autoOrderCcTryOtherCards: {type: GraphQLString},autoOrderCcTryLaterMax: {type: GraphQLInt},digitalItemApprovedStatus: {type: GraphQLString},reserveInventory: {type: GraphQLString},isImmediatelyFulfilled: {type: GraphQLString},defaultPassword: {type: GraphQLString},itemCancelStatus: {type: GraphQLString},autoOrderCcTryExp: {type: GraphQLString},authDeclinedMessage: {type: GraphQLString},prodSearchExcludeVariants: {type: GraphQLString},shipIfCaptureFails: {type: GraphQLString},showPricesWithVatTax: {type: GraphQLString},defaultCurrencyUomId: {type: GraphQLString},orderDecimalQuantity: {type: GraphQLString},prorateShipping: {type: GraphQLString},digProdUploadCategoryId: {type: GraphQLString},reqReturnInventoryReceive: {type: GraphQLString},authErrorMessage: {type: GraphQLString},setOwnerUponIssuance: {type: GraphQLString},checkGcBalance: {type: GraphQLString},autoOrderCcTryLaterNsf: {type: GraphQLString},addToCartReplaceUpsell: {type: GraphQLString},vatTaxAuthGeoId: {type: GraphQLString},vatTaxAuthPartyId: {type: GraphQLString},daysToCancelNonPay: {type: GraphQLInt},requirementMethodEnumId: {type: GraphQLString},payToPartyId: {type: GraphQLString},defaultLocaleString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createProductStore};
 
 
 const createProductStoreCatalog = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreCatalog method',
   args:{productStoreId: {type: GraphQLString},prodCatalogId: {type: GraphQLString},fromDate: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createProductStoreCatalog};
 
 
 const createProductStoreEmailSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreEmailSetting method',
   args:{emailType: {type: GraphQLString},bodyScreenLocation: {type: GraphQLString},subject: {type: GraphQLString},fromAddress: {type: GraphQLString},productStoreId: {type: GraphQLString},xslfoAttachScreenLocation: {type: GraphQLString},bccAddress: {type: GraphQLString},contentType: {type: GraphQLString},ccAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createProductStoreEmailSetting};
 
 
 const createProductStoreFacility = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreFacility method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},productStoreId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createProductStoreFacility};
 
 
 const createProductStoreFinActSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreFinActSetting method',
   args:{productStoreId: {type: GraphQLString},finAccountTypeId: {type: GraphQLString},authValidDays: {type: GraphQLInt},allowAuthToNegative: {type: GraphQLString},accountCodeLength: {type: GraphQLInt},purchSurveyCopyMe: {type: GraphQLString},validateGCFinAcct: {type: GraphQLString},replenishThreshold: {type: GraphQLFloat},accountValidDays: {type: GraphQLInt},replenishMethodEnumId: {type: GraphQLString},purchSurveySendTo: {type: GraphQLString},minBalance: {type: GraphQLFloat},purchaseSurveyId: {type: GraphQLString},requirePinCode: {type: GraphQLString},pinCodeLength: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createProductStoreFinActSetting};
 
 
 const createProductStoreGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreGroup method',
   args:{productStoreGroupTypeId: {type: GraphQLString},primaryParentGroupId: {type: GraphQLString},productStoreGroupName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createProductStoreGroup};
 
 
 const createProductStoreGroupMember = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreGroupMember method',
   args:{fromDate: {type: GraphQLString},productStoreId: {type: GraphQLString},productStoreGroupId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createProductStoreGroupMember};
 
 
 const createProductStoreGroupRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreGroupRole method',
   args:{roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},productStoreGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createProductStoreGroupRole};
 
 
 const createProductStoreGroupRollup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreGroupRollup method',
   args:{fromDate: {type: GraphQLString},parentGroupId: {type: GraphQLString},productStoreGroupId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createProductStoreGroupRollup};
 
 
 const createProductStoreGroupType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreGroupType method',
   args:{productStoreGroupTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createProductStoreGroupType};
 
 
 const createProductStoreKeywordOvrd = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreKeywordOvrd method',
   args:{productStoreId: {type: GraphQLString},targetTypeEnumId: {type: GraphQLString},keyword: {type: GraphQLString},target: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createProductStoreKeywordOvrd};
 
 
 const createProductStorePaymentSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStorePaymentSetting method',
   args:{paymentServiceTypeEnumId: {type: GraphQLString},applyToAllProducts: {type: GraphQLString},productStoreId: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},paymentService: {type: GraphQLInt},paymentPropertiesPath: {type: GraphQLInt},paymentCustomMethodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createProductStorePaymentSetting};
 
 
 const createProductStorePromoAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStorePromoAppl method',
   args:{productStoreId: {type: GraphQLString},productPromoId: {type: GraphQLString},fromDate: {type: GraphQLString},sequenceNum: {type: GraphQLInt},manualOnly: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createProductStorePromoAppl};
 
 
 const createProductStoreRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreRole method',
   args:{roleTypeId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createProductStoreRole};
 
 
 const createProductStoreShipMeth = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreShipMeth method',
   args:{roleTypeId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},productStoreShipMethId: {type: GraphQLString},companyPartyId: {type: GraphQLString},sequenceNumber: {type: GraphQLInt},allowancePercent: {type: GraphQLFloat},includeFeatureGroup: {type: GraphQLString},shipmentCustomMethodId: {type: GraphQLString},minTotal: {type: GraphQLFloat},allowUspsAddr: {type: GraphQLString},minWeight: {type: GraphQLFloat},requireCompanyAddr: {type: GraphQLString},maxSize: {type: GraphQLFloat},maxWeight: {type: GraphQLFloat},excludeGeoId: {type: GraphQLString},serviceName: {type: GraphQLString},includeGeoId: {type: GraphQLString},maxTotal: {type: GraphQLFloat},requireUspsAddr: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},configProps: {type: GraphQLString},minSize: {type: GraphQLFloat},includeNoChargeItems: {type: GraphQLString},allowCompanyAddr: {type: GraphQLString},minimumPrice: {type: GraphQLFloat},excludeFeatureGroup: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createProductStoreShipMeth};
 
 
 const createProductStoreSurveyAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreSurveyAppl method',
   args:{fromDate: {type: GraphQLString},groupName: {type: GraphQLString},surveyId: {type: GraphQLString},productCategoryId: {type: GraphQLString},productId: {type: GraphQLString},surveyTemplate: {type: GraphQLString},sequenceNum: {type: GraphQLInt},productStoreId: {type: GraphQLString},resultTemplate: {type: GraphQLString},surveyApplTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createProductStoreSurveyAppl};
 
 
 const createProductStoreVendorPayment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreVendorPayment method',
   args:{productStoreId: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},vendorPartyId: {type: GraphQLString},creditCardEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createProductStoreVendorPayment};
 
 
 const createProductStoreVendorShipment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreVendorShipment method',
   args:{carrierPartyId: {type: GraphQLString},productStoreId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},vendorPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createProductStoreVendorShipment};
 
 
 const deleteProductStoreCatalog = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreCatalog method',
   args:{fromDate: {type: GraphQLString},productStoreId: {type: GraphQLString},prodCatalogId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {deleteProductStoreCatalog};
 
 
 const deleteProductStoreFacility = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreFacility method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {deleteProductStoreFacility};
 
 
 const deleteProductStoreGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreGroup method',
   args:{productStoreGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {deleteProductStoreGroup};
 
 
 const deleteProductStoreGroupRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreGroupRole method',
   args:{roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},productStoreGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {deleteProductStoreGroupRole};
 
 
 const deleteProductStoreGroupRollup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreGroupRollup method',
   args:{fromDate: {type: GraphQLString},parentGroupId: {type: GraphQLString},productStoreGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {deleteProductStoreGroupRollup};
 
 
 const deleteProductStoreGroupType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreGroupType method',
   args:{productStoreGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {deleteProductStoreGroupType};
 
 
 const deleteProductStoreKeywordOvrd = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreKeywordOvrd method',
   args:{fromDate: {type: GraphQLString},productStoreId: {type: GraphQLString},keyword: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {deleteProductStoreKeywordOvrd};
 
 
 const deleteProductStorePaymentSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStorePaymentSetting method',
   args:{paymentServiceTypeEnumId: {type: GraphQLString},productStoreId: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {deleteProductStorePaymentSetting};
 
 
 const deleteProductStorePromoAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStorePromoAppl method',
   args:{fromDate: {type: GraphQLString},productStoreId: {type: GraphQLString},productPromoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {deleteProductStorePromoAppl};
 
 
 const deleteProductStoreSurveyAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreSurveyAppl method',
   args:{productStoreSurveyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {deleteProductStoreSurveyAppl};
 
 
 const deleteProductStoreVendorPayment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreVendorPayment method',
   args:{productStoreId: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},vendorPartyId: {type: GraphQLString},creditCardEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {deleteProductStoreVendorPayment};
 
 
 const deleteProductStoreVendorShipment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreVendorShipment method',
   args:{carrierPartyId: {type: GraphQLString},productStoreId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},vendorPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,9 +354,9 @@ export {deleteProductStoreVendorShipment};
 
 
 const isStoreInventoryAvailable = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz isStoreInventoryAvailable method',
-  args:{quantity: {type: GraphQLFloat},productId: {type: GraphQLString},productStoreId: {type: GraphQLString},product: {type: new GraphQLList(KeyValueType)},productStore: {type: new GraphQLList(KeyValueType)}},
+  args:{quantity: {type: GraphQLFloat},productId: {type: GraphQLString},productStoreId: {type: GraphQLString},product: {type: new GraphQLList(KeyValueInputType)},productStore: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/productStore/isStoreInventoryAvailable?quantity=${args.quantity}productId=${args.productId}productStoreId=${args.productStoreId}product=${args.product}productStore=${args.productStore}`, null, req);
   }
@@ -365,9 +365,9 @@ export {isStoreInventoryAvailable};
 
 
 const isStoreInventoryAvailableOrNotRequired = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz isStoreInventoryAvailableOrNotRequired method',
-  args:{quantity: {type: GraphQLFloat},productId: {type: GraphQLString},productStoreId: {type: GraphQLString},product: {type: new GraphQLList(KeyValueType)},productStore: {type: new GraphQLList(KeyValueType)}},
+  args:{quantity: {type: GraphQLFloat},productId: {type: GraphQLString},productStoreId: {type: GraphQLString},product: {type: new GraphQLList(KeyValueInputType)},productStore: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/productStore/isStoreInventoryAvailableOrNotRequired?quantity=${args.quantity}productId=${args.productId}productStoreId=${args.productStoreId}product=${args.product}productStore=${args.productStore}`, null, req);
   }
@@ -376,9 +376,9 @@ export {isStoreInventoryAvailableOrNotRequired};
 
 
 const isStoreInventoryRequired = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz isStoreInventoryRequired method',
-  args:{productId: {type: GraphQLString},productStoreId: {type: GraphQLString},product: {type: new GraphQLList(KeyValueType)},productStore: {type: new GraphQLList(KeyValueType)}},
+  args:{productId: {type: GraphQLString},productStoreId: {type: GraphQLString},product: {type: new GraphQLList(KeyValueInputType)},productStore: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/productStore/isStoreInventoryRequired?productId=${args.productId}productStoreId=${args.productStoreId}product=${args.product}productStore=${args.productStore}`, null, req);
   }
@@ -387,7 +387,7 @@ export {isStoreInventoryRequired};
 
 
 const productStoreGenericPermission = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz productStoreGenericPermission method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {productStoreGenericPermission};
 
 
 const removeProductStoreEmailSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeProductStoreEmailSetting method',
   args:{emailType: {type: GraphQLString},productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {removeProductStoreEmailSetting};
 
 
 const removeProductStoreFinActSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeProductStoreFinActSetting method',
   args:{productStoreId: {type: GraphQLString},finAccountTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {removeProductStoreFinActSetting};
 
 
 const removeProductStoreRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeProductStoreRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {removeProductStoreRole};
 
 
 const removeProductStoreShipMeth = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeProductStoreShipMeth method',
   args:{productStoreShipMethId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {removeProductStoreShipMeth};
 
 
 const reserveStoreInventory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz reserveStoreInventory method',
   args:{quantity: {type: GraphQLFloat},productId: {type: GraphQLString},productStoreId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},facilityId: {type: GraphQLString},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {reserveStoreInventory};
 
 
 const updateProductStore = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStore method',
   args:{productStoreId: {type: GraphQLString},viewCartOnAdd: {type: GraphQLString},requireCustomerRole: {type: GraphQLString},companyName: {type: GraphQLString},headerDeclinedStatus: {type: GraphQLString},requireInventory: {type: GraphQLString},checkInventory: {type: GraphQLString},autoApproveInvoice: {type: GraphQLString},addToCartRemoveIncompat: {type: GraphQLString},enableAutoSuggestionList: {type: GraphQLString},defaultSalesChannelEnumId: {type: GraphQLString},autoApproveOrder: {type: GraphQLString},allowPassword: {type: GraphQLString},showTaxIsExempt: {type: GraphQLString},oldHeaderLogo: {type: GraphQLString},autoSaveCart: {type: GraphQLString},inventoryFacilityId: {type: GraphQLString},headerApprovedStatus: {type: GraphQLString},oldHeaderMiddleBackground: {type: GraphQLString},defaultTimeZoneString: {type: GraphQLString},prorateTaxes: {type: GraphQLString},showCheckoutGiftOptions: {type: GraphQLString},oldStyleSheet: {type: GraphQLString},manualAuthIsCapture: {type: GraphQLString},itemDeclinedStatus: {type: GraphQLString},visualThemeId: {type: GraphQLString},storeCreditAccountEnumId: {type: GraphQLString},showOutOfStockProducts: {type: GraphQLString},itemApprovedStatus: {type: GraphQLString},allowComment: {type: GraphQLString},storeCreditValidDays: {type: GraphQLInt},splitPayPrefPerShpGrp: {type: GraphQLString},authFraudMessage: {type: GraphQLString},managedByLot: {type: GraphQLString},reqShipAddrForDigItems: {type: GraphQLString},oneInventoryFacility: {type: GraphQLString},orderNumberPrefix: {type: GraphQLString},autoInvoiceDigitalItems: {type: GraphQLString},subtitle: {type: GraphQLString},reserveOrderEnumId: {type: GraphQLString},isDemoStore: {type: GraphQLString},retryFailedAuths: {type: GraphQLString},selectPaymentTypePerItem: {type: GraphQLString},balanceResOnOrderCreation: {type: GraphQLString},autoApproveReviews: {type: GraphQLString},explodeOrderItems: {type: GraphQLString},usePrimaryEmailUsername: {type: GraphQLString},headerCancelStatus: {type: GraphQLString},title: {type: GraphQLString},primaryStoreGroupId: {type: GraphQLString},oldHeaderRightBackground: {type: GraphQLString},enableDigProdUpload: {type: GraphQLString},autoOrderCcTryOtherCards: {type: GraphQLString},autoOrderCcTryLaterMax: {type: GraphQLInt},digitalItemApprovedStatus: {type: GraphQLString},storeName: {type: GraphQLString},reserveInventory: {type: GraphQLString},isImmediatelyFulfilled: {type: GraphQLString},defaultPassword: {type: GraphQLString},itemCancelStatus: {type: GraphQLString},autoOrderCcTryExp: {type: GraphQLString},authDeclinedMessage: {type: GraphQLString},prodSearchExcludeVariants: {type: GraphQLString},shipIfCaptureFails: {type: GraphQLString},showPricesWithVatTax: {type: GraphQLString},defaultCurrencyUomId: {type: GraphQLString},orderDecimalQuantity: {type: GraphQLString},prorateShipping: {type: GraphQLString},digProdUploadCategoryId: {type: GraphQLString},reqReturnInventoryReceive: {type: GraphQLString},authErrorMessage: {type: GraphQLString},setOwnerUponIssuance: {type: GraphQLString},checkGcBalance: {type: GraphQLString},autoOrderCcTryLaterNsf: {type: GraphQLString},addToCartReplaceUpsell: {type: GraphQLString},vatTaxAuthGeoId: {type: GraphQLString},vatTaxAuthPartyId: {type: GraphQLString},daysToCancelNonPay: {type: GraphQLInt},requirementMethodEnumId: {type: GraphQLString},payToPartyId: {type: GraphQLString},defaultLocaleString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {updateProductStore};
 
 
 const updateProductStoreCatalog = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreCatalog method',
   args:{fromDate: {type: GraphQLString},productStoreId: {type: GraphQLString},prodCatalogId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {updateProductStoreCatalog};
 
 
 const updateProductStoreEmailSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreEmailSetting method',
   args:{emailType: {type: GraphQLString},bodyScreenLocation: {type: GraphQLString},subject: {type: GraphQLString},fromAddress: {type: GraphQLString},productStoreId: {type: GraphQLString},xslfoAttachScreenLocation: {type: GraphQLString},bccAddress: {type: GraphQLString},contentType: {type: GraphQLString},ccAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {updateProductStoreEmailSetting};
 
 
 const updateProductStoreFacility = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreFacility method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},productStoreId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {updateProductStoreFacility};
 
 
 const updateProductStoreFinActSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreFinActSetting method',
   args:{productStoreId: {type: GraphQLString},finAccountTypeId: {type: GraphQLString},authValidDays: {type: GraphQLInt},allowAuthToNegative: {type: GraphQLString},accountCodeLength: {type: GraphQLInt},purchSurveyCopyMe: {type: GraphQLString},validateGCFinAcct: {type: GraphQLString},replenishThreshold: {type: GraphQLFloat},accountValidDays: {type: GraphQLInt},replenishMethodEnumId: {type: GraphQLString},purchSurveySendTo: {type: GraphQLString},minBalance: {type: GraphQLFloat},purchaseSurveyId: {type: GraphQLString},requirePinCode: {type: GraphQLString},pinCodeLength: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {updateProductStoreFinActSetting};
 
 
 const updateProductStoreGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreGroup method',
   args:{productStoreGroupId: {type: GraphQLString},productStoreGroupTypeId: {type: GraphQLString},primaryParentGroupId: {type: GraphQLString},productStoreGroupName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {updateProductStoreGroup};
 
 
 const updateProductStoreGroupMember = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreGroupMember method',
   args:{fromDate: {type: GraphQLString},productStoreId: {type: GraphQLString},productStoreGroupId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {updateProductStoreGroupMember};
 
 
 const updateProductStoreGroupRollup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreGroupRollup method',
   args:{fromDate: {type: GraphQLString},parentGroupId: {type: GraphQLString},productStoreGroupId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {updateProductStoreGroupRollup};
 
 
 const updateProductStoreGroupType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreGroupType method',
   args:{productStoreGroupTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {updateProductStoreGroupType};
 
 
 const updateProductStoreKeywordOvrd = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreKeywordOvrd method',
   args:{fromDate: {type: GraphQLString},productStoreId: {type: GraphQLString},keyword: {type: GraphQLString},targetTypeEnumId: {type: GraphQLString},thruDate: {type: GraphQLString},target: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {updateProductStoreKeywordOvrd};
 
 
 const updateProductStorePaymentSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStorePaymentSetting method',
   args:{paymentServiceTypeEnumId: {type: GraphQLString},applyToAllProducts: {type: GraphQLString},productStoreId: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},paymentService: {type: GraphQLInt},paymentPropertiesPath: {type: GraphQLInt},paymentCustomMethodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {updateProductStorePaymentSetting};
 
 
 const updateProductStorePromoAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStorePromoAppl method',
   args:{fromDate: {type: GraphQLString},productStoreId: {type: GraphQLString},productPromoId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},manualOnly: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {updateProductStorePromoAppl};
 
 
 const updateProductStoreRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,7 +596,7 @@ export {updateProductStoreRole};
 
 
 const updateProductStoreShipMeth = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreShipMeth method',
   args:{productStoreShipMethId: {type: GraphQLString},companyPartyId: {type: GraphQLString},allowancePercent: {type: GraphQLFloat},includeFeatureGroup: {type: GraphQLString},shipmentCustomMethodId: {type: GraphQLString},minTotal: {type: GraphQLFloat},minWeight: {type: GraphQLFloat},requireCompanyAddr: {type: GraphQLString},maxSize: {type: GraphQLFloat},excludeGeoId: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},minSize: {type: GraphQLFloat},productStoreId: {type: GraphQLString},allowCompanyAddr: {type: GraphQLString},partyId: {type: GraphQLString},minimumPrice: {type: GraphQLFloat},shipmentMethodTypeId: {type: GraphQLString},excludeFeatureGroup: {type: GraphQLString},sequenceNumber: {type: GraphQLInt},roleTypeId: {type: GraphQLString},allowUspsAddr: {type: GraphQLString},maxWeight: {type: GraphQLFloat},serviceName: {type: GraphQLString},includeGeoId: {type: GraphQLString},maxTotal: {type: GraphQLFloat},requireUspsAddr: {type: GraphQLString},configProps: {type: GraphQLString},includeNoChargeItems: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

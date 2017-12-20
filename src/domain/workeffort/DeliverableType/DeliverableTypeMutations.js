@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {DeliverableTypeInputType} from '../../workeffort/DeliverableType/DeliverableTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDeliverableType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDeliverableType method',
   args:{deliverableTypeToBeAdded: {type: DeliverableTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createDeliverableType};
 
 
 const updateDeliverableType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDeliverableType method',
   args:{deliverableTypeToBeUpdated: {type: DeliverableTypeInputType},deliverableTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateDeliverableType};
 
 
 const deleteDeliverableTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDeliverableTypeByIdUpdated method',
   args:{deliverableTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

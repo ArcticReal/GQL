@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SurveyPageInputType} from '../../content/SurveyPage/SurveyPageInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSurveyPage = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSurveyPage method',
   args:{surveyPageToBeAdded: {type: SurveyPageInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSurveyPage};
 
 
 const deleteSurveyPageByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSurveyPageByIdUpdated method',
   args:{surveyPageId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteSurveyPageByIdUpdated};
 
 
 const updateSurveyPage = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSurveyPage method',
   args:{surveyPageToBeUpdated: {type: SurveyPageInputType},surveyPageSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

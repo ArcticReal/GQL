@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {OrderItemTypeAttrInputType} from '../../order/OrderItemTypeAttr/OrderItemTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemTypeAttr method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createOrderItemTypeAttr};
 
 
 const updateOrderItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderItemTypeAttr method',
   args:{orderItemTypeAttrToBeUpdated: {type: OrderItemTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateOrderItemTypeAttr};
 
 
 const deleteOrderItemTypeAttrByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemTypeAttrByIdUpdated method',
   args:{orderItemTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

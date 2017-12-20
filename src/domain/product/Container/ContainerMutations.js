@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContainerInputType} from '../../product/Container/ContainerInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContainer = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContainer method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createContainer};
 
 
 const updateContainer = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContainer method',
   args:{containerToBeUpdated: {type: ContainerInputType},containerId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateContainer};
 
 
 const deleteContainerByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteContainerByIdUpdated method',
   args:{containerId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

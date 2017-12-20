@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContentKeywordInputType} from '../../content/ContentKeyword/ContentKeywordInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentKeyword = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentKeyword method',
   args:{contentKeywordToBeAdded: {type: ContentKeywordInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createContentKeyword};
 
 
 const deleteContentKeywordByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteContentKeywordByIdUpdated method',
   args:{contentKeywordId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteContentKeywordByIdUpdated};
 
 
 const updateContentKeyword = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentKeyword method',
   args:{contentKeywordToBeUpdated: {type: ContentKeywordInputType},keyword: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

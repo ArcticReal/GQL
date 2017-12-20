@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyGlAccountInputType} from '../../accounting/PartyGlAccount/PartyGlAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyGlAccount method',
   args:{partyGlAccountToBeAdded: {type: PartyGlAccountInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyGlAccount};
 
 
 const deletePartyGlAccountByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyGlAccountByIdUpdated method',
   args:{partyGlAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deletePartyGlAccountByIdUpdated};
 
 
 const updatePartyGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyGlAccount method',
   args:{partyGlAccountToBeUpdated: {type: PartyGlAccountInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {CheckAccountInputType} from '../../accounting/CheckAccount/CheckAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCheckAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCheckAccount method',
   args:{checkAccountToBeAdded: {type: CheckAccountInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createCheckAccount};
 
 
 const deleteCheckAccountByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCheckAccountByIdUpdated method',
   args:{checkAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteCheckAccountByIdUpdated};
 
 
 const updateCheckAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCheckAccount method',
   args:{checkAccountToBeUpdated: {type: CheckAccountInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

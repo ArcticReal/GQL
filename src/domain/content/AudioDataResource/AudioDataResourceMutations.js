@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {AudioDataResourceInputType} from '../../content/AudioDataResource/AudioDataResourceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAudioDataResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAudioDataResource method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createAudioDataResource};
 
 
 const deleteAudioDataResourceByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAudioDataResourceByIdUpdated method',
   args:{audioDataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteAudioDataResourceByIdUpdated};
 
 
 const updateAudioDataResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAudioDataResource method',
   args:{audioDataResourceToBeUpdated: {type: AudioDataResourceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

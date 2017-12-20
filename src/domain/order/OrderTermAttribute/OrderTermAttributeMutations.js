@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {OrderTermAttributeInputType} from '../../order/OrderTermAttribute/OrderTermAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderTermAttribute method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createOrderTermAttribute};
 
 
 const updateOrderTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderTermAttribute method',
   args:{orderTermAttributeToBeUpdated: {type: OrderTermAttributeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateOrderTermAttribute};
 
 
 const deleteOrderTermAttributeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderTermAttributeByIdUpdated method',
   args:{orderTermAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortDeliverableProdInputType} from '../../workeffort/WorkEffortDeliverableProd/WorkEffortDeliverableProdInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortDeliverableProd = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortDeliverableProd method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortDeliverableProd};
 
 
 const updateWorkEffortDeliverableProd = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortDeliverableProd method',
   args:{workEffortDeliverableProdToBeUpdated: {type: WorkEffortDeliverableProdInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortDeliverableProd};
 
 
 const deleteWorkEffortDeliverableProdByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortDeliverableProdByIdUpdated method',
   args:{workEffortDeliverableProdId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

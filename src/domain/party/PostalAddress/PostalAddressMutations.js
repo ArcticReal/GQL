@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PostalAddressInputType} from '../../party/PostalAddress/PostalAddressInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPostalAddress = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPostalAddress method',
   args:{postalAddressToBeAdded: {type: PostalAddressInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPostalAddress};
 
 
 const updatePostalAddress = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePostalAddress method',
   args:{postalAddressToBeUpdated: {type: PostalAddressInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePostalAddress};
 
 
 const deletePostalAddressByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePostalAddressByIdUpdated method',
   args:{postalAddressId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

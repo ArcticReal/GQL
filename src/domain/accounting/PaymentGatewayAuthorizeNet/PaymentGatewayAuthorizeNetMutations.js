@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PaymentGatewayAuthorizeNetInputType} from '../../accounting/PaymentGatewayAuthorizeNet/PaymentGatewayAuthorizeNetInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGatewayAuthorizeNet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentGatewayAuthorizeNet method',
   args:{paymentGatewayAuthorizeNetToBeAdded: {type: PaymentGatewayAuthorizeNetInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPaymentGatewayAuthorizeNet};
 
 
 const updatePaymentGatewayAuthorizeNet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayAuthorizeNet method',
   args:{paymentGatewayAuthorizeNetToBeUpdated: {type: PaymentGatewayAuthorizeNetInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePaymentGatewayAuthorizeNet};
 
 
 const deletePaymentGatewayAuthorizeNetByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentGatewayAuthorizeNetByIdUpdated method',
   args:{paymentGatewayAuthorizeNetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

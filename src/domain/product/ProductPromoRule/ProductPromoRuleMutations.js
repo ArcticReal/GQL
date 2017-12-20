@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductPromoRuleInputType} from '../../product/ProductPromoRule/ProductPromoRuleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductPromoRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoRule method',
   args:{productPromoRuleToBeAdded: {type: ProductPromoRuleInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductPromoRule};
 
 
 const updateProductPromoRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPromoRule method',
   args:{productPromoRuleToBeUpdated: {type: ProductPromoRuleInputType},productPromoRuleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateProductPromoRule};
 
 
 const deleteProductPromoRuleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromoRuleByIdUpdated method',
   args:{productPromoRuleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

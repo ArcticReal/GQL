@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {CartAbandonedLineInputType} from '../../order/CartAbandonedLine/CartAbandonedLineInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCartAbandonedLine = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCartAbandonedLine method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createCartAbandonedLine};
 
 
 const deleteCartAbandonedLineByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCartAbandonedLineByIdUpdated method',
   args:{cartAbandonedLineId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteCartAbandonedLineByIdUpdated};
 
 
 const updateCartAbandonedLine = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCartAbandonedLine method',
   args:{cartAbandonedLineToBeUpdated: {type: CartAbandonedLineInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

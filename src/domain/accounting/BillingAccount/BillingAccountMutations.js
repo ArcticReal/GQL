@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {BillingAccountInputType} from '../../accounting/BillingAccount/BillingAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBillingAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBillingAccount method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createBillingAccount};
 
 
 const updateBillingAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBillingAccount method',
   args:{billingAccountToBeUpdated: {type: BillingAccountInputType},billingAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateBillingAccount};
 
 
 const deleteBillingAccountByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBillingAccountByIdUpdated method',
   args:{billingAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

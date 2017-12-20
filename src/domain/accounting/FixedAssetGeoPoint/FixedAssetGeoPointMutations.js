@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {FixedAssetGeoPointInputType} from '../../accounting/FixedAssetGeoPoint/FixedAssetGeoPointInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAssetGeoPoint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFixedAssetGeoPoint method',
   args:{fixedAssetGeoPointToBeAdded: {type: FixedAssetGeoPointInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createFixedAssetGeoPoint};
 
 
 const deleteFixedAssetGeoPointByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFixedAssetGeoPointByIdUpdated method',
   args:{fixedAssetGeoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteFixedAssetGeoPointByIdUpdated};
 
 
 const updateFixedAssetGeoPoint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFixedAssetGeoPoint method',
   args:{fixedAssetGeoPointToBeUpdated: {type: FixedAssetGeoPointInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

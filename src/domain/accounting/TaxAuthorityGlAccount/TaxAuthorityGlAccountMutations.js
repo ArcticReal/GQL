@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {TaxAuthorityGlAccountInputType} from '../../accounting/TaxAuthorityGlAccount/TaxAuthorityGlAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTaxAuthorityGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTaxAuthorityGlAccount method',
   args:{taxAuthorityGlAccountToBeAdded: {type: TaxAuthorityGlAccountInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createTaxAuthorityGlAccount};
 
 
 const updateTaxAuthorityGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTaxAuthorityGlAccount method',
   args:{taxAuthorityGlAccountToBeUpdated: {type: TaxAuthorityGlAccountInputType},taxAuthPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateTaxAuthorityGlAccount};
 
 
 const deleteTaxAuthorityGlAccountByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTaxAuthorityGlAccountByIdUpdated method',
   args:{taxAuthorityGlAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

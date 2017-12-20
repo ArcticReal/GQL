@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {BudgetScenarioApplicationInputType} from '../../accounting/BudgetScenarioApplication/BudgetScenarioApplicationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBudgetScenarioApplication = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetScenarioApplication method',
   args:{budgetScenarioApplicationToBeAdded: {type: BudgetScenarioApplicationInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createBudgetScenarioApplication};
 
 
 const updateBudgetScenarioApplication = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetScenarioApplication method',
   args:{budgetScenarioApplicationToBeUpdated: {type: BudgetScenarioApplicationInputType},budgetScenarioApplicId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateBudgetScenarioApplication};
 
 
 const deleteBudgetScenarioApplicationByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetScenarioApplicationByIdUpdated method',
   args:{budgetScenarioApplicationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

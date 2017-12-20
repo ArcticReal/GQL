@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createEntitySyncIncludeGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createEntitySyncIncludeGroup method',
   args:{entitySyncId: {type: GraphQLString},entityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createEntitySyncIncludeGroup};
 
 
 const deleteEntitySyncIncludeGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteEntitySyncIncludeGroup method',
   args:{entitySyncId: {type: GraphQLString},entityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {deleteEntitySyncIncludeGroup};
 
 
 const updateEntitySyncIncludeGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateEntitySyncIncludeGroup method',
   args:{entitySyncId: {type: GraphQLString},entityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

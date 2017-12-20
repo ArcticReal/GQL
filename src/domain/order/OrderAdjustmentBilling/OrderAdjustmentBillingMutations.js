@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {OrderAdjustmentBillingInputType} from '../../order/OrderAdjustmentBilling/OrderAdjustmentBillingInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderAdjustmentBilling = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderAdjustmentBilling method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createOrderAdjustmentBilling};
 
 
 const updateOrderAdjustmentBilling = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderAdjustmentBilling method',
   args:{orderAdjustmentBillingToBeUpdated: {type: OrderAdjustmentBillingInputType},invoiceItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateOrderAdjustmentBilling};
 
 
 const deleteOrderAdjustmentBillingByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderAdjustmentBillingByIdUpdated method',
   args:{orderAdjustmentBillingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

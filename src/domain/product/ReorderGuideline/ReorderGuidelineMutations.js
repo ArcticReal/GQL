@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ReorderGuidelineInputType} from '../../product/ReorderGuideline/ReorderGuidelineInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReorderGuideline = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createReorderGuideline method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createReorderGuideline};
 
 
 const updateReorderGuideline = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateReorderGuideline method',
   args:{reorderGuidelineToBeUpdated: {type: ReorderGuidelineInputType},reorderGuidelineId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateReorderGuideline};
 
 
 const deleteReorderGuidelineByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteReorderGuidelineByIdUpdated method',
   args:{reorderGuidelineId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

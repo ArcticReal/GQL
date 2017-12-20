@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {EmplPositionTypeClassInputType} from '../../humanres/EmplPositionTypeClass/EmplPositionTypeClassInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEmplPositionTypeClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createEmplPositionTypeClass method',
   args:{emplPositionTypeClassToBeAdded: {type: EmplPositionTypeClassInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createEmplPositionTypeClass};
 
 
 const deleteEmplPositionTypeClassByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteEmplPositionTypeClassByIdUpdated method',
   args:{emplPositionTypeClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteEmplPositionTypeClassByIdUpdated};
 
 
 const updateEmplPositionTypeClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateEmplPositionTypeClass method',
   args:{emplPositionTypeClassToBeUpdated: {type: EmplPositionTypeClassInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SegmentGroupClassificationInputType} from '../../marketing/SegmentGroupClassification/SegmentGroupClassificationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSegmentGroupClassification = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSegmentGroupClassification method',
   args:{segmentGroupClassificationToBeAdded: {type: SegmentGroupClassificationInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSegmentGroupClassification};
 
 
 const updateSegmentGroupClassification = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSegmentGroupClassification method',
   args:{segmentGroupClassificationToBeUpdated: {type: SegmentGroupClassificationInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateSegmentGroupClassification};
 
 
 const deleteSegmentGroupClassificationByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSegmentGroupClassificationByIdUpdated method',
   args:{segmentGroupClassificationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

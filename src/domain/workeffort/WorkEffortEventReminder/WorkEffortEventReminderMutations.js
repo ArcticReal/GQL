@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortEventReminderInputType} from '../../workeffort/WorkEffortEventReminder/WorkEffortEventReminderInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortEventReminder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortEventReminder method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortEventReminder};
 
 
 const updateWorkEffortEventReminder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortEventReminder method',
   args:{workEffortEventReminderToBeUpdated: {type: WorkEffortEventReminderInputType},sequenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortEventReminder};
 
 
 const deleteWorkEffortEventReminderByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortEventReminderByIdUpdated method',
   args:{workEffortEventReminderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

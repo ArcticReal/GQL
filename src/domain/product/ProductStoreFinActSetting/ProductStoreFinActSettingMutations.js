@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductStoreFinActSettingInputType} from '../../product/ProductStoreFinActSetting/ProductStoreFinActSettingInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreFinActSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreFinActSetting method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductStoreFinActSetting};
 
 
 const updateProductStoreFinActSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreFinActSetting method',
   args:{productStoreFinActSettingToBeUpdated: {type: ProductStoreFinActSettingInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateProductStoreFinActSetting};
 
 
 const deleteProductStoreFinActSettingByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreFinActSettingByIdUpdated method',
   args:{productStoreFinActSettingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

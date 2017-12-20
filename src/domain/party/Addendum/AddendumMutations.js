@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {AddendumInputType} from '../../party/Addendum/AddendumInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAddendum = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAddendum method',
   args:{addendumToBeAdded: {type: AddendumInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createAddendum};
 
 
 const updateAddendum = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAddendum method',
   args:{addendumToBeUpdated: {type: AddendumInputType},addendumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateAddendum};
 
 
 const deleteAddendumByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAddendumByIdUpdated method',
   args:{addendumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {QuoteWorkEffortInputType} from '../../order/QuoteWorkEffort/QuoteWorkEffortInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuoteWorkEffort = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteWorkEffort method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createQuoteWorkEffort};
 
 
 const updateQuoteWorkEffort = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteWorkEffort method',
   args:{quoteWorkEffortToBeUpdated: {type: QuoteWorkEffortInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateQuoteWorkEffort};
 
 
 const deleteQuoteWorkEffortByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteQuoteWorkEffortByIdUpdated method',
   args:{quoteWorkEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

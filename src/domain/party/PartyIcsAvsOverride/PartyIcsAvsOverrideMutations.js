@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyIcsAvsOverrideInputType} from '../../party/PartyIcsAvsOverride/PartyIcsAvsOverrideInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyIcsAvsOverride = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyIcsAvsOverride method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyIcsAvsOverride};
 
 
 const updatePartyIcsAvsOverride = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyIcsAvsOverride method',
   args:{partyIcsAvsOverrideToBeUpdated: {type: PartyIcsAvsOverrideInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyIcsAvsOverride};
 
 
 const deletePartyIcsAvsOverrideByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyIcsAvsOverrideByIdUpdated method',
   args:{partyIcsAvsOverrideId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

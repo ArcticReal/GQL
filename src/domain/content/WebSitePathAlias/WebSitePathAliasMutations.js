@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WebSitePathAliasInputType} from '../../content/WebSitePathAlias/WebSitePathAliasInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWebSitePathAlias = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWebSitePathAlias method',
   args:{webSitePathAliasToBeAdded: {type: WebSitePathAliasInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWebSitePathAlias};
 
 
 const updateWebSitePathAlias = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWebSitePathAlias method',
   args:{webSitePathAliasToBeUpdated: {type: WebSitePathAliasInputType},pathAlias: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWebSitePathAlias};
 
 
 const deleteWebSitePathAliasByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWebSitePathAliasByIdUpdated method',
   args:{webSitePathAliasId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {GlAccountClassInputType} from '../../accounting/GlAccountClass/GlAccountClassInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlAccountClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccountClass method',
   args:{glAccountClassToBeAdded: {type: GlAccountClassInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createGlAccountClass};
 
 
 const updateGlAccountClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlAccountClass method',
   args:{glAccountClassToBeUpdated: {type: GlAccountClassInputType},glAccountClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateGlAccountClass};
 
 
 const deleteGlAccountClassByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlAccountClassByIdUpdated method',
   args:{glAccountClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

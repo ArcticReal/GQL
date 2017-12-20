@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const calculateAcctgTransTrialBalance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz calculateAcctgTransTrialBalance method',
   args:{acctgTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {calculateAcctgTransTrialBalance};
 
 
 const calculateGlAccountTrialBalance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz calculateGlAccountTrialBalance method',
   args:{fromDate: {type: GraphQLString},glAccountId: {type: GraphQLString},thruDate: {type: GraphQLString},isPosted: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {calculateGlAccountTrialBalance};
 
 
 const calculateGlJournalTrialBalance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz calculateGlJournalTrialBalance method',
   args:{glJournalId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {calculateGlJournalTrialBalance};
 
 
 const closeFinancialTimePeriod = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz closeFinancialTimePeriod method',
   args:{customTimePeriodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {closeFinancialTimePeriod};
 
 
 const completeAcctgTransEntries = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz completeAcctgTransEntries method',
   args:{acctgTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {completeAcctgTransEntries};
 
 
 const computeAndStoreGlAccountHistoryBalance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz computeAndStoreGlAccountHistoryBalance method',
   args:{glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},customTimePeriodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {computeAndStoreGlAccountHistoryBalance};
 
 
 const computeGlAccountBalanceForTimePeriod = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz computeGlAccountBalanceForTimePeriod method',
   args:{glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},customTimePeriodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {computeGlAccountBalanceForTimePeriod};
 
 
 const copyAcctgTransAndEntries = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz copyAcctgTransAndEntries method',
   args:{fromAcctgTransId: {type: GraphQLString},revert: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {copyAcctgTransAndEntries};
 
 
 const createAcctgTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTrans method',
   args:{finAccountTransId: {type: GraphQLString},workEffortId: {type: GraphQLString},theirAcctgTransId: {type: GraphQLString},roleTypeId: {type: GraphQLString},acctgTransTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},glFiscalTypeId: {type: GraphQLString},description: {type: GraphQLString},glJournalId: {type: GraphQLString},transactionDate: {type: GraphQLString},scheduledPostingDate: {type: GraphQLString},voucherRef: {type: GraphQLString},inventoryItemId: {type: GraphQLString},physicalInventoryId: {type: GraphQLString},createdDate: {type: GraphQLString},paymentId: {type: GraphQLString},shipmentId: {type: GraphQLString},voucherDate: {type: GraphQLString},fixedAssetId: {type: GraphQLString},invoiceId: {type: GraphQLString},partyId: {type: GraphQLString},receiptId: {type: GraphQLString},groupStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {createAcctgTrans};
 
 
 const createAcctgTransAndEntries = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransAndEntries method',
   args:{workEffortId: {type: GraphQLString},theirAcctgTransId: {type: GraphQLString},description: {type: GraphQLString},postedDate: {type: GraphQLString},physicalInventoryId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},isPosted: {type: GraphQLString},paymentId: {type: GraphQLString},voucherDate: {type: GraphQLString},partyId: {type: GraphQLString},receiptId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},finAccountTransId: {type: GraphQLString},roleTypeId: {type: GraphQLString},acctgTransTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},glFiscalTypeId: {type: GraphQLString},glJournalId: {type: GraphQLString},transactionDate: {type: GraphQLString},scheduledPostingDate: {type: GraphQLString},voucherRef: {type: GraphQLString},inventoryItemId: {type: GraphQLString},createdDate: {type: GraphQLString},shipmentId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},invoiceId: {type: GraphQLString},groupStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {createAcctgTransAndEntries};
 
 
 const createAcctgTransAndEntriesForCustomerRefundPaymentApplication = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransAndEntriesForCustomerRefundPaymentApplication method',
   args:{paymentApplicationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {createAcctgTransAndEntriesForCustomerRefundPaymentApplication};
 
 
 const createAcctgTransAndEntriesForIncomingPayment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransAndEntriesForIncomingPayment method',
   args:{paymentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {createAcctgTransAndEntriesForIncomingPayment};
 
 
 const createAcctgTransAndEntriesForOutgoingPayment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransAndEntriesForOutgoingPayment method',
   args:{paymentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {createAcctgTransAndEntriesForOutgoingPayment};
 
 
 const createAcctgTransAndEntriesForPaymentApplication = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransAndEntriesForPaymentApplication method',
   args:{paymentApplicationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {createAcctgTransAndEntriesForPaymentApplication};
 
 
 const createAcctgTransAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransAttribute method',
   args:{acctgTransId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {createAcctgTransAttribute};
 
 
 const createAcctgTransEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransEntry method',
   args:{acctgTransId: {type: GraphQLString},roleTypeId: {type: GraphQLString},theirProductId: {type: GraphQLString},amount: {type: GraphQLFloat},productId: {type: GraphQLString},dueDate: {type: GraphQLString},groupId: {type: GraphQLString},settlementTermId: {type: GraphQLString},glAccountId: {type: GraphQLString},description: {type: GraphQLString},theirPartyId: {type: GraphQLString},acctgTransEntryTypeId: {type: GraphQLString},isSummary: {type: GraphQLString},voucherRef: {type: GraphQLString},inventoryItemId: {type: GraphQLString},purposeEnumId: {type: GraphQLString},currencyUomId: {type: GraphQLString},glAccountTypeId: {type: GraphQLString},origAmount: {type: GraphQLFloat},debitCreditFlag: {type: GraphQLString},taxId: {type: GraphQLString},origCurrencyUomId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {createAcctgTransEntry};
 
 
 const createAcctgTransEntryType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransEntryType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},acctgTransEntryTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {createAcctgTransEntryType};
 
 
 const createAcctgTransForCanceledSalesShipmentIssuance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForCanceledSalesShipmentIssuance method',
   args:{itemIssuanceId: {type: GraphQLString},canceledQuantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {createAcctgTransForCanceledSalesShipmentIssuance};
 
 
 const createAcctgTransForCustomerReturnInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForCustomerReturnInvoice method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {createAcctgTransForCustomerReturnInvoice};
 
 
 const createAcctgTransForFixedAssetMaintIssuance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForFixedAssetMaintIssuance method',
   args:{itemIssuanceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -232,7 +233,7 @@ export {createAcctgTransForFixedAssetMaintIssuance};
 
 
 const createAcctgTransForInventoryItemCostChange = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForInventoryItemCostChange method',
   args:{inventoryItemId: {type: GraphQLString},inventoryItemDetailSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -243,7 +244,7 @@ export {createAcctgTransForInventoryItemCostChange};
 
 
 const createAcctgTransForInventoryItemOwnerChange = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForInventoryItemOwnerChange method',
   args:{inventoryItemId: {type: GraphQLString},oldOwnerPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -254,7 +255,7 @@ export {createAcctgTransForInventoryItemOwnerChange};
 
 
 const createAcctgTransForPhysicalInventoryVariance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForPhysicalInventoryVariance method',
   args:{physicalInventoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -265,7 +266,7 @@ export {createAcctgTransForPhysicalInventoryVariance};
 
 
 const createAcctgTransForPurchaseInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForPurchaseInvoice method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -276,7 +277,7 @@ export {createAcctgTransForPurchaseInvoice};
 
 
 const createAcctgTransForSalesInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForSalesInvoice method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -287,7 +288,7 @@ export {createAcctgTransForSalesInvoice};
 
 
 const createAcctgTransForSalesShipmentIssuance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForSalesShipmentIssuance method',
   args:{itemIssuanceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -298,7 +299,7 @@ export {createAcctgTransForSalesShipmentIssuance};
 
 
 const createAcctgTransForShipmentReceipt = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForShipmentReceipt method',
   args:{receiptId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -309,7 +310,7 @@ export {createAcctgTransForShipmentReceipt};
 
 
 const createAcctgTransForWorkEffortCost = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForWorkEffortCost method',
   args:{workEffortId: {type: GraphQLString},costComponentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -320,7 +321,7 @@ export {createAcctgTransForWorkEffortCost};
 
 
 const createAcctgTransForWorkEffortInventoryProduced = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForWorkEffortInventoryProduced method',
   args:{workEffortId: {type: GraphQLString},inventoryItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -331,7 +332,7 @@ export {createAcctgTransForWorkEffortInventoryProduced};
 
 
 const createAcctgTransForWorkEffortIssuance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransForWorkEffortIssuance method',
   args:{workEffortId: {type: GraphQLString},inventoryItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -342,7 +343,7 @@ export {createAcctgTransForWorkEffortIssuance};
 
 
 const createAcctgTransType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},acctgTransTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -353,7 +354,7 @@ export {createAcctgTransType};
 
 
 const createAcctgTransTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransTypeAttr method',
   args:{acctgTransTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -364,7 +365,7 @@ export {createAcctgTransTypeAttr};
 
 
 const createFinAccountTypeGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountTypeGlAccount method',
   args:{glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},finAccountTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -375,7 +376,7 @@ export {createFinAccountTypeGlAccount};
 
 
 const createGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccount method',
   args:{glAccountTypeId: {type: GraphQLString},glResourceTypeId: {type: GraphQLString},accountName: {type: GraphQLString},glAccountId: {type: GraphQLString},glAccountClassId: {type: GraphQLString},accountCode: {type: GraphQLString},productId: {type: GraphQLString},parentGlAccountId: {type: GraphQLString},description: {type: GraphQLString},externalId: {type: GraphQLString},glXbrlClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -386,7 +387,7 @@ export {createGlAccount};
 
 
 const createGlAccountCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccountCategory method',
   args:{glAccountCategoryTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -397,7 +398,7 @@ export {createGlAccountCategory};
 
 
 const createGlAccountCategoryMember = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccountCategoryMember method',
   args:{glAccountId: {type: GraphQLString},glAccountCategoryId: {type: GraphQLString},fromDate: {type: GraphQLString},amountPercentage: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -408,7 +409,7 @@ export {createGlAccountCategoryMember};
 
 
 const createGlAccountCategoryType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccountCategoryType method',
   args:{glAccountCategoryTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -419,7 +420,7 @@ export {createGlAccountCategoryType};
 
 
 const createGlAccountClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccountClass method',
   args:{parentClassId: {type: GraphQLString},glAccountClassId: {type: GraphQLString},description: {type: GraphQLString},isAssetClass: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -430,7 +431,7 @@ export {createGlAccountClass};
 
 
 const createGlAccountGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccountGroup method',
   args:{glAccountGroupTypeId: {type: GraphQLString},description: {type: GraphQLString},glAccountGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -441,7 +442,7 @@ export {createGlAccountGroup};
 
 
 const createGlAccountGroupMember = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccountGroupMember method',
   args:{glAccountId: {type: GraphQLString},glAccountGroupTypeId: {type: GraphQLString},glAccountGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -452,7 +453,7 @@ export {createGlAccountGroupMember};
 
 
 const createGlAccountGroupType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccountGroupType method',
   args:{glAccountGroupTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -463,7 +464,7 @@ export {createGlAccountGroupType};
 
 
 const createGlAccountOrganization = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccountOrganization method',
   args:{glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -474,7 +475,7 @@ export {createGlAccountOrganization};
 
 
 const createGlAccountRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccountRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},glAccountId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -485,7 +486,7 @@ export {createGlAccountRole};
 
 
 const createGlAccountType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAccountType method',
   args:{parentTypeId: {type: GraphQLString},glAccountTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -496,7 +497,7 @@ export {createGlAccountType};
 
 
 const createGlAcctCatMemFromCostCenters = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlAcctCatMemFromCostCenters method',
   args:{glAccountId: {type: GraphQLString},glAccountCategoryId: {type: GraphQLString},amountPercentage: {type: GraphQLFloat},totalAmountPercentage: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -507,7 +508,7 @@ export {createGlAcctCatMemFromCostCenters};
 
 
 const createGlBudgetXref = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlBudgetXref method',
   args:{fromDate: {type: GraphQLString},glAccountId: {type: GraphQLString},budgetItemTypeId: {type: GraphQLString},allocationPercentage: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -518,7 +519,7 @@ export {createGlBudgetXref};
 
 
 const createGlFiscalType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlFiscalType method',
   args:{glFiscalTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -529,7 +530,7 @@ export {createGlFiscalType};
 
 
 const createGlJournal = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlJournal method',
   args:{organizationPartyId: {type: GraphQLString},glJournalName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -540,7 +541,7 @@ export {createGlJournal};
 
 
 const createGlReconciliation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlReconciliation method',
   args:{glReconciliationName: {type: GraphQLString},createdDate: {type: GraphQLString},reconciledBalance: {type: GraphQLFloat},statusId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},glAccountId: {type: GraphQLString},description: {type: GraphQLString},organizationPartyId: {type: GraphQLString},reconciledDate: {type: GraphQLString},openingBalance: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -551,7 +552,7 @@ export {createGlReconciliation};
 
 
 const createGlReconciliationEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlReconciliationEntry method',
   args:{glReconciliationId: {type: GraphQLString},reconciledAmount: {type: GraphQLFloat},acctgTransEntrySeqId: {type: GraphQLString},acctgTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -562,7 +563,7 @@ export {createGlReconciliationEntry};
 
 
 const createGlResourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlResourceType method',
   args:{glResourceTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -573,7 +574,7 @@ export {createGlResourceType};
 
 
 const createGlXbrlClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlXbrlClass method',
   args:{description: {type: GraphQLString},glXbrlClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -584,7 +585,7 @@ export {createGlXbrlClass};
 
 
 const createPartyGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyGlAccount method',
   args:{roleTypeId: {type: GraphQLString},glAccountTypeId: {type: GraphQLString},glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -595,7 +596,7 @@ export {createPartyGlAccount};
 
 
 const createProductAverageCostType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductAverageCostType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},productAverageCostTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -606,7 +607,7 @@ export {createProductAverageCostType};
 
 
 const createSettlementTerm = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSettlementTerm method',
   args:{settlementTermId: {type: GraphQLString},uomId: {type: GraphQLString},termName: {type: GraphQLString},termValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -617,7 +618,7 @@ export {createSettlementTerm};
 
 
 const createUpdateCostCenter = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createUpdateCostCenter method',
   args:{glAccountId: {type: GraphQLString},amountPercentageMap: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -628,7 +629,7 @@ export {createUpdateCostCenter};
 
 
 const createVarianceReasonGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createVarianceReasonGlAccount method',
   args:{varianceReasonId: {type: GraphQLString},glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -639,7 +640,7 @@ export {createVarianceReasonGlAccount};
 
 
 const deleteAcctgTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAcctgTrans method',
   args:{acctgTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -650,7 +651,7 @@ export {deleteAcctgTrans};
 
 
 const deleteAcctgTransAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAcctgTransAttribute method',
   args:{acctgTransId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -661,7 +662,7 @@ export {deleteAcctgTransAttribute};
 
 
 const deleteAcctgTransEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAcctgTransEntry method',
   args:{acctgTransEntrySeqId: {type: GraphQLString},acctgTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -672,7 +673,7 @@ export {deleteAcctgTransEntry};
 
 
 const deleteAcctgTransEntryType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAcctgTransEntryType method',
   args:{acctgTransEntryTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -683,7 +684,7 @@ export {deleteAcctgTransEntryType};
 
 
 const deleteAcctgTransTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAcctgTransTypeAttr method',
   args:{acctgTransTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -694,7 +695,7 @@ export {deleteAcctgTransTypeAttr};
 
 
 const deleteFinAccountTypeGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFinAccountTypeGlAccount method',
   args:{organizationPartyId: {type: GraphQLString},finAccountTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -705,7 +706,7 @@ export {deleteFinAccountTypeGlAccount};
 
 
 const deleteGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlAccount method',
   args:{glAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -716,7 +717,7 @@ export {deleteGlAccount};
 
 
 const deleteGlAccountCategoryMember = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlAccountCategoryMember method',
   args:{fromDate: {type: GraphQLString},glAccountId: {type: GraphQLString},glAccountCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -727,7 +728,7 @@ export {deleteGlAccountCategoryMember};
 
 
 const deleteGlAccountCategoryType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlAccountCategoryType method',
   args:{glAccountCategoryTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -738,7 +739,7 @@ export {deleteGlAccountCategoryType};
 
 
 const deleteGlAccountClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlAccountClass method',
   args:{glAccountClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -749,7 +750,7 @@ export {deleteGlAccountClass};
 
 
 const deleteGlAccountGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlAccountGroup method',
   args:{glAccountGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -760,7 +761,7 @@ export {deleteGlAccountGroup};
 
 
 const deleteGlAccountGroupMember = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlAccountGroupMember method',
   args:{glAccountId: {type: GraphQLString},glAccountGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -771,7 +772,7 @@ export {deleteGlAccountGroupMember};
 
 
 const deleteGlAccountGroupType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlAccountGroupType method',
   args:{glAccountGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -782,7 +783,7 @@ export {deleteGlAccountGroupType};
 
 
 const deleteGlAccountOrganization = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlAccountOrganization method',
   args:{glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -793,7 +794,7 @@ export {deleteGlAccountOrganization};
 
 
 const deleteGlAccountType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlAccountType method',
   args:{glAccountTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -804,7 +805,7 @@ export {deleteGlAccountType};
 
 
 const deleteGlFiscalType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlFiscalType method',
   args:{glFiscalTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -815,7 +816,7 @@ export {deleteGlFiscalType};
 
 
 const deleteGlJournal = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlJournal method',
   args:{glJournalId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -826,7 +827,7 @@ export {deleteGlJournal};
 
 
 const deleteGlReconciliation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlReconciliation method',
   args:{glReconciliationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -837,7 +838,7 @@ export {deleteGlReconciliation};
 
 
 const deleteGlReconciliationEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlReconciliationEntry method',
   args:{glReconciliationId: {type: GraphQLString},acctgTransEntrySeqId: {type: GraphQLString},acctgTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -848,7 +849,7 @@ export {deleteGlReconciliationEntry};
 
 
 const deleteGlResourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlResourceType method',
   args:{glResourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -859,7 +860,7 @@ export {deleteGlResourceType};
 
 
 const deleteGlXbrlClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlXbrlClass method',
   args:{glXbrlClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -870,7 +871,7 @@ export {deleteGlXbrlClass};
 
 
 const deletePartyGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyGlAccount method',
   args:{roleTypeId: {type: GraphQLString},glAccountTypeId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -881,7 +882,7 @@ export {deletePartyGlAccount};
 
 
 const deleteProductAverageCostType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductAverageCostType method',
   args:{productAverageCostTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -892,7 +893,7 @@ export {deleteProductAverageCostType};
 
 
 const deleteSettlementTerm = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSettlementTerm method',
   args:{settlementTermId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -903,7 +904,7 @@ export {deleteSettlementTerm};
 
 
 const deleteVarianceReasonGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteVarianceReasonGlAccount method',
   args:{varianceReasonId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -914,7 +915,7 @@ export {deleteVarianceReasonGlAccount};
 
 
 const expireGlAccountRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz expireGlAccountRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},glAccountId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -925,7 +926,7 @@ export {expireGlAccountRole};
 
 
 const expireGlBudgetXref = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz expireGlBudgetXref method',
   args:{fromDate: {type: GraphQLString},glAccountId: {type: GraphQLString},budgetItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -936,7 +937,7 @@ export {expireGlBudgetXref};
 
 
 const findCustomTimePeriods = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz findCustomTimePeriods method',
   args:{findDate: {type: GraphQLString},excludeNoOrganizationPeriods: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -947,7 +948,7 @@ export {findCustomTimePeriods};
 
 
 const findLastClosedDate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz findLastClosedDate method',
   args:{periodTypeId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},findDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -958,7 +959,7 @@ export {findLastClosedDate};
 
 
 const getAcctgTransEntriesAndTransTotal = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getAcctgTransEntriesAndTransTotal method',
   args:{customTimePeriodEndDate: {type: GraphQLString},glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},customTimePeriodStartDate: {type: GraphQLString},isPosted: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -969,7 +970,7 @@ export {getAcctgTransEntriesAndTransTotal};
 
 
 const getGlAccountFromAccountType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getGlAccountFromAccountType method',
   args:{organizationPartyId: {type: GraphQLString},roleTypeId: {type: GraphQLString},glAccountTypeId: {type: GraphQLString},debitCreditFlag: {type: GraphQLString},productId: {type: GraphQLString},acctgTransTypeId: {type: GraphQLString},paymentId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},invoiceId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -980,7 +981,7 @@ export {getGlAccountFromAccountType};
 
 
 const getGlAcctgAndAmountPercentage = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getGlAcctgAndAmountPercentage method',
   args:{organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -991,7 +992,7 @@ export {getGlAcctgAndAmountPercentage};
 
 
 const getInventoryItemOwner = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getInventoryItemOwner method',
   args:{inventoryItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1002,7 +1003,7 @@ export {getInventoryItemOwner};
 
 
 const getInventoryValuationList = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getInventoryValuationList method',
   args:{fromDate: {type: GraphQLString},cogsMethodId: {type: GraphQLString},facilityId: {type: GraphQLString},productCategoryId: {type: GraphQLString},productId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1013,7 +1014,7 @@ export {getInventoryValuationList};
 
 
 const getPreviousTimePeriod = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getPreviousTimePeriod method',
   args:{customTimePeriodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1024,7 +1025,7 @@ export {getPreviousTimePeriod};
 
 
 const interfaceAcctgTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz interfaceAcctgTrans method',
   args:{acctgTransTypeId: {type: GraphQLString},glFiscalTypeId: {type: GraphQLString},transactionDate: {type: GraphQLString},finAccountTransId: {type: GraphQLString},workEffortId: {type: GraphQLString},theirAcctgTransId: {type: GraphQLString},roleTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},description: {type: GraphQLString},glJournalId: {type: GraphQLString},scheduledPostingDate: {type: GraphQLString},voucherRef: {type: GraphQLString},inventoryItemId: {type: GraphQLString},physicalInventoryId: {type: GraphQLString},createdDate: {type: GraphQLString},paymentId: {type: GraphQLString},shipmentId: {type: GraphQLString},voucherDate: {type: GraphQLString},fixedAssetId: {type: GraphQLString},invoiceId: {type: GraphQLString},partyId: {type: GraphQLString},receiptId: {type: GraphQLString},groupStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1035,7 +1036,7 @@ export {interfaceAcctgTrans};
 
 
 const interfaceAcctgTransEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz interfaceAcctgTransEntry method',
   args:{amount: {type: GraphQLFloat},debitCreditFlag: {type: GraphQLString},glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},roleTypeId: {type: GraphQLString},theirProductId: {type: GraphQLString},productId: {type: GraphQLString},dueDate: {type: GraphQLString},groupId: {type: GraphQLString},settlementTermId: {type: GraphQLString},description: {type: GraphQLString},theirPartyId: {type: GraphQLString},acctgTransEntryTypeId: {type: GraphQLString},isSummary: {type: GraphQLString},voucherRef: {type: GraphQLString},inventoryItemId: {type: GraphQLString},currencyUomId: {type: GraphQLString},glAccountTypeId: {type: GraphQLString},origAmount: {type: GraphQLFloat},taxId: {type: GraphQLString},origCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1046,7 +1047,7 @@ export {interfaceAcctgTransEntry};
 
 
 const postAcctgTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz postAcctgTrans method',
   args:{acctgTransId: {type: GraphQLString},verifyOnly: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1057,7 +1058,7 @@ export {postAcctgTrans};
 
 
 const postGlJournal = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz postGlJournal method',
   args:{glJournalId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1068,7 +1069,7 @@ export {postGlJournal};
 
 
 const prepareIncomeStatement = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz prepareIncomeStatement method',
   args:{fromDate: {type: GraphQLString},glFiscalTypeId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1079,7 +1080,7 @@ export {prepareIncomeStatement};
 
 
 const quickCreateAcctgTransAndEntries = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz quickCreateAcctgTransAndEntries method',
   args:{creditGlAccountId: {type: GraphQLString},amount: {type: GraphQLFloat},debitGlAccountId: {type: GraphQLString},workEffortId: {type: GraphQLString},theirAcctgTransId: {type: GraphQLString},dueDate: {type: GraphQLString},groupId: {type: GraphQLString},description: {type: GraphQLString},theirPartyId: {type: GraphQLString},acctgTransEntryTypeId: {type: GraphQLString},postedDate: {type: GraphQLString},physicalInventoryId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},isPosted: {type: GraphQLString},origAmount: {type: GraphQLFloat},paymentId: {type: GraphQLString},voucherDate: {type: GraphQLString},partyId: {type: GraphQLString},receiptId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},finAccountTransId: {type: GraphQLString},roleTypeId: {type: GraphQLString},theirProductId: {type: GraphQLString},productId: {type: GraphQLString},acctgTransTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},glFiscalTypeId: {type: GraphQLString},settlementTermId: {type: GraphQLString},reconcileStatusId: {type: GraphQLString},glJournalId: {type: GraphQLString},isSummary: {type: GraphQLString},transactionDate: {type: GraphQLString},scheduledPostingDate: {type: GraphQLString},voucherRef: {type: GraphQLString},inventoryItemId: {type: GraphQLString},createdDate: {type: GraphQLString},currencyUomId: {type: GraphQLString},glAccountTypeId: {type: GraphQLString},shipmentId: {type: GraphQLString},taxId: {type: GraphQLString},origCurrencyUomId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},invoiceId: {type: GraphQLString},groupStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1090,7 +1091,7 @@ export {quickCreateAcctgTransAndEntries};
 
 
 const removeAcctgTransType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeAcctgTransType method',
   args:{acctgTransTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1101,7 +1102,7 @@ export {removeAcctgTransType};
 
 
 const revertAcctgTransOnCancelInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz revertAcctgTransOnCancelInvoice method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1112,7 +1113,7 @@ export {revertAcctgTransOnCancelInvoice};
 
 
 const revertAcctgTransOnRemovePaymentApplications = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz revertAcctgTransOnRemovePaymentApplications method',
   args:{paymentApplicationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1123,7 +1124,7 @@ export {revertAcctgTransOnRemovePaymentApplications};
 
 
 const setGlReconciliationStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz setGlReconciliationStatus method',
   args:{statusId: {type: GraphQLString},glReconciliationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1134,7 +1135,7 @@ export {setGlReconciliationStatus};
 
 
 const updateAcctgTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAcctgTrans method',
   args:{acctgTransId: {type: GraphQLString},workEffortId: {type: GraphQLString},theirAcctgTransId: {type: GraphQLString},description: {type: GraphQLString},postedDate: {type: GraphQLString},physicalInventoryId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},isPosted: {type: GraphQLString},paymentId: {type: GraphQLString},voucherDate: {type: GraphQLString},partyId: {type: GraphQLString},receiptId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},finAccountTransId: {type: GraphQLString},roleTypeId: {type: GraphQLString},acctgTransTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},glFiscalTypeId: {type: GraphQLString},glJournalId: {type: GraphQLString},transactionDate: {type: GraphQLString},scheduledPostingDate: {type: GraphQLString},voucherRef: {type: GraphQLString},inventoryItemId: {type: GraphQLString},createdDate: {type: GraphQLString},shipmentId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},invoiceId: {type: GraphQLString},groupStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1145,7 +1146,7 @@ export {updateAcctgTrans};
 
 
 const updateAcctgTransAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAcctgTransAttribute method',
   args:{acctgTransId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1156,7 +1157,7 @@ export {updateAcctgTransAttribute};
 
 
 const updateAcctgTransEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAcctgTransEntry method',
   args:{acctgTransEntrySeqId: {type: GraphQLString},acctgTransId: {type: GraphQLString},roleTypeId: {type: GraphQLString},theirProductId: {type: GraphQLString},amount: {type: GraphQLFloat},productId: {type: GraphQLString},dueDate: {type: GraphQLString},groupId: {type: GraphQLString},settlementTermId: {type: GraphQLString},glAccountId: {type: GraphQLString},description: {type: GraphQLString},theirPartyId: {type: GraphQLString},reconcileStatusId: {type: GraphQLString},acctgTransEntryTypeId: {type: GraphQLString},isSummary: {type: GraphQLString},voucherRef: {type: GraphQLString},inventoryItemId: {type: GraphQLString},currencyUomId: {type: GraphQLString},glAccountTypeId: {type: GraphQLString},origAmount: {type: GraphQLFloat},debitCreditFlag: {type: GraphQLString},taxId: {type: GraphQLString},origCurrencyUomId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1167,7 +1168,7 @@ export {updateAcctgTransEntry};
 
 
 const updateAcctgTransEntryType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAcctgTransEntryType method',
   args:{acctgTransEntryTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1178,7 +1179,7 @@ export {updateAcctgTransEntryType};
 
 
 const updateAcctgTransType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAcctgTransType method',
   args:{acctgTransTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1189,7 +1190,7 @@ export {updateAcctgTransType};
 
 
 const updateAcctgTransTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAcctgTransTypeAttr method',
   args:{acctgTransTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1200,7 +1201,7 @@ export {updateAcctgTransTypeAttr};
 
 
 const updateFinAccountTypeGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccountTypeGlAccount method',
   args:{glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},finAccountTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1211,7 +1212,7 @@ export {updateFinAccountTypeGlAccount};
 
 
 const updateGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlAccount method',
   args:{glAccountId: {type: GraphQLString},accountCode: {type: GraphQLString},glAccountTypeId: {type: GraphQLString},glResourceTypeId: {type: GraphQLString},productId: {type: GraphQLString},parentGlAccountId: {type: GraphQLString},accountName: {type: GraphQLString},glAccountClassId: {type: GraphQLString},description: {type: GraphQLString},externalId: {type: GraphQLString},glXbrlClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1222,7 +1223,7 @@ export {updateGlAccount};
 
 
 const updateGlAccountCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlAccountCategory method',
   args:{glAccountCategoryId: {type: GraphQLString},glAccountCategoryTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1233,7 +1234,7 @@ export {updateGlAccountCategory};
 
 
 const updateGlAccountCategoryMember = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlAccountCategoryMember method',
   args:{fromDate: {type: GraphQLString},glAccountId: {type: GraphQLString},glAccountCategoryId: {type: GraphQLString},amountPercentage: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1244,7 +1245,7 @@ export {updateGlAccountCategoryMember};
 
 
 const updateGlAccountCategoryType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlAccountCategoryType method',
   args:{glAccountCategoryTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1255,7 +1256,7 @@ export {updateGlAccountCategoryType};
 
 
 const updateGlAccountClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlAccountClass method',
   args:{glAccountClassId: {type: GraphQLString},parentClassId: {type: GraphQLString},description: {type: GraphQLString},isAssetClass: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1266,7 +1267,7 @@ export {updateGlAccountClass};
 
 
 const updateGlAccountGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlAccountGroup method',
   args:{glAccountGroupId: {type: GraphQLString},glAccountGroupTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1277,7 +1278,7 @@ export {updateGlAccountGroup};
 
 
 const updateGlAccountGroupMember = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlAccountGroupMember method',
   args:{glAccountId: {type: GraphQLString},glAccountGroupTypeId: {type: GraphQLString},glAccountGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1288,7 +1289,7 @@ export {updateGlAccountGroupMember};
 
 
 const updateGlAccountGroupType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlAccountGroupType method',
   args:{glAccountGroupTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1299,7 +1300,7 @@ export {updateGlAccountGroupType};
 
 
 const updateGlAccountOrganization = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlAccountOrganization method',
   args:{glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1310,7 +1311,7 @@ export {updateGlAccountOrganization};
 
 
 const updateGlAccountType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlAccountType method',
   args:{glAccountTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1321,7 +1322,7 @@ export {updateGlAccountType};
 
 
 const updateGlBudgetXref = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlBudgetXref method',
   args:{fromDate: {type: GraphQLString},glAccountId: {type: GraphQLString},budgetItemTypeId: {type: GraphQLString},allocationPercentage: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1332,7 +1333,7 @@ export {updateGlBudgetXref};
 
 
 const updateGlFiscalType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlFiscalType method',
   args:{glFiscalTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1343,7 +1344,7 @@ export {updateGlFiscalType};
 
 
 const updateGlJournal = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlJournal method',
   args:{glJournalId: {type: GraphQLString},glJournalName: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1354,7 +1355,7 @@ export {updateGlJournal};
 
 
 const updateGlReconciliation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlReconciliation method',
   args:{glReconciliationId: {type: GraphQLString},createdDate: {type: GraphQLString},reconciledBalance: {type: GraphQLFloat},statusId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},glAccountId: {type: GraphQLString},glReconciliationName: {type: GraphQLString},description: {type: GraphQLString},organizationPartyId: {type: GraphQLString},reconciledDate: {type: GraphQLString},openingBalance: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -1365,7 +1366,7 @@ export {updateGlReconciliation};
 
 
 const updateGlReconciliationEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlReconciliationEntry method',
   args:{glReconciliationId: {type: GraphQLString},reconciledAmount: {type: GraphQLFloat},acctgTransEntrySeqId: {type: GraphQLString},acctgTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1376,7 +1377,7 @@ export {updateGlReconciliationEntry};
 
 
 const updateGlResourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlResourceType method',
   args:{glResourceTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1387,7 +1388,7 @@ export {updateGlResourceType};
 
 
 const updateGlXbrlClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlXbrlClass method',
   args:{glXbrlClassId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1398,7 +1399,7 @@ export {updateGlXbrlClass};
 
 
 const updatePartyGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyGlAccount method',
   args:{roleTypeId: {type: GraphQLString},glAccountTypeId: {type: GraphQLString},glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1409,7 +1410,7 @@ export {updatePartyGlAccount};
 
 
 const updateProductAverageCostType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductAverageCostType method',
   args:{productAverageCostTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1420,7 +1421,7 @@ export {updateProductAverageCostType};
 
 
 const updateSettlementTerm = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSettlementTerm method',
   args:{settlementTermId: {type: GraphQLString},uomId: {type: GraphQLString},termName: {type: GraphQLString},termValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1431,7 +1432,7 @@ export {updateSettlementTerm};
 
 
 const updateVarianceReasonGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateVarianceReasonGlAccount method',
   args:{varianceReasonId: {type: GraphQLString},glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

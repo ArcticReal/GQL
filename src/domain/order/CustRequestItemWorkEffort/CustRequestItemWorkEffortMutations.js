@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {CustRequestItemWorkEffortInputType} from '../../order/CustRequestItemWorkEffort/CustRequestItemWorkEffortInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCustRequestItemWorkEffort = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestItemWorkEffort method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createCustRequestItemWorkEffort};
 
 
 const updateCustRequestItemWorkEffort = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustRequestItemWorkEffort method',
   args:{custRequestItemWorkEffortToBeUpdated: {type: CustRequestItemWorkEffortInputType},custRequestItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateCustRequestItemWorkEffort};
 
 
 const deleteCustRequestItemWorkEffortByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCustRequestItemWorkEffortByIdUpdated method',
   args:{custRequestItemWorkEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

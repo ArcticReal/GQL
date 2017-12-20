@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContentSearchConstraintInputType} from '../../content/ContentSearchConstraint/ContentSearchConstraintInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentSearchConstraint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentSearchConstraint method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createContentSearchConstraint};
 
 
 const updateContentSearchConstraint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentSearchConstraint method',
   args:{contentSearchConstraintToBeUpdated: {type: ContentSearchConstraintInputType},constraintSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateContentSearchConstraint};
 
 
 const deleteContentSearchConstraintByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteContentSearchConstraintByIdUpdated method',
   args:{contentSearchConstraintId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

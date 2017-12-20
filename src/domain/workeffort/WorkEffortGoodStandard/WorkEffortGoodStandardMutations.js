@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortGoodStandardInputType} from '../../workeffort/WorkEffortGoodStandard/WorkEffortGoodStandardInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortGoodStandard = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortGoodStandard method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortGoodStandard};
 
 
 const updateWorkEffortGoodStandard = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortGoodStandard method',
   args:{workEffortGoodStandardToBeUpdated: {type: WorkEffortGoodStandardInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortGoodStandard};
 
 
 const deleteWorkEffortGoodStandardByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortGoodStandardByIdUpdated method',
   args:{workEffortGoodStandardId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

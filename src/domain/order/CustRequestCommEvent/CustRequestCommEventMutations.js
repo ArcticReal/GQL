@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {CustRequestCommEventInputType} from '../../order/CustRequestCommEvent/CustRequestCommEventInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCustRequestCommEvent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestCommEvent method',
   args:{custRequestCommEventToBeAdded: {type: CustRequestCommEventInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createCustRequestCommEvent};
 
 
 const deleteCustRequestCommEventByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCustRequestCommEventByIdUpdated method',
   args:{custRequestCommEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteCustRequestCommEventByIdUpdated};
 
 
 const updateCustRequestCommEvent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustRequestCommEvent method',
   args:{custRequestCommEventToBeUpdated: {type: CustRequestCommEventInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

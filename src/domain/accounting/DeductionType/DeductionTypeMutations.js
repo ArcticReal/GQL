@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {DeductionTypeInputType} from '../../accounting/DeductionType/DeductionTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDeductionType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDeductionType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createDeductionType};
 
 
 const updateDeductionType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDeductionType method',
   args:{deductionTypeToBeUpdated: {type: DeductionTypeInputType},deductionTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateDeductionType};
 
 
 const deleteDeductionTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDeductionTypeByIdUpdated method',
   args:{deductionTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

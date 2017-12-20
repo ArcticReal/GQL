@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {FixedAssetRegistrationInputType} from '../../accounting/FixedAssetRegistration/FixedAssetRegistrationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAssetRegistration = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFixedAssetRegistration method',
   args:{fixedAssetRegistrationToBeAdded: {type: FixedAssetRegistrationInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createFixedAssetRegistration};
 
 
 const deleteFixedAssetRegistrationByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFixedAssetRegistrationByIdUpdated method',
   args:{fixedAssetRegistrationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteFixedAssetRegistrationByIdUpdated};
 
 
 const updateFixedAssetRegistration = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFixedAssetRegistration method',
   args:{fixedAssetRegistrationToBeUpdated: {type: FixedAssetRegistrationInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

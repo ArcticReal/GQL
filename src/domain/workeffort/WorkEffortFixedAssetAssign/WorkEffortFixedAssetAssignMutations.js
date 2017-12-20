@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortFixedAssetAssignInputType} from '../../workeffort/WorkEffortFixedAssetAssign/WorkEffortFixedAssetAssignInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortFixedAssetAssign = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortFixedAssetAssign method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortFixedAssetAssign};
 
 
 const updateWorkEffortFixedAssetAssign = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortFixedAssetAssign method',
   args:{workEffortFixedAssetAssignToBeUpdated: {type: WorkEffortFixedAssetAssignInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortFixedAssetAssign};
 
 
 const deleteWorkEffortFixedAssetAssignByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortFixedAssetAssignByIdUpdated method',
   args:{workEffortFixedAssetAssignId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

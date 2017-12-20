@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {CharacterSetInputType} from '../../content/CharacterSet/CharacterSetInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCharacterSet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCharacterSet method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createCharacterSet};
 
 
 const updateCharacterSet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCharacterSet method',
   args:{characterSetToBeUpdated: {type: CharacterSetInputType},characterSetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateCharacterSet};
 
 
 const deleteCharacterSetByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCharacterSetByIdUpdated method',
   args:{characterSetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

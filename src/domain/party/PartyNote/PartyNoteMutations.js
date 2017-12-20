@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyNoteInputType} from '../../party/PartyNote/PartyNoteInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyNote method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyNote};
 
 
 const updatePartyNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyNote method',
   args:{partyNoteToBeUpdated: {type: PartyNoteInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyNote};
 
 
 const deletePartyNoteByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyNoteByIdUpdated method',
   args:{partyNoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

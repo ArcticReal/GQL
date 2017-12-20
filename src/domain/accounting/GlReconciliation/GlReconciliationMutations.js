@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {GlReconciliationInputType} from '../../accounting/GlReconciliation/GlReconciliationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlReconciliation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlReconciliation method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createGlReconciliation};
 
 
 const updateGlReconciliation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlReconciliation method',
   args:{glReconciliationToBeUpdated: {type: GlReconciliationInputType},glReconciliationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateGlReconciliation};
 
 
 const deleteGlReconciliationByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlReconciliationByIdUpdated method',
   args:{glReconciliationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContentAttributeInputType} from '../../content/ContentAttribute/ContentAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentAttribute method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createContentAttribute};
 
 
 const updateContentAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentAttribute method',
   args:{contentAttributeToBeUpdated: {type: ContentAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateContentAttribute};
 
 
 const deleteContentAttributeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteContentAttributeByIdUpdated method',
   args:{contentAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

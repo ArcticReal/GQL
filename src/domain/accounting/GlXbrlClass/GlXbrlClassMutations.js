@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {GlXbrlClassInputType} from '../../accounting/GlXbrlClass/GlXbrlClassInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlXbrlClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlXbrlClass method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createGlXbrlClass};
 
 
 const updateGlXbrlClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlXbrlClass method',
   args:{glXbrlClassToBeUpdated: {type: GlXbrlClassInputType},glXbrlClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateGlXbrlClass};
 
 
 const deleteGlXbrlClassByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlXbrlClassByIdUpdated method',
   args:{glXbrlClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

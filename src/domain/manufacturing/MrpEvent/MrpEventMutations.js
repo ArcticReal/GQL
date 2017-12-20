@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {MrpEventInputType} from '../../manufacturing/MrpEvent/MrpEventInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMrpEvent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createMrpEvent method',
   args:{mrpEventToBeAdded: {type: MrpEventInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createMrpEvent};
 
 
 const deleteMrpEventByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteMrpEventByIdUpdated method',
   args:{mrpEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteMrpEventByIdUpdated};
 
 
 const updateMrpEvent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateMrpEvent method',
   args:{mrpEventToBeUpdated: {type: MrpEventInputType},mrpId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {OrderPaymentPreferenceInputType} from '../../order/OrderPaymentPreference/OrderPaymentPreferenceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderPaymentPreference = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderPaymentPreference method',
   args:{orderPaymentPreferenceToBeAdded: {type: OrderPaymentPreferenceInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createOrderPaymentPreference};
 
 
 const updateOrderPaymentPreference = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderPaymentPreference method',
   args:{orderPaymentPreferenceToBeUpdated: {type: OrderPaymentPreferenceInputType},orderPaymentPreferenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateOrderPaymentPreference};
 
 
 const deleteOrderPaymentPreferenceByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderPaymentPreferenceByIdUpdated method',
   args:{orderPaymentPreferenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

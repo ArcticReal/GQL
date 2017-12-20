@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {CommunicationEventRoleInputType} from '../../party/CommunicationEventRole/CommunicationEventRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCommunicationEventRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCommunicationEventRole method',
   args:{communicationEventRoleToBeAdded: {type: CommunicationEventRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createCommunicationEventRole};
 
 
 const deleteCommunicationEventRoleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCommunicationEventRoleByIdUpdated method',
   args:{communicationEventRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteCommunicationEventRoleByIdUpdated};
 
 
 const updateCommunicationEventRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCommunicationEventRole method',
   args:{communicationEventRoleToBeUpdated: {type: CommunicationEventRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

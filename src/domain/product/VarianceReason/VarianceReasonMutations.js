@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {VarianceReasonInputType} from '../../product/VarianceReason/VarianceReasonInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createVarianceReason = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createVarianceReason method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createVarianceReason};
 
 
 const updateVarianceReason = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateVarianceReason method',
   args:{varianceReasonToBeUpdated: {type: VarianceReasonInputType},varianceReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateVarianceReason};
 
 
 const deleteVarianceReasonByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteVarianceReasonByIdUpdated method',
   args:{varianceReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {CostComponentTypeAttrInputType} from '../../product/CostComponentTypeAttr/CostComponentTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCostComponentTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCostComponentTypeAttr method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createCostComponentTypeAttr};
 
 
 const updateCostComponentTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCostComponentTypeAttr method',
   args:{costComponentTypeAttrToBeUpdated: {type: CostComponentTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateCostComponentTypeAttr};
 
 
 const deleteCostComponentTypeAttrByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCostComponentTypeAttrByIdUpdated method',
   args:{costComponentTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

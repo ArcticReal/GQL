@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {UserDetailsDTOInputType} from '../dto/UserDetailsDTOInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const registerUserAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz registerUserAccount method',
   args:{userDetails: {type: UserDetailsDTOInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {registerUserAccount};
 
 
 const updateUserDetails = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateUserDetails method',
   args:{partyId: {type: GraphQLString},userDetails: {type: UserDetailsDTOInputType}},
   resolve: (root, args, {req}) => {

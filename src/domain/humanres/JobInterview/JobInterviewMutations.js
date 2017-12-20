@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {JobInterviewInputType} from '../../humanres/JobInterview/JobInterviewInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createJobInterview = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createJobInterview method',
   args:{jobInterviewToBeAdded: {type: JobInterviewInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createJobInterview};
 
 
 const updateJobInterview = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateJobInterview method',
   args:{jobInterviewToBeUpdated: {type: JobInterviewInputType},jobInterviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateJobInterview};
 
 
 const deleteJobInterviewByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteJobInterviewByIdUpdated method',
   args:{jobInterviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

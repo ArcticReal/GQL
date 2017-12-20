@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const migrateFacilityRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz migrateFacilityRole method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {migrateFacilityRole};
 
 
 const migrateFacilitySquareFootage = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz migrateFacilitySquareFootage method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {migrateFacilitySquareFootage};
 
 
 const migrateProductKeyword = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz migrateProductKeyword method',
   args:{},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ZipSalesRuleLookupInputType} from '../../accounting/ZipSalesRuleLookup/ZipSalesRuleLookupInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createZipSalesRuleLookup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createZipSalesRuleLookup method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createZipSalesRuleLookup};
 
 
 const updateZipSalesRuleLookup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateZipSalesRuleLookup method',
   args:{zipSalesRuleLookupToBeUpdated: {type: ZipSalesRuleLookupInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateZipSalesRuleLookup};
 
 
 const deleteZipSalesRuleLookupByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteZipSalesRuleLookupByIdUpdated method',
   args:{zipSalesRuleLookupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

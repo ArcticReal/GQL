@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createEmplPositionClassType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createEmplPositionClassType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},emplPositionClassTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createEmplPositionClassType};
 
 
 const createEmplPositionTypeClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createEmplPositionTypeClass method',
   args:{fromDate: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},emplPositionClassTypeId: {type: GraphQLString},standardHoursPerWeek: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createEmplPositionTypeClass};
 
 
 const deleteEmplPositionClassType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteEmplPositionClassType method',
   args:{emplPositionClassTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {deleteEmplPositionClassType};
 
 
 const expireEmplPositionTypeClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz expireEmplPositionTypeClass method',
   args:{fromDate: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},emplPositionClassTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {expireEmplPositionTypeClass};
 
 
 const updateEmplPositionClassType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateEmplPositionClassType method',
   args:{emplPositionClassTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {updateEmplPositionClassType};
 
 
 const updateEmplPositionTypeClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateEmplPositionTypeClass method',
   args:{fromDate: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},emplPositionClassTypeId: {type: GraphQLString},standardHoursPerWeek: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PayrollPreferenceInputType} from '../../humanres/PayrollPreference/PayrollPreferenceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPayrollPreference = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPayrollPreference method',
   args:{payrollPreferenceToBeAdded: {type: PayrollPreferenceInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPayrollPreference};
 
 
 const updatePayrollPreference = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePayrollPreference method',
   args:{payrollPreferenceToBeUpdated: {type: PayrollPreferenceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePayrollPreference};
 
 
 const deletePayrollPreferenceByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePayrollPreferenceByIdUpdated method',
   args:{payrollPreferenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

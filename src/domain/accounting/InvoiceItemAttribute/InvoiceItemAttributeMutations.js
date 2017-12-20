@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {InvoiceItemAttributeInputType} from '../../accounting/InvoiceItemAttribute/InvoiceItemAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoiceItemAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceItemAttribute method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createInvoiceItemAttribute};
 
 
 const deleteInvoiceItemAttributeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceItemAttributeByIdUpdated method',
   args:{invoiceItemAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteInvoiceItemAttributeByIdUpdated};
 
 
 const updateInvoiceItemAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceItemAttribute method',
   args:{invoiceItemAttributeToBeUpdated: {type: InvoiceItemAttributeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContainerGeoPointInputType} from '../../product/ContainerGeoPoint/ContainerGeoPointInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContainerGeoPoint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContainerGeoPoint method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createContainerGeoPoint};
 
 
 const deleteContainerGeoPointByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteContainerGeoPointByIdUpdated method',
   args:{containerGeoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteContainerGeoPointByIdUpdated};
 
 
 const updateContainerGeoPoint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContainerGeoPoint method',
   args:{containerGeoPointToBeUpdated: {type: ContainerGeoPointInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PaymentGatewayRespMsgInputType} from '../../accounting/PaymentGatewayRespMsg/PaymentGatewayRespMsgInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGatewayRespMsg = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentGatewayRespMsg method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPaymentGatewayRespMsg};
 
 
 const updatePaymentGatewayRespMsg = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayRespMsg method',
   args:{paymentGatewayRespMsgToBeUpdated: {type: PaymentGatewayRespMsgInputType},paymentGatewayRespMsgId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePaymentGatewayRespMsg};
 
 
 const deletePaymentGatewayRespMsgByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentGatewayRespMsgByIdUpdated method',
   args:{paymentGatewayRespMsgId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

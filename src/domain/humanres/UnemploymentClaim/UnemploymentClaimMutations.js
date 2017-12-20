@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {UnemploymentClaimInputType} from '../../humanres/UnemploymentClaim/UnemploymentClaimInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createUnemploymentClaim = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createUnemploymentClaim method',
   args:{unemploymentClaimToBeAdded: {type: UnemploymentClaimInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createUnemploymentClaim};
 
 
 const updateUnemploymentClaim = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateUnemploymentClaim method',
   args:{unemploymentClaimToBeUpdated: {type: UnemploymentClaimInputType},unemploymentClaimId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateUnemploymentClaim};
 
 
 const deleteUnemploymentClaimByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteUnemploymentClaimByIdUpdated method',
   args:{unemploymentClaimId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addProductManufacturingRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz addProductManufacturingRule method',
   args:{productIdIn: {type: GraphQLString},fromDate: {type: GraphQLString},ruleOperator: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},productIdFor: {type: GraphQLString},productIdInSubst: {type: GraphQLString},ruleId: {type: GraphQLString},productFeature: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {addProductManufacturingRule};
 
 
 const copyBOMAssocs = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz copyBOMAssocs method',
   args:{productId: {type: GraphQLString},productAssocTypeId: {type: GraphQLString},copyToProductId: {type: GraphQLString},fromDate: {type: GraphQLString},productIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {copyBOMAssocs};
 
 
 const createBOMAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBOMAssoc method',
   args:{productId: {type: GraphQLString},productIdTo: {type: GraphQLString},productAssocTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},reason: {type: GraphQLString},scrapFactor: {type: GraphQLFloat},quantity: {type: GraphQLFloat},recurrenceInfoId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},estimateCalcMethod: {type: GraphQLString},instruction: {type: GraphQLString},routingWorkEffortId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createBOMAssoc};
 
 
 const deleteProductManufacturingRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductManufacturingRule method',
   args:{ruleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {deleteProductManufacturingRule};
 
 
 const getBOMTree = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getBOMTree method',
   args:{productId: {type: GraphQLString},bomType: {type: GraphQLString},fromDate: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},type: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {getBOMTree};
 
 
 const getManufacturingComponents = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getManufacturingComponents method',
   args:{productId: {type: GraphQLString},fromDate: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},excludeWIPs: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {getManufacturingComponents};
 
 
 const getMaxDepth = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getMaxDepth method',
   args:{productId: {type: GraphQLString},fromDate: {type: GraphQLString},bomType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {getMaxDepth};
 
 
 const getNotAssembledComponents = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getNotAssembledComponents method',
   args:{productId: {type: GraphQLString},fromDate: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {getNotAssembledComponents};
 
 
 const getProductsInPackages = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductsInPackages method',
   args:{productId: {type: GraphQLString},fromDate: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {getProductsInPackages};
 
 
 const initLowLevelCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz initLowLevelCode method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {initLowLevelCode};
 
 
 const searchDuplicatedAncestor = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz searchDuplicatedAncestor method',
   args:{productId: {type: GraphQLString},productIdTo: {type: GraphQLString},productAssocTypeId: {type: GraphQLString},fromDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {searchDuplicatedAncestor};
 
 
 const updateLowLevelCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateLowLevelCode method',
   args:{productIdTo: {type: GraphQLString},alsoComponents: {type: GraphQLBoolean},alsoVariants: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {updateLowLevelCode};
 
 
 const updateProductManufacturingRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductManufacturingRule method',
   args:{ruleId: {type: GraphQLString},productIdIn: {type: GraphQLString},fromDate: {type: GraphQLString},ruleOperator: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},productIdFor: {type: GraphQLString},productIdInSubst: {type: GraphQLString},productFeature: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

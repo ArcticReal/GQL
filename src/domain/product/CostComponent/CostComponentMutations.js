@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {CostComponentInputType} from '../../product/CostComponent/CostComponentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCostComponent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCostComponent method',
   args:{costComponentToBeAdded: {type: CostComponentInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createCostComponent};
 
 
 const updateCostComponent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCostComponent method',
   args:{costComponentToBeUpdated: {type: CostComponentInputType},costComponentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateCostComponent};
 
 
 const deleteCostComponentByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCostComponentByIdUpdated method',
   args:{costComponentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

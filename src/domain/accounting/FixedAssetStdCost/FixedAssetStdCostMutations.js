@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {FixedAssetStdCostInputType} from '../../accounting/FixedAssetStdCost/FixedAssetStdCostInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAssetStdCost = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFixedAssetStdCost method',
   args:{fixedAssetStdCostToBeAdded: {type: FixedAssetStdCostInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createFixedAssetStdCost};
 
 
 const deleteFixedAssetStdCostByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFixedAssetStdCostByIdUpdated method',
   args:{fixedAssetStdCostId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteFixedAssetStdCostByIdUpdated};
 
 
 const updateFixedAssetStdCost = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFixedAssetStdCost method',
   args:{fixedAssetStdCostToBeUpdated: {type: FixedAssetStdCostInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

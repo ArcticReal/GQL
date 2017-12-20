@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyCarrierAccountInputType} from '../../party/PartyCarrierAccount/PartyCarrierAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyCarrierAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyCarrierAccount method',
   args:{partyCarrierAccountToBeAdded: {type: PartyCarrierAccountInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyCarrierAccount};
 
 
 const updatePartyCarrierAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyCarrierAccount method',
   args:{partyCarrierAccountToBeUpdated: {type: PartyCarrierAccountInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyCarrierAccount};
 
 
 const deletePartyCarrierAccountByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyCarrierAccountByIdUpdated method',
   args:{partyCarrierAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

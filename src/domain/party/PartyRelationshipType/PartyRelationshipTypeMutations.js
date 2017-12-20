@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyRelationshipTypeInputType} from '../../party/PartyRelationshipType/PartyRelationshipTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyRelationshipType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyRelationshipType method',
   args:{partyRelationshipTypeToBeAdded: {type: PartyRelationshipTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyRelationshipType};
 
 
 const updatePartyRelationshipType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyRelationshipType method',
   args:{partyRelationshipTypeToBeUpdated: {type: PartyRelationshipTypeInputType},partyRelationshipTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyRelationshipType};
 
 
 const deletePartyRelationshipTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyRelationshipTypeByIdUpdated method',
   args:{partyRelationshipTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

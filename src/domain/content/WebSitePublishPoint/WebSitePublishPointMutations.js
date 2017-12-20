@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WebSitePublishPointInputType} from '../../content/WebSitePublishPoint/WebSitePublishPointInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWebSitePublishPoint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWebSitePublishPoint method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWebSitePublishPoint};
 
 
 const updateWebSitePublishPoint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWebSitePublishPoint method',
   args:{webSitePublishPointToBeUpdated: {type: WebSitePublishPointInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWebSitePublishPoint};
 
 
 const deleteWebSitePublishPointByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWebSitePublishPointByIdUpdated method',
   args:{webSitePublishPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

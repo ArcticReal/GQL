@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductManufacturingRuleInputType} from '../../manufacturing/ProductManufacturingRule/ProductManufacturingRuleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductManufacturingRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductManufacturingRule method',
   args:{productManufacturingRuleToBeAdded: {type: ProductManufacturingRuleInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductManufacturingRule};
 
 
 const deleteProductManufacturingRuleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductManufacturingRuleByIdUpdated method',
   args:{productManufacturingRuleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteProductManufacturingRuleByIdUpdated};
 
 
 const updateProductManufacturingRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductManufacturingRule method',
   args:{productManufacturingRuleToBeUpdated: {type: ProductManufacturingRuleInputType},ruleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductGeoInputType} from '../../product/ProductGeo/ProductGeoInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductGeo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductGeo method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductGeo};
 
 
 const updateProductGeo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductGeo method',
   args:{productGeoToBeUpdated: {type: ProductGeoInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateProductGeo};
 
 
 const deleteProductGeoByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductGeoByIdUpdated method',
   args:{productGeoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

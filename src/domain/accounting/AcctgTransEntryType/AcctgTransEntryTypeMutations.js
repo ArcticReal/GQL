@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {AcctgTransEntryTypeInputType} from '../../accounting/AcctgTransEntryType/AcctgTransEntryTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAcctgTransEntryType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAcctgTransEntryType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createAcctgTransEntryType};
 
 
 const updateAcctgTransEntryType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAcctgTransEntryType method',
   args:{acctgTransEntryTypeToBeUpdated: {type: AcctgTransEntryTypeInputType},acctgTransEntryTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateAcctgTransEntryType};
 
 
 const deleteAcctgTransEntryTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAcctgTransEntryTypeByIdUpdated method',
   args:{acctgTransEntryTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

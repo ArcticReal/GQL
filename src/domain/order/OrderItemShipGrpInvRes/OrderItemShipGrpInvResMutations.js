@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {OrderItemShipGrpInvResInputType} from '../../order/OrderItemShipGrpInvRes/OrderItemShipGrpInvResInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderItemShipGrpInvRes = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemShipGrpInvRes method',
   args:{orderItemShipGrpInvResToBeAdded: {type: OrderItemShipGrpInvResInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createOrderItemShipGrpInvRes};
 
 
 const updateOrderItemShipGrpInvRes = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderItemShipGrpInvRes method',
   args:{orderItemShipGrpInvResToBeUpdated: {type: OrderItemShipGrpInvResInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateOrderItemShipGrpInvRes};
 
 
 const deleteOrderItemShipGrpInvResByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemShipGrpInvResByIdUpdated method',
   args:{orderItemShipGrpInvResId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

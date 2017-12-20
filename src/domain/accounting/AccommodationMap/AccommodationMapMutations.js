@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {AccommodationMapInputType} from '../../accounting/AccommodationMap/AccommodationMapInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAccommodationMap = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAccommodationMap method',
   args:{accommodationMapToBeAdded: {type: AccommodationMapInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createAccommodationMap};
 
 
 const updateAccommodationMap = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAccommodationMap method',
   args:{accommodationMapToBeUpdated: {type: AccommodationMapInputType},accommodationMapId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateAccommodationMap};
 
 
 const deleteAccommodationMapByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAccommodationMapByIdUpdated method',
   args:{accommodationMapId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

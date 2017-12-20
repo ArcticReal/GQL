@@ -8,14 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {KeyValueType} from '../../framework/helpTypes.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const calculateProductPrice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz calculateProductPrice method',
-  args:{product: {type: new GraphQLList(KeyValueType)},currencyUomIdTo: {type: GraphQLString},autoUserLogin: {type: new GraphQLList(KeyValueType)},optimizeForLargeRuleSet: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},termUomId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},productStoreGroupId: {type: GraphQLString},findAllQuantityPrices: {type: GraphQLString},currencyUomId: {type: GraphQLString},agreementId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},productPricePurposeId: {type: GraphQLString},checkIncludeVat: {type: GraphQLString},prodCatalogId: {type: GraphQLString},webSiteId: {type: GraphQLString},customAttributes: {type: GraphQLString}},
+  args:{product: {type: new GraphQLList(KeyValueInputType)},currencyUomIdTo: {type: GraphQLString},autoUserLogin: {type: new GraphQLList(KeyValueInputType)},optimizeForLargeRuleSet: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},termUomId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},productStoreGroupId: {type: GraphQLString},findAllQuantityPrices: {type: GraphQLString},currencyUomId: {type: GraphQLString},agreementId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},productPricePurposeId: {type: GraphQLString},checkIncludeVat: {type: GraphQLString},prodCatalogId: {type: GraphQLString},webSiteId: {type: GraphQLString},customAttributes: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/productPricepromo/calculateProductPrice?product=${args.product}currencyUomIdTo=${args.currencyUomIdTo}autoUserLogin=${args.autoUserLogin}optimizeForLargeRuleSet=${args.optimizeForLargeRuleSet}amount=${args.amount}quantity=${args.quantity}termUomId=${args.termUomId}surveyResponseId=${args.surveyResponseId}productStoreGroupId=${args.productStoreGroupId}findAllQuantityPrices=${args.findAllQuantityPrices}currencyUomId=${args.currencyUomId}agreementId=${args.agreementId}productStoreId=${args.productStoreId}partyId=${args.partyId}productPricePurposeId=${args.productPricePurposeId}checkIncludeVat=${args.checkIncludeVat}prodCatalogId=${args.prodCatalogId}webSiteId=${args.webSiteId}customAttributes=${args.customAttributes}`, null, req);
   }
@@ -24,9 +24,9 @@ export {calculateProductPrice};
 
 
 const calculatePurchasePrice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz calculatePurchasePrice method',
-  args:{product: {type: new GraphQLList(KeyValueType)},currencyUomId: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},partyId: {type: GraphQLString}},
+  args:{product: {type: new GraphQLList(KeyValueInputType)},currencyUomId: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/productPricepromo/calculatePurchasePrice?product=${args.product}currencyUomId=${args.currencyUomId}amount=${args.amount}quantity=${args.quantity}partyId=${args.partyId}`, null, req);
   }
@@ -35,7 +35,7 @@ export {calculatePurchasePrice};
 
 
 const createBulkProductPromoCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBulkProductPromoCode method',
   args:{useLimitPerCode: {type: GraphQLInt},lastModifiedDate: {type: GraphQLString},productPromoId: {type: GraphQLString},useLimitPerCustomer: {type: GraphQLInt},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},userEntered: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},_uploadedFile_contentType: {type: GraphQLString},requireEmailOrParty: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},uploadedFile: {type: GraphQLString},_uploadedFile_fileName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createBulkProductPromoCode};
 
 
 const createBulkProductPromoCodeEmail = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBulkProductPromoCodeEmail method',
   args:{productPromoCodeId: {type: GraphQLString},_uploadedFile_contentType: {type: GraphQLString},uploadedFile: {type: GraphQLString},_uploadedFile_fileName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createBulkProductPromoCodeEmail};
 
 
 const createProductPriceAction = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPriceAction method',
   args:{productPriceRuleId: {type: GraphQLString},amount: {type: GraphQLFloat},productPriceActionTypeId: {type: GraphQLString},rateCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createProductPriceAction};
 
 
 const createProductPriceActionType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPriceActionType method',
   args:{description: {type: GraphQLString},productPriceActionTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createProductPriceActionType};
 
 
 const createProductPriceAutoNotice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPriceAutoNotice method',
   args:{fromDate: {type: GraphQLString},runDate: {type: GraphQLString},facilityId: {type: GraphQLString},productPriceNoticeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createProductPriceAutoNotice};
 
 
 const createProductPriceCond = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPriceCond method',
   args:{productPriceRuleId: {type: GraphQLString},condValueInput: {type: GraphQLString},inputParamEnumId: {type: GraphQLString},condValue: {type: GraphQLString},operatorEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createProductPriceCond};
 
 
 const createProductPriceRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPriceRule method',
   args:{ruleName: {type: GraphQLString},fromDate: {type: GraphQLString},description: {type: GraphQLString},isSale: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createProductPriceRule};
 
 
 const createProductPromo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromo method',
   args:{promoName: {type: GraphQLString},showToCustomer: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},requireCode: {type: GraphQLString},overrideOrgPartyId: {type: GraphQLString},useLimitPerCustomer: {type: GraphQLInt},useLimitPerOrder: {type: GraphQLInt},useLimitPerPromotion: {type: GraphQLInt},promoText: {type: GraphQLString},userEntered: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},billbackFactor: {type: GraphQLFloat},createdByUserLogin: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createProductPromo};
 
 
 const createProductPromoAction = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoAction method',
   args:{productPromoRuleId: {type: GraphQLString},productPromoActionEnumId: {type: GraphQLString},productPromoId: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},orderAdjustmentTypeId: {type: GraphQLString},useCartQuantity: {type: GraphQLString},serviceName: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createProductPromoAction};
 
 
 const createProductPromoCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoCategory method',
   args:{productCategoryId: {type: GraphQLString},andGroupId: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString},productPromoCondSeqId: {type: GraphQLString},includeSubCategories: {type: GraphQLString},productPromoApplEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createProductPromoCategory};
 
 
 const createProductPromoCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoCode method',
   args:{useLimitPerCode: {type: GraphQLInt},fromDate: {type: GraphQLString},userEntered: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},productPromoCodeId: {type: GraphQLString},requireEmailOrParty: {type: GraphQLString},productPromoId: {type: GraphQLString},useLimitPerCustomer: {type: GraphQLInt},createdByUserLogin: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createProductPromoCode};
 
 
 const createProductPromoCodeEmail = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoCodeEmail method',
   args:{emailAddress: {type: GraphQLString},productPromoCodeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createProductPromoCodeEmail};
 
 
 const createProductPromoCodeParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoCodeParty method',
   args:{productPromoCodeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createProductPromoCodeParty};
 
 
 const createProductPromoCodeSet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoCodeSet method',
   args:{quantity: {type: GraphQLInt},useLimitPerCode: {type: GraphQLInt},fromDate: {type: GraphQLString},userEntered: {type: GraphQLString},codeLength: {type: GraphQLInt},promoCodeLayout: {type: GraphQLString},requireEmailOrParty: {type: GraphQLString},productPromoId: {type: GraphQLString},useLimitPerCustomer: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createProductPromoCodeSet};
 
 
 const createProductPromoCond = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoCond method',
   args:{productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString},inputParamEnumId: {type: GraphQLString},condValue: {type: GraphQLString},carrierShipmentMethod: {type: GraphQLString},operatorEnumId: {type: GraphQLString},otherValue: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createProductPromoCond};
 
 
 const createProductPromoProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoProduct method',
   args:{productId: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString},productPromoCondSeqId: {type: GraphQLString},productPromoApplEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createProductPromoProduct};
 
 
 const createProductPromoRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoRule method',
   args:{ruleName: {type: GraphQLString},productPromoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createProductPromoRule};
 
 
 const deleteProductPriceAction = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPriceAction method',
   args:{productPriceActionSeqId: {type: GraphQLString},productPriceRuleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {deleteProductPriceAction};
 
 
 const deleteProductPriceActionType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPriceActionType method',
   args:{productPriceActionTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {deleteProductPriceActionType};
 
 
 const deleteProductPriceAutoNotice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPriceAutoNotice method',
   args:{productPriceNoticeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {deleteProductPriceAutoNotice};
 
 
 const deleteProductPriceCond = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPriceCond method',
   args:{productPriceCondSeqId: {type: GraphQLString},productPriceRuleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {deleteProductPriceCond};
 
 
 const deleteProductPriceRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPriceRule method',
   args:{productPriceRuleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {deleteProductPriceRule};
 
 
 const deleteProductPromo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromo method',
   args:{productPromoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {deleteProductPromo};
 
 
 const deleteProductPromoAction = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromoAction method',
   args:{productPromoActionSeqId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {deleteProductPromoAction};
 
 
 const deleteProductPromoCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromoCategory method',
   args:{productCategoryId: {type: GraphQLString},andGroupId: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString},productPromoCondSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {deleteProductPromoCategory};
 
 
 const deleteProductPromoCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromoCode method',
   args:{productPromoCodeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {deleteProductPromoCode};
 
 
 const deleteProductPromoCodeEmail = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromoCodeEmail method',
   args:{emailAddress: {type: GraphQLString},productPromoCodeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {deleteProductPromoCodeEmail};
 
 
 const deleteProductPromoCodeParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromoCodeParty method',
   args:{productPromoCodeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {deleteProductPromoCodeParty};
 
 
 const deleteProductPromoCond = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromoCond method',
   args:{productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString},productPromoCondSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {deleteProductPromoCond};
 
 
 const deleteProductPromoProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromoProduct method',
   args:{productId: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString},productPromoCondSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {deleteProductPromoProduct};
 
 
 const deleteProductPromoRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromoRule method',
   args:{productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {deleteProductPromoRule};
 
 
 const getAssociatedPriceRulesConds = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getAssociatedPriceRulesConds method',
   args:{inputParamEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {getAssociatedPriceRulesConds};
 
 
 const updateProductPriceAction = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPriceAction method',
   args:{productPriceActionSeqId: {type: GraphQLString},productPriceRuleId: {type: GraphQLString},amount: {type: GraphQLFloat},productPriceActionTypeId: {type: GraphQLString},rateCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {updateProductPriceAction};
 
 
 const updateProductPriceActionType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPriceActionType method',
   args:{productPriceActionTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {updateProductPriceActionType};
 
 
 const updateProductPriceAutoNotice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPriceAutoNotice method',
   args:{productPriceNoticeId: {type: GraphQLString},fromDate: {type: GraphQLString},runDate: {type: GraphQLString},facilityId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {updateProductPriceAutoNotice};
 
 
 const updateProductPriceCond = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPriceCond method',
   args:{productPriceCondSeqId: {type: GraphQLString},productPriceRuleId: {type: GraphQLString},condValueInput: {type: GraphQLString},inputParamEnumId: {type: GraphQLString},condValue: {type: GraphQLString},operatorEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {updateProductPriceCond};
 
 
 const updateProductPriceRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPriceRule method',
   args:{productPriceRuleId: {type: GraphQLString},fromDate: {type: GraphQLString},ruleName: {type: GraphQLString},description: {type: GraphQLString},isSale: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {updateProductPriceRule};
 
 
 const updateProductPromo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPromo method',
   args:{productPromoId: {type: GraphQLString},showToCustomer: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},requireCode: {type: GraphQLString},overrideOrgPartyId: {type: GraphQLString},useLimitPerCustomer: {type: GraphQLInt},useLimitPerOrder: {type: GraphQLInt},useLimitPerPromotion: {type: GraphQLInt},promoName: {type: GraphQLString},promoText: {type: GraphQLString},userEntered: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},billbackFactor: {type: GraphQLFloat},createdByUserLogin: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {updateProductPromo};
 
 
 const updateProductPromoAction = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPromoAction method',
   args:{productPromoActionSeqId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},orderAdjustmentTypeId: {type: GraphQLString},useCartQuantity: {type: GraphQLString},productPromoActionEnumId: {type: GraphQLString},serviceName: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {updateProductPromoAction};
 
 
 const updateProductPromoCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPromoCategory method',
   args:{productCategoryId: {type: GraphQLString},andGroupId: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString},productPromoCondSeqId: {type: GraphQLString},includeSubCategories: {type: GraphQLString},productPromoApplEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {updateProductPromoCategory};
 
 
 const updateProductPromoCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPromoCode method',
   args:{productPromoCodeId: {type: GraphQLString},useLimitPerCode: {type: GraphQLInt},fromDate: {type: GraphQLString},userEntered: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},requireEmailOrParty: {type: GraphQLString},productPromoId: {type: GraphQLString},useLimitPerCustomer: {type: GraphQLInt},createdByUserLogin: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {updateProductPromoCode};
 
 
 const updateProductPromoCond = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPromoCond method',
   args:{productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString},productPromoCondSeqId: {type: GraphQLString},inputParamEnumId: {type: GraphQLString},condValue: {type: GraphQLString},carrierShipmentMethod: {type: GraphQLString},operatorEnumId: {type: GraphQLString},otherValue: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {updateProductPromoCond};
 
 
 const updateProductPromoProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPromoProduct method',
   args:{productId: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productPromoId: {type: GraphQLString},productPromoCondSeqId: {type: GraphQLString},productPromoApplEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {updateProductPromoProduct};
 
 
 const updateProductPromoRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPromoRule method',
   args:{productPromoRuleId: {type: GraphQLString},ruleName: {type: GraphQLString},productPromoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

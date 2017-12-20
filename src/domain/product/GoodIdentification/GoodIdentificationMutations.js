@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {GoodIdentificationInputType} from '../../product/GoodIdentification/GoodIdentificationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGoodIdentification = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGoodIdentification method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createGoodIdentification};
 
 
 const deleteGoodIdentificationByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGoodIdentificationByIdUpdated method',
   args:{goodIdentificationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteGoodIdentificationByIdUpdated};
 
 
 const updateGoodIdentification = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGoodIdentification method',
   args:{goodIdentificationToBeUpdated: {type: GoodIdentificationInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

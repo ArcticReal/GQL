@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {BudgetItemTypeAttrInputType} from '../../accounting/BudgetItemTypeAttr/BudgetItemTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBudgetItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetItemTypeAttr method',
   args:{budgetItemTypeAttrToBeAdded: {type: BudgetItemTypeAttrInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createBudgetItemTypeAttr};
 
 
 const updateBudgetItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetItemTypeAttr method',
   args:{budgetItemTypeAttrToBeUpdated: {type: BudgetItemTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateBudgetItemTypeAttr};
 
 
 const deleteBudgetItemTypeAttrByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetItemTypeAttrByIdUpdated method',
   args:{budgetItemTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

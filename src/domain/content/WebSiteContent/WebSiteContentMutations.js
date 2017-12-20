@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WebSiteContentInputType} from '../../content/WebSiteContent/WebSiteContentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWebSiteContent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWebSiteContent method',
   args:{webSiteContentToBeAdded: {type: WebSiteContentInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWebSiteContent};
 
 
 const updateWebSiteContent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWebSiteContent method',
   args:{webSiteContentToBeUpdated: {type: WebSiteContentInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWebSiteContent};
 
 
 const deleteWebSiteContentByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWebSiteContentByIdUpdated method',
   args:{webSiteContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

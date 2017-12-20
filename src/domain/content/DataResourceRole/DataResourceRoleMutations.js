@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {DataResourceRoleInputType} from '../../content/DataResourceRole/DataResourceRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDataResourceRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDataResourceRole method',
   args:{dataResourceRoleToBeAdded: {type: DataResourceRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createDataResourceRole};
 
 
 const deleteDataResourceRoleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDataResourceRoleByIdUpdated method',
   args:{dataResourceRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteDataResourceRoleByIdUpdated};
 
 
 const updateDataResourceRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDataResourceRole method',
   args:{dataResourceRoleToBeUpdated: {type: DataResourceRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

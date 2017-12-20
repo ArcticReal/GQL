@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ImageDataResourceInputType} from '../../content/ImageDataResource/ImageDataResourceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createImageDataResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createImageDataResource method',
   args:{imageDataResourceToBeAdded: {type: ImageDataResourceInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createImageDataResource};
 
 
 const deleteImageDataResourceByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteImageDataResourceByIdUpdated method',
   args:{imageDataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteImageDataResourceByIdUpdated};
 
 
 const updateImageDataResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateImageDataResource method',
   args:{imageDataResourceToBeUpdated: {type: ImageDataResourceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PerformanceNoteInputType} from '../../humanres/PerformanceNote/PerformanceNoteInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPerformanceNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPerformanceNote method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPerformanceNote};
 
 
 const deletePerformanceNoteByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePerformanceNoteByIdUpdated method',
   args:{performanceNoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deletePerformanceNoteByIdUpdated};
 
 
 const updatePerformanceNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePerformanceNote method',
   args:{performanceNoteToBeUpdated: {type: PerformanceNoteInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

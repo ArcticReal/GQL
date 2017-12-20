@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {QuantityBreakInputType} from '../../product/QuantityBreak/QuantityBreakInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuantityBreak = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuantityBreak method',
   args:{quantityBreakToBeAdded: {type: QuantityBreakInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createQuantityBreak};
 
 
 const updateQuantityBreak = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuantityBreak method',
   args:{quantityBreakToBeUpdated: {type: QuantityBreakInputType},quantityBreakId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateQuantityBreak};
 
 
 const deleteQuantityBreakByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteQuantityBreakByIdUpdated method',
   args:{quantityBreakId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortPartyAssignmentInputType} from '../../workeffort/WorkEffortPartyAssignment/WorkEffortPartyAssignmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortPartyAssignment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortPartyAssignment method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortPartyAssignment};
 
 
 const updateWorkEffortPartyAssignment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortPartyAssignment method',
   args:{workEffortPartyAssignmentToBeUpdated: {type: WorkEffortPartyAssignmentInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortPartyAssignment};
 
 
 const deleteWorkEffortPartyAssignmentByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortPartyAssignmentByIdUpdated method',
   args:{workEffortPartyAssignmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

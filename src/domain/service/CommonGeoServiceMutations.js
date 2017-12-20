@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createCountryAddressFormat = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCountryAddressFormat method',
   args:{geoId: {type: GraphQLString},requirePostalCode: {type: GraphQLString},postalCodeRegex: {type: GraphQLString},requireStateProvinceId: {type: GraphQLString},hasPostalCodeExt: {type: GraphQLString},requirePostalCodeExt: {type: GraphQLString},addressFormat: {type: GraphQLString},geoAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createCountryAddressFormat};
 
 
 const createCountryCapital = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCountryCapital method',
   args:{countryCode: {type: GraphQLString},countryCapital: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createCountryCapital};
 
 
 const createCountryCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCountryCode method',
   args:{countryCode: {type: GraphQLString},countryNumber: {type: GraphQLString},countryAbbr: {type: GraphQLString},countryName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createCountryCode};
 
 
 const createCountryTeleCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCountryTeleCode method',
   args:{countryCode: {type: GraphQLString},teleCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createCountryTeleCode};
 
 
 const deleteCountryAddressFormat = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCountryAddressFormat method',
   args:{geoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {deleteCountryAddressFormat};
 
 
 const deleteCountryCapital = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCountryCapital method',
   args:{countryCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {deleteCountryCapital};
 
 
 const deleteCountryCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCountryCode method',
   args:{countryCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {deleteCountryCode};
 
 
 const deleteCountryTeleCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCountryTeleCode method',
   args:{countryCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {deleteCountryTeleCode};
 
 
 const updateCountryAddressFormat = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCountryAddressFormat method',
   args:{geoId: {type: GraphQLString},requirePostalCode: {type: GraphQLString},postalCodeRegex: {type: GraphQLString},requireStateProvinceId: {type: GraphQLString},hasPostalCodeExt: {type: GraphQLString},requirePostalCodeExt: {type: GraphQLString},addressFormat: {type: GraphQLString},geoAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {updateCountryAddressFormat};
 
 
 const updateCountryCapital = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCountryCapital method',
   args:{countryCode: {type: GraphQLString},countryCapital: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {updateCountryCapital};
 
 
 const updateCountryCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCountryCode method',
   args:{countryCode: {type: GraphQLString},countryNumber: {type: GraphQLString},countryAbbr: {type: GraphQLString},countryName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {updateCountryCode};
 
 
 const updateCountryTeleCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCountryTeleCode method',
   args:{countryCode: {type: GraphQLString},teleCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

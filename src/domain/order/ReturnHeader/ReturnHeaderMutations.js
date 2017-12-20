@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ReturnHeaderInputType} from '../../order/ReturnHeader/ReturnHeaderInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReturnHeader = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createReturnHeader method',
   args:{returnHeaderToBeAdded: {type: ReturnHeaderInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createReturnHeader};
 
 
 const deleteReturnHeaderByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteReturnHeaderByIdUpdated method',
   args:{returnHeaderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteReturnHeaderByIdUpdated};
 
 
 const updateReturnHeader = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateReturnHeader method',
   args:{returnHeaderToBeUpdated: {type: ReturnHeaderInputType},returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

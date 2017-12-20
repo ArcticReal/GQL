@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortBillingInputType} from '../../workeffort/WorkEffortBilling/WorkEffortBillingInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortBilling = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortBilling method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortBilling};
 
 
 const updateWorkEffortBilling = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortBilling method',
   args:{workEffortBillingToBeUpdated: {type: WorkEffortBillingInputType},invoiceItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortBilling};
 
 
 const deleteWorkEffortBillingByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortBillingByIdUpdated method',
   args:{workEffortBillingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

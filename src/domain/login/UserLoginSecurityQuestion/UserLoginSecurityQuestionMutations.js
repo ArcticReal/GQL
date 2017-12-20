@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {UserLoginSecurityQuestionInputType} from '../../login/UserLoginSecurityQuestion/UserLoginSecurityQuestionInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createUserLoginSecurityQuestion = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createUserLoginSecurityQuestion method',
   args:{userLoginSecurityQuestionToBeAdded: {type: UserLoginSecurityQuestionInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createUserLoginSecurityQuestion};
 
 
 const updateUserLoginSecurityQuestion = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateUserLoginSecurityQuestion method',
   args:{userLoginSecurityQuestionToBeUpdated: {type: UserLoginSecurityQuestionInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateUserLoginSecurityQuestion};
 
 
 const deleteUserLoginSecurityQuestionByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteUserLoginSecurityQuestionByIdUpdated method',
   args:{userLoginSecurityQuestionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

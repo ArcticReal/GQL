@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {OrderTypeInputType} from '../../order/OrderType/OrderTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createOrderType};
 
 
 const updateOrderType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderType method',
   args:{orderTypeToBeUpdated: {type: OrderTypeInputType},orderTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateOrderType};
 
 
 const deleteOrderTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderTypeByIdUpdated method',
   args:{orderTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

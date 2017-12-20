@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortIcalDataInputType} from '../../workeffort/WorkEffortIcalData/WorkEffortIcalDataInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortIcalData = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortIcalData method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortIcalData};
 
 
 const updateWorkEffortIcalData = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortIcalData method',
   args:{workEffortIcalDataToBeUpdated: {type: WorkEffortIcalDataInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortIcalData};
 
 
 const deleteWorkEffortIcalDataByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortIcalDataByIdUpdated method',
   args:{workEffortIcalDataId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

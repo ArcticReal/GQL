@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {TimesheetRoleInputType} from '../../workeffort/TimesheetRole/TimesheetRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTimesheetRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTimesheetRole method',
   args:{timesheetRoleToBeAdded: {type: TimesheetRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createTimesheetRole};
 
 
 const updateTimesheetRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTimesheetRole method',
   args:{timesheetRoleToBeUpdated: {type: TimesheetRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateTimesheetRole};
 
 
 const deleteTimesheetRoleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTimesheetRoleByIdUpdated method',
   args:{timesheetRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

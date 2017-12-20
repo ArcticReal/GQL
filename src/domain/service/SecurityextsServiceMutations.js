@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const importIssuerProvision = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz importIssuerProvision method',
   args:{alias: {type: GraphQLString},keystoreName: {type: GraphQLString},componentName: {type: GraphQLString},certString: {type: GraphQLString},importIssuer: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

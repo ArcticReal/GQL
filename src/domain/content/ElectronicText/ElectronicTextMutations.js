@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ElectronicTextInputType} from '../../content/ElectronicText/ElectronicTextInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createElectronicText = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createElectronicText method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createElectronicText};
 
 
 const deleteElectronicTextByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteElectronicTextByIdUpdated method',
   args:{electronicTextId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteElectronicTextByIdUpdated};
 
 
 const updateElectronicText = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateElectronicText method',
   args:{electronicTextToBeUpdated: {type: ElectronicTextInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

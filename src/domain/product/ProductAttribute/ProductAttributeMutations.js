@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductAttributeInputType} from '../../product/ProductAttribute/ProductAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductAttribute method',
   args:{productAttributeToBeAdded: {type: ProductAttributeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductAttribute};
 
 
 const deleteProductAttributeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductAttributeByIdUpdated method',
   args:{productAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteProductAttributeByIdUpdated};
 
 
 const updateProductAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductAttribute method',
   args:{productAttributeToBeUpdated: {type: ProductAttributeInputType},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

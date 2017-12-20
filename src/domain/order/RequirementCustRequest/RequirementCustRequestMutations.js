@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {RequirementCustRequestInputType} from '../../order/RequirementCustRequest/RequirementCustRequestInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRequirementCustRequest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createRequirementCustRequest method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createRequirementCustRequest};
 
 
 const updateRequirementCustRequest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateRequirementCustRequest method',
   args:{requirementCustRequestToBeUpdated: {type: RequirementCustRequestInputType},custRequestItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateRequirementCustRequest};
 
 
 const deleteRequirementCustRequestByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteRequirementCustRequestByIdUpdated method',
   args:{requirementCustRequestId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

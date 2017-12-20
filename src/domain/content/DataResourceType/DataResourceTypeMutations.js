@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {DataResourceTypeInputType} from '../../content/DataResourceType/DataResourceTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDataResourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDataResourceType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createDataResourceType};
 
 
 const updateDataResourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDataResourceType method',
   args:{dataResourceTypeToBeUpdated: {type: DataResourceTypeInputType},dataResourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateDataResourceType};
 
 
 const deleteDataResourceTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDataResourceTypeByIdUpdated method',
   args:{dataResourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

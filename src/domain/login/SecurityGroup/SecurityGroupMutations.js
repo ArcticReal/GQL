@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SecurityGroupInputType} from '../../login/SecurityGroup/SecurityGroupInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSecurityGroup method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSecurityGroup};
 
 
 const updateSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSecurityGroup method',
   args:{securityGroupToBeUpdated: {type: SecurityGroupInputType},groupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateSecurityGroup};
 
 
 const deleteSecurityGroupByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSecurityGroupByIdUpdated method',
   args:{securityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

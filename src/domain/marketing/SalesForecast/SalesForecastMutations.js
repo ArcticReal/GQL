@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SalesForecastInputType} from '../../marketing/SalesForecast/SalesForecastInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSalesForecast = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesForecast method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSalesForecast};
 
 
 const updateSalesForecast = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSalesForecast method',
   args:{salesForecastToBeUpdated: {type: SalesForecastInputType},salesForecastId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateSalesForecast};
 
 
 const deleteSalesForecastByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSalesForecastByIdUpdated method',
   args:{salesForecastId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

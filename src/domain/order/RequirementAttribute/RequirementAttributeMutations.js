@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {RequirementAttributeInputType} from '../../order/RequirementAttribute/RequirementAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRequirementAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createRequirementAttribute method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createRequirementAttribute};
 
 
 const updateRequirementAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateRequirementAttribute method',
   args:{requirementAttributeToBeUpdated: {type: RequirementAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateRequirementAttribute};
 
 
 const deleteRequirementAttributeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteRequirementAttributeByIdUpdated method',
   args:{requirementAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {OrderSummaryEntryInputType} from '../../order/OrderSummaryEntry/OrderSummaryEntryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderSummaryEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderSummaryEntry method',
   args:{orderSummaryEntryToBeAdded: {type: OrderSummaryEntryInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createOrderSummaryEntry};
 
 
 const updateOrderSummaryEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderSummaryEntry method',
   args:{orderSummaryEntryToBeUpdated: {type: OrderSummaryEntryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateOrderSummaryEntry};
 
 
 const deleteOrderSummaryEntryByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderSummaryEntryByIdUpdated method',
   args:{orderSummaryEntryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {BudgetRevisionInputType} from '../../accounting/BudgetRevision/BudgetRevisionInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBudgetRevision = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetRevision method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createBudgetRevision};
 
 
 const deleteBudgetRevisionByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetRevisionByIdUpdated method',
   args:{budgetRevisionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteBudgetRevisionByIdUpdated};
 
 
 const updateBudgetRevision = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetRevision method',
   args:{budgetRevisionToBeUpdated: {type: BudgetRevisionInputType},revisionSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

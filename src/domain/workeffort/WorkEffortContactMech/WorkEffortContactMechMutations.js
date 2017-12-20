@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortContactMechInputType} from '../../workeffort/WorkEffortContactMech/WorkEffortContactMechInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortContactMech = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortContactMech method',
   args:{workEffortContactMechToBeAdded: {type: WorkEffortContactMechInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortContactMech};
 
 
 const updateWorkEffortContactMech = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortContactMech method',
   args:{workEffortContactMechToBeUpdated: {type: WorkEffortContactMechInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortContactMech};
 
 
 const deleteWorkEffortContactMechByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortContactMechByIdUpdated method',
   args:{workEffortContactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

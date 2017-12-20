@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {RequirementStatusInputType} from '../../order/RequirementStatus/RequirementStatusInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRequirementStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createRequirementStatus method',
   args:{requirementStatusToBeAdded: {type: RequirementStatusInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createRequirementStatus};
 
 
 const updateRequirementStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateRequirementStatus method',
   args:{requirementStatusToBeUpdated: {type: RequirementStatusInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateRequirementStatus};
 
 
 const deleteRequirementStatusByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteRequirementStatusByIdUpdated method',
   args:{requirementStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyInvitationGroupAssocInputType} from '../../party/PartyInvitationGroupAssoc/PartyInvitationGroupAssocInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyInvitationGroupAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyInvitationGroupAssoc method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyInvitationGroupAssoc};
 
 
 const updatePartyInvitationGroupAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyInvitationGroupAssoc method',
   args:{partyInvitationGroupAssocToBeUpdated: {type: PartyInvitationGroupAssocInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyInvitationGroupAssoc};
 
 
 const deletePartyInvitationGroupAssocByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyInvitationGroupAssocByIdUpdated method',
   args:{partyInvitationGroupAssocId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {QuoteCoefficientInputType} from '../../order/QuoteCoefficient/QuoteCoefficientInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuoteCoefficient = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteCoefficient method',
   args:{quoteCoefficientToBeAdded: {type: QuoteCoefficientInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createQuoteCoefficient};
 
 
 const updateQuoteCoefficient = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteCoefficient method',
   args:{quoteCoefficientToBeUpdated: {type: QuoteCoefficientInputType},coeffName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateQuoteCoefficient};
 
 
 const deleteQuoteCoefficientByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteQuoteCoefficientByIdUpdated method',
   args:{quoteCoefficientId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PersonInputType} from '../../party/Person/PersonInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPerson = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPerson method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPerson};
 
 
 const updatePerson = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePerson method',
   args:{personToBeUpdated: {type: PersonInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePerson};
 
 
 const deletePersonByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePersonByIdUpdated method',
   args:{personId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

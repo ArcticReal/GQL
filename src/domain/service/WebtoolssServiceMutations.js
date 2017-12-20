@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const entityExportAll = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz entityExportAll method',
   args:{fromDate: {type: GraphQLString},outpath: {type: GraphQLString},txTimeout: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {entityExportAll};
 
 
 const entityImport = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz entityImport method',
   args:{placeholderValues: {type: GraphQLString},filename: {type: GraphQLString},checkDataOnly: {type: GraphQLString},fmfilename: {type: GraphQLString},createDummyFks: {type: GraphQLString},maintainTimeStamps: {type: GraphQLString},fulltext: {type: GraphQLString},isUrl: {type: GraphQLString},txTimeout: {type: GraphQLInt},mostlyInserts: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {entityImport};
 
 
 const entityImportDir = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz entityImportDir method',
   args:{path: {type: GraphQLString},deleteFiles: {type: GraphQLString},placeholderValues: {type: GraphQLString},checkDataOnly: {type: GraphQLString},filePause: {type: GraphQLInt},createDummyFks: {type: GraphQLString},maintainTimeStamps: {type: GraphQLString},txTimeout: {type: GraphQLInt},mostlyInserts: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {entityImportDir};
 
 
 const entityImportReaders = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz entityImportReaders method',
   args:{overrideDelegator: {type: GraphQLString},checkDataOnly: {type: GraphQLString},readers: {type: GraphQLString},createDummyFks: {type: GraphQLString},maintainTimeStamps: {type: GraphQLString},txTimeout: {type: GraphQLInt},mostlyInserts: {type: GraphQLString},overrideGroup: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {entityImportReaders};
 
 
 const entityMaintPermCheck = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz entityMaintPermCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {entityMaintPermCheck};
 
 
 const exportEntityEoModelBundle = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz exportEntityEoModelBundle method',
   args:{eomodeldFullPath: {type: GraphQLString},entityNamePrefix: {type: GraphQLString},entityGroupId: {type: GraphQLString},datasourceName: {type: GraphQLString},entityPackageName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {exportEntityEoModelBundle};
 
 
 const exportServiceEoModelBundle = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz exportServiceEoModelBundle method',
   args:{eomodeldFullPath: {type: GraphQLString},serviceName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {exportServiceEoModelBundle};
 
 
 const getEntityRefData = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getEntityRefData method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {getEntityRefData};
 
 
 const parseEntityXmlFile = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz parseEntityXmlFile method',
   args:{xmltext: {type: GraphQLString},placeholderValues: {type: GraphQLString},checkDataOnly: {type: GraphQLString},createDummyFks: {type: GraphQLString},maintainTimeStamps: {type: GraphQLString},txTimeout: {type: GraphQLInt},mostlyInserts: {type: GraphQLString},url: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {parseEntityXmlFile};
 
 
 const saveLabelsToXmlFile = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz saveLabelsToXmlFile method',
   args:{fileName: {type: GraphQLString},update_label: {type: GraphQLString},confirm: {type: GraphQLString},removeLabel: {type: GraphQLString},key: {type: GraphQLString},keyComment: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

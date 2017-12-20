@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {GiftCardInputType} from '../../accounting/GiftCard/GiftCardInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGiftCard = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGiftCard method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createGiftCard};
 
 
 const deleteGiftCardByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGiftCardByIdUpdated method',
   args:{giftCardId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteGiftCardByIdUpdated};
 
 
 const updateGiftCard = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGiftCard method',
   args:{giftCardToBeUpdated: {type: GiftCardInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ValueLinkKeyInputType} from '../../accounting/ValueLinkKey/ValueLinkKeyInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createValueLinkKey = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createValueLinkKey method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createValueLinkKey};
 
 
 const updateValueLinkKey = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateValueLinkKey method',
   args:{valueLinkKeyToBeUpdated: {type: ValueLinkKeyInputType},merchantId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateValueLinkKey};
 
 
 const deleteValueLinkKeyByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteValueLinkKeyByIdUpdated method',
   args:{valueLinkKeyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

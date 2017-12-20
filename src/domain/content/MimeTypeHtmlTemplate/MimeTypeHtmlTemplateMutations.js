@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {MimeTypeHtmlTemplateInputType} from '../../content/MimeTypeHtmlTemplate/MimeTypeHtmlTemplateInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMimeTypeHtmlTemplate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createMimeTypeHtmlTemplate method',
   args:{mimeTypeHtmlTemplateToBeAdded: {type: MimeTypeHtmlTemplateInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createMimeTypeHtmlTemplate};
 
 
 const deleteMimeTypeHtmlTemplateByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteMimeTypeHtmlTemplateByIdUpdated method',
   args:{mimeTypeHtmlTemplateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteMimeTypeHtmlTemplateByIdUpdated};
 
 
 const updateMimeTypeHtmlTemplate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateMimeTypeHtmlTemplate method',
   args:{mimeTypeHtmlTemplateToBeUpdated: {type: MimeTypeHtmlTemplateInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

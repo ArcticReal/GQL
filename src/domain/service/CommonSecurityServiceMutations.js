@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addProtectedViewToSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz addProtectedViewToSecurityGroup method',
   args:{viewNameId: {type: GraphQLString},maxHitsDuration: {type: GraphQLInt},tarpitDuration: {type: GraphQLInt},groupId: {type: GraphQLString},maxHits: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {addProtectedViewToSecurityGroup};
 
 
 const addSecurityPermissionToSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz addSecurityPermissionToSecurityGroup method',
   args:{permissionId: {type: GraphQLString},groupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {addSecurityPermissionToSecurityGroup};
 
 
 const addUserLoginToSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz addUserLoginToSecurityGroup method',
   args:{userLoginId: {type: GraphQLString},groupId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {addUserLoginToSecurityGroup};
 
 
 const createSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSecurityGroup method',
   args:{groupId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createSecurityGroup};
 
 
 const createSecurityPermission = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSecurityPermission method',
   args:{permissionId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createSecurityPermission};
 
 
 const createUserLoginSecurityQuestion = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createUserLoginSecurityQuestion method',
   args:{userLoginId: {type: GraphQLString},questionEnumId: {type: GraphQLString},securityAnswer: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createUserLoginSecurityQuestion};
 
 
 const deleteSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSecurityGroup method',
   args:{groupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {deleteSecurityGroup};
 
 
 const removeProtectedViewFromSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeProtectedViewFromSecurityGroup method',
   args:{viewNameId: {type: GraphQLString},groupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {removeProtectedViewFromSecurityGroup};
 
 
 const removeSecurityPermissionFromSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeSecurityPermissionFromSecurityGroup method',
   args:{permissionId: {type: GraphQLString},groupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {removeSecurityPermissionFromSecurityGroup};
 
 
 const removeUserLoginSecurityQuestion = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeUserLoginSecurityQuestion method',
   args:{userLoginId: {type: GraphQLString},questionEnumId: {type: GraphQLString},securityAnswer: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {removeUserLoginSecurityQuestion};
 
 
 const removeUserLoginToSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeUserLoginToSecurityGroup method',
   args:{userLoginId: {type: GraphQLString},fromDate: {type: GraphQLString},groupId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {removeUserLoginToSecurityGroup};
 
 
 const securityPermissionCheck = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz securityPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {securityPermissionCheck};
 
 
 const updateProtectedViewToSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProtectedViewToSecurityGroup method',
   args:{viewNameId: {type: GraphQLString},maxHitsDuration: {type: GraphQLInt},tarpitDuration: {type: GraphQLInt},groupId: {type: GraphQLString},maxHits: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {updateProtectedViewToSecurityGroup};
 
 
 const updateSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSecurityGroup method',
   args:{groupId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {updateSecurityGroup};
 
 
 const updateSecurityPermission = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSecurityPermission method',
   args:{permissionId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {updateSecurityPermission};
 
 
 const updateUserLoginSecurityQuestion = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateUserLoginSecurityQuestion method',
   args:{userLoginId: {type: GraphQLString},questionEnumId: {type: GraphQLString},securityAnswer: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {updateUserLoginSecurityQuestion};
 
 
 const updateUserLoginToSecurityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateUserLoginToSecurityGroup method',
   args:{userLoginId: {type: GraphQLString},fromDate: {type: GraphQLString},groupId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

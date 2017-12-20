@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductStoreEmailSettingInputType} from '../../product/ProductStoreEmailSetting/ProductStoreEmailSettingInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreEmailSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreEmailSetting method',
   args:{productStoreEmailSettingToBeAdded: {type: ProductStoreEmailSettingInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductStoreEmailSetting};
 
 
 const updateProductStoreEmailSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreEmailSetting method',
   args:{productStoreEmailSettingToBeUpdated: {type: ProductStoreEmailSettingInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateProductStoreEmailSetting};
 
 
 const deleteProductStoreEmailSettingByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreEmailSettingByIdUpdated method',
   args:{productStoreEmailSettingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {EftAccountInputType} from '../../accounting/EftAccount/EftAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEftAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createEftAccount method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createEftAccount};
 
 
 const deleteEftAccountByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteEftAccountByIdUpdated method',
   args:{eftAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteEftAccountByIdUpdated};
 
 
 const updateEftAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateEftAccount method',
   args:{eftAccountToBeUpdated: {type: EftAccountInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

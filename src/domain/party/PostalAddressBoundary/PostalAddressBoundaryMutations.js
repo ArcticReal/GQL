@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PostalAddressBoundaryInputType} from '../../party/PostalAddressBoundary/PostalAddressBoundaryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPostalAddressBoundary = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPostalAddressBoundary method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPostalAddressBoundary};
 
 
 const updatePostalAddressBoundary = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePostalAddressBoundary method',
   args:{postalAddressBoundaryToBeUpdated: {type: PostalAddressBoundaryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePostalAddressBoundary};
 
 
 const deletePostalAddressBoundaryByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePostalAddressBoundaryByIdUpdated method',
   args:{postalAddressBoundaryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

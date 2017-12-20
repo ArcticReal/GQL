@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortCostCalcInputType} from '../../workeffort/WorkEffortCostCalc/WorkEffortCostCalcInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortCostCalc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortCostCalc method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortCostCalc};
 
 
 const updateWorkEffortCostCalc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortCostCalc method',
   args:{workEffortCostCalcToBeUpdated: {type: WorkEffortCostCalcInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortCostCalc};
 
 
 const deleteWorkEffortCostCalcByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortCostCalcByIdUpdated method',
   args:{workEffortCostCalcId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

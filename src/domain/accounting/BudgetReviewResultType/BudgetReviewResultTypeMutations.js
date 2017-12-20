@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {BudgetReviewResultTypeInputType} from '../../accounting/BudgetReviewResultType/BudgetReviewResultTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBudgetReviewResultType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetReviewResultType method',
   args:{budgetReviewResultTypeToBeAdded: {type: BudgetReviewResultTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createBudgetReviewResultType};
 
 
 const updateBudgetReviewResultType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetReviewResultType method',
   args:{budgetReviewResultTypeToBeUpdated: {type: BudgetReviewResultTypeInputType},budgetReviewResultTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateBudgetReviewResultType};
 
 
 const deleteBudgetReviewResultTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetReviewResultTypeByIdUpdated method',
   args:{budgetReviewResultTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

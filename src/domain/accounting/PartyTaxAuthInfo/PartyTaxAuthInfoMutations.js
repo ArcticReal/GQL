@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyTaxAuthInfoInputType} from '../../accounting/PartyTaxAuthInfo/PartyTaxAuthInfoInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyTaxAuthInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyTaxAuthInfo method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyTaxAuthInfo};
 
 
 const deletePartyTaxAuthInfoByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyTaxAuthInfoByIdUpdated method',
   args:{partyTaxAuthInfoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deletePartyTaxAuthInfoByIdUpdated};
 
 
 const updatePartyTaxAuthInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyTaxAuthInfo method',
   args:{partyTaxAuthInfoToBeUpdated: {type: PartyTaxAuthInfoInputType},taxAuthPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

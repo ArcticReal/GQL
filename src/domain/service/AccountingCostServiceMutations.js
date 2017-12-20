@@ -8,12 +8,12 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {KeyValueType} from '../../framework/helpTypes.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createCostComponentCalc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCostComponentCalc method',
   args:{costCustomMethodId: {type: GraphQLString},currencyUomId: {type: GraphQLString},variableCost: {type: GraphQLFloat},costGlAccountTypeId: {type: GraphQLString},fixedCost: {type: GraphQLFloat},description: {type: GraphQLString},offsettingGlAccountTypeId: {type: GraphQLString},perMilliSecond: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createCostComponentCalc};
 
 
 const createProductAverageCost = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductAverageCost method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},productAverageCostTypeId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},averageCost: {type: GraphQLFloat},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createProductAverageCost};
 
 
 const createWorkEffortCostCalc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortCostCalc method',
   args:{workEffortId: {type: GraphQLString},costComponentTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},costComponentCalcId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createWorkEffortCostCalc};
 
 
 const deleteProductAverageCost = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductAverageCost method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},productId: {type: GraphQLString},productAverageCostTypeId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,9 +57,9 @@ export {deleteProductAverageCost};
 
 
 const getProductAverageCost = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductAverageCost method',
-  args:{inventoryItem: {type: new GraphQLList(KeyValueType)}},
+  args:{inventoryItem: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingCost/getProductAverageCost?inventoryItem=${args.inventoryItem}`, null, req);
   }
@@ -68,7 +68,7 @@ export {getProductAverageCost};
 
 
 const removeCostComponentCalc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeCostComponentCalc method',
   args:{costComponentCalcId: {type: GraphQLString},costCustomMethodId: {type: GraphQLString},currencyUomId: {type: GraphQLString},variableCost: {type: GraphQLFloat},costGlAccountTypeId: {type: GraphQLString},fixedCost: {type: GraphQLFloat},description: {type: GraphQLString},offsettingGlAccountTypeId: {type: GraphQLString},perMilliSecond: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {removeCostComponentCalc};
 
 
 const removeWorkEffortCostCalc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeWorkEffortCostCalc method',
   args:{workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},costComponentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {removeWorkEffortCostCalc};
 
 
 const updateCostComponentCalc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCostComponentCalc method',
   args:{costComponentCalcId: {type: GraphQLString},costCustomMethodId: {type: GraphQLString},currencyUomId: {type: GraphQLString},variableCost: {type: GraphQLFloat},costGlAccountTypeId: {type: GraphQLString},fixedCost: {type: GraphQLFloat},description: {type: GraphQLString},offsettingGlAccountTypeId: {type: GraphQLString},perMilliSecond: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {updateCostComponentCalc};
 
 
 const updateProductAverageCost = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductAverageCost method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},productId: {type: GraphQLString},productAverageCostTypeId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},averageCost: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {updateProductAverageCost};
 
 
 const updateProductAverageCostOnReceiveInventory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductAverageCostOnReceiveInventory method',
   args:{inventoryItemId: {type: GraphQLString},facilityId: {type: GraphQLString},productId: {type: GraphQLString},quantityAccepted: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {

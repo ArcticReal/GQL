@@ -57,27 +57,55 @@ function postToUrl(relativeURL, body, req){
   console.log('post to URL: ' + relativeURL);
   return fetch(`${BASE_URL}${relativeURL}`, {method: 'POST', body: JSON.stringify(body), headers: {'Cookie': getCookie(req), 'Content-Type': 'application/JSON'}})
         .then(res => {
-          if (res.status===401) {
-            throw new GraphQLError('unauthorized');
-          }else {
-            return res.json();
-          }
+          return {
+            body: res.text(),
+            status: res.status,
+            contentType: res.headers.get('Content-Type')
+          };
         })
-        .catch((err) => {throw err;});
+        .catch((err) => {
+          if (err.code==='ECONNREFUSED') {
+            throw new GraphQLError('Connection refused');
+          }
+          throw err;
+        });
 }
 
 function putToUrl(relativeURL, body, req){
   console.log('put to URL: ' + relativeURL);
   return fetch(`${BASE_URL}${relativeURL}`, {method: 'PUT', body: body, headers: {'Cookie': getCookie(req)}})
-        .then(res => {return res.json();})
-        .catch(err => {});
+        .then(res => {
+          return {
+            body: res.text(),
+            status: res.status,
+            contentType: res.headers.get('Content-Type')
+          };
+        })
+        .catch(err => {
+          if (err.code==='ECONNREFUSED') {
+            throw new GraphQLError('Connection refused');
+          }else {
+            throw err;
+          }
+        });
 }
 
 function deleteToUrl(relativeURL, body, req){
   console.log('put to URL: ' + relativeURL);
   return fetch(`${BASE_URL}${relativeURL}`, {method: 'DELETE', body: body, headers: {'Cookie': getCookie(req)}})
-        .then(res => {return res.json();})
-        .catch(err => {});
+        .then(res => {
+          return {
+            body: res.text(),
+            status: res.status,
+            contentType: res.headers.get('Content-Type')
+          };
+        })
+        .catch(err => {
+          if (err.code==='ECONNREFUSED') {
+            throw new GraphQLError('Connection refused');
+          }
+          throw err;
+        });
 }
 
 

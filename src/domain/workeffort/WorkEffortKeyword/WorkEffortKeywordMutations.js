@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortKeywordInputType} from '../../workeffort/WorkEffortKeyword/WorkEffortKeywordInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortKeyword = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortKeyword method',
   args:{workEffortKeywordToBeAdded: {type: WorkEffortKeywordInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortKeyword};
 
 
 const updateWorkEffortKeyword = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortKeyword method',
   args:{workEffortKeywordToBeUpdated: {type: WorkEffortKeywordInputType},keyword: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortKeyword};
 
 
 const deleteWorkEffortKeywordByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortKeywordByIdUpdated method',
   args:{workEffortKeywordId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

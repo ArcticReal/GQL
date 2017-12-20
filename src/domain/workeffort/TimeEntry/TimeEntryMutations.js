@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {TimeEntryInputType} from '../../workeffort/TimeEntry/TimeEntryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTimeEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTimeEntry method',
   args:{timeEntryToBeAdded: {type: TimeEntryInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createTimeEntry};
 
 
 const updateTimeEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTimeEntry method',
   args:{timeEntryToBeUpdated: {type: TimeEntryInputType},timeEntryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateTimeEntry};
 
 
 const deleteTimeEntryByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTimeEntryByIdUpdated method',
   args:{timeEntryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

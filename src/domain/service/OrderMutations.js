@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContactDTOInputType} from '../dto/ContactDTOInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const finishOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz finishOrder method',
   args:{contact: {type: ContactDTOInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {finishOrder};
 
 
 const approveOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz approveOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {approveOrder};
 
 
 const cancelOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz cancelOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +47,7 @@ export {cancelOrder};
 
 
 const completeOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz completeOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +58,7 @@ export {completeOrder};
 
 
 const createOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +69,7 @@ export {createOrder};
 
 
 const holdOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz holdOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +80,7 @@ export {holdOrder};
 
 
 const rejectOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz rejectOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +91,7 @@ export {rejectOrder};
 
 
 const sendOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

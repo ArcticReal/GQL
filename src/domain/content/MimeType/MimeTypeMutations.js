@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {MimeTypeInputType} from '../../content/MimeType/MimeTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMimeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createMimeType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createMimeType};
 
 
 const updateMimeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateMimeType method',
   args:{mimeTypeToBeUpdated: {type: MimeTypeInputType},mimeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateMimeType};
 
 
 const deleteMimeTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteMimeTypeByIdUpdated method',
   args:{mimeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

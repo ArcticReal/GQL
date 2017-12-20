@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {AgreementInputType} from '../../party/Agreement/AgreementInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAgreement = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAgreement method',
   args:{agreementToBeAdded: {type: AgreementInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createAgreement};
 
 
 const updateAgreement = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAgreement method',
   args:{agreementToBeUpdated: {type: AgreementInputType},agreementId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateAgreement};
 
 
 const deleteAgreementByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAgreementByIdUpdated method',
   args:{agreementId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SalesOpportunityCompetitorInputType} from '../../marketing/SalesOpportunityCompetitor/SalesOpportunityCompetitorInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSalesOpportunityCompetitor = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesOpportunityCompetitor method',
   args:{salesOpportunityCompetitorToBeAdded: {type: SalesOpportunityCompetitorInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSalesOpportunityCompetitor};
 
 
 const updateSalesOpportunityCompetitor = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSalesOpportunityCompetitor method',
   args:{salesOpportunityCompetitorToBeUpdated: {type: SalesOpportunityCompetitorInputType},competitorPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateSalesOpportunityCompetitor};
 
 
 const deleteSalesOpportunityCompetitorByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSalesOpportunityCompetitorByIdUpdated method',
   args:{salesOpportunityCompetitorId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

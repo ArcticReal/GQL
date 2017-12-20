@@ -8,12 +8,12 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {KeyValueType} from '../../framework/helpTypes.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addtax = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz addtax method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addtax};
 
 
 const autoGenerateInvoiceFromExistingInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz autoGenerateInvoiceFromExistingInvoice method',
   args:{recurrenceInfoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,9 +35,9 @@ export {autoGenerateInvoiceFromExistingInvoice};
 
 
 const calculateInvoicedAdjustmentTotal = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz calculateInvoicedAdjustmentTotal method',
-  args:{orderAdjustment: {type: new GraphQLList(KeyValueType)}},
+  args:{orderAdjustment: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingInvoice/calculateInvoicedAdjustmentTotal?orderAdjustment=${args.orderAdjustment}`, null, req);
   }
@@ -46,7 +46,7 @@ export {calculateInvoicedAdjustmentTotal};
 
 
 const cancelInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz cancelInvoice method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {cancelInvoice};
 
 
 const checkInvoicePaymentApplications = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz checkInvoicePaymentApplications method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {checkInvoicePaymentApplications};
 
 
 const copyInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz copyInvoice method',
   args:{invoiceIdToCopyFrom: {type: GraphQLString},invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {copyInvoice};
 
 
 const copyInvoiceToTemplate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz copyInvoiceToTemplate method',
   args:{invoiceTypeId: {type: GraphQLString},invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {copyInvoiceToTemplate};
 
 
 const createCommissionInvoices = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCommissionInvoices method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createCommissionInvoices};
 
 
 const createInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoice method',
   args:{partyIdFrom: {type: GraphQLString},invoiceTypeId: {type: GraphQLString},partyId: {type: GraphQLString},roleTypeId: {type: GraphQLString},recurrenceInfoId: {type: GraphQLString},dueDate: {type: GraphQLString},description: {type: GraphQLString},billingAccountId: {type: GraphQLString},invoiceDate: {type: GraphQLString},contactMechId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},paidDate: {type: GraphQLString},referenceNumber: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceMessage: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createInvoice};
 
 
 const createInvoiceAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceAttribute method',
   args:{invoiceId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createInvoiceAttribute};
 
 
 const createInvoiceContactMech = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceContactMech method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},invoiceId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createInvoiceContactMech};
 
 
 const createInvoiceContent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceContent method',
   args:{invoiceContentTypeId: {type: GraphQLString},invoiceId: {type: GraphQLString},ownerContentId: {type: GraphQLString},contentId: {type: GraphQLString},contentTypeId: {type: GraphQLString},description: {type: GraphQLString},mimeTypeId: {type: GraphQLString},childLeafCount: {type: GraphQLInt},privilegeEnumId: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},dataResourceId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},templateDataResourceId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},instanceOfContentId: {type: GraphQLString},serviceName: {type: GraphQLString},customMethodId: {type: GraphQLString},characterSetId: {type: GraphQLString},thruDate: {type: GraphQLString},contentName: {type: GraphQLInt},fromDate: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString},decoratorContentId: {type: GraphQLString},childBranchCount: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createInvoiceContent};
 
 
 const createInvoiceContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceContentType method',
   args:{invoiceContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createInvoiceContentType};
 
 
 const createInvoiceForOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceForOrder method',
   args:{orderId: {type: GraphQLString},invoiceId: {type: GraphQLString},eventDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createInvoiceForOrder};
 
 
 const createInvoiceForOrderAllItems = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceForOrderAllItems method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createInvoiceForOrderAllItems};
 
 
 const createInvoiceFromOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceFromOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createInvoiceFromOrder};
 
 
 const createInvoiceFromReturn = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceFromReturn method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createInvoiceFromReturn};
 
 
 const createInvoiceItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceItem method',
   args:{invoiceId: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},overrideOrgPartyId: {type: GraphQLString},productFeatureId: {type: GraphQLString},taxableFlag: {type: GraphQLString},taxAuthorityRateSeqId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},description: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},uomId: {type: GraphQLString},invoiceItemTypeId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},parentInvoiceId: {type: GraphQLString},parentInvoiceItemSeqId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createInvoiceItem};
 
 
 const createInvoiceItemAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceItemAssoc method',
   args:{invoiceItemSeqIdFrom: {type: GraphQLString},invoiceIdFrom: {type: GraphQLString},invoiceItemSeqIdTo: {type: GraphQLString},invoiceItemAssocTypeId: {type: GraphQLString},invoiceIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},partyIdTo: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createInvoiceItemAssoc};
 
 
 const createInvoiceItemAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceItemAssocType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},invoiceItemAssocTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {createInvoiceItemAssocType};
 
 
 const createInvoiceItemAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceItemAttribute method',
   args:{invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {createInvoiceItemAttribute};
 
 
 const createInvoiceItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceItemTypeAttr method',
   args:{invoiceItemTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {createInvoiceItemTypeAttr};
 
 
 const createInvoiceItemTypeMap = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceItemTypeMap method',
   args:{invoiceItemMapKey: {type: GraphQLString},invoiceTypeId: {type: GraphQLString},invoiceItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {createInvoiceItemTypeMap};
 
 
 const createInvoiceNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceNote method',
   args:{invoiceId: {type: GraphQLString},noteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {createInvoiceNote};
 
 
 const createInvoiceRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceRole method',
   args:{roleTypeId: {type: GraphQLString},invoiceId: {type: GraphQLString},partyId: {type: GraphQLString},datetimePerformed: {type: GraphQLString},percentage: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {createInvoiceRole};
 
 
 const createInvoiceStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceStatus method',
   args:{statusId: {type: GraphQLString},invoiceId: {type: GraphQLString},statusDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {createInvoiceStatus};
 
 
 const createInvoiceTerm = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceTerm method',
   args:{textValue: {type: GraphQLString},termDays: {type: GraphQLInt},termTypeId: {type: GraphQLString},description: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},uomId: {type: GraphQLString},termValue: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {createInvoiceTerm};
 
 
 const createInvoiceTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceTermAttribute method',
   args:{invoiceTermId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {createInvoiceTermAttribute};
 
 
 const createInvoiceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},invoiceTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {createInvoiceType};
 
 
 const createInvoiceTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceTypeAttr method',
   args:{invoiceTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {createInvoiceTypeAttr};
 
 
 const createInvoicesFromReturnShipment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoicesFromReturnShipment method',
   args:{shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {createInvoicesFromReturnShipment};
 
 
 const createInvoicesFromShipment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoicesFromShipment method',
   args:{shipmentId: {type: GraphQLString},eventDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {createInvoicesFromShipment};
 
 
 const createInvoicesFromShipments = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoicesFromShipments method',
   args:{createSalesInvoicesForDropShipments: {type: GraphQLBoolean},eventDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {createInvoicesFromShipments};
 
 
 const createSalesInvoicesFromDropShipment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesInvoicesFromDropShipment method',
   args:{shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {createSalesInvoicesFromDropShipment};
 
 
 const createSimpleTextContentForInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSimpleTextContentForInvoice method',
   args:{invoiceContentTypeId: {type: GraphQLString},invoiceId: {type: GraphQLString},text: {type: GraphQLString},ownerContentId: {type: GraphQLString},contentId: {type: GraphQLString},contentTypeId: {type: GraphQLString},description: {type: GraphQLString},mimeTypeId: {type: GraphQLString},childLeafCount: {type: GraphQLInt},privilegeEnumId: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},dataResourceId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},templateDataResourceId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},instanceOfContentId: {type: GraphQLString},serviceName: {type: GraphQLString},customMethodId: {type: GraphQLString},characterSetId: {type: GraphQLString},thruDate: {type: GraphQLString},contentName: {type: GraphQLInt},fromDate: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString},decoratorContentId: {type: GraphQLString},childBranchCount: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {createSimpleTextContentForInvoice};
 
 
 const deleteInvoiceAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceAttribute method',
   args:{invoiceId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {deleteInvoiceAttribute};
 
 
 const deleteInvoiceContactMech = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceContactMech method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},invoiceId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {deleteInvoiceContactMech};
 
 
 const deleteInvoiceContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceContentType method',
   args:{invoiceContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {deleteInvoiceContentType};
 
 
 const deleteInvoiceItemAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceItemAssoc method',
   args:{fromDate: {type: GraphQLString},invoiceItemSeqIdFrom: {type: GraphQLString},invoiceIdFrom: {type: GraphQLString},invoiceItemSeqIdTo: {type: GraphQLString},invoiceItemAssocTypeId: {type: GraphQLString},invoiceIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {deleteInvoiceItemAssoc};
 
 
 const deleteInvoiceItemAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceItemAssocType method',
   args:{invoiceItemAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {deleteInvoiceItemAssocType};
 
 
 const deleteInvoiceItemAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceItemAttribute method',
   args:{invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {deleteInvoiceItemAttribute};
 
 
 const deleteInvoiceItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceItemTypeAttr method',
   args:{invoiceItemTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {deleteInvoiceItemTypeAttr};
 
 
 const deleteInvoiceItemTypeMap = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceItemTypeMap method',
   args:{invoiceItemMapKey: {type: GraphQLString},invoiceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {deleteInvoiceItemTypeMap};
 
 
 const deleteInvoiceNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceNote method',
   args:{invoiceId: {type: GraphQLString},noteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {deleteInvoiceNote};
 
 
 const deleteInvoiceTerm = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceTerm method',
   args:{invoiceTermId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {deleteInvoiceTerm};
 
 
 const deleteInvoiceTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceTermAttribute method',
   args:{invoiceTermId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {deleteInvoiceTermAttribute};
 
 
 const deleteInvoiceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceType method',
   args:{invoiceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {deleteInvoiceType};
 
 
 const deleteInvoiceTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceTypeAttr method',
   args:{invoiceTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {deleteInvoiceTypeAttr};
 
 
 const getInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getInvoice method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {getInvoice};
 
 
 const getInvoiceRunningTotal = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getInvoiceRunningTotal method',
   args:{organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {getInvoiceRunningTotal};
 
 
 const getInvoicesFilterByAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getInvoicesFilterByAssocType method',
   args:{invoiceItemAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {getInvoicesFilterByAssocType};
 
 
 const getNextInvoiceId = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getNextInvoiceId method',
   args:{partyIdFrom: {type: GraphQLString},roleTypeId: {type: GraphQLString},recurrenceInfoId: {type: GraphQLString},invoiceTypeId: {type: GraphQLString},dueDate: {type: GraphQLString},description: {type: GraphQLString},billingAccountId: {type: GraphQLString},invoiceDate: {type: GraphQLString},contactMechId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},paidDate: {type: GraphQLString},referenceNumber: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceMessage: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {getNextInvoiceId};
 
 
 const importInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz importInvoice method',
   args:{organizationPartyId: {type: GraphQLString},uploadedFile: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,9 +596,9 @@ export {importInvoice};
 
 
 const invoiceSequenceEnforced = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz invoiceSequenceEnforced method',
-  args:{partyAcctgPreference: {type: new GraphQLList(KeyValueType)},partyIdFrom: {type: GraphQLString},roleTypeId: {type: GraphQLString},recurrenceInfoId: {type: GraphQLString},invoiceTypeId: {type: GraphQLString},dueDate: {type: GraphQLString},description: {type: GraphQLString},billingAccountId: {type: GraphQLString},invoiceDate: {type: GraphQLString},contactMechId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},paidDate: {type: GraphQLString},referenceNumber: {type: GraphQLString},invoiceMessage: {type: GraphQLString},partyId: {type: GraphQLString}},
+  args:{partyAcctgPreference: {type: new GraphQLList(KeyValueInputType)},partyIdFrom: {type: GraphQLString},roleTypeId: {type: GraphQLString},recurrenceInfoId: {type: GraphQLString},invoiceTypeId: {type: GraphQLString},dueDate: {type: GraphQLString},description: {type: GraphQLString},billingAccountId: {type: GraphQLString},invoiceDate: {type: GraphQLString},contactMechId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},paidDate: {type: GraphQLString},referenceNumber: {type: GraphQLString},invoiceMessage: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingInvoice/invoiceSequenceEnforced?partyAcctgPreference=${args.partyAcctgPreference}partyIdFrom=${args.partyIdFrom}roleTypeId=${args.roleTypeId}recurrenceInfoId=${args.recurrenceInfoId}invoiceTypeId=${args.invoiceTypeId}dueDate=${args.dueDate}description=${args.description}billingAccountId=${args.billingAccountId}invoiceDate=${args.invoiceDate}contactMechId=${args.contactMechId}currencyUomId=${args.currencyUomId}statusId=${args.statusId}paidDate=${args.paidDate}referenceNumber=${args.referenceNumber}invoiceMessage=${args.invoiceMessage}partyId=${args.partyId}`, null, req);
   }
@@ -607,9 +607,9 @@ export {invoiceSequenceEnforced};
 
 
 const invoiceSequenceRestart = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz invoiceSequenceRestart method',
-  args:{partyAcctgPreference: {type: new GraphQLList(KeyValueType)},partyIdFrom: {type: GraphQLString},roleTypeId: {type: GraphQLString},recurrenceInfoId: {type: GraphQLString},invoiceTypeId: {type: GraphQLString},dueDate: {type: GraphQLString},description: {type: GraphQLString},billingAccountId: {type: GraphQLString},invoiceDate: {type: GraphQLString},contactMechId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},paidDate: {type: GraphQLString},referenceNumber: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceMessage: {type: GraphQLString},partyId: {type: GraphQLString}},
+  args:{partyAcctgPreference: {type: new GraphQLList(KeyValueInputType)},partyIdFrom: {type: GraphQLString},roleTypeId: {type: GraphQLString},recurrenceInfoId: {type: GraphQLString},invoiceTypeId: {type: GraphQLString},dueDate: {type: GraphQLString},description: {type: GraphQLString},billingAccountId: {type: GraphQLString},invoiceDate: {type: GraphQLString},contactMechId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},paidDate: {type: GraphQLString},referenceNumber: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceMessage: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingInvoice/invoiceSequenceRestart?partyAcctgPreference=${args.partyAcctgPreference}partyIdFrom=${args.partyIdFrom}roleTypeId=${args.roleTypeId}recurrenceInfoId=${args.recurrenceInfoId}invoiceTypeId=${args.invoiceTypeId}dueDate=${args.dueDate}description=${args.description}billingAccountId=${args.billingAccountId}invoiceDate=${args.invoiceDate}contactMechId=${args.contactMechId}currencyUomId=${args.currencyUomId}statusId=${args.statusId}paidDate=${args.paidDate}referenceNumber=${args.referenceNumber}invoiceId=${args.invoiceId}invoiceMessage=${args.invoiceMessage}partyId=${args.partyId}`, null, req);
   }
@@ -618,7 +618,7 @@ export {invoiceSequenceRestart};
 
 
 const isInvoiceInForeignCurrency = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz isInvoiceInForeignCurrency method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -629,7 +629,7 @@ export {isInvoiceInForeignCurrency};
 
 
 const massChangeInvoiceStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz massChangeInvoiceStatus method',
   args:{statusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -640,7 +640,7 @@ export {massChangeInvoiceStatus};
 
 
 const readyInvoices = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz readyInvoices method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -651,7 +651,7 @@ export {readyInvoices};
 
 
 const removeInvoiceContent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeInvoiceContent method',
   args:{invoiceContentTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},contentId: {type: GraphQLString},invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -662,7 +662,7 @@ export {removeInvoiceContent};
 
 
 const removeInvoiceItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeInvoiceItem method',
   args:{invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -673,7 +673,7 @@ export {removeInvoiceItem};
 
 
 const removeInvoiceItemAssocOnCancelInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeInvoiceItemAssocOnCancelInvoice method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -684,7 +684,7 @@ export {removeInvoiceItemAssocOnCancelInvoice};
 
 
 const removeInvoiceRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeInvoiceRole method',
   args:{roleTypeId: {type: GraphQLString},invoiceId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -695,7 +695,7 @@ export {removeInvoiceRole};
 
 
 const resetOrderItemBillingAndOrderAdjustmentBillingOnCancelInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz resetOrderItemBillingAndOrderAdjustmentBillingOnCancelInvoice method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -706,7 +706,7 @@ export {resetOrderItemBillingAndOrderAdjustmentBillingOnCancelInvoice};
 
 
 const sampleInvoiceAffiliateCommission = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sampleInvoiceAffiliateCommission method',
   args:{paymentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {sampleInvoiceAffiliateCommission};
 
 
 const sendInvoicePerEmail = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendInvoicePerEmail method',
   args:{sendTo: {type: GraphQLString},sendFrom: {type: GraphQLString},invoiceId: {type: GraphQLString},other: {type: GraphQLString},bodyText: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {sendInvoicePerEmail};
 
 
 const setInvoiceStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz setInvoiceStatus method',
   args:{statusId: {type: GraphQLString},invoiceId: {type: GraphQLString},statusDate: {type: GraphQLString},paidDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {setInvoiceStatus};
 
 
 const setInvoicesToReadyFromShipment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz setInvoicesToReadyFromShipment method',
   args:{shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -750,7 +750,7 @@ export {setInvoicesToReadyFromShipment};
 
 
 const updateInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoice method',
   args:{invoiceId: {type: GraphQLString},partyIdFrom: {type: GraphQLString},roleTypeId: {type: GraphQLString},recurrenceInfoId: {type: GraphQLString},invoiceTypeId: {type: GraphQLString},dueDate: {type: GraphQLString},description: {type: GraphQLString},billingAccountId: {type: GraphQLString},invoiceDate: {type: GraphQLString},contactMechId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},paidDate: {type: GraphQLString},referenceNumber: {type: GraphQLString},invoiceMessage: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -761,7 +761,7 @@ export {updateInvoice};
 
 
 const updateInvoiceAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceAttribute method',
   args:{invoiceId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -772,7 +772,7 @@ export {updateInvoiceAttribute};
 
 
 const updateInvoiceContent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceContent method',
   args:{invoiceContentTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},contentId: {type: GraphQLString},invoiceId: {type: GraphQLString},ownerContentId: {type: GraphQLString},templateDataResourceId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},instanceOfContentId: {type: GraphQLString},contentTypeId: {type: GraphQLString},description: {type: GraphQLString},mimeTypeId: {type: GraphQLString},childLeafCount: {type: GraphQLInt},serviceName: {type: GraphQLString},customMethodId: {type: GraphQLString},characterSetId: {type: GraphQLString},thruDate: {type: GraphQLString},contentName: {type: GraphQLInt},privilegeEnumId: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString},dataResourceId: {type: GraphQLString},decoratorContentId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},childBranchCount: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -783,7 +783,7 @@ export {updateInvoiceContent};
 
 
 const updateInvoiceContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceContentType method',
   args:{invoiceContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -794,7 +794,7 @@ export {updateInvoiceContentType};
 
 
 const updateInvoiceItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceItem method',
   args:{invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},overrideOrgPartyId: {type: GraphQLString},productFeatureId: {type: GraphQLString},taxableFlag: {type: GraphQLString},taxAuthorityRateSeqId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},description: {type: GraphQLString},uomId: {type: GraphQLString},invoiceItemTypeId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},parentInvoiceId: {type: GraphQLString},parentInvoiceItemSeqId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -805,7 +805,7 @@ export {updateInvoiceItem};
 
 
 const updateInvoiceItemAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceItemAssoc method',
   args:{fromDate: {type: GraphQLString},invoiceItemSeqIdFrom: {type: GraphQLString},invoiceIdFrom: {type: GraphQLString},invoiceItemSeqIdTo: {type: GraphQLString},invoiceItemAssocTypeId: {type: GraphQLString},invoiceIdTo: {type: GraphQLString},partyIdFrom: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},partyIdTo: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -816,7 +816,7 @@ export {updateInvoiceItemAssoc};
 
 
 const updateInvoiceItemAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceItemAssocType method',
   args:{invoiceItemAssocTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -827,7 +827,7 @@ export {updateInvoiceItemAssocType};
 
 
 const updateInvoiceItemAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceItemAttribute method',
   args:{invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -838,7 +838,7 @@ export {updateInvoiceItemAttribute};
 
 
 const updateInvoiceItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceItemType method',
   args:{invoiceItemTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},defaultGlAccountId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -849,7 +849,7 @@ export {updateInvoiceItemType};
 
 
 const updateInvoiceItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceItemTypeAttr method',
   args:{invoiceItemTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -860,7 +860,7 @@ export {updateInvoiceItemTypeAttr};
 
 
 const updateInvoiceItemTypeMap = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceItemTypeMap method',
   args:{invoiceItemMapKey: {type: GraphQLString},invoiceTypeId: {type: GraphQLString},invoiceItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -871,7 +871,7 @@ export {updateInvoiceItemTypeMap};
 
 
 const updateInvoiceTerm = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceTerm method',
   args:{invoiceTermId: {type: GraphQLString},textValue: {type: GraphQLString},termDays: {type: GraphQLInt},termTypeId: {type: GraphQLString},description: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},uomId: {type: GraphQLString},termValue: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -882,7 +882,7 @@ export {updateInvoiceTerm};
 
 
 const updateInvoiceTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceTermAttribute method',
   args:{invoiceTermId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -893,7 +893,7 @@ export {updateInvoiceTermAttribute};
 
 
 const updateInvoiceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceType method',
   args:{invoiceTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -904,7 +904,7 @@ export {updateInvoiceType};
 
 
 const updateInvoiceTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceTypeAttr method',
   args:{invoiceTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -915,7 +915,7 @@ export {updateInvoiceTypeAttr};
 
 
 const updateSimpleTextContentForInvoice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSimpleTextContentForInvoice method',
   args:{invoiceContentTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},contentId: {type: GraphQLString},invoiceId: {type: GraphQLString},ownerContentId: {type: GraphQLString},contentTypeId: {type: GraphQLString},description: {type: GraphQLString},mimeTypeId: {type: GraphQLString},childLeafCount: {type: GraphQLInt},privilegeEnumId: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},dataResourceId: {type: GraphQLString},text: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},textDataResourceId: {type: GraphQLString},templateDataResourceId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},instanceOfContentId: {type: GraphQLString},serviceName: {type: GraphQLString},customMethodId: {type: GraphQLString},characterSetId: {type: GraphQLString},thruDate: {type: GraphQLString},contentName: {type: GraphQLInt},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString},decoratorContentId: {type: GraphQLString},childBranchCount: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {

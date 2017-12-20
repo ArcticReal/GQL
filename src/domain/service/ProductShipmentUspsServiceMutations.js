@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const uspsAddressValidation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz uspsAddressValidation method',
   args:{address1: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},configProps: {type: GraphQLString},address2: {type: GraphQLString},city: {type: GraphQLString},firmName: {type: GraphQLString},zip4: {type: GraphQLString},state: {type: GraphQLString},zip5: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {uspsAddressValidation};
 
 
 const uspsCityStateLookup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz uspsCityStateLookup method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},configProps: {type: GraphQLString},zip5: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {uspsCityStateLookup};
 
 
 const uspsDeliveryConfirmation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz uspsDeliveryConfirmation method',
   args:{shipmentRouteSegmentId: {type: GraphQLString},shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {uspsDeliveryConfirmation};
 
 
 const uspsDomesticRate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz uspsDomesticRate method',
   args:{originZip: {type: GraphQLString},service: {type: GraphQLString},pounds: {type: GraphQLString},ounces: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},destinationZip: {type: GraphQLString},configProps: {type: GraphQLString},container: {type: GraphQLString},machinable: {type: GraphQLString},size: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {uspsDomesticRate};
 
 
 const uspsInternationalRateInquire = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz uspsInternationalRateInquire method',
   args:{carrierPartyId: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},shippableWeight: {type: GraphQLFloat},productStoreId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},shippableQuantity: {type: GraphQLFloat},shippableTotal: {type: GraphQLFloat},productStoreShipMethId: {type: GraphQLString},shippingContactMechId: {type: GraphQLString},shippingCountryCode: {type: GraphQLString},shipmentCustomMethodId: {type: GraphQLString},serviceConfigProps: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},shippingOriginContactMechId: {type: GraphQLString},shippingPostalCode: {type: GraphQLString},initialEstimateAmt: {type: GraphQLFloat},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {uspsInternationalRateInquire};
 
 
 const uspsPackageServicesStandard = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz uspsPackageServicesStandard method',
   args:{originZip: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},destinationZip: {type: GraphQLString},configProps: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {uspsPackageServicesStandard};
 
 
 const uspsPriorityMailStandard = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz uspsPriorityMailStandard method',
   args:{originZip: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},destinationZip: {type: GraphQLString},configProps: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {uspsPriorityMailStandard};
 
 
 const uspsRateInquire = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz uspsRateInquire method',
   args:{carrierPartyId: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},shippableWeight: {type: GraphQLFloat},productStoreId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},shippableQuantity: {type: GraphQLFloat},shippableTotal: {type: GraphQLFloat},productStoreShipMethId: {type: GraphQLString},shippingContactMechId: {type: GraphQLString},shippingCountryCode: {type: GraphQLString},shipmentCustomMethodId: {type: GraphQLString},serviceConfigProps: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},shippingOriginContactMechId: {type: GraphQLString},shippingPostalCode: {type: GraphQLString},initialEstimateAmt: {type: GraphQLFloat},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {uspsRateInquire};
 
 
 const uspsTrackConfirm = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz uspsTrackConfirm method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},configProps: {type: GraphQLString},trackingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {uspsTrackConfirm};
 
 
 const uspsUpdateShipmentRateInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz uspsUpdateShipmentRateInfo method',
   args:{shipmentRouteSegmentId: {type: GraphQLString},shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,12 +8,12 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {KeyValueType} from '../../framework/helpTypes.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const blockingTestScv = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz blockingTestScv method',
   args:{duration: {type: GraphQLInt},message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {blockingTestScv};
 
 
 const byteBufferTest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz byteBufferTest method',
   args:{byteBuffer2: {type: GraphQLString},byteBuffer1: {type: GraphQLString},saveAsFileName1: {type: GraphQLString},saveAsFileName2: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {byteBufferTest};
 
 
 const conditionReturnFalse = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz conditionReturnFalse method',
   args:{serviceContext: {type: GraphQLString},serviceName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {conditionReturnFalse};
 
 
 const conditionReturnTrue = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz conditionReturnTrue method',
   args:{serviceContext: {type: GraphQLString},serviceName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {conditionReturnTrue};
 
 
 const entitySortTest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz entitySortTest method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {entitySortTest};
 
 
 const groupTest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz groupTest method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {groupTest};
 
 
 const makeALotOfVisits = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz makeALotOfVisits method',
   args:{count: {type: GraphQLInt},rollback: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {makeALotOfVisits};
 
 
 const ping = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz ping method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {ping};
 
 
 const serviceStreamTest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz serviceStreamTest method',
   args:{inputStream: {type: GraphQLString},outputStream: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {serviceStreamTest};
 
 
 const simpleMapListTest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz simpleMapListTest method',
   args:{mapOfStrings: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {simpleMapListTest};
 
 
 const testCommit = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testCommit method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {testCommit};
 
 
 const testEntityFailure = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testEntityFailure method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {testEntityFailure};
 
 
 const testError = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testError method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {testError};
 
 
 const testGroovy = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testGroovy method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {testGroovy};
 
 
 const testGroovyMethod = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testGroovyMethod method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {testGroovyMethod};
 
 
 const testHttp = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testHttp method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {testHttp};
 
 
 const testJMSQueue = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testJMSQueue method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {testJMSQueue};
 
 
 const testJMSTopic = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testJMSTopic method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {testJMSTopic};
 
 
 const testJavaScript = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testJavaScript method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {testJavaScript};
 
 
 const testMca = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testMca method',
   args:{messageWrapper: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {testMca};
 
 
 const testRemoteSoap = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testRemoteSoap method',
   args:{defaultValue: {type: GraphQLFloat},message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {testRemoteSoap};
 
 
 const testRemoteSoap1 = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testRemoteSoap1 method',
   args:{ZipCode: {type: GraphQLString},invoke: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {testRemoteSoap1};
 
 
 const testRemoteSoap2 = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testRemoteSoap2 method',
   args:{invoke: {type: GraphQLString},CityName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {testRemoteSoap2};
 
 
 const testRemoteSoap3 = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testRemoteSoap3 method',
   args:{ZipCode: {type: GraphQLString},invoke: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {testRemoteSoap3};
 
 
 const testRemoteSoap4 = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testRemoteSoap4 method',
   args:{invoke: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {testRemoteSoap4};
 
 
 const testRmi = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testRmi method',
   args:{defaultValue: {type: GraphQLFloat},message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {testRmi};
 
 
 const testRollback = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testRollback method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {testRollback};
 
 
 const testRoute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testRoute method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -321,9 +321,9 @@ export {testRoute};
 
 
 const testSOAPScv = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testSOAPScv method',
-  args:{testing: {type: new GraphQLList(KeyValueType)}},
+  args:{testing: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/commonTest/testSOAPScv?testing=${args.testing}`, null, req);
   }
@@ -332,7 +332,7 @@ export {testSOAPScv};
 
 
 const testScriptEngineGroovy = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testScriptEngineGroovy method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {testScriptEngineGroovy};
 
 
 const testScriptEngineGroovyMethod = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testScriptEngineGroovyMethod method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {testScriptEngineGroovyMethod};
 
 
 const testScriptEngineJavaScript = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testScriptEngineJavaScript method',
   args:{exampleId: {type: GraphQLString},message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {testScriptEngineJavaScript};
 
 
 const testScriptEngineJavaScriptFunction = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testScriptEngineJavaScriptFunction method',
   args:{message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {testScriptEngineJavaScriptFunction};
 
 
 const testScv = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testScv method',
   args:{defaultValue: {type: GraphQLFloat},message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,9 +387,9 @@ export {testScv};
 
 
 const testSoap = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testSoap method',
-  args:{testing: {type: new GraphQLList(KeyValueType)}},
+  args:{testing: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/commonTest/testSoap?testing=${args.testing}`, null, req);
   }
@@ -398,7 +398,7 @@ export {testSoap};
 
 
 const testSoapSimple = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz testSoapSimple method',
   args:{defaultValue: {type: GraphQLFloat},message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {testSoapSimple};
 
 
 const uploadContentTest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz uploadContentTest method',
   args:{uploadFile: {type: GraphQLString},_uploadFile_fileName: {type: GraphQLString},_uploadFile_contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SurveyMultiRespInputType} from '../../content/SurveyMultiResp/SurveyMultiRespInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSurveyMultiResp = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSurveyMultiResp method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSurveyMultiResp};
 
 
 const updateSurveyMultiResp = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSurveyMultiResp method',
   args:{surveyMultiRespToBeUpdated: {type: SurveyMultiRespInputType},surveyMultiRespId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateSurveyMultiResp};
 
 
 const deleteSurveyMultiRespByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSurveyMultiRespByIdUpdated method',
   args:{surveyMultiRespId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {FixedAssetMaintOrderInputType} from '../../accounting/FixedAssetMaintOrder/FixedAssetMaintOrderInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAssetMaintOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFixedAssetMaintOrder method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createFixedAssetMaintOrder};
 
 
 const deleteFixedAssetMaintOrderByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFixedAssetMaintOrderByIdUpdated method',
   args:{fixedAssetMaintOrderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteFixedAssetMaintOrderByIdUpdated};
 
 
 const updateFixedAssetMaintOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFixedAssetMaintOrder method',
   args:{fixedAssetMaintOrderToBeUpdated: {type: FixedAssetMaintOrderInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

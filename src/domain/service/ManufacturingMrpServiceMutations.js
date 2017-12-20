@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createMrpEvent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createMrpEvent method',
   args:{mrpEventTypeId: {type: GraphQLString},mrpId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},eventDate: {type: GraphQLString},facilityId: {type: GraphQLString},eventName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createMrpEvent};
 
 
 const createMrpEventType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createMrpEventType method',
   args:{mrpEventTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createMrpEventType};
 
 
 const deleteMrpEventType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteMrpEventType method',
   args:{mrpEventTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {deleteMrpEventType};
 
 
 const executeMrp = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz executeMrp method',
   args:{facilityId: {type: GraphQLString},defaultYearsOffset: {type: GraphQLInt},facilityGroupId: {type: GraphQLString},mrpName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {executeMrp};
 
 
 const findProductMrpQoh = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz findProductMrpQoh method',
   args:{productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {findProductMrpQoh};
 
 
 const initMrpEvents = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz initMrpEvents method',
   args:{reInitialize: {type: GraphQLBoolean},manufacturingFacilityId: {type: GraphQLString},mrpId: {type: GraphQLString},facilityId: {type: GraphQLString},defaultYearsOffset: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {initMrpEvents};
 
 
 const setEstimatedDeliveryDates = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz setEstimatedDeliveryDates method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {setEstimatedDeliveryDates};
 
 
 const updateMrpEventType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateMrpEventType method',
   args:{mrpEventTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

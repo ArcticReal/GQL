@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkRequirementFulfillmentInputType} from '../../order/WorkRequirementFulfillment/WorkRequirementFulfillmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkRequirementFulfillment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkRequirementFulfillment method',
   args:{workRequirementFulfillmentToBeAdded: {type: WorkRequirementFulfillmentInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkRequirementFulfillment};
 
 
 const updateWorkRequirementFulfillment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkRequirementFulfillment method',
   args:{workRequirementFulfillmentToBeUpdated: {type: WorkRequirementFulfillmentInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkRequirementFulfillment};
 
 
 const deleteWorkRequirementFulfillmentByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkRequirementFulfillmentByIdUpdated method',
   args:{workRequirementFulfillmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

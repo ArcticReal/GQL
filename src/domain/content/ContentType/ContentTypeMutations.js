@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContentTypeInputType} from '../../content/ContentType/ContentTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentType method',
   args:{contentTypeToBeAdded: {type: ContentTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createContentType};
 
 
 const updateContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentType method',
   args:{contentTypeToBeUpdated: {type: ContentTypeInputType},contentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateContentType};
 
 
 const deleteContentTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteContentTypeByIdUpdated method',
   args:{contentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

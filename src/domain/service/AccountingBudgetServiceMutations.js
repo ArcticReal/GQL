@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createBudget = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudget method',
   args:{comments: {type: GraphQLString},budgetTypeId: {type: GraphQLString},budgetId: {type: GraphQLString},customTimePeriodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createBudget};
 
 
 const createBudgetAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetAttribute method',
   args:{budgetId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createBudgetAttribute};
 
 
 const createBudgetItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetItem method',
   args:{budgetId: {type: GraphQLString},amount: {type: GraphQLFloat},purpose: {type: GraphQLString},budgetItemTypeId: {type: GraphQLString},justification: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createBudgetItem};
 
 
 const createBudgetItemAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetItemAttribute method',
   args:{budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createBudgetItemAttribute};
 
 
 const createBudgetItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetItemType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},budgetItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createBudgetItemType};
 
 
 const createBudgetItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetItemTypeAttr method',
   args:{budgetItemTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createBudgetItemTypeAttr};
 
 
 const createBudgetReview = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetReview method',
   args:{budgetReviewResultTypeId: {type: GraphQLString},budgetId: {type: GraphQLString},partyId: {type: GraphQLString},reviewDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {createBudgetReview};
 
 
 const createBudgetReviewResultType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetReviewResultType method',
   args:{comments: {type: GraphQLString},budgetReviewResultTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {createBudgetReviewResultType};
 
 
 const createBudgetRevision = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetRevision method',
   args:{revisionSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},dateRevised: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {createBudgetRevision};
 
 
 const createBudgetRevisionImpact = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetRevisionImpact method',
   args:{revisionSeqId: {type: GraphQLString},budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},addDeleteFlag: {type: GraphQLString},revisionReason: {type: GraphQLString},revisedAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {createBudgetRevisionImpact};
 
 
 const createBudgetRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetRole method',
   args:{roleTypeId: {type: GraphQLString},budgetId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {createBudgetRole};
 
 
 const createBudgetScenario = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetScenario method',
   args:{budgetScenarioId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {createBudgetScenario};
 
 
 const createBudgetScenarioApplication = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetScenarioApplication method',
   args:{budgetScenarioApplicId: {type: GraphQLString},budgetScenarioId: {type: GraphQLString},amountChange: {type: GraphQLFloat},percentageChange: {type: GraphQLFloat},budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {createBudgetScenarioApplication};
 
 
 const createBudgetScenarioRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetScenarioRule method',
   args:{budgetScenarioId: {type: GraphQLString},budgetItemTypeId: {type: GraphQLString},amountChange: {type: GraphQLFloat},percentageChange: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {createBudgetScenarioRule};
 
 
 const createBudgetStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetStatus method',
   args:{statusId: {type: GraphQLString},budgetId: {type: GraphQLString},statusDate: {type: GraphQLString},comments: {type: GraphQLString},changeByUserLoginId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {createBudgetStatus};
 
 
 const createBudgetType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetType method',
   args:{parentTypeId: {type: GraphQLString},budgetTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {createBudgetType};
 
 
 const createBudgetTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createBudgetTypeAttr method',
   args:{budgetTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {createBudgetTypeAttr};
 
 
 const deleteBudgetItemAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetItemAttribute method',
   args:{budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {deleteBudgetItemAttribute};
 
 
 const deleteBudgetItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetItemTypeAttr method',
   args:{budgetItemTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {deleteBudgetItemTypeAttr};
 
 
 const deleteBudgetReviewResultType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetReviewResultType method',
   args:{budgetReviewResultTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -232,7 +233,7 @@ export {deleteBudgetReviewResultType};
 
 
 const deleteBudgetRevision = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetRevision method',
   args:{revisionSeqId: {type: GraphQLString},budgetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -243,7 +244,7 @@ export {deleteBudgetRevision};
 
 
 const deleteBudgetScenario = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetScenario method',
   args:{budgetScenarioId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -254,7 +255,7 @@ export {deleteBudgetScenario};
 
 
 const deleteBudgetScenarioApplication = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetScenarioApplication method',
   args:{budgetScenarioApplicId: {type: GraphQLString},budgetScenarioId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -265,7 +266,7 @@ export {deleteBudgetScenarioApplication};
 
 
 const deleteBudgetScenarioRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetScenarioRule method',
   args:{budgetScenarioId: {type: GraphQLString},budgetItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -276,7 +277,7 @@ export {deleteBudgetScenarioRule};
 
 
 const deleteBudgetType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetType method',
   args:{budgetTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -287,7 +288,7 @@ export {deleteBudgetType};
 
 
 const deleteBudgetTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteBudgetTypeAttr method',
   args:{budgetTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -298,7 +299,7 @@ export {deleteBudgetTypeAttr};
 
 
 const removeBudgetAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeBudgetAttribute method',
   args:{budgetId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -309,7 +310,7 @@ export {removeBudgetAttribute};
 
 
 const removeBudgetItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeBudgetItem method',
   args:{budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -320,7 +321,7 @@ export {removeBudgetItem};
 
 
 const removeBudgetItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeBudgetItemType method',
   args:{budgetItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -331,7 +332,7 @@ export {removeBudgetItemType};
 
 
 const removeBudgetReview = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeBudgetReview method',
   args:{budgetReviewResultTypeId: {type: GraphQLString},budgetId: {type: GraphQLString},partyId: {type: GraphQLString},budgetReviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -342,7 +343,7 @@ export {removeBudgetReview};
 
 
 const removeBudgetRevisionImpact = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeBudgetRevisionImpact method',
   args:{revisionSeqId: {type: GraphQLString},budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -353,7 +354,7 @@ export {removeBudgetRevisionImpact};
 
 
 const removeBudgetRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeBudgetRole method',
   args:{roleTypeId: {type: GraphQLString},budgetId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -364,7 +365,7 @@ export {removeBudgetRole};
 
 
 const updateBudget = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudget method',
   args:{budgetId: {type: GraphQLString},comments: {type: GraphQLString},budgetTypeId: {type: GraphQLString},customTimePeriodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -375,7 +376,7 @@ export {updateBudget};
 
 
 const updateBudgetAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetAttribute method',
   args:{budgetId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -386,7 +387,7 @@ export {updateBudgetAttribute};
 
 
 const updateBudgetItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetItem method',
   args:{budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},amount: {type: GraphQLFloat},purpose: {type: GraphQLString},budgetItemTypeId: {type: GraphQLString},justification: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -397,7 +398,7 @@ export {updateBudgetItem};
 
 
 const updateBudgetItemAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetItemAttribute method',
   args:{budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -408,7 +409,7 @@ export {updateBudgetItemAttribute};
 
 
 const updateBudgetItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetItemType method',
   args:{budgetItemTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -419,7 +420,7 @@ export {updateBudgetItemType};
 
 
 const updateBudgetItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetItemTypeAttr method',
   args:{budgetItemTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -430,7 +431,7 @@ export {updateBudgetItemTypeAttr};
 
 
 const updateBudgetReviewResultType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetReviewResultType method',
   args:{budgetReviewResultTypeId: {type: GraphQLString},comments: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -441,7 +442,7 @@ export {updateBudgetReviewResultType};
 
 
 const updateBudgetRevision = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetRevision method',
   args:{revisionSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},dateRevised: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -452,7 +453,7 @@ export {updateBudgetRevision};
 
 
 const updateBudgetRevisionImpact = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetRevisionImpact method',
   args:{revisionSeqId: {type: GraphQLString},budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},addDeleteFlag: {type: GraphQLString},revisionReason: {type: GraphQLString},revisedAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -463,7 +464,7 @@ export {updateBudgetRevisionImpact};
 
 
 const updateBudgetScenario = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetScenario method',
   args:{budgetScenarioId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -474,7 +475,7 @@ export {updateBudgetScenario};
 
 
 const updateBudgetScenarioApplication = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetScenarioApplication method',
   args:{budgetScenarioApplicId: {type: GraphQLString},budgetScenarioId: {type: GraphQLString},amountChange: {type: GraphQLFloat},percentageChange: {type: GraphQLFloat},budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -485,7 +486,7 @@ export {updateBudgetScenarioApplication};
 
 
 const updateBudgetScenarioRule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetScenarioRule method',
   args:{budgetScenarioId: {type: GraphQLString},budgetItemTypeId: {type: GraphQLString},amountChange: {type: GraphQLFloat},percentageChange: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -496,7 +497,7 @@ export {updateBudgetScenarioRule};
 
 
 const updateBudgetStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetStatus method',
   args:{statusId: {type: GraphQLString},budgetId: {type: GraphQLString},statusDate: {type: GraphQLString},comments: {type: GraphQLString},changeByUserLoginId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -507,7 +508,7 @@ export {updateBudgetStatus};
 
 
 const updateBudgetType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetType method',
   args:{budgetTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -518,7 +519,7 @@ export {updateBudgetType};
 
 
 const updateBudgetTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateBudgetTypeAttr method',
   args:{budgetTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

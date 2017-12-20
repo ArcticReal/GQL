@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {FacilityGroupInputType} from '../../product/FacilityGroup/FacilityGroupInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFacilityGroup method',
   args:{facilityGroupToBeAdded: {type: FacilityGroupInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createFacilityGroup};
 
 
 const updateFacilityGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFacilityGroup method',
   args:{facilityGroupToBeUpdated: {type: FacilityGroupInputType},facilityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateFacilityGroup};
 
 
 const deleteFacilityGroupByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFacilityGroupByIdUpdated method',
   args:{facilityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

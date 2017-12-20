@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContentRevisionItemInputType} from '../../content/ContentRevisionItem/ContentRevisionItemInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentRevisionItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentRevisionItem method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createContentRevisionItem};
 
 
 const deleteContentRevisionItemByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteContentRevisionItemByIdUpdated method',
   args:{contentRevisionItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteContentRevisionItemByIdUpdated};
 
 
 const updateContentRevisionItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentRevisionItem method',
   args:{contentRevisionItemToBeUpdated: {type: ContentRevisionItemInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

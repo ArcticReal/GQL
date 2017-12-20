@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductKeywordInputType} from '../../product/ProductKeyword/ProductKeywordInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductKeyword = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductKeyword method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductKeyword};
 
 
 const updateProductKeyword = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductKeyword method',
   args:{productKeywordToBeUpdated: {type: ProductKeywordInputType},keyword: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateProductKeyword};
 
 
 const deleteProductKeywordByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductKeywordByIdUpdated method',
   args:{productKeywordId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

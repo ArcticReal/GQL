@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {MarketingCampaignPriceInputType} from '../../marketing/MarketingCampaignPrice/MarketingCampaignPriceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMarketingCampaignPrice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createMarketingCampaignPrice method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createMarketingCampaignPrice};
 
 
 const deleteMarketingCampaignPriceByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteMarketingCampaignPriceByIdUpdated method',
   args:{marketingCampaignPriceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteMarketingCampaignPriceByIdUpdated};
 
 
 const updateMarketingCampaignPrice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateMarketingCampaignPrice method',
   args:{marketingCampaignPriceToBeUpdated: {type: MarketingCampaignPriceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

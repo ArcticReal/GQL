@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createEnumerationType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createEnumerationType method',
   args:{enumTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createEnumerationType};
 
 
 const deleteEnumerationType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteEnumerationType method',
   args:{enumTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {deleteEnumerationType};
 
 
 const updateEnumerationType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateEnumerationType method',
   args:{enumTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

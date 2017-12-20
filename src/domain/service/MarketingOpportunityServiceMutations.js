@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createSalesForecast = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesForecast method',
   args:{forecastAmount: {type: GraphQLFloat},pipelineAmount: {type: GraphQLFloat},modifiedByUserLoginId: {type: GraphQLString},quotaAmount: {type: GraphQLFloat},bestCaseAmount: {type: GraphQLFloat},createdByUserLoginId: {type: GraphQLString},internalPartyId: {type: GraphQLString},closedAmount: {type: GraphQLFloat},percentOfQuotaForecast: {type: GraphQLFloat},currencyUomId: {type: GraphQLString},parentSalesForecastId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},percentOfQuotaClosed: {type: GraphQLFloat},customTimePeriodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createSalesForecast};
 
 
 const createSalesForecastDetail = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesForecastDetail method',
   args:{salesForecastId: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},productCategoryId: {type: GraphQLString},productId: {type: GraphQLString},quantityUomId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createSalesForecastDetail};
 
 
 const createSalesOpportunity = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesOpportunity method',
   args:{estimatedProbability: {type: GraphQLFloat},opportunityName: {type: GraphQLString},marketingCampaignId: {type: GraphQLString},description: {type: GraphQLString},opportunityStageId: {type: GraphQLString},typeEnumId: {type: GraphQLString},leadPartyId: {type: GraphQLString},estimatedCloseDate: {type: GraphQLString},dataSourceId: {type: GraphQLString},currencyUomId: {type: GraphQLString},accountPartyId: {type: GraphQLString},nextStep: {type: GraphQLString},nextStepDate: {type: GraphQLString},estimatedAmount: {type: GraphQLFloat},createdByUserLogin: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createSalesOpportunity};
 
 
 const createSalesOpportunityAccountRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesOpportunityAccountRole method',
   args:{accountPartyId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createSalesOpportunityAccountRole};
 
 
 const createSalesOpportunityCompetitor = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesOpportunityCompetitor method',
   args:{competitorPartyId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString},strengths: {type: GraphQLString},weaknesses: {type: GraphQLString},positionEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createSalesOpportunityCompetitor};
 
 
 const createSalesOpportunityLeadRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesOpportunityLeadRole method',
   args:{leadPartyId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createSalesOpportunityLeadRole};
 
 
 const createSalesOpportunityQuote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesOpportunityQuote method',
   args:{quoteId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {createSalesOpportunityQuote};
 
 
 const createSalesOpportunityRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesOpportunityRole method',
   args:{roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {createSalesOpportunityRole};
 
 
 const createSalesOpportunityStage = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesOpportunityStage method',
   args:{sequenceNum: {type: GraphQLInt},defaultProbability: {type: GraphQLFloat},description: {type: GraphQLString},opportunityStageId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {createSalesOpportunityStage};
 
 
 const createSalesOpportunityTrckCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesOpportunityTrckCode method',
   args:{trackingCodeId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString},receivedDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {createSalesOpportunityTrckCode};
 
 
 const createSalesOpportunityWorkEffort = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSalesOpportunityWorkEffort method',
   args:{workEffortId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {createSalesOpportunityWorkEffort};
 
 
 const deleteSalesForecastDetail = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSalesForecastDetail method',
   args:{salesForecastId: {type: GraphQLString},salesForecastDetailId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {deleteSalesForecastDetail};
 
 
 const deleteSalesOpportunityCompetitor = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSalesOpportunityCompetitor method',
   args:{competitorPartyId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {deleteSalesOpportunityCompetitor};
 
 
 const deleteSalesOpportunityQuote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSalesOpportunityQuote method',
   args:{quoteId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {deleteSalesOpportunityQuote};
 
 
 const deleteSalesOpportunityRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSalesOpportunityRole method',
   args:{roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {deleteSalesOpportunityRole};
 
 
 const deleteSalesOpportunityStage = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSalesOpportunityStage method',
   args:{opportunityStageId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {deleteSalesOpportunityStage};
 
 
 const deleteSalesOpportunityTrckCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSalesOpportunityTrckCode method',
   args:{trackingCodeId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {deleteSalesOpportunityTrckCode};
 
 
 const deleteSalesOpportunityWorkEffort = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSalesOpportunityWorkEffort method',
   args:{workEffortId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {deleteSalesOpportunityWorkEffort};
 
 
 const findPartyInSalesOpportunityRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz findPartyInSalesOpportunityRole method',
   args:{roleTypeId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {findPartyInSalesOpportunityRole};
 
 
 const updateSalesForecast = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSalesForecast method',
   args:{salesForecastId: {type: GraphQLString},forecastAmount: {type: GraphQLFloat},pipelineAmount: {type: GraphQLFloat},modifiedByUserLoginId: {type: GraphQLString},quotaAmount: {type: GraphQLFloat},bestCaseAmount: {type: GraphQLFloat},createdByUserLoginId: {type: GraphQLString},changeNote: {type: GraphQLString},internalPartyId: {type: GraphQLString},closedAmount: {type: GraphQLFloat},percentOfQuotaForecast: {type: GraphQLFloat},currencyUomId: {type: GraphQLString},parentSalesForecastId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},percentOfQuotaClosed: {type: GraphQLFloat},customTimePeriodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -232,7 +233,7 @@ export {updateSalesForecast};
 
 
 const updateSalesForecastDetail = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSalesForecastDetail method',
   args:{salesForecastId: {type: GraphQLString},salesForecastDetailId: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},productCategoryId: {type: GraphQLString},productId: {type: GraphQLString},quantityUomId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -243,7 +244,7 @@ export {updateSalesForecastDetail};
 
 
 const updateSalesOpportunity = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSalesOpportunity method',
   args:{salesOpportunityId: {type: GraphQLString},estimatedProbability: {type: GraphQLFloat},opportunityName: {type: GraphQLString},marketingCampaignId: {type: GraphQLString},description: {type: GraphQLString},opportunityStageId: {type: GraphQLString},typeEnumId: {type: GraphQLString},leadPartyId: {type: GraphQLString},estimatedCloseDate: {type: GraphQLString},dataSourceId: {type: GraphQLString},currencyUomId: {type: GraphQLString},accountPartyId: {type: GraphQLString},nextStep: {type: GraphQLString},nextStepDate: {type: GraphQLString},estimatedAmount: {type: GraphQLFloat},createdByUserLogin: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -254,7 +255,7 @@ export {updateSalesOpportunity};
 
 
 const updateSalesOpportunityCompetitor = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSalesOpportunityCompetitor method',
   args:{competitorPartyId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString},strengths: {type: GraphQLString},weaknesses: {type: GraphQLString},positionEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -265,7 +266,7 @@ export {updateSalesOpportunityCompetitor};
 
 
 const updateSalesOpportunityStage = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSalesOpportunityStage method',
   args:{opportunityStageId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},defaultProbability: {type: GraphQLFloat},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -276,7 +277,7 @@ export {updateSalesOpportunityStage};
 
 
 const updateSalesOpportunityTrckCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSalesOpportunityTrckCode method',
   args:{trackingCodeId: {type: GraphQLString},salesOpportunityId: {type: GraphQLString},receivedDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

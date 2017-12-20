@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {GlResourceTypeInputType} from '../../accounting/GlResourceType/GlResourceTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlResourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlResourceType method',
   args:{glResourceTypeToBeAdded: {type: GlResourceTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createGlResourceType};
 
 
 const updateGlResourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlResourceType method',
   args:{glResourceTypeToBeUpdated: {type: GlResourceTypeInputType},glResourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateGlResourceType};
 
 
 const deleteGlResourceTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlResourceTypeByIdUpdated method',
   args:{glResourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {FacilityPartyInputType} from '../../product/FacilityParty/FacilityPartyInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFacilityParty method',
   args:{facilityPartyToBeAdded: {type: FacilityPartyInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createFacilityParty};
 
 
 const deleteFacilityPartyByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFacilityPartyByIdUpdated method',
   args:{facilityPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteFacilityPartyByIdUpdated};
 
 
 const updateFacilityParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFacilityParty method',
   args:{facilityPartyToBeUpdated: {type: FacilityPartyInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContentMetaDataInputType} from '../../content/ContentMetaData/ContentMetaDataInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentMetaData = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentMetaData method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createContentMetaData};
 
 
 const deleteContentMetaDataByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteContentMetaDataByIdUpdated method',
   args:{contentMetaDataId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteContentMetaDataByIdUpdated};
 
 
 const updateContentMetaData = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentMetaData method',
   args:{contentMetaDataToBeUpdated: {type: ContentMetaDataInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

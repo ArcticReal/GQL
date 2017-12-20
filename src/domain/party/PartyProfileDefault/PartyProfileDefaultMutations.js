@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyProfileDefaultInputType} from '../../party/PartyProfileDefault/PartyProfileDefaultInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyProfileDefault = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyProfileDefault method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyProfileDefault};
 
 
 const updatePartyProfileDefault = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyProfileDefault method',
   args:{partyProfileDefaultToBeUpdated: {type: PartyProfileDefaultInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyProfileDefault};
 
 
 const deletePartyProfileDefaultByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyProfileDefaultByIdUpdated method',
   args:{partyProfileDefaultId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

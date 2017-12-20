@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {OrderItemShipGroupAssocInputType} from '../../order/OrderItemShipGroupAssoc/OrderItemShipGroupAssocInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderItemShipGroupAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemShipGroupAssoc method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createOrderItemShipGroupAssoc};
 
 
 const updateOrderItemShipGroupAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderItemShipGroupAssoc method',
   args:{orderItemShipGroupAssocToBeUpdated: {type: OrderItemShipGroupAssocInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateOrderItemShipGroupAssoc};
 
 
 const deleteOrderItemShipGroupAssocByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemShipGroupAssocByIdUpdated method',
   args:{orderItemShipGroupAssocId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

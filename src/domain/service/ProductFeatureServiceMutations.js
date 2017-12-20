@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const applyFeatureToProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz applyFeatureToProduct method',
   args:{productId: {type: GraphQLString},productFeatureId: {type: GraphQLString},productFeatureApplTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},amount: {type: GraphQLFloat},sequenceNum: {type: GraphQLInt},recurringAmount: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {applyFeatureToProduct};
 
 
 const applyFeatureToProductFromTypeAndCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz applyFeatureToProductFromTypeAndCode method',
   args:{productFeatureTypeId: {type: GraphQLString},productId: {type: GraphQLString},idCode: {type: GraphQLString},productFeatureApplTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {applyFeatureToProductFromTypeAndCode};
 
 
 const createFeaturePrice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFeaturePrice method',
   args:{currencyUomId: {type: GraphQLString},price: {type: GraphQLFloat},productPriceTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},productFeatureId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createFeaturePrice};
 
 
 const createProductFeature = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeature method',
   args:{productFeatureTypeId: {type: GraphQLString},description: {type: GraphQLString},defaultSequenceNum: {type: GraphQLInt},defaultAmount: {type: GraphQLFloat},idCode: {type: GraphQLString},productFeatureId: {type: GraphQLString},numberSpecified: {type: GraphQLFloat},productFeatureCategoryId: {type: GraphQLString},uomId: {type: GraphQLString},abbrev: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createProductFeature};
 
 
 const createProductFeatureApplAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeatureApplAttr method',
   args:{productId: {type: GraphQLString},productFeatureId: {type: GraphQLString},attrName: {type: GraphQLString},fromDate: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createProductFeatureApplAttr};
 
 
 const createProductFeatureApplType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeatureApplType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},productFeatureApplTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createProductFeatureApplType};
 
 
 const createProductFeatureCatGrpAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeatureCatGrpAppl method',
   args:{productCategoryId: {type: GraphQLString},productFeatureGroupId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {createProductFeatureCatGrpAppl};
 
 
 const createProductFeatureCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeatureCategory method',
   args:{description: {type: GraphQLString},parentCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {createProductFeatureCategory};
 
 
 const createProductFeatureCategoryAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeatureCategoryAppl method',
   args:{productCategoryId: {type: GraphQLString},productFeatureCategoryId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {createProductFeatureCategoryAppl};
 
 
 const createProductFeatureGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeatureGroup method',
   args:{description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {createProductFeatureGroup};
 
 
 const createProductFeatureGroupAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeatureGroupAppl method',
   args:{productFeatureId: {type: GraphQLString},productFeatureGroupId: {type: GraphQLString},fromDate: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {createProductFeatureGroupAppl};
 
 
 const createProductFeatureIactn = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeatureIactn method',
   args:{productFeatureIactnTypeId: {type: GraphQLString},productFeatureId: {type: GraphQLString},productFeatureIdTo: {type: GraphQLString},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {createProductFeatureIactn};
 
 
 const createProductFeatureIactnType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeatureIactnType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},productFeatureIactnTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {createProductFeatureIactnType};
 
 
 const createProductFeatureType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeatureType method',
   args:{productFeatureTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {createProductFeatureType};
 
 
 const deleteFeaturePrice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFeaturePrice method',
   args:{fromDate: {type: GraphQLString},currencyUomId: {type: GraphQLString},productFeatureId: {type: GraphQLString},productPriceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {deleteFeaturePrice};
 
 
 const deleteProductFeatureApplType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductFeatureApplType method',
   args:{productFeatureApplTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {deleteProductFeatureApplType};
 
 
 const deleteProductFeatureIactnType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductFeatureIactnType method',
   args:{productFeatureIactnTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {deleteProductFeatureIactnType};
 
 
 const removeFeatureFromProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeFeatureFromProduct method',
   args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},productFeatureId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {removeFeatureFromProduct};
 
 
 const removeProductFeatureApplAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeProductFeatureApplAttr method',
   args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},productFeatureId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {removeProductFeatureApplAttr};
 
 
 const removeProductFeatureCatGrpAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeProductFeatureCatGrpAppl method',
   args:{fromDate: {type: GraphQLString},productCategoryId: {type: GraphQLString},productFeatureGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -232,7 +233,7 @@ export {removeProductFeatureCatGrpAppl};
 
 
 const removeProductFeatureCategoryAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeProductFeatureCategoryAppl method',
   args:{fromDate: {type: GraphQLString},productCategoryId: {type: GraphQLString},productFeatureCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -243,7 +244,7 @@ export {removeProductFeatureCategoryAppl};
 
 
 const removeProductFeatureGroupAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeProductFeatureGroupAppl method',
   args:{fromDate: {type: GraphQLString},productFeatureId: {type: GraphQLString},productFeatureGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -254,7 +255,7 @@ export {removeProductFeatureGroupAppl};
 
 
 const removeProductFeatureIactn = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeProductFeatureIactn method',
   args:{productFeatureId: {type: GraphQLString},productFeatureIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -265,7 +266,7 @@ export {removeProductFeatureIactn};
 
 
 const removeProductFeatureType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeProductFeatureType method',
   args:{productFeatureTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -276,7 +277,7 @@ export {removeProductFeatureType};
 
 
 const updateFeaturePrice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFeaturePrice method',
   args:{fromDate: {type: GraphQLString},currencyUomId: {type: GraphQLString},price: {type: GraphQLFloat},productFeatureId: {type: GraphQLString},productPriceTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -287,7 +288,7 @@ export {updateFeaturePrice};
 
 
 const updateFeatureToProductApplication = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFeatureToProductApplication method',
   args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},productFeatureId: {type: GraphQLString},productFeatureApplTypeId: {type: GraphQLString},amount: {type: GraphQLFloat},sequenceNum: {type: GraphQLInt},recurringAmount: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -298,7 +299,7 @@ export {updateFeatureToProductApplication};
 
 
 const updateProductFeature = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductFeature method',
   args:{productFeatureTypeId: {type: GraphQLString},productFeatureId: {type: GraphQLString},description: {type: GraphQLString},defaultSequenceNum: {type: GraphQLInt},defaultAmount: {type: GraphQLFloat},idCode: {type: GraphQLString},numberSpecified: {type: GraphQLFloat},productFeatureCategoryId: {type: GraphQLString},uomId: {type: GraphQLString},abbrev: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -309,7 +310,7 @@ export {updateProductFeature};
 
 
 const updateProductFeatureApplAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductFeatureApplAttr method',
   args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},productFeatureId: {type: GraphQLString},attrName: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -320,7 +321,7 @@ export {updateProductFeatureApplAttr};
 
 
 const updateProductFeatureApplType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductFeatureApplType method',
   args:{productFeatureApplTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -331,7 +332,7 @@ export {updateProductFeatureApplType};
 
 
 const updateProductFeatureCatGrpAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductFeatureCatGrpAppl method',
   args:{fromDate: {type: GraphQLString},productCategoryId: {type: GraphQLString},productFeatureGroupId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -342,7 +343,7 @@ export {updateProductFeatureCatGrpAppl};
 
 
 const updateProductFeatureCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductFeatureCategory method',
   args:{productFeatureCategoryId: {type: GraphQLString},description: {type: GraphQLString},parentCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -353,7 +354,7 @@ export {updateProductFeatureCategory};
 
 
 const updateProductFeatureCategoryAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductFeatureCategoryAppl method',
   args:{fromDate: {type: GraphQLString},productCategoryId: {type: GraphQLString},productFeatureCategoryId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -364,7 +365,7 @@ export {updateProductFeatureCategoryAppl};
 
 
 const updateProductFeatureGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductFeatureGroup method',
   args:{productFeatureGroupId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -375,7 +376,7 @@ export {updateProductFeatureGroup};
 
 
 const updateProductFeatureGroupAppl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductFeatureGroupAppl method',
   args:{fromDate: {type: GraphQLString},productFeatureId: {type: GraphQLString},productFeatureGroupId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -386,7 +387,7 @@ export {updateProductFeatureGroupAppl};
 
 
 const updateProductFeatureIactnType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductFeatureIactnType method',
   args:{productFeatureIactnTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -397,7 +398,7 @@ export {updateProductFeatureIactnType};
 
 
 const updateProductFeatureType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductFeatureType method',
   args:{productFeatureTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

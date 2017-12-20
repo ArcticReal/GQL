@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {TaxAuthorityAssocTypeInputType} from '../../accounting/TaxAuthorityAssocType/TaxAuthorityAssocTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTaxAuthorityAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTaxAuthorityAssocType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createTaxAuthorityAssocType};
 
 
 const updateTaxAuthorityAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTaxAuthorityAssocType method',
   args:{taxAuthorityAssocTypeToBeUpdated: {type: TaxAuthorityAssocTypeInputType},taxAuthorityAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateTaxAuthorityAssocType};
 
 
 const deleteTaxAuthorityAssocTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTaxAuthorityAssocTypeByIdUpdated method',
   args:{taxAuthorityAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {OrderDeliveryScheduleInputType} from '../../order/OrderDeliverySchedule/OrderDeliveryScheduleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderDeliverySchedule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderDeliverySchedule method',
   args:{orderDeliveryScheduleToBeAdded: {type: OrderDeliveryScheduleInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createOrderDeliverySchedule};
 
 
 const deleteOrderDeliveryScheduleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderDeliveryScheduleByIdUpdated method',
   args:{orderDeliveryScheduleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteOrderDeliveryScheduleByIdUpdated};
 
 
 const updateOrderDeliverySchedule = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderDeliverySchedule method',
   args:{orderDeliveryScheduleToBeUpdated: {type: OrderDeliveryScheduleInputType},orderItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

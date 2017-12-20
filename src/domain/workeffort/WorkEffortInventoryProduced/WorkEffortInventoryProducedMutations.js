@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortInventoryProducedInputType} from '../../workeffort/WorkEffortInventoryProduced/WorkEffortInventoryProducedInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortInventoryProduced = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortInventoryProduced method',
   args:{workEffortInventoryProducedToBeAdded: {type: WorkEffortInventoryProducedInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortInventoryProduced};
 
 
 const updateWorkEffortInventoryProduced = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortInventoryProduced method',
   args:{workEffortInventoryProducedToBeUpdated: {type: WorkEffortInventoryProducedInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortInventoryProduced};
 
 
 const deleteWorkEffortInventoryProducedByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortInventoryProducedByIdUpdated method',
   args:{workEffortInventoryProducedId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

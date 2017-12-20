@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {CommunicationEventPurposeInputType} from '../../party/CommunicationEventPurpose/CommunicationEventPurposeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCommunicationEventPurpose = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCommunicationEventPurpose method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createCommunicationEventPurpose};
 
 
 const deleteCommunicationEventPurposeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCommunicationEventPurposeByIdUpdated method',
   args:{communicationEventPurposeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteCommunicationEventPurposeByIdUpdated};
 
 
 const updateCommunicationEventPurpose = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCommunicationEventPurpose method',
   args:{communicationEventPurposeToBeUpdated: {type: CommunicationEventPurposeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

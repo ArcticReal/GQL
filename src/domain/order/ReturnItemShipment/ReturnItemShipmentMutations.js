@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ReturnItemShipmentInputType} from '../../order/ReturnItemShipment/ReturnItemShipmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReturnItemShipment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createReturnItemShipment method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createReturnItemShipment};
 
 
 const updateReturnItemShipment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateReturnItemShipment method',
   args:{returnItemShipmentToBeUpdated: {type: ReturnItemShipmentInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateReturnItemShipment};
 
 
 const deleteReturnItemShipmentByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteReturnItemShipmentByIdUpdated method',
   args:{returnItemShipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

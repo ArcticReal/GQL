@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {QuoteAdjustmentInputType} from '../../order/QuoteAdjustment/QuoteAdjustmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuoteAdjustment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteAdjustment method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createQuoteAdjustment};
 
 
 const updateQuoteAdjustment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteAdjustment method',
   args:{quoteAdjustmentToBeUpdated: {type: QuoteAdjustmentInputType},quoteAdjustmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateQuoteAdjustment};
 
 
 const deleteQuoteAdjustmentByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteQuoteAdjustmentByIdUpdated method',
   args:{quoteAdjustmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

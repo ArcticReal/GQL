@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SubscriptionResourceInputType} from '../../product/SubscriptionResource/SubscriptionResourceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSubscriptionResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSubscriptionResource method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSubscriptionResource};
 
 
 const updateSubscriptionResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSubscriptionResource method',
   args:{subscriptionResourceToBeUpdated: {type: SubscriptionResourceInputType},subscriptionResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateSubscriptionResource};
 
 
 const deleteSubscriptionResourceByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSubscriptionResourceByIdUpdated method',
   args:{subscriptionResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createReorderGuideline = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createReorderGuideline method',
   args:{fromDate: {type: GraphQLString},reorderLevel: {type: GraphQLFloat},reorderGuidelineId: {type: GraphQLString},roleTypeId: {type: GraphQLString},facilityId: {type: GraphQLString},productId: {type: GraphQLString},geoId: {type: GraphQLString},reorderQuantity: {type: GraphQLFloat},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createReorderGuideline};
 
 
 const createSupplierRatingType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSupplierRatingType method',
   args:{supplierRatingTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createSupplierRatingType};
 
 
 const deleteReorderGuideline = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteReorderGuideline method',
   args:{reorderGuidelineId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {deleteReorderGuideline};
 
 
 const deleteSupplierRatingType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSupplierRatingType method',
   args:{supplierRatingTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {deleteSupplierRatingType};
 
 
 const updateReorderGuideline = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateReorderGuideline method',
   args:{reorderGuidelineId: {type: GraphQLString},fromDate: {type: GraphQLString},reorderLevel: {type: GraphQLFloat},roleTypeId: {type: GraphQLString},facilityId: {type: GraphQLString},productId: {type: GraphQLString},geoId: {type: GraphQLString},reorderQuantity: {type: GraphQLFloat},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {updateReorderGuideline};
 
 
 const updateSupplierRatingType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSupplierRatingType method',
   args:{supplierRatingTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

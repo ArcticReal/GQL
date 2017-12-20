@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createCharacterSet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCharacterSet method',
   args:{characterSetId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createCharacterSet};
 
 
 const createContentAssocPredicate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentAssocPredicate method',
   args:{contentAssocPredicateId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createContentAssocPredicate};
 
 
 const createContentAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentAssocType method',
   args:{contentAssocTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createContentAssocType};
 
 
 const createContentPurposeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentPurposeType method',
   args:{contentPurposeTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createContentPurposeType};
 
 
 const createContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},contentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createContentType};
 
 
 const createContentTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentTypeAttr method',
   args:{contentTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createContentTypeAttr};
 
 
 const createDataResourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDataResourceType method',
   args:{dataResourceTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {createDataResourceType};
 
 
 const createDataResourceTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDataResourceTypeAttr method',
   args:{dataResourceTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {createDataResourceTypeAttr};
 
 
 const createFileExtension = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFileExtension method',
   args:{fileExtensionId: {type: GraphQLString},mimeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {createFileExtension};
 
 
 const createMetaDataPredicate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createMetaDataPredicate method',
   args:{metaDataPredicateId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {createMetaDataPredicate};
 
 
 const createMimeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createMimeType method',
   args:{mimeTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {createMimeType};
 
 
 const createMimeTypeHtmlTemplate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createMimeTypeHtmlTemplate method',
   args:{mimeTypeId: {type: GraphQLString},templateLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {createMimeTypeHtmlTemplate};
 
 
 const removeCharacterSet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeCharacterSet method',
   args:{characterSetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {removeCharacterSet};
 
 
 const removeContentAssocPredicate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeContentAssocPredicate method',
   args:{contentAssocPredicateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {removeContentAssocPredicate};
 
 
 const removeContentAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeContentAssocType method',
   args:{contentAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {removeContentAssocType};
 
 
 const removeContentPurposeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeContentPurposeType method',
   args:{contentPurposeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {removeContentPurposeType};
 
 
 const removeContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeContentType method',
   args:{contentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {removeContentType};
 
 
 const removeContentTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeContentTypeAttr method',
   args:{contentTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {removeContentTypeAttr};
 
 
 const removeDataResourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeDataResourceType method',
   args:{dataResourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {removeDataResourceType};
 
 
 const removeDataResourceTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeDataResourceTypeAttr method',
   args:{dataResourceTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -232,7 +233,7 @@ export {removeDataResourceTypeAttr};
 
 
 const removeFileExtension = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeFileExtension method',
   args:{fileExtensionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -243,7 +244,7 @@ export {removeFileExtension};
 
 
 const removeMetaDataPredicate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeMetaDataPredicate method',
   args:{metaDataPredicateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -254,7 +255,7 @@ export {removeMetaDataPredicate};
 
 
 const removeMimeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeMimeType method',
   args:{mimeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -265,7 +266,7 @@ export {removeMimeType};
 
 
 const removeMimeTypeHtmlTemplate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeMimeTypeHtmlTemplate method',
   args:{mimeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -276,7 +277,7 @@ export {removeMimeTypeHtmlTemplate};
 
 
 const updateCharacterSet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCharacterSet method',
   args:{characterSetId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -287,7 +288,7 @@ export {updateCharacterSet};
 
 
 const updateContentAssocPredicate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentAssocPredicate method',
   args:{contentAssocPredicateId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -298,7 +299,7 @@ export {updateContentAssocPredicate};
 
 
 const updateContentAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentAssocType method',
   args:{contentAssocTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -309,7 +310,7 @@ export {updateContentAssocType};
 
 
 const updateContentPurposeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentPurposeType method',
   args:{contentPurposeTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -320,7 +321,7 @@ export {updateContentPurposeType};
 
 
 const updateContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentType method',
   args:{contentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -331,7 +332,7 @@ export {updateContentType};
 
 
 const updateDataResourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDataResourceType method',
   args:{dataResourceTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -342,7 +343,7 @@ export {updateDataResourceType};
 
 
 const updateDataResourceTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDataResourceTypeAttr method',
   args:{dataResourceTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -353,7 +354,7 @@ export {updateDataResourceTypeAttr};
 
 
 const updateFileExtension = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFileExtension method',
   args:{fileExtensionId: {type: GraphQLString},mimeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -364,7 +365,7 @@ export {updateFileExtension};
 
 
 const updateMetaDataPredicate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateMetaDataPredicate method',
   args:{metaDataPredicateId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -375,7 +376,7 @@ export {updateMetaDataPredicate};
 
 
 const updateMimeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateMimeType method',
   args:{mimeTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -386,7 +387,7 @@ export {updateMimeType};
 
 
 const updateMimeTypeHtmlTemplate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateMimeTypeHtmlTemplate method',
   args:{mimeTypeId: {type: GraphQLString},templateLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

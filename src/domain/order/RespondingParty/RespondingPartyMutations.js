@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {RespondingPartyInputType} from '../../order/RespondingParty/RespondingPartyInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRespondingParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createRespondingParty method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createRespondingParty};
 
 
 const deleteRespondingPartyByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteRespondingPartyByIdUpdated method',
   args:{respondingPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteRespondingPartyByIdUpdated};
 
 
 const updateRespondingParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateRespondingParty method',
   args:{respondingPartyToBeUpdated: {type: RespondingPartyInputType},respondingPartySeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

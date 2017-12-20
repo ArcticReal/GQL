@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SupplierPrefOrderInputType} from '../../product/SupplierPrefOrder/SupplierPrefOrderInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSupplierPrefOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSupplierPrefOrder method',
   args:{supplierPrefOrderToBeAdded: {type: SupplierPrefOrderInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSupplierPrefOrder};
 
 
 const updateSupplierPrefOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSupplierPrefOrder method',
   args:{supplierPrefOrderToBeUpdated: {type: SupplierPrefOrderInputType},supplierPrefOrderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateSupplierPrefOrder};
 
 
 const deleteSupplierPrefOrderByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSupplierPrefOrderByIdUpdated method',
   args:{supplierPrefOrderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

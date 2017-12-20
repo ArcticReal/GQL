@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {TermTypeInputType} from '../../party/TermType/TermTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTermType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTermType method',
   args:{termTypeToBeAdded: {type: TermTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createTermType};
 
 
 const updateTermType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTermType method',
   args:{termTypeToBeUpdated: {type: TermTypeInputType},termTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateTermType};
 
 
 const deleteTermTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTermTypeByIdUpdated method',
   args:{termTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createPartyClassificationType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyClassificationType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},partyClassificationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createPartyClassificationType};
 
 
 const createPartyContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyContentType method',
   args:{partyContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createPartyContentType};
 
 
 const createPartyGeoPoint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyGeoPoint method',
   args:{fromDate: {type: GraphQLString},partyId: {type: GraphQLString},geoPointId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createPartyGeoPoint};
 
 
 const createPartyIcsAvsOverride = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyIcsAvsOverride method',
   args:{partyId: {type: GraphQLString},avsDeclineString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createPartyIcsAvsOverride};
 
 
 const createPartyIdentificationType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyIdentificationType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},partyIdentificationTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createPartyIdentificationType};
 
 
 const createPartyType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyType method',
   args:{partyTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createPartyType};
 
 
 const createPartyTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyTypeAttr method',
   args:{partyTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {createPartyTypeAttr};
 
 
 const createPriorityType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPriorityType method',
   args:{priorityTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {createPriorityType};
 
 
 const deletePartyClassificationType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyClassificationType method',
   args:{partyClassificationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {deletePartyClassificationType};
 
 
 const deletePartyContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyContentType method',
   args:{partyContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {deletePartyContentType};
 
 
 const deletePartyIcsAvsOverride = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyIcsAvsOverride method',
   args:{partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {deletePartyIcsAvsOverride};
 
 
 const deletePartyIdentificationType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyIdentificationType method',
   args:{partyIdentificationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {deletePartyIdentificationType};
 
 
 const deletePartyType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyType method',
   args:{partyTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {deletePartyType};
 
 
 const deletePartyTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyTypeAttr method',
   args:{partyTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {deletePartyTypeAttr};
 
 
 const deletePriorityType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePriorityType method',
   args:{priorityTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {deletePriorityType};
 
 
 const expirePartyGeoPoint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz expirePartyGeoPoint method',
   args:{fromDate: {type: GraphQLString},partyId: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {expirePartyGeoPoint};
 
 
 const updatePartyClassificationType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyClassificationType method',
   args:{partyClassificationTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {updatePartyClassificationType};
 
 
 const updatePartyContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyContentType method',
   args:{partyContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {updatePartyContentType};
 
 
 const updatePartyGeoPoint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyGeoPoint method',
   args:{fromDate: {type: GraphQLString},partyId: {type: GraphQLString},geoPointId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {updatePartyGeoPoint};
 
 
 const updatePartyIcsAvsOverride = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyIcsAvsOverride method',
   args:{partyId: {type: GraphQLString},avsDeclineString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -232,7 +233,7 @@ export {updatePartyIcsAvsOverride};
 
 
 const updatePartyIdentificationType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyIdentificationType method',
   args:{partyIdentificationTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -243,7 +244,7 @@ export {updatePartyIdentificationType};
 
 
 const updatePartyType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyType method',
   args:{partyTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -254,7 +255,7 @@ export {updatePartyType};
 
 
 const updatePartyTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyTypeAttr method',
   args:{partyTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -265,7 +266,7 @@ export {updatePartyTypeAttr};
 
 
 const updatePriorityType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePriorityType method',
   args:{priorityTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

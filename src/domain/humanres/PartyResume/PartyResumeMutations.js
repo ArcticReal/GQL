@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyResumeInputType} from '../../humanres/PartyResume/PartyResumeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyResume = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyResume method',
   args:{partyResumeToBeAdded: {type: PartyResumeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyResume};
 
 
 const deletePartyResumeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyResumeByIdUpdated method',
   args:{partyResumeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deletePartyResumeByIdUpdated};
 
 
 const updatePartyResume = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyResume method',
   args:{partyResumeToBeUpdated: {type: PartyResumeInputType},resumeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

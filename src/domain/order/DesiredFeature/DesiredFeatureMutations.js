@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {DesiredFeatureInputType} from '../../order/DesiredFeature/DesiredFeatureInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDesiredFeature = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDesiredFeature method',
   args:{desiredFeatureToBeAdded: {type: DesiredFeatureInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createDesiredFeature};
 
 
 const updateDesiredFeature = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDesiredFeature method',
   args:{desiredFeatureToBeUpdated: {type: DesiredFeatureInputType},desiredFeatureId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateDesiredFeature};
 
 
 const deleteDesiredFeatureByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDesiredFeatureByIdUpdated method',
   args:{desiredFeatureId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

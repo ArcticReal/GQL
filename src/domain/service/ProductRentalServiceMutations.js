@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createFixedAssetAndLinkToProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFixedAssetAndLinkToProduct method',
   args:{productId: {type: GraphQLString},dateNextService: {type: GraphQLString},purchaseCostUomId: {type: GraphQLString},productionCapacity: {type: GraphQLFloat},acquireOrderId: {type: GraphQLString},locatedAtLocationSeqId: {type: GraphQLString},actualEndOfLife: {type: GraphQLString},dateLastServiced: {type: GraphQLString},acquireOrderItemSeqId: {type: GraphQLString},partyId: {type: GraphQLString},locatedAtFacilityId: {type: GraphQLString},depreciation: {type: GraphQLFloat},roleTypeId: {type: GraphQLString},dateAcquired: {type: GraphQLString},purchaseCost: {type: GraphQLFloat},serialNumber: {type: GraphQLString},fixedAssetTypeId: {type: GraphQLString},classEnumId: {type: GraphQLString},fixedAssetName: {type: GraphQLString},uomId: {type: GraphQLString},calendarId: {type: GraphQLString},salvageValue: {type: GraphQLFloat},fixedAssetId: {type: GraphQLString},parentFixedAssetId: {type: GraphQLString},expectedEndOfLife: {type: GraphQLString},instanceOfProductId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createFixedAssetAndLinkToProduct};
 
 
 const getProductFirstRelatedFixedAsset = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductFirstRelatedFixedAsset method',
   args:{productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

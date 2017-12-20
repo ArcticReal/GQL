@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {AccommodationClassInputType} from '../../accounting/AccommodationClass/AccommodationClassInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAccommodationClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAccommodationClass method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createAccommodationClass};
 
 
 const updateAccommodationClass = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAccommodationClass method',
   args:{accommodationClassToBeUpdated: {type: AccommodationClassInputType},accommodationClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateAccommodationClass};
 
 
 const deleteAccommodationClassByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAccommodationClassByIdUpdated method',
   args:{accommodationClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

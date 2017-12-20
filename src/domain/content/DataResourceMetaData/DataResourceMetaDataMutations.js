@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {DataResourceMetaDataInputType} from '../../content/DataResourceMetaData/DataResourceMetaDataInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDataResourceMetaData = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDataResourceMetaData method',
   args:{dataResourceMetaDataToBeAdded: {type: DataResourceMetaDataInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createDataResourceMetaData};
 
 
 const deleteDataResourceMetaDataByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDataResourceMetaDataByIdUpdated method',
   args:{dataResourceMetaDataId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteDataResourceMetaDataByIdUpdated};
 
 
 const updateDataResourceMetaData = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDataResourceMetaData method',
   args:{dataResourceMetaDataToBeUpdated: {type: DataResourceMetaDataInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ReturnItemResponseInputType} from '../../order/ReturnItemResponse/ReturnItemResponseInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReturnItemResponse = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createReturnItemResponse method',
   args:{returnItemResponseToBeAdded: {type: ReturnItemResponseInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createReturnItemResponse};
 
 
 const updateReturnItemResponse = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateReturnItemResponse method',
   args:{returnItemResponseToBeUpdated: {type: ReturnItemResponseInputType},returnItemResponseId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateReturnItemResponse};
 
 
 const deleteReturnItemResponseByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteReturnItemResponseByIdUpdated method',
   args:{returnItemResponseId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

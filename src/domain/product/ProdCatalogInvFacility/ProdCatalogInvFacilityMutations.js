@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProdCatalogInvFacilityInputType} from '../../product/ProdCatalogInvFacility/ProdCatalogInvFacilityInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProdCatalogInvFacility = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProdCatalogInvFacility method',
   args:{prodCatalogInvFacilityToBeAdded: {type: ProdCatalogInvFacilityInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProdCatalogInvFacility};
 
 
 const updateProdCatalogInvFacility = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProdCatalogInvFacility method',
   args:{prodCatalogInvFacilityToBeUpdated: {type: ProdCatalogInvFacilityInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateProdCatalogInvFacility};
 
 
 const deleteProdCatalogInvFacilityByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProdCatalogInvFacilityByIdUpdated method',
   args:{prodCatalogInvFacilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

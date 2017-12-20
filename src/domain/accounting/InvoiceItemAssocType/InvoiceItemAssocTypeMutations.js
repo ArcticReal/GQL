@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {InvoiceItemAssocTypeInputType} from '../../accounting/InvoiceItemAssocType/InvoiceItemAssocTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoiceItemAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceItemAssocType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createInvoiceItemAssocType};
 
 
 const updateInvoiceItemAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceItemAssocType method',
   args:{invoiceItemAssocTypeToBeUpdated: {type: InvoiceItemAssocTypeInputType},invoiceItemAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateInvoiceItemAssocType};
 
 
 const deleteInvoiceItemAssocTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceItemAssocTypeByIdUpdated method',
   args:{invoiceItemAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

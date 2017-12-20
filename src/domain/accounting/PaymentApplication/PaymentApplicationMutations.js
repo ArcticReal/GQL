@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PaymentApplicationInputType} from '../../accounting/PaymentApplication/PaymentApplicationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentApplication = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentApplication method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPaymentApplication};
 
 
 const updatePaymentApplication = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentApplication method',
   args:{paymentApplicationToBeUpdated: {type: PaymentApplicationInputType},paymentApplicationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePaymentApplication};
 
 
 const deletePaymentApplicationByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentApplicationByIdUpdated method',
   args:{paymentApplicationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

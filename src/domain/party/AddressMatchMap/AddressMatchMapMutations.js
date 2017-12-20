@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {AddressMatchMapInputType} from '../../party/AddressMatchMap/AddressMatchMapInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAddressMatchMap = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAddressMatchMap method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createAddressMatchMap};
 
 
 const deleteAddressMatchMapByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAddressMatchMapByIdUpdated method',
   args:{addressMatchMapId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteAddressMatchMapByIdUpdated};
 
 
 const updateAddressMatchMap = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAddressMatchMap method',
   args:{addressMatchMapToBeUpdated: {type: AddressMatchMapInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

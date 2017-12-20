@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {AffiliateInputType} from '../../party/Affiliate/AffiliateInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAffiliate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createAffiliate method',
   args:{affiliateToBeAdded: {type: AffiliateInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createAffiliate};
 
 
 const deleteAffiliateByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteAffiliateByIdUpdated method',
   args:{affiliateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteAffiliateByIdUpdated};
 
 
 const updateAffiliate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateAffiliate method',
   args:{affiliateToBeUpdated: {type: AffiliateInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

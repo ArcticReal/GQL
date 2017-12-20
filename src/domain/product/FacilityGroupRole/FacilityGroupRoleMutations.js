@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {FacilityGroupRoleInputType} from '../../product/FacilityGroupRole/FacilityGroupRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityGroupRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFacilityGroupRole method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createFacilityGroupRole};
 
 
 const deleteFacilityGroupRoleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFacilityGroupRoleByIdUpdated method',
   args:{facilityGroupRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteFacilityGroupRoleByIdUpdated};
 
 
 const updateFacilityGroupRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFacilityGroupRole method',
   args:{facilityGroupRoleToBeUpdated: {type: FacilityGroupRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

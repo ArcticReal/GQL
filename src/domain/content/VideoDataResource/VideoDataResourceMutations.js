@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {VideoDataResourceInputType} from '../../content/VideoDataResource/VideoDataResourceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createVideoDataResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createVideoDataResource method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createVideoDataResource};
 
 
 const updateVideoDataResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateVideoDataResource method',
   args:{videoDataResourceToBeUpdated: {type: VideoDataResourceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateVideoDataResource};
 
 
 const deleteVideoDataResourceByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteVideoDataResourceByIdUpdated method',
   args:{videoDataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

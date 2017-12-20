@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyContactMechPurposeInputType} from '../../party/PartyContactMechPurpose/PartyContactMechPurposeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyContactMechPurpose = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyContactMechPurpose method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyContactMechPurpose};
 
 
 const updatePartyContactMechPurpose = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyContactMechPurpose method',
   args:{partyContactMechPurposeToBeUpdated: {type: PartyContactMechPurposeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyContactMechPurpose};
 
 
 const deletePartyContactMechPurposeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyContactMechPurposeByIdUpdated method',
   args:{partyContactMechPurposeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

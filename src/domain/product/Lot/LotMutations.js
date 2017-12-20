@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {LotInputType} from '../../product/Lot/LotInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createLot = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createLot method',
   args:{lotToBeAdded: {type: LotInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createLot};
 
 
 const updateLot = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateLot method',
   args:{lotToBeUpdated: {type: LotInputType},lotId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateLot};
 
 
 const deleteLotByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteLotByIdUpdated method',
   args:{lotId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

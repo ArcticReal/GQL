@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {TrackingCodeTypeInputType} from '../../marketing/TrackingCodeType/TrackingCodeTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTrackingCodeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTrackingCodeType method',
   args:{trackingCodeTypeToBeAdded: {type: TrackingCodeTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createTrackingCodeType};
 
 
 const updateTrackingCodeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTrackingCodeType method',
   args:{trackingCodeTypeToBeUpdated: {type: TrackingCodeTypeInputType},trackingCodeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateTrackingCodeType};
 
 
 const deleteTrackingCodeTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTrackingCodeTypeByIdUpdated method',
   args:{trackingCodeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

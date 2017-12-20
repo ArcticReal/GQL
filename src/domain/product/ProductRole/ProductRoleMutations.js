@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductRoleInputType} from '../../product/ProductRole/ProductRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductRole method',
   args:{productRoleToBeAdded: {type: ProductRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductRole};
 
 
 const deleteProductRoleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductRoleByIdUpdated method',
   args:{productRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteProductRoleByIdUpdated};
 
 
 const updateProductRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductRole method',
   args:{productRoleToBeUpdated: {type: ProductRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

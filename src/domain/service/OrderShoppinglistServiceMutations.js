@@ -8,12 +8,12 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {KeyValueType} from '../../framework/helpTypes.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addDistinctShoppingListItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz addDistinctShoppingListItem method',
   args:{shoppingListId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},reservStart: {type: GraphQLString},configId: {type: GraphQLString},quantityPurchased: {type: GraphQLFloat},productStoreId: {type: GraphQLString},modifiedPrice: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addDistinctShoppingListItem};
 
 
 const addSuggestionsToShoppingList = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz addSuggestionsToShoppingList method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {addSuggestionsToShoppingList};
 
 
 const autoDeleteAutoSaveShoppingList = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz autoDeleteAutoSaveShoppingList method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -46,9 +46,9 @@ export {autoDeleteAutoSaveShoppingList};
 
 
 const calculateShoppingListDeepTotalPrice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz calculateShoppingListDeepTotalPrice method',
-  args:{shoppingListId: {type: GraphQLString},prodCatalogId: {type: GraphQLString},webSiteId: {type: GraphQLString},autoUserLogin: {type: new GraphQLList(KeyValueType)},quantity: {type: GraphQLFloat},currencyUomId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},productStoreGroupId: {type: GraphQLString}},
+  args:{shoppingListId: {type: GraphQLString},prodCatalogId: {type: GraphQLString},webSiteId: {type: GraphQLString},autoUserLogin: {type: new GraphQLList(KeyValueInputType)},quantity: {type: GraphQLFloat},currencyUomId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},productStoreGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/orderShoppinglist/calculateShoppingListDeepTotalPrice?shoppingListId=${args.shoppingListId}prodCatalogId=${args.prodCatalogId}webSiteId=${args.webSiteId}autoUserLogin=${args.autoUserLogin}quantity=${args.quantity}currencyUomId=${args.currencyUomId}productStoreId=${args.productStoreId}partyId=${args.partyId}productStoreGroupId=${args.productStoreGroupId}`, null, req);
   }
@@ -57,7 +57,7 @@ export {calculateShoppingListDeepTotalPrice};
 
 
 const createShoppingList = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShoppingList method',
   args:{intervalNumber: {type: GraphQLInt},recurrenceInfoId: {type: GraphQLString},parentShoppingListId: {type: GraphQLString},productPromoCodeId: {type: GraphQLString},description: {type: GraphQLString},endDateTime: {type: GraphQLString},isActive: {type: GraphQLString},shoppingListTypeId: {type: GraphQLString},contactMechId: {type: GraphQLString},frequency: {type: GraphQLInt},shippingMethodString: {type: GraphQLString},carrierPartyId: {type: GraphQLString},startDateTime: {type: GraphQLString},currencyUom: {type: GraphQLString},lastOrderedDate: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},paymentMethodId: {type: GraphQLString},isPublic: {type: GraphQLString},productStoreId: {type: GraphQLString},listName: {type: GraphQLString},lastAdminModified: {type: GraphQLString},partyId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},visitorId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createShoppingList};
 
 
 const createShoppingListItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShoppingListItem method',
   args:{shoppingListId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},reservStart: {type: GraphQLString},configId: {type: GraphQLString},quantityPurchased: {type: GraphQLFloat},productStoreId: {type: GraphQLString},modifiedPrice: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createShoppingListItem};
 
 
 const createShoppingListItemSurvey = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShoppingListItemSurvey method',
   args:{shoppingListId: {type: GraphQLString},shoppingListItemSeqId: {type: GraphQLString},surveyResponseId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createShoppingListItemSurvey};
 
 
 const createShoppingListRecurrence = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShoppingListRecurrence method',
   args:{intervalNumber: {type: GraphQLInt},startDateTime: {type: GraphQLString},endDateTime: {type: GraphQLString},frequency: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createShoppingListRecurrence};
 
 
 const createShoppingListType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShoppingListType method',
   args:{shoppingListTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createShoppingListType};
 
 
 const deleteShoppingListItemSurvey = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShoppingListItemSurvey method',
   args:{shoppingListId: {type: GraphQLString},shoppingListItemSeqId: {type: GraphQLString},surveyResponseId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {deleteShoppingListItemSurvey};
 
 
 const deleteShoppingListType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShoppingListType method',
   args:{shoppingListTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {deleteShoppingListType};
 
 
 const makeShoppingListFromOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz makeShoppingListFromOrder method',
   args:{orderId: {type: GraphQLString},intervalNumber: {type: GraphQLInt},startDateTime: {type: GraphQLString},shoppingListId: {type: GraphQLString},endDateTime: {type: GraphQLString},partyId: {type: GraphQLString},shoppingListTypeId: {type: GraphQLString},frequency: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {makeShoppingListFromOrder};
 
 
 const removeShoppingList = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeShoppingList method',
   args:{shoppingListId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {removeShoppingList};
 
 
 const removeShoppingListItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeShoppingListItem method',
   args:{shoppingListId: {type: GraphQLString},shoppingListItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {removeShoppingListItem};
 
 
 const runShoppingListAutoReorder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz runShoppingListAutoReorder method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {runShoppingListAutoReorder};
 
 
 const shoppingListInterface = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz shoppingListInterface method',
   args:{recurrenceInfoId: {type: GraphQLString},parentShoppingListId: {type: GraphQLString},productPromoCodeId: {type: GraphQLString},description: {type: GraphQLString},isActive: {type: GraphQLString},shoppingListTypeId: {type: GraphQLString},contactMechId: {type: GraphQLString},shippingMethodString: {type: GraphQLString},carrierPartyId: {type: GraphQLString},currencyUom: {type: GraphQLString},lastOrderedDate: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},paymentMethodId: {type: GraphQLString},isPublic: {type: GraphQLString},productStoreId: {type: GraphQLString},listName: {type: GraphQLString},lastAdminModified: {type: GraphQLString},partyId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},visitorId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {shoppingListInterface};
 
 
 const shoppingListItemInterface = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz shoppingListItemInterface method',
   args:{shoppingListId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},reservStart: {type: GraphQLString},configId: {type: GraphQLString},quantityPurchased: {type: GraphQLFloat},modifiedPrice: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {shoppingListItemInterface};
 
 
 const splitShipmentMethodString = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz splitShipmentMethodString method',
   args:{shippingMethodString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {splitShipmentMethodString};
 
 
 const updateShoppingList = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShoppingList method',
   args:{shoppingListId: {type: GraphQLString},intervalNumber: {type: GraphQLInt},recurrenceInfoId: {type: GraphQLString},parentShoppingListId: {type: GraphQLString},productPromoCodeId: {type: GraphQLString},description: {type: GraphQLString},endDateTime: {type: GraphQLString},isActive: {type: GraphQLString},shoppingListTypeId: {type: GraphQLString},contactMechId: {type: GraphQLString},frequency: {type: GraphQLInt},shippingMethodString: {type: GraphQLString},carrierPartyId: {type: GraphQLString},startDateTime: {type: GraphQLString},currencyUom: {type: GraphQLString},lastOrderedDate: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},paymentMethodId: {type: GraphQLString},isPublic: {type: GraphQLString},productStoreId: {type: GraphQLString},listName: {type: GraphQLString},lastAdminModified: {type: GraphQLString},partyId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},visitorId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {updateShoppingList};
 
 
 const updateShoppingListItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShoppingListItem method',
   args:{shoppingListId: {type: GraphQLString},shoppingListItemSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},reservStart: {type: GraphQLString},configId: {type: GraphQLString},quantityPurchased: {type: GraphQLFloat},modifiedPrice: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {updateShoppingListItem};
 
 
 const updateShoppingListType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShoppingListType method',
   args:{shoppingListTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

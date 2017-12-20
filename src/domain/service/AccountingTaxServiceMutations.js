@@ -8,14 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {KeyValueType} from '../../framework/helpTypes.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const calcTax = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz calcTax method',
-  args:{orderPromotionsAmount: {type: GraphQLFloat},facilityId: {type: GraphQLString},orderShippingAmount: {type: GraphQLFloat},billToPartyId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueType)},productStoreId: {type: GraphQLString},payToPartyId: {type: GraphQLString}},
+  args:{orderPromotionsAmount: {type: GraphQLFloat},facilityId: {type: GraphQLString},orderShippingAmount: {type: GraphQLFloat},billToPartyId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},productStoreId: {type: GraphQLString},payToPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingTax/calcTax?itemPriceList=${args.itemPriceList}itemAmountList=${args.itemAmountList}itemProductList=${args.itemProductList}orderPromotionsAmount=${args.orderPromotionsAmount}facilityId=${args.facilityId}orderShippingAmount=${args.orderShippingAmount}billToPartyId=${args.billToPartyId}shippingAddress=${args.shippingAddress}productStoreId=${args.productStoreId}itemQuantityList=${args.itemQuantityList}payToPartyId=${args.payToPartyId}itemShippingList=${args.itemShippingList}`, null, req);
   }
@@ -24,7 +24,7 @@ export {calcTax};
 
 
 const calcTaxForDisplay = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz calcTaxForDisplay method',
   args:{productId: {type: GraphQLString},productStoreId: {type: GraphQLString},basePrice: {type: GraphQLFloat},quantity: {type: GraphQLFloat},shippingPrice: {type: GraphQLFloat},billToPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,9 +35,9 @@ export {calcTaxForDisplay};
 
 
 const calcTaxInterface = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz calcTaxInterface method',
-  args:{orderPromotionsAmount: {type: GraphQLFloat},facilityId: {type: GraphQLString},orderShippingAmount: {type: GraphQLFloat},billToPartyId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueType)},productStoreId: {type: GraphQLString},payToPartyId: {type: GraphQLString}},
+  args:{orderPromotionsAmount: {type: GraphQLFloat},facilityId: {type: GraphQLString},orderShippingAmount: {type: GraphQLFloat},billToPartyId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},productStoreId: {type: GraphQLString},payToPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingTax/calcTaxInterface?itemPriceList=${args.itemPriceList}itemAmountList=${args.itemAmountList}itemProductList=${args.itemProductList}orderPromotionsAmount=${args.orderPromotionsAmount}facilityId=${args.facilityId}orderShippingAmount=${args.orderShippingAmount}billToPartyId=${args.billToPartyId}shippingAddress=${args.shippingAddress}productStoreId=${args.productStoreId}itemQuantityList=${args.itemQuantityList}payToPartyId=${args.payToPartyId}itemShippingList=${args.itemShippingList}`, null, req);
   }
@@ -46,7 +46,7 @@ export {calcTaxInterface};
 
 
 const calcTaxTotalForDisplayInterface = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz calcTaxTotalForDisplayInterface method',
   args:{productId: {type: GraphQLString},productStoreId: {type: GraphQLString},basePrice: {type: GraphQLFloat},quantity: {type: GraphQLFloat},shippingPrice: {type: GraphQLFloat},billToPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {calcTaxTotalForDisplayInterface};
 
 
 const createCustomerTaxAuthInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustomerTaxAuthInfo method',
   args:{taxAuthPartyGeoIds: {type: GraphQLString},partyId: {type: GraphQLString},partyTaxId: {type: GraphQLString},fromDate: {type: GraphQLString},isNexus: {type: GraphQLString},isExempt: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createCustomerTaxAuthInfo};
 
 
 const createPartyTaxAuthInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyTaxAuthInfo method',
   args:{taxAuthPartyId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},partyTaxId: {type: GraphQLString},isNexus: {type: GraphQLString},isExempt: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createPartyTaxAuthInfo};
 
 
 const createTaxAuthority = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTaxAuthority method',
   args:{taxAuthPartyId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},requireTaxIdForExemption: {type: GraphQLString},includeTaxInPrice: {type: GraphQLString},taxIdFormatPattern: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createTaxAuthority};
 
 
 const createTaxAuthorityAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTaxAuthorityAssoc method',
   args:{taxAuthPartyId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},toTaxAuthPartyId: {type: GraphQLString},toTaxAuthGeoId: {type: GraphQLString},fromDate: {type: GraphQLString},taxAuthorityAssocTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createTaxAuthorityAssoc};
 
 
 const createTaxAuthorityAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTaxAuthorityAssocType method',
   args:{taxAuthorityAssocTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createTaxAuthorityAssocType};
 
 
 const createTaxAuthorityCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTaxAuthorityCategory method',
   args:{taxAuthPartyId: {type: GraphQLString},productCategoryId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createTaxAuthorityCategory};
 
 
 const createTaxAuthorityGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTaxAuthorityGlAccount method',
   args:{taxAuthPartyId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},glAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createTaxAuthorityGlAccount};
 
 
 const createTaxAuthorityRateProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTaxAuthorityRateProduct method',
   args:{taxShipping: {type: GraphQLString},taxPercentage: {type: GraphQLFloat},description: {type: GraphQLString},titleTransferEnumId: {type: GraphQLString},taxPromotions: {type: GraphQLString},thruDate: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},fromDate: {type: GraphQLString},productCategoryId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},minItemPrice: {type: GraphQLFloat},minPurchase: {type: GraphQLFloat},taxAuthorityRateTypeId: {type: GraphQLString},productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createTaxAuthorityRateProduct};
 
 
 const createTaxAuthorityRateType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTaxAuthorityRateType method',
   args:{description: {type: GraphQLString},taxAuthorityRateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createTaxAuthorityRateType};
 
 
 const deletePartyTaxAuthInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyTaxAuthInfo method',
   args:{taxAuthPartyId: {type: GraphQLString},fromDate: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {deletePartyTaxAuthInfo};
 
 
 const deleteTaxAuthority = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTaxAuthority method',
   args:{taxAuthPartyId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {deleteTaxAuthority};
 
 
 const deleteTaxAuthorityAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTaxAuthorityAssoc method',
   args:{taxAuthPartyId: {type: GraphQLString},fromDate: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},toTaxAuthPartyId: {type: GraphQLString},toTaxAuthGeoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {deleteTaxAuthorityAssoc};
 
 
 const deleteTaxAuthorityAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTaxAuthorityAssocType method',
   args:{taxAuthorityAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {deleteTaxAuthorityAssocType};
 
 
 const deleteTaxAuthorityCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTaxAuthorityCategory method',
   args:{taxAuthPartyId: {type: GraphQLString},productCategoryId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {deleteTaxAuthorityCategory};
 
 
 const deleteTaxAuthorityGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTaxAuthorityGlAccount method',
   args:{taxAuthPartyId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {deleteTaxAuthorityGlAccount};
 
 
 const deleteTaxAuthorityRateProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTaxAuthorityRateProduct method',
   args:{taxAuthorityRateSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {deleteTaxAuthorityRateProduct};
 
 
 const deleteTaxAuthorityRateType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTaxAuthorityRateType method',
   args:{taxAuthorityRateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,9 +244,9 @@ export {deleteTaxAuthorityRateType};
 
 
 const flatZipSalesTaxCalc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz flatZipSalesTaxCalc method',
-  args:{orderPromotionsAmount: {type: GraphQLFloat},facilityId: {type: GraphQLString},orderShippingAmount: {type: GraphQLFloat},billToPartyId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueType)},productStoreId: {type: GraphQLString},payToPartyId: {type: GraphQLString}},
+  args:{orderPromotionsAmount: {type: GraphQLFloat},facilityId: {type: GraphQLString},orderShippingAmount: {type: GraphQLFloat},billToPartyId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},productStoreId: {type: GraphQLString},payToPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingTax/flatZipSalesTaxCalc?itemPriceList=${args.itemPriceList}itemAmountList=${args.itemAmountList}itemProductList=${args.itemProductList}orderPromotionsAmount=${args.orderPromotionsAmount}facilityId=${args.facilityId}orderShippingAmount=${args.orderShippingAmount}billToPartyId=${args.billToPartyId}shippingAddress=${args.shippingAddress}productStoreId=${args.productStoreId}itemQuantityList=${args.itemQuantityList}payToPartyId=${args.payToPartyId}itemShippingList=${args.itemShippingList}`, null, req);
   }
@@ -255,7 +255,7 @@ export {flatZipSalesTaxCalc};
 
 
 const importZipSalesTaxData = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz importZipSalesTaxData method',
   args:{ruleFileLocation: {type: GraphQLString},taxFileLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {importZipSalesTaxData};
 
 
 const updatePartyTaxAuthInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyTaxAuthInfo method',
   args:{taxAuthPartyId: {type: GraphQLString},fromDate: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},partyId: {type: GraphQLString},partyTaxId: {type: GraphQLString},isNexus: {type: GraphQLString},isExempt: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {updatePartyTaxAuthInfo};
 
 
 const updateTaxAuthority = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTaxAuthority method',
   args:{taxAuthPartyId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},requireTaxIdForExemption: {type: GraphQLString},includeTaxInPrice: {type: GraphQLString},taxIdFormatPattern: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {updateTaxAuthority};
 
 
 const updateTaxAuthorityAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTaxAuthorityAssoc method',
   args:{taxAuthPartyId: {type: GraphQLString},fromDate: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},toTaxAuthPartyId: {type: GraphQLString},toTaxAuthGeoId: {type: GraphQLString},taxAuthorityAssocTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {updateTaxAuthorityAssoc};
 
 
 const updateTaxAuthorityAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTaxAuthorityAssocType method',
   args:{taxAuthorityAssocTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {updateTaxAuthorityAssocType};
 
 
 const updateTaxAuthorityCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTaxAuthorityCategory method',
   args:{taxAuthPartyId: {type: GraphQLString},productCategoryId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {updateTaxAuthorityCategory};
 
 
 const updateTaxAuthorityGlAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTaxAuthorityGlAccount method',
   args:{taxAuthPartyId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},glAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {updateTaxAuthorityGlAccount};
 
 
 const updateTaxAuthorityRateProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTaxAuthorityRateProduct method',
   args:{taxAuthorityRateSeqId: {type: GraphQLString},taxShipping: {type: GraphQLString},taxPercentage: {type: GraphQLFloat},description: {type: GraphQLString},titleTransferEnumId: {type: GraphQLString},taxPromotions: {type: GraphQLString},thruDate: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},fromDate: {type: GraphQLString},productCategoryId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},minItemPrice: {type: GraphQLFloat},minPurchase: {type: GraphQLFloat},taxAuthorityRateTypeId: {type: GraphQLString},productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {updateTaxAuthorityRateProduct};
 
 
 const updateTaxAuthorityRateType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTaxAuthorityRateType method',
   args:{taxAuthorityRateTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

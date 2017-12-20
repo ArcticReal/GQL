@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ShoppingListWorkEffortInputType} from '../../order/ShoppingListWorkEffort/ShoppingListWorkEffortInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShoppingListWorkEffort = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShoppingListWorkEffort method',
   args:{shoppingListWorkEffortToBeAdded: {type: ShoppingListWorkEffortInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createShoppingListWorkEffort};
 
 
 const updateShoppingListWorkEffort = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShoppingListWorkEffort method',
   args:{shoppingListWorkEffortToBeUpdated: {type: ShoppingListWorkEffortInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateShoppingListWorkEffort};
 
 
 const deleteShoppingListWorkEffortByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShoppingListWorkEffortByIdUpdated method',
   args:{shoppingListWorkEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

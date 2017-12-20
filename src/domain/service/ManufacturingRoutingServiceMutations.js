@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const checkRoutingTaskAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz checkRoutingTaskAssoc method',
   args:{workEffortIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},workEffortIdFrom: {type: GraphQLString},workEffortAssocTypeId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},create: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {checkRoutingTaskAssoc};
 
 
 const getEstimatedTaskTime = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getEstimatedTaskTime method',
   args:{taskId: {type: GraphQLString},routingId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {getEstimatedTaskTime};
 
 
 const getProductRouting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductRouting method',
   args:{productId: {type: GraphQLString},workEffortId: {type: GraphQLString},applicableDate: {type: GraphQLString},ignoreDefaultRouting: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {getProductRouting};
 
 
 const getRoutingTaskAssocs = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getRoutingTaskAssocs method',
   args:{workEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {getRoutingTaskAssocs};
 
 
 const lookupRoutingTask = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz lookupRoutingTask method',
   args:{fixedAssetId: {type: GraphQLString},workEffortName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

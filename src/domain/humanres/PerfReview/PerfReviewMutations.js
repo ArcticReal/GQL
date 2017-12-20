@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PerfReviewInputType} from '../../humanres/PerfReview/PerfReviewInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPerfReview = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPerfReview method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPerfReview};
 
 
 const updatePerfReview = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePerfReview method',
   args:{perfReviewToBeUpdated: {type: PerfReviewInputType},perfReviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePerfReview};
 
 
 const deletePerfReviewByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePerfReviewByIdUpdated method',
   args:{perfReviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

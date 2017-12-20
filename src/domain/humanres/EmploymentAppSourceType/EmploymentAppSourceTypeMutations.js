@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {EmploymentAppSourceTypeInputType} from '../../humanres/EmploymentAppSourceType/EmploymentAppSourceTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEmploymentAppSourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createEmploymentAppSourceType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createEmploymentAppSourceType};
 
 
 const updateEmploymentAppSourceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateEmploymentAppSourceType method',
   args:{employmentAppSourceTypeToBeUpdated: {type: EmploymentAppSourceTypeInputType},employmentAppSourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateEmploymentAppSourceType};
 
 
 const deleteEmploymentAppSourceTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteEmploymentAppSourceTypeByIdUpdated method',
   args:{employmentAppSourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

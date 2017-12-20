@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PaymentGatewayClearCommerceInputType} from '../../accounting/PaymentGatewayClearCommerce/PaymentGatewayClearCommerceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGatewayClearCommerce = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentGatewayClearCommerce method',
   args:{paymentGatewayClearCommerceToBeAdded: {type: PaymentGatewayClearCommerceInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPaymentGatewayClearCommerce};
 
 
 const updatePaymentGatewayClearCommerce = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayClearCommerce method',
   args:{paymentGatewayClearCommerceToBeUpdated: {type: PaymentGatewayClearCommerceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePaymentGatewayClearCommerce};
 
 
 const deletePaymentGatewayClearCommerceByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentGatewayClearCommerceByIdUpdated method',
   args:{paymentGatewayClearCommerceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {RejectionReasonInputType} from '../../shipment/RejectionReason/RejectionReasonInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRejectionReason = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createRejectionReason method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createRejectionReason};
 
 
 const updateRejectionReason = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateRejectionReason method',
   args:{rejectionReasonToBeUpdated: {type: RejectionReasonInputType},rejectionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateRejectionReason};
 
 
 const deleteRejectionReasonByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteRejectionReasonByIdUpdated method',
   args:{rejectionReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

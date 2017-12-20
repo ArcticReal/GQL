@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {RequirementBudgetAllocationInputType} from '../../order/RequirementBudgetAllocation/RequirementBudgetAllocationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRequirementBudgetAllocation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createRequirementBudgetAllocation method',
   args:{requirementBudgetAllocationToBeAdded: {type: RequirementBudgetAllocationInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createRequirementBudgetAllocation};
 
 
 const updateRequirementBudgetAllocation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateRequirementBudgetAllocation method',
   args:{requirementBudgetAllocationToBeUpdated: {type: RequirementBudgetAllocationInputType},budgetItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateRequirementBudgetAllocation};
 
 
 const deleteRequirementBudgetAllocationByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteRequirementBudgetAllocationByIdUpdated method',
   args:{requirementBudgetAllocationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

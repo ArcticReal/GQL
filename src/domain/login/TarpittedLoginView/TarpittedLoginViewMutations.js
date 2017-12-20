@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {TarpittedLoginViewInputType} from '../../login/TarpittedLoginView/TarpittedLoginViewInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTarpittedLoginView = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTarpittedLoginView method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createTarpittedLoginView};
 
 
 const updateTarpittedLoginView = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTarpittedLoginView method',
   args:{tarpittedLoginViewToBeUpdated: {type: TarpittedLoginViewInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateTarpittedLoginView};
 
 
 const deleteTarpittedLoginViewByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTarpittedLoginViewByIdUpdated method',
   args:{tarpittedLoginViewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

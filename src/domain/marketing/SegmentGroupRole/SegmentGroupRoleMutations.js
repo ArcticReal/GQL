@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SegmentGroupRoleInputType} from '../../marketing/SegmentGroupRole/SegmentGroupRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSegmentGroupRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSegmentGroupRole method',
   args:{segmentGroupRoleToBeAdded: {type: SegmentGroupRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSegmentGroupRole};
 
 
 const updateSegmentGroupRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSegmentGroupRole method',
   args:{segmentGroupRoleToBeUpdated: {type: SegmentGroupRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateSegmentGroupRole};
 
 
 const deleteSegmentGroupRoleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSegmentGroupRoleByIdUpdated method',
   args:{segmentGroupRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

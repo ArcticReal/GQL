@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ReturnStatusInputType} from '../../order/ReturnStatus/ReturnStatusInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReturnStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createReturnStatus method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createReturnStatus};
 
 
 const updateReturnStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateReturnStatus method',
   args:{returnStatusToBeUpdated: {type: ReturnStatusInputType},returnStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateReturnStatus};
 
 
 const deleteReturnStatusByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteReturnStatusByIdUpdated method',
   args:{returnStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

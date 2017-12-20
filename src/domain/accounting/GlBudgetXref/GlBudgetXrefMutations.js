@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {GlBudgetXrefInputType} from '../../accounting/GlBudgetXref/GlBudgetXrefInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlBudgetXref = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlBudgetXref method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createGlBudgetXref};
 
 
 const deleteGlBudgetXrefByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlBudgetXrefByIdUpdated method',
   args:{glBudgetXrefId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteGlBudgetXrefByIdUpdated};
 
 
 const updateGlBudgetXref = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlBudgetXref method',
   args:{glBudgetXrefToBeUpdated: {type: GlBudgetXrefInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

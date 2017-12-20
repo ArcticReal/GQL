@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {UserLoginHistoryInputType} from '../../login/UserLoginHistory/UserLoginHistoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createUserLoginHistory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createUserLoginHistory method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createUserLoginHistory};
 
 
 const updateUserLoginHistory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateUserLoginHistory method',
   args:{userLoginHistoryToBeUpdated: {type: UserLoginHistoryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateUserLoginHistory};
 
 
 const deleteUserLoginHistoryByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteUserLoginHistoryByIdUpdated method',
   args:{userLoginHistoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ShipmentCostEstimateInputType} from '../../shipment/ShipmentCostEstimate/ShipmentCostEstimateInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentCostEstimate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentCostEstimate method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createShipmentCostEstimate};
 
 
 const updateShipmentCostEstimate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentCostEstimate method',
   args:{shipmentCostEstimateToBeUpdated: {type: ShipmentCostEstimateInputType},shipmentCostEstimateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateShipmentCostEstimate};
 
 
 const deleteShipmentCostEstimateByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentCostEstimateByIdUpdated method',
   args:{shipmentCostEstimateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

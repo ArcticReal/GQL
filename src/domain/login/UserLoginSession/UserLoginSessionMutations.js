@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {UserLoginSessionInputType} from '../../login/UserLoginSession/UserLoginSessionInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createUserLoginSession = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createUserLoginSession method',
   args:{userLoginSessionToBeAdded: {type: UserLoginSessionInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createUserLoginSession};
 
 
 const updateUserLoginSession = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateUserLoginSession method',
   args:{userLoginSessionToBeUpdated: {type: UserLoginSessionInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateUserLoginSession};
 
 
 const deleteUserLoginSessionByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteUserLoginSessionByIdUpdated method',
   args:{userLoginSessionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductStoreGroupRollupInputType} from '../../product/ProductStoreGroupRollup/ProductStoreGroupRollupInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreGroupRollup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductStoreGroupRollup method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductStoreGroupRollup};
 
 
 const updateProductStoreGroupRollup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductStoreGroupRollup method',
   args:{productStoreGroupRollupToBeUpdated: {type: ProductStoreGroupRollupInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateProductStoreGroupRollup};
 
 
 const deleteProductStoreGroupRollupByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductStoreGroupRollupByIdUpdated method',
   args:{productStoreGroupRollupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

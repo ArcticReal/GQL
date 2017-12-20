@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {MetaDataPredicateInputType} from '../../content/MetaDataPredicate/MetaDataPredicateInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMetaDataPredicate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createMetaDataPredicate method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createMetaDataPredicate};
 
 
 const updateMetaDataPredicate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateMetaDataPredicate method',
   args:{metaDataPredicateToBeUpdated: {type: MetaDataPredicateInputType},metaDataPredicateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateMetaDataPredicate};
 
 
 const deleteMetaDataPredicateByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteMetaDataPredicateByIdUpdated method',
   args:{metaDataPredicateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

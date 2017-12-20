@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyAcctgPreferenceInputType} from '../../accounting/PartyAcctgPreference/PartyAcctgPreferenceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyAcctgPreference = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyAcctgPreference method',
   args:{partyAcctgPreferenceToBeAdded: {type: PartyAcctgPreferenceInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyAcctgPreference};
 
 
 const updatePartyAcctgPreference = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyAcctgPreference method',
   args:{partyAcctgPreferenceToBeUpdated: {type: PartyAcctgPreferenceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyAcctgPreference};
 
 
 const deletePartyAcctgPreferenceByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyAcctgPreferenceByIdUpdated method',
   args:{partyAcctgPreferenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

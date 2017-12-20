@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyQualInputType} from '../../humanres/PartyQual/PartyQualInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyQual = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyQual method',
   args:{partyQualToBeAdded: {type: PartyQualInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyQual};
 
 
 const updatePartyQual = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyQual method',
   args:{partyQualToBeUpdated: {type: PartyQualInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyQual};
 
 
 const deletePartyQualByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyQualByIdUpdated method',
   args:{partyQualId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContentApprovalInputType} from '../../content/ContentApproval/ContentApprovalInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentApproval = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentApproval method',
   args:{contentApprovalToBeAdded: {type: ContentApprovalInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createContentApproval};
 
 
 const updateContentApproval = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentApproval method',
   args:{contentApprovalToBeUpdated: {type: ContentApprovalInputType},contentApprovalId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateContentApproval};
 
 
 const deleteContentApprovalByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteContentApprovalByIdUpdated method',
   args:{contentApprovalId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

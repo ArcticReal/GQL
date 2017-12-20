@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ShipmentPackageInputType} from '../../shipment/ShipmentPackage/ShipmentPackageInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentPackage = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentPackage method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createShipmentPackage};
 
 
 const deleteShipmentPackageByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentPackageByIdUpdated method',
   args:{shipmentPackageId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteShipmentPackageByIdUpdated};
 
 
 const updateShipmentPackage = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentPackage method',
   args:{shipmentPackageToBeUpdated: {type: ShipmentPackageInputType},shipmentPackageSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

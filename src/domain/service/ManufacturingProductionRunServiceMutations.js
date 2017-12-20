@@ -8,12 +8,12 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {KeyValueType} from '../../framework/helpTypes.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addProductionRunComponent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz addProductionRunComponent method',
   args:{productId: {type: GraphQLString},estimatedQuantity: {type: GraphQLFloat},productionRunId: {type: GraphQLString},workEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addProductionRunComponent};
 
 
 const addProductionRunRoutingTask = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz addProductionRunRoutingTask method',
   args:{routingTaskId: {type: GraphQLString},priority: {type: GraphQLInt},productionRunId: {type: GraphQLString},estimatedSetupMillis: {type: GraphQLFloat},estimatedStartDate: {type: GraphQLString},description: {type: GraphQLString},workEffortName: {type: GraphQLString},estimatedMilliSeconds: {type: GraphQLFloat},estimatedCompletionDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {addProductionRunRoutingTask};
 
 
 const cancelProductionRun = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz cancelProductionRun method',
   args:{productionRunId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {cancelProductionRun};
 
 
 const changeProductionRunStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz changeProductionRunStatus method',
   args:{productionRunId: {type: GraphQLString},statusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {changeProductionRunStatus};
 
 
 const changeProductionRunTaskStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz changeProductionRunTaskStatus method',
   args:{workEffortId: {type: GraphQLString},productionRunId: {type: GraphQLString},statusId: {type: GraphQLString},issueAllComponents: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {changeProductionRunTaskStatus};
 
 
 const checkDecomposeInventoryItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz checkDecomposeInventoryItem method',
   args:{inventoryItemId: {type: GraphQLString},quantityAccepted: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {checkDecomposeInventoryItem};
 
 
 const checkUpdatePrunRoutingTask = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz checkUpdatePrunRoutingTask method',
   args:{routingTaskId: {type: GraphQLString},estimatedSetupMillis: {type: GraphQLFloat},estimatedStartDate: {type: GraphQLString},priority: {type: GraphQLInt},productionRunId: {type: GraphQLString},estimatedMilliSeconds: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {checkUpdatePrunRoutingTask};
 
 
 const createProductionRun = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductionRun method',
   args:{pRQuantity: {type: GraphQLFloat},facilityId: {type: GraphQLString},productId: {type: GraphQLString},startDate: {type: GraphQLString},routingId: {type: GraphQLString},description: {type: GraphQLString},workEffortName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createProductionRun};
 
 
 const createProductionRunAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductionRunAssoc method',
   args:{productionRunIdTo: {type: GraphQLString},workFlowSequenceTypeId: {type: GraphQLString},productionRunId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createProductionRunAssoc};
 
 
 const createProductionRunForMktgPkg = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductionRunForMktgPkg method',
   args:{orderItemSeqId: {type: GraphQLString},facilityId: {type: GraphQLString},orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createProductionRunForMktgPkg};
 
 
 const createProductionRunFromConfiguration = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductionRunFromConfiguration method',
   args:{facilityId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat},orderId: {type: GraphQLString},configId: {type: GraphQLString},config: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createProductionRunFromConfiguration};
 
 
 const createProductionRunFromRequirement = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductionRunFromRequirement method',
   args:{requirementId: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createProductionRunFromRequirement};
 
 
 const createProductionRunPartyAssign = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductionRunPartyAssign method',
   args:{roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},productionRunId: {type: GraphQLString},workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createProductionRunPartyAssign};
 
 
 const createProductionRunTaskCosts = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductionRunTaskCosts method',
   args:{productionRunTaskId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createProductionRunTaskCosts};
 
 
 const createProductionRunsForOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductionRunsForOrder method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},fromDate: {type: GraphQLString},quantity: {type: GraphQLFloat},shipmentId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createProductionRunsForOrder};
 
 
 const createProductionRunsForProductBom = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductionRunsForProductBom method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},startDate: {type: GraphQLString},quantity: {type: GraphQLFloat},routingId: {type: GraphQLString},description: {type: GraphQLString},workEffortName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createProductionRunsForProductBom};
 
 
 const decomposeInventoryItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz decomposeInventoryItem method',
   args:{inventoryItemId: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {decomposeInventoryItem};
 
 
 const deleteProductionRunComponent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductionRunComponent method',
   args:{productId: {type: GraphQLString},productionRunId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {deleteProductionRunComponent};
 
 
 const deleteProductionRunRoutingTask = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductionRunRoutingTask method',
   args:{routingTaskId: {type: GraphQLString},productionRunId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {deleteProductionRunRoutingTask};
 
 
 const getProductionRunCost = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductionRunCost method',
   args:{workEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {getProductionRunCost};
 
 
 const getProductionRunTotResQty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductionRunTotResQty method',
   args:{productId: {type: GraphQLString},startDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {getProductionRunTotResQty};
 
 
 const getWorkEffortCosts = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getWorkEffortCosts method',
   args:{workEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,9 +255,9 @@ export {getWorkEffortCosts};
 
 
 const issueInventoryItemToWorkEffort = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz issueInventoryItemToWorkEffort method',
-  args:{workEffortId: {type: GraphQLString},inventoryItem: {type: new GraphQLList(KeyValueType)},quantity: {type: GraphQLFloat}},
+  args:{workEffortId: {type: GraphQLString},inventoryItem: {type: new GraphQLList(KeyValueInputType)},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/manufacturingProductionRun/issueInventoryItemToWorkEffort?workEffortId=${args.workEffortId}inventoryItem=${args.inventoryItem}quantity=${args.quantity}`, null, req);
   }
@@ -266,7 +266,7 @@ export {issueInventoryItemToWorkEffort};
 
 
 const issueProductionRunTask = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz issueProductionRunTask method',
   args:{workEffortId: {type: GraphQLString},failIfItemsAreNotOnHand: {type: GraphQLString},reserveOrderEnumId: {type: GraphQLString},failIfItemsAreNotAvailable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {issueProductionRunTask};
 
 
 const issueProductionRunTaskComponent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz issueProductionRunTaskComponent method',
   args:{workEffortId: {type: GraphQLString},productId: {type: GraphQLString},fromDate: {type: GraphQLString},secondaryLocationSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat},failIfItemsAreNotOnHand: {type: GraphQLString},description: {type: GraphQLString},lotId: {type: GraphQLString},reserveOrderEnumId: {type: GraphQLString},reasonEnumId: {type: GraphQLString},failIfItemsAreNotAvailable: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {issueProductionRunTaskComponent};
 
 
 const productionRunDeclareAndProduce = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz productionRunDeclareAndProduce method',
   args:{workEffortId: {type: GraphQLString},quantity: {type: GraphQLFloat},componentsLocationMap: {type: GraphQLString},createLotIfNeeded: {type: GraphQLBoolean},quantityUomId: {type: GraphQLString},lotId: {type: GraphQLString},autoCreateLot: {type: GraphQLBoolean},inventoryItemTypeId: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {productionRunDeclareAndProduce};
 
 
 const productionRunProduce = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz productionRunProduce method',
   args:{workEffortId: {type: GraphQLString},quantity: {type: GraphQLFloat},createLotIfNeeded: {type: GraphQLBoolean},quantityUomId: {type: GraphQLString},lotId: {type: GraphQLString},autoCreateLot: {type: GraphQLBoolean},inventoryItemTypeId: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {productionRunProduce};
 
 
 const productionRunTaskProduce = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz productionRunTaskProduce method',
   args:{workEffortId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},isReturned: {type: GraphQLString},facilityId: {type: GraphQLString},currencyUomId: {type: GraphQLString},unitCost: {type: GraphQLFloat},lotId: {type: GraphQLString},locationSeqId: {type: GraphQLString},inventoryItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {productionRunTaskProduce};
 
 
 const productionRunTaskReturnMaterial = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz productionRunTaskReturnMaterial method',
   args:{workEffortId: {type: GraphQLString},productId: {type: GraphQLString},quantity: {type: GraphQLFloat},lotId: {type: GraphQLString},inventoryItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {productionRunTaskReturnMaterial};
 
 
 const quickChangeProductionRunStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz quickChangeProductionRunStatus method',
   args:{statusId: {type: GraphQLString},productionRunId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {quickChangeProductionRunStatus};
 
 
 const quickRunAllProductionRunTasks = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz quickRunAllProductionRunTasks method',
   args:{productionRunId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {quickRunAllProductionRunTasks};
 
 
 const quickRunProductionRunTask = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz quickRunProductionRunTask method',
   args:{productionRunId: {type: GraphQLString},taskId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {quickRunProductionRunTask};
 
 
 const quickStartAllProductionRunTasks = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz quickStartAllProductionRunTasks method',
   args:{productionRunId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {quickStartAllProductionRunTasks};
 
 
 const updateProductionRun = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductionRun method',
   args:{productionRunId: {type: GraphQLString},quantity: {type: GraphQLFloat},facilityId: {type: GraphQLString},estimatedStartDate: {type: GraphQLString},description: {type: GraphQLString},workEffortName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {updateProductionRun};
 
 
 const updateProductionRunComponent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductionRunComponent method',
   args:{productId: {type: GraphQLString},productionRunId: {type: GraphQLString},workEffortId: {type: GraphQLString},estimatedQuantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {updateProductionRunComponent};
 
 
 const updateProductionRunTask = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductionRunTask method',
   args:{productionRunTaskId: {type: GraphQLString},productionRunId: {type: GraphQLString},fromDate: {type: GraphQLString},addSetupTime: {type: GraphQLFloat},comments: {type: GraphQLString},issueRequiredComponents: {type: GraphQLBoolean},componentsLocationMap: {type: GraphQLString},addQuantityRejected: {type: GraphQLFloat},addTaskTime: {type: GraphQLFloat},partyId: {type: GraphQLString},addQuantityProduced: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createPaymentGatewayConfig = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentGatewayConfig method',
   args:{paymentGatewayConfigId: {type: GraphQLString},paymentGatewayConfigTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createPaymentGatewayConfig};
 
 
 const createPaymentGatewayConfigAuthorizeNet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentGatewayConfigAuthorizeNet method',
   args:{cpVersion: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},method: {type: GraphQLString},transDescription: {type: GraphQLInt},cpMarketType: {type: GraphQLString},certificateAlias: {type: GraphQLInt},delimiterChar: {type: GraphQLString},emailCustomer: {type: GraphQLString},transactionUrl: {type: GraphQLInt},userId: {type: GraphQLInt},delimitedData: {type: GraphQLString},tranKey: {type: GraphQLInt},apiVersion: {type: GraphQLString},emailMerchant: {type: GraphQLString},testMode: {type: GraphQLString},relayResponse: {type: GraphQLString},pwd: {type: GraphQLInt},duplicateWindow: {type: GraphQLInt},cpDeviceType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createPaymentGatewayConfigAuthorizeNet};
 
 
 const createPaymentGatewayConfigClearCommerce = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentGatewayConfigClearCommerce method',
   args:{sourceId: {type: GraphQLString},effectiveAlias: {type: GraphQLString},clientId: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},groupId: {type: GraphQLString},userAlias: {type: GraphQLString},serverURL: {type: GraphQLInt},pwd: {type: GraphQLInt},processMode: {type: GraphQLString},enableCVM: {type: GraphQLString},username: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createPaymentGatewayConfigClearCommerce};
 
 
 const createPaymentGatewayConfigSagePay = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentGatewayConfigSagePay method',
   args:{authenticationTransType: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},voidUrl: {type: GraphQLString},testingHost: {type: GraphQLString},sagePayMode: {type: GraphQLString},releaseTransType: {type: GraphQLString},authoriseTransType: {type: GraphQLString},vendor: {type: GraphQLString},productionHost: {type: GraphQLString},refundUrl: {type: GraphQLString},protocolVersion: {type: GraphQLString},releaseUrl: {type: GraphQLString},authenticationUrl: {type: GraphQLString},authoriseUrl: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createPaymentGatewayConfigSagePay};
 
 
 const deletePaymentGatewayConfig = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentGatewayConfig method',
   args:{paymentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {deletePaymentGatewayConfig};
 
 
 const deletePaymentGatewayConfigAuthorizeNet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentGatewayConfigAuthorizeNet method',
   args:{paymentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {deletePaymentGatewayConfigAuthorizeNet};
 
 
 const deletePaymentGatewayConfigClearCommerce = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentGatewayConfigClearCommerce method',
   args:{paymentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {deletePaymentGatewayConfigClearCommerce};
 
 
 const deletePaymentGatewayConfigSagePay = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentGatewayConfigSagePay method',
   args:{paymentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {deletePaymentGatewayConfigSagePay};
 
 
 const updatePaymentGatewayConfig = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfig method',
   args:{paymentGatewayConfigId: {type: GraphQLString},paymentGatewayConfigTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {updatePaymentGatewayConfig};
 
 
 const updatePaymentGatewayConfigAuthorizeNet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfigAuthorizeNet method',
   args:{paymentGatewayConfigId: {type: GraphQLString},cpVersion: {type: GraphQLString},method: {type: GraphQLString},transDescription: {type: GraphQLInt},cpMarketType: {type: GraphQLString},certificateAlias: {type: GraphQLInt},delimiterChar: {type: GraphQLString},emailCustomer: {type: GraphQLString},transactionUrl: {type: GraphQLInt},userId: {type: GraphQLInt},delimitedData: {type: GraphQLString},tranKey: {type: GraphQLInt},apiVersion: {type: GraphQLString},emailMerchant: {type: GraphQLString},testMode: {type: GraphQLString},relayResponse: {type: GraphQLString},pwd: {type: GraphQLInt},duplicateWindow: {type: GraphQLInt},cpDeviceType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {updatePaymentGatewayConfigAuthorizeNet};
 
 
 const updatePaymentGatewayConfigClearCommerce = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfigClearCommerce method',
   args:{paymentGatewayConfigId: {type: GraphQLString},sourceId: {type: GraphQLString},effectiveAlias: {type: GraphQLString},clientId: {type: GraphQLString},groupId: {type: GraphQLString},userAlias: {type: GraphQLString},serverURL: {type: GraphQLInt},pwd: {type: GraphQLInt},processMode: {type: GraphQLString},enableCVM: {type: GraphQLString},username: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {updatePaymentGatewayConfigClearCommerce};
 
 
 const updatePaymentGatewayConfigCyberSource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfigCyberSource method',
   args:{paymentGatewayConfigId: {type: GraphQLString},fraudScore: {type: GraphQLString},production: {type: GraphQLString},keysDir: {type: GraphQLInt},merchantContact: {type: GraphQLInt},autoBill: {type: GraphQLString},enableDav: {type: GraphQLString},apiVersion: {type: GraphQLString},keysFile: {type: GraphQLInt},merchantDescr: {type: GraphQLInt},logEnabled: {type: GraphQLString},merchantId: {type: GraphQLInt},logFile: {type: GraphQLInt},logSize: {type: GraphQLInt},ignoreAvs: {type: GraphQLString},disableBillAvs: {type: GraphQLString},logDir: {type: GraphQLInt},avsDeclineCodes: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {updatePaymentGatewayConfigCyberSource};
 
 
 const updatePaymentGatewayConfigEway = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfigEway method',
   args:{paymentGatewayConfigId: {type: GraphQLString},enableCvn: {type: GraphQLString},testMode: {type: GraphQLString},enableBeagle: {type: GraphQLString},customerId: {type: GraphQLInt},refundPwd: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {updatePaymentGatewayConfigEway};
 
 
 const updatePaymentGatewayConfigPayPal = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfigPayPal method',
   args:{paymentGatewayConfigId: {type: GraphQLString},businessEmail: {type: GraphQLInt},apiUserName: {type: GraphQLString},redirectUrl: {type: GraphQLInt},confirmTemplate: {type: GraphQLInt},cancelReturnUrl: {type: GraphQLInt},apiPassword: {type: GraphQLString},apiSignature: {type: GraphQLString},imageUrl: {type: GraphQLInt},requireConfirmedShipping: {type: GraphQLString},notifyUrl: {type: GraphQLInt},apiEnvironment: {type: GraphQLString},confirmUrl: {type: GraphQLInt},returnUrl: {type: GraphQLInt},shippingCallbackUrl: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {updatePaymentGatewayConfigPayPal};
 
 
 const updatePaymentGatewayConfigPayflowPro = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfigPayflowPro method',
   args:{paymentGatewayConfigId: {type: GraphQLString},redirectUrl: {type: GraphQLInt},proxyPassword: {type: GraphQLInt},cancelReturnUrl: {type: GraphQLInt},enableTransmit: {type: GraphQLInt},checkAvs: {type: GraphQLString},stackTraceOn: {type: GraphQLString},userId: {type: GraphQLString},checkCvv2: {type: GraphQLString},timeout: {type: GraphQLInt},proxyPort: {type: GraphQLInt},proxyLogon: {type: GraphQLInt},certsPath: {type: GraphQLInt},partner: {type: GraphQLString},vendor: {type: GraphQLString},logFileName: {type: GraphQLInt},hostPort: {type: GraphQLInt},hostAddress: {type: GraphQLInt},preAuth: {type: GraphQLString},proxyAddress: {type: GraphQLInt},pwd: {type: GraphQLInt},returnUrl: {type: GraphQLInt},loggingLevel: {type: GraphQLInt},maxLogFileSize: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {updatePaymentGatewayConfigPayflowPro};
 
 
 const updatePaymentGatewayConfigSagePay = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfigSagePay method',
   args:{paymentGatewayConfigId: {type: GraphQLString},authenticationTransType: {type: GraphQLString},voidUrl: {type: GraphQLString},testingHost: {type: GraphQLString},sagePayMode: {type: GraphQLString},releaseTransType: {type: GraphQLString},authoriseTransType: {type: GraphQLString},vendor: {type: GraphQLString},productionHost: {type: GraphQLString},refundUrl: {type: GraphQLString},protocolVersion: {type: GraphQLString},releaseUrl: {type: GraphQLString},authenticationUrl: {type: GraphQLString},authoriseUrl: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {updatePaymentGatewayConfigSagePay};
 
 
 const updatePaymentGatewayConfigSecurePay = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfigSecurePay method',
   args:{paymentGatewayConfigId: {type: GraphQLString},merchantId: {type: GraphQLInt},serverURL: {type: GraphQLInt},pwd: {type: GraphQLInt},processTimeout: {type: GraphQLInt},enableAmountRound: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {updatePaymentGatewayConfigSecurePay};
 
 
 const updatePaymentGatewayConfigType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfigType method',
   args:{paymentGatewayConfigTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {updatePaymentGatewayConfigType};
 
 
 const updatePaymentGatewayConfigWorldPay = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfigWorldPay method',
   args:{paymentGatewayConfigId: {type: GraphQLString},authMode: {type: GraphQLString},instId: {type: GraphQLInt},redirectUrl: {type: GraphQLInt},hideContact: {type: GraphQLString},testMode: {type: GraphQLInt},fixContact: {type: GraphQLString},langId: {type: GraphQLString},hideCurrency: {type: GraphQLString},noLanguageMenu: {type: GraphQLString},withDelivery: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {updatePaymentGatewayConfigWorldPay};
 
 
 const updatePaymentGatewayConfigiDEAL = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayConfigiDEAL method',
   args:{paymentGatewayConfigId: {type: GraphQLString},expirationPeriod: {type: GraphQLInt},merchantReturnURL: {type: GraphQLInt},merchantId: {type: GraphQLInt},acquirerKeyStoreFilename: {type: GraphQLInt},merchantSubId: {type: GraphQLInt},merchantKeyStorePassword: {type: GraphQLInt},acquirerURL: {type: GraphQLInt},acquirerTimeout: {type: GraphQLInt},privateCert: {type: GraphQLInt},acquirerKeyStorePassword: {type: GraphQLInt},merchantKeyStoreFilename: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {

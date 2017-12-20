@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {X509IssuerProvisionInputType} from '../../login/X509IssuerProvision/X509IssuerProvisionInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createX509IssuerProvision = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createX509IssuerProvision method',
   args:{x509IssuerProvisionToBeAdded: {type: X509IssuerProvisionInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createX509IssuerProvision};
 
 
 const updateX509IssuerProvision = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateX509IssuerProvision method',
   args:{x509IssuerProvisionToBeUpdated: {type: X509IssuerProvisionInputType},certProvisionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateX509IssuerProvision};
 
 
 const deleteX509IssuerProvisionByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteX509IssuerProvisionByIdUpdated method',
   args:{x509IssuerProvisionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

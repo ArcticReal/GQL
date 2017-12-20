@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductFeatureDataResourceInputType} from '../../product/ProductFeatureDataResource/ProductFeatureDataResourceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductFeatureDataResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductFeatureDataResource method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductFeatureDataResource};
 
 
 const updateProductFeatureDataResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductFeatureDataResource method',
   args:{productFeatureDataResourceToBeUpdated: {type: ProductFeatureDataResourceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateProductFeatureDataResource};
 
 
 const deleteProductFeatureDataResourceByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductFeatureDataResourceByIdUpdated method',
   args:{productFeatureDataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

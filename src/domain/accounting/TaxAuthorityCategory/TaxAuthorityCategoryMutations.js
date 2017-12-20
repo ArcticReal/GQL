@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {TaxAuthorityCategoryInputType} from '../../accounting/TaxAuthorityCategory/TaxAuthorityCategoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTaxAuthorityCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTaxAuthorityCategory method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createTaxAuthorityCategory};
 
 
 const updateTaxAuthorityCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTaxAuthorityCategory method',
   args:{taxAuthorityCategoryToBeUpdated: {type: TaxAuthorityCategoryInputType},taxAuthPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateTaxAuthorityCategory};
 
 
 const deleteTaxAuthorityCategoryByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTaxAuthorityCategoryByIdUpdated method',
   args:{taxAuthorityCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

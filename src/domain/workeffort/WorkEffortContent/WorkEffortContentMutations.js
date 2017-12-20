@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortContentInputType} from '../../workeffort/WorkEffortContent/WorkEffortContentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortContent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortContent method',
   args:{workEffortContentToBeAdded: {type: WorkEffortContentInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortContent};
 
 
 const updateWorkEffortContent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortContent method',
   args:{workEffortContentToBeUpdated: {type: WorkEffortContentInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortContent};
 
 
 const deleteWorkEffortContentByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortContentByIdUpdated method',
   args:{workEffortContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

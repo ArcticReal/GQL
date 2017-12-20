@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const copyCustRequestItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz copyCustRequestItem method',
   args:{custRequestId: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString},custRequestResolutionId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},sequenceNum: {type: GraphQLInt},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},custRequestItemSeqIdTo: {type: GraphQLString},maximumAmount: {type: GraphQLFloat},requiredByDate: {type: GraphQLString},description: {type: GraphQLString},priority: {type: GraphQLInt},custRequestIdTo: {type: GraphQLString},statusId: {type: GraphQLString},reservStart: {type: GraphQLString},configId: {type: GraphQLString},copyLinkedQuotes: {type: GraphQLString},selectedAmount: {type: GraphQLFloat},story: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {copyCustRequestItem};
 
 
 const createCustRequest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequest method',
   args:{reason: {type: GraphQLString},fromPartyId: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},reservPersons: {type: GraphQLFloat},fulfillContactMechId: {type: GraphQLString},maximumAmount: {type: GraphQLFloat},description: {type: GraphQLString},requiredByDate: {type: GraphQLString},custRequestDate: {type: GraphQLString},internalComment: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},reservStart: {type: GraphQLString},configId: {type: GraphQLString},custRequestId: {type: GraphQLString},productStoreId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},closedDateTime: {type: GraphQLString},selectedAmount: {type: GraphQLFloat},webSiteId: {type: GraphQLString},custRequestName: {type: GraphQLString},custRequestResolutionId: {type: GraphQLString},responseRequiredDate: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},productId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},priority: {type: GraphQLInt},maximumAmountUomId: {type: GraphQLString},openDateTime: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString},currencyUomId: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},custRequestTypeId: {type: GraphQLString},custRequestCategoryId: {type: GraphQLString},story: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createCustRequest};
 
 
 const createCustRequestAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestAttribute method',
   args:{custRequestId: {type: GraphQLString},attrValue: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createCustRequestAttribute};
 
 
 const createCustRequestCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestCategory method',
   args:{description: {type: GraphQLString},custRequestTypeId: {type: GraphQLString},custRequestCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createCustRequestCategory};
 
 
 const createCustRequestContent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestContent method',
   args:{contentId: {type: GraphQLString},custRequestId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createCustRequestContent};
 
 
 const createCustRequestFromCart = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestFromCart method',
   args:{cart: {type: GraphQLString},custRequestName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createCustRequestFromCart};
 
 
 const createCustRequestFromCommEvent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestFromCommEvent method',
   args:{communicationEventId: {type: GraphQLString},partyIdFrom: {type: GraphQLString},note: {type: GraphQLString},subject: {type: GraphQLString},ccString: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},communicationEventTypeId: {type: GraphQLString},content: {type: GraphQLString},contentMimeTypeId: {type: GraphQLString},datetimeStarted: {type: GraphQLString},contactListId: {type: GraphQLString},custRequestId: {type: GraphQLString},contactMechIdFrom: {type: GraphQLString},reasonEnumId: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},custRequestName: {type: GraphQLString},parentCommEventId: {type: GraphQLString},entryDate: {type: GraphQLString},datetimeEnded: {type: GraphQLString},origCommEventId: {type: GraphQLString},messageId: {type: GraphQLInt},roleTypeIdFrom: {type: GraphQLString},contactMechIdTo: {type: GraphQLString},headerString: {type: GraphQLString},statusId: {type: GraphQLString},bccString: {type: GraphQLString},partyIdTo: {type: GraphQLString},toString: {type: GraphQLString},custRequestTypeId: {type: GraphQLString},fromString: {type: GraphQLString},story: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {createCustRequestFromCommEvent};
 
 
 const createCustRequestFromShoppingList = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestFromShoppingList method',
   args:{shoppingListId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {createCustRequestFromShoppingList};
 
 
 const createCustRequestItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestItem method',
   args:{custRequestId: {type: GraphQLString},custRequestResolutionId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},sequenceNum: {type: GraphQLInt},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},maximumAmount: {type: GraphQLFloat},requiredByDate: {type: GraphQLString},description: {type: GraphQLString},priority: {type: GraphQLInt},custRequestItemSeqId: {type: GraphQLString},statusId: {type: GraphQLString},reservStart: {type: GraphQLString},configId: {type: GraphQLString},selectedAmount: {type: GraphQLFloat},story: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {createCustRequestItem};
 
 
 const createCustRequestItemNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestItemNote method',
   args:{note: {type: GraphQLString},custRequestId: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {createCustRequestItemNote};
 
 
 const createCustRequestNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestNote method',
   args:{custRequestId: {type: GraphQLString},noteInfo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {createCustRequestNote};
 
 
 const createCustRequestParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestParty method',
   args:{roleTypeId: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {createCustRequestParty};
 
 
 const createCustRequestResolution = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestResolution method',
   args:{custRequestResolutionId: {type: GraphQLString},description: {type: GraphQLString},custRequestTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {createCustRequestResolution};
 
 
 const createCustRequestStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestStatus method',
   args:{statusDate: {type: GraphQLString},statusId: {type: GraphQLString},custRequestId: {type: GraphQLString},changeByUserLoginId: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {createCustRequestStatus};
 
 
 const createCustRequestType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},custRequestTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {createCustRequestType};
 
 
 const createCustRequestTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCustRequestTypeAttr method',
   args:{custRequestTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {createCustRequestTypeAttr};
 
 
 const createRespondingParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createRespondingParty method',
   args:{respondingPartySeqId: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString},dateSent: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {createRespondingParty};
 
 
 const custRequestPermissionCheck = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz custRequestPermissionCheck method',
   args:{fromPartyId: {type: GraphQLString},primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {custRequestPermissionCheck};
 
 
 const deleteCustRequest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCustRequest method',
   args:{custRequestId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {deleteCustRequest};
 
 
 const deleteCustRequestCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCustRequestCategory method',
   args:{custRequestCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -232,7 +233,7 @@ export {deleteCustRequestCategory};
 
 
 const deleteCustRequestContent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCustRequestContent method',
   args:{fromDate: {type: GraphQLString},contentId: {type: GraphQLString},custRequestId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -243,7 +244,7 @@ export {deleteCustRequestContent};
 
 
 const deleteCustRequestParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCustRequestParty method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -254,7 +255,7 @@ export {deleteCustRequestParty};
 
 
 const deleteCustRequestResolution = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCustRequestResolution method',
   args:{custRequestResolutionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -265,7 +266,7 @@ export {deleteCustRequestResolution};
 
 
 const deleteCustRequestType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCustRequestType method',
   args:{custRequestTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -276,7 +277,7 @@ export {deleteCustRequestType};
 
 
 const deleteCustRequestTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCustRequestTypeAttr method',
   args:{custRequestTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -287,7 +288,7 @@ export {deleteCustRequestTypeAttr};
 
 
 const deleteRespondingParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteRespondingParty method',
   args:{respondingPartySeqId: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -298,7 +299,7 @@ export {deleteRespondingParty};
 
 
 const expireCustRequestParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz expireCustRequestParty method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -309,7 +310,7 @@ export {expireCustRequestParty};
 
 
 const getCustRequestsByRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getCustRequestsByRole method',
   args:{roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -320,7 +321,7 @@ export {getCustRequestsByRole};
 
 
 const setCustRequestStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz setCustRequestStatus method',
   args:{statusId: {type: GraphQLString},custRequestId: {type: GraphQLString},reason: {type: GraphQLString},webSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -331,7 +332,7 @@ export {setCustRequestStatus};
 
 
 const updateCustRequest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustRequest method',
   args:{custRequestId: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString},reason: {type: GraphQLString},fromPartyId: {type: GraphQLString},custRequestName: {type: GraphQLString},responseRequiredDate: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},fulfillContactMechId: {type: GraphQLString},description: {type: GraphQLString},custRequestDate: {type: GraphQLString},priority: {type: GraphQLInt},maximumAmountUomId: {type: GraphQLString},openDateTime: {type: GraphQLString},internalComment: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},currencyUomId: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},custRequestTypeId: {type: GraphQLString},productStoreId: {type: GraphQLString},custRequestCategoryId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},closedDateTime: {type: GraphQLString},story: {type: GraphQLString},webSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -342,7 +343,7 @@ export {updateCustRequest};
 
 
 const updateCustRequestAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustRequestAttribute method',
   args:{custRequestId: {type: GraphQLString},attrValue: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -353,7 +354,7 @@ export {updateCustRequestAttribute};
 
 
 const updateCustRequestCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustRequestCategory method',
   args:{custRequestCategoryId: {type: GraphQLString},description: {type: GraphQLString},custRequestTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -364,7 +365,7 @@ export {updateCustRequestCategory};
 
 
 const updateCustRequestItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustRequestItem method',
   args:{custRequestId: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString},custRequestResolutionId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},sequenceNum: {type: GraphQLInt},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},maximumAmount: {type: GraphQLFloat},requiredByDate: {type: GraphQLString},description: {type: GraphQLString},priority: {type: GraphQLInt},statusId: {type: GraphQLString},reservStart: {type: GraphQLString},configId: {type: GraphQLString},selectedAmount: {type: GraphQLFloat},story: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -375,7 +376,7 @@ export {updateCustRequestItem};
 
 
 const updateCustRequestNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustRequestNote method',
   args:{custRequestId: {type: GraphQLString},noteId: {type: GraphQLString},noteInfo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -386,7 +387,7 @@ export {updateCustRequestNote};
 
 
 const updateCustRequestParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustRequestParty method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -397,7 +398,7 @@ export {updateCustRequestParty};
 
 
 const updateCustRequestResolution = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustRequestResolution method',
   args:{custRequestResolutionId: {type: GraphQLString},description: {type: GraphQLString},custRequestTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -408,7 +409,7 @@ export {updateCustRequestResolution};
 
 
 const updateCustRequestType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustRequestType method',
   args:{custRequestTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -419,7 +420,7 @@ export {updateCustRequestType};
 
 
 const updateCustRequestTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCustRequestTypeAttr method',
   args:{custRequestTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -430,7 +431,7 @@ export {updateCustRequestTypeAttr};
 
 
 const updateRespondingParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateRespondingParty method',
   args:{respondingPartySeqId: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString},dateSent: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

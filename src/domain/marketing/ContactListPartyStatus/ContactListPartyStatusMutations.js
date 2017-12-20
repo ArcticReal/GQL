@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContactListPartyStatusInputType} from '../../marketing/ContactListPartyStatus/ContactListPartyStatusInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContactListPartyStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContactListPartyStatus method',
   args:{contactListPartyStatusToBeAdded: {type: ContactListPartyStatusInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createContactListPartyStatus};
 
 
 const deleteContactListPartyStatusByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteContactListPartyStatusByIdUpdated method',
   args:{contactListPartyStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteContactListPartyStatusByIdUpdated};
 
 
 const updateContactListPartyStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContactListPartyStatus method',
   args:{contactListPartyStatusToBeUpdated: {type: ContactListPartyStatusInputType},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

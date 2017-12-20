@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createDocument = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDocument method',
   args:{dateCreated: {type: GraphQLString},comments: {type: GraphQLString},imageData: {type: GraphQLString},documentTypeId: {type: GraphQLString},documentText: {type: GraphQLString},documentId: {type: GraphQLString},documentLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createDocument};
 
 
 const createDocumentAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDocumentAttribute method',
   args:{documentId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createDocumentAttribute};
 
 
 const createDocumentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDocumentType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},documentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createDocumentType};
 
 
 const createDocumentTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDocumentTypeAttr method',
   args:{documentTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createDocumentTypeAttr};
 
 
 const deleteDocument = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDocument method',
   args:{documentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {deleteDocument};
 
 
 const deleteDocumentAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDocumentAttribute method',
   args:{documentId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {deleteDocumentAttribute};
 
 
 const deleteDocumentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDocumentType method',
   args:{documentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {deleteDocumentType};
 
 
 const deleteDocumentTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDocumentTypeAttr method',
   args:{documentTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {deleteDocumentTypeAttr};
 
 
 const updateDocument = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDocument method',
   args:{documentId: {type: GraphQLString},dateCreated: {type: GraphQLString},comments: {type: GraphQLString},imageData: {type: GraphQLString},documentTypeId: {type: GraphQLString},documentText: {type: GraphQLString},documentLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {updateDocument};
 
 
 const updateDocumentAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDocumentAttribute method',
   args:{documentId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {updateDocumentAttribute};
 
 
 const updateDocumentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDocumentType method',
   args:{documentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {updateDocumentType};
 
 
 const updateDocumentTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDocumentTypeAttr method',
   args:{documentTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

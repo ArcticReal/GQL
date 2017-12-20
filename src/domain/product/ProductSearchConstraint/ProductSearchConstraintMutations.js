@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductSearchConstraintInputType} from '../../product/ProductSearchConstraint/ProductSearchConstraintInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductSearchConstraint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductSearchConstraint method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductSearchConstraint};
 
 
 const updateProductSearchConstraint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductSearchConstraint method',
   args:{productSearchConstraintToBeUpdated: {type: ProductSearchConstraintInputType},constraintSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateProductSearchConstraint};
 
 
 const deleteProductSearchConstraintByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductSearchConstraintByIdUpdated method',
   args:{productSearchConstraintId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

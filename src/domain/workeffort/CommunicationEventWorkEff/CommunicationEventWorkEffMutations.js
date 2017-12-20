@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {CommunicationEventWorkEffInputType} from '../../workeffort/CommunicationEventWorkEff/CommunicationEventWorkEffInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCommunicationEventWorkEff = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCommunicationEventWorkEff method',
   args:{communicationEventWorkEffToBeAdded: {type: CommunicationEventWorkEffInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createCommunicationEventWorkEff};
 
 
 const deleteCommunicationEventWorkEffByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteCommunicationEventWorkEffByIdUpdated method',
   args:{communicationEventWorkEffId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteCommunicationEventWorkEffByIdUpdated};
 
 
 const updateCommunicationEventWorkEff = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCommunicationEventWorkEff method',
   args:{communicationEventWorkEffToBeUpdated: {type: CommunicationEventWorkEffInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

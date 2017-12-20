@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const convertFeaturesForSupplier = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz convertFeaturesForSupplier method',
   args:{productFeatures: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {convertFeaturesForSupplier};
 
 
 const getAllProductVariants = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getAllProductVariants method',
   args:{productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {getAllProductVariants};
 
 
 const getAssociatedProducts = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getAssociatedProducts method',
   args:{type: {type: GraphQLString},sortDescending: {type: GraphQLBoolean},checkViewAllow: {type: GraphQLBoolean},bidirectional: {type: GraphQLBoolean},productId: {type: GraphQLString},productIdTo: {type: GraphQLString},prodCatalogId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {getAssociatedProducts};
 
 
 const getAssociatedProductsList = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getAssociatedProductsList method',
   args:{productCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {getAssociatedProductsList};
 
 
 const getPreviousNextProducts = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getPreviousNextProducts method',
   args:{productId: {type: GraphQLString},categoryId: {type: GraphQLString},activeOnly: {type: GraphQLBoolean},introductionDateLimit: {type: GraphQLString},releaseDateLimit: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {getPreviousNextProducts};
 
 
 const getProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProduct method',
   args:{productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {getProduct};
 
 
 const getProductCategoryAndLimitedMembers = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductCategoryAndLimitedMembers method',
   args:{productCategoryId: {type: GraphQLString},defaultViewSize: {type: GraphQLInt},limitView: {type: GraphQLBoolean},activeOnly: {type: GraphQLBoolean},checkViewAllow: {type: GraphQLBoolean},viewIndexString: {type: GraphQLString},introductionDateLimit: {type: GraphQLString},useCacheForMembers: {type: GraphQLBoolean},viewSizeString: {type: GraphQLString},productStoreId: {type: GraphQLString},releaseDateLimit: {type: GraphQLString},prodCatalogId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {getProductCategoryAndLimitedMembers};
 
 
 const getProductCategoryMembers = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductCategoryMembers method',
   args:{categoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {getProductCategoryMembers};
 
 
 const getProductFeatureSet = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductFeatureSet method',
   args:{productId: {type: GraphQLString},productFeatureApplTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {getProductFeatureSet};
 
 
 const getProductFeatures = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductFeatures method',
   args:{productId: {type: GraphQLString},distinct: {type: GraphQLString},type: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {getProductFeatures};
 
 
 const getProductVariant = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductVariant method',
   args:{selectedFeatures: {type: GraphQLString},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {getProductVariant};
 
 
 const getProductVariantTree = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getProductVariantTree method',
   args:{productId: {type: GraphQLString},featureOrder: {type: GraphQLString},productStoreId: {type: GraphQLString},checkInventory: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {getProductVariantTree};
 
 
 const getSuppliersForProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getSuppliersForProduct method',
   args:{productId: {type: GraphQLString},currencyUomId: {type: GraphQLString},quantity: {type: GraphQLFloat},canDropShip: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

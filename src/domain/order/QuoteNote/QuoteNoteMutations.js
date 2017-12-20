@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {QuoteNoteInputType} from '../../order/QuoteNote/QuoteNoteInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuoteNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteNote method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createQuoteNote};
 
 
 const updateQuoteNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteNote method',
   args:{quoteNoteToBeUpdated: {type: QuoteNoteInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateQuoteNote};
 
 
 const deleteQuoteNoteByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteQuoteNoteByIdUpdated method',
   args:{quoteNoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

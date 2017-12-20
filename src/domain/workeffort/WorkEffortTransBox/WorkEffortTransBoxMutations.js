@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortTransBoxInputType} from '../../workeffort/WorkEffortTransBox/WorkEffortTransBoxInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortTransBox = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortTransBox method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortTransBox};
 
 
 const updateWorkEffortTransBox = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortTransBox method',
   args:{workEffortTransBoxToBeUpdated: {type: WorkEffortTransBoxInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortTransBox};
 
 
 const deleteWorkEffortTransBoxByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortTransBoxByIdUpdated method',
   args:{workEffortTransBoxId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

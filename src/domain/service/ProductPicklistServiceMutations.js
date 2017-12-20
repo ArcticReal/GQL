@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const cancelPicklistAndItems = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz cancelPicklistAndItems method',
   args:{picklistId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {cancelPicklistAndItems};
 
 
 const checkPicklistBinItemStatuses = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz checkPicklistBinItemStatuses method',
   args:{picklistBinId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {checkPicklistBinItemStatuses};
 
 
 const convertPickOrderIdListToHeaders = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz convertPickOrderIdListToHeaders method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {convertPickOrderIdListToHeaders};
 
 
 const createPicklist = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPicklist method',
   args:{facilityId: {type: GraphQLString},statusId: {type: GraphQLString},description: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createPicklist};
 
 
 const createPicklistBin = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPicklistBin method',
   args:{picklistId: {type: GraphQLString},primaryOrderId: {type: GraphQLString},primaryShipGroupSeqId: {type: GraphQLString},binLocationNumber: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createPicklistBin};
 
 
 const createPicklistFromOrders = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPicklistFromOrders method',
   args:{facilityId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},maxNumberOfOrders: {type: GraphQLInt},isRushOrder: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createPicklistFromOrders};
 
 
 const createPicklistItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPicklistItem method',
   args:{orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},quantity: {type: GraphQLFloat},orderId: {type: GraphQLString},picklistBinId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},itemStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {createPicklistItem};
 
 
 const createPicklistRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPicklistRole method',
   args:{picklistId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {createPicklistRole};
 
 
 const deletePicklist = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePicklist method',
   args:{picklistId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {deletePicklist};
 
 
 const deletePicklistBin = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePicklistBin method',
   args:{picklistBinId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {deletePicklistBin};
 
 
 const deletePicklistItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePicklistItem method',
   args:{orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},orderId: {type: GraphQLString},picklistBinId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {deletePicklistItem};
 
 
 const deletePicklistRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePicklistRole method',
   args:{fromDate: {type: GraphQLString},picklistId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {deletePicklistRole};
 
 
 const editPicklistItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz editPicklistItem method',
   args:{orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},quantity: {type: GraphQLFloat},facilityId: {type: GraphQLString},productId: {type: GraphQLString},orderId: {type: GraphQLString},lotId: {type: GraphQLString},picklistBinId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},oldLotId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {editPicklistItem};
 
 
 const findOrdersToPickMove = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz findOrdersToPickMove method',
   args:{facilityId: {type: GraphQLString},groupByNoOfOrderItems: {type: GraphQLString},orderId: {type: GraphQLString},groupByWarehouseArea: {type: GraphQLString},groupByShippingMethod: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},maxNumberOfOrders: {type: GraphQLInt},isRushOrder: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {findOrdersToPickMove};
 
 
 const getPickAndPackReportInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getPickAndPackReportInfo method',
   args:{picklistId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {getPickAndPackReportInfo};
 
 
 const getPicklistDisplayInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getPicklistDisplayInfo method',
   args:{facilityId: {type: GraphQLString},viewSize: {type: GraphQLInt},viewIndex: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {getPicklistDisplayInfo};
 
 
 const printPickSheets = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz printPickSheets method',
   args:{facilityId: {type: GraphQLString},groupByNoOfOrderItems: {type: GraphQLString},orderId: {type: GraphQLString},printGroupName: {type: GraphQLString},groupByWarehouseArea: {type: GraphQLString},groupByShippingMethod: {type: GraphQLString},maxNumberOfOrdersToPrint: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {printPickSheets};
 
 
 const setPicklistItemToComplete = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz setPicklistItemToComplete method',
   args:{orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},quantity: {type: GraphQLFloat},orderId: {type: GraphQLString},picklistBinId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},itemStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {setPicklistItemToComplete};
 
 
 const updatePicklist = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePicklist method',
   args:{picklistId: {type: GraphQLString},facilityId: {type: GraphQLString},statusId: {type: GraphQLString},description: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {updatePicklist};
 
 
 const updatePicklistBin = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePicklistBin method',
   args:{picklistBinId: {type: GraphQLString},picklistId: {type: GraphQLString},primaryOrderId: {type: GraphQLString},primaryShipGroupSeqId: {type: GraphQLString},binLocationNumber: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -232,7 +233,7 @@ export {updatePicklistBin};
 
 
 const updatePicklistItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePicklistItem method',
   args:{orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},orderId: {type: GraphQLString},picklistBinId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat},itemStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -243,7 +244,7 @@ export {updatePicklistItem};
 
 
 const updatePicklistRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePicklistRole method',
   args:{fromDate: {type: GraphQLString},picklistId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

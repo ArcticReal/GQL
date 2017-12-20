@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {GlFiscalTypeInputType} from '../../accounting/GlFiscalType/GlFiscalTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlFiscalType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGlFiscalType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createGlFiscalType};
 
 
 const updateGlFiscalType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateGlFiscalType method',
   args:{glFiscalTypeToBeUpdated: {type: GlFiscalTypeInputType},glFiscalTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateGlFiscalType};
 
 
 const deleteGlFiscalTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteGlFiscalTypeByIdUpdated method',
   args:{glFiscalTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

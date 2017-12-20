@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ShipmentGatewayDhlInputType} from '../../shipment/ShipmentGatewayDhl/ShipmentGatewayDhlInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentGatewayDhl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentGatewayDhl method',
   args:{shipmentGatewayDhlToBeAdded: {type: ShipmentGatewayDhlInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createShipmentGatewayDhl};
 
 
 const updateShipmentGatewayDhl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentGatewayDhl method',
   args:{shipmentGatewayDhlToBeUpdated: {type: ShipmentGatewayDhlInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateShipmentGatewayDhl};
 
 
 const deleteShipmentGatewayDhlByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentGatewayDhlByIdUpdated method',
   args:{shipmentGatewayDhlId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

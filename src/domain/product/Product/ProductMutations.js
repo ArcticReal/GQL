@@ -11,10 +11,11 @@ import {
 import {ProductInputType} from '../../product/Product/ProductInputType.js';
 import {ProductDetailsDTOInputType} from '../../dto/ProductDetailsDTOInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProduct method',
   args:{productToBeAdded: {type: ProductInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProduct};
 
 
 const addProductWithDetails = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz addProductWithDetails method',
   args:{dto: {type: ProductDetailsDTOInputType}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {addProductWithDetails};
 
 
 const updateProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProduct method',
   args:{productToBeUpdated: {type: ProductInputType},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -47,7 +48,7 @@ export {updateProduct};
 
 
 const deleteProductByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductByIdUpdated method',
   args:{productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -58,7 +59,7 @@ export {deleteProductByIdUpdated};
 
 
 const updateProductWithDetails = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductWithDetails method',
   args:{productId: {type: GraphQLString},dto: {type: ProductDetailsDTOInputType}},
   resolve: (root, args, {req}) => {
@@ -69,7 +70,7 @@ export {updateProductWithDetails};
 
 
 const updateCategories = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCategories method',
   args:{productId: {type: GraphQLString},newCategoryIds: {type: new GraphQLList(GraphQLString)}},
   resolve: (root, args, {req}) => {

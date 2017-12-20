@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortAssocTypeInputType} from '../../workeffort/WorkEffortAssocType/WorkEffortAssocTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortAssocType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortAssocType};
 
 
 const updateWorkEffortAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortAssocType method',
   args:{workEffortAssocTypeToBeUpdated: {type: WorkEffortAssocTypeInputType},workEffortAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortAssocType};
 
 
 const deleteWorkEffortAssocTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortAssocTypeByIdUpdated method',
   args:{workEffortAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

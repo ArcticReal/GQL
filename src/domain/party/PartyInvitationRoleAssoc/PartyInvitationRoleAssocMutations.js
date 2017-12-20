@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyInvitationRoleAssocInputType} from '../../party/PartyInvitationRoleAssoc/PartyInvitationRoleAssocInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyInvitationRoleAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyInvitationRoleAssoc method',
   args:{partyInvitationRoleAssocToBeAdded: {type: PartyInvitationRoleAssocInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyInvitationRoleAssoc};
 
 
 const updatePartyInvitationRoleAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyInvitationRoleAssoc method',
   args:{partyInvitationRoleAssocToBeUpdated: {type: PartyInvitationRoleAssocInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyInvitationRoleAssoc};
 
 
 const deletePartyInvitationRoleAssocByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyInvitationRoleAssocByIdUpdated method',
   args:{partyInvitationRoleAssocId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

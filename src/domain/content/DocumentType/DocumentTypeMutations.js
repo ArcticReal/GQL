@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {DocumentTypeInputType} from '../../content/DocumentType/DocumentTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDocumentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDocumentType method',
   args:{documentTypeToBeAdded: {type: DocumentTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createDocumentType};
 
 
 const updateDocumentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDocumentType method',
   args:{documentTypeToBeUpdated: {type: DocumentTypeInputType},documentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateDocumentType};
 
 
 const deleteDocumentTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDocumentTypeByIdUpdated method',
   args:{documentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

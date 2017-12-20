@@ -8,12 +8,12 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {KeyValueType} from '../../framework/helpTypes.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const autoCreateQuoteAdjustments = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz autoCreateQuoteAdjustments method',
   args:{quoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {autoCreateQuoteAdjustments};
 
 
 const autoUpdateQuotePrice = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz autoUpdateQuotePrice method',
   args:{quoteItemSeqId: {type: GraphQLString},quoteId: {type: GraphQLString},defaultQuoteUnitPrice: {type: GraphQLFloat},manualQuoteUnitPrice: {type: GraphQLFloat},averageCost: {type: GraphQLFloat},costToPriceMult: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {autoUpdateQuotePrice};
 
 
 const checkUpdateQuoteStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz checkUpdateQuoteStatus method',
   args:{quoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {checkUpdateQuoteStatus};
 
 
 const copyQuote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz copyQuote method',
   args:{quoteId: {type: GraphQLString},copyQuoteAttributes: {type: GraphQLString},copyQuoteCoefficients: {type: GraphQLString},copyQuoteTerms: {type: GraphQLString},copyQuoteRoles: {type: GraphQLString},copyQuoteItems: {type: GraphQLString},copyQuoteAdjustments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {copyQuote};
 
 
 const copyQuoteItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz copyQuoteItem method',
   args:{quoteItemSeqId: {type: GraphQLString},quoteId: {type: GraphQLString},workEffortId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},comments: {type: GraphQLString},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},quoteIdTo: {type: GraphQLString},deliverableTypeId: {type: GraphQLString},quoteItemSeqIdTo: {type: GraphQLString},productFeatureId: {type: GraphQLString},quoteUnitPrice: {type: GraphQLFloat},uomId: {type: GraphQLString},estimatedDeliveryDate: {type: GraphQLString},isPromo: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString},copyQuoteAdjustments: {type: GraphQLString},skillTypeId: {type: GraphQLString},reservStart: {type: GraphQLString},configId: {type: GraphQLString},custRequestId: {type: GraphQLString},leadTimeDays: {type: GraphQLInt},selectedAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {copyQuoteItem};
 
 
 const createQuote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuote method',
   args:{quoteTypeId: {type: GraphQLString},currencyUomId: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},statusId: {type: GraphQLString},validFromDate: {type: GraphQLString},description: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},issueDate: {type: GraphQLString},validThruDate: {type: GraphQLString},quoteName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createQuote};
 
 
 const createQuoteAdjustment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteAdjustment method',
   args:{quoteAdjustmentTypeId: {type: GraphQLString},quoteId: {type: GraphQLString},customerReferenceId: {type: GraphQLString},amount: {type: GraphQLFloat},correspondingProductId: {type: GraphQLString},comments: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},quoteItemSeqId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productFeatureId: {type: GraphQLString},includeInShipping: {type: GraphQLString},description: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},exemptAmount: {type: GraphQLFloat},productPromoId: {type: GraphQLString},includeInTax: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},primaryGeoId: {type: GraphQLString},sourcePercentage: {type: GraphQLFloat},taxAuthGeoId: {type: GraphQLString},secondaryGeoId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createQuoteAdjustment};
 
 
 const createQuoteAndQuoteItemForRequest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteAndQuoteItemForRequest method',
   args:{custRequestId: {type: GraphQLString},workEffortId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},comments: {type: GraphQLString},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},deliverableTypeId: {type: GraphQLString},productFeatureId: {type: GraphQLString},quoteUnitPrice: {type: GraphQLFloat},uomId: {type: GraphQLString},estimatedDeliveryDate: {type: GraphQLString},isPromo: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString},skillTypeId: {type: GraphQLString},reservStart: {type: GraphQLString},configId: {type: GraphQLString},leadTimeDays: {type: GraphQLInt},selectedAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createQuoteAndQuoteItemForRequest};
 
 
 const createQuoteAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteAttribute method',
   args:{quoteId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createQuoteAttribute};
 
 
 const createQuoteCoefficient = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteCoefficient method',
   args:{coeffName: {type: GraphQLString},quoteId: {type: GraphQLString},coeffValue: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createQuoteCoefficient};
 
 
 const createQuoteFromCart = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteFromCart method',
   args:{cart: {type: GraphQLString},applyStorePromotions: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createQuoteFromCart};
 
 
 const createQuoteFromCustRequest = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteFromCustRequest method',
   args:{custRequestId: {type: GraphQLString},quoteTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createQuoteFromCustRequest};
 
 
 const createQuoteFromShoppingList = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteFromShoppingList method',
   args:{shoppingListId: {type: GraphQLString},applyStorePromotions: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createQuoteFromShoppingList};
 
 
 const createQuoteItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteItem method',
   args:{workEffortId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},comments: {type: GraphQLString},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},deliverableTypeId: {type: GraphQLString},quoteItemSeqId: {type: GraphQLString},productFeatureId: {type: GraphQLString},quoteUnitPrice: {type: GraphQLFloat},uomId: {type: GraphQLString},estimatedDeliveryDate: {type: GraphQLString},isPromo: {type: GraphQLString},quoteId: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString},skillTypeId: {type: GraphQLString},reservStart: {type: GraphQLString},configId: {type: GraphQLString},custRequestId: {type: GraphQLString},leadTimeDays: {type: GraphQLInt},selectedAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createQuoteItem};
 
 
 const createQuoteNote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteNote method',
   args:{noteInfo: {type: GraphQLString},quoteId: {type: GraphQLString},noteName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createQuoteNote};
 
 
 const createQuoteRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteRole method',
   args:{roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},quoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createQuoteRole};
 
 
 const createQuoteTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteTermAttribute method',
   args:{quoteItemSeqId: {type: GraphQLString},termTypeId: {type: GraphQLString},quoteId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createQuoteTermAttribute};
 
 
 const createQuoteType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteType method',
   args:{quoteTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createQuoteType};
 
 
 const createQuoteTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteTypeAttr method',
   args:{quoteTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createQuoteTypeAttr};
 
 
 const createQuoteWorkEffort = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteWorkEffort method',
   args:{workEffortId: {type: GraphQLString},quoteId: {type: GraphQLString},recurrenceInfoId: {type: GraphQLString},workEffortTypeId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},revisionNumber: {type: GraphQLInt},tempExprId: {type: GraphQLString},showAsEnumId: {type: GraphQLString},infoUrl: {type: GraphQLString},universalId: {type: GraphQLString},locationDesc: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},actualMilliSeconds: {type: GraphQLFloat},quantityToProduce: {type: GraphQLFloat},workEffortPurposeTypeId: {type: GraphQLString},serviceLoaderName: {type: GraphQLString},accommodationSpotId: {type: GraphQLString},estimatedStartDate: {type: GraphQLString},sendNotificationEmail: {type: GraphQLString},noteId: {type: GraphQLString},quantityRejected: {type: GraphQLFloat},priority: {type: GraphQLInt},currentStatusId: {type: GraphQLString},runtimeDataId: {type: GraphQLString},estimatedMilliSeconds: {type: GraphQLFloat},specialTerms: {type: GraphQLString},timeTransparency: {type: GraphQLInt},actualCompletionDate: {type: GraphQLString},fixedAssetId: {type: GraphQLString},reserv2ndPPPerc: {type: GraphQLFloat},totalMoneyAllowed: {type: GraphQLFloat},estimateCalcMethod: {type: GraphQLString},workEffortParentId: {type: GraphQLString},description: {type: GraphQLString},moneyUomId: {type: GraphQLString},reservNthPPPerc: {type: GraphQLFloat},workEffortName: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},accommodationMapId: {type: GraphQLString},actualStartDate: {type: GraphQLString},scopeEnumId: {type: GraphQLString},quantityProduced: {type: GraphQLFloat},facilityId: {type: GraphQLString},estimatedSetupMillis: {type: GraphQLFloat},lastModifiedDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},lastStatusUpdate: {type: GraphQLString},percentComplete: {type: GraphQLInt},totalMilliSecondsAllowed: {type: GraphQLFloat},createdDate: {type: GraphQLString},actualSetupMillis: {type: GraphQLFloat},estimatedCompletionDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {createQuoteWorkEffort};
 
 
 const deleteQuoteTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteQuoteTermAttribute method',
   args:{quoteItemSeqId: {type: GraphQLString},termTypeId: {type: GraphQLString},quoteId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {deleteQuoteTermAttribute};
 
 
 const deleteQuoteType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteQuoteType method',
   args:{quoteTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {deleteQuoteType};
 
 
 const deleteQuoteTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteQuoteTypeAttr method',
   args:{quoteTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {deleteQuoteTypeAttr};
 
 
 const deleteQuoteWorkEffort = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteQuoteWorkEffort method',
   args:{workEffortId: {type: GraphQLString},quoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {deleteQuoteWorkEffort};
 
 
 const getNextQuoteId = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getNextQuoteId method',
   args:{quoteTypeId: {type: GraphQLString},currencyUomId: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},statusId: {type: GraphQLString},validFromDate: {type: GraphQLString},description: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},issueDate: {type: GraphQLString},validThruDate: {type: GraphQLString},quoteName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,9 +288,9 @@ export {getNextQuoteId};
 
 
 const quoteSequenceEnforced = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz quoteSequenceEnforced method',
-  args:{partyAcctgPreference: {type: new GraphQLList(KeyValueType)},quoteTypeId: {type: GraphQLString},currencyUomId: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},statusId: {type: GraphQLString},validFromDate: {type: GraphQLString},description: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},issueDate: {type: GraphQLString},validThruDate: {type: GraphQLString},quoteName: {type: GraphQLString}},
+  args:{partyAcctgPreference: {type: new GraphQLList(KeyValueInputType)},quoteTypeId: {type: GraphQLString},currencyUomId: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},statusId: {type: GraphQLString},validFromDate: {type: GraphQLString},description: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},issueDate: {type: GraphQLString},validThruDate: {type: GraphQLString},quoteName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/orderQuote/quoteSequenceEnforced?partyAcctgPreference=${args.partyAcctgPreference}quoteTypeId=${args.quoteTypeId}currencyUomId=${args.currencyUomId}salesChannelEnumId=${args.salesChannelEnumId}statusId=${args.statusId}validFromDate=${args.validFromDate}description=${args.description}productStoreId=${args.productStoreId}partyId=${args.partyId}issueDate=${args.issueDate}validThruDate=${args.validThruDate}quoteName=${args.quoteName}`, null, req);
   }
@@ -299,7 +299,7 @@ export {quoteSequenceEnforced};
 
 
 const removeQuoteAdjustment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeQuoteAdjustment method',
   args:{customerReferenceId: {type: GraphQLString},correspondingProductId: {type: GraphQLString},includeInShipping: {type: GraphQLString},description: {type: GraphQLString},exemptAmount: {type: GraphQLFloat},productPromoId: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},quoteAdjustmentId: {type: GraphQLString},primaryGeoId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},secondaryGeoId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},quoteItemSeqId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productFeatureId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},quoteId: {type: GraphQLString},includeInTax: {type: GraphQLString},quoteAdjustmentTypeId: {type: GraphQLString},createdDate: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},sourcePercentage: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {removeQuoteAdjustment};
 
 
 const removeQuoteAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeQuoteAttribute method',
   args:{attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt},quoteId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {removeQuoteAttribute};
 
 
 const removeQuoteCoefficient = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeQuoteCoefficient method',
   args:{coeffValue: {type: GraphQLFloat},coeffName: {type: GraphQLString},quoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {removeQuoteCoefficient};
 
 
 const removeQuoteItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeQuoteItem method',
   args:{workEffortId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},comments: {type: GraphQLString},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},deliverableTypeId: {type: GraphQLString},quoteItemSeqId: {type: GraphQLString},productFeatureId: {type: GraphQLString},quoteUnitPrice: {type: GraphQLFloat},uomId: {type: GraphQLString},estimatedDeliveryDate: {type: GraphQLString},isPromo: {type: GraphQLString},quoteId: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString},skillTypeId: {type: GraphQLString},reservStart: {type: GraphQLString},configId: {type: GraphQLString},custRequestId: {type: GraphQLString},leadTimeDays: {type: GraphQLInt},selectedAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {removeQuoteItem};
 
 
 const removeQuoteRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeQuoteRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},quoteId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {removeQuoteRole};
 
 
 const sendQuoteReportMail = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendQuoteReportMail method',
   args:{sendTo: {type: GraphQLString},emailType: {type: GraphQLString},quoteId: {type: GraphQLString},note: {type: GraphQLString},sendCc: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {sendQuoteReportMail};
 
 
 const storeQuote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz storeQuote method',
   args:{salesChannelEnumId: {type: GraphQLString},description: {type: GraphQLString},validThruDate: {type: GraphQLString},quoteTypeId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},validFromDate: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},issueDate: {type: GraphQLString},quoteName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {storeQuote};
 
 
 const updateQuote = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuote method',
   args:{quoteId: {type: GraphQLString},quoteTypeId: {type: GraphQLString},currencyUomId: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},statusId: {type: GraphQLString},validFromDate: {type: GraphQLString},description: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},issueDate: {type: GraphQLString},validThruDate: {type: GraphQLString},quoteName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {updateQuote};
 
 
 const updateQuoteAdjustment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteAdjustment method',
   args:{customerReferenceId: {type: GraphQLString},correspondingProductId: {type: GraphQLString},includeInShipping: {type: GraphQLString},description: {type: GraphQLString},exemptAmount: {type: GraphQLFloat},productPromoId: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},quoteAdjustmentId: {type: GraphQLString},primaryGeoId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},secondaryGeoId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},quoteItemSeqId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productFeatureId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},quoteId: {type: GraphQLString},includeInTax: {type: GraphQLString},quoteAdjustmentTypeId: {type: GraphQLString},createdDate: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},sourcePercentage: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {updateQuoteAdjustment};
 
 
 const updateQuoteAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteAttribute method',
   args:{attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt},quoteId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {updateQuoteAttribute};
 
 
 const updateQuoteCoefficient = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteCoefficient method',
   args:{coeffValue: {type: GraphQLFloat},coeffName: {type: GraphQLString},quoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {updateQuoteCoefficient};
 
 
 const updateQuoteItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteItem method',
   args:{workEffortId: {type: GraphQLString},quantity: {type: GraphQLFloat},reservLength: {type: GraphQLFloat},comments: {type: GraphQLString},productId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},deliverableTypeId: {type: GraphQLString},quoteItemSeqId: {type: GraphQLString},productFeatureId: {type: GraphQLString},quoteUnitPrice: {type: GraphQLFloat},uomId: {type: GraphQLString},estimatedDeliveryDate: {type: GraphQLString},isPromo: {type: GraphQLString},quoteId: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString},skillTypeId: {type: GraphQLString},reservStart: {type: GraphQLString},configId: {type: GraphQLString},custRequestId: {type: GraphQLString},leadTimeDays: {type: GraphQLInt},selectedAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {updateQuoteItem};
 
 
 const updateQuoteTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteTermAttribute method',
   args:{quoteItemSeqId: {type: GraphQLString},termTypeId: {type: GraphQLString},quoteId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {updateQuoteTermAttribute};
 
 
 const updateQuoteType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteType method',
   args:{quoteTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {updateQuoteType};
 
 
 const updateQuoteTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteTypeAttr method',
   args:{quoteTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

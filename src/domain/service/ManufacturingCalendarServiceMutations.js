@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createCalendar = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCalendar method',
   args:{calendarId: {type: GraphQLString},calendarWeekId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createCalendar};
 
 
 const createCalendarExceptionDay = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCalendarExceptionDay method',
   args:{exceptionDateStartTime: {type: GraphQLString},calendarId: {type: GraphQLString},exceptionCapacity: {type: GraphQLFloat},usedCapacity: {type: GraphQLFloat},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createCalendarExceptionDay};
 
 
 const createCalendarExceptionWeek = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCalendarExceptionWeek method',
   args:{exceptionDateStart: {type: GraphQLString},calendarId: {type: GraphQLString},calendarWeekId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createCalendarExceptionWeek};
 
 
 const createCalendarWeek = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createCalendarWeek method',
   args:{calendarWeekId: {type: GraphQLString},sundayCapacity: {type: GraphQLFloat},wednesdayStartTime: {type: GraphQLString},thursdayCapacity: {type: GraphQLFloat},tuesdayStartTime: {type: GraphQLString},wednesdayCapacity: {type: GraphQLFloat},fridayStartTime: {type: GraphQLString},description: {type: GraphQLString},saturdayCapacity: {type: GraphQLFloat},mondayCapacity: {type: GraphQLFloat},mondayStartTime: {type: GraphQLString},saturdayStartTime: {type: GraphQLString},thursdayStartTime: {type: GraphQLString},sundayStartTime: {type: GraphQLString},fridayCapacity: {type: GraphQLFloat},tuesdayCapacity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createCalendarWeek};
 
 
 const removeCalendar = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeCalendar method',
   args:{calendarId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {removeCalendar};
 
 
 const removeCalendarExceptionDay = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeCalendarExceptionDay method',
   args:{exceptionDateStartTime: {type: GraphQLString},calendarId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {removeCalendarExceptionDay};
 
 
 const removeCalendarExceptionWeek = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeCalendarExceptionWeek method',
   args:{exceptionDateStart: {type: GraphQLString},calendarId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {removeCalendarExceptionWeek};
 
 
 const removeCalendarWeek = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeCalendarWeek method',
   args:{calendarWeekId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {removeCalendarWeek};
 
 
 const updateCalendar = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCalendar method',
   args:{calendarId: {type: GraphQLString},calendarWeekId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {updateCalendar};
 
 
 const updateCalendarExceptionDay = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCalendarExceptionDay method',
   args:{exceptionDateStartTime: {type: GraphQLString},calendarId: {type: GraphQLString},exceptionCapacity: {type: GraphQLFloat},usedCapacity: {type: GraphQLFloat},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {updateCalendarExceptionDay};
 
 
 const updateCalendarExceptionWeek = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCalendarExceptionWeek method',
   args:{exceptionDateStart: {type: GraphQLString},calendarId: {type: GraphQLString},calendarWeekId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {updateCalendarExceptionWeek};
 
 
 const updateCalendarWeek = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateCalendarWeek method',
   args:{calendarWeekId: {type: GraphQLString},sundayCapacity: {type: GraphQLFloat},wednesdayStartTime: {type: GraphQLString},thursdayCapacity: {type: GraphQLFloat},tuesdayStartTime: {type: GraphQLString},wednesdayCapacity: {type: GraphQLFloat},fridayStartTime: {type: GraphQLString},description: {type: GraphQLString},saturdayCapacity: {type: GraphQLFloat},mondayCapacity: {type: GraphQLFloat},mondayStartTime: {type: GraphQLString},saturdayStartTime: {type: GraphQLString},thursdayStartTime: {type: GraphQLString},sundayStartTime: {type: GraphQLString},fridayCapacity: {type: GraphQLFloat},tuesdayCapacity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {

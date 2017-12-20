@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ContentRoleInputType} from '../../content/ContentRole/ContentRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createContentRole method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createContentRole};
 
 
 const deleteContentRoleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteContentRoleByIdUpdated method',
   args:{contentRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteContentRoleByIdUpdated};
 
 
 const updateContentRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateContentRole method',
   args:{contentRoleToBeUpdated: {type: ContentRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

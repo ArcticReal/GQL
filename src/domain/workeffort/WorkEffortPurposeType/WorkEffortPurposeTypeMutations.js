@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortPurposeTypeInputType} from '../../workeffort/WorkEffortPurposeType/WorkEffortPurposeTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortPurposeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortPurposeType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortPurposeType};
 
 
 const updateWorkEffortPurposeType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortPurposeType method',
   args:{workEffortPurposeTypeToBeUpdated: {type: WorkEffortPurposeTypeInputType},workEffortPurposeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortPurposeType};
 
 
 const deleteWorkEffortPurposeTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortPurposeTypeByIdUpdated method',
   args:{workEffortPurposeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {QuoteItemInputType} from '../../order/QuoteItem/QuoteItemInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuoteItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createQuoteItem method',
   args:{quoteItemToBeAdded: {type: QuoteItemInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createQuoteItem};
 
 
 const deleteQuoteItemByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteQuoteItemByIdUpdated method',
   args:{quoteItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteQuoteItemByIdUpdated};
 
 
 const updateQuoteItem = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateQuoteItem method',
   args:{quoteItemToBeUpdated: {type: QuoteItemInputType},quoteItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

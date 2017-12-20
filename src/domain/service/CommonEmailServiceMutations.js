@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createEmailTemplateSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createEmailTemplateSetting method',
   args:{xslfoAttachScreenLocation: {type: GraphQLString},emailType: {type: GraphQLString},bodyScreenLocation: {type: GraphQLString},subject: {type: GraphQLString},description: {type: GraphQLString},fromAddress: {type: GraphQLString},bccAddress: {type: GraphQLString},emailTemplateSettingId: {type: GraphQLString},contentType: {type: GraphQLString},ccAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createEmailTemplateSetting};
 
 
 const deleteEmailTemplateSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteEmailTemplateSetting method',
   args:{emailTemplateSettingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {deleteEmailTemplateSetting};
 
 
 const prepareNotificationInterface = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz prepareNotificationInterface method',
   args:{templateName: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},templateData: {type: GraphQLString},authUser: {type: GraphQLString},body: {type: GraphQLString},sendPartial: {type: GraphQLBoolean},emailType: {type: GraphQLString},sendBcc: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString},contentType: {type: GraphQLString},webSiteId: {type: GraphQLString},sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},baseUrl: {type: GraphQLString},port: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendType: {type: GraphQLString},communicationEventId: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {prepareNotificationInterface};
 
 
 const sendGenericNotificationEmail = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendGenericNotificationEmail method',
   args:{templateName: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},templateData: {type: GraphQLString},authUser: {type: GraphQLString},body: {type: GraphQLString},sendPartial: {type: GraphQLBoolean},emailType: {type: GraphQLString},sendBcc: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString},contentType: {type: GraphQLString},webSiteId: {type: GraphQLString},sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},baseUrl: {type: GraphQLString},port: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendType: {type: GraphQLString},communicationEventId: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {sendGenericNotificationEmail};
 
 
 const sendMail = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMail method',
   args:{body: {type: GraphQLString},sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},authUser: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},sendPartial: {type: GraphQLBoolean},port: {type: GraphQLString},emailType: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendBcc: {type: GraphQLString},sendType: {type: GraphQLString},custRequestId: {type: GraphQLString},communicationEventId: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean},partyId: {type: GraphQLString},contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {sendMail};
 
 
 const sendMailFromScreen = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMailFromScreen method',
   args:{xslfoAttachScreenLocation: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},authUser: {type: GraphQLString},sendPartial: {type: GraphQLBoolean},bodyText: {type: GraphQLString},emailType: {type: GraphQLString},hideInLog: {type: GraphQLBoolean},sendBcc: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString},contentType: {type: GraphQLString},webSiteId: {type: GraphQLString},sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},bodyParameters: {type: GraphQLString},port: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendType: {type: GraphQLString},communicationEventId: {type: GraphQLString},attachmentName: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean},bodyScreenUri: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {sendMailFromScreen};
 
 
 const sendMailFromScreenInterface = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMailFromScreenInterface method',
   args:{xslfoAttachScreenLocation: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},authUser: {type: GraphQLString},sendPartial: {type: GraphQLBoolean},bodyText: {type: GraphQLString},emailType: {type: GraphQLString},sendBcc: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString},contentType: {type: GraphQLString},webSiteId: {type: GraphQLString},sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},bodyParameters: {type: GraphQLString},port: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendType: {type: GraphQLString},communicationEventId: {type: GraphQLString},attachmentName: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean},bodyScreenUri: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {sendMailFromScreenInterface};
 
 
 const sendMailFromTemplateSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMailFromTemplateSetting method',
   args:{emailTemplateSettingId: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},authUser: {type: GraphQLString},sendPartial: {type: GraphQLBoolean},bodyText: {type: GraphQLString},emailType: {type: GraphQLString},sendBcc: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString},contentType: {type: GraphQLString},webSiteId: {type: GraphQLString},sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},bodyParameters: {type: GraphQLString},port: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendType: {type: GraphQLString},communicationEventId: {type: GraphQLString},partyIdTo: {type: GraphQLString},attachmentName: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {sendMailFromTemplateSetting};
 
 
 const sendMailFromUrl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMailFromUrl method',
   args:{bodyUrl: {type: GraphQLString},sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},subject: {type: GraphQLString},bodyUrlParameters: {type: GraphQLString},sendCc: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},authUser: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},sendPartial: {type: GraphQLBoolean},port: {type: GraphQLString},emailType: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendBcc: {type: GraphQLString},sendType: {type: GraphQLString},custRequestId: {type: GraphQLString},communicationEventId: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean},partyId: {type: GraphQLString},contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {sendMailFromUrl};
 
 
 const sendMailHiddenInLog = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMailHiddenInLog method',
   args:{body: {type: GraphQLString},sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},authUser: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},sendPartial: {type: GraphQLBoolean},port: {type: GraphQLString},emailType: {type: GraphQLString},hideInLog: {type: GraphQLBoolean},socketFactoryClass: {type: GraphQLString},sendBcc: {type: GraphQLString},sendType: {type: GraphQLString},custRequestId: {type: GraphQLString},communicationEventId: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean},partyId: {type: GraphQLString},contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {sendMailHiddenInLog};
 
 
 const sendMailHiddenInLogFromScreen = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMailHiddenInLogFromScreen method',
   args:{xslfoAttachScreenLocation: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},authUser: {type: GraphQLString},sendPartial: {type: GraphQLBoolean},bodyText: {type: GraphQLString},emailType: {type: GraphQLString},sendBcc: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString},contentType: {type: GraphQLString},webSiteId: {type: GraphQLString},sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},bodyParameters: {type: GraphQLString},port: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendType: {type: GraphQLString},communicationEventId: {type: GraphQLString},attachmentName: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean},bodyScreenUri: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {sendMailHiddenInLogFromScreen};
 
 
 const sendMailInterface = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMailInterface method',
   args:{sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},authUser: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},sendPartial: {type: GraphQLBoolean},port: {type: GraphQLString},emailType: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendBcc: {type: GraphQLString},sendType: {type: GraphQLString},custRequestId: {type: GraphQLString},communicationEventId: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean},partyId: {type: GraphQLString},contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {sendMailInterface};
 
 
 const sendMailMultiPart = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMailMultiPart method',
   args:{sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},authUser: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},sendPartial: {type: GraphQLBoolean},port: {type: GraphQLString},emailType: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendBcc: {type: GraphQLString},sendType: {type: GraphQLString},custRequestId: {type: GraphQLString},communicationEventId: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean},partyId: {type: GraphQLString},contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {sendMailMultiPart};
 
 
 const sendMailMultiPartHiddenInLog = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMailMultiPartHiddenInLog method',
   args:{sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},authUser: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},sendPartial: {type: GraphQLBoolean},port: {type: GraphQLString},emailType: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendBcc: {type: GraphQLString},sendType: {type: GraphQLString},custRequestId: {type: GraphQLString},communicationEventId: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean},partyId: {type: GraphQLString},contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {sendMailMultiPartHiddenInLog};
 
 
 const sendMailMultiPartInterface = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMailMultiPartInterface method',
   args:{sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},authUser: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},sendPartial: {type: GraphQLBoolean},port: {type: GraphQLString},emailType: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendBcc: {type: GraphQLString},sendType: {type: GraphQLString},custRequestId: {type: GraphQLString},communicationEventId: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean},partyId: {type: GraphQLString},contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {sendMailMultiPartInterface};
 
 
 const sendMailOnePartInterface = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendMailOnePartInterface method',
   args:{sendTo: {type: GraphQLString},subject: {type: GraphQLString},body: {type: GraphQLString},sendVia: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},sendCc: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},authUser: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},sendPartial: {type: GraphQLBoolean},port: {type: GraphQLString},emailType: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendBcc: {type: GraphQLString},sendType: {type: GraphQLString},custRequestId: {type: GraphQLString},communicationEventId: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean},partyId: {type: GraphQLString},contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {sendMailOnePartInterface};
 
 
 const sendNotificationInterface = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz sendNotificationInterface method',
   args:{templateName: {type: GraphQLString},authPass: {type: GraphQLString},orderId: {type: GraphQLString},sendFrom: {type: GraphQLString},subject: {type: GraphQLString},sendCc: {type: GraphQLString},templateData: {type: GraphQLString},authUser: {type: GraphQLString},body: {type: GraphQLString},sendPartial: {type: GraphQLBoolean},emailType: {type: GraphQLString},sendBcc: {type: GraphQLString},custRequestId: {type: GraphQLString},partyId: {type: GraphQLString},contentType: {type: GraphQLString},webSiteId: {type: GraphQLString},sendTo: {type: GraphQLString},sendVia: {type: GraphQLString},socketFactoryFallback: {type: GraphQLString},messageId: {type: GraphQLString},socketFactoryPort: {type: GraphQLString},startTLSEnabled: {type: GraphQLBoolean},baseUrl: {type: GraphQLString},port: {type: GraphQLString},socketFactoryClass: {type: GraphQLString},sendType: {type: GraphQLString},communicationEventId: {type: GraphQLString},sendFailureNotification: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {sendNotificationInterface};
 
 
 const storeForwardedEmail = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz storeForwardedEmail method',
   args:{messageWrapper: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {storeForwardedEmail};
 
 
 const updateEmailTemplateSetting = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateEmailTemplateSetting method',
   args:{emailTemplateSettingId: {type: GraphQLString},xslfoAttachScreenLocation: {type: GraphQLString},emailType: {type: GraphQLString},bodyScreenLocation: {type: GraphQLString},subject: {type: GraphQLString},description: {type: GraphQLString},fromAddress: {type: GraphQLString},bccAddress: {type: GraphQLString},contentType: {type: GraphQLString},ccAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PayGradeInputType} from '../../humanres/PayGrade/PayGradeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPayGrade = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPayGrade method',
   args:{payGradeToBeAdded: {type: PayGradeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPayGrade};
 
 
 const updatePayGrade = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePayGrade method',
   args:{payGradeToBeUpdated: {type: PayGradeInputType},payGradeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePayGrade};
 
 
 const deletePayGradeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePayGradeByIdUpdated method',
   args:{payGradeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

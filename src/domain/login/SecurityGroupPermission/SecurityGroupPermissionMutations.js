@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {SecurityGroupPermissionInputType} from '../../login/SecurityGroupPermission/SecurityGroupPermissionInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSecurityGroupPermission = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSecurityGroupPermission method',
   args:{securityGroupPermissionToBeAdded: {type: SecurityGroupPermissionInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createSecurityGroupPermission};
 
 
 const updateSecurityGroupPermission = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSecurityGroupPermission method',
   args:{securityGroupPermissionToBeUpdated: {type: SecurityGroupPermissionInputType},permissionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateSecurityGroupPermission};
 
 
 const deleteSecurityGroupPermissionByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSecurityGroupPermissionByIdUpdated method',
   args:{securityGroupPermissionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {InvoiceContactMechInputType} from '../../accounting/InvoiceContactMech/InvoiceContactMechInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoiceContactMech = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInvoiceContactMech method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createInvoiceContactMech};
 
 
 const deleteInvoiceContactMechByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInvoiceContactMechByIdUpdated method',
   args:{invoiceContactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteInvoiceContactMechByIdUpdated};
 
 
 const updateInvoiceContactMech = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInvoiceContactMech method',
   args:{invoiceContactMechToBeUpdated: {type: InvoiceContactMechInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PriorityTypeInputType} from '../../party/PriorityType/PriorityTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPriorityType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPriorityType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPriorityType};
 
 
 const updatePriorityType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePriorityType method',
   args:{priorityTypeToBeUpdated: {type: PriorityTypeInputType},priorityTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePriorityType};
 
 
 const deletePriorityTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePriorityTypeByIdUpdated method',
   args:{priorityTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

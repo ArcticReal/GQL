@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {NeedTypeInputType} from '../../party/NeedType/NeedTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createNeedType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createNeedType method',
   args:{needTypeToBeAdded: {type: NeedTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createNeedType};
 
 
 const updateNeedType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateNeedType method',
   args:{needTypeToBeUpdated: {type: NeedTypeInputType},needTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateNeedType};
 
 
 const deleteNeedTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteNeedTypeByIdUpdated method',
   args:{needTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

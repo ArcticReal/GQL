@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {FacilityCarrierShipmentInputType} from '../../product/FacilityCarrierShipment/FacilityCarrierShipmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityCarrierShipment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFacilityCarrierShipment method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createFacilityCarrierShipment};
 
 
 const deleteFacilityCarrierShipmentByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFacilityCarrierShipmentByIdUpdated method',
   args:{facilityCarrierShipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteFacilityCarrierShipmentByIdUpdated};
 
 
 const updateFacilityCarrierShipment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFacilityCarrierShipment method',
   args:{facilityCarrierShipmentToBeUpdated: {type: FacilityCarrierShipmentInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

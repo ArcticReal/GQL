@@ -8,12 +8,12 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {KeyValueType} from '../../framework/helpTypes.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addFundsToGiftCertificate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz addFundsToGiftCertificate method',
   args:{amount: {type: GraphQLFloat},productStoreId: {type: GraphQLString},cardNumber: {type: GraphQLString},pinNumber: {type: GraphQLString},currency: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addFundsToGiftCertificate};
 
 
 const assignGlRecToFinAccTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz assignGlRecToFinAccTrans method',
   args:{finAccountTransId: {type: GraphQLString},glReconciliationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {assignGlRecToFinAccTrans};
 
 
 const autoFinAccountReconciliation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz autoFinAccountReconciliation method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {autoFinAccountReconciliation};
 
 
 const cancelBankReconciliation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz cancelBankReconciliation method',
   args:{glReconciliationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {cancelBankReconciliation};
 
 
 const checkFinAccountBalance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz checkFinAccountBalance method',
   args:{finAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {checkFinAccountBalance};
 
 
 const checkFinAccountStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz checkFinAccountStatus method',
   args:{finAccountAuthId: {type: GraphQLString},finAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {checkFinAccountStatus};
 
 
 const checkGiftCertificateBalance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz checkGiftCertificateBalance method',
   args:{pinNumber: {type: GraphQLString},cardNumber: {type: GraphQLString},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {checkGiftCertificateBalance};
 
 
 const createFinAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccount method',
   args:{finAccountTypeId: {type: GraphQLString},thruDate: {type: GraphQLString},isRefundable: {type: GraphQLString},fromDate: {type: GraphQLString},ownerPartyId: {type: GraphQLString},finAccountId: {type: GraphQLString},postToGlAccountId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},finAccountName: {type: GraphQLString},finAccountPin: {type: GraphQLString},replenishLevel: {type: GraphQLFloat},replenishPaymentId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},finAccountCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createFinAccount};
 
 
 const createFinAccountAndCredit = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountAndCredit method',
   args:{amount: {type: GraphQLFloat},partyId: {type: GraphQLString},finAccountTypeId: {type: GraphQLString},finAccountId: {type: GraphQLString},comments: {type: GraphQLString},currencyUomId: {type: GraphQLString},finAccountName: {type: GraphQLString},replenishLevel: {type: GraphQLFloat},replenishPaymentId: {type: GraphQLString},reasonEnumId: {type: GraphQLString},productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createFinAccountAndCredit};
 
 
 const createFinAccountAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountAttribute method',
   args:{finAccountId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createFinAccountAttribute};
 
 
 const createFinAccountAuth = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountAuth method',
   args:{fromDate: {type: GraphQLString},finAccountId: {type: GraphQLString},amount: {type: GraphQLFloat},currencyUomId: {type: GraphQLString},authorizationDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createFinAccountAuth};
 
 
 const createFinAccountForStore = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountForStore method',
   args:{productStoreId: {type: GraphQLString},finAccountTypeId: {type: GraphQLString},thruDate: {type: GraphQLString},isRefundable: {type: GraphQLString},availableBalance: {type: GraphQLFloat},fromDate: {type: GraphQLString},ownerPartyId: {type: GraphQLString},postToGlAccountId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},finAccountName: {type: GraphQLString},finAccountPin: {type: GraphQLString},actualBalance: {type: GraphQLFloat},replenishLevel: {type: GraphQLFloat},replenishPaymentId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},finAccountCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createFinAccountForStore};
 
 
 const createFinAccountRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountRole method',
   args:{finAccountId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createFinAccountRole};
 
 
 const createFinAccountStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountStatus method',
   args:{finAccountId: {type: GraphQLString},statusId: {type: GraphQLString},statusDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createFinAccountStatus};
 
 
 const createFinAccountTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountTrans method',
   args:{orderItemSeqId: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},entryDate: {type: GraphQLString},orderId: {type: GraphQLString},glReconciliationId: {type: GraphQLString},glAccountId: {type: GraphQLString},transactionDate: {type: GraphQLString},finAccountId: {type: GraphQLString},finAccountTransTypeId: {type: GraphQLString},statusId: {type: GraphQLString},paymentId: {type: GraphQLString},reasonEnumId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createFinAccountTrans};
 
 
 const createFinAccountTransAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountTransAttribute method',
   args:{finAccountTransId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createFinAccountTransAttribute};
 
 
 const createFinAccountTransType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountTransType method',
   args:{parentTypeId: {type: GraphQLString},finAccountTransTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createFinAccountTransType};
 
 
 const createFinAccountTransTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountTransTypeAttr method',
   args:{finAccountTransTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createFinAccountTransTypeAttr};
 
 
 const createFinAccountType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountType method',
   args:{parentTypeId: {type: GraphQLString},replenishEnumId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},finAccountTypeId: {type: GraphQLString},isRefundable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createFinAccountType};
 
 
 const createFinAccountTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createFinAccountTypeAttr method',
   args:{finAccountTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString},attrValue: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {createFinAccountTypeAttr};
 
 
 const createGcFulFillmentRecord = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGcFulFillmentRecord method',
   args:{typeEnumId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},referenceNum: {type: GraphQLString},amount: {type: GraphQLFloat},authCode: {type: GraphQLString},merchantId: {type: GraphQLString},orderId: {type: GraphQLString},pinNumber: {type: GraphQLString},partyId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},cardNumber: {type: GraphQLString},responseCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {createGcFulFillmentRecord};
 
 
 const createGiftCertificate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createGiftCertificate method',
   args:{initialAmount: {type: GraphQLFloat},productStoreId: {type: GraphQLString},currency: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,9 +255,9 @@ export {createGiftCertificate};
 
 
 const createPartyFinAccountFromPurchase = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyFinAccountFromPurchase method',
-  args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},orderItem: {type: new GraphQLList(KeyValueType)},contentId: {type: GraphQLString},productContentTypeId: {type: GraphQLString}},
+  args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},orderItem: {type: new GraphQLList(KeyValueInputType)},contentId: {type: GraphQLString},productContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/createPartyFinAccountFromPurchase?fromDate=${args.fromDate}productId=${args.productId}orderItem=${args.orderItem}contentId=${args.contentId}productContentTypeId=${args.productContentTypeId}`, null, req);
   }
@@ -266,7 +266,7 @@ export {createPartyFinAccountFromPurchase};
 
 
 const createPaymentAndFinAccountTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentAndFinAccountTrans method',
   args:{finAccountTransTypeId: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},finAccountTransId: {type: GraphQLString},partyIdFrom: {type: GraphQLString},amount: {type: GraphQLFloat},paymentPreferenceId: {type: GraphQLString},comments: {type: GraphQLString},actualCurrencyAmount: {type: GraphQLFloat},overrideGlAccountId: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},paymentGroupTypeId: {type: GraphQLString},actualCurrencyUomId: {type: GraphQLString},isDepositWithDrawPayment: {type: GraphQLString},paymentTypeId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},paymentMethodId: {type: GraphQLString},paymentGatewayResponseId: {type: GraphQLString},paymentId: {type: GraphQLString},paymentRefNum: {type: GraphQLString},partyIdTo: {type: GraphQLString},effectiveDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {createPaymentAndFinAccountTrans};
 
 
 const createServiceCredit = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createServiceCredit method',
   args:{amount: {type: GraphQLFloat},partyId: {type: GraphQLString},finAccountTypeId: {type: GraphQLString},finAccountId: {type: GraphQLString},comments: {type: GraphQLString},currencyUomId: {type: GraphQLString},finAccountName: {type: GraphQLString},reasonEnumId: {type: GraphQLString},productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {createServiceCredit};
 
 
 const deleteFinAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFinAccount method',
   args:{finAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {deleteFinAccount};
 
 
 const deleteFinAccountAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFinAccountAttribute method',
   args:{finAccountId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {deleteFinAccountAttribute};
 
 
 const deleteFinAccountRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFinAccountRole method',
   args:{fromDate: {type: GraphQLString},finAccountId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {deleteFinAccountRole};
 
 
 const deleteFinAccountTransAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFinAccountTransAttribute method',
   args:{finAccountTransId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {deleteFinAccountTransAttribute};
 
 
 const deleteFinAccountTransType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFinAccountTransType method',
   args:{finAccountTransTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {deleteFinAccountTransType};
 
 
 const deleteFinAccountTransTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFinAccountTransTypeAttr method',
   args:{finAccountTransTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {deleteFinAccountTransTypeAttr};
 
 
 const deleteFinAccountType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFinAccountType method',
   args:{finAccountTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {deleteFinAccountType};
 
 
 const deleteFinAccountTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteFinAccountTypeAttr method',
   args:{finAccountTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {deleteFinAccountTypeAttr};
 
 
 const depositWithdrawPayments = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz depositWithdrawPayments method',
   args:{finAccountId: {type: GraphQLString},groupInOneTransaction: {type: GraphQLString},paymentGroupName: {type: GraphQLString},paymentGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {depositWithdrawPayments};
 
 
 const expireFinAccountAuth = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz expireFinAccountAuth method',
   args:{finAccountAuthId: {type: GraphQLString},expireDateTime: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {expireFinAccountAuth};
 
 
 const expirePaymentAssociationsOnFinAccountTransCancel = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz expirePaymentAssociationsOnFinAccountTransCancel method',
   args:{finAccountTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {expirePaymentAssociationsOnFinAccountTransCancel};
 
 
 const finAccountDeposit = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz finAccountDeposit method',
   args:{finAccountId: {type: GraphQLString},amount: {type: GraphQLFloat},orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},isRefund: {type: GraphQLBoolean},currency: {type: GraphQLString},productStoreId: {type: GraphQLString},reasonEnumId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {finAccountDeposit};
 
 
 const finAccountRefund = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz finAccountRefund method',
   args:{finAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {finAccountRefund};
 
 
 const finAccountReplenish = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz finAccountReplenish method',
   args:{finAccountId: {type: GraphQLString},productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {finAccountReplenish};
 
 
 const finAccountWithdraw = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz finAccountWithdraw method',
   args:{finAccountId: {type: GraphQLString},amount: {type: GraphQLFloat},orderItemSeqId: {type: GraphQLString},requireBalance: {type: GraphQLBoolean},orderId: {type: GraphQLString},currency: {type: GraphQLString},productStoreId: {type: GraphQLString},reasonEnumId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {finAccountWithdraw};
 
 
 const getAssociatedAcctgTransEntriesWithFinAccountTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getAssociatedAcctgTransEntriesWithFinAccountTrans method',
   args:{finAccountTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {getAssociatedAcctgTransEntriesWithFinAccountTrans};
 
 
 const getFinAccountTransListAndTotals = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getFinAccountTransListAndTotals method',
   args:{finAccountId: {type: GraphQLString},fromEntryDate: {type: GraphQLString},finAccountTransTypeId: {type: GraphQLString},thruEntryDate: {type: GraphQLString},statusId: {type: GraphQLString},glReconciliationId: {type: GraphQLString},fromTransactionDate: {type: GraphQLString},openingBalance: {type: GraphQLFloat},thruTransactionDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {getFinAccountTransListAndTotals};
 
 
 const getFinAccountTransRunningTotalAndBalances = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getFinAccountTransRunningTotalAndBalances method',
   args:{finAccountTransId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},runningTotal: {type: GraphQLFloat},reconciledBalance: {type: GraphQLFloat},numberOfTransactions: {type: GraphQLInt},openingBalance: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {getFinAccountTransRunningTotalAndBalances};
 
 
 const getReconciliationClosingBalance = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getReconciliationClosingBalance method',
   args:{glReconciliationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {getReconciliationClosingBalance};
 
 
 const getTransactionTotalByGlReconcileId = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getTransactionTotalByGlReconcileId method',
   args:{glReconciliationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {getTransactionTotalByGlReconcileId};
 
 
 const isGlReconciliationReconciled = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz isGlReconciliationReconciled method',
   args:{glReconciliationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,9 +519,9 @@ export {isGlReconciliationReconciled};
 
 
 const ofbFaAuthorize = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz ofbFaAuthorize method',
-  args:{billToParty: {type: new GraphQLList(KeyValueType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueType)},paymentConfig: {type: GraphQLString},finAccountId: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueType)},paymentGatewayConfigId: {type: GraphQLString},finAccountPin: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueType)},customerIpAddress: {type: GraphQLString},finAccountCode: {type: GraphQLString}},
+  args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},finAccountId: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},finAccountPin: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString},finAccountCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/ofbFaAuthorize?billToParty=${args.billToParty}orderId=${args.orderId}processAmount=${args.processAmount}orderPaymentPreference=${args.orderPaymentPreference}orderItems=${args.orderItems}paymentConfig=${args.paymentConfig}finAccountId=${args.finAccountId}billToEmail=${args.billToEmail}paymentGatewayConfigId=${args.paymentGatewayConfigId}finAccountPin=${args.finAccountPin}shippingAddress=${args.shippingAddress}currency=${args.currency}billingAddress=${args.billingAddress}customerIpAddress=${args.customerIpAddress}finAccountCode=${args.finAccountCode}`, null, req);
   }
@@ -530,9 +530,9 @@ export {ofbFaAuthorize};
 
 
 const ofbFaCapture = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz ofbFaCapture method',
-  args:{orderPaymentPreference: {type: new GraphQLList(KeyValueType)},captureAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueType)},currency: {type: GraphQLString}},
+  args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},captureAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/ofbFaCapture?orderPaymentPreference=${args.orderPaymentPreference}captureAmount=${args.captureAmount}paymentConfig=${args.paymentConfig}paymentGatewayConfigId=${args.paymentGatewayConfigId}authTrans=${args.authTrans}currency=${args.currency}`, null, req);
   }
@@ -541,9 +541,9 @@ export {ofbFaCapture};
 
 
 const ofbFaRefund = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz ofbFaRefund method',
-  args:{orderPaymentPreference: {type: new GraphQLList(KeyValueType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},finAccountId: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
+  args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},finAccountId: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/ofbFaRefund?orderPaymentPreference=${args.orderPaymentPreference}refundAmount=${args.refundAmount}paymentConfig=${args.paymentConfig}finAccountId=${args.finAccountId}paymentGatewayConfigId=${args.paymentGatewayConfigId}currency=${args.currency}`, null, req);
   }
@@ -552,9 +552,9 @@ export {ofbFaRefund};
 
 
 const ofbFaRelease = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz ofbFaRelease method',
-  args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueType)},currency: {type: GraphQLString}},
+  args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/ofbFaRelease?releaseAmount=${args.releaseAmount}orderPaymentPreference=${args.orderPaymentPreference}paymentConfig=${args.paymentConfig}paymentGatewayConfigId=${args.paymentGatewayConfigId}authTrans=${args.authTrans}currency=${args.currency}`, null, req);
   }
@@ -563,9 +563,9 @@ export {ofbFaRelease};
 
 
 const ofbGcAuthorize = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz ofbGcAuthorize method',
-  args:{billToParty: {type: new GraphQLList(KeyValueType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueType)},giftCard: {type: new GraphQLList(KeyValueType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueType)},customerIpAddress: {type: GraphQLString}},
+  args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},giftCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/ofbGcAuthorize?billToParty=${args.billToParty}orderId=${args.orderId}processAmount=${args.processAmount}orderPaymentPreference=${args.orderPaymentPreference}giftCard=${args.giftCard}orderItems=${args.orderItems}paymentConfig=${args.paymentConfig}billToEmail=${args.billToEmail}paymentGatewayConfigId=${args.paymentGatewayConfigId}shippingAddress=${args.shippingAddress}currency=${args.currency}billingAddress=${args.billingAddress}customerIpAddress=${args.customerIpAddress}`, null, req);
   }
@@ -574,9 +574,9 @@ export {ofbGcAuthorize};
 
 
 const ofbGcProcessor = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz ofbGcProcessor method',
-  args:{billToParty: {type: new GraphQLList(KeyValueType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueType)},giftCard: {type: new GraphQLList(KeyValueType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueType)},customerIpAddress: {type: GraphQLString}},
+  args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},giftCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/ofbGcProcessor?billToParty=${args.billToParty}orderId=${args.orderId}processAmount=${args.processAmount}orderPaymentPreference=${args.orderPaymentPreference}giftCard=${args.giftCard}orderItems=${args.orderItems}paymentConfig=${args.paymentConfig}billToEmail=${args.billToEmail}paymentGatewayConfigId=${args.paymentGatewayConfigId}shippingAddress=${args.shippingAddress}currency=${args.currency}billingAddress=${args.billingAddress}customerIpAddress=${args.customerIpAddress}`, null, req);
   }
@@ -585,9 +585,9 @@ export {ofbGcProcessor};
 
 
 const ofbGcPurchase = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz ofbGcPurchase method',
-  args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},orderItem: {type: new GraphQLList(KeyValueType)},contentId: {type: GraphQLString},productContentTypeId: {type: GraphQLString}},
+  args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},orderItem: {type: new GraphQLList(KeyValueInputType)},contentId: {type: GraphQLString},productContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/ofbGcPurchase?fromDate=${args.fromDate}productId=${args.productId}orderItem=${args.orderItem}contentId=${args.contentId}productContentTypeId=${args.productContentTypeId}`, null, req);
   }
@@ -596,9 +596,9 @@ export {ofbGcPurchase};
 
 
 const ofbGcRefund = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz ofbGcRefund method',
-  args:{orderPaymentPreference: {type: new GraphQLList(KeyValueType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
+  args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/ofbGcRefund?orderPaymentPreference=${args.orderPaymentPreference}refundAmount=${args.refundAmount}paymentConfig=${args.paymentConfig}paymentGatewayConfigId=${args.paymentGatewayConfigId}currency=${args.currency}`, null, req);
   }
@@ -607,9 +607,9 @@ export {ofbGcRefund};
 
 
 const ofbGcRelease = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz ofbGcRelease method',
-  args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueType)},currency: {type: GraphQLString}},
+  args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/ofbGcRelease?releaseAmount=${args.releaseAmount}orderPaymentPreference=${args.orderPaymentPreference}paymentConfig=${args.paymentConfig}paymentGatewayConfigId=${args.paymentGatewayConfigId}authTrans=${args.authTrans}currency=${args.currency}`, null, req);
   }
@@ -618,9 +618,9 @@ export {ofbGcRelease};
 
 
 const ofbGcReload = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz ofbGcReload method',
-  args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},orderItem: {type: new GraphQLList(KeyValueType)},contentId: {type: GraphQLString},productContentTypeId: {type: GraphQLString}},
+  args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},orderItem: {type: new GraphQLList(KeyValueInputType)},contentId: {type: GraphQLString},productContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/ofbGcReload?fromDate=${args.fromDate}productId=${args.productId}orderItem=${args.orderItem}contentId=${args.contentId}productContentTypeId=${args.productContentTypeId}`, null, req);
   }
@@ -629,7 +629,7 @@ export {ofbGcReload};
 
 
 const postFinAccountTransToGl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz postFinAccountTransToGl method',
   args:{finAccountTransId: {type: GraphQLString},glAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -640,9 +640,9 @@ export {postFinAccountTransToGl};
 
 
 const reconcileAdjustmentFinAcctgTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz reconcileAdjustmentFinAcctgTrans method',
-  args:{organizationPartyId: {type: GraphQLString},finAccountTrans: {type: new GraphQLList(KeyValueType)}},
+  args:{organizationPartyId: {type: GraphQLString},finAccountTrans: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/reconcileAdjustmentFinAcctgTrans?organizationPartyId=${args.organizationPartyId}finAccountTrans=${args.finAccountTrans}`, null, req);
   }
@@ -651,9 +651,9 @@ export {reconcileAdjustmentFinAcctgTrans};
 
 
 const reconcileDepositFinAcctgTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz reconcileDepositFinAcctgTrans method',
-  args:{finAccountTrans: {type: new GraphQLList(KeyValueType)}},
+  args:{finAccountTrans: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/reconcileDepositFinAcctgTrans?finAccountTrans=${args.finAccountTrans}`, null, req);
   }
@@ -662,7 +662,7 @@ export {reconcileDepositFinAcctgTrans};
 
 
 const reconcileFinAccountTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz reconcileFinAccountTrans method',
   args:{finAccountTransId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},debitCreditFlag: {type: GraphQLString},glAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -673,9 +673,9 @@ export {reconcileFinAccountTrans};
 
 
 const reconcileWithdrawalFinAcctgTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz reconcileWithdrawalFinAcctgTrans method',
-  args:{finAccountTrans: {type: new GraphQLList(KeyValueType)}},
+  args:{finAccountTrans: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/reconcileWithdrawalFinAcctgTrans?finAccountTrans=${args.finAccountTrans}`, null, req);
   }
@@ -684,7 +684,7 @@ export {reconcileWithdrawalFinAcctgTrans};
 
 
 const redeemGiftCertificate = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz redeemGiftCertificate method',
   args:{amount: {type: GraphQLFloat},pinNumber: {type: GraphQLString},productStoreId: {type: GraphQLString},cardNumber: {type: GraphQLString},currency: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -695,9 +695,9 @@ export {redeemGiftCertificate};
 
 
 const refundGcPurchase = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz refundGcPurchase method',
-  args:{orderItem: {type: new GraphQLList(KeyValueType)},partyId: {type: GraphQLString}},
+  args:{orderItem: {type: new GraphQLList(KeyValueInputType)},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
     return postToUrl(`service/accountingFinaccount/refundGcPurchase?orderItem=${args.orderItem}partyId=${args.partyId}`, null, req);
   }
@@ -706,7 +706,7 @@ export {refundGcPurchase};
 
 
 const removeFinAccountTransFromReconciliation = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeFinAccountTransFromReconciliation method',
   args:{finAccountTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {removeFinAccountTransFromReconciliation};
 
 
 const setFinAccountTransStatus = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz setFinAccountTransStatus method',
   args:{finAccountTransId: {type: GraphQLString},statusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {setFinAccountTransStatus};
 
 
 const updateFinAccount = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccount method',
   args:{finAccountId: {type: GraphQLString},finAccountTypeId: {type: GraphQLString},thruDate: {type: GraphQLString},isRefundable: {type: GraphQLString},fromDate: {type: GraphQLString},ownerPartyId: {type: GraphQLString},postToGlAccountId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},finAccountName: {type: GraphQLString},finAccountPin: {type: GraphQLString},replenishLevel: {type: GraphQLFloat},replenishPaymentId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},finAccountCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {updateFinAccount};
 
 
 const updateFinAccountAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccountAttribute method',
   args:{finAccountId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -750,7 +750,7 @@ export {updateFinAccountAttribute};
 
 
 const updateFinAccountBalancesFromAuth = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccountBalancesFromAuth method',
   args:{finAccountAuthId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -761,7 +761,7 @@ export {updateFinAccountBalancesFromAuth};
 
 
 const updateFinAccountBalancesFromTrans = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccountBalancesFromTrans method',
   args:{finAccountTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -772,7 +772,7 @@ export {updateFinAccountBalancesFromTrans};
 
 
 const updateFinAccountRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccountRole method',
   args:{fromDate: {type: GraphQLString},finAccountId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -783,7 +783,7 @@ export {updateFinAccountRole};
 
 
 const updateFinAccountTransAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccountTransAttribute method',
   args:{finAccountTransId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -794,7 +794,7 @@ export {updateFinAccountTransAttribute};
 
 
 const updateFinAccountTransType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccountTransType method',
   args:{finAccountTransTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -805,7 +805,7 @@ export {updateFinAccountTransType};
 
 
 const updateFinAccountTransTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccountTransTypeAttr method',
   args:{finAccountTransTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -816,7 +816,7 @@ export {updateFinAccountTransTypeAttr};
 
 
 const updateFinAccountType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccountType method',
   args:{finAccountTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},replenishEnumId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},isRefundable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -827,7 +827,7 @@ export {updateFinAccountType};
 
 
 const updateFinAccountTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateFinAccountTypeAttr method',
   args:{finAccountTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString},attrValue: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -838,7 +838,7 @@ export {updateFinAccountTypeAttr};
 
 
 const updatePaymentOnFinAccTransStatusSetToCancel = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentOnFinAccTransStatusSetToCancel method',
   args:{finAccountTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

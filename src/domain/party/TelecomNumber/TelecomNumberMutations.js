@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {TelecomNumberInputType} from '../../party/TelecomNumber/TelecomNumberInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTelecomNumber = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTelecomNumber method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createTelecomNumber};
 
 
 const updateTelecomNumber = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTelecomNumber method',
   args:{telecomNumberToBeUpdated: {type: TelecomNumberInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateTelecomNumber};
 
 
 const deleteTelecomNumberByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTelecomNumberByIdUpdated method',
   args:{telecomNumberId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

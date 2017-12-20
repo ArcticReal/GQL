@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createProductSubscriptionResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductSubscriptionResource method',
   args:{productId: {type: GraphQLString},subscriptionResourceId: {type: GraphQLString},purchaseFromDate: {type: GraphQLString},maxLifeTimeUomId: {type: GraphQLString},useTimeUomId: {type: GraphQLString},canclAutmExtTimeUomId: {type: GraphQLString},useCountLimit: {type: GraphQLInt},availableTimeUomId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},canclAutmExtTime: {type: GraphQLInt},gracePeriodOnExpiryUomId: {type: GraphQLString},availableTime: {type: GraphQLInt},automaticExtend: {type: GraphQLString},useRoleTypeId: {type: GraphQLString},maxLifeTime: {type: GraphQLInt},useTime: {type: GraphQLInt},purchaseThruDate: {type: GraphQLString},gracePeriodOnExpiry: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createProductSubscriptionResource};
 
 
 const createSubscription = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSubscription method',
   args:{maxLifeTimeUomId: {type: GraphQLString},useTimeUomId: {type: GraphQLString},orderId: {type: GraphQLString},subscriptionResourceId: {type: GraphQLString},description: {type: GraphQLString},subscriptionTypeId: {type: GraphQLString},canclAutmExtTimeUomId: {type: GraphQLString},contactMechId: {type: GraphQLString},gracePeriodOnExpiryUomId: {type: GraphQLString},availableTime: {type: GraphQLInt},productCategoryId: {type: GraphQLString},partyNeedId: {type: GraphQLString},useTime: {type: GraphQLInt},partyId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},roleTypeId: {type: GraphQLString},purchaseFromDate: {type: GraphQLString},needTypeId: {type: GraphQLString},productId: {type: GraphQLString},useCountLimit: {type: GraphQLInt},expirationCompletedDate: {type: GraphQLString},availableTimeUomId: {type: GraphQLString},thruDate: {type: GraphQLString},inventoryItemId: {type: GraphQLString},fromDate: {type: GraphQLString},canclAutmExtTime: {type: GraphQLInt},originatedFromRoleTypeId: {type: GraphQLString},automaticExtend: {type: GraphQLString},originatedFromPartyId: {type: GraphQLString},communicationEventId: {type: GraphQLString},maxLifeTime: {type: GraphQLInt},purchaseThruDate: {type: GraphQLString},externalSubscriptionId: {type: GraphQLString},gracePeriodOnExpiry: {type: GraphQLInt},subscriptionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createSubscription};
 
 
 const createSubscriptionActivity = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSubscriptionActivity method',
   args:{comments: {type: GraphQLString},subscriptionActivityId: {type: GraphQLString},dateSent: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createSubscriptionActivity};
 
 
 const createSubscriptionAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSubscriptionAttribute method',
   args:{subscriptionId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createSubscriptionAttribute};
 
 
 const createSubscriptionCommEvent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSubscriptionCommEvent method',
   args:{communicationEventId: {type: GraphQLString},subscriptionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createSubscriptionCommEvent};
 
 
 const createSubscriptionResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSubscriptionResource method',
   args:{serviceNameOnExpiry: {type: GraphQLString},contentId: {type: GraphQLString},description: {type: GraphQLString},parentResourceId: {type: GraphQLString},webSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createSubscriptionResource};
 
 
 const createSubscriptionType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSubscriptionType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},subscriptionTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {createSubscriptionType};
 
 
 const createSubscriptionTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createSubscriptionTypeAttr method',
   args:{subscriptionTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {createSubscriptionTypeAttr};
 
 
 const deleteProductSubscriptionResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductSubscriptionResource method',
   args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},subscriptionResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {deleteProductSubscriptionResource};
 
 
 const deleteSubscriptionActivity = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSubscriptionActivity method',
   args:{subscriptionActivityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {deleteSubscriptionActivity};
 
 
 const deleteSubscriptionAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSubscriptionAttribute method',
   args:{subscriptionId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {deleteSubscriptionAttribute};
 
 
 const deleteSubscriptionType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSubscriptionType method',
   args:{subscriptionTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {deleteSubscriptionType};
 
 
 const deleteSubscriptionTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteSubscriptionTypeAttr method',
   args:{subscriptionTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {deleteSubscriptionTypeAttr};
 
 
 const getSubscriptionEnt = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz getSubscriptionEnt method',
   args:{subscriptionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {getSubscriptionEnt};
 
 
 const isSubscribed = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz isSubscribed method',
   args:{partyId: {type: GraphQLString},maxLifeTimeUomId: {type: GraphQLString},useTimeUomId: {type: GraphQLString},orderId: {type: GraphQLString},subscriptionResourceId: {type: GraphQLString},description: {type: GraphQLString},subscriptionTypeId: {type: GraphQLString},canclAutmExtTimeUomId: {type: GraphQLString},contactMechId: {type: GraphQLString},gracePeriodOnExpiryUomId: {type: GraphQLString},availableTime: {type: GraphQLInt},productCategoryId: {type: GraphQLString},partyNeedId: {type: GraphQLString},useTime: {type: GraphQLInt},orderItemSeqId: {type: GraphQLString},roleTypeId: {type: GraphQLString},purchaseFromDate: {type: GraphQLString},needTypeId: {type: GraphQLString},productId: {type: GraphQLString},filterByDate: {type: GraphQLString},useCountLimit: {type: GraphQLInt},expirationCompletedDate: {type: GraphQLString},availableTimeUomId: {type: GraphQLString},thruDate: {type: GraphQLString},inventoryItemId: {type: GraphQLString},fromDate: {type: GraphQLString},canclAutmExtTime: {type: GraphQLInt},originatedFromRoleTypeId: {type: GraphQLString},automaticExtend: {type: GraphQLString},originatedFromPartyId: {type: GraphQLString},communicationEventId: {type: GraphQLString},maxLifeTime: {type: GraphQLInt},purchaseThruDate: {type: GraphQLString},externalSubscriptionId: {type: GraphQLString},gracePeriodOnExpiry: {type: GraphQLInt},subscriptionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {isSubscribed};
 
 
 const processExtendSubscription = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz processExtendSubscription method',
   args:{useTimeUomId: {type: GraphQLString},subscriptionResourceId: {type: GraphQLString},useTime: {type: GraphQLInt},partyId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},canclAutmExtTime: {type: GraphQLInt},gracePeriodOnExpiryUomId: {type: GraphQLString},alwaysCreateNewRecord: {type: GraphQLString},productId: {type: GraphQLString},orderId: {type: GraphQLString},automaticExtend: {type: GraphQLString},useRoleTypeId: {type: GraphQLString},canclAutmExtTimeUomId: {type: GraphQLString},gracePeriodOnExpiry: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {processExtendSubscription};
 
 
 const processExtendSubscriptionByOrder = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz processExtendSubscriptionByOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {processExtendSubscriptionByOrder};
 
 
 const processExtendSubscriptionByProduct = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz processExtendSubscriptionByProduct method',
   args:{quantity: {type: GraphQLInt},productId: {type: GraphQLString},partyId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},orderId: {type: GraphQLString},orderCreatedDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {processExtendSubscriptionByProduct};
 
 
 const removeSubscriptionCommEvent = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz removeSubscriptionCommEvent method',
   args:{communicationEventId: {type: GraphQLString},subscriptionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {removeSubscriptionCommEvent};
 
 
 const runServiceOnSubscriptionExpiry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz runServiceOnSubscriptionExpiry method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -232,7 +233,7 @@ export {runServiceOnSubscriptionExpiry};
 
 
 const runSubscriptionExpired = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz runSubscriptionExpired method',
   args:{subscriptionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -243,7 +244,7 @@ export {runSubscriptionExpired};
 
 
 const subscriptionPermissionCheck = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz subscriptionPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -254,7 +255,7 @@ export {subscriptionPermissionCheck};
 
 
 const updateProductSubscriptionResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductSubscriptionResource method',
   args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},subscriptionResourceId: {type: GraphQLString},purchaseFromDate: {type: GraphQLString},maxLifeTimeUomId: {type: GraphQLString},useTimeUomId: {type: GraphQLString},canclAutmExtTimeUomId: {type: GraphQLString},useCountLimit: {type: GraphQLInt},availableTimeUomId: {type: GraphQLString},thruDate: {type: GraphQLString},canclAutmExtTime: {type: GraphQLInt},gracePeriodOnExpiryUomId: {type: GraphQLString},availableTime: {type: GraphQLInt},automaticExtend: {type: GraphQLString},useRoleTypeId: {type: GraphQLString},maxLifeTime: {type: GraphQLInt},useTime: {type: GraphQLInt},purchaseThruDate: {type: GraphQLString},gracePeriodOnExpiry: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -265,7 +266,7 @@ export {updateProductSubscriptionResource};
 
 
 const updateSubscription = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSubscription method',
   args:{subscriptionId: {type: GraphQLString},maxLifeTimeUomId: {type: GraphQLString},useTimeUomId: {type: GraphQLString},orderId: {type: GraphQLString},subscriptionResourceId: {type: GraphQLString},description: {type: GraphQLString},subscriptionTypeId: {type: GraphQLString},canclAutmExtTimeUomId: {type: GraphQLString},contactMechId: {type: GraphQLString},gracePeriodOnExpiryUomId: {type: GraphQLString},availableTime: {type: GraphQLInt},productCategoryId: {type: GraphQLString},partyNeedId: {type: GraphQLString},useTime: {type: GraphQLInt},partyId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},roleTypeId: {type: GraphQLString},purchaseFromDate: {type: GraphQLString},needTypeId: {type: GraphQLString},productId: {type: GraphQLString},useCountLimit: {type: GraphQLInt},expirationCompletedDate: {type: GraphQLString},availableTimeUomId: {type: GraphQLString},thruDate: {type: GraphQLString},inventoryItemId: {type: GraphQLString},fromDate: {type: GraphQLString},canclAutmExtTime: {type: GraphQLInt},originatedFromRoleTypeId: {type: GraphQLString},automaticExtend: {type: GraphQLString},originatedFromPartyId: {type: GraphQLString},communicationEventId: {type: GraphQLString},maxLifeTime: {type: GraphQLInt},purchaseThruDate: {type: GraphQLString},externalSubscriptionId: {type: GraphQLString},gracePeriodOnExpiry: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -276,7 +277,7 @@ export {updateSubscription};
 
 
 const updateSubscriptionActivity = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSubscriptionActivity method',
   args:{subscriptionActivityId: {type: GraphQLString},comments: {type: GraphQLString},dateSent: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -287,7 +288,7 @@ export {updateSubscriptionActivity};
 
 
 const updateSubscriptionAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSubscriptionAttribute method',
   args:{subscriptionId: {type: GraphQLString},attrName: {type: GraphQLString},attrValue: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -298,7 +299,7 @@ export {updateSubscriptionAttribute};
 
 
 const updateSubscriptionResource = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSubscriptionResource method',
   args:{subscriptionResourceId: {type: GraphQLString},serviceNameOnExpiry: {type: GraphQLString},contentId: {type: GraphQLString},description: {type: GraphQLString},parentResourceId: {type: GraphQLString},webSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -309,7 +310,7 @@ export {updateSubscriptionResource};
 
 
 const updateSubscriptionType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSubscriptionType method',
   args:{subscriptionTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -320,7 +321,7 @@ export {updateSubscriptionType};
 
 
 const updateSubscriptionTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateSubscriptionTypeAttr method',
   args:{subscriptionTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ReturnReasonInputType} from '../../order/ReturnReason/ReturnReasonInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReturnReason = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createReturnReason method',
   args:{returnReasonToBeAdded: {type: ReturnReasonInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createReturnReason};
 
 
 const updateReturnReason = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateReturnReason method',
   args:{returnReasonToBeUpdated: {type: ReturnReasonInputType},returnReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateReturnReason};
 
 
 const deleteReturnReasonByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteReturnReasonByIdUpdated method',
   args:{returnReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

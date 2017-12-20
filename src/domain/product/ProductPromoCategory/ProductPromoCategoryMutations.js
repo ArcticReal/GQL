@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductPromoCategoryInputType} from '../../product/ProductPromoCategory/ProductPromoCategoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductPromoCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoCategory method',
   args:{productPromoCategoryToBeAdded: {type: ProductPromoCategoryInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductPromoCategory};
 
 
 const updateProductPromoCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPromoCategory method',
   args:{productPromoCategoryToBeUpdated: {type: ProductPromoCategoryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateProductPromoCategory};
 
 
 const deleteProductPromoCategoryByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromoCategoryByIdUpdated method',
   args:{productPromoCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

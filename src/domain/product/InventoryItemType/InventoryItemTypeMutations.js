@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {InventoryItemTypeInputType} from '../../product/InventoryItemType/InventoryItemTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInventoryItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createInventoryItemType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createInventoryItemType};
 
 
 const updateInventoryItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateInventoryItemType method',
   args:{inventoryItemTypeToBeUpdated: {type: InventoryItemTypeInputType},inventoryItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateInventoryItemType};
 
 
 const deleteInventoryItemTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteInventoryItemTypeByIdUpdated method',
   args:{inventoryItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

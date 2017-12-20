@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortTypeAttrInputType} from '../../workeffort/WorkEffortTypeAttr/WorkEffortTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortTypeAttr method',
   args:{workEffortTypeAttrToBeAdded: {type: WorkEffortTypeAttrInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortTypeAttr};
 
 
 const updateWorkEffortTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortTypeAttr method',
   args:{workEffortTypeAttrToBeUpdated: {type: WorkEffortTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortTypeAttr};
 
 
 const deleteWorkEffortTypeAttrByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortTypeAttrByIdUpdated method',
   args:{workEffortTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

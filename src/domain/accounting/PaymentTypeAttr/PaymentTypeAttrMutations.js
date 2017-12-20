@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PaymentTypeAttrInputType} from '../../accounting/PaymentTypeAttr/PaymentTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentTypeAttr method',
   args:{paymentTypeAttrToBeAdded: {type: PaymentTypeAttrInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPaymentTypeAttr};
 
 
 const updatePaymentTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentTypeAttr method',
   args:{paymentTypeAttrToBeUpdated: {type: PaymentTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePaymentTypeAttr};
 
 
 const deletePaymentTypeAttrByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentTypeAttrByIdUpdated method',
   args:{paymentTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

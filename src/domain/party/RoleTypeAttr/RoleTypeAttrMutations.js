@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {RoleTypeAttrInputType} from '../../party/RoleTypeAttr/RoleTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRoleTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createRoleTypeAttr method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createRoleTypeAttr};
 
 
 const updateRoleTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateRoleTypeAttr method',
   args:{roleTypeAttrToBeUpdated: {type: RoleTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateRoleTypeAttr};
 
 
 const deleteRoleTypeAttrByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteRoleTypeAttrByIdUpdated method',
   args:{roleTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {DataCategoryInputType} from '../../content/DataCategory/DataCategoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDataCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDataCategory method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createDataCategory};
 
 
 const updateDataCategory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDataCategory method',
   args:{dataCategoryToBeUpdated: {type: DataCategoryInputType},dataCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateDataCategory};
 
 
 const deleteDataCategoryByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDataCategoryByIdUpdated method',
   args:{dataCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

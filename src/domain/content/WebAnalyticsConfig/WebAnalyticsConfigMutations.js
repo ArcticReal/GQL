@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WebAnalyticsConfigInputType} from '../../content/WebAnalyticsConfig/WebAnalyticsConfigInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWebAnalyticsConfig = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWebAnalyticsConfig method',
   args:{webAnalyticsConfigToBeAdded: {type: WebAnalyticsConfigInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWebAnalyticsConfig};
 
 
 const updateWebAnalyticsConfig = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWebAnalyticsConfig method',
   args:{webAnalyticsConfigToBeUpdated: {type: WebAnalyticsConfigInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWebAnalyticsConfig};
 
 
 const deleteWebAnalyticsConfigByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWebAnalyticsConfigByIdUpdated method',
   args:{webAnalyticsConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

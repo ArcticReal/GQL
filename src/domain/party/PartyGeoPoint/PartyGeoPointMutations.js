@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PartyGeoPointInputType} from '../../party/PartyGeoPoint/PartyGeoPointInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyGeoPoint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPartyGeoPoint method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPartyGeoPoint};
 
 
 const updatePartyGeoPoint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePartyGeoPoint method',
   args:{partyGeoPointToBeUpdated: {type: PartyGeoPointInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePartyGeoPoint};
 
 
 const deletePartyGeoPointByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePartyGeoPointByIdUpdated method',
   args:{partyGeoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

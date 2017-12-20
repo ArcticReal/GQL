@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {DocumentTypeAttrInputType} from '../../content/DocumentTypeAttr/DocumentTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDocumentTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDocumentTypeAttr method',
   args:{documentTypeAttrToBeAdded: {type: DocumentTypeAttrInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createDocumentTypeAttr};
 
 
 const updateDocumentTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDocumentTypeAttr method',
   args:{documentTypeAttrToBeUpdated: {type: DocumentTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateDocumentTypeAttr};
 
 
 const deleteDocumentTypeAttrByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDocumentTypeAttrByIdUpdated method',
   args:{documentTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

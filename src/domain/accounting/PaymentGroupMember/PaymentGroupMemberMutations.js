@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PaymentGroupMemberInputType} from '../../accounting/PaymentGroupMember/PaymentGroupMemberInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGroupMember = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentGroupMember method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPaymentGroupMember};
 
 
 const updatePaymentGroupMember = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGroupMember method',
   args:{paymentGroupMemberToBeUpdated: {type: PaymentGroupMemberInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePaymentGroupMember};
 
 
 const deletePaymentGroupMemberByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentGroupMemberByIdUpdated method',
   args:{paymentGroupMemberId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

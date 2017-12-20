@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ProductPromoCodePartyInputType} from '../../product/ProductPromoCodeParty/ProductPromoCodePartyInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductPromoCodeParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createProductPromoCodeParty method',
   args:{productPromoCodePartyToBeAdded: {type: ProductPromoCodePartyInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createProductPromoCodeParty};
 
 
 const updateProductPromoCodeParty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateProductPromoCodeParty method',
   args:{productPromoCodePartyToBeUpdated: {type: ProductPromoCodePartyInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateProductPromoCodeParty};
 
 
 const deleteProductPromoCodePartyByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteProductPromoCodePartyByIdUpdated method',
   args:{productPromoCodePartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

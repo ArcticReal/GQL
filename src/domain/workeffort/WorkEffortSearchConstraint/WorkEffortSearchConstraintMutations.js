@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WorkEffortSearchConstraintInputType} from '../../workeffort/WorkEffortSearchConstraint/WorkEffortSearchConstraintInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortSearchConstraint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWorkEffortSearchConstraint method',
   args:{workEffortSearchConstraintToBeAdded: {type: WorkEffortSearchConstraintInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWorkEffortSearchConstraint};
 
 
 const updateWorkEffortSearchConstraint = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWorkEffortSearchConstraint method',
   args:{workEffortSearchConstraintToBeUpdated: {type: WorkEffortSearchConstraintInputType},constraintSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWorkEffortSearchConstraint};
 
 
 const deleteWorkEffortSearchConstraintByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWorkEffortSearchConstraintByIdUpdated method',
   args:{workEffortSearchConstraintId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

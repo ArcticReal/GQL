@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PaymentGlAccountTypeMapInputType} from '../../accounting/PaymentGlAccountTypeMap/PaymentGlAccountTypeMapInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGlAccountTypeMap = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentGlAccountTypeMap method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPaymentGlAccountTypeMap};
 
 
 const updatePaymentGlAccountTypeMap = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGlAccountTypeMap method',
   args:{paymentGlAccountTypeMapToBeUpdated: {type: PaymentGlAccountTypeMapInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePaymentGlAccountTypeMap};
 
 
 const deletePaymentGlAccountTypeMapByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentGlAccountTypeMapByIdUpdated method',
   args:{paymentGlAccountTypeMapId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

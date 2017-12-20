@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createShipmentGatewayConfig = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentGatewayConfig method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},description: {type: GraphQLString},shipmentGatewayConfTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createShipmentGatewayConfig};
 
 
 const createShipmentGatewayConfigType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentGatewayConfigType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},shipmentGatewayConfTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createShipmentGatewayConfigType};
 
 
 const createShipmentGatewayDhl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentGatewayDhl method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},connectUrl: {type: GraphQLInt},accessUserId: {type: GraphQLInt},accessShippingKey: {type: GraphQLInt},rateEstimateTemplate: {type: GraphQLInt},connectTimeout: {type: GraphQLInt},accessAccountNbr: {type: GraphQLInt},labelImageFormat: {type: GraphQLString},headVersion: {type: GraphQLString},headAction: {type: GraphQLInt},accessPassword: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createShipmentGatewayDhl};
 
 
 const createShipmentGatewayFedex = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentGatewayFedex method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},connectUrl: {type: GraphQLInt},accessMeterNumber: {type: GraphQLInt},rateEstimateTemplate: {type: GraphQLInt},labelImageType: {type: GraphQLString},defaultDropoffType: {type: GraphQLInt},accessUserKey: {type: GraphQLInt},templateShipment: {type: GraphQLInt},templateSubscription: {type: GraphQLInt},accessUserPwd: {type: GraphQLInt},defaultPackagingType: {type: GraphQLInt},connectTimeout: {type: GraphQLInt},accessAccountNbr: {type: GraphQLInt},connectSoapUrl: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createShipmentGatewayFedex};
 
 
 const createShipmentGatewayUps = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentGatewayUps method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},connectUrl: {type: GraphQLInt},accessUserId: {type: GraphQLInt},saveCertPath: {type: GraphQLInt},billShipperAccountNumber: {type: GraphQLInt},defaultReturnLabelSubject: {type: GraphQLInt},customerClassification: {type: GraphQLString},shipperNumber: {type: GraphQLInt},maxEstimateWeight: {type: GraphQLFloat},codSurchargeApplyToPackage: {type: GraphQLString},saveCertInfo: {type: GraphQLString},codSurchargeCurrencyUomId: {type: GraphQLString},codFundsCode: {type: GraphQLString},shipperPickupType: {type: GraphQLString},minEstimateWeight: {type: GraphQLFloat},codAllowCod: {type: GraphQLInt},connectTimeout: {type: GraphQLInt},codSurchargeAmount: {type: GraphQLFloat},accessPassword: {type: GraphQLInt},accessLicenseNumber: {type: GraphQLInt},defaultReturnLabelMemo: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createShipmentGatewayUps};
 
 
 const createShipmentGatewayUsps = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentGatewayUsps method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},connectUrl: {type: GraphQLInt},accessUserId: {type: GraphQLInt},test: {type: GraphQLString},connectTimeout: {type: GraphQLInt},connectUrlLabels: {type: GraphQLInt},accessPassword: {type: GraphQLInt},maxEstimateWeight: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createShipmentGatewayUsps};
 
 
 const createShipmentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},shipmentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {createShipmentType};
 
 
 const deleteShipmentGatewayConfig = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentGatewayConfig method',
   args:{shipmentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {deleteShipmentGatewayConfig};
 
 
 const deleteShipmentGatewayConfigType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentGatewayConfigType method',
   args:{shipmentGatewayConfTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {deleteShipmentGatewayConfigType};
 
 
 const deleteShipmentGatewayDhl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentGatewayDhl method',
   args:{shipmentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {deleteShipmentGatewayDhl};
 
 
 const deleteShipmentGatewayFedex = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentGatewayFedex method',
   args:{shipmentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {deleteShipmentGatewayFedex};
 
 
 const deleteShipmentGatewayUps = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentGatewayUps method',
   args:{shipmentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {deleteShipmentGatewayUps};
 
 
 const deleteShipmentGatewayUsps = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentGatewayUsps method',
   args:{shipmentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {deleteShipmentGatewayUsps};
 
 
 const deleteShipmentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentType method',
   args:{shipmentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {deleteShipmentType};
 
 
 const updateShipmentGatewayConfig = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentGatewayConfig method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},description: {type: GraphQLString},shipmentGatewayConfTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {updateShipmentGatewayConfig};
 
 
 const updateShipmentGatewayConfigType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentGatewayConfigType method',
   args:{shipmentGatewayConfTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {updateShipmentGatewayConfigType};
 
 
 const updateShipmentGatewayDhl = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentGatewayDhl method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},connectUrl: {type: GraphQLInt},accessUserId: {type: GraphQLInt},accessShippingKey: {type: GraphQLInt},rateEstimateTemplate: {type: GraphQLInt},connectTimeout: {type: GraphQLInt},accessAccountNbr: {type: GraphQLInt},labelImageFormat: {type: GraphQLString},headVersion: {type: GraphQLString},headAction: {type: GraphQLInt},accessPassword: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {updateShipmentGatewayDhl};
 
 
 const updateShipmentGatewayFedex = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentGatewayFedex method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},connectUrl: {type: GraphQLInt},accessMeterNumber: {type: GraphQLInt},rateEstimateTemplate: {type: GraphQLInt},labelImageType: {type: GraphQLString},defaultDropoffType: {type: GraphQLInt},accessUserKey: {type: GraphQLInt},templateShipment: {type: GraphQLInt},templateSubscription: {type: GraphQLInt},accessUserPwd: {type: GraphQLInt},defaultPackagingType: {type: GraphQLInt},connectTimeout: {type: GraphQLInt},accessAccountNbr: {type: GraphQLInt},connectSoapUrl: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {updateShipmentGatewayFedex};
 
 
 const updateShipmentGatewayUps = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentGatewayUps method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},connectUrl: {type: GraphQLInt},accessUserId: {type: GraphQLInt},saveCertPath: {type: GraphQLInt},billShipperAccountNumber: {type: GraphQLInt},defaultReturnLabelSubject: {type: GraphQLInt},customerClassification: {type: GraphQLString},shipperNumber: {type: GraphQLInt},maxEstimateWeight: {type: GraphQLFloat},codSurchargeApplyToPackage: {type: GraphQLString},saveCertInfo: {type: GraphQLString},codSurchargeCurrencyUomId: {type: GraphQLString},codFundsCode: {type: GraphQLString},shipperPickupType: {type: GraphQLString},minEstimateWeight: {type: GraphQLFloat},codAllowCod: {type: GraphQLInt},connectTimeout: {type: GraphQLInt},codSurchargeAmount: {type: GraphQLFloat},accessPassword: {type: GraphQLInt},accessLicenseNumber: {type: GraphQLInt},defaultReturnLabelMemo: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {updateShipmentGatewayUps};
 
 
 const updateShipmentGatewayUsps = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentGatewayUsps method',
   args:{shipmentGatewayConfigId: {type: GraphQLString},connectUrl: {type: GraphQLInt},accessUserId: {type: GraphQLInt},test: {type: GraphQLString},connectTimeout: {type: GraphQLInt},connectUrlLabels: {type: GraphQLInt},accessPassword: {type: GraphQLInt},maxEstimateWeight: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -232,7 +233,7 @@ export {updateShipmentGatewayUsps};
 
 
 const updateShipmentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentType method',
   args:{shipmentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

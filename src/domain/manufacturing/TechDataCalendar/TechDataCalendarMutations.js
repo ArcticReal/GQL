@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {TechDataCalendarInputType} from '../../manufacturing/TechDataCalendar/TechDataCalendarInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTechDataCalendar = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTechDataCalendar method',
   args:{techDataCalendarToBeAdded: {type: TechDataCalendarInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createTechDataCalendar};
 
 
 const updateTechDataCalendar = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTechDataCalendar method',
   args:{techDataCalendarToBeUpdated: {type: TechDataCalendarInputType},calendarId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateTechDataCalendar};
 
 
 const deleteTechDataCalendarByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTechDataCalendarByIdUpdated method',
   args:{techDataCalendarId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {DataTemplateTypeInputType} from '../../content/DataTemplateType/DataTemplateTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDataTemplateType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDataTemplateType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createDataTemplateType};
 
 
 const updateDataTemplateType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDataTemplateType method',
   args:{dataTemplateTypeToBeUpdated: {type: DataTemplateTypeInputType},dataTemplateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateDataTemplateType};
 
 
 const deleteDataTemplateTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDataTemplateTypeByIdUpdated method',
   args:{dataTemplateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

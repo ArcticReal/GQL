@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createOrderAdjustmentAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderAdjustmentAttribute method',
   args:{orderAdjustmentId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {createOrderAdjustmentAttribute};
 
 
 const createOrderAdjustmentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderAdjustmentType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},orderAdjustmentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -34,7 +35,7 @@ export {createOrderAdjustmentType};
 
 
 const createOrderAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderAttribute method',
   args:{orderId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -45,7 +46,7 @@ export {createOrderAttribute};
 
 
 const createOrderBlacklist = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderBlacklist method',
   args:{orderBlacklistTypeId: {type: GraphQLString},blacklistString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -56,7 +57,7 @@ export {createOrderBlacklist};
 
 
 const createOrderBlacklistType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderBlacklistType method',
   args:{description: {type: GraphQLString},orderBlacklistTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -67,7 +68,7 @@ export {createOrderBlacklistType};
 
 
 const createOrderContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderContentType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},orderContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -78,7 +79,7 @@ export {createOrderContentType};
 
 
 const createOrderItemAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemAssoc method',
   args:{orderItemSeqId: {type: GraphQLString},toOrderId: {type: GraphQLString},orderId: {type: GraphQLString},toOrderItemSeqId: {type: GraphQLString},orderItemAssocTypeId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},toShipGroupSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -89,7 +90,7 @@ export {createOrderItemAssoc};
 
 
 const createOrderItemAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemAssocType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},orderItemAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -100,7 +101,7 @@ export {createOrderItemAssocType};
 
 
 const createOrderItemContactMech = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemContactMech method',
   args:{orderItemSeqId: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},orderId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -111,7 +112,7 @@ export {createOrderItemContactMech};
 
 
 const createOrderItemGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemGroup method',
   args:{orderId: {type: GraphQLString},orderItemGroupSeqId: {type: GraphQLString},groupName: {type: GraphQLString},parentGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -122,7 +123,7 @@ export {createOrderItemGroup};
 
 
 const createOrderItemPriceInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemPriceInfo method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},productPriceActionSeqId: {type: GraphQLString},modifyAmount: {type: GraphQLFloat},description: {type: GraphQLString},productPriceRuleId: {type: GraphQLString},rateCode: {type: GraphQLString},orderItemPriceInfoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -133,7 +134,7 @@ export {createOrderItemPriceInfo};
 
 
 const createOrderItemRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemRole method',
   args:{orderItemSeqId: {type: GraphQLString},roleTypeId: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -144,7 +145,7 @@ export {createOrderItemRole};
 
 
 const createOrderItemShipGrpInvRes = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemShipGrpInvRes method',
   args:{orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat},promisedDatetime: {type: GraphQLString},quantityNotAvailable: {type: GraphQLFloat},createdDatetime: {type: GraphQLString},reserveOrderEnumId: {type: GraphQLString},reservedDatetime: {type: GraphQLString},priority: {type: GraphQLString},sequenceId: {type: GraphQLInt},oldPickStartDate: {type: GraphQLString},currentPromisedDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -155,7 +156,7 @@ export {createOrderItemShipGrpInvRes};
 
 
 const createOrderItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},orderItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -166,7 +167,7 @@ export {createOrderItemType};
 
 
 const createOrderItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderItemTypeAttr method',
   args:{attrName: {type: GraphQLString},orderItemTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -177,7 +178,7 @@ export {createOrderItemTypeAttr};
 
 
 const createOrderProductPromoCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderProductPromoCode method',
   args:{orderId: {type: GraphQLString},productPromoCodeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -188,7 +189,7 @@ export {createOrderProductPromoCode};
 
 
 const createOrderSummaryEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderSummaryEntry method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},entryDate: {type: GraphQLString},totalQuantity: {type: GraphQLFloat},productCost: {type: GraphQLFloat},grossSales: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -199,7 +200,7 @@ export {createOrderSummaryEntry};
 
 
 const createOrderTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderTermAttribute method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},termTypeId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -210,7 +211,7 @@ export {createOrderTermAttribute};
 
 
 const createOrderType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},orderTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -221,7 +222,7 @@ export {createOrderType};
 
 
 const createOrderTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderTypeAttr method',
   args:{orderTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -232,7 +233,7 @@ export {createOrderTypeAttr};
 
 
 const deleteOrderAdjustmentAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderAdjustmentAttribute method',
   args:{orderAdjustmentId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -243,7 +244,7 @@ export {deleteOrderAdjustmentAttribute};
 
 
 const deleteOrderAdjustmentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderAdjustmentType method',
   args:{orderAdjustmentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -254,7 +255,7 @@ export {deleteOrderAdjustmentType};
 
 
 const deleteOrderAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderAttribute method',
   args:{orderId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -265,7 +266,7 @@ export {deleteOrderAttribute};
 
 
 const deleteOrderBlacklist = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderBlacklist method',
   args:{orderBlacklistTypeId: {type: GraphQLString},blacklistString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -276,7 +277,7 @@ export {deleteOrderBlacklist};
 
 
 const deleteOrderBlacklistType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderBlacklistType method',
   args:{orderBlacklistTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -287,7 +288,7 @@ export {deleteOrderBlacklistType};
 
 
 const deleteOrderContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderContentType method',
   args:{orderContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -298,7 +299,7 @@ export {deleteOrderContentType};
 
 
 const deleteOrderItemAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemAssoc method',
   args:{orderItemSeqId: {type: GraphQLString},toOrderId: {type: GraphQLString},orderId: {type: GraphQLString},toOrderItemSeqId: {type: GraphQLString},orderItemAssocTypeId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},toShipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -309,7 +310,7 @@ export {deleteOrderItemAssoc};
 
 
 const deleteOrderItemAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemAssocType method',
   args:{orderItemAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -320,7 +321,7 @@ export {deleteOrderItemAssocType};
 
 
 const deleteOrderItemContactMech = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemContactMech method',
   args:{orderItemSeqId: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -331,7 +332,7 @@ export {deleteOrderItemContactMech};
 
 
 const deleteOrderItemGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemGroup method',
   args:{orderId: {type: GraphQLString},orderItemGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -342,7 +343,7 @@ export {deleteOrderItemGroup};
 
 
 const deleteOrderItemPriceInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemPriceInfo method',
   args:{orderItemPriceInfoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -353,7 +354,7 @@ export {deleteOrderItemPriceInfo};
 
 
 const deleteOrderItemRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemRole method',
   args:{orderItemSeqId: {type: GraphQLString},roleTypeId: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -364,7 +365,7 @@ export {deleteOrderItemRole};
 
 
 const deleteOrderItemShipGrpInvRes = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemShipGrpInvRes method',
   args:{orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -375,7 +376,7 @@ export {deleteOrderItemShipGrpInvRes};
 
 
 const deleteOrderItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemType method',
   args:{orderItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -386,7 +387,7 @@ export {deleteOrderItemType};
 
 
 const deleteOrderItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderItemTypeAttr method',
   args:{attrName: {type: GraphQLString},orderItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -397,7 +398,7 @@ export {deleteOrderItemTypeAttr};
 
 
 const deleteOrderNotification = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderNotification method',
   args:{orderNotificationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -408,7 +409,7 @@ export {deleteOrderNotification};
 
 
 const deleteOrderProductPromoCode = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderProductPromoCode method',
   args:{orderId: {type: GraphQLString},productPromoCodeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -419,7 +420,7 @@ export {deleteOrderProductPromoCode};
 
 
 const deleteOrderRequirementCommitment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderRequirementCommitment method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},requirementId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -430,7 +431,7 @@ export {deleteOrderRequirementCommitment};
 
 
 const deleteOrderSummaryEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderSummaryEntry method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},entryDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -441,7 +442,7 @@ export {deleteOrderSummaryEntry};
 
 
 const deleteOrderTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderTermAttribute method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},termTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -452,7 +453,7 @@ export {deleteOrderTermAttribute};
 
 
 const deleteOrderType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderType method',
   args:{orderTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -463,7 +464,7 @@ export {deleteOrderType};
 
 
 const deleteOrderTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderTypeAttr method',
   args:{orderTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -474,7 +475,7 @@ export {deleteOrderTypeAttr};
 
 
 const updateOrderAdjustmentAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderAdjustmentAttribute method',
   args:{orderAdjustmentId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -485,7 +486,7 @@ export {updateOrderAdjustmentAttribute};
 
 
 const updateOrderAdjustmentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderAdjustmentType method',
   args:{orderAdjustmentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -496,7 +497,7 @@ export {updateOrderAdjustmentType};
 
 
 const updateOrderAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderAttribute method',
   args:{orderId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -507,7 +508,7 @@ export {updateOrderAttribute};
 
 
 const updateOrderBlacklistType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderBlacklistType method',
   args:{orderBlacklistTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -518,7 +519,7 @@ export {updateOrderBlacklistType};
 
 
 const updateOrderContentType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderContentType method',
   args:{orderContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -529,7 +530,7 @@ export {updateOrderContentType};
 
 
 const updateOrderItemAssoc = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderItemAssoc method',
   args:{orderItemSeqId: {type: GraphQLString},toOrderId: {type: GraphQLString},orderId: {type: GraphQLString},toOrderItemSeqId: {type: GraphQLString},orderItemAssocTypeId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},toShipGroupSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -540,7 +541,7 @@ export {updateOrderItemAssoc};
 
 
 const updateOrderItemAssocType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderItemAssocType method',
   args:{orderItemAssocTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -551,7 +552,7 @@ export {updateOrderItemAssocType};
 
 
 const updateOrderItemContactMech = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderItemContactMech method',
   args:{orderItemSeqId: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},orderId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -562,7 +563,7 @@ export {updateOrderItemContactMech};
 
 
 const updateOrderItemGroup = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderItemGroup method',
   args:{orderId: {type: GraphQLString},orderItemGroupSeqId: {type: GraphQLString},groupName: {type: GraphQLString},parentGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -573,7 +574,7 @@ export {updateOrderItemGroup};
 
 
 const updateOrderItemPriceInfo = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderItemPriceInfo method',
   args:{orderItemPriceInfoId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},productPriceActionSeqId: {type: GraphQLString},modifyAmount: {type: GraphQLFloat},description: {type: GraphQLString},productPriceRuleId: {type: GraphQLString},rateCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -584,7 +585,7 @@ export {updateOrderItemPriceInfo};
 
 
 const updateOrderItemShipGrpInvRes = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderItemShipGrpInvRes method',
   args:{orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat},promisedDatetime: {type: GraphQLString},quantityNotAvailable: {type: GraphQLFloat},createdDatetime: {type: GraphQLString},reserveOrderEnumId: {type: GraphQLString},reservedDatetime: {type: GraphQLString},priority: {type: GraphQLString},sequenceId: {type: GraphQLInt},oldPickStartDate: {type: GraphQLString},currentPromisedDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -595,7 +596,7 @@ export {updateOrderItemShipGrpInvRes};
 
 
 const updateOrderItemType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderItemType method',
   args:{orderItemTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -606,7 +607,7 @@ export {updateOrderItemType};
 
 
 const updateOrderItemTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderItemTypeAttr method',
   args:{attrName: {type: GraphQLString},orderItemTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -617,7 +618,7 @@ export {updateOrderItemTypeAttr};
 
 
 const updateOrderNotification = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderNotification method',
   args:{orderNotificationId: {type: GraphQLString},comments: {type: GraphQLString},orderId: {type: GraphQLString},emailType: {type: GraphQLString},notificationDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -628,7 +629,7 @@ export {updateOrderNotification};
 
 
 const updateOrderRequirementCommitment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderRequirementCommitment method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},requirementId: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -639,7 +640,7 @@ export {updateOrderRequirementCommitment};
 
 
 const updateOrderSummaryEntry = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderSummaryEntry method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},entryDate: {type: GraphQLString},totalQuantity: {type: GraphQLFloat},productCost: {type: GraphQLFloat},grossSales: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -650,7 +651,7 @@ export {updateOrderSummaryEntry};
 
 
 const updateOrderTermAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderTermAttribute method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},termTypeId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -661,7 +662,7 @@ export {updateOrderTermAttribute};
 
 
 const updateOrderType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderType method',
   args:{orderTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -672,7 +673,7 @@ export {updateOrderType};
 
 
 const updateOrderTypeAttr = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderTypeAttr method',
   args:{orderTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

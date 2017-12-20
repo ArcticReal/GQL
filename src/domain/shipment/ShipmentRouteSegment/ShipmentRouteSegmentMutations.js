@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ShipmentRouteSegmentInputType} from '../../shipment/ShipmentRouteSegment/ShipmentRouteSegmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentRouteSegment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentRouteSegment method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createShipmentRouteSegment};
 
 
 const updateShipmentRouteSegment = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentRouteSegment method',
   args:{shipmentRouteSegmentToBeUpdated: {type: ShipmentRouteSegmentInputType},shipmentRouteSegmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateShipmentRouteSegment};
 
 
 const deleteShipmentRouteSegmentByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentRouteSegmentByIdUpdated method',
   args:{shipmentRouteSegmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

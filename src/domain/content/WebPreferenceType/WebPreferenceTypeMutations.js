@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {WebPreferenceTypeInputType} from '../../content/WebPreferenceType/WebPreferenceTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWebPreferenceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createWebPreferenceType method',
   args:{webPreferenceTypeToBeAdded: {type: WebPreferenceTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createWebPreferenceType};
 
 
 const updateWebPreferenceType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateWebPreferenceType method',
   args:{webPreferenceTypeToBeUpdated: {type: WebPreferenceTypeInputType},webPreferenceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateWebPreferenceType};
 
 
 const deleteWebPreferenceTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteWebPreferenceTypeByIdUpdated method',
   args:{webPreferenceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

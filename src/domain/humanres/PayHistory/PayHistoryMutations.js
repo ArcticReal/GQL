@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PayHistoryInputType} from '../../humanres/PayHistory/PayHistoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPayHistory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPayHistory method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPayHistory};
 
 
 const updatePayHistory = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePayHistory method',
   args:{payHistoryToBeUpdated: {type: PayHistoryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePayHistory};
 
 
 const deletePayHistoryByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePayHistoryByIdUpdated method',
   args:{payHistoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

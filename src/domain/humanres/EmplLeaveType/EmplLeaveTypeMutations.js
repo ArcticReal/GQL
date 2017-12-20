@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {EmplLeaveTypeInputType} from '../../humanres/EmplLeaveType/EmplLeaveTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEmplLeaveType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createEmplLeaveType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createEmplLeaveType};
 
 
 const deleteEmplLeaveTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteEmplLeaveTypeByIdUpdated method',
   args:{emplLeaveTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteEmplLeaveTypeByIdUpdated};
 
 
 const updateEmplLeaveType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateEmplLeaveType method',
   args:{emplLeaveTypeToBeUpdated: {type: EmplLeaveTypeInputType},leaveTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

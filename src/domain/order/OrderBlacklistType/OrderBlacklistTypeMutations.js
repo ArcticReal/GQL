@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {OrderBlacklistTypeInputType} from '../../order/OrderBlacklistType/OrderBlacklistTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderBlacklistType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createOrderBlacklistType method',
   args:{orderBlacklistTypeToBeAdded: {type: OrderBlacklistTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createOrderBlacklistType};
 
 
 const updateOrderBlacklistType = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateOrderBlacklistType method',
   args:{orderBlacklistTypeToBeUpdated: {type: OrderBlacklistTypeInputType},orderBlacklistTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateOrderBlacklistType};
 
 
 const deleteOrderBlacklistTypeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteOrderBlacklistTypeByIdUpdated method',
   args:{orderBlacklistTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

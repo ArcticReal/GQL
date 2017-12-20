@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {MarketingCampaignRoleInputType} from '../../marketing/MarketingCampaignRole/MarketingCampaignRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMarketingCampaignRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createMarketingCampaignRole method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createMarketingCampaignRole};
 
 
 const deleteMarketingCampaignRoleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteMarketingCampaignRoleByIdUpdated method',
   args:{marketingCampaignRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {deleteMarketingCampaignRoleByIdUpdated};
 
 
 const updateMarketingCampaignRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateMarketingCampaignRole method',
   args:{marketingCampaignRoleToBeUpdated: {type: MarketingCampaignRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

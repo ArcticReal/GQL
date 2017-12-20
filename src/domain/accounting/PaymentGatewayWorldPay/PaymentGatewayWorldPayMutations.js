@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {PaymentGatewayWorldPayInputType} from '../../accounting/PaymentGatewayWorldPay/PaymentGatewayWorldPayInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGatewayWorldPay = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createPaymentGatewayWorldPay method',
   args:{paymentGatewayWorldPayToBeAdded: {type: PaymentGatewayWorldPayInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createPaymentGatewayWorldPay};
 
 
 const updatePaymentGatewayWorldPay = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updatePaymentGatewayWorldPay method',
   args:{paymentGatewayWorldPayToBeUpdated: {type: PaymentGatewayWorldPayInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updatePaymentGatewayWorldPay};
 
 
 const deletePaymentGatewayWorldPayByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deletePaymentGatewayWorldPayByIdUpdated method',
   args:{paymentGatewayWorldPayId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

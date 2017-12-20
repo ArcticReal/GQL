@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {TechDataCalendarExcWeekInputType} from '../../manufacturing/TechDataCalendarExcWeek/TechDataCalendarExcWeekInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTechDataCalendarExcWeek = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createTechDataCalendarExcWeek method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createTechDataCalendarExcWeek};
 
 
 const updateTechDataCalendarExcWeek = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateTechDataCalendarExcWeek method',
   args:{techDataCalendarExcWeekToBeUpdated: {type: TechDataCalendarExcWeekInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateTechDataCalendarExcWeek};
 
 
 const deleteTechDataCalendarExcWeekByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteTechDataCalendarExcWeekByIdUpdated method',
   args:{techDataCalendarExcWeekId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

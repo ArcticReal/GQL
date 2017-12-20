@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {EmailAddressVerificationInputType} from '../../party/EmailAddressVerification/EmailAddressVerificationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEmailAddressVerification = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createEmailAddressVerification method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createEmailAddressVerification};
 
 
 const updateEmailAddressVerification = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateEmailAddressVerification method',
   args:{emailAddressVerificationToBeUpdated: {type: EmailAddressVerificationInputType},emailAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateEmailAddressVerification};
 
 
 const deleteEmailAddressVerificationByHash = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteEmailAddressVerificationByHash method',
   args:{hash: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

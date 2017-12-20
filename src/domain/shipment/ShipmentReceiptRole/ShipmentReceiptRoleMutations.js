@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {ShipmentReceiptRoleInputType} from '../../shipment/ShipmentReceiptRole/ShipmentReceiptRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentReceiptRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createShipmentReceiptRole method',
   args:{shipmentReceiptRoleToBeAdded: {type: ShipmentReceiptRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createShipmentReceiptRole};
 
 
 const updateShipmentReceiptRole = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateShipmentReceiptRole method',
   args:{shipmentReceiptRoleToBeUpdated: {type: ShipmentReceiptRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateShipmentReceiptRole};
 
 
 const deleteShipmentReceiptRoleByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteShipmentReceiptRoleByIdUpdated method',
   args:{shipmentReceiptRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

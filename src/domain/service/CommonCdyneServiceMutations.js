@@ -9,10 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const cdynePostalAddressFillInCounty = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz cdynePostalAddressFillInCounty method',
   args:{contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -23,7 +24,7 @@ export {cdynePostalAddressFillInCounty};
 
 
 const cdyneReturnCityState = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz cdyneReturnCityState method',
   args:{zipcode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

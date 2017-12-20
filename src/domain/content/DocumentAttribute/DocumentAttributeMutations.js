@@ -10,10 +10,11 @@ import {
 } from 'graphql';
 import {DocumentAttributeInputType} from '../../content/DocumentAttribute/DocumentAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
+import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDocumentAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz createDocumentAttribute method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +25,7 @@ export {createDocumentAttribute};
 
 
 const updateDocumentAttribute = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz updateDocumentAttribute method',
   args:{documentAttributeToBeUpdated: {type: DocumentAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +36,7 @@ export {updateDocumentAttribute};
 
 
 const deleteDocumentAttributeByIdUpdated = {
-  type: GraphQLString,
+  type: ResopnseType,
   description: 'mutation for ofbiz deleteDocumentAttributeByIdUpdated method',
   args:{documentAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
