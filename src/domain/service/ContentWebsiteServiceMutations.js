@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addWebSiteRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addWebSiteRole method',
   args:{roleTypeId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},partyId: {type: GraphQLString},webSiteId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addWebSiteRole};
 
 
 const autoCreateWebSiteContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz autoCreateWebSiteContent method',
   args:{webSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {autoCreateWebSiteContent};
 
 
 const createWebSite = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWebSite method',
   args:{siteName: {type: GraphQLString},webSiteId: {type: GraphQLString},secureContentPrefix: {type: GraphQLString},cookieDomain: {type: GraphQLString},standardContentPrefix: {type: GraphQLString},httpPort: {type: GraphQLString},enableHttps: {type: GraphQLString},httpHost: {type: GraphQLString},visualThemeSetId: {type: GraphQLString},httpsHost: {type: GraphQLString},httpsPort: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createWebSite};
 
 
 const createWebSiteContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWebSiteContent method',
   args:{webSiteContentTypeId: {type: GraphQLString},contentId: {type: GraphQLString},webSiteId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createWebSiteContent};
 
 
 const createWebSiteContentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWebSiteContentType method',
   args:{webSiteContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createWebSiteContentType};
 
 
 const createWebSitePathAlias = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWebSitePathAlias method',
   args:{fromDate: {type: GraphQLString},webSiteId: {type: GraphQLString},pathAlias: {type: GraphQLString},aliasTo: {type: GraphQLString},contentId: {type: GraphQLString},mapKey: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createWebSitePathAlias};
 
 
 const createWebSiteRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWebSiteRole method',
   args:{roleTypeId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},partyId: {type: GraphQLString},webSiteId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createWebSiteRole};
 
 
 const generateMissingSeoUrlForWebsite = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz generateMissingSeoUrlForWebsite method',
   args:{webSiteId: {type: GraphQLString},prodCatalogId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {generateMissingSeoUrlForWebsite};
 
 
 const getWebSitePathAlias = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getWebSitePathAlias method',
   args:{fromDate: {type: GraphQLString},webSiteId: {type: GraphQLString},pathAlias: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {getWebSitePathAlias};
 
 
 const removeWebSiteContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeWebSiteContent method',
   args:{fromDate: {type: GraphQLString},webSiteContentTypeId: {type: GraphQLString},contentId: {type: GraphQLString},webSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {removeWebSiteContent};
 
 
 const removeWebSiteContentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeWebSiteContentType method',
   args:{webSiteContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {removeWebSiteContentType};
 
 
 const removeWebSitePathAlias = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeWebSitePathAlias method',
   args:{fromDate: {type: GraphQLString},webSiteId: {type: GraphQLString},pathAlias: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {removeWebSitePathAlias};
 
 
 const removeWebSiteRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeWebSiteRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},webSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {removeWebSiteRole};
 
 
 const updateWebSite = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWebSite method',
   args:{webSiteId: {type: GraphQLString},secureContentPrefix: {type: GraphQLString},cookieDomain: {type: GraphQLString},standardContentPrefix: {type: GraphQLString},httpPort: {type: GraphQLString},siteName: {type: GraphQLString},enableHttps: {type: GraphQLString},httpHost: {type: GraphQLString},visualThemeSetId: {type: GraphQLString},httpsHost: {type: GraphQLString},httpsPort: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {updateWebSite};
 
 
 const updateWebSiteContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWebSiteContent method',
   args:{fromDate: {type: GraphQLString},webSiteContentTypeId: {type: GraphQLString},contentId: {type: GraphQLString},webSiteId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {updateWebSiteContent};
 
 
 const updateWebSiteContentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWebSiteContentType method',
   args:{webSiteContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {updateWebSiteContentType};
 
 
 const updateWebSitePathAlias = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWebSitePathAlias method',
   args:{fromDate: {type: GraphQLString},webSiteId: {type: GraphQLString},pathAlias: {type: GraphQLString},aliasTo: {type: GraphQLString},contentId: {type: GraphQLString},mapKey: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {updateWebSitePathAlias};
 
 
 const updateWebSiteRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWebSiteRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},partyId: {type: GraphQLString},webSiteId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {updateWebSiteRole};
 
 
 const webSiteRoleInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz webSiteRoleInterface method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},webSiteId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

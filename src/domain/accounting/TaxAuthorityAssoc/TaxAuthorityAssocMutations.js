@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {TaxAuthorityAssocInputType} from '../../accounting/TaxAuthorityAssoc/TaxAuthorityAssocInputType.js';
+import {TaxAuthorityAssocResponseType} from '../../accounting/TaxAuthorityAssoc/TaxAuthorityAssocResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTaxAuthorityAssoc = {
-  type: ResopnseType,
+  type: TaxAuthorityAssocResponseType,
   description: 'mutation for ofbiz createTaxAuthorityAssoc method',
-  args:{},
+  args:{taxAuthorityAssocToBeAdded: {type: TaxAuthorityAssocInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/taxAuthority/taxAuthorityAssocs/add?`, null, req);
+    return postToUrl(`accounting/taxAuthority/taxAuthorityAssocs/add?`, args.taxAuthorityAssocToBeAdded, req);
   }
 };
 export {createTaxAuthorityAssoc};
 
 
 const updateTaxAuthorityAssoc = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTaxAuthorityAssoc method',
   args:{taxAuthorityAssocToBeUpdated: {type: TaxAuthorityAssocInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTaxAuthorityAssoc};
 
 
 const deleteTaxAuthorityAssocByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTaxAuthorityAssocByIdUpdated method',
   args:{taxAuthorityAssocId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

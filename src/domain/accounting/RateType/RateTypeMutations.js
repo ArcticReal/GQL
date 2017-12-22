@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {RateTypeInputType} from '../../accounting/RateType/RateTypeInputType.js';
+import {RateTypeResponseType} from '../../accounting/RateType/RateTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRateType = {
-  type: ResopnseType,
+  type: RateTypeResponseType,
   description: 'mutation for ofbiz createRateType method',
   args:{rateTypeToBeAdded: {type: RateTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createRateType};
 
 
 const updateRateType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateRateType method',
   args:{rateTypeToBeUpdated: {type: RateTypeInputType},rateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateRateType};
 
 
 const deleteRateTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteRateTypeByIdUpdated method',
   args:{rateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

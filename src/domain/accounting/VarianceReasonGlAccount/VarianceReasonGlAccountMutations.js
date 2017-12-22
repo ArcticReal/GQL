@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {VarianceReasonGlAccountInputType} from '../../accounting/VarianceReasonGlAccount/VarianceReasonGlAccountInputType.js';
+import {VarianceReasonGlAccountResponseType} from '../../accounting/VarianceReasonGlAccount/VarianceReasonGlAccountResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createVarianceReasonGlAccount = {
-  type: ResopnseType,
+  type: VarianceReasonGlAccountResponseType,
   description: 'mutation for ofbiz createVarianceReasonGlAccount method',
   args:{varianceReasonGlAccountToBeAdded: {type: VarianceReasonGlAccountInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createVarianceReasonGlAccount};
 
 
 const updateVarianceReasonGlAccount = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateVarianceReasonGlAccount method',
   args:{varianceReasonGlAccountToBeUpdated: {type: VarianceReasonGlAccountInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateVarianceReasonGlAccount};
 
 
 const deleteVarianceReasonGlAccountByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteVarianceReasonGlAccountByIdUpdated method',
   args:{varianceReasonGlAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

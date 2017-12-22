@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductPromoCategoryResponseType} from '../../product/ProductPromoCategory/ProductPromoCategoryResponseType.js';
 import {ProductPromoCategoryInputType} from '../../product/ProductPromoCategory/ProductPromoCategoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductPromoCategory = {
-  type: ResopnseType,
+  type: ProductPromoCategoryResponseType,
   description: 'mutation for ofbiz createProductPromoCategory method',
-  args:{productPromoCategoryToBeAdded: {type: ProductPromoCategoryInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productPromoCategorys/add?`, args.productPromoCategoryToBeAdded, req);
+    return postToUrl(`product/product/productPromoCategorys/add?`, null, req);
   }
 };
 export {createProductPromoCategory};
 
 
 const updateProductPromoCategory = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductPromoCategory method',
   args:{productPromoCategoryToBeUpdated: {type: ProductPromoCategoryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductPromoCategory};
 
 
 const deleteProductPromoCategoryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductPromoCategoryByIdUpdated method',
   args:{productPromoCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

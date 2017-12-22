@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {BillingAccountTermAttrInputType} from '../../accounting/BillingAccountTermAttr/BillingAccountTermAttrInputType.js';
+import {BillingAccountTermAttrResponseType} from '../../accounting/BillingAccountTermAttr/BillingAccountTermAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBillingAccountTermAttr = {
-  type: ResopnseType,
+  type: BillingAccountTermAttrResponseType,
   description: 'mutation for ofbiz createBillingAccountTermAttr method',
   args:{billingAccountTermAttrToBeAdded: {type: BillingAccountTermAttrInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createBillingAccountTermAttr};
 
 
 const updateBillingAccountTermAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateBillingAccountTermAttr method',
   args:{billingAccountTermAttrToBeUpdated: {type: BillingAccountTermAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateBillingAccountTermAttr};
 
 
 const deleteBillingAccountTermAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteBillingAccountTermAttrByIdUpdated method',
   args:{billingAccountTermAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

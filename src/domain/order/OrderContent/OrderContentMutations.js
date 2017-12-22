@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderContentInputType} from '../../order/OrderContent/OrderContentInputType.js';
+import {OrderContentResponseType} from '../../order/OrderContent/OrderContentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderContent = {
-  type: ResopnseType,
+  type: OrderContentResponseType,
   description: 'mutation for ofbiz createOrderContent method',
   args:{orderContentToBeAdded: {type: OrderContentInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createOrderContent};
 
 
 const deleteOrderContentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderContentByIdUpdated method',
   args:{orderContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteOrderContentByIdUpdated};
 
 
 const updateOrderContent = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderContent method',
   args:{orderContentToBeUpdated: {type: OrderContentInputType},orderItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

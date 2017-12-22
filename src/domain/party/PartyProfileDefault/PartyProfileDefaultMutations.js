@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyProfileDefaultResponseType} from '../../party/PartyProfileDefault/PartyProfileDefaultResponseType.js';
 import {PartyProfileDefaultInputType} from '../../party/PartyProfileDefault/PartyProfileDefaultInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyProfileDefault = {
-  type: ResopnseType,
+  type: PartyProfileDefaultResponseType,
   description: 'mutation for ofbiz createPartyProfileDefault method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPartyProfileDefault};
 
 
 const updatePartyProfileDefault = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyProfileDefault method',
   args:{partyProfileDefaultToBeUpdated: {type: PartyProfileDefaultInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyProfileDefault};
 
 
 const deletePartyProfileDefaultByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyProfileDefaultByIdUpdated method',
   args:{partyProfileDefaultId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

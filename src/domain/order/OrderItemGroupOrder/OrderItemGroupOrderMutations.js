@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderItemGroupOrderInputType} from '../../order/OrderItemGroupOrder/OrderItemGroupOrderInputType.js';
+import {OrderItemGroupOrderResponseType} from '../../order/OrderItemGroupOrder/OrderItemGroupOrderResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderItemGroupOrder = {
-  type: ResopnseType,
+  type: OrderItemGroupOrderResponseType,
   description: 'mutation for ofbiz createOrderItemGroupOrder method',
   args:{orderItemGroupOrderToBeAdded: {type: OrderItemGroupOrderInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createOrderItemGroupOrder};
 
 
 const deleteOrderItemGroupOrderByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderItemGroupOrderByIdUpdated method',
   args:{orderItemGroupOrderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteOrderItemGroupOrderByIdUpdated};
 
 
 const updateOrderItemGroupOrder = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderItemGroupOrder method',
   args:{orderItemGroupOrderToBeUpdated: {type: OrderItemGroupOrderInputType},orderItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

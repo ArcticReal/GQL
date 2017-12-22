@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createPerfRatingType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPerfRatingType method',
   args:{perfRatingTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createPerfRatingType};
 
 
 const createPerfReviewItemType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPerfReviewItemType method',
   args:{perfReviewItemTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createPerfReviewItemType};
 
 
 const deletePerfRatingType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePerfRatingType method',
   args:{perfRatingTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {deletePerfRatingType};
 
 
 const deletePerfReviewItemType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePerfReviewItemType method',
   args:{perfReviewItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {deletePerfReviewItemType};
 
 
 const updatePerfRatingType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePerfRatingType method',
   args:{perfRatingTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {updatePerfRatingType};
 
 
 const updatePerfReviewItemType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePerfReviewItemType method',
   args:{perfReviewItemTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

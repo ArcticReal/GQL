@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProdCatalogCategoryTypeInputType} from '../../product/ProdCatalogCategoryType/ProdCatalogCategoryTypeInputType.js';
+import {ProdCatalogCategoryTypeResponseType} from '../../product/ProdCatalogCategoryType/ProdCatalogCategoryTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProdCatalogCategoryType = {
-  type: ResopnseType,
+  type: ProdCatalogCategoryTypeResponseType,
   description: 'mutation for ofbiz createProdCatalogCategoryType method',
-  args:{},
+  args:{prodCatalogCategoryTypeToBeAdded: {type: ProdCatalogCategoryTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/prodCatalog/prodCatalogCategoryTypes/add?`, null, req);
+    return postToUrl(`product/prodCatalog/prodCatalogCategoryTypes/add?`, args.prodCatalogCategoryTypeToBeAdded, req);
   }
 };
 export {createProdCatalogCategoryType};
 
 
 const updateProdCatalogCategoryType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProdCatalogCategoryType method',
   args:{prodCatalogCategoryTypeToBeUpdated: {type: ProdCatalogCategoryTypeInputType},prodCatalogCategoryTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProdCatalogCategoryType};
 
 
 const deleteProdCatalogCategoryTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProdCatalogCategoryTypeByIdUpdated method',
   args:{prodCatalogCategoryTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

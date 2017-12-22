@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createBenefitType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createBenefitType method',
   args:{parentTypeId: {type: GraphQLString},employerPaidPercentage: {type: GraphQLFloat},hasTable: {type: GraphQLString},benefitName: {type: GraphQLString},benefitTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createBenefitType};
 
 
 const createEmploymentAppSourceType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmploymentAppSourceType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},employmentAppSourceTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createEmploymentAppSourceType};
 
 
 const deleteBenefitType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteBenefitType method',
   args:{benefitTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {deleteBenefitType};
 
 
 const deleteEmploymentAppSourceType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmploymentAppSourceType method',
   args:{employmentAppSourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {deleteEmploymentAppSourceType};
 
 
 const updateBenefitType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateBenefitType method',
   args:{benefitTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},employerPaidPercentage: {type: GraphQLFloat},hasTable: {type: GraphQLString},benefitName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {updateBenefitType};
 
 
 const updateEmploymentAppSourceType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmploymentAppSourceType method',
   args:{employmentAppSourceTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

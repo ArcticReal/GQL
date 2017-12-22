@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {CustRequestWorkEffortInputType} from '../../order/CustRequestWorkEffort/CustRequestWorkEffortInputType.js';
+import {CustRequestWorkEffortResponseType} from '../../order/CustRequestWorkEffort/CustRequestWorkEffortResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCustRequestWorkEffort = {
-  type: ResopnseType,
+  type: CustRequestWorkEffortResponseType,
   description: 'mutation for ofbiz createCustRequestWorkEffort method',
   args:{custRequestWorkEffortToBeAdded: {type: CustRequestWorkEffortInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createCustRequestWorkEffort};
 
 
 const deleteCustRequestWorkEffortByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCustRequestWorkEffortByIdUpdated method',
   args:{custRequestWorkEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCustRequestWorkEffortByIdUpdated};
 
 
 const updateCustRequestWorkEffort = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCustRequestWorkEffort method',
   args:{custRequestWorkEffortToBeUpdated: {type: CustRequestWorkEffortInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

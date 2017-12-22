@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PriorityTypeInputType} from '../../party/PriorityType/PriorityTypeInputType.js';
+import {PriorityTypeResponseType} from '../../party/PriorityType/PriorityTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPriorityType = {
-  type: ResopnseType,
+  type: PriorityTypeResponseType,
   description: 'mutation for ofbiz createPriorityType method',
-  args:{},
+  args:{priorityTypeToBeAdded: {type: PriorityTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/priorityTypes/add?`, null, req);
+    return postToUrl(`party/priorityTypes/add?`, args.priorityTypeToBeAdded, req);
   }
 };
 export {createPriorityType};
 
 
 const updatePriorityType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePriorityType method',
   args:{priorityTypeToBeUpdated: {type: PriorityTypeInputType},priorityTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePriorityType};
 
 
 const deletePriorityTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePriorityTypeByIdUpdated method',
   args:{priorityTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

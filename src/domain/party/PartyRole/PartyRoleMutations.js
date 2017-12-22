@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PartyRoleInputType} from '../../party/PartyRole/PartyRoleInputType.js';
+import {PartyRoleResponseType} from '../../party/PartyRole/PartyRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyRole = {
-  type: ResopnseType,
+  type: PartyRoleResponseType,
   description: 'mutation for ofbiz createPartyRole method',
-  args:{},
+  args:{partyRoleToBeAdded: {type: PartyRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyRoles/add?`, null, req);
+    return postToUrl(`party/party/partyRoles/add?`, args.partyRoleToBeAdded, req);
   }
 };
 export {createPartyRole};
 
 
 const updatePartyRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyRole method',
   args:{partyRoleToBeUpdated: {type: PartyRoleInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyRole};
 
 
 const deletePartyRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyRoleByIdUpdated method',
   args:{partyRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

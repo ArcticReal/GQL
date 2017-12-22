@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {CustRequestCategoryResponseType} from '../../order/CustRequestCategory/CustRequestCategoryResponseType.js';
 import {CustRequestCategoryInputType} from '../../order/CustRequestCategory/CustRequestCategoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCustRequestCategory = {
-  type: ResopnseType,
+  type: CustRequestCategoryResponseType,
   description: 'mutation for ofbiz createCustRequestCategory method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createCustRequestCategory};
 
 
 const updateCustRequestCategory = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCustRequestCategory method',
   args:{custRequestCategoryToBeUpdated: {type: CustRequestCategoryInputType},custRequestCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateCustRequestCategory};
 
 
 const deleteCustRequestCategoryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCustRequestCategoryByIdUpdated method',
   args:{custRequestCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

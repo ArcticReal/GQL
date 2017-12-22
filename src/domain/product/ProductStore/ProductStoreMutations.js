@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductStoreResponseType} from '../../product/ProductStore/ProductStoreResponseType.js';
 import {ProductStoreInputType} from '../../product/ProductStore/ProductStoreInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStore = {
-  type: ResopnseType,
+  type: ProductStoreResponseType,
   description: 'mutation for ofbiz createProductStore method',
-  args:{productStoreToBeAdded: {type: ProductStoreInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStores/add?`, args.productStoreToBeAdded, req);
+    return postToUrl(`product/product/productStores/add?`, null, req);
   }
 };
 export {createProductStore};
 
 
 const updateProductStore = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStore method',
   args:{productStoreToBeUpdated: {type: ProductStoreInputType},productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStore};
 
 
 const deleteProductStoreByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreByIdUpdated method',
   args:{productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

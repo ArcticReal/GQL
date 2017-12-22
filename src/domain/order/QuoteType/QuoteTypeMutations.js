@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {QuoteTypeResponseType} from '../../order/QuoteType/QuoteTypeResponseType.js';
 import {QuoteTypeInputType} from '../../order/QuoteType/QuoteTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuoteType = {
-  type: ResopnseType,
+  type: QuoteTypeResponseType,
   description: 'mutation for ofbiz createQuoteType method',
-  args:{quoteTypeToBeAdded: {type: QuoteTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/quote/quoteTypes/add?`, args.quoteTypeToBeAdded, req);
+    return postToUrl(`order/quote/quoteTypes/add?`, null, req);
   }
 };
 export {createQuoteType};
 
 
 const updateQuoteType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateQuoteType method',
   args:{quoteTypeToBeUpdated: {type: QuoteTypeInputType},quoteTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateQuoteType};
 
 
 const deleteQuoteTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteQuoteTypeByIdUpdated method',
   args:{quoteTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

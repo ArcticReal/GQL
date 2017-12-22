@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductFeatureGroupApplResponseType} from '../../product/ProductFeatureGroupAppl/ProductFeatureGroupApplResponseType.js';
 import {ProductFeatureGroupApplInputType} from '../../product/ProductFeatureGroupAppl/ProductFeatureGroupApplInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductFeatureGroupAppl = {
-  type: ResopnseType,
+  type: ProductFeatureGroupApplResponseType,
   description: 'mutation for ofbiz createProductFeatureGroupAppl method',
-  args:{productFeatureGroupApplToBeAdded: {type: ProductFeatureGroupApplInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productFeatureGroupAppls/add?`, args.productFeatureGroupApplToBeAdded, req);
+    return postToUrl(`product/product/productFeatureGroupAppls/add?`, null, req);
   }
 };
 export {createProductFeatureGroupAppl};
 
 
 const updateProductFeatureGroupAppl = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductFeatureGroupAppl method',
   args:{productFeatureGroupApplToBeUpdated: {type: ProductFeatureGroupApplInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductFeatureGroupAppl};
 
 
 const deleteProductFeatureGroupApplByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductFeatureGroupApplByIdUpdated method',
   args:{productFeatureGroupApplId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

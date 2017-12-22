@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {CarrierShipmentBoxTypeInputType} from '../../shipment/CarrierShipmentBoxType/CarrierShipmentBoxTypeInputType.js';
+import {CarrierShipmentBoxTypeResponseType} from '../../shipment/CarrierShipmentBoxType/CarrierShipmentBoxTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCarrierShipmentBoxType = {
-  type: ResopnseType,
+  type: CarrierShipmentBoxTypeResponseType,
   description: 'mutation for ofbiz createCarrierShipmentBoxType method',
   args:{carrierShipmentBoxTypeToBeAdded: {type: CarrierShipmentBoxTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createCarrierShipmentBoxType};
 
 
 const deleteCarrierShipmentBoxTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCarrierShipmentBoxTypeByIdUpdated method',
   args:{carrierShipmentBoxTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCarrierShipmentBoxTypeByIdUpdated};
 
 
 const updateCarrierShipmentBoxType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCarrierShipmentBoxType method',
   args:{carrierShipmentBoxTypeToBeUpdated: {type: CarrierShipmentBoxTypeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

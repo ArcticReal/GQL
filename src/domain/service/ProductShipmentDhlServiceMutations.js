@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const dhlRateEstimate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz dhlRateEstimate method',
   args:{carrierPartyId: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},shippableWeight: {type: GraphQLFloat},productStoreId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},shippableQuantity: {type: GraphQLFloat},shippableTotal: {type: GraphQLFloat},productStoreShipMethId: {type: GraphQLString},shippingContactMechId: {type: GraphQLString},shippingCountryCode: {type: GraphQLString},shipmentCustomMethodId: {type: GraphQLString},serviceConfigProps: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},shippingOriginContactMechId: {type: GraphQLString},shippingPostalCode: {type: GraphQLString},initialEstimateAmt: {type: GraphQLFloat},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {dhlRateEstimate};
 
 
 const dhlRegisterAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz dhlRegisterAccount method',
   args:{postalCode: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},configProps: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {dhlRegisterAccount};
 
 
 const dhlShipmentConfirm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz dhlShipmentConfirm method',
   args:{shipmentRouteSegmentId: {type: GraphQLString},shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

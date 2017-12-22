@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {CartAbandonedLineInputType} from '../../order/CartAbandonedLine/CartAbandonedLineInputType.js';
+import {CartAbandonedLineResponseType} from '../../order/CartAbandonedLine/CartAbandonedLineResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCartAbandonedLine = {
-  type: ResopnseType,
+  type: CartAbandonedLineResponseType,
   description: 'mutation for ofbiz createCartAbandonedLine method',
-  args:{},
+  args:{cartAbandonedLineToBeAdded: {type: CartAbandonedLineInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/cartAbandonedLines/add?`, null, req);
+    return postToUrl(`order/cartAbandonedLines/add?`, args.cartAbandonedLineToBeAdded, req);
   }
 };
 export {createCartAbandonedLine};
 
 
 const deleteCartAbandonedLineByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCartAbandonedLineByIdUpdated method',
   args:{cartAbandonedLineId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCartAbandonedLineByIdUpdated};
 
 
 const updateCartAbandonedLine = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCartAbandonedLine method',
   args:{cartAbandonedLineToBeUpdated: {type: CartAbandonedLineInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

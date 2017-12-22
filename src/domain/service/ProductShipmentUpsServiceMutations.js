@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const upsAddressValidation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz upsAddressValidation method',
   args:{city: {type: GraphQLString},postalCode: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {upsAddressValidation};
 
 
 const upsEmailReturnLabel = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz upsEmailReturnLabel method',
   args:{shipmentRouteSegmentId: {type: GraphQLString},shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {upsEmailReturnLabel};
 
 
 const upsRateEstimate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz upsRateEstimate method',
   args:{carrierPartyId: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},shippableWeight: {type: GraphQLFloat},productStoreId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},shippableQuantity: {type: GraphQLFloat},shippableTotal: {type: GraphQLFloat},productStoreShipMethId: {type: GraphQLString},shippingContactMechId: {type: GraphQLString},shippingCountryCode: {type: GraphQLString},shipmentCustomMethodId: {type: GraphQLString},serviceConfigProps: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},upsRateInquireMode: {type: GraphQLString},shippingOriginContactMechId: {type: GraphQLString},shippingPostalCode: {type: GraphQLString},initialEstimateAmt: {type: GraphQLFloat},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {upsRateEstimate};
 
 
 const upsRateEstimateByPostalCode = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz upsRateEstimateByPostalCode method',
   args:{carrierPartyId: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},shippableWeight: {type: GraphQLFloat},productStoreId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},shippableQuantity: {type: GraphQLFloat},shippableTotal: {type: GraphQLFloat},shippingCountryCode: {type: GraphQLString},shipFromAddress: {type: new GraphQLList(KeyValueInputType)},serviceConfigProps: {type: GraphQLString},upsRateInquireMode: {type: GraphQLString},shipmentGatewayConfigId: {type: GraphQLString},shippingPostalCode: {type: GraphQLString},initialEstimateAmt: {type: GraphQLFloat},isResidentialAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {upsRateEstimateByPostalCode};
 
 
 const upsShipmentAccept = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz upsShipmentAccept method',
   args:{shipmentRouteSegmentId: {type: GraphQLString},shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {upsShipmentAccept};
 
 
 const upsShipmentAlternateRatesEstimate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz upsShipmentAlternateRatesEstimate method',
   args:{shipmentId: {type: GraphQLString},productStoreId: {type: GraphQLString},shipmentRouteSegmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {upsShipmentAlternateRatesEstimate};
 
 
 const upsShipmentConfirm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz upsShipmentConfirm method',
   args:{shipmentRouteSegmentId: {type: GraphQLString},shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {upsShipmentConfirm};
 
 
 const upsTrackShipment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz upsTrackShipment method',
   args:{shipmentRouteSegmentId: {type: GraphQLString},shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {upsTrackShipment};
 
 
 const upsVoidShipment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz upsVoidShipment method',
   args:{shipmentRouteSegmentId: {type: GraphQLString},shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

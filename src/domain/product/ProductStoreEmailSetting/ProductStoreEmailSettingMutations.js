@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductStoreEmailSettingInputType} from '../../product/ProductStoreEmailSetting/ProductStoreEmailSettingInputType.js';
+import {ProductStoreEmailSettingResponseType} from '../../product/ProductStoreEmailSetting/ProductStoreEmailSettingResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreEmailSetting = {
-  type: ResopnseType,
+  type: ProductStoreEmailSettingResponseType,
   description: 'mutation for ofbiz createProductStoreEmailSetting method',
   args:{productStoreEmailSettingToBeAdded: {type: ProductStoreEmailSettingInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductStoreEmailSetting};
 
 
 const updateProductStoreEmailSetting = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreEmailSetting method',
   args:{productStoreEmailSettingToBeUpdated: {type: ProductStoreEmailSettingInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStoreEmailSetting};
 
 
 const deleteProductStoreEmailSettingByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreEmailSettingByIdUpdated method',
   args:{productStoreEmailSettingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

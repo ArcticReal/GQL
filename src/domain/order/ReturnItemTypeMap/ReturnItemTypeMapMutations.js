@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ReturnItemTypeMapInputType} from '../../order/ReturnItemTypeMap/ReturnItemTypeMapInputType.js';
+import {ReturnItemTypeMapResponseType} from '../../order/ReturnItemTypeMap/ReturnItemTypeMapResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReturnItemTypeMap = {
-  type: ResopnseType,
+  type: ReturnItemTypeMapResponseType,
   description: 'mutation for ofbiz createReturnItemTypeMap method',
   args:{returnItemTypeMapToBeAdded: {type: ReturnItemTypeMapInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createReturnItemTypeMap};
 
 
 const updateReturnItemTypeMap = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateReturnItemTypeMap method',
   args:{returnItemTypeMapToBeUpdated: {type: ReturnItemTypeMapInputType},returnItemMapKey: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateReturnItemTypeMap};
 
 
 const deleteReturnItemTypeMapByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteReturnItemTypeMapByIdUpdated method',
   args:{returnItemTypeMapId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

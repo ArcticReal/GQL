@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ShoppingListTypeInputType} from '../../order/ShoppingListType/ShoppingListTypeInputType.js';
+import {ShoppingListTypeResponseType} from '../../order/ShoppingListType/ShoppingListTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShoppingListType = {
-  type: ResopnseType,
+  type: ShoppingListTypeResponseType,
   description: 'mutation for ofbiz createShoppingListType method',
-  args:{},
+  args:{shoppingListTypeToBeAdded: {type: ShoppingListTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/shoppingList/shoppingListTypes/add?`, null, req);
+    return postToUrl(`order/shoppingList/shoppingListTypes/add?`, args.shoppingListTypeToBeAdded, req);
   }
 };
 export {createShoppingListType};
 
 
 const updateShoppingListType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShoppingListType method',
   args:{shoppingListTypeToBeUpdated: {type: ShoppingListTypeInputType},shoppingListTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateShoppingListType};
 
 
 const deleteShoppingListTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShoppingListTypeByIdUpdated method',
   args:{shoppingListTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

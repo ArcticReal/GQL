@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductPromoCodeEmailResponseType} from '../../product/ProductPromoCodeEmail/ProductPromoCodeEmailResponseType.js';
 import {ProductPromoCodeEmailInputType} from '../../product/ProductPromoCodeEmail/ProductPromoCodeEmailInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductPromoCodeEmail = {
-  type: ResopnseType,
+  type: ProductPromoCodeEmailResponseType,
   description: 'mutation for ofbiz createProductPromoCodeEmail method',
-  args:{productPromoCodeEmailToBeAdded: {type: ProductPromoCodeEmailInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productPromoCodeEmails/add?`, args.productPromoCodeEmailToBeAdded, req);
+    return postToUrl(`product/product/productPromoCodeEmails/add?`, null, req);
   }
 };
 export {createProductPromoCodeEmail};
 
 
 const updateProductPromoCodeEmail = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductPromoCodeEmail method',
   args:{productPromoCodeEmailToBeUpdated: {type: ProductPromoCodeEmailInputType},emailAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductPromoCodeEmail};
 
 
 const deleteProductPromoCodeEmailByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductPromoCodeEmailByIdUpdated method',
   args:{productPromoCodeEmailId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

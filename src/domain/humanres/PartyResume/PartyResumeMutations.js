@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyResumeResponseType} from '../../humanres/PartyResume/PartyResumeResponseType.js';
 import {PartyResumeInputType} from '../../humanres/PartyResume/PartyResumeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyResume = {
-  type: ResopnseType,
+  type: PartyResumeResponseType,
   description: 'mutation for ofbiz createPartyResume method',
-  args:{partyResumeToBeAdded: {type: PartyResumeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/partyResumes/add?`, args.partyResumeToBeAdded, req);
+    return postToUrl(`humanres/partyResumes/add?`, null, req);
   }
 };
 export {createPartyResume};
 
 
 const deletePartyResumeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyResumeByIdUpdated method',
   args:{partyResumeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deletePartyResumeByIdUpdated};
 
 
 const updatePartyResume = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyResume method',
   args:{partyResumeToBeUpdated: {type: PartyResumeInputType},resumeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

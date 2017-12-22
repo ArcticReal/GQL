@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {MarketInterestInputType} from '../../product/MarketInterest/MarketInterestInputType.js';
+import {MarketInterestResponseType} from '../../product/MarketInterest/MarketInterestResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMarketInterest = {
-  type: ResopnseType,
+  type: MarketInterestResponseType,
   description: 'mutation for ofbiz createMarketInterest method',
   args:{marketInterestToBeAdded: {type: MarketInterestInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createMarketInterest};
 
 
 const deleteMarketInterestByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteMarketInterestByIdUpdated method',
   args:{marketInterestId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteMarketInterestByIdUpdated};
 
 
 const updateMarketInterest = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateMarketInterest method',
   args:{marketInterestToBeUpdated: {type: MarketInterestInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

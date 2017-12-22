@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {DataResourcePurposeResponseType} from '../../content/DataResourcePurpose/DataResourcePurposeResponseType.js';
 import {DataResourcePurposeInputType} from '../../content/DataResourcePurpose/DataResourcePurposeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDataResourcePurpose = {
-  type: ResopnseType,
+  type: DataResourcePurposeResponseType,
   description: 'mutation for ofbiz createDataResourcePurpose method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createDataResourcePurpose};
 
 
 const deleteDataResourcePurposeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDataResourcePurposeByIdUpdated method',
   args:{dataResourcePurposeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteDataResourcePurposeByIdUpdated};
 
 
 const updateDataResourcePurpose = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDataResourcePurpose method',
   args:{dataResourcePurposeToBeUpdated: {type: DataResourcePurposeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

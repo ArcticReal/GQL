@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {AddendumResponseType} from '../../party/Addendum/AddendumResponseType.js';
 import {AddendumInputType} from '../../party/Addendum/AddendumInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAddendum = {
-  type: ResopnseType,
+  type: AddendumResponseType,
   description: 'mutation for ofbiz createAddendum method',
-  args:{addendumToBeAdded: {type: AddendumInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/addendums/add?`, args.addendumToBeAdded, req);
+    return postToUrl(`party/addendums/add?`, null, req);
   }
 };
 export {createAddendum};
 
 
 const updateAddendum = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAddendum method',
   args:{addendumToBeUpdated: {type: AddendumInputType},addendumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateAddendum};
 
 
 const deleteAddendumByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAddendumByIdUpdated method',
   args:{addendumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

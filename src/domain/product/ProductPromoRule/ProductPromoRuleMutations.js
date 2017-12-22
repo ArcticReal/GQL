@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductPromoRuleInputType} from '../../product/ProductPromoRule/ProductPromoRuleInputType.js';
+import {ProductPromoRuleResponseType} from '../../product/ProductPromoRule/ProductPromoRuleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductPromoRule = {
-  type: ResopnseType,
+  type: ProductPromoRuleResponseType,
   description: 'mutation for ofbiz createProductPromoRule method',
   args:{productPromoRuleToBeAdded: {type: ProductPromoRuleInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductPromoRule};
 
 
 const updateProductPromoRule = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductPromoRule method',
   args:{productPromoRuleToBeUpdated: {type: ProductPromoRuleInputType},productPromoRuleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductPromoRule};
 
 
 const deleteProductPromoRuleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductPromoRuleByIdUpdated method',
   args:{productPromoRuleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

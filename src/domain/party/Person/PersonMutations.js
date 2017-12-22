@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PersonInputType} from '../../party/Person/PersonInputType.js';
+import {PersonResponseType} from '../../party/Person/PersonResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPerson = {
-  type: ResopnseType,
+  type: PersonResponseType,
   description: 'mutation for ofbiz createPerson method',
-  args:{},
+  args:{personToBeAdded: {type: PersonInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/persons/add?`, null, req);
+    return postToUrl(`party/persons/add?`, args.personToBeAdded, req);
   }
 };
 export {createPerson};
 
 
 const updatePerson = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePerson method',
   args:{personToBeUpdated: {type: PersonInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePerson};
 
 
 const deletePersonByIdUpdated = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePersonByIdUpdated method',
   args:{personId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

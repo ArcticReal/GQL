@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {MarketingCampaignNoteResponseType} from '../../marketing/MarketingCampaignNote/MarketingCampaignNoteResponseType.js';
 import {MarketingCampaignNoteInputType} from '../../marketing/MarketingCampaignNote/MarketingCampaignNoteInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMarketingCampaignNote = {
-  type: ResopnseType,
+  type: MarketingCampaignNoteResponseType,
   description: 'mutation for ofbiz createMarketingCampaignNote method',
-  args:{marketingCampaignNoteToBeAdded: {type: MarketingCampaignNoteInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/marketingCampaign/marketingCampaignNotes/add?`, args.marketingCampaignNoteToBeAdded, req);
+    return postToUrl(`marketing/marketingCampaign/marketingCampaignNotes/add?`, null, req);
   }
 };
 export {createMarketingCampaignNote};
 
 
 const deleteMarketingCampaignNoteByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteMarketingCampaignNoteByIdUpdated method',
   args:{marketingCampaignNoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteMarketingCampaignNoteByIdUpdated};
 
 
 const updateMarketingCampaignNote = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateMarketingCampaignNote method',
   args:{marketingCampaignNoteToBeUpdated: {type: MarketingCampaignNoteInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

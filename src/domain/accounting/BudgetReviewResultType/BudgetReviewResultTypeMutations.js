@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {BudgetReviewResultTypeInputType} from '../../accounting/BudgetReviewResultType/BudgetReviewResultTypeInputType.js';
+import {BudgetReviewResultTypeResponseType} from '../../accounting/BudgetReviewResultType/BudgetReviewResultTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBudgetReviewResultType = {
-  type: ResopnseType,
+  type: BudgetReviewResultTypeResponseType,
   description: 'mutation for ofbiz createBudgetReviewResultType method',
   args:{budgetReviewResultTypeToBeAdded: {type: BudgetReviewResultTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createBudgetReviewResultType};
 
 
 const updateBudgetReviewResultType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateBudgetReviewResultType method',
   args:{budgetReviewResultTypeToBeUpdated: {type: BudgetReviewResultTypeInputType},budgetReviewResultTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateBudgetReviewResultType};
 
 
 const deleteBudgetReviewResultTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteBudgetReviewResultTypeByIdUpdated method',
   args:{budgetReviewResultTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {WebSiteContentTypeInputType} from '../../content/WebSiteContentType/WebSiteContentTypeInputType.js';
+import {WebSiteContentTypeResponseType} from '../../content/WebSiteContentType/WebSiteContentTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWebSiteContentType = {
-  type: ResopnseType,
+  type: WebSiteContentTypeResponseType,
   description: 'mutation for ofbiz createWebSiteContentType method',
   args:{webSiteContentTypeToBeAdded: {type: WebSiteContentTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createWebSiteContentType};
 
 
 const updateWebSiteContentType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWebSiteContentType method',
   args:{webSiteContentTypeToBeUpdated: {type: WebSiteContentTypeInputType},webSiteContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWebSiteContentType};
 
 
 const deleteWebSiteContentTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWebSiteContentTypeByIdUpdated method',
   args:{webSiteContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

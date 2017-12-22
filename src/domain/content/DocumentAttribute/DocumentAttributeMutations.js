@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {DocumentAttributeInputType} from '../../content/DocumentAttribute/DocumentAttributeInputType.js';
+import {DocumentAttributeResponseType} from '../../content/DocumentAttribute/DocumentAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDocumentAttribute = {
-  type: ResopnseType,
+  type: DocumentAttributeResponseType,
   description: 'mutation for ofbiz createDocumentAttribute method',
-  args:{},
+  args:{documentAttributeToBeAdded: {type: DocumentAttributeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/document/documentAttributes/add?`, null, req);
+    return postToUrl(`content/document/documentAttributes/add?`, args.documentAttributeToBeAdded, req);
   }
 };
 export {createDocumentAttribute};
 
 
 const updateDocumentAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDocumentAttribute method',
   args:{documentAttributeToBeUpdated: {type: DocumentAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateDocumentAttribute};
 
 
 const deleteDocumentAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDocumentAttributeByIdUpdated method',
   args:{documentAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

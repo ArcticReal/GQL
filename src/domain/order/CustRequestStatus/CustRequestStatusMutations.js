@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {CustRequestStatusResponseType} from '../../order/CustRequestStatus/CustRequestStatusResponseType.js';
 import {CustRequestStatusInputType} from '../../order/CustRequestStatus/CustRequestStatusInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCustRequestStatus = {
-  type: ResopnseType,
+  type: CustRequestStatusResponseType,
   description: 'mutation for ofbiz createCustRequestStatus method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createCustRequestStatus};
 
 
 const updateCustRequestStatus = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCustRequestStatus method',
   args:{custRequestStatusToBeUpdated: {type: CustRequestStatusInputType},custRequestStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateCustRequestStatus};
 
 
 const deleteCustRequestStatusByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCustRequestStatusByIdUpdated method',
   args:{custRequestStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

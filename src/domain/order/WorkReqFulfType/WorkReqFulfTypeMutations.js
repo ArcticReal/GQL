@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {WorkReqFulfTypeInputType} from '../../order/WorkReqFulfType/WorkReqFulfTypeInputType.js';
+import {WorkReqFulfTypeResponseType} from '../../order/WorkReqFulfType/WorkReqFulfTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkReqFulfType = {
-  type: ResopnseType,
+  type: WorkReqFulfTypeResponseType,
   description: 'mutation for ofbiz createWorkReqFulfType method',
   args:{workReqFulfTypeToBeAdded: {type: WorkReqFulfTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createWorkReqFulfType};
 
 
 const updateWorkReqFulfType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkReqFulfType method',
   args:{workReqFulfTypeToBeUpdated: {type: WorkReqFulfTypeInputType},workReqFulfTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkReqFulfType};
 
 
 const deleteWorkReqFulfTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkReqFulfTypeByIdUpdated method',
   args:{workReqFulfTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

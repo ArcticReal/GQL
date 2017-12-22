@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OldPartyTaxInfoInputType} from '../../party/OldPartyTaxInfo/OldPartyTaxInfoInputType.js';
+import {OldPartyTaxInfoResponseType} from '../../party/OldPartyTaxInfo/OldPartyTaxInfoResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOldPartyTaxInfo = {
-  type: ResopnseType,
+  type: OldPartyTaxInfoResponseType,
   description: 'mutation for ofbiz createOldPartyTaxInfo method',
-  args:{},
+  args:{oldPartyTaxInfoToBeAdded: {type: OldPartyTaxInfoInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/oldPartyTaxInfos/add?`, null, req);
+    return postToUrl(`party/party/oldPartyTaxInfos/add?`, args.oldPartyTaxInfoToBeAdded, req);
   }
 };
 export {createOldPartyTaxInfo};
 
 
 const updateOldPartyTaxInfo = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOldPartyTaxInfo method',
   args:{oldPartyTaxInfoToBeUpdated: {type: OldPartyTaxInfoInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOldPartyTaxInfo};
 
 
 const deleteOldPartyTaxInfoByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOldPartyTaxInfoByIdUpdated method',
   args:{oldPartyTaxInfoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

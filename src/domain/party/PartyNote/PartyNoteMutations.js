@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyNoteResponseType} from '../../party/PartyNote/PartyNoteResponseType.js';
 import {PartyNoteInputType} from '../../party/PartyNote/PartyNoteInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyNote = {
-  type: ResopnseType,
+  type: PartyNoteResponseType,
   description: 'mutation for ofbiz createPartyNote method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPartyNote};
 
 
 const updatePartyNote = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyNote method',
   args:{partyNoteToBeUpdated: {type: PartyNoteInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyNote};
 
 
 const deletePartyNoteByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyNoteByIdUpdated method',
   args:{partyNoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

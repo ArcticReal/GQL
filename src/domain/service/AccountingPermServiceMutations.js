@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const acctgAgreementPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acctgAgreementPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {acctgAgreementPermissionCheck};
 
 
 const acctgBasePermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acctgBasePermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {acctgBasePermissionCheck};
 
 
 const acctgBillingAcctCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acctgBillingAcctCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {acctgBillingAcctCheck};
 
 
 const acctgCommissionPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acctgCommissionPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {acctgCommissionPermissionCheck};
 
 
 const acctgCostPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acctgCostPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {acctgCostPermissionCheck};
 
 
 const acctgFinAcctPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acctgFinAcctPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {acctgFinAcctPermissionCheck};
 
 
 const acctgFxPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acctgFxPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {acctgFxPermissionCheck};
 
 
 const acctgInvoicePermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acctgInvoicePermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {acctgInvoicePermissionCheck};
 
 
 const acctgPaymentPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acctgPaymentPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {acctgPaymentPermissionCheck};
 
 
 const acctgPrefPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acctgPrefPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {acctgPrefPermissionCheck};
 
 
 const acctgTransactionPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acctgTransactionPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {acctgTransactionPermissionCheck};
 
 
 const basicGeneralLedgerPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz basicGeneralLedgerPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {basicGeneralLedgerPermissionCheck};
 
 
 const fixedAssetPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz fixedAssetPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

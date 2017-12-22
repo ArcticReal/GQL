@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortInventoryAssignResponseType} from '../../workeffort/WorkEffortInventoryAssign/WorkEffortInventoryAssignResponseType.js';
 import {WorkEffortInventoryAssignInputType} from '../../workeffort/WorkEffortInventoryAssign/WorkEffortInventoryAssignInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortInventoryAssign = {
-  type: ResopnseType,
+  type: WorkEffortInventoryAssignResponseType,
   description: 'mutation for ofbiz createWorkEffortInventoryAssign method',
-  args:{workEffortInventoryAssignToBeAdded: {type: WorkEffortInventoryAssignInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortInventoryAssigns/add?`, args.workEffortInventoryAssignToBeAdded, req);
+    return postToUrl(`workeffort/workEffort/workEffortInventoryAssigns/add?`, null, req);
   }
 };
 export {createWorkEffortInventoryAssign};
 
 
 const updateWorkEffortInventoryAssign = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortInventoryAssign method',
   args:{workEffortInventoryAssignToBeUpdated: {type: WorkEffortInventoryAssignInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortInventoryAssign};
 
 
 const deleteWorkEffortInventoryAssignByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortInventoryAssignByIdUpdated method',
   args:{workEffortInventoryAssignId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

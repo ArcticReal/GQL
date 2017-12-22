@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {CostComponentTypeAttrInputType} from '../../product/CostComponentTypeAttr/CostComponentTypeAttrInputType.js';
+import {CostComponentTypeAttrResponseType} from '../../product/CostComponentTypeAttr/CostComponentTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCostComponentTypeAttr = {
-  type: ResopnseType,
+  type: CostComponentTypeAttrResponseType,
   description: 'mutation for ofbiz createCostComponentTypeAttr method',
-  args:{},
+  args:{costComponentTypeAttrToBeAdded: {type: CostComponentTypeAttrInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/costComponent/costComponentTypeAttrs/add?`, null, req);
+    return postToUrl(`product/costComponent/costComponentTypeAttrs/add?`, args.costComponentTypeAttrToBeAdded, req);
   }
 };
 export {createCostComponentTypeAttr};
 
 
 const updateCostComponentTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCostComponentTypeAttr method',
   args:{costComponentTypeAttrToBeUpdated: {type: CostComponentTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateCostComponentTypeAttr};
 
 
 const deleteCostComponentTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCostComponentTypeAttrByIdUpdated method',
   args:{costComponentTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

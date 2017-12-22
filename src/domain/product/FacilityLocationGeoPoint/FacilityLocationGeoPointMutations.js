@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FacilityLocationGeoPointResponseType} from '../../product/FacilityLocationGeoPoint/FacilityLocationGeoPointResponseType.js';
 import {FacilityLocationGeoPointInputType} from '../../product/FacilityLocationGeoPoint/FacilityLocationGeoPointInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityLocationGeoPoint = {
-  type: ResopnseType,
+  type: FacilityLocationGeoPointResponseType,
   description: 'mutation for ofbiz createFacilityLocationGeoPoint method',
-  args:{facilityLocationGeoPointToBeAdded: {type: FacilityLocationGeoPointInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityLocationGeoPoints/add?`, args.facilityLocationGeoPointToBeAdded, req);
+    return postToUrl(`product/facility/facilityLocationGeoPoints/add?`, null, req);
   }
 };
 export {createFacilityLocationGeoPoint};
 
 
 const deleteFacilityLocationGeoPointByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFacilityLocationGeoPointByIdUpdated method',
   args:{facilityLocationGeoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFacilityLocationGeoPointByIdUpdated};
 
 
 const updateFacilityLocationGeoPoint = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFacilityLocationGeoPoint method',
   args:{facilityLocationGeoPointToBeUpdated: {type: FacilityLocationGeoPointInputType},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

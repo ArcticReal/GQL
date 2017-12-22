@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {CustRequestItemResponseType} from '../../order/CustRequestItem/CustRequestItemResponseType.js';
 import {CustRequestItemInputType} from '../../order/CustRequestItem/CustRequestItemInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCustRequestItem = {
-  type: ResopnseType,
+  type: CustRequestItemResponseType,
   description: 'mutation for ofbiz createCustRequestItem method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createCustRequestItem};
 
 
 const deleteCustRequestItemByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCustRequestItemByIdUpdated method',
   args:{custRequestItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCustRequestItemByIdUpdated};
 
 
 const updateCustRequestItem = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCustRequestItem method',
   args:{custRequestItemToBeUpdated: {type: CustRequestItemInputType},custRequestItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContactMechResponseType} from '../../party/ContactMech/ContactMechResponseType.js';
 import {ContactMechInputType} from '../../party/ContactMech/ContactMechInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContactMech = {
-  type: ResopnseType,
+  type: ContactMechResponseType,
   description: 'mutation for ofbiz createContactMech method',
-  args:{contactMechToBeAdded: {type: ContactMechInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/contactMechs/add?`, args.contactMechToBeAdded, req);
+    return postToUrl(`party/contactMechs/add?`, null, req);
   }
 };
 export {createContactMech};
 
 
 const updateContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactMech method',
   args:{contactMechToBeUpdated: {type: ContactMechInputType},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContactMech};
 
 
 const deleteContactMechByIdUpdated = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteContactMechByIdUpdated method',
   args:{contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

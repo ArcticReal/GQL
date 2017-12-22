@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {SalesOpportunityStageInputType} from '../../marketing/SalesOpportunityStage/SalesOpportunityStageInputType.js';
+import {SalesOpportunityStageResponseType} from '../../marketing/SalesOpportunityStage/SalesOpportunityStageResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSalesOpportunityStage = {
-  type: ResopnseType,
+  type: SalesOpportunityStageResponseType,
   description: 'mutation for ofbiz createSalesOpportunityStage method',
-  args:{},
+  args:{salesOpportunityStageToBeAdded: {type: SalesOpportunityStageInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/salesOpportunity/salesOpportunityStages/add?`, null, req);
+    return postToUrl(`marketing/salesOpportunity/salesOpportunityStages/add?`, args.salesOpportunityStageToBeAdded, req);
   }
 };
 export {createSalesOpportunityStage};
 
 
 const updateSalesOpportunityStage = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSalesOpportunityStage method',
   args:{salesOpportunityStageToBeUpdated: {type: SalesOpportunityStageInputType},opportunityStageId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSalesOpportunityStage};
 
 
 const deleteSalesOpportunityStageByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSalesOpportunityStageByIdUpdated method',
   args:{salesOpportunityStageId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {QuoteCoefficientResponseType} from '../../order/QuoteCoefficient/QuoteCoefficientResponseType.js';
 import {QuoteCoefficientInputType} from '../../order/QuoteCoefficient/QuoteCoefficientInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuoteCoefficient = {
-  type: ResopnseType,
+  type: QuoteCoefficientResponseType,
   description: 'mutation for ofbiz createQuoteCoefficient method',
-  args:{quoteCoefficientToBeAdded: {type: QuoteCoefficientInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/quote/quoteCoefficients/add?`, args.quoteCoefficientToBeAdded, req);
+    return postToUrl(`order/quote/quoteCoefficients/add?`, null, req);
   }
 };
 export {createQuoteCoefficient};
 
 
 const updateQuoteCoefficient = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateQuoteCoefficient method',
   args:{quoteCoefficientToBeUpdated: {type: QuoteCoefficientInputType},coeffName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateQuoteCoefficient};
 
 
 const deleteQuoteCoefficientByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteQuoteCoefficientByIdUpdated method',
   args:{quoteCoefficientId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

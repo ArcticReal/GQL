@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {RoleTypeAttrInputType} from '../../party/RoleTypeAttr/RoleTypeAttrInputType.js';
+import {RoleTypeAttrResponseType} from '../../party/RoleTypeAttr/RoleTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRoleTypeAttr = {
-  type: ResopnseType,
+  type: RoleTypeAttrResponseType,
   description: 'mutation for ofbiz createRoleTypeAttr method',
-  args:{},
+  args:{roleTypeAttrToBeAdded: {type: RoleTypeAttrInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/roleType/roleTypeAttrs/add?`, null, req);
+    return postToUrl(`party/roleType/roleTypeAttrs/add?`, args.roleTypeAttrToBeAdded, req);
   }
 };
 export {createRoleTypeAttr};
 
 
 const updateRoleTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateRoleTypeAttr method',
   args:{roleTypeAttrToBeUpdated: {type: RoleTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateRoleTypeAttr};
 
 
 const deleteRoleTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteRoleTypeAttrByIdUpdated method',
   args:{roleTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

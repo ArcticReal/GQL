@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyTaxAuthInfoResponseType} from '../../accounting/PartyTaxAuthInfo/PartyTaxAuthInfoResponseType.js';
 import {PartyTaxAuthInfoInputType} from '../../accounting/PartyTaxAuthInfo/PartyTaxAuthInfoInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyTaxAuthInfo = {
-  type: ResopnseType,
+  type: PartyTaxAuthInfoResponseType,
   description: 'mutation for ofbiz createPartyTaxAuthInfo method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPartyTaxAuthInfo};
 
 
 const deletePartyTaxAuthInfoByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyTaxAuthInfoByIdUpdated method',
   args:{partyTaxAuthInfoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deletePartyTaxAuthInfoByIdUpdated};
 
 
 const updatePartyTaxAuthInfo = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyTaxAuthInfo method',
   args:{partyTaxAuthInfoToBeUpdated: {type: PartyTaxAuthInfoInputType},taxAuthPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

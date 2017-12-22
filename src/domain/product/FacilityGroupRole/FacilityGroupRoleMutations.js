@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {FacilityGroupRoleInputType} from '../../product/FacilityGroupRole/FacilityGroupRoleInputType.js';
+import {FacilityGroupRoleResponseType} from '../../product/FacilityGroupRole/FacilityGroupRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityGroupRole = {
-  type: ResopnseType,
+  type: FacilityGroupRoleResponseType,
   description: 'mutation for ofbiz createFacilityGroupRole method',
-  args:{},
+  args:{facilityGroupRoleToBeAdded: {type: FacilityGroupRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityGroupRoles/add?`, null, req);
+    return postToUrl(`product/facility/facilityGroupRoles/add?`, args.facilityGroupRoleToBeAdded, req);
   }
 };
 export {createFacilityGroupRole};
 
 
 const deleteFacilityGroupRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFacilityGroupRoleByIdUpdated method',
   args:{facilityGroupRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFacilityGroupRoleByIdUpdated};
 
 
 const updateFacilityGroupRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFacilityGroupRole method',
   args:{facilityGroupRoleToBeUpdated: {type: FacilityGroupRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

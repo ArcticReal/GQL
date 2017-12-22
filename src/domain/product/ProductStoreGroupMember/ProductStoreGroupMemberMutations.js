@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductStoreGroupMemberInputType} from '../../product/ProductStoreGroupMember/ProductStoreGroupMemberInputType.js';
+import {ProductStoreGroupMemberResponseType} from '../../product/ProductStoreGroupMember/ProductStoreGroupMemberResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreGroupMember = {
-  type: ResopnseType,
+  type: ProductStoreGroupMemberResponseType,
   description: 'mutation for ofbiz createProductStoreGroupMember method',
   args:{productStoreGroupMemberToBeAdded: {type: ProductStoreGroupMemberInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductStoreGroupMember};
 
 
 const updateProductStoreGroupMember = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreGroupMember method',
   args:{productStoreGroupMemberToBeUpdated: {type: ProductStoreGroupMemberInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStoreGroupMember};
 
 
 const deleteProductStoreGroupMemberByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreGroupMemberByIdUpdated method',
   args:{productStoreGroupMemberId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

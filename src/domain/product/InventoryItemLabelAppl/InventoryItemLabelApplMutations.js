@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {InventoryItemLabelApplResponseType} from '../../product/InventoryItemLabelAppl/InventoryItemLabelApplResponseType.js';
 import {InventoryItemLabelApplInputType} from '../../product/InventoryItemLabelAppl/InventoryItemLabelApplInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInventoryItemLabelAppl = {
-  type: ResopnseType,
+  type: InventoryItemLabelApplResponseType,
   description: 'mutation for ofbiz createInventoryItemLabelAppl method',
-  args:{inventoryItemLabelApplToBeAdded: {type: InventoryItemLabelApplInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/inventoryItem/inventoryItemLabelAppls/add?`, args.inventoryItemLabelApplToBeAdded, req);
+    return postToUrl(`product/inventoryItem/inventoryItemLabelAppls/add?`, null, req);
   }
 };
 export {createInventoryItemLabelAppl};
 
 
 const deleteInventoryItemLabelApplByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInventoryItemLabelApplByIdUpdated method',
   args:{inventoryItemLabelApplId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteInventoryItemLabelApplByIdUpdated};
 
 
 const updateInventoryItemLabelAppl = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInventoryItemLabelAppl method',
   args:{inventoryItemLabelApplToBeUpdated: {type: InventoryItemLabelApplInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

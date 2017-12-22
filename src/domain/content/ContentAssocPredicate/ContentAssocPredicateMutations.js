@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContentAssocPredicateResponseType} from '../../content/ContentAssocPredicate/ContentAssocPredicateResponseType.js';
 import {ContentAssocPredicateInputType} from '../../content/ContentAssocPredicate/ContentAssocPredicateInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentAssocPredicate = {
-  type: ResopnseType,
+  type: ContentAssocPredicateResponseType,
   description: 'mutation for ofbiz createContentAssocPredicate method',
-  args:{contentAssocPredicateToBeAdded: {type: ContentAssocPredicateInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentAssocPredicates/add?`, args.contentAssocPredicateToBeAdded, req);
+    return postToUrl(`content/content/contentAssocPredicates/add?`, null, req);
   }
 };
 export {createContentAssocPredicate};
 
 
 const updateContentAssocPredicate = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentAssocPredicate method',
   args:{contentAssocPredicateToBeUpdated: {type: ContentAssocPredicateInputType},contentAssocPredicateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContentAssocPredicate};
 
 
 const deleteContentAssocPredicateByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentAssocPredicateByIdUpdated method',
   args:{contentAssocPredicateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

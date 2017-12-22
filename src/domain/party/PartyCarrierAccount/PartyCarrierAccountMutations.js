@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyCarrierAccountResponseType} from '../../party/PartyCarrierAccount/PartyCarrierAccountResponseType.js';
 import {PartyCarrierAccountInputType} from '../../party/PartyCarrierAccount/PartyCarrierAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyCarrierAccount = {
-  type: ResopnseType,
+  type: PartyCarrierAccountResponseType,
   description: 'mutation for ofbiz createPartyCarrierAccount method',
-  args:{partyCarrierAccountToBeAdded: {type: PartyCarrierAccountInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyCarrierAccounts/add?`, args.partyCarrierAccountToBeAdded, req);
+    return postToUrl(`party/party/partyCarrierAccounts/add?`, null, req);
   }
 };
 export {createPartyCarrierAccount};
 
 
 const updatePartyCarrierAccount = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyCarrierAccount method',
   args:{partyCarrierAccountToBeUpdated: {type: PartyCarrierAccountInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyCarrierAccount};
 
 
 const deletePartyCarrierAccountByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyCarrierAccountByIdUpdated method',
   args:{partyCarrierAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

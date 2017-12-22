@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addRequirementTask = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addRequirementTask method',
   args:{workEffortId: {type: GraphQLString},requirementId: {type: GraphQLString},workReqFulfTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addRequirementTask};
 
 
 const approveRequirement = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz approveRequirement method',
   args:{requirementId: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {approveRequirement};
 
 
 const associatedRequirementWithRequestItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz associatedRequirementWithRequestItem method',
   args:{custRequestId: {type: GraphQLString},requirementId: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {associatedRequirementWithRequestItem};
 
 
 const autoAssignRequirementToSupplier = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz autoAssignRequirementToSupplier method',
   args:{requirementId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {autoAssignRequirementToSupplier};
 
 
 const checkCreateOrderRequirement = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkCreateOrderRequirement method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {checkCreateOrderRequirement};
 
 
 const checkCreateProductRequirementForFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkCreateProductRequirementForFacility method',
   args:{facilityId: {type: GraphQLString},defaultRequirementMethodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {checkCreateProductRequirementForFacility};
 
 
 const checkCreateStockRequirementAtp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkCreateStockRequirementAtp method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {checkCreateStockRequirementAtp};
 
 
 const checkCreateStockRequirementQoh = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkCreateStockRequirementQoh method',
   args:{orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},quantity: {type: GraphQLFloat},orderId: {type: GraphQLString},itemIssuanceId: {type: GraphQLString},shipmentId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},maintHistSeqId: {type: GraphQLString},shipmentItemSeqId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},issuedByUserLoginId: {type: GraphQLString},cancelQuantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {checkCreateStockRequirementQoh};
 
 
 const createATPRequirementsForOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createATPRequirementsForOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createATPRequirementsForOrder};
 
 
 const createAutoRequirementsForOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAutoRequirementsForOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createAutoRequirementsForOrder};
 
 
 const createDesiredFeature = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDesiredFeature method',
   args:{desiredFeatureId: {type: GraphQLString},requirementId: {type: GraphQLString},optionalInd: {type: GraphQLString},productFeatureId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createDesiredFeature};
 
 
 const createOrderRequirementCommitment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderRequirementCommitment method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},requirementId: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createOrderRequirementCommitment};
 
 
 const createRequirement = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRequirement method',
   args:{reason: {type: GraphQLString},facilityId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},estimatedBudget: {type: GraphQLFloat},description: {type: GraphQLString},requiredByDate: {type: GraphQLString},requirementStartDate: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString},requirementTypeId: {type: GraphQLString},useCase: {type: GraphQLString},statusId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},custRequestId: {type: GraphQLString},requirementId: {type: GraphQLString},deliverableId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createRequirement};
 
 
 const createRequirementAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRequirementAttribute method',
   args:{requirementId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createRequirementAttribute};
 
 
 const createRequirementBudgetAllocation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRequirementBudgetAllocation method',
   args:{budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},requirementId: {type: GraphQLString},amount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createRequirementBudgetAllocation};
 
 
 const createRequirementFromItemATP = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRequirementFromItemATP method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createRequirementFromItemATP};
 
 
 const createRequirementRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRequirementRole method',
   args:{roleTypeId: {type: GraphQLString},requirementId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createRequirementRole};
 
 
 const createRequirementStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRequirementStatus method',
   args:{statusId: {type: GraphQLString},requirementId: {type: GraphQLString},statusDate: {type: GraphQLString},changeByUserLoginId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createRequirementStatus};
 
 
 const createRequirementType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRequirementType method',
   args:{requirementTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createRequirementType};
 
 
 const createRequirementTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRequirementTypeAttr method',
   args:{requirementTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {createRequirementTypeAttr};
 
 
 const createTransferFromRequirement = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTransferFromRequirement method',
   args:{fromFacilityId: {type: GraphQLString},requirementId: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {createTransferFromRequirement};
 
 
 const createWorkReqFulfType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWorkReqFulfType method',
   args:{workReqFulfTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {createWorkReqFulfType};
 
 
 const deleteDesiredFeature = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteDesiredFeature method',
   args:{desiredFeatureId: {type: GraphQLString},requirementId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {deleteDesiredFeature};
 
 
 const deleteRequirement = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteRequirement method',
   args:{requirementId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {deleteRequirement};
 
 
 const deleteRequirementAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteRequirementAttribute method',
   args:{requirementId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {deleteRequirementAttribute};
 
 
 const deleteRequirementBudgetAllocation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteRequirementBudgetAllocation method',
   args:{budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},requirementId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {deleteRequirementBudgetAllocation};
 
 
 const deleteRequirementCustRequest = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteRequirementCustRequest method',
   args:{custRequestId: {type: GraphQLString},requirementId: {type: GraphQLString},custRequestItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {deleteRequirementCustRequest};
 
 
 const deleteRequirementType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteRequirementType method',
   args:{requirementTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {deleteRequirementType};
 
 
 const deleteRequirementTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteRequirementTypeAttr method',
   args:{requirementTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {deleteRequirementTypeAttr};
 
 
 const deleteWorkReqFulfType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWorkReqFulfType method',
   args:{workReqFulfTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {deleteWorkReqFulfType};
 
 
 const getRequirementsForSupplier = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getRequirementsForSupplier method',
   args:{currencyUomId: {type: GraphQLString},unassignedRequirements: {type: GraphQLString},partyId: {type: GraphQLString},requirementConditions: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {getRequirementsForSupplier};
 
 
 const removeRequirementRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeRequirementRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},requirementId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {removeRequirementRole};
 
 
 const requirementInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz requirementInterface method',
   args:{reason: {type: GraphQLString},facilityId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},estimatedBudget: {type: GraphQLFloat},description: {type: GraphQLString},requiredByDate: {type: GraphQLString},requirementStartDate: {type: GraphQLString},requirementTypeId: {type: GraphQLString},useCase: {type: GraphQLString},statusId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},deliverableId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {requirementInterface};
 
 
 const updateDesiredFeature = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDesiredFeature method',
   args:{desiredFeatureId: {type: GraphQLString},requirementId: {type: GraphQLString},optionalInd: {type: GraphQLString},productFeatureId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {updateDesiredFeature};
 
 
 const updateRequirement = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRequirement method',
   args:{requirementId: {type: GraphQLString},reason: {type: GraphQLString},facilityId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},estimatedBudget: {type: GraphQLFloat},description: {type: GraphQLString},requiredByDate: {type: GraphQLString},requirementStartDate: {type: GraphQLString},requirementTypeId: {type: GraphQLString},useCase: {type: GraphQLString},statusId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},deliverableId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {updateRequirement};
 
 
 const updateRequirementAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRequirementAttribute method',
   args:{requirementId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {updateRequirementAttribute};
 
 
 const updateRequirementBudgetAllocation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRequirementBudgetAllocation method',
   args:{budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},requirementId: {type: GraphQLString},amount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {updateRequirementBudgetAllocation};
 
 
 const updateRequirementRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRequirementRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},requirementId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {updateRequirementRole};
 
 
 const updateRequirementType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRequirementType method',
   args:{requirementTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {updateRequirementType};
 
 
 const updateRequirementTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRequirementTypeAttr method',
   args:{requirementTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {updateRequirementTypeAttr};
 
 
 const updateRequirementsToOrdered = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRequirementsToOrdered method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {updateRequirementsToOrdered};
 
 
 const updateWorkReqFulfType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWorkReqFulfType method',
   args:{workReqFulfTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

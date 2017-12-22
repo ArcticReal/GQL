@@ -9,22 +9,22 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const authenticationInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz authenticationInterface method',
-  args:{loginUsername: {type: GraphQLString},loginPassword: {type: GraphQLString},visitId: {type: GraphQLString},isServiceAuth: {type: GraphQLBoolean}},
+  args:{loginusername: {type: GraphQLString},loginpassword: {type: GraphQLString},visitId: {type: GraphQLString},isServiceAuth: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/s/authenticationInterface?loginUsername=${args.loginUsername}loginPassword=${args.loginPassword}visitId=${args.visitId}isServiceAuth=${args.isServiceAuth}`, null, req);
+    return postToUrl(`service/s/authenticationInterface?loginusername=${args.loginusername}loginpassword=${args.loginpassword}visitId=${args.visitId}isServiceAuth=${args.isServiceAuth}`, null, req);
   }
 };
 export {authenticationInterface};
 
 
 const cancelJobRetries = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelJobRetries method',
   args:{jobId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {cancelJobRetries};
 
 
 const cancelScheduledJob = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelScheduledJob method',
   args:{jobId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {cancelScheduledJob};
 
 
 const createCatalinaSession = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCatalinaSession method',
   args:{sessionInfo: {type: GraphQLString},maxIdle: {type: GraphQLInt},isValid: {type: GraphQLString},lastAccessed: {type: GraphQLInt},sessionId: {type: GraphQLString},sessionSize: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createCatalinaSession};
 
 
 const createJobManagerLock = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createJobManagerLock method',
   args:{fromDate: {type: GraphQLString},instanceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},comments: {type: GraphQLString},createdDate: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},reasonEnumId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createJobManagerLock};
 
 
 const createJobSandbox = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createJobSandbox method',
   args:{jobName: {type: GraphQLString},recurrenceInfoId: {type: GraphQLString},runByInstanceId: {type: GraphQLString},maxRecurrenceCount: {type: GraphQLInt},currentRecurrenceCount: {type: GraphQLInt},tempExprId: {type: GraphQLString},cancelDateTime: {type: GraphQLString},serviceName: {type: GraphQLString},authUserLoginId: {type: GraphQLString},runtimeDataId: {type: GraphQLString},currentRetryCount: {type: GraphQLInt},runAsUser: {type: GraphQLString},finishDateTime: {type: GraphQLString},jobId: {type: GraphQLString},maxRetry: {type: GraphQLInt},loaderName: {type: GraphQLString},startDateTime: {type: GraphQLString},statusId: {type: GraphQLString},previousJobId: {type: GraphQLString},parentJobId: {type: GraphQLString},jobResult: {type: GraphQLInt},poolId: {type: GraphQLString},runTime: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createJobSandbox};
 
 
 const createRuntimeData = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRuntimeData method',
   args:{runtimeDataId: {type: GraphQLString},runtimeInfo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createRuntimeData};
 
 
 const createSequenceValueItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSequenceValueItem method',
   args:{seqName: {type: GraphQLString},seqId: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createSequenceValueItem};
 
 
 const createStandardLanguage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createStandardLanguage method',
   args:{langCode3t: {type: GraphQLString},langCode2: {type: GraphQLString},standardLanguageId: {type: GraphQLString},langCode3b: {type: GraphQLString},langFamily: {type: GraphQLString},langName: {type: GraphQLString},langCharset: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createStandardLanguage};
 
 
 const createStatusItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createStatusItem method',
   args:{statusId: {type: GraphQLString},statusTypeId: {type: GraphQLString},description: {type: GraphQLString},sequenceId: {type: GraphQLString},statusCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createStatusItem};
 
 
 const createStatusType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createStatusType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},statusTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createStatusType};
 
 
 const deleteCatalinaSession = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCatalinaSession method',
   args:{sessionId: {type: GraphQLString},sessionInfo: {type: GraphQLString},maxIdle: {type: GraphQLInt},isValid: {type: GraphQLString},lastAccessed: {type: GraphQLInt},sessionSize: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {deleteCatalinaSession};
 
 
 const deleteJobSandbox = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteJobSandbox method',
   args:{jobId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {deleteJobSandbox};
 
 
 const deleteRuntimeData = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteRuntimeData method',
   args:{runtimeDataId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {deleteRuntimeData};
 
 
 const deleteSequenceValueItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSequenceValueItem method',
   args:{seqName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {deleteSequenceValueItem};
 
 
 const deleteStandardLanguage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteStandardLanguage method',
   args:{standardLanguageId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {deleteStandardLanguage};
 
 
 const deleteStatusItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteStatusItem method',
   args:{statusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {deleteStatusItem};
 
 
 const deleteStatusType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteStatusType method',
   args:{statusTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {deleteStatusType};
 
 
 const effectiveDateEcaCondition = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz effectiveDateEcaCondition method',
   args:{serviceContext: {type: GraphQLString},serviceName: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {effectiveDateEcaCondition};
 
 
 const mailProcessInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz mailProcessInterface method',
   args:{messageWrapper: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {mailProcessInterface};
 
 
 const permissionInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz permissionInterface method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {permissionInterface};
 
 
 const purgeOldJobs = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz purgeOldJobs method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {purgeOldJobs};
 
 
 const resetScheduledJob = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz resetScheduledJob method',
   args:{jobId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {resetScheduledJob};
 
 
 const serviceEcaConditionInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz serviceEcaConditionInterface method',
   args:{serviceContext: {type: GraphQLString},serviceName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {serviceEcaConditionInterface};
 
 
 const serviceMcaConditionInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz serviceMcaConditionInterface method',
   args:{messageWrapper: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {serviceMcaConditionInterface};
 
 
 const serviceStreamInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz serviceStreamInterface method',
   args:{inputStream: {type: GraphQLString},outputStream: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {serviceStreamInterface};
 
 
 const updateCatalinaSession = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCatalinaSession method',
   args:{sessionId: {type: GraphQLString},sessionInfo: {type: GraphQLString},maxIdle: {type: GraphQLInt},isValid: {type: GraphQLString},lastAccessed: {type: GraphQLInt},sessionSize: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {updateCatalinaSession};
 
 
 const updateJobManagerLock = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateJobManagerLock method',
   args:{fromDate: {type: GraphQLString},instanceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},comments: {type: GraphQLString},createdDate: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},reasonEnumId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {updateJobManagerLock};
 
 
 const updateJobSandbox = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateJobSandbox method',
   args:{jobId: {type: GraphQLString},jobName: {type: GraphQLString},recurrenceInfoId: {type: GraphQLString},runByInstanceId: {type: GraphQLString},maxRecurrenceCount: {type: GraphQLInt},currentRecurrenceCount: {type: GraphQLInt},tempExprId: {type: GraphQLString},cancelDateTime: {type: GraphQLString},serviceName: {type: GraphQLString},authUserLoginId: {type: GraphQLString},runtimeDataId: {type: GraphQLString},currentRetryCount: {type: GraphQLInt},runAsUser: {type: GraphQLString},finishDateTime: {type: GraphQLString},maxRetry: {type: GraphQLInt},loaderName: {type: GraphQLString},startDateTime: {type: GraphQLString},statusId: {type: GraphQLString},previousJobId: {type: GraphQLString},parentJobId: {type: GraphQLString},jobResult: {type: GraphQLInt},poolId: {type: GraphQLString},runTime: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {updateJobSandbox};
 
 
 const updateRuntimeData = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRuntimeData method',
   args:{runtimeDataId: {type: GraphQLString},runtimeInfo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {updateRuntimeData};
 
 
 const updateSequenceValueItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSequenceValueItem method',
   args:{seqName: {type: GraphQLString},seqId: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {updateSequenceValueItem};
 
 
 const updateStandardLanguage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateStandardLanguage method',
   args:{standardLanguageId: {type: GraphQLString},langCode3t: {type: GraphQLString},langCode2: {type: GraphQLString},langCode3b: {type: GraphQLString},langFamily: {type: GraphQLString},langName: {type: GraphQLString},langCharset: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {updateStandardLanguage};
 
 
 const updateStatusItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateStatusItem method',
   args:{statusId: {type: GraphQLString},statusTypeId: {type: GraphQLString},description: {type: GraphQLString},sequenceId: {type: GraphQLString},statusCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {updateStatusItem};
 
 
 const updateStatusType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateStatusType method',
   args:{statusTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

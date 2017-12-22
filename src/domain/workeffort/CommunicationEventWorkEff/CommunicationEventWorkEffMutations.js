@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {CommunicationEventWorkEffResponseType} from '../../workeffort/CommunicationEventWorkEff/CommunicationEventWorkEffResponseType.js';
 import {CommunicationEventWorkEffInputType} from '../../workeffort/CommunicationEventWorkEff/CommunicationEventWorkEffInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCommunicationEventWorkEff = {
-  type: ResopnseType,
+  type: CommunicationEventWorkEffResponseType,
   description: 'mutation for ofbiz createCommunicationEventWorkEff method',
-  args:{communicationEventWorkEffToBeAdded: {type: CommunicationEventWorkEffInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/communicationEventWorkEffs/add?`, args.communicationEventWorkEffToBeAdded, req);
+    return postToUrl(`workeffort/communicationEventWorkEffs/add?`, null, req);
   }
 };
 export {createCommunicationEventWorkEff};
 
 
 const deleteCommunicationEventWorkEffByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCommunicationEventWorkEffByIdUpdated method',
   args:{communicationEventWorkEffId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCommunicationEventWorkEffByIdUpdated};
 
 
 const updateCommunicationEventWorkEff = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCommunicationEventWorkEff method',
   args:{communicationEventWorkEffToBeUpdated: {type: CommunicationEventWorkEffInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

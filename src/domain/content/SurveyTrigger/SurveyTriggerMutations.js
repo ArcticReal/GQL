@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {SurveyTriggerResponseType} from '../../content/SurveyTrigger/SurveyTriggerResponseType.js';
 import {SurveyTriggerInputType} from '../../content/SurveyTrigger/SurveyTriggerInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSurveyTrigger = {
-  type: ResopnseType,
+  type: SurveyTriggerResponseType,
   description: 'mutation for ofbiz createSurveyTrigger method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createSurveyTrigger};
 
 
 const updateSurveyTrigger = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSurveyTrigger method',
   args:{surveyTriggerToBeUpdated: {type: SurveyTriggerInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSurveyTrigger};
 
 
 const deleteSurveyTriggerByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSurveyTriggerByIdUpdated method',
   args:{surveyTriggerId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

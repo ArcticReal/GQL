@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {GlReconciliationEntryResponseType} from '../../accounting/GlReconciliationEntry/GlReconciliationEntryResponseType.js';
 import {GlReconciliationEntryInputType} from '../../accounting/GlReconciliationEntry/GlReconciliationEntryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlReconciliationEntry = {
-  type: ResopnseType,
+  type: GlReconciliationEntryResponseType,
   description: 'mutation for ofbiz createGlReconciliationEntry method',
-  args:{glReconciliationEntryToBeAdded: {type: GlReconciliationEntryInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glReconciliation/glReconciliationEntrys/add?`, args.glReconciliationEntryToBeAdded, req);
+    return postToUrl(`accounting/glReconciliation/glReconciliationEntrys/add?`, null, req);
   }
 };
 export {createGlReconciliationEntry};
 
 
 const updateGlReconciliationEntry = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGlReconciliationEntry method',
   args:{glReconciliationEntryToBeUpdated: {type: GlReconciliationEntryInputType},acctgTransEntrySeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateGlReconciliationEntry};
 
 
 const deleteGlReconciliationEntryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGlReconciliationEntryByIdUpdated method',
   args:{glReconciliationEntryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductKeywordInputType} from '../../product/ProductKeyword/ProductKeywordInputType.js';
+import {ProductKeywordResponseType} from '../../product/ProductKeyword/ProductKeywordResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductKeyword = {
-  type: ResopnseType,
+  type: ProductKeywordResponseType,
   description: 'mutation for ofbiz createProductKeyword method',
-  args:{},
+  args:{productKeywordToBeAdded: {type: ProductKeywordInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productKeywords/add?`, null, req);
+    return postToUrl(`product/product/productKeywords/add?`, args.productKeywordToBeAdded, req);
   }
 };
 export {createProductKeyword};
 
 
 const updateProductKeyword = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductKeyword method',
   args:{productKeywordToBeUpdated: {type: ProductKeywordInputType},keyword: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductKeyword};
 
 
 const deleteProductKeywordByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductKeywordByIdUpdated method',
   args:{productKeywordId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

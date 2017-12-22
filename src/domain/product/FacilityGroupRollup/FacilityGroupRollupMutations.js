@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FacilityGroupRollupResponseType} from '../../product/FacilityGroupRollup/FacilityGroupRollupResponseType.js';
 import {FacilityGroupRollupInputType} from '../../product/FacilityGroupRollup/FacilityGroupRollupInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityGroupRollup = {
-  type: ResopnseType,
+  type: FacilityGroupRollupResponseType,
   description: 'mutation for ofbiz createFacilityGroupRollup method',
-  args:{facilityGroupRollupToBeAdded: {type: FacilityGroupRollupInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityGroupRollups/add?`, args.facilityGroupRollupToBeAdded, req);
+    return postToUrl(`product/facility/facilityGroupRollups/add?`, null, req);
   }
 };
 export {createFacilityGroupRollup};
 
 
 const deleteFacilityGroupRollupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFacilityGroupRollupByIdUpdated method',
   args:{facilityGroupRollupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFacilityGroupRollupByIdUpdated};
 
 
 const updateFacilityGroupRollup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFacilityGroupRollup method',
   args:{facilityGroupRollupToBeUpdated: {type: FacilityGroupRollupInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

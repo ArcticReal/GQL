@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductConfigOptionInputType} from '../../product/ProductConfigOption/ProductConfigOptionInputType.js';
+import {ProductConfigOptionResponseType} from '../../product/ProductConfigOption/ProductConfigOptionResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductConfigOption = {
-  type: ResopnseType,
+  type: ProductConfigOptionResponseType,
   description: 'mutation for ofbiz createProductConfigOption method',
-  args:{},
+  args:{productConfigOptionToBeAdded: {type: ProductConfigOptionInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productConfigOptions/add?`, null, req);
+    return postToUrl(`product/product/productConfigOptions/add?`, args.productConfigOptionToBeAdded, req);
   }
 };
 export {createProductConfigOption};
 
 
 const updateProductConfigOption = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductConfigOption method',
   args:{productConfigOptionToBeUpdated: {type: ProductConfigOptionInputType},configOptionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductConfigOption};
 
 
 const deleteProductConfigOptionByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductConfigOptionByIdUpdated method',
   args:{productConfigOptionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addTimesheetToInvoice = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addTimesheetToInvoice method',
   args:{timesheetId: {type: GraphQLString},invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addTimesheetToInvoice};
 
 
 const addTimesheetToNewInvoice = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addTimesheetToNewInvoice method',
   args:{timesheetId: {type: GraphQLString},partyIdFrom: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {addTimesheetToNewInvoice};
 
 
 const addWorkEffortTimeToInvoice = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addWorkEffortTimeToInvoice method',
   args:{workEffortId: {type: GraphQLString},invoiceId: {type: GraphQLString},combineInvoiceItem: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {addWorkEffortTimeToInvoice};
 
 
 const addWorkEffortTimeToNewInvoice = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addWorkEffortTimeToNewInvoice method',
   args:{workEffortId: {type: GraphQLString},partyIdFrom: {type: GraphQLString},partyId: {type: GraphQLString},combineInvoiceItem: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {addWorkEffortTimeToNewInvoice};
 
 
 const createTimeEntry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTimeEntry method',
   args:{fromDate: {type: GraphQLString},workEffortId: {type: GraphQLString},timesheetId: {type: GraphQLString},rateTypeId: {type: GraphQLString},hours: {type: GraphQLFloat},comments: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createTimeEntry};
 
 
 const createTimesheet = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTimesheet method',
   args:{fromDate: {type: GraphQLString},comments: {type: GraphQLString},statusId: {type: GraphQLString},approvedByUserLoginId: {type: GraphQLString},partyId: {type: GraphQLString},clientPartyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createTimesheet};
 
 
 const createTimesheetForThisWeek = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTimesheetForThisWeek method',
   args:{comments: {type: GraphQLString},statusId: {type: GraphQLString},approvedByUserLoginId: {type: GraphQLString},requiredDate: {type: GraphQLString},partyId: {type: GraphQLString},clientPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createTimesheetForThisWeek};
 
 
 const createTimesheetRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTimesheetRole method',
   args:{timesheetId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createTimesheetRole};
 
 
 const createTimesheets = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTimesheets method',
   args:{fromDate: {type: GraphQLString},comments: {type: GraphQLString},clientPartyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createTimesheets};
 
 
 const deleteTimeEntry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteTimeEntry method',
   args:{timeEntryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {deleteTimeEntry};
 
 
 const deleteTimesheet = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteTimesheet method',
   args:{timesheetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {deleteTimesheet};
 
 
 const deleteTimesheetRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteTimesheetRole method',
   args:{timesheetId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {deleteTimesheetRole};
 
 
 const getTimeEntryRate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getTimeEntryRate method',
   args:{timeEntryId: {type: GraphQLString},currencyUomId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {getTimeEntryRate};
 
 
 const unlinkInvoiceFromTimeEntry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz unlinkInvoiceFromTimeEntry method',
   args:{timeEntryId: {type: GraphQLString},invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {unlinkInvoiceFromTimeEntry};
 
 
 const updateTimeEntry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTimeEntry method',
   args:{timeEntryId: {type: GraphQLString},fromDate: {type: GraphQLString},workEffortId: {type: GraphQLString},timesheetId: {type: GraphQLString},rateTypeId: {type: GraphQLString},hours: {type: GraphQLFloat},comments: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {updateTimeEntry};
 
 
 const updateTimesheet = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTimesheet method',
   args:{timesheetId: {type: GraphQLString},fromDate: {type: GraphQLString},comments: {type: GraphQLString},statusId: {type: GraphQLString},approvedByUserLoginId: {type: GraphQLString},partyId: {type: GraphQLString},clientPartyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {updateTimesheet};
 
 
 const updateTimesheetToInProcess = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTimesheetToInProcess method',
   args:{timesheetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

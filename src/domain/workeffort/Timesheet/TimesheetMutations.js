@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {TimesheetInputType} from '../../workeffort/Timesheet/TimesheetInputType.js';
+import {TimesheetResponseType} from '../../workeffort/Timesheet/TimesheetResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTimesheet = {
-  type: ResopnseType,
+  type: TimesheetResponseType,
   description: 'mutation for ofbiz createTimesheet method',
   args:{timesheetToBeAdded: {type: TimesheetInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createTimesheet};
 
 
 const updateTimesheet = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTimesheet method',
   args:{timesheetToBeUpdated: {type: TimesheetInputType},timesheetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTimesheet};
 
 
 const deleteTimesheetByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTimesheetByIdUpdated method',
   args:{timesheetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

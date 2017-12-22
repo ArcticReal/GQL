@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {TrainingClassTypeInputType} from '../../humanres/TrainingClassType/TrainingClassTypeInputType.js';
+import {TrainingClassTypeResponseType} from '../../humanres/TrainingClassType/TrainingClassTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTrainingClassType = {
-  type: ResopnseType,
+  type: TrainingClassTypeResponseType,
   description: 'mutation for ofbiz createTrainingClassType method',
-  args:{},
+  args:{trainingClassTypeToBeAdded: {type: TrainingClassTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/trainingClassTypes/add?`, null, req);
+    return postToUrl(`humanres/trainingClassTypes/add?`, args.trainingClassTypeToBeAdded, req);
   }
 };
 export {createTrainingClassType};
 
 
 const updateTrainingClassType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTrainingClassType method',
   args:{trainingClassTypeToBeUpdated: {type: TrainingClassTypeInputType},trainingClassTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTrainingClassType};
 
 
 const deleteTrainingClassTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTrainingClassTypeByIdUpdated method',
   args:{trainingClassTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

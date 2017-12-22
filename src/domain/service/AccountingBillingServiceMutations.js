@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const calcBillingAccountBalance = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz calcBillingAccountBalance method',
   args:{billingAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {calcBillingAccountBalance};
 
 
 const createBillingAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createBillingAccount method',
   args:{fromDate: {type: GraphQLString},accountLimit: {type: GraphQLFloat},externalAccountId: {type: GraphQLString},accountCurrencyUomId: {type: GraphQLString},description: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createBillingAccount};
 
 
 const createBillingAccountAndRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createBillingAccountAndRole method',
   args:{roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},accountLimit: {type: GraphQLFloat},externalAccountId: {type: GraphQLString},accountCurrencyUomId: {type: GraphQLString},description: {type: GraphQLString},billingAccountId: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createBillingAccountAndRole};
 
 
 const createBillingAccountRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createBillingAccountRole method',
   args:{roleTypeId: {type: GraphQLString},billingAccountId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createBillingAccountRole};
 
 
 const createBillingAccountTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createBillingAccountTerm method',
   args:{termTypeId: {type: GraphQLString},billingAccountId: {type: GraphQLString},termDays: {type: GraphQLInt},uomId: {type: GraphQLString},termValue: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createBillingAccountTerm};
 
 
 const removeBillingAccountRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeBillingAccountRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},billingAccountId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {removeBillingAccountRole};
 
 
 const removeBillingAccountTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeBillingAccountTerm method',
   args:{billingAccountTermId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {removeBillingAccountTerm};
 
 
 const updateBillingAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateBillingAccount method',
   args:{billingAccountId: {type: GraphQLString},fromDate: {type: GraphQLString},accountLimit: {type: GraphQLFloat},externalAccountId: {type: GraphQLString},accountCurrencyUomId: {type: GraphQLString},description: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {updateBillingAccount};
 
 
 const updateBillingAccountRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateBillingAccountRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},billingAccountId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {updateBillingAccountRole};
 
 
 const updateBillingAccountTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateBillingAccountTerm method',
   args:{billingAccountTermId: {type: GraphQLString},termTypeId: {type: GraphQLString},billingAccountId: {type: GraphQLString},termDays: {type: GraphQLInt},uomId: {type: GraphQLString},termValue: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {

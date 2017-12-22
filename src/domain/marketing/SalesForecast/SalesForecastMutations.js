@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {SalesForecastInputType} from '../../marketing/SalesForecast/SalesForecastInputType.js';
+import {SalesForecastResponseType} from '../../marketing/SalesForecast/SalesForecastResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSalesForecast = {
-  type: ResopnseType,
+  type: SalesForecastResponseType,
   description: 'mutation for ofbiz createSalesForecast method',
-  args:{},
+  args:{salesForecastToBeAdded: {type: SalesForecastInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/salesForecasts/add?`, null, req);
+    return postToUrl(`marketing/salesForecasts/add?`, args.salesForecastToBeAdded, req);
   }
 };
 export {createSalesForecast};
 
 
 const updateSalesForecast = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSalesForecast method',
   args:{salesForecastToBeUpdated: {type: SalesForecastInputType},salesForecastId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSalesForecast};
 
 
 const deleteSalesForecastByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSalesForecastByIdUpdated method',
   args:{salesForecastId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

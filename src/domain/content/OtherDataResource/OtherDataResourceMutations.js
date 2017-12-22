@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {OtherDataResourceResponseType} from '../../content/OtherDataResource/OtherDataResourceResponseType.js';
 import {OtherDataResourceInputType} from '../../content/OtherDataResource/OtherDataResourceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOtherDataResource = {
-  type: ResopnseType,
+  type: OtherDataResourceResponseType,
   description: 'mutation for ofbiz createOtherDataResource method',
-  args:{otherDataResourceToBeAdded: {type: OtherDataResourceInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/dataResource/otherDataResources/add?`, args.otherDataResourceToBeAdded, req);
+    return postToUrl(`content/dataResource/otherDataResources/add?`, null, req);
   }
 };
 export {createOtherDataResource};
 
 
 const updateOtherDataResource = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOtherDataResource method',
   args:{otherDataResourceToBeUpdated: {type: OtherDataResourceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOtherDataResource};
 
 
 const deleteOtherDataResourceByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOtherDataResourceByIdUpdated method',
   args:{otherDataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

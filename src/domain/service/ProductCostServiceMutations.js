@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const calculateAllProductsCosts = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz calculateAllProductsCosts method',
   args:{costComponentTypePrefix: {type: GraphQLString},currencyUomId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {calculateAllProductsCosts};
 
 
 const calculateProductAverageCost = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz calculateProductAverageCost method',
   args:{productId: {type: GraphQLString},ownerPartyId: {type: GraphQLString},facilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {calculateProductAverageCost};
 
 
 const calculateProductCosts = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz calculateProductCosts method',
   args:{costComponentTypePrefix: {type: GraphQLString},currencyUomId: {type: GraphQLString},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {calculateProductCosts};
 
 
 const cancelCostComponents = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelCostComponents method',
   args:{costComponentTypeId: {type: GraphQLString},productId: {type: GraphQLString},costUomId: {type: GraphQLString},costComponentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {cancelCostComponents};
 
 
 const createCostComponent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCostComponent method',
   args:{costComponentTypeId: {type: GraphQLString},workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},cost: {type: GraphQLFloat},productId: {type: GraphQLString},geoId: {type: GraphQLString},productFeatureId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},costUomId: {type: GraphQLString},partyId: {type: GraphQLString},costComponentCalcId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createCostComponent};
 
 
 const createCostComponentAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCostComponentAttribute method',
   args:{attrName: {type: GraphQLString},costComponentId: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createCostComponentAttribute};
 
 
 const createCostComponentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCostComponentType method',
   args:{costComponentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createCostComponentType};
 
 
 const createCostComponentTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCostComponentTypeAttr method',
   args:{costComponentTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createCostComponentTypeAttr};
 
 
 const createProductCostComponentCalc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createProductCostComponentCalc method',
   args:{fromDate: {type: GraphQLString},costComponentTypeId: {type: GraphQLString},productId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},costComponentCalcId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createProductCostComponentCalc};
 
 
 const deleteCostComponent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCostComponent method',
   args:{costComponentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {deleteCostComponent};
 
 
 const deleteCostComponentAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCostComponentAttribute method',
   args:{attrName: {type: GraphQLString},costComponentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {deleteCostComponentAttribute};
 
 
 const deleteCostComponentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCostComponentType method',
   args:{costComponentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {deleteCostComponentType};
 
 
 const deleteCostComponentTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCostComponentTypeAttr method',
   args:{costComponentTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {deleteCostComponentTypeAttr};
 
 
 const deleteProductCostComponentCalc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteProductCostComponentCalc method',
   args:{fromDate: {type: GraphQLString},costComponentTypeId: {type: GraphQLString},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {deleteProductCostComponentCalc};
 
 
 const getProductCost = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getProductCost method',
   args:{costComponentTypePrefix: {type: GraphQLString},currencyUomId: {type: GraphQLString},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {getProductCost};
 
 
 const getTaskCost = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getTaskCost method',
   args:{workEffortId: {type: GraphQLString},currencyUomId: {type: GraphQLString},routingId: {type: GraphQLString},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {getTaskCost};
 
 
 const productCostCalcInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz productCostCalcInterface method',
   args:{productCostComponentCalc: {type: new GraphQLList(KeyValueInputType)},costComponentTypePrefix: {type: GraphQLString},baseCost: {type: GraphQLFloat},currencyUomId: {type: GraphQLString},costComponentCalc: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {productCostCalcInterface};
 
 
 const productCostPercentageFormula = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz productCostPercentageFormula method',
   args:{productCostComponentCalc: {type: new GraphQLList(KeyValueInputType)},costComponentTypePrefix: {type: GraphQLString},baseCost: {type: GraphQLFloat},currencyUomId: {type: GraphQLString},costComponentCalc: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {productCostPercentageFormula};
 
 
 const recreateCostComponent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz recreateCostComponent method',
   args:{workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},costComponentTypeId: {type: GraphQLString},cost: {type: GraphQLFloat},productId: {type: GraphQLString},geoId: {type: GraphQLString},productFeatureId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},costUomId: {type: GraphQLString},partyId: {type: GraphQLString},costComponentCalcId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {recreateCostComponent};
 
 
 const updateCostComponent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCostComponent method',
   args:{costComponentId: {type: GraphQLString},workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},costComponentTypeId: {type: GraphQLString},cost: {type: GraphQLFloat},productId: {type: GraphQLString},geoId: {type: GraphQLString},productFeatureId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},costUomId: {type: GraphQLString},partyId: {type: GraphQLString},costComponentCalcId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {updateCostComponent};
 
 
 const updateCostComponentAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCostComponentAttribute method',
   args:{attrName: {type: GraphQLString},costComponentId: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {updateCostComponentAttribute};
 
 
 const updateCostComponentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCostComponentType method',
   args:{costComponentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {updateCostComponentType};
 
 
 const updateCostComponentTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCostComponentTypeAttr method',
   args:{costComponentTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {updateCostComponentTypeAttr};
 
 
 const updateProductCostComponentCalc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateProductCostComponentCalc method',
   args:{fromDate: {type: GraphQLString},costComponentTypeId: {type: GraphQLString},productId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},costComponentCalcId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

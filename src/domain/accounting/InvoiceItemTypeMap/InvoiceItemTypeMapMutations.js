@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {InvoiceItemTypeMapResponseType} from '../../accounting/InvoiceItemTypeMap/InvoiceItemTypeMapResponseType.js';
 import {InvoiceItemTypeMapInputType} from '../../accounting/InvoiceItemTypeMap/InvoiceItemTypeMapInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoiceItemTypeMap = {
-  type: ResopnseType,
+  type: InvoiceItemTypeMapResponseType,
   description: 'mutation for ofbiz createInvoiceItemTypeMap method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createInvoiceItemTypeMap};
 
 
 const updateInvoiceItemTypeMap = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInvoiceItemTypeMap method',
   args:{invoiceItemTypeMapToBeUpdated: {type: InvoiceItemTypeMapInputType},invoiceItemMapKey: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateInvoiceItemTypeMap};
 
 
 const deleteInvoiceItemTypeMapByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInvoiceItemTypeMapByIdUpdated method',
   args:{invoiceItemTypeMapId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {RequirementAttributeResponseType} from '../../order/RequirementAttribute/RequirementAttributeResponseType.js';
 import {RequirementAttributeInputType} from '../../order/RequirementAttribute/RequirementAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRequirementAttribute = {
-  type: ResopnseType,
+  type: RequirementAttributeResponseType,
   description: 'mutation for ofbiz createRequirementAttribute method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createRequirementAttribute};
 
 
 const updateRequirementAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateRequirementAttribute method',
   args:{requirementAttributeToBeUpdated: {type: RequirementAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateRequirementAttribute};
 
 
 const deleteRequirementAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteRequirementAttributeByIdUpdated method',
   args:{requirementAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {SurveyMultiRespColumnResponseType} from '../../content/SurveyMultiRespColumn/SurveyMultiRespColumnResponseType.js';
 import {SurveyMultiRespColumnInputType} from '../../content/SurveyMultiRespColumn/SurveyMultiRespColumnInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSurveyMultiRespColumn = {
-  type: ResopnseType,
+  type: SurveyMultiRespColumnResponseType,
   description: 'mutation for ofbiz createSurveyMultiRespColumn method',
-  args:{surveyMultiRespColumnToBeAdded: {type: SurveyMultiRespColumnInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/survey/surveyMultiRespColumns/add?`, args.surveyMultiRespColumnToBeAdded, req);
+    return postToUrl(`content/survey/surveyMultiRespColumns/add?`, null, req);
   }
 };
 export {createSurveyMultiRespColumn};
 
 
 const updateSurveyMultiRespColumn = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSurveyMultiRespColumn method',
   args:{surveyMultiRespColumnToBeUpdated: {type: SurveyMultiRespColumnInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSurveyMultiRespColumn};
 
 
 const deleteSurveyMultiRespColumnByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSurveyMultiRespColumnByIdUpdated method',
   args:{surveyMultiRespColumnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

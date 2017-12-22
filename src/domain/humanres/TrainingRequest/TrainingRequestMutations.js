@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {TrainingRequestInputType} from '../../humanres/TrainingRequest/TrainingRequestInputType.js';
+import {TrainingRequestResponseType} from '../../humanres/TrainingRequest/TrainingRequestResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTrainingRequest = {
-  type: ResopnseType,
+  type: TrainingRequestResponseType,
   description: 'mutation for ofbiz createTrainingRequest method',
   args:{trainingRequestToBeAdded: {type: TrainingRequestInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createTrainingRequest};
 
 
 const updateTrainingRequest = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTrainingRequest method',
   args:{trainingRequestToBeUpdated: {type: TrainingRequestInputType},trainingRequestId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTrainingRequest};
 
 
 const deleteTrainingRequestByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTrainingRequestByIdUpdated method',
   args:{trainingRequestId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

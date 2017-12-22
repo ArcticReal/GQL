@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductCategoryGlAccountResponseType} from '../../product/ProductCategoryGlAccount/ProductCategoryGlAccountResponseType.js';
 import {ProductCategoryGlAccountInputType} from '../../product/ProductCategoryGlAccount/ProductCategoryGlAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductCategoryGlAccount = {
-  type: ResopnseType,
+  type: ProductCategoryGlAccountResponseType,
   description: 'mutation for ofbiz createProductCategoryGlAccount method',
-  args:{productCategoryGlAccountToBeAdded: {type: ProductCategoryGlAccountInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productCategoryGlAccounts/add?`, args.productCategoryGlAccountToBeAdded, req);
+    return postToUrl(`product/product/productCategoryGlAccounts/add?`, null, req);
   }
 };
 export {createProductCategoryGlAccount};
 
 
 const updateProductCategoryGlAccount = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductCategoryGlAccount method',
   args:{productCategoryGlAccountToBeUpdated: {type: ProductCategoryGlAccountInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductCategoryGlAccount};
 
 
 const deleteProductCategoryGlAccountByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductCategoryGlAccountByIdUpdated method',
   args:{productCategoryGlAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

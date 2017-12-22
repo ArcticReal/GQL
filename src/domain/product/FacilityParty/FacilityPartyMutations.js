@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FacilityPartyResponseType} from '../../product/FacilityParty/FacilityPartyResponseType.js';
 import {FacilityPartyInputType} from '../../product/FacilityParty/FacilityPartyInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityParty = {
-  type: ResopnseType,
+  type: FacilityPartyResponseType,
   description: 'mutation for ofbiz createFacilityParty method',
-  args:{facilityPartyToBeAdded: {type: FacilityPartyInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityPartys/add?`, args.facilityPartyToBeAdded, req);
+    return postToUrl(`product/facility/facilityPartys/add?`, null, req);
   }
 };
 export {createFacilityParty};
 
 
 const deleteFacilityPartyByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFacilityPartyByIdUpdated method',
   args:{facilityPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFacilityPartyByIdUpdated};
 
 
 const updateFacilityParty = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFacilityParty method',
   args:{facilityPartyToBeUpdated: {type: FacilityPartyInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

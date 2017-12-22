@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {FinAccountAttributeInputType} from '../../accounting/FinAccountAttribute/FinAccountAttributeInputType.js';
+import {FinAccountAttributeResponseType} from '../../accounting/FinAccountAttribute/FinAccountAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFinAccountAttribute = {
-  type: ResopnseType,
+  type: FinAccountAttributeResponseType,
   description: 'mutation for ofbiz createFinAccountAttribute method',
-  args:{},
+  args:{finAccountAttributeToBeAdded: {type: FinAccountAttributeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/finAccount/finAccountAttributes/add?`, null, req);
+    return postToUrl(`accounting/finAccount/finAccountAttributes/add?`, args.finAccountAttributeToBeAdded, req);
   }
 };
 export {createFinAccountAttribute};
 
 
 const updateFinAccountAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFinAccountAttribute method',
   args:{finAccountAttributeToBeUpdated: {type: FinAccountAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateFinAccountAttribute};
 
 
 const deleteFinAccountAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFinAccountAttributeByIdUpdated method',
   args:{finAccountAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

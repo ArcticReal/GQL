@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderItemAssocTypeInputType} from '../../order/OrderItemAssocType/OrderItemAssocTypeInputType.js';
+import {OrderItemAssocTypeResponseType} from '../../order/OrderItemAssocType/OrderItemAssocTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderItemAssocType = {
-  type: ResopnseType,
+  type: OrderItemAssocTypeResponseType,
   description: 'mutation for ofbiz createOrderItemAssocType method',
   args:{orderItemAssocTypeToBeAdded: {type: OrderItemAssocTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createOrderItemAssocType};
 
 
 const updateOrderItemAssocType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderItemAssocType method',
   args:{orderItemAssocTypeToBeUpdated: {type: OrderItemAssocTypeInputType},orderItemAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderItemAssocType};
 
 
 const deleteOrderItemAssocTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderItemAssocTypeByIdUpdated method',
   args:{orderItemAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

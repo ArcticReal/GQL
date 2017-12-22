@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortKeywordResponseType} from '../../workeffort/WorkEffortKeyword/WorkEffortKeywordResponseType.js';
 import {WorkEffortKeywordInputType} from '../../workeffort/WorkEffortKeyword/WorkEffortKeywordInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortKeyword = {
-  type: ResopnseType,
+  type: WorkEffortKeywordResponseType,
   description: 'mutation for ofbiz createWorkEffortKeyword method',
-  args:{workEffortKeywordToBeAdded: {type: WorkEffortKeywordInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortKeywords/add?`, args.workEffortKeywordToBeAdded, req);
+    return postToUrl(`workeffort/workEffort/workEffortKeywords/add?`, null, req);
   }
 };
 export {createWorkEffortKeyword};
 
 
 const updateWorkEffortKeyword = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortKeyword method',
   args:{workEffortKeywordToBeUpdated: {type: WorkEffortKeywordInputType},keyword: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortKeyword};
 
 
 const deleteWorkEffortKeywordByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortKeywordByIdUpdated method',
   args:{workEffortKeywordId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

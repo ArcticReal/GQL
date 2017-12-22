@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {SecurityGroupInputType} from '../../login/SecurityGroup/SecurityGroupInputType.js';
+import {SecurityGroupResponseType} from '../../login/SecurityGroup/SecurityGroupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSecurityGroup = {
-  type: ResopnseType,
+  type: SecurityGroupResponseType,
   description: 'mutation for ofbiz createSecurityGroup method',
-  args:{},
+  args:{securityGroupToBeAdded: {type: SecurityGroupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`login/securityGroups/add?`, null, req);
+    return postToUrl(`login/securityGroups/add?`, args.securityGroupToBeAdded, req);
   }
 };
 export {createSecurityGroup};
 
 
 const updateSecurityGroup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSecurityGroup method',
   args:{securityGroupToBeUpdated: {type: SecurityGroupInputType},groupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSecurityGroup};
 
 
 const deleteSecurityGroupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSecurityGroupByIdUpdated method',
   args:{securityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

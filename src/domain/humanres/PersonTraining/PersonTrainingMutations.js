@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PersonTrainingResponseType} from '../../humanres/PersonTraining/PersonTrainingResponseType.js';
 import {PersonTrainingInputType} from '../../humanres/PersonTraining/PersonTrainingInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPersonTraining = {
-  type: ResopnseType,
+  type: PersonTrainingResponseType,
   description: 'mutation for ofbiz createPersonTraining method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPersonTraining};
 
 
 const updatePersonTraining = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePersonTraining method',
   args:{personTrainingToBeUpdated: {type: PersonTrainingInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePersonTraining};
 
 
 const deletePersonTrainingByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePersonTrainingByIdUpdated method',
   args:{personTrainingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

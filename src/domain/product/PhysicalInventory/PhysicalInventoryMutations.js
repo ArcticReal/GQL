@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PhysicalInventoryResponseType} from '../../product/PhysicalInventory/PhysicalInventoryResponseType.js';
 import {PhysicalInventoryInputType} from '../../product/PhysicalInventory/PhysicalInventoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPhysicalInventory = {
-  type: ResopnseType,
+  type: PhysicalInventoryResponseType,
   description: 'mutation for ofbiz createPhysicalInventory method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPhysicalInventory};
 
 
 const updatePhysicalInventory = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePhysicalInventory method',
   args:{physicalInventoryToBeUpdated: {type: PhysicalInventoryInputType},physicalInventoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePhysicalInventory};
 
 
 const deletePhysicalInventoryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePhysicalInventoryByIdUpdated method',
   args:{physicalInventoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

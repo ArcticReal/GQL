@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const buildPdfFromSurveyResponse = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz buildPdfFromSurveyResponse method',
   args:{surveyResponseId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {buildPdfFromSurveyResponse};
 
 
 const buildSurveyFromPdf = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz buildSurveyFromPdf method',
   args:{surveyId: {type: GraphQLString},surveyName: {type: GraphQLString},inputByteBuffer: {type: GraphQLString},contentId: {type: GraphQLString},pdfFileNameIn: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {buildSurveyFromPdf};
 
 
 const buildSurveyQuestionsAndAnswers = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz buildSurveyQuestionsAndAnswers method',
   args:{surveyResponseId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {buildSurveyQuestionsAndAnswers};
 
 
 const buildSurveyResponseFromPdf = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz buildSurveyResponseFromPdf method',
   args:{surveyId: {type: GraphQLString},inputByteBuffer: {type: GraphQLString},contentId: {type: GraphQLString},pdfFileNameIn: {type: GraphQLString},partyId: {type: GraphQLString},surveyResponseId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {buildSurveyResponseFromPdf};
 
 
 const cloneSurvey = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cloneSurvey method',
   args:{surveyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {cloneSurvey};
 
 
 const createSurvey = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurvey method',
   args:{isAnonymous: {type: GraphQLString},comments: {type: GraphQLString},surveyName: {type: GraphQLString},allowMultiple: {type: GraphQLString},responseService: {type: GraphQLString},description: {type: GraphQLString},acroFormContentId: {type: GraphQLString},allowUpdate: {type: GraphQLString},submitCaption: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createSurvey};
 
 
 const createSurveyApplType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurveyApplType method',
   args:{description: {type: GraphQLString},surveyApplTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createSurveyApplType};
 
 
 const createSurveyMultiResp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurveyMultiResp method',
   args:{surveyId: {type: GraphQLString},multiRespTitle: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createSurveyMultiResp};
 
 
 const createSurveyMultiRespColumn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurveyMultiRespColumn method',
   args:{surveyId: {type: GraphQLString},surveyMultiRespId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},columnTitle: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createSurveyMultiRespColumn};
 
 
 const createSurveyPage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurveyPage method',
   args:{surveyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},pageName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createSurveyPage};
 
 
 const createSurveyQuestion = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurveyQuestion method',
   args:{surveyQuestionTypeId: {type: GraphQLString},enumTypeId: {type: GraphQLString},formatString: {type: GraphQLInt},surveyQuestionCategoryId: {type: GraphQLString},surveyId: {type: GraphQLString},question: {type: GraphQLString},hint: {type: GraphQLString},geoId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createSurveyQuestion};
 
 
 const createSurveyQuestionAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurveyQuestionAppl method',
   args:{surveyQuestionId: {type: GraphQLString},surveyId: {type: GraphQLString},fromDate: {type: GraphQLString},withSurveyOptionSeqId: {type: GraphQLString},externalFieldRef: {type: GraphQLString},requiredField: {type: GraphQLString},sequenceNum: {type: GraphQLInt},withSurveyQuestionId: {type: GraphQLString},surveyPageSeqId: {type: GraphQLString},surveyMultiRespId: {type: GraphQLString},surveyMultiRespColId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createSurveyQuestionAppl};
 
 
 const createSurveyQuestionCategory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurveyQuestionCategory method',
   args:{description: {type: GraphQLString},parentCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createSurveyQuestionCategory};
 
 
 const createSurveyQuestionOption = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurveyQuestionOption method',
   args:{surveyQuestionId: {type: GraphQLString},amountBase: {type: GraphQLFloat},duration: {type: GraphQLInt},sequenceNum: {type: GraphQLInt},amountBaseUomId: {type: GraphQLString},durationUomId: {type: GraphQLString},description: {type: GraphQLString},weightFactor: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createSurveyQuestionOption};
 
 
 const createSurveyQuestionType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurveyQuestionType method',
   args:{surveyQuestionTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createSurveyQuestionType};
 
 
 const createSurveyResponse = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurveyResponse method',
   args:{surveyId: {type: GraphQLString},answers: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},productStoreSurveyId: {type: GraphQLString},statusId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},orderId: {type: GraphQLString},generalFeedback: {type: GraphQLString},dataResourceId: {type: GraphQLString},partyId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},responseDate: {type: GraphQLString},referenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createSurveyResponse};
 
 
 const createSurveyTrigger = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSurveyTrigger method',
   args:{surveyId: {type: GraphQLString},surveyApplTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createSurveyTrigger};
 
 
 const deleteSurvey = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSurvey method',
   args:{surveyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {deleteSurvey};
 
 
 const deleteSurveyApplType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSurveyApplType method',
   args:{surveyApplTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {deleteSurveyApplType};
 
 
 const deleteSurveyMultiResp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSurveyMultiResp method',
   args:{surveyId: {type: GraphQLString},surveyMultiRespId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {deleteSurveyMultiResp};
 
 
 const deleteSurveyMultiRespColumn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSurveyMultiRespColumn method',
   args:{surveyId: {type: GraphQLString},surveyMultiRespId: {type: GraphQLString},surveyMultiRespColId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {deleteSurveyMultiRespColumn};
 
 
 const deleteSurveyPage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSurveyPage method',
   args:{surveyId: {type: GraphQLString},surveyPageSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {deleteSurveyPage};
 
 
 const deleteSurveyQuestion = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSurveyQuestion method',
   args:{surveyQuestionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {deleteSurveyQuestion};
 
 
 const deleteSurveyQuestionAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSurveyQuestionAppl method',
   args:{fromDate: {type: GraphQLString},surveyQuestionId: {type: GraphQLString},surveyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {deleteSurveyQuestionAppl};
 
 
 const deleteSurveyQuestionCategory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSurveyQuestionCategory method',
   args:{surveyQuestionCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {deleteSurveyQuestionCategory};
 
 
 const deleteSurveyQuestionOption = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSurveyQuestionOption method',
   args:{surveyQuestionId: {type: GraphQLString},surveyOptionSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {deleteSurveyQuestionOption};
 
 
 const deleteSurveyQuestionType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSurveyQuestionType method',
   args:{surveyQuestionTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {deleteSurveyQuestionType};
 
 
 const deleteSurveyTrigger = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSurveyTrigger method',
   args:{fromDate: {type: GraphQLString},surveyId: {type: GraphQLString},surveyApplTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {deleteSurveyTrigger};
 
 
 const getAcroFieldsFromPdf = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getAcroFieldsFromPdf method',
   args:{inputByteBuffer: {type: GraphQLString},contentId: {type: GraphQLString},pdfFileNameIn: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {getAcroFieldsFromPdf};
 
 
 const setAcroFields = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setAcroFields method',
   args:{acroFieldMap: {type: GraphQLString},inputByteBuffer: {type: GraphQLString},contentId: {type: GraphQLString},pdfFileNameIn: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {setAcroFields};
 
 
 const setAcroFieldsFromSurveyResponse = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setAcroFieldsFromSurveyResponse method',
   args:{surveyResponseId: {type: GraphQLString},inputByteBuffer: {type: GraphQLString},contentId: {type: GraphQLString},pdfFileNameIn: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {setAcroFieldsFromSurveyResponse};
 
 
 const surveyResponseProcessInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz surveyResponseProcessInterface method',
   args:{surveyResponseId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {surveyResponseProcessInterface};
 
 
 const updateSurvey = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSurvey method',
   args:{surveyId: {type: GraphQLString},isAnonymous: {type: GraphQLString},comments: {type: GraphQLString},surveyName: {type: GraphQLString},allowMultiple: {type: GraphQLString},responseService: {type: GraphQLString},description: {type: GraphQLString},acroFormContentId: {type: GraphQLString},allowUpdate: {type: GraphQLString},submitCaption: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {updateSurvey};
 
 
 const updateSurveyApplType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSurveyApplType method',
   args:{surveyApplTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {updateSurveyApplType};
 
 
 const updateSurveyMultiResp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSurveyMultiResp method',
   args:{surveyId: {type: GraphQLString},surveyMultiRespId: {type: GraphQLString},multiRespTitle: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {updateSurveyMultiResp};
 
 
 const updateSurveyMultiRespColumn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSurveyMultiRespColumn method',
   args:{surveyId: {type: GraphQLString},surveyMultiRespId: {type: GraphQLString},surveyMultiRespColId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},columnTitle: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {updateSurveyMultiRespColumn};
 
 
 const updateSurveyPage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSurveyPage method',
   args:{surveyId: {type: GraphQLString},surveyPageSeqId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},pageName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {updateSurveyPage};
 
 
 const updateSurveyQuestion = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSurveyQuestion method',
   args:{surveyQuestionId: {type: GraphQLString},surveyQuestionTypeId: {type: GraphQLString},enumTypeId: {type: GraphQLString},formatString: {type: GraphQLInt},surveyQuestionCategoryId: {type: GraphQLString},question: {type: GraphQLString},hint: {type: GraphQLString},geoId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {updateSurveyQuestion};
 
 
 const updateSurveyQuestionAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSurveyQuestionAppl method',
   args:{fromDate: {type: GraphQLString},surveyQuestionId: {type: GraphQLString},surveyId: {type: GraphQLString},withSurveyOptionSeqId: {type: GraphQLString},externalFieldRef: {type: GraphQLString},requiredField: {type: GraphQLString},sequenceNum: {type: GraphQLInt},withSurveyQuestionId: {type: GraphQLString},surveyPageSeqId: {type: GraphQLString},surveyMultiRespId: {type: GraphQLString},surveyMultiRespColId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {updateSurveyQuestionAppl};
 
 
 const updateSurveyQuestionCategory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSurveyQuestionCategory method',
   args:{surveyQuestionCategoryId: {type: GraphQLString},description: {type: GraphQLString},parentCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {updateSurveyQuestionCategory};
 
 
 const updateSurveyQuestionOption = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSurveyQuestionOption method',
   args:{surveyQuestionId: {type: GraphQLString},surveyOptionSeqId: {type: GraphQLString},amountBase: {type: GraphQLFloat},duration: {type: GraphQLInt},sequenceNum: {type: GraphQLInt},amountBaseUomId: {type: GraphQLString},durationUomId: {type: GraphQLString},description: {type: GraphQLString},weightFactor: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {updateSurveyQuestionOption};
 
 
 const updateSurveyQuestionType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSurveyQuestionType method',
   args:{surveyQuestionTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {updateSurveyQuestionType};
 
 
 const updateSurveyTrigger = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSurveyTrigger method',
   args:{fromDate: {type: GraphQLString},surveyId: {type: GraphQLString},surveyApplTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

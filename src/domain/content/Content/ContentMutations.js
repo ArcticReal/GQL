@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContentResponseType} from '../../content/Content/ContentResponseType.js';
 import {ContentInputType} from '../../content/Content/ContentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContent = {
-  type: ResopnseType,
+  type: ContentResponseType,
   description: 'mutation for ofbiz createContent method',
-  args:{contentToBeAdded: {type: ContentInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`contents/add?`, args.contentToBeAdded, req);
+    return postToUrl(`contents/add?`, null, req);
   }
 };
 export {createContent};
 
 
 const updateContent = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContent method',
   args:{contentToBeUpdated: {type: ContentInputType},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContent};
 
 
 const deleteContentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentByIdUpdated method',
   args:{contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ContentOperationInputType} from '../../content/ContentOperation/ContentOperationInputType.js';
+import {ContentOperationResponseType} from '../../content/ContentOperation/ContentOperationResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentOperation = {
-  type: ResopnseType,
+  type: ContentOperationResponseType,
   description: 'mutation for ofbiz createContentOperation method',
-  args:{},
+  args:{contentOperationToBeAdded: {type: ContentOperationInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentOperations/add?`, null, req);
+    return postToUrl(`content/content/contentOperations/add?`, args.contentOperationToBeAdded, req);
   }
 };
 export {createContentOperation};
 
 
 const updateContentOperation = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentOperation method',
   args:{contentOperationToBeUpdated: {type: ContentOperationInputType},contentOperationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContentOperation};
 
 
 const deleteContentOperationByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentOperationByIdUpdated method',
   args:{contentOperationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

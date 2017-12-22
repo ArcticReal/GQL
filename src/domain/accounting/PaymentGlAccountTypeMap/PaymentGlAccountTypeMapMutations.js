@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PaymentGlAccountTypeMapInputType} from '../../accounting/PaymentGlAccountTypeMap/PaymentGlAccountTypeMapInputType.js';
+import {PaymentGlAccountTypeMapResponseType} from '../../accounting/PaymentGlAccountTypeMap/PaymentGlAccountTypeMapResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGlAccountTypeMap = {
-  type: ResopnseType,
+  type: PaymentGlAccountTypeMapResponseType,
   description: 'mutation for ofbiz createPaymentGlAccountTypeMap method',
-  args:{},
+  args:{paymentGlAccountTypeMapToBeAdded: {type: PaymentGlAccountTypeMapInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/paymentGlAccountTypeMaps/add?`, null, req);
+    return postToUrl(`accounting/glAccount/paymentGlAccountTypeMaps/add?`, args.paymentGlAccountTypeMapToBeAdded, req);
   }
 };
 export {createPaymentGlAccountTypeMap};
 
 
 const updatePaymentGlAccountTypeMap = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePaymentGlAccountTypeMap method',
   args:{paymentGlAccountTypeMapToBeUpdated: {type: PaymentGlAccountTypeMapInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePaymentGlAccountTypeMap};
 
 
 const deletePaymentGlAccountTypeMapByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePaymentGlAccountTypeMapByIdUpdated method',
   args:{paymentGlAccountTypeMapId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

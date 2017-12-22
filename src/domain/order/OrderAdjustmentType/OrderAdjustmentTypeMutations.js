@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderAdjustmentTypeInputType} from '../../order/OrderAdjustmentType/OrderAdjustmentTypeInputType.js';
+import {OrderAdjustmentTypeResponseType} from '../../order/OrderAdjustmentType/OrderAdjustmentTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderAdjustmentType = {
-  type: ResopnseType,
+  type: OrderAdjustmentTypeResponseType,
   description: 'mutation for ofbiz createOrderAdjustmentType method',
-  args:{},
+  args:{orderAdjustmentTypeToBeAdded: {type: OrderAdjustmentTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderAdjustment/orderAdjustmentTypes/add?`, null, req);
+    return postToUrl(`order/orderAdjustment/orderAdjustmentTypes/add?`, args.orderAdjustmentTypeToBeAdded, req);
   }
 };
 export {createOrderAdjustmentType};
 
 
 const updateOrderAdjustmentType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderAdjustmentType method',
   args:{orderAdjustmentTypeToBeUpdated: {type: OrderAdjustmentTypeInputType},orderAdjustmentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderAdjustmentType};
 
 
 const deleteOrderAdjustmentTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderAdjustmentTypeByIdUpdated method',
   args:{orderAdjustmentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

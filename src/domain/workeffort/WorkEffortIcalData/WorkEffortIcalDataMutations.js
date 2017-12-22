@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {WorkEffortIcalDataInputType} from '../../workeffort/WorkEffortIcalData/WorkEffortIcalDataInputType.js';
+import {WorkEffortIcalDataResponseType} from '../../workeffort/WorkEffortIcalData/WorkEffortIcalDataResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortIcalData = {
-  type: ResopnseType,
+  type: WorkEffortIcalDataResponseType,
   description: 'mutation for ofbiz createWorkEffortIcalData method',
-  args:{},
+  args:{workEffortIcalDataToBeAdded: {type: WorkEffortIcalDataInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortIcalDatas/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortIcalDatas/add?`, args.workEffortIcalDataToBeAdded, req);
   }
 };
 export {createWorkEffortIcalData};
 
 
 const updateWorkEffortIcalData = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortIcalData method',
   args:{workEffortIcalDataToBeUpdated: {type: WorkEffortIcalDataInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortIcalData};
 
 
 const deleteWorkEffortIcalDataByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortIcalDataByIdUpdated method',
   args:{workEffortIcalDataId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

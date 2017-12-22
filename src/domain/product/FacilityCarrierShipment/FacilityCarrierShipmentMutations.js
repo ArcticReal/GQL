@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FacilityCarrierShipmentResponseType} from '../../product/FacilityCarrierShipment/FacilityCarrierShipmentResponseType.js';
 import {FacilityCarrierShipmentInputType} from '../../product/FacilityCarrierShipment/FacilityCarrierShipmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityCarrierShipment = {
-  type: ResopnseType,
+  type: FacilityCarrierShipmentResponseType,
   description: 'mutation for ofbiz createFacilityCarrierShipment method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createFacilityCarrierShipment};
 
 
 const deleteFacilityCarrierShipmentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFacilityCarrierShipmentByIdUpdated method',
   args:{facilityCarrierShipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFacilityCarrierShipmentByIdUpdated};
 
 
 const updateFacilityCarrierShipment = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFacilityCarrierShipment method',
   args:{facilityCarrierShipmentToBeUpdated: {type: FacilityCarrierShipmentInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

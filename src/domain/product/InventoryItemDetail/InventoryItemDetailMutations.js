@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {InventoryItemDetailResponseType} from '../../product/InventoryItemDetail/InventoryItemDetailResponseType.js';
 import {InventoryItemDetailInputType} from '../../product/InventoryItemDetail/InventoryItemDetailInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInventoryItemDetail = {
-  type: ResopnseType,
+  type: InventoryItemDetailResponseType,
   description: 'mutation for ofbiz createInventoryItemDetail method',
-  args:{inventoryItemDetailToBeAdded: {type: InventoryItemDetailInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/inventoryItem/inventoryItemDetails/add?`, args.inventoryItemDetailToBeAdded, req);
+    return postToUrl(`product/inventoryItem/inventoryItemDetails/add?`, null, req);
   }
 };
 export {createInventoryItemDetail};
 
 
 const deleteInventoryItemDetailByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInventoryItemDetailByIdUpdated method',
   args:{inventoryItemDetailId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteInventoryItemDetailByIdUpdated};
 
 
 const updateInventoryItemDetail = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInventoryItemDetail method',
   args:{inventoryItemDetailToBeUpdated: {type: InventoryItemDetailInputType},inventoryItemDetailSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

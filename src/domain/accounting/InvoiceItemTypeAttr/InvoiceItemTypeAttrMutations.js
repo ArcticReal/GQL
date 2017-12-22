@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {InvoiceItemTypeAttrInputType} from '../../accounting/InvoiceItemTypeAttr/InvoiceItemTypeAttrInputType.js';
+import {InvoiceItemTypeAttrResponseType} from '../../accounting/InvoiceItemTypeAttr/InvoiceItemTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoiceItemTypeAttr = {
-  type: ResopnseType,
+  type: InvoiceItemTypeAttrResponseType,
   description: 'mutation for ofbiz createInvoiceItemTypeAttr method',
-  args:{},
+  args:{invoiceItemTypeAttrToBeAdded: {type: InvoiceItemTypeAttrInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceItemTypeAttrs/add?`, null, req);
+    return postToUrl(`accounting/invoice/invoiceItemTypeAttrs/add?`, args.invoiceItemTypeAttrToBeAdded, req);
   }
 };
 export {createInvoiceItemTypeAttr};
 
 
 const updateInvoiceItemTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInvoiceItemTypeAttr method',
   args:{invoiceItemTypeAttrToBeUpdated: {type: InvoiceItemTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateInvoiceItemTypeAttr};
 
 
 const deleteInvoiceItemTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInvoiceItemTypeAttrByIdUpdated method',
   args:{invoiceItemTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

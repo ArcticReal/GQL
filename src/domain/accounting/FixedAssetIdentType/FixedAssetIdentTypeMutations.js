@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FixedAssetIdentTypeResponseType} from '../../accounting/FixedAssetIdentType/FixedAssetIdentTypeResponseType.js';
 import {FixedAssetIdentTypeInputType} from '../../accounting/FixedAssetIdentType/FixedAssetIdentTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAssetIdentType = {
-  type: ResopnseType,
+  type: FixedAssetIdentTypeResponseType,
   description: 'mutation for ofbiz createFixedAssetIdentType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createFixedAssetIdentType};
 
 
 const updateFixedAssetIdentType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFixedAssetIdentType method',
   args:{fixedAssetIdentTypeToBeUpdated: {type: FixedAssetIdentTypeInputType},fixedAssetIdentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateFixedAssetIdentType};
 
 
 const deleteFixedAssetIdentTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFixedAssetIdentTypeByIdUpdated method',
   args:{fixedAssetIdentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

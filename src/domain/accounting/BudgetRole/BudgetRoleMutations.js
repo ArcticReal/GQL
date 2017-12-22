@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {BudgetRoleInputType} from '../../accounting/BudgetRole/BudgetRoleInputType.js';
+import {BudgetRoleResponseType} from '../../accounting/BudgetRole/BudgetRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBudgetRole = {
-  type: ResopnseType,
+  type: BudgetRoleResponseType,
   description: 'mutation for ofbiz createBudgetRole method',
-  args:{},
+  args:{budgetRoleToBeAdded: {type: BudgetRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/budget/budgetRoles/add?`, null, req);
+    return postToUrl(`accounting/budget/budgetRoles/add?`, args.budgetRoleToBeAdded, req);
   }
 };
 export {createBudgetRole};
 
 
 const deleteBudgetRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteBudgetRoleByIdUpdated method',
   args:{budgetRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteBudgetRoleByIdUpdated};
 
 
 const updateBudgetRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateBudgetRole method',
   args:{budgetRoleToBeUpdated: {type: BudgetRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

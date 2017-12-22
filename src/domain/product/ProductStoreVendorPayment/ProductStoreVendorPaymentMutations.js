@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductStoreVendorPaymentResponseType} from '../../product/ProductStoreVendorPayment/ProductStoreVendorPaymentResponseType.js';
 import {ProductStoreVendorPaymentInputType} from '../../product/ProductStoreVendorPayment/ProductStoreVendorPaymentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreVendorPayment = {
-  type: ResopnseType,
+  type: ProductStoreVendorPaymentResponseType,
   description: 'mutation for ofbiz createProductStoreVendorPayment method',
-  args:{productStoreVendorPaymentToBeAdded: {type: ProductStoreVendorPaymentInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStoreVendorPayments/add?`, args.productStoreVendorPaymentToBeAdded, req);
+    return postToUrl(`product/product/productStoreVendorPayments/add?`, null, req);
   }
 };
 export {createProductStoreVendorPayment};
 
 
 const updateProductStoreVendorPayment = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreVendorPayment method',
   args:{productStoreVendorPaymentToBeUpdated: {type: ProductStoreVendorPaymentInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStoreVendorPayment};
 
 
 const deleteProductStoreVendorPaymentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreVendorPaymentByIdUpdated method',
   args:{productStoreVendorPaymentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

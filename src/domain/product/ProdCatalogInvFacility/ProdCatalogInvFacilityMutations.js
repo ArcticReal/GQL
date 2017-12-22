@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProdCatalogInvFacilityResponseType} from '../../product/ProdCatalogInvFacility/ProdCatalogInvFacilityResponseType.js';
 import {ProdCatalogInvFacilityInputType} from '../../product/ProdCatalogInvFacility/ProdCatalogInvFacilityInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProdCatalogInvFacility = {
-  type: ResopnseType,
+  type: ProdCatalogInvFacilityResponseType,
   description: 'mutation for ofbiz createProdCatalogInvFacility method',
-  args:{prodCatalogInvFacilityToBeAdded: {type: ProdCatalogInvFacilityInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/prodCatalog/prodCatalogInvFacilitys/add?`, args.prodCatalogInvFacilityToBeAdded, req);
+    return postToUrl(`product/prodCatalog/prodCatalogInvFacilitys/add?`, null, req);
   }
 };
 export {createProdCatalogInvFacility};
 
 
 const updateProdCatalogInvFacility = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProdCatalogInvFacility method',
   args:{prodCatalogInvFacilityToBeUpdated: {type: ProdCatalogInvFacilityInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProdCatalogInvFacility};
 
 
 const deleteProdCatalogInvFacilityByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProdCatalogInvFacilityByIdUpdated method',
   args:{prodCatalogInvFacilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

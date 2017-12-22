@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PartyAttributeInputType} from '../../party/PartyAttribute/PartyAttributeInputType.js';
+import {PartyAttributeResponseType} from '../../party/PartyAttribute/PartyAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyAttribute = {
-  type: ResopnseType,
+  type: PartyAttributeResponseType,
   description: 'mutation for ofbiz createPartyAttribute method',
   args:{partyAttributeToBeAdded: {type: PartyAttributeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPartyAttribute};
 
 
 const updatePartyAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyAttribute method',
   args:{partyAttributeToBeUpdated: {type: PartyAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyAttribute};
 
 
 const deletePartyAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyAttributeByIdUpdated method',
   args:{partyAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

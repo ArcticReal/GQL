@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {InvoiceItemAssocResponseType} from '../../accounting/InvoiceItemAssoc/InvoiceItemAssocResponseType.js';
 import {InvoiceItemAssocInputType} from '../../accounting/InvoiceItemAssoc/InvoiceItemAssocInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoiceItemAssoc = {
-  type: ResopnseType,
+  type: InvoiceItemAssocResponseType,
   description: 'mutation for ofbiz createInvoiceItemAssoc method',
-  args:{invoiceItemAssocToBeAdded: {type: InvoiceItemAssocInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceItemAssocs/add?`, args.invoiceItemAssocToBeAdded, req);
+    return postToUrl(`accounting/invoice/invoiceItemAssocs/add?`, null, req);
   }
 };
 export {createInvoiceItemAssoc};
 
 
 const deleteInvoiceItemAssocByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInvoiceItemAssocByIdUpdated method',
   args:{invoiceItemAssocId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteInvoiceItemAssocByIdUpdated};
 
 
 const updateInvoiceItemAssoc = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInvoiceItemAssoc method',
   args:{invoiceItemAssocToBeUpdated: {type: InvoiceItemAssocInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

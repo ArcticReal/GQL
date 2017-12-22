@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductStoreGroupRollupResponseType} from '../../product/ProductStoreGroupRollup/ProductStoreGroupRollupResponseType.js';
 import {ProductStoreGroupRollupInputType} from '../../product/ProductStoreGroupRollup/ProductStoreGroupRollupInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreGroupRollup = {
-  type: ResopnseType,
+  type: ProductStoreGroupRollupResponseType,
   description: 'mutation for ofbiz createProductStoreGroupRollup method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductStoreGroupRollup};
 
 
 const updateProductStoreGroupRollup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreGroupRollup method',
   args:{productStoreGroupRollupToBeUpdated: {type: ProductStoreGroupRollupInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStoreGroupRollup};
 
 
 const deleteProductStoreGroupRollupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreGroupRollupByIdUpdated method',
   args:{productStoreGroupRollupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

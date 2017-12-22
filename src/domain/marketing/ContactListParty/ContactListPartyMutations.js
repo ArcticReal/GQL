@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContactListPartyResponseType} from '../../marketing/ContactListParty/ContactListPartyResponseType.js';
 import {ContactListPartyInputType} from '../../marketing/ContactListParty/ContactListPartyInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContactListParty = {
-  type: ResopnseType,
+  type: ContactListPartyResponseType,
   description: 'mutation for ofbiz createContactListParty method',
-  args:{contactListPartyToBeAdded: {type: ContactListPartyInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/contactList/contactListPartys/add?`, args.contactListPartyToBeAdded, req);
+    return postToUrl(`marketing/contactList/contactListPartys/add?`, null, req);
   }
 };
 export {createContactListParty};
 
 
 const deleteContactListPartyByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContactListPartyByIdUpdated method',
   args:{contactListPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteContactListPartyByIdUpdated};
 
 
 const updateContactListParty = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContactListParty method',
   args:{contactListPartyToBeUpdated: {type: ContactListPartyInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {GlAccountGroupTypeResponseType} from '../../accounting/GlAccountGroupType/GlAccountGroupTypeResponseType.js';
 import {GlAccountGroupTypeInputType} from '../../accounting/GlAccountGroupType/GlAccountGroupTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlAccountGroupType = {
-  type: ResopnseType,
+  type: GlAccountGroupTypeResponseType,
   description: 'mutation for ofbiz createGlAccountGroupType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createGlAccountGroupType};
 
 
 const updateGlAccountGroupType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGlAccountGroupType method',
   args:{glAccountGroupTypeToBeUpdated: {type: GlAccountGroupTypeInputType},glAccountGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateGlAccountGroupType};
 
 
 const deleteGlAccountGroupTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGlAccountGroupTypeByIdUpdated method',
   args:{glAccountGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

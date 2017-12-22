@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortGoodStandardResponseType} from '../../workeffort/WorkEffortGoodStandard/WorkEffortGoodStandardResponseType.js';
 import {WorkEffortGoodStandardInputType} from '../../workeffort/WorkEffortGoodStandard/WorkEffortGoodStandardInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortGoodStandard = {
-  type: ResopnseType,
+  type: WorkEffortGoodStandardResponseType,
   description: 'mutation for ofbiz createWorkEffortGoodStandard method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createWorkEffortGoodStandard};
 
 
 const updateWorkEffortGoodStandard = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortGoodStandard method',
   args:{workEffortGoodStandardToBeUpdated: {type: WorkEffortGoodStandardInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortGoodStandard};
 
 
 const deleteWorkEffortGoodStandardByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortGoodStandardByIdUpdated method',
   args:{workEffortGoodStandardId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

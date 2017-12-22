@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {TrackingCodeVisitResponseType} from '../../marketing/TrackingCodeVisit/TrackingCodeVisitResponseType.js';
 import {TrackingCodeVisitInputType} from '../../marketing/TrackingCodeVisit/TrackingCodeVisitInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTrackingCodeVisit = {
-  type: ResopnseType,
+  type: TrackingCodeVisitResponseType,
   description: 'mutation for ofbiz createTrackingCodeVisit method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createTrackingCodeVisit};
 
 
 const deleteTrackingCodeVisitByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTrackingCodeVisitByIdUpdated method',
   args:{trackingCodeVisitId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteTrackingCodeVisitByIdUpdated};
 
 
 const updateTrackingCodeVisit = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTrackingCodeVisit method',
   args:{trackingCodeVisitToBeUpdated: {type: TrackingCodeVisitInputType},visitId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

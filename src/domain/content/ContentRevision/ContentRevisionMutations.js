@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContentRevisionResponseType} from '../../content/ContentRevision/ContentRevisionResponseType.js';
 import {ContentRevisionInputType} from '../../content/ContentRevision/ContentRevisionInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentRevision = {
-  type: ResopnseType,
+  type: ContentRevisionResponseType,
   description: 'mutation for ofbiz createContentRevision method',
-  args:{contentRevisionToBeAdded: {type: ContentRevisionInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentRevisions/add?`, args.contentRevisionToBeAdded, req);
+    return postToUrl(`content/content/contentRevisions/add?`, null, req);
   }
 };
 export {createContentRevision};
 
 
 const deleteContentRevisionByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentRevisionByIdUpdated method',
   args:{contentRevisionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteContentRevisionByIdUpdated};
 
 
 const updateContentRevision = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentRevision method',
   args:{contentRevisionToBeUpdated: {type: ContentRevisionInputType},contentRevisionSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

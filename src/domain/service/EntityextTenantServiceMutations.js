@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createComponent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createComponent method',
   args:{componentName: {type: GraphQLString},rootLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createComponent};
 
 
 const deleteComponent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteComponent method',
   args:{componentName: {type: GraphQLString},rootLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {deleteComponent};
 
 
 const updateComponent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateComponent method',
   args:{componentName: {type: GraphQLString},rootLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

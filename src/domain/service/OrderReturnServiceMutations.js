@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addProductsBackToCategory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addProductsBackToCategory method',
   args:{inventoryItemId: {type: GraphQLString},returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addProductsBackToCategory};
 
 
 const autoCancelReplacementOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz autoCancelReplacementOrders method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {autoCancelReplacementOrders};
 
 
 const cancelReplacementOrderItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelReplacementOrderItems method',
   args:{returnId: {type: GraphQLString},returnItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {cancelReplacementOrderItems};
 
 
 const cancelReturnItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelReturnItems method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {cancelReturnItems};
 
 
 const checkPaymentAmountForRefund = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkPaymentAmountForRefund method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {checkPaymentAmountForRefund};
 
 
 const checkReturnComplete = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkReturnComplete method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {checkReturnComplete};
 
 
 const createExchangeOrderAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createExchangeOrderAssoc method',
   args:{orderId: {type: GraphQLString},originOrderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createExchangeOrderAssoc};
 
 
 const createPaymentApplicationsFromReturnItemResponse = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPaymentApplicationsFromReturnItemResponse method',
   args:{returnItemResponseId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createPaymentApplicationsFromReturnItemResponse};
 
 
 const createReturnAdjustment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnAdjustment method',
   args:{customerReferenceId: {type: GraphQLString},correspondingProductId: {type: GraphQLString},includeInShipping: {type: GraphQLString},description: {type: GraphQLString},returnTypeId: {type: GraphQLString},exemptAmount: {type: GraphQLFloat},productPromoId: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},returnAdjustmentTypeId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},primaryGeoId: {type: GraphQLString},returnId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},secondaryGeoId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},orderAdjustmentId: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productFeatureId: {type: GraphQLString},taxAuthorityRateSeqId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},includeInTax: {type: GraphQLString},createdDate: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},sourcePercentage: {type: GraphQLFloat},returnItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createReturnAdjustment};
 
 
 const createReturnAdjustmentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnAdjustmentType method',
   args:{returnAdjustmentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createReturnAdjustmentType};
 
 
 const createReturnAndItemOrAdjustment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnAndItemOrAdjustment method',
   args:{returnQuantity: {type: GraphQLFloat},orderId: {type: GraphQLString},includeInShipping: {type: GraphQLString},returnTypeId: {type: GraphQLString},billingAccountId: {type: GraphQLString},productPromoId: {type: GraphQLString},returnHeaderTypeId: {type: GraphQLString},returnAdjustmentTypeId: {type: GraphQLString},returnItemResponseId: {type: GraphQLString},expectedItemStatus: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},productId: {type: GraphQLString},entryDate: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productFeatureId: {type: GraphQLString},taxAuthorityRateSeqId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},includeInTax: {type: GraphQLString},statusId: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},receivedQuantity: {type: GraphQLFloat},sourcePercentage: {type: GraphQLFloat},toPartyId: {type: GraphQLString},customerReferenceId: {type: GraphQLString},fromPartyId: {type: GraphQLString},correspondingProductId: {type: GraphQLString},description: {type: GraphQLString},exemptAmount: {type: GraphQLFloat},taxAuthPartyId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},returnReasonId: {type: GraphQLString},paymentMethodId: {type: GraphQLString},primaryGeoId: {type: GraphQLString},returnId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},secondaryGeoId: {type: GraphQLString},destinationFacilityId: {type: GraphQLString},orderAdjustmentId: {type: GraphQLString},supplierRmaId: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},originContactMechId: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},returnPrice: {type: GraphQLFloat},returnAdjustmentId: {type: GraphQLString},finAccountId: {type: GraphQLString},currencyUomId: {type: GraphQLString},createdDate: {type: GraphQLString},createdBy: {type: GraphQLString},returnItemTypeId: {type: GraphQLString},needsInventoryReceive: {type: GraphQLString},returnItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createReturnAndItemOrAdjustment};
 
 
 const createReturnContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnContactMech method',
   args:{shipmentId: {type: GraphQLString},returnId: {type: GraphQLString},returnItemSeqId: {type: GraphQLString},shipmentItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createReturnContactMech};
 
 
 const createReturnHeader = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnHeader method',
   args:{returnHeaderTypeId: {type: GraphQLString},fromPartyId: {type: GraphQLString},entryDate: {type: GraphQLString},originContactMechId: {type: GraphQLString},billingAccountId: {type: GraphQLString},finAccountId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},createdBy: {type: GraphQLString},paymentMethodId: {type: GraphQLString},needsInventoryReceive: {type: GraphQLString},toPartyId: {type: GraphQLString},destinationFacilityId: {type: GraphQLString},supplierRmaId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createReturnHeader};
 
 
 const createReturnHeaderType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnHeaderType method',
   args:{parentTypeId: {type: GraphQLString},description: {type: GraphQLString},returnHeaderTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createReturnHeaderType};
 
 
 const createReturnItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnItem method',
   args:{returnQuantity: {type: GraphQLFloat},returnItemTypeId: {type: GraphQLString},orderId: {type: GraphQLString},returnId: {type: GraphQLString},returnTypeId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},includeAdjustments: {type: GraphQLString},returnItemResponseId: {type: GraphQLString},productId: {type: GraphQLString},statusId: {type: GraphQLString},returnReasonId: {type: GraphQLString},receivedQuantity: {type: GraphQLFloat},description: {type: GraphQLString},expectedItemStatus: {type: GraphQLString},returnPrice: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createReturnItem};
 
 
 const createReturnItemBilling = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnItemBilling method',
   args:{returnId: {type: GraphQLString},returnItemSeqId: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},shipmentReceiptId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createReturnItemBilling};
 
 
 const createReturnItemForRental = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnItemForRental method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createReturnItemForRental};
 
 
 const createReturnItemOrAdjustment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnItemOrAdjustment method',
   args:{customerReferenceId: {type: GraphQLString},correspondingProductId: {type: GraphQLString},returnQuantity: {type: GraphQLFloat},orderId: {type: GraphQLString},includeInShipping: {type: GraphQLString},description: {type: GraphQLString},returnTypeId: {type: GraphQLString},exemptAmount: {type: GraphQLFloat},productPromoId: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},returnAdjustmentTypeId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},returnItemResponseId: {type: GraphQLString},returnReasonId: {type: GraphQLString},primaryGeoId: {type: GraphQLString},returnId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},expectedItemStatus: {type: GraphQLString},secondaryGeoId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},orderAdjustmentId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},productId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productFeatureId: {type: GraphQLString},taxAuthorityRateSeqId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},returnPrice: {type: GraphQLFloat},shipGroupSeqId: {type: GraphQLString},includeInTax: {type: GraphQLString},returnAdjustmentId: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},returnItemTypeId: {type: GraphQLString},receivedQuantity: {type: GraphQLFloat},sourcePercentage: {type: GraphQLFloat},returnItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createReturnItemOrAdjustment};
 
 
 const createReturnItemResponse = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnItemResponse method',
   args:{replacementOrderId: {type: GraphQLString},finAccountTransId: {type: GraphQLString},orderPaymentPreferenceId: {type: GraphQLString},responseAmount: {type: GraphQLFloat},paymentId: {type: GraphQLString},billingAccountId: {type: GraphQLString},responseDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createReturnItemResponse};
 
 
 const createReturnItemShipment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnItemShipment method',
   args:{quantity: {type: GraphQLFloat},shipmentId: {type: GraphQLString},returnId: {type: GraphQLString},returnItemSeqId: {type: GraphQLString},shipmentItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {createReturnItemShipment};
 
 
 const createReturnItemType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnItemType method',
   args:{parentTypeId: {type: GraphQLString},returnItemTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {createReturnItemType};
 
 
 const createReturnItemTypeMap = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnItemTypeMap method',
   args:{returnItemMapKey: {type: GraphQLString},returnHeaderTypeId: {type: GraphQLString},returnItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {createReturnItemTypeMap};
 
 
 const createReturnReason = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnReason method',
   args:{returnReasonId: {type: GraphQLString},description: {type: GraphQLString},sequenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {createReturnReason};
 
 
 const createReturnStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnStatus method',
   args:{returnId: {type: GraphQLString},returnItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {createReturnStatus};
 
 
 const createReturnType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createReturnType method',
   args:{returnTypeId: {type: GraphQLString},description: {type: GraphQLString},sequenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {createReturnType};
 
 
 const deleteReturnAdjustmentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteReturnAdjustmentType method',
   args:{returnAdjustmentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {deleteReturnAdjustmentType};
 
 
 const deleteReturnContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteReturnContactMech method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},returnId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {deleteReturnContactMech};
 
 
 const deleteReturnHeaderType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteReturnHeaderType method',
   args:{returnHeaderTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {deleteReturnHeaderType};
 
 
 const deleteReturnItemType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteReturnItemType method',
   args:{returnItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {deleteReturnItemType};
 
 
 const deleteReturnItemTypeMap = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteReturnItemTypeMap method',
   args:{returnItemMapKey: {type: GraphQLString},returnHeaderTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {deleteReturnItemTypeMap};
 
 
 const deleteReturnReason = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteReturnReason method',
   args:{returnReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {deleteReturnReason};
 
 
 const deleteReturnType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteReturnType method',
   args:{returnTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {deleteReturnType};
 
 
 const getOrderAvailableReturnedTotal = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getOrderAvailableReturnedTotal method',
   args:{orderId: {type: GraphQLString},countNewReturnItems: {type: GraphQLBoolean},adjustment: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {getOrderAvailableReturnedTotal};
 
 
 const getReturnAmountByOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getReturnAmountByOrder method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {getReturnAmountByOrder};
 
 
 const getReturnItemInitialCost = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getReturnItemInitialCost method',
   args:{returnId: {type: GraphQLString},returnItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {getReturnItemInitialCost};
 
 
 const getReturnableItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getReturnableItems method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {getReturnableItems};
 
 
 const getReturnableQuantity = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getReturnableQuantity method',
   args:{orderItem: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {getReturnableQuantity};
 
 
 const getStatusItemsForReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getStatusItemsForReturn method',
   args:{returnHeaderTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {getStatusItemsForReturn};
 
 
 const processCreditReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processCreditReturn method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {processCreditReturn};
 
 
 const processCrossShipReplacementReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processCrossShipReplacementReturn method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {processCrossShipReplacementReturn};
 
 
 const processRefundImmediatelyReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processRefundImmediatelyReturn method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {processRefundImmediatelyReturn};
 
 
 const processRefundOnlyReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processRefundOnlyReturn method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {processRefundOnlyReturn};
 
 
 const processRefundReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processRefundReturn method',
   args:{returnId: {type: GraphQLString},returnTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {processRefundReturn};
 
 
 const processRefundReturnForReplacement = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processRefundReturnForReplacement method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {processRefundReturnForReplacement};
 
 
 const processRepairReplacementReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processRepairReplacementReturn method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {processRepairReplacementReturn};
 
 
 const processReplaceImmediatelyReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processReplaceImmediatelyReturn method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {processReplaceImmediatelyReturn};
 
 
 const processReplacementReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processReplacementReturn method',
   args:{returnId: {type: GraphQLString},returnTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {processReplacementReturn};
 
 
 const processSubscriptionReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processSubscriptionReturn method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {processSubscriptionReturn};
 
 
 const processWaitReplacementReservedReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processWaitReplacementReservedReturn method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {processWaitReplacementReservedReturn};
 
 
 const processWaitReplacementReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processWaitReplacementReturn method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {processWaitReplacementReturn};
 
 
 const quickReturnOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz quickReturnOrder method',
   args:{orderId: {type: GraphQLString},returnHeaderTypeId: {type: GraphQLString},returnReasonId: {type: GraphQLString},returnTypeId: {type: GraphQLString},receiveReturn: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {quickReturnOrder};
 
 
 const refundBillingAccountPayment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz refundBillingAccountPayment method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {refundBillingAccountPayment};
 
 
 const removeReturnAdjustment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeReturnAdjustment method',
   args:{returnAdjustmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,7 +596,7 @@ export {removeReturnAdjustment};
 
 
 const removeReturnItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeReturnItem method',
   args:{returnId: {type: GraphQLString},returnItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -607,7 +607,7 @@ export {removeReturnItem};
 
 
 const returnAdjustmentInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz returnAdjustmentInterface method',
   args:{customerReferenceId: {type: GraphQLString},correspondingProductId: {type: GraphQLString},includeInShipping: {type: GraphQLString},description: {type: GraphQLString},returnTypeId: {type: GraphQLString},exemptAmount: {type: GraphQLFloat},productPromoId: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},returnAdjustmentTypeId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},primaryGeoId: {type: GraphQLString},returnId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},secondaryGeoId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},orderAdjustmentId: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productFeatureId: {type: GraphQLString},taxAuthorityRateSeqId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},includeInTax: {type: GraphQLString},returnAdjustmentId: {type: GraphQLString},createdDate: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},sourcePercentage: {type: GraphQLFloat},returnItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -618,7 +618,7 @@ export {returnAdjustmentInterface};
 
 
 const sendReturnAcceptNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendReturnAcceptNotification method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -629,7 +629,7 @@ export {sendReturnAcceptNotification};
 
 
 const sendReturnCancelNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendReturnCancelNotification method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -640,7 +640,7 @@ export {sendReturnCancelNotification};
 
 
 const sendReturnCompleteNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendReturnCompleteNotification method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -651,7 +651,7 @@ export {sendReturnCompleteNotification};
 
 
 const updateReturnAdjustment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnAdjustment method',
   args:{returnAdjustmentId: {type: GraphQLString},customerReferenceId: {type: GraphQLString},correspondingProductId: {type: GraphQLString},includeInShipping: {type: GraphQLString},description: {type: GraphQLString},returnTypeId: {type: GraphQLString},exemptAmount: {type: GraphQLFloat},productPromoId: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},returnAdjustmentTypeId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},primaryGeoId: {type: GraphQLString},returnId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},secondaryGeoId: {type: GraphQLString},originalReturnQuantity: {type: GraphQLFloat},createdByUserLogin: {type: GraphQLString},orderAdjustmentId: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productFeatureId: {type: GraphQLString},taxAuthorityRateSeqId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},includeInTax: {type: GraphQLString},createdDate: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},sourcePercentage: {type: GraphQLFloat},returnItemSeqId: {type: GraphQLString},originalReturnPrice: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -662,7 +662,7 @@ export {updateReturnAdjustment};
 
 
 const updateReturnAdjustmentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnAdjustmentType method',
   args:{returnAdjustmentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -673,7 +673,7 @@ export {updateReturnAdjustmentType};
 
 
 const updateReturnContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnContactMech method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},returnId: {type: GraphQLString},contactMechId: {type: GraphQLString},oldContactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -684,7 +684,7 @@ export {updateReturnContactMech};
 
 
 const updateReturnHeader = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnHeader method',
   args:{returnId: {type: GraphQLString},fromPartyId: {type: GraphQLString},entryDate: {type: GraphQLString},originContactMechId: {type: GraphQLString},billingAccountId: {type: GraphQLString},returnHeaderTypeId: {type: GraphQLString},finAccountId: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},createdBy: {type: GraphQLString},paymentMethodId: {type: GraphQLString},needsInventoryReceive: {type: GraphQLString},toPartyId: {type: GraphQLString},destinationFacilityId: {type: GraphQLString},supplierRmaId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -695,7 +695,7 @@ export {updateReturnHeader};
 
 
 const updateReturnHeaderType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnHeaderType method',
   args:{returnHeaderTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -706,7 +706,7 @@ export {updateReturnHeaderType};
 
 
 const updateReturnItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnItem method',
   args:{returnId: {type: GraphQLString},returnItemSeqId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},returnQuantity: {type: GraphQLFloat},productId: {type: GraphQLString},orderId: {type: GraphQLString},returnTypeId: {type: GraphQLString},description: {type: GraphQLString},returnPrice: {type: GraphQLFloat},returnItemResponseId: {type: GraphQLString},statusId: {type: GraphQLString},returnReasonId: {type: GraphQLString},returnItemTypeId: {type: GraphQLString},receivedQuantity: {type: GraphQLFloat},expectedItemStatus: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {updateReturnItem};
 
 
 const updateReturnItemOrAdjustment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnItemOrAdjustment method',
   args:{customerReferenceId: {type: GraphQLString},correspondingProductId: {type: GraphQLString},returnQuantity: {type: GraphQLFloat},orderId: {type: GraphQLString},includeInShipping: {type: GraphQLString},description: {type: GraphQLString},returnTypeId: {type: GraphQLString},exemptAmount: {type: GraphQLFloat},productPromoId: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},returnAdjustmentTypeId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},returnItemResponseId: {type: GraphQLString},returnReasonId: {type: GraphQLString},primaryGeoId: {type: GraphQLString},returnId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},expectedItemStatus: {type: GraphQLString},secondaryGeoId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},orderAdjustmentId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},productId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},productFeatureId: {type: GraphQLString},taxAuthorityRateSeqId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},returnPrice: {type: GraphQLFloat},shipGroupSeqId: {type: GraphQLString},includeInTax: {type: GraphQLString},returnAdjustmentId: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},returnItemTypeId: {type: GraphQLString},receivedQuantity: {type: GraphQLFloat},sourcePercentage: {type: GraphQLFloat},returnItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {updateReturnItemOrAdjustment};
 
 
 const updateReturnItemType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnItemType method',
   args:{returnItemTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {updateReturnItemType};
 
 
 const updateReturnItemTypeMap = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnItemTypeMap method',
   args:{returnItemMapKey: {type: GraphQLString},returnHeaderTypeId: {type: GraphQLString},returnItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -750,7 +750,7 @@ export {updateReturnItemTypeMap};
 
 
 const updateReturnItemsStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnItemsStatus method',
   args:{statusId: {type: GraphQLString},returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -761,7 +761,7 @@ export {updateReturnItemsStatus};
 
 
 const updateReturnReason = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnReason method',
   args:{returnReasonId: {type: GraphQLString},description: {type: GraphQLString},sequenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -772,7 +772,7 @@ export {updateReturnReason};
 
 
 const updateReturnStatusFromReceipt = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnStatusFromReceipt method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -783,7 +783,7 @@ export {updateReturnStatusFromReceipt};
 
 
 const updateReturnType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateReturnType method',
   args:{returnTypeId: {type: GraphQLString},description: {type: GraphQLString},sequenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

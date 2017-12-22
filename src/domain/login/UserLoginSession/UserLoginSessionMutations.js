@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {UserLoginSessionResponseType} from '../../login/UserLoginSession/UserLoginSessionResponseType.js';
 import {UserLoginSessionInputType} from '../../login/UserLoginSession/UserLoginSessionInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createUserLoginSession = {
-  type: ResopnseType,
+  type: UserLoginSessionResponseType,
   description: 'mutation for ofbiz createUserLoginSession method',
-  args:{userLoginSessionToBeAdded: {type: UserLoginSessionInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`login/userLogin/userLoginSessions/add?`, args.userLoginSessionToBeAdded, req);
+    return postToUrl(`login/userLogin/userLoginSessions/add?`, null, req);
   }
 };
 export {createUserLoginSession};
 
 
 const updateUserLoginSession = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateUserLoginSession method',
   args:{userLoginSessionToBeUpdated: {type: UserLoginSessionInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateUserLoginSession};
 
 
 const deleteUserLoginSessionByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteUserLoginSessionByIdUpdated method',
   args:{userLoginSessionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

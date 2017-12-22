@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductStoreVendorShipmentInputType} from '../../product/ProductStoreVendorShipment/ProductStoreVendorShipmentInputType.js';
+import {ProductStoreVendorShipmentResponseType} from '../../product/ProductStoreVendorShipment/ProductStoreVendorShipmentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreVendorShipment = {
-  type: ResopnseType,
+  type: ProductStoreVendorShipmentResponseType,
   description: 'mutation for ofbiz createProductStoreVendorShipment method',
-  args:{},
+  args:{productStoreVendorShipmentToBeAdded: {type: ProductStoreVendorShipmentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStoreVendorShipments/add?`, null, req);
+    return postToUrl(`product/product/productStoreVendorShipments/add?`, args.productStoreVendorShipmentToBeAdded, req);
   }
 };
 export {createProductStoreVendorShipment};
 
 
 const updateProductStoreVendorShipment = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreVendorShipment method',
   args:{productStoreVendorShipmentToBeUpdated: {type: ProductStoreVendorShipmentInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStoreVendorShipment};
 
 
 const deleteProductStoreVendorShipmentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreVendorShipmentByIdUpdated method',
   args:{productStoreVendorShipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

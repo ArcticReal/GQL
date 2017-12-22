@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FacilityContactMechPurposeResponseType} from '../../product/FacilityContactMechPurpose/FacilityContactMechPurposeResponseType.js';
 import {FacilityContactMechPurposeInputType} from '../../product/FacilityContactMechPurpose/FacilityContactMechPurposeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityContactMechPurpose = {
-  type: ResopnseType,
+  type: FacilityContactMechPurposeResponseType,
   description: 'mutation for ofbiz createFacilityContactMechPurpose method',
-  args:{facilityContactMechPurposeToBeAdded: {type: FacilityContactMechPurposeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityContactMechPurposes/add?`, args.facilityContactMechPurposeToBeAdded, req);
+    return postToUrl(`product/facility/facilityContactMechPurposes/add?`, null, req);
   }
 };
 export {createFacilityContactMechPurpose};
 
 
 const deleteFacilityContactMechPurposeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFacilityContactMechPurposeByIdUpdated method',
   args:{facilityContactMechPurposeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFacilityContactMechPurposeByIdUpdated};
 
 
 const updateFacilityContactMechPurpose = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFacilityContactMechPurpose method',
   args:{facilityContactMechPurposeToBeUpdated: {type: FacilityContactMechPurposeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyTypeAttrResponseType} from '../../party/PartyTypeAttr/PartyTypeAttrResponseType.js';
 import {PartyTypeAttrInputType} from '../../party/PartyTypeAttr/PartyTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyTypeAttr = {
-  type: ResopnseType,
+  type: PartyTypeAttrResponseType,
   description: 'mutation for ofbiz createPartyTypeAttr method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPartyTypeAttr};
 
 
 const updatePartyTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyTypeAttr method',
   args:{partyTypeAttrToBeUpdated: {type: PartyTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyTypeAttr};
 
 
 const deletePartyTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyTypeAttrByIdUpdated method',
   args:{partyTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

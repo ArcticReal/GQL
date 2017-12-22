@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PicklistStatusHistoryResponseType} from '../../shipment/PicklistStatusHistory/PicklistStatusHistoryResponseType.js';
 import {PicklistStatusHistoryInputType} from '../../shipment/PicklistStatusHistory/PicklistStatusHistoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPicklistStatusHistory = {
-  type: ResopnseType,
+  type: PicklistStatusHistoryResponseType,
   description: 'mutation for ofbiz createPicklistStatusHistory method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPicklistStatusHistory};
 
 
 const updatePicklistStatusHistory = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePicklistStatusHistory method',
   args:{picklistStatusHistoryToBeUpdated: {type: PicklistStatusHistoryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePicklistStatusHistory};
 
 
 const deletePicklistStatusHistoryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePicklistStatusHistoryByIdUpdated method',
   args:{picklistStatusHistoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

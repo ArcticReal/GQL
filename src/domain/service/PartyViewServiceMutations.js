@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const findParty = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findParty method',
   args:{lastName: {type: GraphQLString},VIEW_SIZE: {type: GraphQLString},city: {type: GraphQLString},postalCode: {type: GraphQLString},softIdentifier: {type: GraphQLString},extInfo: {type: GraphQLString},partyTypeId: {type: GraphQLString},showAll: {type: GraphQLString},infoString: {type: GraphQLString},countryCode: {type: GraphQLString},contactNumber: {type: GraphQLString},sortField: {type: GraphQLString},partyId: {type: GraphQLString},roleTypeId: {type: GraphQLString},serialNumber: {type: GraphQLString},address2: {type: GraphQLString},address1: {type: GraphQLString},userLoginId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},lookupFlag: {type: GraphQLString},firstName: {type: GraphQLString},partyRelationshipTypeId: {type: GraphQLString},groupName: {type: GraphQLString},areaCode: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},VIEW_INDEX: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {findParty};
 
 
 const getChildRoleTypes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getChildRoleTypes method',
   args:{roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {getChildRoleTypes};
 
 
 const getParentOrganizations = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getParentOrganizations method',
   args:{organizationPartyId: {type: GraphQLString},getParentsOfParents: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {getParentOrganizations};
 
 
 const getPartiesByRelationship = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartiesByRelationship method',
   args:{partyIdFrom: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},positionTitle: {type: GraphQLString},comments: {type: GraphQLString},priorityTypeId: {type: GraphQLString},permissionsEnumId: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},relationshipName: {type: GraphQLString},securityGroupId: {type: GraphQLString},partyRelationshipTypeId: {type: GraphQLString},statusId: {type: GraphQLString},partyIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {getPartiesByRelationship};
 
 
 const getPartyContactMechValueMaps = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyContactMechValueMaps method',
   args:{userLogin: {type: new GraphQLList(KeyValueInputType)},showOld: {type: GraphQLBoolean},contactMechTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {getPartyContactMechValueMaps};
 
 
 const getPartyFromEmail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyFromEmail method',
   args:{email: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {getPartyFromEmail};
 
 
 const getPartyFromExternalId = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyFromExternalId method',
   args:{externalId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {getPartyFromExternalId};
 
 
 const getPartyFromGroupName = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyFromGroupName method',
   args:{groupName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {getPartyFromGroupName};
 
 
 const getPartyFromName = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyFromName method',
   args:{firstName: {type: GraphQLString},lastName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {getPartyFromName};
 
 
 const getPartyFromUserLogin = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyFromUserLogin method',
   args:{userLoginId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {getPartyFromUserLogin};
 
 
 const getPerson = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPerson method',
   args:{partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {getPerson};
 
 
 const getPostalAddressBoundary = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPostalAddressBoundary method',
   args:{contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {getPostalAddressBoundary};
 
 
 const getRelatedParties = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getRelatedParties method',
   args:{partyIdFrom: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},partyRelationshipTypeId: {type: GraphQLString},includeFromToSwitched: {type: GraphQLString},roleTypeIdToIncludeAllChildTypes: {type: GraphQLString},recurse: {type: GraphQLString},useCache: {type: GraphQLString},roleTypeIdFromInclueAllChildTypes: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {getRelatedParties};
 
 
 const performFindParty = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz performFindParty method',
   args:{lastName: {type: GraphQLString},city: {type: GraphQLString},postalCode: {type: GraphQLString},softIdentifier: {type: GraphQLString},extInfo: {type: GraphQLString},partyTypeId: {type: GraphQLString},infoString: {type: GraphQLString},countryCode: {type: GraphQLString},partyIdentificationTypeId: {type: GraphQLString},contactNumber: {type: GraphQLString},sortField: {type: GraphQLString},partyId: {type: GraphQLString},roleTypeId: {type: GraphQLString},serialNumber: {type: GraphQLString},address2: {type: GraphQLString},address1: {type: GraphQLString},noConditionFind: {type: GraphQLString},externalId: {type: GraphQLString},idValue: {type: GraphQLString},userLoginId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},firstName: {type: GraphQLString},partyRelationshipTypeId: {type: GraphQLString},groupName: {type: GraphQLString},areaCode: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},extCond: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FixedAssetStdCostResponseType} from '../../accounting/FixedAssetStdCost/FixedAssetStdCostResponseType.js';
 import {FixedAssetStdCostInputType} from '../../accounting/FixedAssetStdCost/FixedAssetStdCostInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAssetStdCost = {
-  type: ResopnseType,
+  type: FixedAssetStdCostResponseType,
   description: 'mutation for ofbiz createFixedAssetStdCost method',
-  args:{fixedAssetStdCostToBeAdded: {type: FixedAssetStdCostInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/fixedAsset/fixedAssetStdCosts/add?`, args.fixedAssetStdCostToBeAdded, req);
+    return postToUrl(`accounting/fixedAsset/fixedAssetStdCosts/add?`, null, req);
   }
 };
 export {createFixedAssetStdCost};
 
 
 const deleteFixedAssetStdCostByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFixedAssetStdCostByIdUpdated method',
   args:{fixedAssetStdCostId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFixedAssetStdCostByIdUpdated};
 
 
 const updateFixedAssetStdCost = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFixedAssetStdCost method',
   args:{fixedAssetStdCostToBeUpdated: {type: FixedAssetStdCostInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

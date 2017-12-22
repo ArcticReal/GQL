@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FileExtensionResponseType} from '../../content/FileExtension/FileExtensionResponseType.js';
 import {FileExtensionInputType} from '../../content/FileExtension/FileExtensionInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFileExtension = {
-  type: ResopnseType,
+  type: FileExtensionResponseType,
   description: 'mutation for ofbiz createFileExtension method',
-  args:{fileExtensionToBeAdded: {type: FileExtensionInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/fileExtensions/add?`, args.fileExtensionToBeAdded, req);
+    return postToUrl(`content/fileExtensions/add?`, null, req);
   }
 };
 export {createFileExtension};
 
 
 const updateFileExtension = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFileExtension method',
   args:{fileExtensionToBeUpdated: {type: FileExtensionInputType},fileExtensionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateFileExtension};
 
 
 const deleteFileExtensionByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFileExtensionByIdUpdated method',
   args:{fileExtensionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortSurveyApplResponseType} from '../../workeffort/WorkEffortSurveyAppl/WorkEffortSurveyApplResponseType.js';
 import {WorkEffortSurveyApplInputType} from '../../workeffort/WorkEffortSurveyAppl/WorkEffortSurveyApplInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortSurveyAppl = {
-  type: ResopnseType,
+  type: WorkEffortSurveyApplResponseType,
   description: 'mutation for ofbiz createWorkEffortSurveyAppl method',
-  args:{workEffortSurveyApplToBeAdded: {type: WorkEffortSurveyApplInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortSurveyAppls/add?`, args.workEffortSurveyApplToBeAdded, req);
+    return postToUrl(`workeffort/workEffort/workEffortSurveyAppls/add?`, null, req);
   }
 };
 export {createWorkEffortSurveyAppl};
 
 
 const updateWorkEffortSurveyAppl = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortSurveyAppl method',
   args:{workEffortSurveyApplToBeUpdated: {type: WorkEffortSurveyApplInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortSurveyAppl};
 
 
 const deleteWorkEffortSurveyApplByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortSurveyApplByIdUpdated method',
   args:{workEffortSurveyApplId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {RespondingPartyInputType} from '../../order/RespondingParty/RespondingPartyInputType.js';
+import {RespondingPartyResponseType} from '../../order/RespondingParty/RespondingPartyResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRespondingParty = {
-  type: ResopnseType,
+  type: RespondingPartyResponseType,
   description: 'mutation for ofbiz createRespondingParty method',
-  args:{},
+  args:{respondingPartyToBeAdded: {type: RespondingPartyInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/respondingPartys/add?`, null, req);
+    return postToUrl(`order/respondingPartys/add?`, args.respondingPartyToBeAdded, req);
   }
 };
 export {createRespondingParty};
 
 
 const deleteRespondingPartyByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteRespondingPartyByIdUpdated method',
   args:{respondingPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteRespondingPartyByIdUpdated};
 
 
 const updateRespondingParty = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateRespondingParty method',
   args:{respondingPartyToBeUpdated: {type: RespondingPartyInputType},respondingPartySeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const payflowCCCapture = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payflowCCCapture method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},captureAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {payflowCCCapture};
 
 
 const payflowCCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payflowCCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {payflowCCProcessor};
 
 
 const payflowCCRefund = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payflowCCRefund method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {payflowCCRefund};
 
 
 const payflowCCVoid = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payflowCCVoid method',
   args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {payflowCCVoid};
 
 
 const payflowDoExpressCheckout = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payflowDoExpressCheckout method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {payflowDoExpressCheckout};
 
 
 const payflowGetExpressCheckout = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payflowGetExpressCheckout method',
   args:{cart: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {payflowGetExpressCheckout};
 
 
 const payflowPayPalCapture = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payflowPayPalCapture method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},captureAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {payflowPayPalCapture};
 
 
 const payflowPayPalProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payflowPayPalProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},payPalPaymentMethod: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {payflowPayPalProcessor};
 
 
 const payflowPayPalRefund = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payflowPayPalRefund method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {payflowPayPalRefund};
 
 
 const payflowPayPalVoid = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payflowPayPalVoid method',
   args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {payflowPayPalVoid};
 
 
 const payflowSetExpressCheckout = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payflowSetExpressCheckout method',
   args:{cart: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

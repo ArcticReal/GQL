@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {BudgetStatusResponseType} from '../../accounting/BudgetStatus/BudgetStatusResponseType.js';
 import {BudgetStatusInputType} from '../../accounting/BudgetStatus/BudgetStatusInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBudgetStatus = {
-  type: ResopnseType,
+  type: BudgetStatusResponseType,
   description: 'mutation for ofbiz createBudgetStatus method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createBudgetStatus};
 
 
 const deleteBudgetStatusByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteBudgetStatusByIdUpdated method',
   args:{budgetStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteBudgetStatusByIdUpdated};
 
 
 const updateBudgetStatus = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateBudgetStatus method',
   args:{budgetStatusToBeUpdated: {type: BudgetStatusInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

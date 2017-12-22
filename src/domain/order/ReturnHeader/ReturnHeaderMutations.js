@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ReturnHeaderResponseType} from '../../order/ReturnHeader/ReturnHeaderResponseType.js';
 import {ReturnHeaderInputType} from '../../order/ReturnHeader/ReturnHeaderInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReturnHeader = {
-  type: ResopnseType,
+  type: ReturnHeaderResponseType,
   description: 'mutation for ofbiz createReturnHeader method',
-  args:{returnHeaderToBeAdded: {type: ReturnHeaderInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/returnHeaders/add?`, args.returnHeaderToBeAdded, req);
+    return postToUrl(`order/returnHeaders/add?`, null, req);
   }
 };
 export {createReturnHeader};
 
 
 const deleteReturnHeaderByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteReturnHeaderByIdUpdated method',
   args:{returnHeaderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteReturnHeaderByIdUpdated};
 
 
 const updateReturnHeader = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateReturnHeader method',
   args:{returnHeaderToBeUpdated: {type: ReturnHeaderInputType},returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

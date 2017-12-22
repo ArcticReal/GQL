@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {AgreementContentInputType} from '../../party/AgreementContent/AgreementContentInputType.js';
+import {AgreementContentResponseType} from '../../party/AgreementContent/AgreementContentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAgreementContent = {
-  type: ResopnseType,
+  type: AgreementContentResponseType,
   description: 'mutation for ofbiz createAgreementContent method',
   args:{agreementContentToBeAdded: {type: AgreementContentInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createAgreementContent};
 
 
 const deleteAgreementContentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAgreementContentByIdUpdated method',
   args:{agreementContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteAgreementContentByIdUpdated};
 
 
 const updateAgreementContent = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAgreementContent method',
   args:{agreementContentToBeUpdated: {type: AgreementContentInputType},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WebAnalyticsTypeResponseType} from '../../content/WebAnalyticsType/WebAnalyticsTypeResponseType.js';
 import {WebAnalyticsTypeInputType} from '../../content/WebAnalyticsType/WebAnalyticsTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWebAnalyticsType = {
-  type: ResopnseType,
+  type: WebAnalyticsTypeResponseType,
   description: 'mutation for ofbiz createWebAnalyticsType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createWebAnalyticsType};
 
 
 const updateWebAnalyticsType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWebAnalyticsType method',
   args:{webAnalyticsTypeToBeUpdated: {type: WebAnalyticsTypeInputType},webAnalyticsTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWebAnalyticsType};
 
 
 const deleteWebAnalyticsTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWebAnalyticsTypeByIdUpdated method',
   args:{webAnalyticsTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

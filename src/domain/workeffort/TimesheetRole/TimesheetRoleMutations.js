@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {TimesheetRoleResponseType} from '../../workeffort/TimesheetRole/TimesheetRoleResponseType.js';
 import {TimesheetRoleInputType} from '../../workeffort/TimesheetRole/TimesheetRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTimesheetRole = {
-  type: ResopnseType,
+  type: TimesheetRoleResponseType,
   description: 'mutation for ofbiz createTimesheetRole method',
-  args:{timesheetRoleToBeAdded: {type: TimesheetRoleInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/timesheet/timesheetRoles/add?`, args.timesheetRoleToBeAdded, req);
+    return postToUrl(`workeffort/timesheet/timesheetRoles/add?`, null, req);
   }
 };
 export {createTimesheetRole};
 
 
 const updateTimesheetRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTimesheetRole method',
   args:{timesheetRoleToBeUpdated: {type: TimesheetRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTimesheetRole};
 
 
 const deleteTimesheetRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTimesheetRoleByIdUpdated method',
   args:{timesheetRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

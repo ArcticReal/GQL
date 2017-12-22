@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {OrderStatusResponseType} from '../../order/OrderStatus/OrderStatusResponseType.js';
 import {OrderStatusInputType} from '../../order/OrderStatus/OrderStatusInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderStatus = {
-  type: ResopnseType,
+  type: OrderStatusResponseType,
   description: 'mutation for ofbiz createOrderStatus method',
-  args:{orderStatusToBeAdded: {type: OrderStatusInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderStatuss/add?`, args.orderStatusToBeAdded, req);
+    return postToUrl(`order/orderStatuss/add?`, null, req);
   }
 };
 export {createOrderStatus};
 
 
 const updateOrderStatus = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderStatus method',
   args:{orderStatusToBeUpdated: {type: OrderStatusInputType},orderStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderStatus};
 
 
 const deleteOrderStatusByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderStatusByIdUpdated method',
   args:{orderStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

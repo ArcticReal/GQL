@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {DataResourceRoleResponseType} from '../../content/DataResourceRole/DataResourceRoleResponseType.js';
 import {DataResourceRoleInputType} from '../../content/DataResourceRole/DataResourceRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDataResourceRole = {
-  type: ResopnseType,
+  type: DataResourceRoleResponseType,
   description: 'mutation for ofbiz createDataResourceRole method',
-  args:{dataResourceRoleToBeAdded: {type: DataResourceRoleInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/dataResource/dataResourceRoles/add?`, args.dataResourceRoleToBeAdded, req);
+    return postToUrl(`content/dataResource/dataResourceRoles/add?`, null, req);
   }
 };
 export {createDataResourceRole};
 
 
 const deleteDataResourceRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDataResourceRoleByIdUpdated method',
   args:{dataResourceRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteDataResourceRoleByIdUpdated};
 
 
 const updateDataResourceRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDataResourceRole method',
   args:{dataResourceRoleToBeUpdated: {type: DataResourceRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

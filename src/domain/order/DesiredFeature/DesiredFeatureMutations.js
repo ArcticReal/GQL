@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {DesiredFeatureResponseType} from '../../order/DesiredFeature/DesiredFeatureResponseType.js';
 import {DesiredFeatureInputType} from '../../order/DesiredFeature/DesiredFeatureInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDesiredFeature = {
-  type: ResopnseType,
+  type: DesiredFeatureResponseType,
   description: 'mutation for ofbiz createDesiredFeature method',
-  args:{desiredFeatureToBeAdded: {type: DesiredFeatureInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/desiredFeatures/add?`, args.desiredFeatureToBeAdded, req);
+    return postToUrl(`order/desiredFeatures/add?`, null, req);
   }
 };
 export {createDesiredFeature};
 
 
 const updateDesiredFeature = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDesiredFeature method',
   args:{desiredFeatureToBeUpdated: {type: DesiredFeatureInputType},desiredFeatureId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateDesiredFeature};
 
 
 const deleteDesiredFeatureByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDesiredFeatureByIdUpdated method',
   args:{desiredFeatureId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

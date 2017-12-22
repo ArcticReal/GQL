@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductFeatureIactnResponseType} from '../../product/ProductFeatureIactn/ProductFeatureIactnResponseType.js';
 import {ProductFeatureIactnInputType} from '../../product/ProductFeatureIactn/ProductFeatureIactnInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductFeatureIactn = {
-  type: ResopnseType,
+  type: ProductFeatureIactnResponseType,
   description: 'mutation for ofbiz createProductFeatureIactn method',
-  args:{productFeatureIactnToBeAdded: {type: ProductFeatureIactnInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productFeatureIactns/add?`, args.productFeatureIactnToBeAdded, req);
+    return postToUrl(`product/product/productFeatureIactns/add?`, null, req);
   }
 };
 export {createProductFeatureIactn};
 
 
 const updateProductFeatureIactn = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductFeatureIactn method',
   args:{productFeatureIactnToBeUpdated: {type: ProductFeatureIactnInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductFeatureIactn};
 
 
 const deleteProductFeatureIactnByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductFeatureIactnByIdUpdated method',
   args:{productFeatureIactnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

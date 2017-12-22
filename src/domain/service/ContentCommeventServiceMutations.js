@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createCommContentAssocType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommContentAssocType method',
   args:{commContentAssocTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createCommContentAssocType};
 
 
 const createCommContentDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommContentDataResource method',
   args:{contentId: {type: GraphQLString},communicationEventId: {type: GraphQLString},caFromDate: {type: GraphQLString},surveyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},caContentId: {type: GraphQLString},ownerContentId: {type: GraphQLString},imageData: {type: GraphQLString},upperCoordinate: {type: GraphQLInt},leftCoordinate: {type: GraphQLInt},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},contentAssocPredicateId: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},deactivateExisting: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},caContentAssocTypeId: {type: GraphQLString},caSequenceNum: {type: GraphQLInt},dataTemplateTypeId: {type: GraphQLString},forceElectronicText: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},contentPurposeString: {type: GraphQLString},mapKey: {type: GraphQLString},DataResource: {type: GraphQLString},characterSetId: {type: GraphQLString},_imageData_fileName: {type: GraphQLString},thruDate: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},localeString: {type: GraphQLString},Content: {type: GraphQLString},_imageData_contentType: {type: GraphQLString},caContentIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createCommContentDataResource};
 
 
 const createCommEventContentAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommEventContentAssoc method',
   args:{contentId: {type: GraphQLString},communicationEventId: {type: GraphQLString},fromDate: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createCommEventContentAssoc};
 
 
 const deleteCommContentAssocType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCommContentAssocType method',
   args:{commContentAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {deleteCommContentAssocType};
 
 
 const removeCommEventContentAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeCommEventContentAssoc method',
   args:{fromDate: {type: GraphQLString},contentId: {type: GraphQLString},communicationEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {removeCommEventContentAssoc};
 
 
 const updateCommContentAssocType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCommContentAssocType method',
   args:{commContentAssocTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {updateCommContentAssocType};
 
 
 const updateCommContentDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCommContentDataResource method',
   args:{fromDate: {type: GraphQLString},communicationEventId: {type: GraphQLString},caFromDate: {type: GraphQLString},surveyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},caContentId: {type: GraphQLString},ownerContentId: {type: GraphQLString},imageData: {type: GraphQLString},upperCoordinate: {type: GraphQLInt},leftCoordinate: {type: GraphQLInt},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},contentAssocPredicateId: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},deactivateExisting: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},caContentAssocTypeId: {type: GraphQLString},caSequenceNum: {type: GraphQLInt},dataTemplateTypeId: {type: GraphQLString},forceElectronicText: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},contentPurposeString: {type: GraphQLString},mapKey: {type: GraphQLString},DataResource: {type: GraphQLString},characterSetId: {type: GraphQLString},_imageData_fileName: {type: GraphQLString},thruDate: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},localeString: {type: GraphQLString},Content: {type: GraphQLString},_imageData_contentType: {type: GraphQLString},caContentIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {updateCommContentDataResource};
 
 
 const updateCommEventContentAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCommEventContentAssoc method',
   args:{fromDate: {type: GraphQLString},contentId: {type: GraphQLString},communicationEventId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

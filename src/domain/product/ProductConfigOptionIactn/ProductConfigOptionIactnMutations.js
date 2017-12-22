@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductConfigOptionIactnInputType} from '../../product/ProductConfigOptionIactn/ProductConfigOptionIactnInputType.js';
+import {ProductConfigOptionIactnResponseType} from '../../product/ProductConfigOptionIactn/ProductConfigOptionIactnResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductConfigOptionIactn = {
-  type: ResopnseType,
+  type: ProductConfigOptionIactnResponseType,
   description: 'mutation for ofbiz createProductConfigOptionIactn method',
-  args:{},
+  args:{productConfigOptionIactnToBeAdded: {type: ProductConfigOptionIactnInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productConfigOptionIactns/add?`, null, req);
+    return postToUrl(`product/product/productConfigOptionIactns/add?`, args.productConfigOptionIactnToBeAdded, req);
   }
 };
 export {createProductConfigOptionIactn};
 
 
 const updateProductConfigOptionIactn = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductConfigOptionIactn method',
   args:{productConfigOptionIactnToBeUpdated: {type: ProductConfigOptionIactnInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductConfigOptionIactn};
 
 
 const deleteProductConfigOptionIactnByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductConfigOptionIactnByIdUpdated method',
   args:{productConfigOptionIactnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

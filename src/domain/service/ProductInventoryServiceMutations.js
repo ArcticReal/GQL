@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createInventoryItemAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItemAttribute method',
   args:{inventoryItemId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createInventoryItemAttribute};
 
 
 const createInventoryItemTempRes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItemTempRes method',
   args:{visitId: {type: GraphQLString},productId: {type: GraphQLString},productStoreId: {type: GraphQLString},reservedDate: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createInventoryItemTempRes};
 
 
 const createInventoryItemTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItemTypeAttr method',
   args:{attrName: {type: GraphQLString},inventoryItemTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createInventoryItemTypeAttr};
 
 
 const deleteInventoryItemAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteInventoryItemAttribute method',
   args:{inventoryItemId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {deleteInventoryItemAttribute};
 
 
 const deleteInventoryItemTempRes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteInventoryItemTempRes method',
   args:{visitId: {type: GraphQLString},productId: {type: GraphQLString},productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {deleteInventoryItemTempRes};
 
 
 const deleteInventoryItemTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteInventoryItemTypeAttr method',
   args:{attrName: {type: GraphQLString},inventoryItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {deleteInventoryItemTypeAttr};
 
 
 const updateInventoryItemAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateInventoryItemAttribute method',
   args:{inventoryItemId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {updateInventoryItemAttribute};
 
 
 const updateInventoryItemTempRes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateInventoryItemTempRes method',
   args:{visitId: {type: GraphQLString},productId: {type: GraphQLString},productStoreId: {type: GraphQLString},reservedDate: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {updateInventoryItemTempRes};
 
 
 const updateInventoryItemTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateInventoryItemTypeAttr method',
   args:{attrName: {type: GraphQLString},inventoryItemTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

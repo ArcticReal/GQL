@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {BillingAccountTermInputType} from '../../accounting/BillingAccountTerm/BillingAccountTermInputType.js';
+import {BillingAccountTermResponseType} from '../../accounting/BillingAccountTerm/BillingAccountTermResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBillingAccountTerm = {
-  type: ResopnseType,
+  type: BillingAccountTermResponseType,
   description: 'mutation for ofbiz createBillingAccountTerm method',
   args:{billingAccountTermToBeAdded: {type: BillingAccountTermInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createBillingAccountTerm};
 
 
 const updateBillingAccountTerm = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateBillingAccountTerm method',
   args:{billingAccountTermToBeUpdated: {type: BillingAccountTermInputType},billingAccountTermId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateBillingAccountTerm};
 
 
 const deleteBillingAccountTermByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteBillingAccountTermByIdUpdated method',
   args:{billingAccountTermId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

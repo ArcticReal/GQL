@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {UserLoginResponseType} from '../../login/UserLogin/UserLoginResponseType.js';
 import {UserLoginInputType} from '../../login/UserLogin/UserLoginInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createUserLogin = {
-  type: ResopnseType,
+  type: UserLoginResponseType,
   description: 'mutation for ofbiz createUserLogin method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createUserLogin};
 
 
 const updateUserLogin = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateUserLogin method',
   args:{userLoginToBeUpdated: {type: UserLoginInputType},userLoginId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateUserLogin};
 
 
 const deleteUserLoginByIdUpdated = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteUserLoginByIdUpdated method',
   args:{userLoginId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

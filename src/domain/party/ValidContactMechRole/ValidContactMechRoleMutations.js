@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ValidContactMechRoleInputType} from '../../party/ValidContactMechRole/ValidContactMechRoleInputType.js';
+import {ValidContactMechRoleResponseType} from '../../party/ValidContactMechRole/ValidContactMechRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createValidContactMechRole = {
-  type: ResopnseType,
+  type: ValidContactMechRoleResponseType,
   description: 'mutation for ofbiz createValidContactMechRole method',
   args:{validContactMechRoleToBeAdded: {type: ValidContactMechRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createValidContactMechRole};
 
 
 const updateValidContactMechRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateValidContactMechRole method',
   args:{validContactMechRoleToBeUpdated: {type: ValidContactMechRoleInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateValidContactMechRole};
 
 
 const deleteValidContactMechRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteValidContactMechRoleByIdUpdated method',
   args:{validContactMechRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

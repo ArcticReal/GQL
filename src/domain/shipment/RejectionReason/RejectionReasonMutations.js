@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {RejectionReasonInputType} from '../../shipment/RejectionReason/RejectionReasonInputType.js';
+import {RejectionReasonResponseType} from '../../shipment/RejectionReason/RejectionReasonResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRejectionReason = {
-  type: ResopnseType,
+  type: RejectionReasonResponseType,
   description: 'mutation for ofbiz createRejectionReason method',
-  args:{},
+  args:{rejectionReasonToBeAdded: {type: RejectionReasonInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/rejectionReasons/add?`, null, req);
+    return postToUrl(`shipment/rejectionReasons/add?`, args.rejectionReasonToBeAdded, req);
   }
 };
 export {createRejectionReason};
 
 
 const updateRejectionReason = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateRejectionReason method',
   args:{rejectionReasonToBeUpdated: {type: RejectionReasonInputType},rejectionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateRejectionReason};
 
 
 const deleteRejectionReasonByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteRejectionReasonByIdUpdated method',
   args:{rejectionReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

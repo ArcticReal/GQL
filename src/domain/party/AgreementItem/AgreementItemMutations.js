@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {AgreementItemResponseType} from '../../party/AgreementItem/AgreementItemResponseType.js';
 import {AgreementItemInputType} from '../../party/AgreementItem/AgreementItemInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAgreementItem = {
-  type: ResopnseType,
+  type: AgreementItemResponseType,
   description: 'mutation for ofbiz createAgreementItem method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createAgreementItem};
 
 
 const deleteAgreementItemByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAgreementItemByIdUpdated method',
   args:{agreementItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteAgreementItemByIdUpdated};
 
 
 const updateAgreementItem = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAgreementItem method',
   args:{agreementItemToBeUpdated: {type: AgreementItemInputType},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

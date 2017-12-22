@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createProductPricePurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createProductPricePurpose method',
   args:{description: {type: GraphQLString},productPricePurposeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createProductPricePurpose};
 
 
 const createProductPriceType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createProductPriceType method',
   args:{description: {type: GraphQLString},productPriceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createProductPriceType};
 
 
 const createQuantityBreakType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createQuantityBreakType method',
   args:{quantityBreakTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createQuantityBreakType};
 
 
 const createSaleType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSaleType method',
   args:{saleTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createSaleType};
 
 
 const deleteProductPricePurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteProductPricePurpose method',
   args:{productPricePurposeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {deleteProductPricePurpose};
 
 
 const deleteProductPriceType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteProductPriceType method',
   args:{productPriceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {deleteProductPriceType};
 
 
 const deleteQuantityBreakType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteQuantityBreakType method',
   args:{quantityBreakTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {deleteQuantityBreakType};
 
 
 const deleteSaleType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSaleType method',
   args:{saleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {deleteSaleType};
 
 
 const updateProductPricePurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateProductPricePurpose method',
   args:{productPricePurposeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {updateProductPricePurpose};
 
 
 const updateProductPriceType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateProductPriceType method',
   args:{productPriceTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {updateProductPriceType};
 
 
 const updateQuantityBreakType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateQuantityBreakType method',
   args:{quantityBreakTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {updateQuantityBreakType};
 
 
 const updateSaleType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSaleType method',
   args:{saleTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

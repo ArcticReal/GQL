@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderHeaderWorkEffortInputType} from '../../order/OrderHeaderWorkEffort/OrderHeaderWorkEffortInputType.js';
+import {OrderHeaderWorkEffortResponseType} from '../../order/OrderHeaderWorkEffort/OrderHeaderWorkEffortResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderHeaderWorkEffort = {
-  type: ResopnseType,
+  type: OrderHeaderWorkEffortResponseType,
   description: 'mutation for ofbiz createOrderHeaderWorkEffort method',
   args:{orderHeaderWorkEffortToBeAdded: {type: OrderHeaderWorkEffortInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createOrderHeaderWorkEffort};
 
 
 const updateOrderHeaderWorkEffort = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderHeaderWorkEffort method',
   args:{orderHeaderWorkEffortToBeUpdated: {type: OrderHeaderWorkEffortInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderHeaderWorkEffort};
 
 
 const deleteOrderHeaderWorkEffortByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderHeaderWorkEffortByIdUpdated method',
   args:{orderHeaderWorkEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

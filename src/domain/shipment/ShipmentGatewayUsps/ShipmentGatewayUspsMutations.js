@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ShipmentGatewayUspsResponseType} from '../../shipment/ShipmentGatewayUsps/ShipmentGatewayUspsResponseType.js';
 import {ShipmentGatewayUspsInputType} from '../../shipment/ShipmentGatewayUsps/ShipmentGatewayUspsInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentGatewayUsps = {
-  type: ResopnseType,
+  type: ShipmentGatewayUspsResponseType,
   description: 'mutation for ofbiz createShipmentGatewayUsps method',
-  args:{shipmentGatewayUspsToBeAdded: {type: ShipmentGatewayUspsInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/shipmentGatewayUspss/add?`, args.shipmentGatewayUspsToBeAdded, req);
+    return postToUrl(`shipment/shipment/shipmentGatewayUspss/add?`, null, req);
   }
 };
 export {createShipmentGatewayUsps};
 
 
 const updateShipmentGatewayUsps = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShipmentGatewayUsps method',
   args:{shipmentGatewayUspsToBeUpdated: {type: ShipmentGatewayUspsInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateShipmentGatewayUsps};
 
 
 const deleteShipmentGatewayUspsByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShipmentGatewayUspsByIdUpdated method',
   args:{shipmentGatewayUspsId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

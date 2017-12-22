@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {CustRequestTypeResponseType} from '../../order/CustRequestType/CustRequestTypeResponseType.js';
 import {CustRequestTypeInputType} from '../../order/CustRequestType/CustRequestTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCustRequestType = {
-  type: ResopnseType,
+  type: CustRequestTypeResponseType,
   description: 'mutation for ofbiz createCustRequestType method',
-  args:{custRequestTypeToBeAdded: {type: CustRequestTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/custRequest/custRequestTypes/add?`, args.custRequestTypeToBeAdded, req);
+    return postToUrl(`order/custRequest/custRequestTypes/add?`, null, req);
   }
 };
 export {createCustRequestType};
 
 
 const updateCustRequestType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCustRequestType method',
   args:{custRequestTypeToBeUpdated: {type: CustRequestTypeInputType},custRequestTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateCustRequestType};
 
 
 const deleteCustRequestTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCustRequestTypeByIdUpdated method',
   args:{custRequestTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

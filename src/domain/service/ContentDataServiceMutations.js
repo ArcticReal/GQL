@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const clearAssociatedRenderCache = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz clearAssociatedRenderCache method',
   args:{dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {clearAssociatedRenderCache};
 
 
 const createAnonFile = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAnonFile method',
   args:{surveyId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},relatedDetailId: {type: GraphQLString},dataResourceId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},partyId: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},uploadedFile: {type: GraphQLString},dataResource: {type: new GraphQLList(KeyValueInputType)},dataResourceName: {type: GraphQLInt},roleTypeId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},characterSetId: {type: GraphQLString},binData: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createAnonFile};
 
 
 const createAudioDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAudioDataResource method',
   args:{audioData: {type: GraphQLString},dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createAudioDataResource};
 
 
 const createDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDataResource method',
   args:{surveyId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},relatedDetailId: {type: GraphQLString},dataResourceId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},partyId: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},uploadedFile: {type: GraphQLString},dataResourceName: {type: GraphQLInt},roleTypeId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},characterSetId: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createDataResource};
 
 
 const createDataResourceAndAssocToContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDataResourceAndAssocToContent method',
   args:{contentId: {type: GraphQLString},surveyId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},relatedDetailId: {type: GraphQLString},dataResourceId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},partyId: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},uploadedFile: {type: GraphQLString},templateDataResource: {type: GraphQLString},dataResourceName: {type: GraphQLInt},roleTypeId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},characterSetId: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createDataResourceAndAssocToContent};
 
 
 const createDataResourceAndText = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDataResourceAndText method',
   args:{dataResourceName: {type: GraphQLInt},surveyId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},mimeTypeId: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},characterSetId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString},relatedDetailId: {type: GraphQLString},dataResourceId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createDataResourceAndText};
 
 
 const createDataResourceMetaData = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDataResourceMetaData method',
   args:{metaDataPredicateId: {type: GraphQLString},dataResourceId: {type: GraphQLString},dataSourceId: {type: GraphQLString},metaDataValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createDataResourceMetaData};
 
 
 const createDataResourcePurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDataResourcePurpose method',
   args:{contentPurposeTypeId: {type: GraphQLString},dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createDataResourcePurpose};
 
 
 const createDataTemplateType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDataTemplateType method',
   args:{extension: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createDataTemplateType};
 
 
 const createDataText = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDataText method',
   args:{surveyId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},relatedDetailId: {type: GraphQLString},dataResourceId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},partyId: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},uploadedFile: {type: GraphQLString},dataResourceName: {type: GraphQLInt},roleTypeId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},characterSetId: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createDataText};
 
 
 const createElectronicText = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createElectronicText method',
   args:{surveyId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},relatedDetailId: {type: GraphQLString},dataResourceId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},partyId: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},uploadedFile: {type: GraphQLString},dataResourceName: {type: GraphQLInt},roleTypeId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},characterSetId: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createElectronicText};
 
 
 const createElectronicTextForm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createElectronicTextForm method',
   args:{surveyId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},relatedDetailId: {type: GraphQLString},dataResourceId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},partyId: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},uploadedFile: {type: GraphQLString},dataResourceName: {type: GraphQLInt},roleTypeId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},characterSetId: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createElectronicTextForm};
 
 
 const createFile = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFile method',
   args:{surveyId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},relatedDetailId: {type: GraphQLString},dataResourceId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},partyId: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},uploadedFile: {type: GraphQLString},dataResource: {type: new GraphQLList(KeyValueInputType)},dataResourceName: {type: GraphQLInt},roleTypeId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},characterSetId: {type: GraphQLString},binData: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createFile};
 
 
 const createImageDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createImageDataResource method',
   args:{imageData: {type: GraphQLString},dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createImageDataResource};
 
 
 const createOtherDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOtherDataResource method',
   args:{dataResourceContent: {type: GraphQLString},dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createOtherDataResource};
 
 
 const createVideoDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createVideoDataResource method',
   args:{dataResourceId: {type: GraphQLString},videoData: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createVideoDataResource};
 
 
 const deleteDataTemplateType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteDataTemplateType method',
   args:{dataTemplateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {deleteDataTemplateType};
 
 
 const getElectronicText = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getElectronicText method',
   args:{contentId: {type: GraphQLString},content: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {getElectronicText};
 
 
 const removeAudioDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeAudioDataResource method',
   args:{dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {removeAudioDataResource};
 
 
 const removeDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeDataResource method',
   args:{dataResourceId: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {removeDataResource};
 
 
 const removeDataResourceMetaData = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeDataResourceMetaData method',
   args:{metaDataPredicateId: {type: GraphQLString},dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {removeDataResourceMetaData};
 
 
 const removeDataResourcePurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeDataResourcePurpose method',
   args:{contentPurposeTypeId: {type: GraphQLString},dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {removeDataResourcePurpose};
 
 
 const removeElectronicText = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeElectronicText method',
   args:{dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {removeElectronicText};
 
 
 const removeImageDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeImageDataResource method',
   args:{dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {removeImageDataResource};
 
 
 const removeOtherDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeOtherDataResource method',
   args:{dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {removeOtherDataResource};
 
 
 const removeVideoDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeVideoDataResource method',
   args:{dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {removeVideoDataResource};
 
 
 const updateAudioDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAudioDataResource method',
   args:{dataResourceId: {type: GraphQLString},audioData: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {updateAudioDataResource};
 
 
 const updateDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDataResource method',
   args:{dataResourceId: {type: GraphQLString},dataResourceName: {type: GraphQLInt},surveyId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},mimeTypeId: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},characterSetId: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {updateDataResource};
 
 
 const updateDataResourceAndText = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDataResourceAndText method',
   args:{dataResourceName: {type: GraphQLInt},surveyId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},mimeTypeId: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},characterSetId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString},relatedDetailId: {type: GraphQLString},dataResourceId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {updateDataResourceAndText};
 
 
 const updateDataResourceMetaData = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDataResourceMetaData method',
   args:{metaDataPredicateId: {type: GraphQLString},dataResourceId: {type: GraphQLString},dataSourceId: {type: GraphQLString},metaDataValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {updateDataResourceMetaData};
 
 
 const updateDataResourcePurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDataResourcePurpose method',
   args:{contentPurposeTypeId: {type: GraphQLString},dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {updateDataResourcePurpose};
 
 
 const updateDataTemplateType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDataTemplateType method',
   args:{dataTemplateTypeId: {type: GraphQLString},extension: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {updateDataTemplateType};
 
 
 const updateDataText = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDataText method',
   args:{dataResourceId: {type: GraphQLString},dataResourceName: {type: GraphQLInt},surveyId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},contentId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},characterSetId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {updateDataText};
 
 
 const updateElectronicText = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateElectronicText method',
   args:{dataResourceId: {type: GraphQLString},textData: {type: GraphQLString},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {updateElectronicText};
 
 
 const updateElectronicTextForm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateElectronicTextForm method',
   args:{dataResourceId: {type: GraphQLString},textData: {type: GraphQLString},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {updateElectronicTextForm};
 
 
 const updateFile = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFile method',
   args:{textData: {type: GraphQLString},rootDir: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},dataResource: {type: new GraphQLList(KeyValueInputType)},binData: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {updateFile};
 
 
 const updateImageDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateImageDataResource method',
   args:{dataResourceId: {type: GraphQLString},imageData: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {updateImageDataResource};
 
 
 const updateOtherDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOtherDataResource method',
   args:{dataResourceId: {type: GraphQLString},dataResourceContent: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {updateOtherDataResource};
 
 
 const updateVideoDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateVideoDataResource method',
   args:{dataResourceId: {type: GraphQLString},videoData: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

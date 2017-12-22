@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ContactMechTypeAttrInputType} from '../../party/ContactMechTypeAttr/ContactMechTypeAttrInputType.js';
+import {ContactMechTypeAttrResponseType} from '../../party/ContactMechTypeAttr/ContactMechTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContactMechTypeAttr = {
-  type: ResopnseType,
+  type: ContactMechTypeAttrResponseType,
   description: 'mutation for ofbiz createContactMechTypeAttr method',
   args:{contactMechTypeAttrToBeAdded: {type: ContactMechTypeAttrInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createContactMechTypeAttr};
 
 
 const updateContactMechTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContactMechTypeAttr method',
   args:{contactMechTypeAttrToBeUpdated: {type: ContactMechTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContactMechTypeAttr};
 
 
 const deleteContactMechTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContactMechTypeAttrByIdUpdated method',
   args:{contactMechTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

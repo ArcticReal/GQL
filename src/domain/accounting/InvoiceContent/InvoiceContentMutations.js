@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {InvoiceContentInputType} from '../../accounting/InvoiceContent/InvoiceContentInputType.js';
+import {InvoiceContentResponseType} from '../../accounting/InvoiceContent/InvoiceContentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoiceContent = {
-  type: ResopnseType,
+  type: InvoiceContentResponseType,
   description: 'mutation for ofbiz createInvoiceContent method',
-  args:{},
+  args:{invoiceContentToBeAdded: {type: InvoiceContentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceContents/add?`, null, req);
+    return postToUrl(`accounting/invoice/invoiceContents/add?`, args.invoiceContentToBeAdded, req);
   }
 };
 export {createInvoiceContent};
 
 
 const deleteInvoiceContentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInvoiceContentByIdUpdated method',
   args:{invoiceContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteInvoiceContentByIdUpdated};
 
 
 const updateInvoiceContent = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInvoiceContent method',
   args:{invoiceContentToBeUpdated: {type: InvoiceContentInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

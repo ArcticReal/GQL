@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addContactMechToFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addContactMechToFacility method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addContactMechToFacility};
 
 
 const addFacilityGroupToGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addFacilityGroupToGroup method',
   args:{facilityGroupId: {type: GraphQLString},parentFacilityGroupId: {type: GraphQLString},fromDate: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {addFacilityGroupToGroup};
 
 
 const addFacilityToGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addFacilityToGroup method',
   args:{facilityId: {type: GraphQLString},facilityGroupId: {type: GraphQLString},fromDate: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {addFacilityToGroup};
 
 
 const addPartyToFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addPartyToFacility method',
   args:{roleTypeId: {type: GraphQLString},facilityId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {addPartyToFacility};
 
 
 const addPartyToFacilityGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addPartyToFacilityGroup method',
   args:{roleTypeId: {type: GraphQLString},facilityGroupId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {addPartyToFacilityGroup};
 
 
 const balanceInventoryItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz balanceInventoryItems method',
   args:{inventoryItemId: {type: GraphQLString},priorityOrderId: {type: GraphQLString},priorityOrderItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {balanceInventoryItems};
 
 
 const balanceOrderItemsWithNegativeReservations = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz balanceOrderItemsWithNegativeReservations method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {balanceOrderItemsWithNegativeReservations};
 
 
 const cancelInventoryTransfer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelInventoryTransfer method',
   args:{inventoryTransferId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {cancelInventoryTransfer};
 
 
 const cancelOrderInventoryReservation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelOrderInventoryReservation method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {cancelOrderInventoryReservation};
 
 
 const cancelOrderItemInvResQty = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelOrderItemInvResQty method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},cancelQuantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {cancelOrderItemInvResQty};
 
 
 const cancelOrderItemShipGrpInvRes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelOrderItemShipGrpInvRes method',
   args:{orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},cancelQuantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {cancelOrderItemShipGrpInvRes};
 
 
 const changeOwnerUponIssuance = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz changeOwnerUponIssuance method',
   args:{itemIssuanceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {changeOwnerUponIssuance};
 
 
 const checkInventoryAvailability = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkInventoryAvailability method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {checkInventoryAvailability};
 
 
 const checkProductFacilityRelatedPermission = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkProductFacilityRelatedPermission method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {checkProductFacilityRelatedPermission};
 
 
 const checkProductInventoryDiscontinuation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkProductInventoryDiscontinuation method',
   args:{productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {checkProductInventoryDiscontinuation};
 
 
 const completeInventoryTransfer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz completeInventoryTransfer method',
   args:{inventoryTransferId: {type: GraphQLString},receiveDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {completeInventoryTransfer};
 
 
 const countProductInventoryOnHand = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz countProductInventoryOnHand method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},inventoryCountDate: {type: GraphQLString},statusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {countProductInventoryOnHand};
 
 
 const countProductInventoryShippedForSales = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz countProductInventoryShippedForSales method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},productId: {type: GraphQLString},statusId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {countProductInventoryShippedForSales};
 
 
 const createContainer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContainer method',
   args:{facilityId: {type: GraphQLString},containerTypeId: {type: GraphQLString},description: {type: GraphQLString},containerId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createContainer};
 
 
 const createContainerType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContainerType method',
   args:{containerTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {createContainerType};
 
 
 const createFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacility method',
   args:{ownerPartyId: {type: GraphQLString},facilityTypeId: {type: GraphQLString},facilityName: {type: GraphQLString},defaultInventoryItemTypeId: {type: GraphQLString},parentFacilityId: {type: GraphQLString},description: {type: GraphQLString},defaultWeightUomId: {type: GraphQLString},primaryFacilityGroupId: {type: GraphQLString},openedDate: {type: GraphQLString},facilitySize: {type: GraphQLFloat},facilitySizeUomId: {type: GraphQLString},closedDate: {type: GraphQLString},defaultDaysToShip: {type: GraphQLInt},defaultDimensionUomId: {type: GraphQLString},productStoreId: {type: GraphQLString},geoPointId: {type: GraphQLString},oldSquareFootage: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {createFacility};
 
 
 const createFacilityAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityAttribute method',
   args:{facilityId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {createFacilityAttribute};
 
 
 const createFacilityCarrierShipment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityCarrierShipment method',
   args:{roleTypeId: {type: GraphQLString},facilityId: {type: GraphQLString},partyId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {createFacilityCarrierShipment};
 
 
 const createFacilityContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityContactMech method',
   args:{fromDate: {type: GraphQLString},extension: {type: GraphQLString},infoString: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {createFacilityContactMech};
 
 
 const createFacilityContactMechPurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityContactMechPurpose method',
   args:{facilityId: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {createFacilityContactMechPurpose};
 
 
 const createFacilityContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityContent method',
   args:{facilityId: {type: GraphQLString},contentId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {createFacilityContent};
 
 
 const createFacilityEmailAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityEmailAddress method',
   args:{emailAddress: {type: GraphQLString},fromDate: {type: GraphQLString},extension: {type: GraphQLString},infoString: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {createFacilityEmailAddress};
 
 
 const createFacilityGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityGroup method',
   args:{facilityGroupTypeId: {type: GraphQLString},facilityGroupName: {type: GraphQLString},primaryParentGroupId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {createFacilityGroup};
 
 
 const createFacilityGroupType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityGroupType method',
   args:{facilityGroupTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {createFacilityGroupType};
 
 
 const createFacilityLocation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityLocation method',
   args:{facilityId: {type: GraphQLString},areaId: {type: GraphQLString},positionId: {type: GraphQLString},levelId: {type: GraphQLString},sectionId: {type: GraphQLString},geoPointId: {type: GraphQLString},locationTypeEnumId: {type: GraphQLString},aisleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {createFacilityLocation};
 
 
 const createFacilityLocationGeoPoint = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityLocationGeoPoint method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},geoPointId: {type: GraphQLString},locationSeqId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {createFacilityLocationGeoPoint};
 
 
 const createFacilityPostalAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityPostalAddress method',
   args:{city: {type: GraphQLString},address1: {type: GraphQLString},countryGeoId: {type: GraphQLString},houseNumberExt: {type: GraphQLString},extension: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},address2: {type: GraphQLString},postalCode: {type: GraphQLString},postalCodeGeoId: {type: GraphQLString},houseNumber: {type: GraphQLInt},postalCodeExt: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},attnName: {type: GraphQLString},directions: {type: GraphQLString},countyGeoId: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},toName: {type: GraphQLString},cityGeoId: {type: GraphQLString},paymentMethodId: {type: GraphQLString},municipalityGeoId: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {createFacilityPostalAddress};
 
 
 const createFacilityTelecomNumber = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityTelecomNumber method',
   args:{fromDate: {type: GraphQLString},extension: {type: GraphQLString},areaCode: {type: GraphQLString},askForName: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},countryCode: {type: GraphQLString},contactNumber: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {createFacilityTelecomNumber};
 
 
 const createFacilityType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},facilityTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {createFacilityType};
 
 
 const createFacilityTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFacilityTypeAttr method',
   args:{facilityTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {createFacilityTypeAttr};
 
 
 const createInventoryItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItem method',
   args:{isReturned: {type: GraphQLString},facilityId: {type: GraphQLString},productId: {type: GraphQLString},inventoryItemTypeId: {type: GraphQLString},comments: {type: GraphQLString},serialNumber: {type: GraphQLInt},softIdentifier: {type: GraphQLInt},binNumber: {type: GraphQLString},lotId: {type: GraphQLString},uomId: {type: GraphQLString},accountingQuantityTotal: {type: GraphQLFloat},ownerPartyId: {type: GraphQLString},oldAvailableToPromise: {type: GraphQLFloat},activationValidThru: {type: GraphQLString},activationNumber: {type: GraphQLInt},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},unitCost: {type: GraphQLFloat},datetimeManufactured: {type: GraphQLString},datetimeReceived: {type: GraphQLString},expireDate: {type: GraphQLString},oldQuantityOnHand: {type: GraphQLFloat},partyId: {type: GraphQLString},containerId: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {createInventoryItem};
 
 
 const createInventoryItemCheckSetAtpQoh = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItemCheckSetAtpQoh method',
   args:{inventoryItemId: {type: GraphQLString},quantityOnHandTotal: {type: GraphQLFloat},availableToPromiseTotal: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {createInventoryItemCheckSetAtpQoh};
 
 
 const createInventoryItemDetail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItemDetail method',
   args:{inventoryItemId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},workEffortId: {type: GraphQLString},orderId: {type: GraphQLString},description: {type: GraphQLString},maintHistSeqId: {type: GraphQLString},shipmentItemSeqId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},accountingQuantityDiff: {type: GraphQLFloat},physicalInventoryId: {type: GraphQLString},availableToPromiseDiff: {type: GraphQLFloat},shipmentId: {type: GraphQLString},itemIssuanceId: {type: GraphQLString},unitCost: {type: GraphQLFloat},returnId: {type: GraphQLString},returnItemSeqId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},reasonEnumId: {type: GraphQLString},receiptId: {type: GraphQLString},quantityOnHandDiff: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {createInventoryItemDetail};
 
 
 const createInventoryItemLabel = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItemLabel method',
   args:{inventoryItemLabelId: {type: GraphQLString},inventoryItemLabelTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {createInventoryItemLabel};
 
 
 const createInventoryItemLabelAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItemLabelAppl method',
   args:{inventoryItemId: {type: GraphQLString},inventoryItemLabelId: {type: GraphQLString},sequenceNum: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {createInventoryItemLabelAppl};
 
 
 const createInventoryItemLabelType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItemLabelType method',
   args:{inventoryItemLabelTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {createInventoryItemLabelType};
 
 
 const createInventoryItemStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItemStatus method',
   args:{inventoryItemId: {type: GraphQLString},statusId: {type: GraphQLString},ownerPartyId: {type: GraphQLString},productId: {type: GraphQLString},statusDatetime: {type: GraphQLString},changeByUserLoginId: {type: GraphQLString},statusEndDatetime: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {createInventoryItemStatus};
 
 
 const createInventoryItemType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItemType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},inventoryItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {createInventoryItemType};
 
 
 const createInventoryItemVariance = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryItemVariance method',
   args:{inventoryItemId: {type: GraphQLString},physicalInventoryId: {type: GraphQLString},varianceReasonId: {type: GraphQLString},comments: {type: GraphQLString},quantityOnHandVar: {type: GraphQLFloat},availableToPromiseVar: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {createInventoryItemVariance};
 
 
 const createInventoryTransfer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryTransfer method',
   args:{inventoryItemId: {type: GraphQLString},statusId: {type: GraphQLString},xferQty: {type: GraphQLFloat},containerIdTo: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},sendDate: {type: GraphQLString},itemIssuanceId: {type: GraphQLString},receiveDate: {type: GraphQLString},facilityIdTo: {type: GraphQLString},containerId: {type: GraphQLString},locationSeqIdTo: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {createInventoryTransfer};
 
 
 const createInventoryTransfersForProduct = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInventoryTransfersForProduct method',
   args:{facilityId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},facilityIdTo: {type: GraphQLString},statusId: {type: GraphQLString},sendDate: {type: GraphQLString},reserveOrderEnumId: {type: GraphQLString},containerId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {createInventoryTransfersForProduct};
 
 
 const createPhysicalInventory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPhysicalInventory method',
   args:{physicalInventoryDate: {type: GraphQLString},generalComments: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {createPhysicalInventory};
 
 
 const createPhysicalInventoryAndVariance = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPhysicalInventoryAndVariance method',
   args:{inventoryItemId: {type: GraphQLString},varianceReasonId: {type: GraphQLString},physicalInventoryDate: {type: GraphQLString},comments: {type: GraphQLString},quantityOnHandVar: {type: GraphQLFloat},generalComments: {type: GraphQLString},partyId: {type: GraphQLString},availableToPromiseVar: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {createPhysicalInventoryAndVariance};
 
 
 const createProductFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createProductFacility method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},lastInventoryCount: {type: GraphQLFloat},minimumStock: {type: GraphQLFloat},reorderQuantity: {type: GraphQLFloat},daysToShip: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {createProductFacility};
 
 
 const createProductFacilityLocation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createProductFacilityLocation method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},locationSeqId: {type: GraphQLString},moveQuantity: {type: GraphQLFloat},minimumStock: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {createProductFacilityLocation};
 
 
 const createUpdateFacilityGeoPoint = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUpdateFacilityGeoPoint method',
   args:{dataSourceId: {type: GraphQLString},facilityId: {type: GraphQLString},latitude: {type: GraphQLString},longitude: {type: GraphQLString},elevation: {type: GraphQLFloat},elevationUomId: {type: GraphQLString},geoPointTypeEnumId: {type: GraphQLString},description: {type: GraphQLString},information: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {createUpdateFacilityGeoPoint};
 
 
 const deleteContainer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteContainer method',
   args:{containerId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {deleteContainer};
 
 
 const deleteContainerType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteContainerType method',
   args:{containerTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,7 +596,7 @@ export {deleteContainerType};
 
 
 const deleteFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFacility method',
   args:{facilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -607,7 +607,7 @@ export {deleteFacility};
 
 
 const deleteFacilityAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFacilityAttribute method',
   args:{facilityId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -618,7 +618,7 @@ export {deleteFacilityAttribute};
 
 
 const deleteFacilityCarrierShipment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFacilityCarrierShipment method',
   args:{roleTypeId: {type: GraphQLString},facilityId: {type: GraphQLString},partyId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -629,7 +629,7 @@ export {deleteFacilityCarrierShipment};
 
 
 const deleteFacilityContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFacilityContactMech method',
   args:{facilityId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -640,7 +640,7 @@ export {deleteFacilityContactMech};
 
 
 const deleteFacilityContactMechPurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFacilityContactMechPurpose method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -651,7 +651,7 @@ export {deleteFacilityContactMechPurpose};
 
 
 const deleteFacilityContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFacilityContent method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -662,7 +662,7 @@ export {deleteFacilityContent};
 
 
 const deleteFacilityGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFacilityGroup method',
   args:{facilityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -673,7 +673,7 @@ export {deleteFacilityGroup};
 
 
 const deleteFacilityGroupType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFacilityGroupType method',
   args:{facilityGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -684,7 +684,7 @@ export {deleteFacilityGroupType};
 
 
 const deleteFacilityLocation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFacilityLocation method',
   args:{facilityId: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -695,7 +695,7 @@ export {deleteFacilityLocation};
 
 
 const deleteFacilityType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFacilityType method',
   args:{facilityTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -706,7 +706,7 @@ export {deleteFacilityType};
 
 
 const deleteInventoryItemLabel = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteInventoryItemLabel method',
   args:{inventoryItemLabelId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {deleteInventoryItemLabel};
 
 
 const deleteInventoryItemLabelAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteInventoryItemLabelAppl method',
   args:{inventoryItemId: {type: GraphQLString},inventoryItemLabelTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {deleteInventoryItemLabelAppl};
 
 
 const deleteInventoryItemLabelType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteInventoryItemLabelType method',
   args:{inventoryItemLabelTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {deleteInventoryItemLabelType};
 
 
 const deleteInventoryItemType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteInventoryItemType method',
   args:{inventoryItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -750,7 +750,7 @@ export {deleteInventoryItemType};
 
 
 const deleteProductFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteProductFacility method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -761,7 +761,7 @@ export {deleteProductFacility};
 
 
 const deleteProductFacilityLocation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteProductFacilityLocation method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -772,7 +772,7 @@ export {deleteProductFacilityLocation};
 
 
 const expireFacilityLocationGeoPoint = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz expireFacilityLocationGeoPoint method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},geoPointId: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -783,7 +783,7 @@ export {expireFacilityLocationGeoPoint};
 
 
 const facilityGenericPermission = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz facilityGenericPermission method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -794,7 +794,7 @@ export {facilityGenericPermission};
 
 
 const findProductInventorylocations = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findProductInventorylocations method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -805,7 +805,7 @@ export {findProductInventorylocations};
 
 
 const findStockMovesNeeded = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findStockMovesNeeded method',
   args:{facilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -816,7 +816,7 @@ export {findStockMovesNeeded};
 
 
 const findStockMovesRecommended = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findStockMovesRecommended method',
   args:{facilityId: {type: GraphQLString},stockMoveHandled: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -827,7 +827,7 @@ export {findStockMovesRecommended};
 
 
 const getInventoryAvailableByContainer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getInventoryAvailableByContainer method',
   args:{productId: {type: GraphQLString},containerId: {type: GraphQLString},statusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -838,7 +838,7 @@ export {getInventoryAvailableByContainer};
 
 
 const getInventoryAvailableByFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getInventoryAvailableByFacility method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},statusId: {type: GraphQLString},useCache: {type: GraphQLBoolean},lotId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -849,7 +849,7 @@ export {getInventoryAvailableByFacility};
 
 
 const getInventoryAvailableByItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getInventoryAvailableByItem method',
   args:{inventoryItemId: {type: GraphQLString},useCache: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -860,7 +860,7 @@ export {getInventoryAvailableByItem};
 
 
 const getInventoryAvailableByLocation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getInventoryAvailableByLocation method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},locationSeqId: {type: GraphQLString},statusId: {type: GraphQLString},useCache: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -871,7 +871,7 @@ export {getInventoryAvailableByLocation};
 
 
 const getMktgPackagesAvailable = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getMktgPackagesAvailable method',
   args:{productId: {type: GraphQLString},facilityId: {type: GraphQLString},statusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -882,7 +882,7 @@ export {getMktgPackagesAvailable};
 
 
 const getProductInventoryAndFacilitySummary = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getProductInventoryAndFacilitySummary method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},checkTime: {type: GraphQLString},statusId: {type: GraphQLString},minimumStock: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -893,7 +893,7 @@ export {getProductInventoryAndFacilitySummary};
 
 
 const getProductInventoryAvailable = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getProductInventoryAvailable method',
   args:{productId: {type: GraphQLString},statusId: {type: GraphQLString},useCache: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -904,7 +904,7 @@ export {getProductInventoryAvailable};
 
 
 const getProductInventoryAvailableBySupplier = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getProductInventoryAvailableBySupplier method',
   args:{productId: {type: GraphQLString},partyId: {type: GraphQLString},statusId: {type: GraphQLString},useCache: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -915,7 +915,7 @@ export {getProductInventoryAvailableBySupplier};
 
 
 const getProductInventoryAvailableFromAssocProducts = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getProductInventoryAvailableFromAssocProducts method',
   args:{facilityId: {type: GraphQLString},statusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -926,7 +926,7 @@ export {getProductInventoryAvailableFromAssocProducts};
 
 
 const getProductInventorySummaryForItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getProductInventorySummaryForItems method',
   args:{facilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -937,7 +937,7 @@ export {getProductInventorySummaryForItems};
 
 
 const interfaceInventoryTransfer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz interfaceInventoryTransfer method',
   args:{inventoryItemId: {type: GraphQLString},statusId: {type: GraphQLString},containerIdTo: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},sendDate: {type: GraphQLString},itemIssuanceId: {type: GraphQLString},receiveDate: {type: GraphQLString},facilityIdTo: {type: GraphQLString},containerId: {type: GraphQLString},locationSeqIdTo: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -948,7 +948,7 @@ export {interfaceInventoryTransfer};
 
 
 const inventoryItemCheckSetDefaultValues = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz inventoryItemCheckSetDefaultValues method',
   args:{inventoryItemId: {type: GraphQLString},inventoryItem: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -959,7 +959,7 @@ export {inventoryItemCheckSetDefaultValues};
 
 
 const issueImmediatelyFulfilledOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz issueImmediatelyFulfilledOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -970,7 +970,7 @@ export {issueImmediatelyFulfilledOrder};
 
 
 const issueImmediatelyFulfilledOrderItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz issueImmediatelyFulfilledOrderItem method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},orderItem: {type: new GraphQLList(KeyValueInputType)},orderHeader: {type: new GraphQLList(KeyValueInputType)},productStore: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -981,7 +981,7 @@ export {issueImmediatelyFulfilledOrderItem};
 
 
 const prepareInventoryTransfer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz prepareInventoryTransfer method',
   args:{inventoryItemId: {type: GraphQLString},xferQty: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -992,7 +992,7 @@ export {prepareInventoryTransfer};
 
 
 const processPhysicalStockMove = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processPhysicalStockMove method',
   args:{quantityMoved: {type: GraphQLFloat},facilityId: {type: GraphQLString},productId: {type: GraphQLString},targetLocationSeqId: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1003,7 +1003,7 @@ export {processPhysicalStockMove};
 
 
 const reassignInventoryReservations = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz reassignInventoryReservations method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},fromDate: {type: GraphQLString},priority: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1014,7 +1014,7 @@ export {reassignInventoryReservations};
 
 
 const removeContactMechFromFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeContactMechFromFacility method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1025,7 +1025,7 @@ export {removeContactMechFromFacility};
 
 
 const removeFacilityFromGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeFacilityFromGroup method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},facilityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1036,7 +1036,7 @@ export {removeFacilityFromGroup};
 
 
 const removeFacilityGroupFromGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeFacilityGroupFromGroup method',
   args:{fromDate: {type: GraphQLString},facilityGroupId: {type: GraphQLString},parentFacilityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1047,7 +1047,7 @@ export {removeFacilityGroupFromGroup};
 
 
 const removeFacilityTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeFacilityTypeAttr method',
   args:{facilityTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1058,7 +1058,7 @@ export {removeFacilityTypeAttr};
 
 
 const removePartyFromFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removePartyFromFacility method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},facilityId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1069,7 +1069,7 @@ export {removePartyFromFacility};
 
 
 const removePartyFromFacilityGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removePartyFromFacilityGroup method',
   args:{roleTypeId: {type: GraphQLString},facilityGroupId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1080,7 +1080,7 @@ export {removePartyFromFacilityGroup};
 
 
 const reserveAnInventoryItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz reserveAnInventoryItem method',
   args:{inventoryItemId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},orderId: {type: GraphQLString},promisedDatetime: {type: GraphQLString},requireInventory: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},serialNumber: {type: GraphQLString},reservedDatetime: {type: GraphQLString},priority: {type: GraphQLString},sequenceId: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1091,7 +1091,7 @@ export {reserveAnInventoryItem};
 
 
 const reserveOrderItemInventory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz reserveOrderItemInventory method',
   args:{orderItemSeqId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},quantity: {type: GraphQLFloat},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},promisedDatetime: {type: GraphQLString},quantityNotAvailable: {type: GraphQLFloat},reserveOrderEnumId: {type: GraphQLString},reservedDatetime: {type: GraphQLString},priority: {type: GraphQLString},sequenceId: {type: GraphQLInt},oldPickStartDate: {type: GraphQLString},currentPromisedDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1102,7 +1102,7 @@ export {reserveOrderItemInventory};
 
 
 const reserveProductInventory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz reserveProductInventory method',
   args:{orderItemSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},orderId: {type: GraphQLString},requireInventory: {type: GraphQLString},reserveOrderEnumId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},lotId: {type: GraphQLString},reservedDatetime: {type: GraphQLString},priority: {type: GraphQLString},sequenceId: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1113,7 +1113,7 @@ export {reserveProductInventory};
 
 
 const reserveProductInventoryByContainer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz reserveProductInventoryByContainer method',
   args:{orderItemSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},orderId: {type: GraphQLString},requireInventory: {type: GraphQLString},containerId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},reservedDatetime: {type: GraphQLString},reserveOrderEnumId: {type: GraphQLString},sequenceId: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1124,7 +1124,7 @@ export {reserveProductInventoryByContainer};
 
 
 const reserveProductInventoryByFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz reserveProductInventoryByFacility method',
   args:{orderItemSeqId: {type: GraphQLString},facilityId: {type: GraphQLString},quantity: {type: GraphQLFloat},productId: {type: GraphQLString},orderId: {type: GraphQLString},requireInventory: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},lotId: {type: GraphQLString},reservedDatetime: {type: GraphQLString},reserveOrderEnumId: {type: GraphQLString},priority: {type: GraphQLString},sequenceId: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1135,7 +1135,7 @@ export {reserveProductInventoryByFacility};
 
 
 const setLastInventoryCount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setLastInventoryCount method',
   args:{inventoryItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1146,7 +1146,7 @@ export {setLastInventoryCount};
 
 
 const setOrderReservationPriority = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setOrderReservationPriority method',
   args:{orderId: {type: GraphQLString},priority: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1157,7 +1157,7 @@ export {setOrderReservationPriority};
 
 
 const updateContainer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContainer method',
   args:{containerId: {type: GraphQLString},facilityId: {type: GraphQLString},containerTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1168,7 +1168,7 @@ export {updateContainer};
 
 
 const updateContainerType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContainerType method',
   args:{containerTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1179,7 +1179,7 @@ export {updateContainerType};
 
 
 const updateFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacility method',
   args:{facilityId: {type: GraphQLString},defaultInventoryItemTypeId: {type: GraphQLString},parentFacilityId: {type: GraphQLString},description: {type: GraphQLString},defaultWeightUomId: {type: GraphQLString},primaryFacilityGroupId: {type: GraphQLString},openedDate: {type: GraphQLString},ownerPartyId: {type: GraphQLString},facilitySize: {type: GraphQLFloat},facilitySizeUomId: {type: GraphQLString},closedDate: {type: GraphQLString},facilityTypeId: {type: GraphQLString},defaultDaysToShip: {type: GraphQLInt},defaultDimensionUomId: {type: GraphQLString},facilityName: {type: GraphQLString},productStoreId: {type: GraphQLString},geoPointId: {type: GraphQLString},oldSquareFootage: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1190,7 +1190,7 @@ export {updateFacility};
 
 
 const updateFacilityAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityAttribute method',
   args:{facilityId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1201,7 +1201,7 @@ export {updateFacilityAttribute};
 
 
 const updateFacilityContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityContactMech method',
   args:{contactMechTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},extension: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},infoString: {type: GraphQLString},newContactMechId: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1212,7 +1212,7 @@ export {updateFacilityContactMech};
 
 
 const updateFacilityEmailAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityEmailAddress method',
   args:{emailAddress: {type: GraphQLString},fromDate: {type: GraphQLString},extension: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1223,7 +1223,7 @@ export {updateFacilityEmailAddress};
 
 
 const updateFacilityGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityGroup method',
   args:{facilityGroupId: {type: GraphQLString},primaryParentGroupId: {type: GraphQLString},facilityGroupTypeId: {type: GraphQLString},description: {type: GraphQLString},facilityGroupName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1234,7 +1234,7 @@ export {updateFacilityGroup};
 
 
 const updateFacilityGroupToGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityGroupToGroup method',
   args:{fromDate: {type: GraphQLString},facilityGroupId: {type: GraphQLString},parentFacilityGroupId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1245,7 +1245,7 @@ export {updateFacilityGroupToGroup};
 
 
 const updateFacilityGroupType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityGroupType method',
   args:{facilityGroupTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1256,7 +1256,7 @@ export {updateFacilityGroupType};
 
 
 const updateFacilityLocation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityLocation method',
   args:{facilityId: {type: GraphQLString},locationSeqId: {type: GraphQLString},areaId: {type: GraphQLString},positionId: {type: GraphQLString},levelId: {type: GraphQLString},sectionId: {type: GraphQLString},geoPointId: {type: GraphQLString},locationTypeEnumId: {type: GraphQLString},aisleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1267,7 +1267,7 @@ export {updateFacilityLocation};
 
 
 const updateFacilityPostalAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityPostalAddress method',
   args:{countryGeoId: {type: GraphQLString},houseNumberExt: {type: GraphQLString},extension: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},address2: {type: GraphQLString},city: {type: GraphQLString},address1: {type: GraphQLString},postalCode: {type: GraphQLString},postalCodeGeoId: {type: GraphQLString},houseNumber: {type: GraphQLInt},postalCodeExt: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},attnName: {type: GraphQLString},directions: {type: GraphQLString},countyGeoId: {type: GraphQLString},toName: {type: GraphQLString},cityGeoId: {type: GraphQLString},municipalityGeoId: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1278,7 +1278,7 @@ export {updateFacilityPostalAddress};
 
 
 const updateFacilityTelecomNumber = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityTelecomNumber method',
   args:{fromDate: {type: GraphQLString},extension: {type: GraphQLString},areaCode: {type: GraphQLString},askForName: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},countryCode: {type: GraphQLString},contactNumber: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1289,7 +1289,7 @@ export {updateFacilityTelecomNumber};
 
 
 const updateFacilityToGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityToGroup method',
   args:{fromDate: {type: GraphQLString},facilityId: {type: GraphQLString},facilityGroupId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1300,7 +1300,7 @@ export {updateFacilityToGroup};
 
 
 const updateFacilityType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityType method',
   args:{facilityTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1311,7 +1311,7 @@ export {updateFacilityType};
 
 
 const updateFacilityTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFacilityTypeAttr method',
   args:{facilityTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1322,7 +1322,7 @@ export {updateFacilityTypeAttr};
 
 
 const updateInventoryItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateInventoryItem method',
   args:{inventoryItemId: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},serialNumber: {type: GraphQLInt},productId: {type: GraphQLString},softIdentifier: {type: GraphQLInt},binNumber: {type: GraphQLString},lotId: {type: GraphQLString},uomId: {type: GraphQLString},accountingQuantityTotal: {type: GraphQLFloat},ownerPartyId: {type: GraphQLString},oldAvailableToPromise: {type: GraphQLFloat},activationValidThru: {type: GraphQLString},activationNumber: {type: GraphQLInt},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},unitCost: {type: GraphQLFloat},datetimeManufactured: {type: GraphQLString},datetimeReceived: {type: GraphQLString},expireDate: {type: GraphQLString},oldQuantityOnHand: {type: GraphQLFloat},partyId: {type: GraphQLString},containerId: {type: GraphQLString},inventoryItemTypeId: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1333,7 +1333,7 @@ export {updateInventoryItem};
 
 
 const updateInventoryItemFromDetail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateInventoryItemFromDetail method',
   args:{inventoryItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1344,7 +1344,7 @@ export {updateInventoryItemFromDetail};
 
 
 const updateInventoryItemLabel = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateInventoryItemLabel method',
   args:{inventoryItemLabelId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1355,7 +1355,7 @@ export {updateInventoryItemLabel};
 
 
 const updateInventoryItemLabelAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateInventoryItemLabelAppl method',
   args:{inventoryItemLabelTypeId: {type: GraphQLString},inventoryItemLabelId: {type: GraphQLString},sequenceNum: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1366,7 +1366,7 @@ export {updateInventoryItemLabelAppl};
 
 
 const updateInventoryItemLabelType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateInventoryItemLabelType method',
   args:{inventoryItemLabelTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1377,7 +1377,7 @@ export {updateInventoryItemLabelType};
 
 
 const updateInventoryItemType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateInventoryItemType method',
   args:{inventoryItemTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1388,7 +1388,7 @@ export {updateInventoryItemType};
 
 
 const updateInventoryTransfer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateInventoryTransfer method',
   args:{inventoryItemId: {type: GraphQLString},inventoryTransferId: {type: GraphQLString},statusId: {type: GraphQLString},containerIdTo: {type: GraphQLString},facilityId: {type: GraphQLString},comments: {type: GraphQLString},sendDate: {type: GraphQLString},itemIssuanceId: {type: GraphQLString},receiveDate: {type: GraphQLString},facilityIdTo: {type: GraphQLString},containerId: {type: GraphQLString},locationSeqIdTo: {type: GraphQLString},locationSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1399,7 +1399,7 @@ export {updateInventoryTransfer};
 
 
 const updateProductFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateProductFacility method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},lastInventoryCount: {type: GraphQLFloat},minimumStock: {type: GraphQLFloat},reorderQuantity: {type: GraphQLFloat},daysToShip: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1410,7 +1410,7 @@ export {updateProductFacility};
 
 
 const updateProductFacilityLocation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateProductFacilityLocation method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},locationSeqId: {type: GraphQLString},moveQuantity: {type: GraphQLFloat},minimumStock: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -1421,7 +1421,7 @@ export {updateProductFacilityLocation};
 
 
 const updateSerializedInventoryTotals = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSerializedInventoryTotals method',
   args:{inventoryItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {RequirementCustRequestResponseType} from '../../order/RequirementCustRequest/RequirementCustRequestResponseType.js';
 import {RequirementCustRequestInputType} from '../../order/RequirementCustRequest/RequirementCustRequestInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRequirementCustRequest = {
-  type: ResopnseType,
+  type: RequirementCustRequestResponseType,
   description: 'mutation for ofbiz createRequirementCustRequest method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createRequirementCustRequest};
 
 
 const updateRequirementCustRequest = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateRequirementCustRequest method',
   args:{requirementCustRequestToBeUpdated: {type: RequirementCustRequestInputType},custRequestItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateRequirementCustRequest};
 
 
 const deleteRequirementCustRequestByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteRequirementCustRequestByIdUpdated method',
   args:{requirementCustRequestId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

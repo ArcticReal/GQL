@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const fedexShipRequest = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz fedexShipRequest method',
   args:{shipmentRouteSegmentId: {type: GraphQLString},shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {fedexShipRequest};
 
 
 const fedexSubscriptionRequest = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz fedexSubscriptionRequest method',
   args:{companyPartyId: {type: GraphQLString},replaceMeterNumber: {type: GraphQLBoolean},shipmentGatewayConfigId: {type: GraphQLString},configProps: {type: GraphQLString},contactPartyName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

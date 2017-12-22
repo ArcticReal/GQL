@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {CommunicationEventPurposeResponseType} from '../../party/CommunicationEventPurpose/CommunicationEventPurposeResponseType.js';
 import {CommunicationEventPurposeInputType} from '../../party/CommunicationEventPurpose/CommunicationEventPurposeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCommunicationEventPurpose = {
-  type: ResopnseType,
+  type: CommunicationEventPurposeResponseType,
   description: 'mutation for ofbiz createCommunicationEventPurpose method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createCommunicationEventPurpose};
 
 
 const deleteCommunicationEventPurposeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCommunicationEventPurposeByIdUpdated method',
   args:{communicationEventPurposeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCommunicationEventPurposeByIdUpdated};
 
 
 const updateCommunicationEventPurpose = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCommunicationEventPurpose method',
   args:{communicationEventPurposeToBeUpdated: {type: CommunicationEventPurposeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

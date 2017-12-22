@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductStoreShipmentMethResponseType} from '../../product/ProductStoreShipmentMeth/ProductStoreShipmentMethResponseType.js';
 import {ProductStoreShipmentMethInputType} from '../../product/ProductStoreShipmentMeth/ProductStoreShipmentMethInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreShipmentMeth = {
-  type: ResopnseType,
+  type: ProductStoreShipmentMethResponseType,
   description: 'mutation for ofbiz createProductStoreShipmentMeth method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductStoreShipmentMeth};
 
 
 const updateProductStoreShipmentMeth = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreShipmentMeth method',
   args:{productStoreShipmentMethToBeUpdated: {type: ProductStoreShipmentMethInputType},productStoreShipMethId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStoreShipmentMeth};
 
 
 const deleteProductStoreShipmentMethByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreShipmentMethByIdUpdated method',
   args:{productStoreShipmentMethId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

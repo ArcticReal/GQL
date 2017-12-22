@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {BudgetTypeAttrInputType} from '../../accounting/BudgetTypeAttr/BudgetTypeAttrInputType.js';
+import {BudgetTypeAttrResponseType} from '../../accounting/BudgetTypeAttr/BudgetTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBudgetTypeAttr = {
-  type: ResopnseType,
+  type: BudgetTypeAttrResponseType,
   description: 'mutation for ofbiz createBudgetTypeAttr method',
   args:{budgetTypeAttrToBeAdded: {type: BudgetTypeAttrInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createBudgetTypeAttr};
 
 
 const updateBudgetTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateBudgetTypeAttr method',
   args:{budgetTypeAttrToBeUpdated: {type: BudgetTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateBudgetTypeAttr};
 
 
 const deleteBudgetTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteBudgetTypeAttrByIdUpdated method',
   args:{budgetTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

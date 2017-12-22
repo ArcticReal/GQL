@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {EftAccountResponseType} from '../../accounting/EftAccount/EftAccountResponseType.js';
 import {EftAccountInputType} from '../../accounting/EftAccount/EftAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEftAccount = {
-  type: ResopnseType,
+  type: EftAccountResponseType,
   description: 'mutation for ofbiz createEftAccount method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createEftAccount};
 
 
 const deleteEftAccountByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteEftAccountByIdUpdated method',
   args:{eftAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteEftAccountByIdUpdated};
 
 
 const updateEftAccount = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateEftAccount method',
   args:{eftAccountToBeUpdated: {type: EftAccountInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

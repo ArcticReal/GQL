@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyInvitationGroupAssocResponseType} from '../../party/PartyInvitationGroupAssoc/PartyInvitationGroupAssocResponseType.js';
 import {PartyInvitationGroupAssocInputType} from '../../party/PartyInvitationGroupAssoc/PartyInvitationGroupAssocInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyInvitationGroupAssoc = {
-  type: ResopnseType,
+  type: PartyInvitationGroupAssocResponseType,
   description: 'mutation for ofbiz createPartyInvitationGroupAssoc method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPartyInvitationGroupAssoc};
 
 
 const updatePartyInvitationGroupAssoc = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyInvitationGroupAssoc method',
   args:{partyInvitationGroupAssocToBeUpdated: {type: PartyInvitationGroupAssocInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyInvitationGroupAssoc};
 
 
 const deletePartyInvitationGroupAssocByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyInvitationGroupAssocByIdUpdated method',
   args:{partyInvitationGroupAssocId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

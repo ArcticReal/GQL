@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {TaxAuthorityRateTypeResponseType} from '../../accounting/TaxAuthorityRateType/TaxAuthorityRateTypeResponseType.js';
 import {TaxAuthorityRateTypeInputType} from '../../accounting/TaxAuthorityRateType/TaxAuthorityRateTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTaxAuthorityRateType = {
-  type: ResopnseType,
+  type: TaxAuthorityRateTypeResponseType,
   description: 'mutation for ofbiz createTaxAuthorityRateType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createTaxAuthorityRateType};
 
 
 const updateTaxAuthorityRateType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTaxAuthorityRateType method',
   args:{taxAuthorityRateTypeToBeUpdated: {type: TaxAuthorityRateTypeInputType},taxAuthorityRateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTaxAuthorityRateType};
 
 
 const deleteTaxAuthorityRateTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTaxAuthorityRateTypeByIdUpdated method',
   args:{taxAuthorityRateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

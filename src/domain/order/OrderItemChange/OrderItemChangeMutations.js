@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderItemChangeInputType} from '../../order/OrderItemChange/OrderItemChangeInputType.js';
+import {OrderItemChangeResponseType} from '../../order/OrderItemChange/OrderItemChangeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderItemChange = {
-  type: ResopnseType,
+  type: OrderItemChangeResponseType,
   description: 'mutation for ofbiz createOrderItemChange method',
-  args:{},
+  args:{orderItemChangeToBeAdded: {type: OrderItemChangeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderItem/orderItemChanges/add?`, null, req);
+    return postToUrl(`order/orderItem/orderItemChanges/add?`, args.orderItemChangeToBeAdded, req);
   }
 };
 export {createOrderItemChange};
 
 
 const updateOrderItemChange = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderItemChange method',
   args:{orderItemChangeToBeUpdated: {type: OrderItemChangeInputType},orderItemChangeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderItemChange};
 
 
 const deleteOrderItemChangeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderItemChangeByIdUpdated method',
   args:{orderItemChangeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

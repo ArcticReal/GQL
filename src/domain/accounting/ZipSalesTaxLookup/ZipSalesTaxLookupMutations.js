@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ZipSalesTaxLookupResponseType} from '../../accounting/ZipSalesTaxLookup/ZipSalesTaxLookupResponseType.js';
 import {ZipSalesTaxLookupInputType} from '../../accounting/ZipSalesTaxLookup/ZipSalesTaxLookupInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createZipSalesTaxLookup = {
-  type: ResopnseType,
+  type: ZipSalesTaxLookupResponseType,
   description: 'mutation for ofbiz createZipSalesTaxLookup method',
-  args:{zipSalesTaxLookupToBeAdded: {type: ZipSalesTaxLookupInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/zipSalesTaxLookups/add?`, args.zipSalesTaxLookupToBeAdded, req);
+    return postToUrl(`accounting/zipSalesTaxLookups/add?`, null, req);
   }
 };
 export {createZipSalesTaxLookup};
 
 
 const updateZipSalesTaxLookup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateZipSalesTaxLookup method',
   args:{zipSalesTaxLookupToBeUpdated: {type: ZipSalesTaxLookupInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateZipSalesTaxLookup};
 
 
 const deleteZipSalesTaxLookupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteZipSalesTaxLookupByIdUpdated method',
   args:{zipSalesTaxLookupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

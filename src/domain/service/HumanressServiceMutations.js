@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const applyTraining = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz applyTraining method',
   args:{workEffortId: {type: GraphQLString},approverId: {type: GraphQLString},partyId: {type: GraphQLString},trainingClassTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},approvalStatus: {type: GraphQLString},reason: {type: GraphQLString},trainingRequestId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {applyTraining};
 
 
 const assignTraining = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz assignTraining method',
   args:{fromDate: {type: GraphQLString},approverId: {type: GraphQLString},partyId: {type: GraphQLString},trainingClassTypeId: {type: GraphQLString},workEffortId: {type: GraphQLString},approvalStatus: {type: GraphQLString},reason: {type: GraphQLString},trainingRequestId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {assignTraining};
 
 
 const createAgreementEmploymentAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementEmploymentAppl method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},agreementDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createAgreementEmploymentAppl};
 
 
 const createEmplLeave = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmplLeave method',
   args:{fromDate: {type: GraphQLString},approverPartyId: {type: GraphQLString},leaveTypeId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString},emplLeaveReasonTypeId: {type: GraphQLString},description: {type: GraphQLString},leaveStatus: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createEmplLeave};
 
 
 const createEmplLeaveReasonType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmplLeaveReasonType method',
   args:{description: {type: GraphQLString},parentTypeId: {type: GraphQLString},emplLeaveReasonTypeId: {type: GraphQLString},hasTable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createEmplLeaveReasonType};
 
 
 const createEmplLeaveType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmplLeaveType method',
   args:{description: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},leaveTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createEmplLeaveType};
 
 
 const createEmplPosition = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmplPosition method',
   args:{estimatedThruDate: {type: GraphQLString},actualThruDate: {type: GraphQLString},exemptFlag: {type: GraphQLString},temporaryFlag: {type: GraphQLString},fulltimeFlag: {type: GraphQLString},emplPositionId: {type: GraphQLString},actualFromDate: {type: GraphQLString},budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},salaryFlag: {type: GraphQLString},statusId: {type: GraphQLString},estimatedFromDate: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createEmplPosition};
 
 
 const createEmplPositionFulfillment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmplPositionFulfillment method',
   args:{fromDate: {type: GraphQLString},emplPositionId: {type: GraphQLString},partyId: {type: GraphQLString},comments: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createEmplPositionFulfillment};
 
 
 const createEmplPositionReportingStruct = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmplPositionReportingStruct method',
   args:{fromDate: {type: GraphQLString},emplPositionIdManagedBy: {type: GraphQLString},emplPositionIdReportingTo: {type: GraphQLString},comments: {type: GraphQLString},primaryFlag: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createEmplPositionReportingStruct};
 
 
 const createEmplPositionResponsibility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmplPositionResponsibility method',
   args:{fromDate: {type: GraphQLString},responsibilityTypeId: {type: GraphQLString},emplPositionId: {type: GraphQLString},comments: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createEmplPositionResponsibility};
 
 
 const createEmplPositionType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmplPositionType method',
   args:{description: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createEmplPositionType};
 
 
 const createEmployee = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmployee method',
   args:{postalAddContactMechPurpTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},emailAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createEmployee};
 
 
 const createEmployment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmployment method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},terminationReasonId: {type: GraphQLString},terminationTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createEmployment};
 
 
 const createEmploymentApp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmploymentApp method',
   args:{applyingPartyId: {type: GraphQLString},statusId: {type: GraphQLString},approverPartyId: {type: GraphQLString},employmentAppSourceTypeId: {type: GraphQLString},emplPositionId: {type: GraphQLString},applicationId: {type: GraphQLString},referredByPartyId: {type: GraphQLString},jobRequisitionId: {type: GraphQLString},applicationDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createEmploymentApp};
 
 
 const createInternalJobPosting = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createInternalJobPosting method',
   args:{applyingPartyId: {type: GraphQLString},approverPartyId: {type: GraphQLString},jobRequisitionId: {type: GraphQLString},statusId: {type: GraphQLString},employmentAppSourceTypeId: {type: GraphQLString},emplPositionId: {type: GraphQLString},applicationId: {type: GraphQLString},referredByPartyId: {type: GraphQLString},applicationDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createInternalJobPosting};
 
 
 const createJobInterview = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createJobInterview method',
   args:{jobIntervieweePartyId: {type: GraphQLString},jobInterviewerPartyId: {type: GraphQLString},jobRequisitionId: {type: GraphQLString},jobInterviewId: {type: GraphQLString},jobInterviewTypeId: {type: GraphQLString},gradeSecuredEnumId: {type: GraphQLString},jobInterviewDate: {type: GraphQLString},jobInterviewResult: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createJobInterview};
 
 
 const createJobInterviewType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createJobInterviewType method',
   args:{description: {type: GraphQLString},jobInterviewTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createJobInterviewType};
 
 
 const createJobRequisition = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createJobRequisition method',
   args:{qualification: {type: GraphQLString},skillTypeId: {type: GraphQLString},experienceMonths: {type: GraphQLInt},jobLocation: {type: GraphQLString},noOfResources: {type: GraphQLInt},experienceYears: {type: GraphQLInt},durationMonths: {type: GraphQLInt},gender: {type: GraphQLString},jobRequisitionId: {type: GraphQLString},examTypeEnumId: {type: GraphQLString},jobRequisitionDate: {type: GraphQLString},requiredOnDate: {type: GraphQLString},age: {type: GraphQLInt},jobPostingTypeEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createJobRequisition};
 
 
 const createPartyBenefit = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyBenefit method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},benefitTypeId: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},availableTime: {type: GraphQLInt},cost: {type: GraphQLFloat},actualEmployerPaidPercent: {type: GraphQLFloat},periodTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createPartyBenefit};
 
 
 const createPartyQual = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyQual method',
   args:{partyQualTypeId: {type: GraphQLString},partyId: {type: GraphQLString},qualificationDesc: {type: GraphQLString},fromDate: {type: GraphQLString},statusId: {type: GraphQLString},verifStatusId: {type: GraphQLString},title: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {createPartyQual};
 
 
 const createPartyQualType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyQualType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},partyQualTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {createPartyQualType};
 
 
 const createPartyResume = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyResume method',
   args:{resumeText: {type: GraphQLString},resumeId: {type: GraphQLString},contentId: {type: GraphQLString},partyId: {type: GraphQLString},resumeDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {createPartyResume};
 
 
 const createPartySkill = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartySkill method',
   args:{skillTypeId: {type: GraphQLString},partyId: {type: GraphQLString},rating: {type: GraphQLInt},yearsExperience: {type: GraphQLInt},startedUsingDate: {type: GraphQLString},skillLevel: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {createPartySkill};
 
 
 const createPayGrade = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPayGrade method',
   args:{payGradeName: {type: GraphQLString},comments: {type: GraphQLString},payGradeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {createPayGrade};
 
 
 const createPayHistory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPayHistory method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},salaryStepSeqId: {type: GraphQLString},periodTypeId: {type: GraphQLString},payGradeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {createPayHistory};
 
 
 const createPayrollPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPayrollPreference method',
   args:{payrollPreferenceSeqId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},routingNumber: {type: GraphQLString},flatAmount: {type: GraphQLFloat},percentage: {type: GraphQLFloat},periodTypeId: {type: GraphQLString},deductionTypeId: {type: GraphQLString},bankName: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},accountNumber: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {createPayrollPreference};
 
 
 const createPerfReview = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPerfReview method',
   args:{employeeRoleTypeId: {type: GraphQLString},employeePartyId: {type: GraphQLString},fromDate: {type: GraphQLString},managerRoleTypeId: {type: GraphQLString},comments: {type: GraphQLString},paymentId: {type: GraphQLString},emplPositionId: {type: GraphQLString},perfReviewId: {type: GraphQLString},managerPartyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {createPerfReview};
 
 
 const createPerfReviewItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPerfReviewItem method',
   args:{employeeRoleTypeId: {type: GraphQLString},employeePartyId: {type: GraphQLString},perfReviewId: {type: GraphQLString},perfReviewItemTypeId: {type: GraphQLString},perfRatingTypeId: {type: GraphQLString},comments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {createPerfReviewItem};
 
 
 const createPerformanceNote = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPerformanceNote method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},comments: {type: GraphQLString},communicationDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {createPerformanceNote};
 
 
 const createResponsibilityType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createResponsibilityType method',
   args:{description: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},responsibilityTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {createResponsibilityType};
 
 
 const createSalaryStep = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSalaryStep method',
   args:{fromDate: {type: GraphQLString},salaryStepSeqId: {type: GraphQLString},payGradeId: {type: GraphQLString},amount: {type: GraphQLFloat},lastModifiedByUserLogin: {type: GraphQLString},dateModified: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {createSalaryStep};
 
 
 const createSkillType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSkillType method',
   args:{description: {type: GraphQLString},skillTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {createSkillType};
 
 
 const createTerminationReason = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTerminationReason method',
   args:{description: {type: GraphQLString},terminationReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {createTerminationReason};
 
 
 const createTerminationType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTerminationType method',
   args:{description: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},terminationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {createTerminationType};
 
 
 const createTrainingTypes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTrainingTypes method',
   args:{description: {type: GraphQLString},trainingClassTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {createTrainingTypes};
 
 
 const createUnemploymentClaim = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUnemploymentClaim method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},unemploymentClaimId: {type: GraphQLString},partyIdFrom: {type: GraphQLString},statusId: {type: GraphQLString},description: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},unemploymentClaimDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {createUnemploymentClaim};
 
 
 const createValidResponsibility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createValidResponsibility method',
   args:{fromDate: {type: GraphQLString},responsibilityTypeId: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},comments: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {createValidResponsibility};
 
 
 const deleteAgreementEmploymentAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAgreementEmploymentAppl method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {deleteAgreementEmploymentAppl};
 
 
 const deleteEmplLeave = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmplLeave method',
   args:{fromDate: {type: GraphQLString},leaveTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {deleteEmplLeave};
 
 
 const deleteEmplLeaveReasonType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmplLeaveReasonType method',
   args:{emplLeaveReasonTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {deleteEmplLeaveReasonType};
 
 
 const deleteEmplLeaveType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmplLeaveType method',
   args:{leaveTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {deleteEmplLeaveType};
 
 
 const deleteEmplPosition = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmplPosition method',
   args:{emplPositionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {deleteEmplPosition};
 
 
 const deleteEmplPositionFulfillment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmplPositionFulfillment method',
   args:{fromDate: {type: GraphQLString},emplPositionId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {deleteEmplPositionFulfillment};
 
 
 const deleteEmplPositionReportingStruct = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmplPositionReportingStruct method',
   args:{fromDate: {type: GraphQLString},emplPositionIdManagedBy: {type: GraphQLString},emplPositionIdReportingTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {deleteEmplPositionReportingStruct};
 
 
 const deleteEmplPositionResponsibility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmplPositionResponsibility method',
   args:{fromDate: {type: GraphQLString},responsibilityTypeId: {type: GraphQLString},emplPositionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {deleteEmplPositionResponsibility};
 
 
 const deleteEmplPositionType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmplPositionType method',
   args:{emplPositionTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {deleteEmplPositionType};
 
 
 const deleteEmplPositionTypeRate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmplPositionTypeRate method',
   args:{fromDate: {type: GraphQLString},rateTypeId: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},rateAmountFromDate: {type: GraphQLString},periodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {deleteEmplPositionTypeRate};
 
 
 const deleteEmployment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmployment method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {deleteEmployment};
 
 
 const deleteEmploymentApp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEmploymentApp method',
   args:{applicationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {deleteEmploymentApp};
 
 
 const deleteInternalJobPosting = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteInternalJobPosting method',
   args:{applicationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {deleteInternalJobPosting};
 
 
 const deleteJobInterview = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteJobInterview method',
   args:{jobInterviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {deleteJobInterview};
 
 
 const deleteJobInterviewType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteJobInterviewType method',
   args:{jobInterviewTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {deleteJobInterviewType};
 
 
 const deleteJobRequisition = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteJobRequisition method',
   args:{jobRequisitionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,7 +596,7 @@ export {deleteJobRequisition};
 
 
 const deletePartyBenefit = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyBenefit method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},benefitTypeId: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -607,7 +607,7 @@ export {deletePartyBenefit};
 
 
 const deletePartyQual = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyQual method',
   args:{fromDate: {type: GraphQLString},partyQualTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -618,7 +618,7 @@ export {deletePartyQual};
 
 
 const deletePartyQualType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyQualType method',
   args:{partyQualTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -629,7 +629,7 @@ export {deletePartyQualType};
 
 
 const deletePartyResume = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyResume method',
   args:{resumeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -640,7 +640,7 @@ export {deletePartyResume};
 
 
 const deletePartySkill = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartySkill method',
   args:{skillTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -651,7 +651,7 @@ export {deletePartySkill};
 
 
 const deletePayGrade = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePayGrade method',
   args:{payGradeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -662,7 +662,7 @@ export {deletePayGrade};
 
 
 const deletePayHistory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePayHistory method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -673,7 +673,7 @@ export {deletePayHistory};
 
 
 const deletePayrollPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePayrollPreference method',
   args:{payrollPreferenceSeqId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -684,7 +684,7 @@ export {deletePayrollPreference};
 
 
 const deletePerfReview = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePerfReview method',
   args:{employeeRoleTypeId: {type: GraphQLString},employeePartyId: {type: GraphQLString},perfReviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -695,7 +695,7 @@ export {deletePerfReview};
 
 
 const deletePerfReviewItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePerfReviewItem method',
   args:{employeeRoleTypeId: {type: GraphQLString},perfReviewItemSeqId: {type: GraphQLString},employeePartyId: {type: GraphQLString},perfReviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -706,7 +706,7 @@ export {deletePerfReviewItem};
 
 
 const deletePerformanceNote = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePerformanceNote method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {deletePerformanceNote};
 
 
 const deleteResponsibilityType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteResponsibilityType method',
   args:{responsibilityTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {deleteResponsibilityType};
 
 
 const deleteSalaryStep = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSalaryStep method',
   args:{fromDate: {type: GraphQLString},salaryStepSeqId: {type: GraphQLString},payGradeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {deleteSalaryStep};
 
 
 const deleteSkillType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSkillType method',
   args:{skillTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -750,7 +750,7 @@ export {deleteSkillType};
 
 
 const deleteTerminationReason = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteTerminationReason method',
   args:{terminationReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -761,7 +761,7 @@ export {deleteTerminationReason};
 
 
 const deleteTerminationType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteTerminationType method',
   args:{terminationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -772,7 +772,7 @@ export {deleteTerminationType};
 
 
 const deleteTrainingTypes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteTrainingTypes method',
   args:{trainingClassTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -783,7 +783,7 @@ export {deleteTrainingTypes};
 
 
 const deleteUnemploymentClaim = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteUnemploymentClaim method',
   args:{unemploymentClaimId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -794,7 +794,7 @@ export {deleteUnemploymentClaim};
 
 
 const deleteValidResponsibility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteValidResponsibility method',
   args:{fromDate: {type: GraphQLString},responsibilityTypeId: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -805,7 +805,7 @@ export {deleteValidResponsibility};
 
 
 const getCurrentPartyEmploymentData = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getCurrentPartyEmploymentData method',
   args:{partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -816,7 +816,7 @@ export {getCurrentPartyEmploymentData};
 
 
 const humanResManagerPermission = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz humanResManagerPermission method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -827,7 +827,7 @@ export {humanResManagerPermission};
 
 
 const updateAgreementEmploymentAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementEmploymentAppl method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},agreementDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -838,7 +838,7 @@ export {updateAgreementEmploymentAppl};
 
 
 const updateApprovalStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateApprovalStatus method',
   args:{applicationId: {type: GraphQLString},applyingPartyId: {type: GraphQLString},statusId: {type: GraphQLString},approverPartyId: {type: GraphQLString},employmentAppSourceTypeId: {type: GraphQLString},emplPositionId: {type: GraphQLString},referredByPartyId: {type: GraphQLString},jobRequisitionId: {type: GraphQLString},applicationDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -849,7 +849,7 @@ export {updateApprovalStatus};
 
 
 const updateEmplLeave = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmplLeave method',
   args:{fromDate: {type: GraphQLString},approverPartyId: {type: GraphQLString},leaveTypeId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString},emplLeaveReasonTypeId: {type: GraphQLString},description: {type: GraphQLString},leaveStatus: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -860,7 +860,7 @@ export {updateEmplLeave};
 
 
 const updateEmplLeaveReasonType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmplLeaveReasonType method',
   args:{emplLeaveReasonTypeId: {type: GraphQLString},description: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -871,7 +871,7 @@ export {updateEmplLeaveReasonType};
 
 
 const updateEmplLeaveStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmplLeaveStatus method',
   args:{fromDate: {type: GraphQLString},leaveTypeId: {type: GraphQLString},partyId: {type: GraphQLString},approverPartyId: {type: GraphQLString},emplLeaveReasonTypeId: {type: GraphQLString},description: {type: GraphQLString},leaveStatus: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -882,7 +882,7 @@ export {updateEmplLeaveStatus};
 
 
 const updateEmplLeaveType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmplLeaveType method',
   args:{description: {type: GraphQLString},leaveTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -893,7 +893,7 @@ export {updateEmplLeaveType};
 
 
 const updateEmplPosition = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmplPosition method',
   args:{emplPositionId: {type: GraphQLString},estimatedThruDate: {type: GraphQLString},actualThruDate: {type: GraphQLString},exemptFlag: {type: GraphQLString},temporaryFlag: {type: GraphQLString},fulltimeFlag: {type: GraphQLString},actualFromDate: {type: GraphQLString},budgetItemSeqId: {type: GraphQLString},budgetId: {type: GraphQLString},salaryFlag: {type: GraphQLString},statusId: {type: GraphQLString},estimatedFromDate: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -904,7 +904,7 @@ export {updateEmplPosition};
 
 
 const updateEmplPositionFulfillment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmplPositionFulfillment method',
   args:{fromDate: {type: GraphQLString},emplPositionId: {type: GraphQLString},partyId: {type: GraphQLString},comments: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -915,7 +915,7 @@ export {updateEmplPositionFulfillment};
 
 
 const updateEmplPositionReportingStruct = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmplPositionReportingStruct method',
   args:{fromDate: {type: GraphQLString},emplPositionIdManagedBy: {type: GraphQLString},emplPositionIdReportingTo: {type: GraphQLString},comments: {type: GraphQLString},primaryFlag: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -926,7 +926,7 @@ export {updateEmplPositionReportingStruct};
 
 
 const updateEmplPositionResponsibility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmplPositionResponsibility method',
   args:{fromDate: {type: GraphQLString},responsibilityTypeId: {type: GraphQLString},emplPositionId: {type: GraphQLString},comments: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -937,7 +937,7 @@ export {updateEmplPositionResponsibility};
 
 
 const updateEmplPositionType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmplPositionType method',
   args:{emplPositionTypeId: {type: GraphQLString},description: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -948,7 +948,7 @@ export {updateEmplPositionType};
 
 
 const updateEmplPositionTypeRate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmplPositionTypeRate method',
   args:{rateTypeId: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},periodTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},rateAmount: {type: GraphQLFloat},salaryStepSeqId: {type: GraphQLString},rateCurrencyUomId: {type: GraphQLString},payGradeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -959,7 +959,7 @@ export {updateEmplPositionTypeRate};
 
 
 const updateEmployment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmployment method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},terminationReasonId: {type: GraphQLString},terminationTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -970,7 +970,7 @@ export {updateEmployment};
 
 
 const updateEmploymentApp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmploymentApp method',
   args:{applicationId: {type: GraphQLString},applyingPartyId: {type: GraphQLString},statusId: {type: GraphQLString},approverPartyId: {type: GraphQLString},employmentAppSourceTypeId: {type: GraphQLString},emplPositionId: {type: GraphQLString},referredByPartyId: {type: GraphQLString},jobRequisitionId: {type: GraphQLString},applicationDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -981,7 +981,7 @@ export {updateEmploymentApp};
 
 
 const updateInternalJobPosting = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateInternalJobPosting method',
   args:{applyingPartyId: {type: GraphQLString},approverPartyId: {type: GraphQLString},applicationId: {type: GraphQLString},jobRequisitionId: {type: GraphQLString},statusId: {type: GraphQLString},employmentAppSourceTypeId: {type: GraphQLString},emplPositionId: {type: GraphQLString},referredByPartyId: {type: GraphQLString},applicationDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -992,7 +992,7 @@ export {updateInternalJobPosting};
 
 
 const updateJobInterview = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateJobInterview method',
   args:{jobInterviewId: {type: GraphQLString},jobInterviewTypeId: {type: GraphQLString},jobIntervieweePartyId: {type: GraphQLString},jobRequisitionId: {type: GraphQLString},gradeSecuredEnumId: {type: GraphQLString},jobInterviewDate: {type: GraphQLString},jobInterviewerPartyId: {type: GraphQLString},jobInterviewResult: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1003,7 +1003,7 @@ export {updateJobInterview};
 
 
 const updateJobInterviewType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateJobInterviewType method',
   args:{jobInterviewTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1014,7 +1014,7 @@ export {updateJobInterviewType};
 
 
 const updateJobRequisition = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateJobRequisition method',
   args:{skillTypeId: {type: GraphQLString},experienceMonths: {type: GraphQLInt},jobLocation: {type: GraphQLString},noOfResources: {type: GraphQLInt},jobRequisitionId: {type: GraphQLString},experienceYears: {type: GraphQLInt},qualification: {type: GraphQLString},durationMonths: {type: GraphQLInt},gender: {type: GraphQLString},examTypeEnumId: {type: GraphQLString},jobRequisitionDate: {type: GraphQLString},requiredOnDate: {type: GraphQLString},age: {type: GraphQLInt},jobPostingTypeEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1025,7 +1025,7 @@ export {updateJobRequisition};
 
 
 const updatePartyBenefit = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyBenefit method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},benefitTypeId: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},availableTime: {type: GraphQLInt},cost: {type: GraphQLFloat},actualEmployerPaidPercent: {type: GraphQLFloat},periodTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1036,7 +1036,7 @@ export {updatePartyBenefit};
 
 
 const updatePartyQual = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyQual method',
   args:{fromDate: {type: GraphQLString},partyQualTypeId: {type: GraphQLString},partyId: {type: GraphQLString},qualificationDesc: {type: GraphQLString},statusId: {type: GraphQLString},verifStatusId: {type: GraphQLString},title: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1047,7 +1047,7 @@ export {updatePartyQual};
 
 
 const updatePartyQualType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyQualType method',
   args:{partyQualTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1058,7 +1058,7 @@ export {updatePartyQualType};
 
 
 const updatePartyResume = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyResume method',
   args:{resumeId: {type: GraphQLString},resumeText: {type: GraphQLString},contentId: {type: GraphQLString},partyId: {type: GraphQLString},resumeDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1069,7 +1069,7 @@ export {updatePartyResume};
 
 
 const updatePartySkill = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartySkill method',
   args:{skillTypeId: {type: GraphQLString},partyId: {type: GraphQLString},rating: {type: GraphQLInt},yearsExperience: {type: GraphQLInt},startedUsingDate: {type: GraphQLString},skillLevel: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1080,7 +1080,7 @@ export {updatePartySkill};
 
 
 const updatePayGrade = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePayGrade method',
   args:{payGradeName: {type: GraphQLString},payGradeId: {type: GraphQLString},comments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1091,7 +1091,7 @@ export {updatePayGrade};
 
 
 const updatePayHistory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePayHistory method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},salaryStepSeqId: {type: GraphQLString},periodTypeId: {type: GraphQLString},payGradeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1102,7 +1102,7 @@ export {updatePayHistory};
 
 
 const updatePayrollPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePayrollPreference method',
   args:{payrollPreferenceSeqId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},routingNumber: {type: GraphQLString},flatAmount: {type: GraphQLFloat},percentage: {type: GraphQLFloat},periodTypeId: {type: GraphQLString},deductionTypeId: {type: GraphQLString},bankName: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},accountNumber: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1113,7 +1113,7 @@ export {updatePayrollPreference};
 
 
 const updatePerfReview = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePerfReview method',
   args:{employeeRoleTypeId: {type: GraphQLString},employeePartyId: {type: GraphQLString},perfReviewId: {type: GraphQLString},fromDate: {type: GraphQLString},managerRoleTypeId: {type: GraphQLString},comments: {type: GraphQLString},paymentId: {type: GraphQLString},emplPositionId: {type: GraphQLString},managerPartyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1124,7 +1124,7 @@ export {updatePerfReview};
 
 
 const updatePerfReviewItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePerfReviewItem method',
   args:{employeeRoleTypeId: {type: GraphQLString},perfReviewItemSeqId: {type: GraphQLString},employeePartyId: {type: GraphQLString},perfReviewId: {type: GraphQLString},perfReviewItemTypeId: {type: GraphQLString},perfRatingTypeId: {type: GraphQLString},comments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1135,7 +1135,7 @@ export {updatePerfReviewItem};
 
 
 const updatePerformanceNote = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePerformanceNote method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},comments: {type: GraphQLString},communicationDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1146,7 +1146,7 @@ export {updatePerformanceNote};
 
 
 const updateResponsibilityType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateResponsibilityType method',
   args:{responsibilityTypeId: {type: GraphQLString},description: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1157,7 +1157,7 @@ export {updateResponsibilityType};
 
 
 const updateSalaryStep = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSalaryStep method',
   args:{fromDate: {type: GraphQLString},salaryStepSeqId: {type: GraphQLString},payGradeId: {type: GraphQLString},amount: {type: GraphQLFloat},lastModifiedByUserLogin: {type: GraphQLString},dateModified: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1168,7 +1168,7 @@ export {updateSalaryStep};
 
 
 const updateSkillType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSkillType method',
   args:{skillTypeId: {type: GraphQLString},description: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1179,7 +1179,7 @@ export {updateSkillType};
 
 
 const updateTerminationReason = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTerminationReason method',
   args:{terminationReasonId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1190,7 +1190,7 @@ export {updateTerminationReason};
 
 
 const updateTerminationType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTerminationType method',
   args:{terminationTypeId: {type: GraphQLString},description: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1201,7 +1201,7 @@ export {updateTerminationType};
 
 
 const updateTrainingStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTrainingStatus method',
   args:{fromDate: {type: GraphQLString},reason: {type: GraphQLString},partyId: {type: GraphQLString},trainingClassTypeId: {type: GraphQLString},workEffortId: {type: GraphQLString},approvalStatus: {type: GraphQLString},trainingRequestId: {type: GraphQLString},approverId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1212,7 +1212,7 @@ export {updateTrainingStatus};
 
 
 const updateTrainingTypes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTrainingTypes method',
   args:{description: {type: GraphQLString},trainingClassTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1223,7 +1223,7 @@ export {updateTrainingTypes};
 
 
 const updateUnemploymentClaim = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateUnemploymentClaim method',
   args:{unemploymentClaimId: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},statusId: {type: GraphQLString},description: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},unemploymentClaimDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1234,7 +1234,7 @@ export {updateUnemploymentClaim};
 
 
 const updateValidResponsibility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateValidResponsibility method',
   args:{fromDate: {type: GraphQLString},responsibilityTypeId: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},comments: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

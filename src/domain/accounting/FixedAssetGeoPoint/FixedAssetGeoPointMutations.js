@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FixedAssetGeoPointResponseType} from '../../accounting/FixedAssetGeoPoint/FixedAssetGeoPointResponseType.js';
 import {FixedAssetGeoPointInputType} from '../../accounting/FixedAssetGeoPoint/FixedAssetGeoPointInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAssetGeoPoint = {
-  type: ResopnseType,
+  type: FixedAssetGeoPointResponseType,
   description: 'mutation for ofbiz createFixedAssetGeoPoint method',
-  args:{fixedAssetGeoPointToBeAdded: {type: FixedAssetGeoPointInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/fixedAsset/fixedAssetGeoPoints/add?`, args.fixedAssetGeoPointToBeAdded, req);
+    return postToUrl(`accounting/fixedAsset/fixedAssetGeoPoints/add?`, null, req);
   }
 };
 export {createFixedAssetGeoPoint};
 
 
 const deleteFixedAssetGeoPointByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFixedAssetGeoPointByIdUpdated method',
   args:{fixedAssetGeoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFixedAssetGeoPointByIdUpdated};
 
 
 const updateFixedAssetGeoPoint = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFixedAssetGeoPoint method',
   args:{fixedAssetGeoPointToBeUpdated: {type: FixedAssetGeoPointInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

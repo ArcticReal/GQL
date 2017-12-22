@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {FixedAssetMaintInputType} from '../../accounting/FixedAssetMaint/FixedAssetMaintInputType.js';
+import {FixedAssetMaintResponseType} from '../../accounting/FixedAssetMaint/FixedAssetMaintResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAssetMaint = {
-  type: ResopnseType,
+  type: FixedAssetMaintResponseType,
   description: 'mutation for ofbiz createFixedAssetMaint method',
-  args:{},
+  args:{fixedAssetMaintToBeAdded: {type: FixedAssetMaintInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/fixedAsset/fixedAssetMaints/add?`, null, req);
+    return postToUrl(`accounting/fixedAsset/fixedAssetMaints/add?`, args.fixedAssetMaintToBeAdded, req);
   }
 };
 export {createFixedAssetMaint};
 
 
 const deleteFixedAssetMaintByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFixedAssetMaintByIdUpdated method',
   args:{fixedAssetMaintId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFixedAssetMaintByIdUpdated};
 
 
 const updateFixedAssetMaint = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFixedAssetMaint method',
   args:{fixedAssetMaintToBeUpdated: {type: FixedAssetMaintInputType},maintHistSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

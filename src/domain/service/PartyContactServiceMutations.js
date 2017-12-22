@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createContactMechPurposeType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContactMechPurposeType method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createContactMechPurposeType};
 
 
 const createContactMechType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContactMechType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},contactMechTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createContactMechType};
 
 
 const createContactMechTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContactMechTypeAttr method',
   args:{contactMechTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createContactMechTypeAttr};
 
 
 const createContactMechTypePurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContactMechTypePurpose method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},contactMechTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createContactMechTypePurpose};
 
 
 const deleteContactMechPurposeType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteContactMechPurposeType method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {deleteContactMechPurposeType};
 
 
 const deleteContactMechType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteContactMechType method',
   args:{contactMechTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {deleteContactMechType};
 
 
 const deleteContactMechTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteContactMechTypeAttr method',
   args:{contactMechTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {deleteContactMechTypeAttr};
 
 
 const deleteContactMechTypePurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteContactMechTypePurpose method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},contactMechTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {deleteContactMechTypePurpose};
 
 
 const updateContactMechPurposeType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactMechPurposeType method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {updateContactMechPurposeType};
 
 
 const updateContactMechType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactMechType method',
   args:{contactMechTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {updateContactMechType};
 
 
 const updateContactMechTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactMechTypeAttr method',
   args:{contactMechTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {updateContactMechTypeAttr};
 
 
 const updateContactMechTypePurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactMechTypePurpose method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},contactMechTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

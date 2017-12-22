@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {SalaryStepResponseType} from '../../humanres/SalaryStep/SalaryStepResponseType.js';
 import {SalaryStepInputType} from '../../humanres/SalaryStep/SalaryStepInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSalaryStep = {
-  type: ResopnseType,
+  type: SalaryStepResponseType,
   description: 'mutation for ofbiz createSalaryStep method',
-  args:{salaryStepToBeAdded: {type: SalaryStepInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/salarySteps/add?`, args.salaryStepToBeAdded, req);
+    return postToUrl(`humanres/salarySteps/add?`, null, req);
   }
 };
 export {createSalaryStep};
 
 
 const deleteSalaryStepByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSalaryStepByIdUpdated method',
   args:{salaryStepId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteSalaryStepByIdUpdated};
 
 
 const updateSalaryStep = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSalaryStep method',
   args:{salaryStepToBeUpdated: {type: SalaryStepInputType},salaryStepSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

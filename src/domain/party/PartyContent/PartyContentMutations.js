@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyContentResponseType} from '../../party/PartyContent/PartyContentResponseType.js';
 import {PartyContentInputType} from '../../party/PartyContent/PartyContentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyContent = {
-  type: ResopnseType,
+  type: PartyContentResponseType,
   description: 'mutation for ofbiz createPartyContent method',
-  args:{partyContentToBeAdded: {type: PartyContentInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyContents/add?`, args.partyContentToBeAdded, req);
+    return postToUrl(`party/party/partyContents/add?`, null, req);
   }
 };
 export {createPartyContent};
 
 
 const updatePartyContent = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyContent method',
   args:{partyContentToBeUpdated: {type: PartyContentInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyContent};
 
 
 const deletePartyContentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyContentByIdUpdated method',
   args:{partyContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

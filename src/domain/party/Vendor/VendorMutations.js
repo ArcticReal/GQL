@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {VendorInputType} from '../../party/Vendor/VendorInputType.js';
+import {VendorResponseType} from '../../party/Vendor/VendorResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createVendor = {
-  type: ResopnseType,
+  type: VendorResponseType,
   description: 'mutation for ofbiz createVendor method',
   args:{vendorToBeAdded: {type: VendorInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createVendor};
 
 
 const updateVendor = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateVendor method',
   args:{vendorToBeUpdated: {type: VendorInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateVendor};
 
 
 const deleteVendorByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteVendorByIdUpdated method',
   args:{vendorId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContentTypeAttrResponseType} from '../../content/ContentTypeAttr/ContentTypeAttrResponseType.js';
 import {ContentTypeAttrInputType} from '../../content/ContentTypeAttr/ContentTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentTypeAttr = {
-  type: ResopnseType,
+  type: ContentTypeAttrResponseType,
   description: 'mutation for ofbiz createContentTypeAttr method',
-  args:{contentTypeAttrToBeAdded: {type: ContentTypeAttrInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentTypeAttrs/add?`, args.contentTypeAttrToBeAdded, req);
+    return postToUrl(`content/content/contentTypeAttrs/add?`, null, req);
   }
 };
 export {createContentTypeAttr};
 
 
 const updateContentTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentTypeAttr method',
   args:{contentTypeAttrToBeUpdated: {type: ContentTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContentTypeAttr};
 
 
 const deleteContentTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentTypeAttrByIdUpdated method',
   args:{contentTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

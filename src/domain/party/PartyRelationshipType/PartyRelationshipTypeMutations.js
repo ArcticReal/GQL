@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyRelationshipTypeResponseType} from '../../party/PartyRelationshipType/PartyRelationshipTypeResponseType.js';
 import {PartyRelationshipTypeInputType} from '../../party/PartyRelationshipType/PartyRelationshipTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyRelationshipType = {
-  type: ResopnseType,
+  type: PartyRelationshipTypeResponseType,
   description: 'mutation for ofbiz createPartyRelationshipType method',
-  args:{partyRelationshipTypeToBeAdded: {type: PartyRelationshipTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyRelationshipTypes/add?`, args.partyRelationshipTypeToBeAdded, req);
+    return postToUrl(`party/party/partyRelationshipTypes/add?`, null, req);
   }
 };
 export {createPartyRelationshipType};
 
 
 const updatePartyRelationshipType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyRelationshipType method',
   args:{partyRelationshipTypeToBeUpdated: {type: PartyRelationshipTypeInputType},partyRelationshipTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyRelationshipType};
 
 
 const deletePartyRelationshipTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyRelationshipTypeByIdUpdated method',
   args:{partyRelationshipTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

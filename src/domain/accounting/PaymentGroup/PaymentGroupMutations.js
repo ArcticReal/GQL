@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PaymentGroupResponseType} from '../../accounting/PaymentGroup/PaymentGroupResponseType.js';
 import {PaymentGroupInputType} from '../../accounting/PaymentGroup/PaymentGroupInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGroup = {
-  type: ResopnseType,
+  type: PaymentGroupResponseType,
   description: 'mutation for ofbiz createPaymentGroup method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPaymentGroup};
 
 
 const updatePaymentGroup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePaymentGroup method',
   args:{paymentGroupToBeUpdated: {type: PaymentGroupInputType},paymentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePaymentGroup};
 
 
 const deletePaymentGroupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePaymentGroupByIdUpdated method',
   args:{paymentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

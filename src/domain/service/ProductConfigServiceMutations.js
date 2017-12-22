@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createConfigOptionProductOption = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createConfigOptionProductOption method',
   args:{configItemId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},productId: {type: GraphQLString},configId: {type: GraphQLString},configOptionId: {type: GraphQLString},productOptionId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createConfigOptionProductOption};
 
 
 const createProdConfItemContentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createProdConfItemContentType method',
   args:{confItemContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createProdConfItemContentType};
 
 
 const deleteConfigOptionProductOption = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteConfigOptionProductOption method',
   args:{configItemId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},productId: {type: GraphQLString},configId: {type: GraphQLString},configOptionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {deleteConfigOptionProductOption};
 
 
 const deleteProdConfItemContentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteProdConfItemContentType method',
   args:{confItemContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {deleteProdConfItemContentType};
 
 
 const updateConfigOptionProductOption = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateConfigOptionProductOption method',
   args:{configItemId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},productId: {type: GraphQLString},configId: {type: GraphQLString},configOptionId: {type: GraphQLString},productOptionId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {updateConfigOptionProductOption};
 
 
 const updateProdConfItemContentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateProdConfItemContentType method',
   args:{confItemContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

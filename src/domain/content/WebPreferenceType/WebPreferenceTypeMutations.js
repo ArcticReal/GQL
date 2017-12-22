@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WebPreferenceTypeResponseType} from '../../content/WebPreferenceType/WebPreferenceTypeResponseType.js';
 import {WebPreferenceTypeInputType} from '../../content/WebPreferenceType/WebPreferenceTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWebPreferenceType = {
-  type: ResopnseType,
+  type: WebPreferenceTypeResponseType,
   description: 'mutation for ofbiz createWebPreferenceType method',
-  args:{webPreferenceTypeToBeAdded: {type: WebPreferenceTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/webPreferenceTypes/add?`, args.webPreferenceTypeToBeAdded, req);
+    return postToUrl(`content/webPreferenceTypes/add?`, null, req);
   }
 };
 export {createWebPreferenceType};
 
 
 const updateWebPreferenceType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWebPreferenceType method',
   args:{webPreferenceTypeToBeUpdated: {type: WebPreferenceTypeInputType},webPreferenceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWebPreferenceType};
 
 
 const deleteWebPreferenceTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWebPreferenceTypeByIdUpdated method',
   args:{webPreferenceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

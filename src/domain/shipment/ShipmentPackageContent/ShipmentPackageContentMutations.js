@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ShipmentPackageContentResponseType} from '../../shipment/ShipmentPackageContent/ShipmentPackageContentResponseType.js';
 import {ShipmentPackageContentInputType} from '../../shipment/ShipmentPackageContent/ShipmentPackageContentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentPackageContent = {
-  type: ResopnseType,
+  type: ShipmentPackageContentResponseType,
   description: 'mutation for ofbiz createShipmentPackageContent method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createShipmentPackageContent};
 
 
 const updateShipmentPackageContent = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShipmentPackageContent method',
   args:{shipmentPackageContentToBeUpdated: {type: ShipmentPackageContentInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateShipmentPackageContent};
 
 
 const deleteShipmentPackageContentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShipmentPackageContentByIdUpdated method',
   args:{shipmentPackageContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

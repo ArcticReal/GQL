@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {AcctgTransInputType} from '../../accounting/AcctgTrans/AcctgTransInputType.js';
+import {AcctgTransResponseType} from '../../accounting/AcctgTrans/AcctgTransResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAcctgTrans = {
-  type: ResopnseType,
+  type: AcctgTransResponseType,
   description: 'mutation for ofbiz createAcctgTrans method',
   args:{acctgTransToBeAdded: {type: AcctgTransInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createAcctgTrans};
 
 
 const updateAcctgTrans = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAcctgTrans method',
   args:{acctgTransToBeUpdated: {type: AcctgTransInputType},acctgTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateAcctgTrans};
 
 
 const deleteAcctgTransByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAcctgTransByIdUpdated method',
   args:{acctgTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

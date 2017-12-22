@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {BudgetItemResponseType} from '../../accounting/BudgetItem/BudgetItemResponseType.js';
 import {BudgetItemInputType} from '../../accounting/BudgetItem/BudgetItemInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createBudgetItem = {
-  type: ResopnseType,
+  type: BudgetItemResponseType,
   description: 'mutation for ofbiz createBudgetItem method',
-  args:{budgetItemToBeAdded: {type: BudgetItemInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/budget/budgetItems/add?`, args.budgetItemToBeAdded, req);
+    return postToUrl(`accounting/budget/budgetItems/add?`, null, req);
   }
 };
 export {createBudgetItem};
 
 
 const deleteBudgetItemByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteBudgetItemByIdUpdated method',
   args:{budgetItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteBudgetItemByIdUpdated};
 
 
 const updateBudgetItem = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateBudgetItem method',
   args:{budgetItemToBeUpdated: {type: BudgetItemInputType},budgetItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

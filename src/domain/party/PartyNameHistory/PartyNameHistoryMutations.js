@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PartyNameHistoryInputType} from '../../party/PartyNameHistory/PartyNameHistoryInputType.js';
+import {PartyNameHistoryResponseType} from '../../party/PartyNameHistory/PartyNameHistoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyNameHistory = {
-  type: ResopnseType,
+  type: PartyNameHistoryResponseType,
   description: 'mutation for ofbiz createPartyNameHistory method',
-  args:{},
+  args:{partyNameHistoryToBeAdded: {type: PartyNameHistoryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyNameHistorys/add?`, null, req);
+    return postToUrl(`party/party/partyNameHistorys/add?`, args.partyNameHistoryToBeAdded, req);
   }
 };
 export {createPartyNameHistory};
 
 
 const updatePartyNameHistory = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyNameHistory method',
   args:{partyNameHistoryToBeUpdated: {type: PartyNameHistoryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyNameHistory};
 
 
 const deletePartyNameHistoryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyNameHistoryByIdUpdated method',
   args:{partyNameHistoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

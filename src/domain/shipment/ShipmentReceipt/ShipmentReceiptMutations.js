@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ShipmentReceiptInputType} from '../../shipment/ShipmentReceipt/ShipmentReceiptInputType.js';
+import {ShipmentReceiptResponseType} from '../../shipment/ShipmentReceipt/ShipmentReceiptResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentReceipt = {
-  type: ResopnseType,
+  type: ShipmentReceiptResponseType,
   description: 'mutation for ofbiz createShipmentReceipt method',
   args:{shipmentReceiptToBeAdded: {type: ShipmentReceiptInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createShipmentReceipt};
 
 
 const updateShipmentReceipt = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShipmentReceipt method',
   args:{shipmentReceiptToBeUpdated: {type: ShipmentReceiptInputType},receiptId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateShipmentReceipt};
 
 
 const deleteShipmentReceiptByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShipmentReceiptByIdUpdated method',
   args:{shipmentReceiptId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

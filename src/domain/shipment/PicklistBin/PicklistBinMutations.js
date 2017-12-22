@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PicklistBinInputType} from '../../shipment/PicklistBin/PicklistBinInputType.js';
+import {PicklistBinResponseType} from '../../shipment/PicklistBin/PicklistBinResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPicklistBin = {
-  type: ResopnseType,
+  type: PicklistBinResponseType,
   description: 'mutation for ofbiz createPicklistBin method',
   args:{picklistBinToBeAdded: {type: PicklistBinInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPicklistBin};
 
 
 const updatePicklistBin = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePicklistBin method',
   args:{picklistBinToBeUpdated: {type: PicklistBinInputType},picklistBinId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePicklistBin};
 
 
 const deletePicklistBinByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePicklistBinByIdUpdated method',
   args:{picklistBinId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

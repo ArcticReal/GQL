@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ShipmentPackageRouteSegResponseType} from '../../shipment/ShipmentPackageRouteSeg/ShipmentPackageRouteSegResponseType.js';
 import {ShipmentPackageRouteSegInputType} from '../../shipment/ShipmentPackageRouteSeg/ShipmentPackageRouteSegInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentPackageRouteSeg = {
-  type: ResopnseType,
+  type: ShipmentPackageRouteSegResponseType,
   description: 'mutation for ofbiz createShipmentPackageRouteSeg method',
-  args:{shipmentPackageRouteSegToBeAdded: {type: ShipmentPackageRouteSegInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/shipmentPackageRouteSegs/add?`, args.shipmentPackageRouteSegToBeAdded, req);
+    return postToUrl(`shipment/shipment/shipmentPackageRouteSegs/add?`, null, req);
   }
 };
 export {createShipmentPackageRouteSeg};
 
 
 const updateShipmentPackageRouteSeg = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShipmentPackageRouteSeg method',
   args:{shipmentPackageRouteSegToBeUpdated: {type: ShipmentPackageRouteSegInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateShipmentPackageRouteSeg};
 
 
 const deleteShipmentPackageRouteSegByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShipmentPackageRouteSegByIdUpdated method',
   args:{shipmentPackageRouteSegId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

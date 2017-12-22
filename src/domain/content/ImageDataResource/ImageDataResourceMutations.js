@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ImageDataResourceInputType} from '../../content/ImageDataResource/ImageDataResourceInputType.js';
+import {ImageDataResourceResponseType} from '../../content/ImageDataResource/ImageDataResourceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createImageDataResource = {
-  type: ResopnseType,
+  type: ImageDataResourceResponseType,
   description: 'mutation for ofbiz createImageDataResource method',
   args:{imageDataResourceToBeAdded: {type: ImageDataResourceInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createImageDataResource};
 
 
 const deleteImageDataResourceByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteImageDataResourceByIdUpdated method',
   args:{imageDataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteImageDataResourceByIdUpdated};
 
 
 const updateImageDataResource = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateImageDataResource method',
   args:{imageDataResourceToBeUpdated: {type: ImageDataResourceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

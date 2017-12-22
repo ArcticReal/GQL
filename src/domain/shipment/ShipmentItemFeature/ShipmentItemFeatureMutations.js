@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ShipmentItemFeatureResponseType} from '../../shipment/ShipmentItemFeature/ShipmentItemFeatureResponseType.js';
 import {ShipmentItemFeatureInputType} from '../../shipment/ShipmentItemFeature/ShipmentItemFeatureInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentItemFeature = {
-  type: ResopnseType,
+  type: ShipmentItemFeatureResponseType,
   description: 'mutation for ofbiz createShipmentItemFeature method',
-  args:{shipmentItemFeatureToBeAdded: {type: ShipmentItemFeatureInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/shipmentItemFeatures/add?`, args.shipmentItemFeatureToBeAdded, req);
+    return postToUrl(`shipment/shipment/shipmentItemFeatures/add?`, null, req);
   }
 };
 export {createShipmentItemFeature};
 
 
 const deleteShipmentItemFeatureByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShipmentItemFeatureByIdUpdated method',
   args:{shipmentItemFeatureId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteShipmentItemFeatureByIdUpdated};
 
 
 const updateShipmentItemFeature = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShipmentItemFeature method',
   args:{shipmentItemFeatureToBeUpdated: {type: ShipmentItemFeatureInputType},shipmentItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

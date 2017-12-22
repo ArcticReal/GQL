@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FinAccountTypeGlAccountResponseType} from '../../accounting/FinAccountTypeGlAccount/FinAccountTypeGlAccountResponseType.js';
 import {FinAccountTypeGlAccountInputType} from '../../accounting/FinAccountTypeGlAccount/FinAccountTypeGlAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFinAccountTypeGlAccount = {
-  type: ResopnseType,
+  type: FinAccountTypeGlAccountResponseType,
   description: 'mutation for ofbiz createFinAccountTypeGlAccount method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createFinAccountTypeGlAccount};
 
 
 const deleteFinAccountTypeGlAccountByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFinAccountTypeGlAccountByIdUpdated method',
   args:{finAccountTypeGlAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFinAccountTypeGlAccountByIdUpdated};
 
 
 const updateFinAccountTypeGlAccount = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFinAccountTypeGlAccount method',
   args:{finAccountTypeGlAccountToBeUpdated: {type: FinAccountTypeGlAccountInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

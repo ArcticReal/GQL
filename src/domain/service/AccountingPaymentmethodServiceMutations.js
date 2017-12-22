@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const alwaysApproveCCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz alwaysApproveCCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {alwaysApproveCCProcessor};
 
 
 const alwaysApproveEFTProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz alwaysApproveEFTProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},eftAccount: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {alwaysApproveEFTProcessor};
 
 
 const alwaysApproveGCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz alwaysApproveGCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},giftCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {alwaysApproveGCProcessor};
 
 
 const alwaysApproveWithCaptureCCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz alwaysApproveWithCaptureCCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {alwaysApproveWithCaptureCCProcessor};
 
 
 const alwaysBadCardNumberCCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz alwaysBadCardNumberCCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {alwaysBadCardNumberCCProcessor};
 
 
 const alwaysBadExpireCCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz alwaysBadExpireCCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {alwaysBadExpireCCProcessor};
 
 
 const alwaysDeclineCCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz alwaysDeclineCCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {alwaysDeclineCCProcessor};
 
 
 const alwaysDeclineEFTProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz alwaysDeclineEFTProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},eftAccount: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {alwaysDeclineEFTProcessor};
 
 
 const alwaysDeclineGCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz alwaysDeclineGCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},giftCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {alwaysDeclineGCProcessor};
 
 
 const alwaysFailCCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz alwaysFailCCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {alwaysFailCCProcessor};
 
 
 const alwaysNsfCCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz alwaysNsfCCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {alwaysNsfCCProcessor};
 
 
 const authOrderPaymentPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz authOrderPaymentPreference method',
   args:{orderPaymentPreferenceId: {type: GraphQLString},overrideAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {authOrderPaymentPreference};
 
 
 const authOrderPayments = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz authOrderPayments method',
   args:{orderId: {type: GraphQLString},reAuth: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {authOrderPayments};
 
 
 const badExpireEvenCCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz badExpireEvenCCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {badExpireEvenCCProcessor};
 
 
 const buildCcExpireDate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz buildCcExpireDate method',
   args:{expMonth: {type: GraphQLString},expYear: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {buildCcExpireDate};
 
 
 const captureBillingAccountPayment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz captureBillingAccountPayment method',
   args:{invoiceId: {type: GraphQLString},billingAccountId: {type: GraphQLString},captureAmount: {type: GraphQLFloat},orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {captureBillingAccountPayment};
 
 
 const captureBillingAccountPayments = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz captureBillingAccountPayments method',
   args:{billingAccountId: {type: GraphQLString},invoiceId: {type: GraphQLString},captureAmount: {type: GraphQLFloat},orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {captureBillingAccountPayments};
 
 
 const captureOrderPayments = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz captureOrderPayments method',
   args:{orderId: {type: GraphQLString},captureAmount: {type: GraphQLFloat},invoiceId: {type: GraphQLString},billingAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {captureOrderPayments};
 
 
 const capturePaymentsByInvoice = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz capturePaymentsByInvoice method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {capturePaymentsByInvoice};
 
 
 const ccAuthInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz ccAuthInterface method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {ccAuthInterface};
 
 
 const ccCaptureInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz ccCaptureInterface method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},captureAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {ccCaptureInterface};
 
 
 const ccCreditInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz ccCreditInterface method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},referenceCode: {type: GraphQLString},creditAmount: {type: GraphQLFloat},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {ccCreditInterface};
 
 
 const clearCreditCardDataAndExpire = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz clearCreditCardDataAndExpire method',
   args:{paymentMethodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {clearCreditCardDataAndExpire};
 
 
 const createCheckAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCheckAccount method',
   args:{nameOnAccount: {type: GraphQLString},bankName: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},companyNameOnAccount: {type: GraphQLString},routingNumber: {type: GraphQLString},paymentMethodId: {type: GraphQLString},accountType: {type: GraphQLString},description: {type: GraphQLString},partyId: {type: GraphQLString},accountNumber: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {createCheckAccount};
 
 
 const createCreditCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCreditCard method',
   args:{lastNameOnCard: {type: GraphQLString},firstNameOnCard: {type: GraphQLString},cardType: {type: GraphQLString},expireDate: {type: GraphQLString},cardNumber: {type: GraphQLString},issueNumber: {type: GraphQLString},description: {type: GraphQLString},lastFailedAuthDate: {type: GraphQLString},consecutiveFailedNsf: {type: GraphQLInt},contactMechId: {type: GraphQLString},companyNameOnCard: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},expMonth: {type: GraphQLString},titleOnCard: {type: GraphQLString},expYear: {type: GraphQLString},paymentMethodId: {type: GraphQLString},middleNameOnCard: {type: GraphQLString},validFromDate: {type: GraphQLString},productStoreId: {type: GraphQLString},consecutiveFailedAuths: {type: GraphQLInt},partyId: {type: GraphQLString},lastFailedNsfDate: {type: GraphQLString},suffixOnCard: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {createCreditCard};
 
 
 const createCreditCardAndAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCreditCardAndAddress method',
   args:{paymentMethodId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {createCreditCardAndAddress};
 
 
 const createCreditCardTypeGlAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCreditCardTypeGlAccount method',
   args:{cardType: {type: GraphQLString},glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {createCreditCardTypeGlAccount};
 
 
 const createEftAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEftAccount method',
   args:{routingNumber: {type: GraphQLString},nameOnAccount: {type: GraphQLString},accountType: {type: GraphQLString},bankName: {type: GraphQLString},accountNumber: {type: GraphQLString},fromDate: {type: GraphQLString},companyNameOnAccount: {type: GraphQLString},paymentMethodId: {type: GraphQLString},description: {type: GraphQLString},partyId: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {createEftAccount};
 
 
 const createEftAccountAndAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEftAccountAndAddress method',
   args:{paymentMethodId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {createEftAccountAndAddress};
 
 
 const createGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createGiftCard method',
   args:{cardNumber: {type: GraphQLString},fromDate: {type: GraphQLString},expMonth: {type: GraphQLString},expYear: {type: GraphQLString},paymentMethodId: {type: GraphQLString},description: {type: GraphQLString},pinNumber: {type: GraphQLString},expireDate: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {createGiftCard};
 
 
 const createPayPalPaymentMethod = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPayPalPaymentMethod method',
   args:{expressCheckoutToken: {type: GraphQLString},avsAddr: {type: GraphQLString},payerId: {type: GraphQLString},description: {type: GraphQLString},payerStatus: {type: GraphQLString},contactMechId: {type: GraphQLString},transactionId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},paymentMethodId: {type: GraphQLString},avsZip: {type: GraphQLString},correlationId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {createPayPalPaymentMethod};
 
 
 const createPaymentGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPaymentGroup method',
   args:{paymentGroupName: {type: GraphQLString},paymentGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {createPaymentGroup};
 
 
 const createPaymentGroupMember = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPaymentGroupMember method',
   args:{paymentGroupId: {type: GraphQLString},paymentId: {type: GraphQLString},fromDate: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {createPaymentGroupMember};
 
 
 const createPaymentMethodType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPaymentMethodType method',
   args:{defaultGlAccountId: {type: GraphQLString},description: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {createPaymentMethodType};
 
 
 const creditOrderPaymentPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz creditOrderPaymentPreference method',
   args:{orderPaymentPreferenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {creditOrderPaymentPreference};
 
 
 const deleteCreditCardTypeGlAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCreditCardTypeGlAccount method',
   args:{cardType: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {deleteCreditCardTypeGlAccount};
 
 
 const deletePaymentGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePaymentGroup method',
   args:{paymentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {deletePaymentGroup};
 
 
 const deletePaymentGroupMember = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePaymentGroupMember method',
   args:{paymentGroupId: {type: GraphQLString},fromDate: {type: GraphQLString},paymentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {deletePaymentGroupMember};
 
 
 const deletePaymentMethod = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePaymentMethod method',
   args:{paymentMethodId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {deletePaymentMethod};
 
 
 const deletePaymentMethodType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePaymentMethodType method',
   args:{paymentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {deletePaymentMethodType};
 
 
 const eftProcessInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz eftProcessInterface method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},eftAccount: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {eftProcessInterface};
 
 
 const expirePaymentGroupMember = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz expirePaymentGroupMember method',
   args:{paymentGroupId: {type: GraphQLString},fromDate: {type: GraphQLString},paymentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {expirePaymentGroupMember};
 
 
 const giftCardProcessInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz giftCardProcessInterface method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},giftCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {giftCardProcessInterface};
 
 
 const manualForcedCcAuthTransaction = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz manualForcedCcAuthTransaction method',
   args:{amount: {type: GraphQLFloat},paymentMethodId: {type: GraphQLString},productStoreId: {type: GraphQLString},securityCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {manualForcedCcAuthTransaction};
 
 
 const manualForcedCcTransaction = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz manualForcedCcTransaction method',
   args:{countryGeoId: {type: GraphQLString},lastName: {type: GraphQLString},amount: {type: GraphQLFloat},city: {type: GraphQLString},firstNameOnCard: {type: GraphQLString},address1: {type: GraphQLString},postalCode: {type: GraphQLString},cardType: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},transactionType: {type: GraphQLString},expMonth: {type: GraphQLString},firstName: {type: GraphQLString},infoString: {type: GraphQLString},orderPaymentPreferenceId: {type: GraphQLString},lastNameOnCard: {type: GraphQLString},expYear: {type: GraphQLString},productStoreId: {type: GraphQLString},cardNumber: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},titleOnCard: {type: GraphQLString},address2: {type: GraphQLString},middleNameOnCard: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},referenceCode: {type: GraphQLString},suffixOnCard: {type: GraphQLString},companyNameOnCard: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {manualForcedCcTransaction};
 
 
 const payPalCaptureInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalCaptureInterface method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},captureAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {payPalCaptureInterface};
 
 
 const payPalDoExpressCheckoutInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalDoExpressCheckoutInterface method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {payPalDoExpressCheckoutInterface};
 
 
 const payPalGetExpressCheckoutInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalGetExpressCheckoutInterface method',
   args:{cart: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {payPalGetExpressCheckoutInterface};
 
 
 const payPalProcessInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalProcessInterface method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},payPalPaymentMethod: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {payPalProcessInterface};
 
 
 const payPalSetExpressCheckoutInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalSetExpressCheckoutInterface method',
   args:{cart: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {payPalSetExpressCheckoutInterface};
 
 
 const paymentCreditInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz paymentCreditInterface method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},referenceCode: {type: GraphQLString},creditAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {paymentCreditInterface};
 
 
 const paymentProcessInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz paymentProcessInterface method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {paymentProcessInterface};
 
 
 const paymentRefundInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz paymentRefundInterface method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,7 +596,7 @@ export {paymentRefundInterface};
 
 
 const paymentReleaseInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz paymentReleaseInterface method',
   args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -607,7 +607,7 @@ export {paymentReleaseInterface};
 
 
 const processAuthResult = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processAuthResult method',
   args:{processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},authResult: {type: GraphQLBoolean},authRefNum: {type: GraphQLString},scoreCode: {type: GraphQLString},currencyUomId: {type: GraphQLString},authCode: {type: GraphQLString},serviceTypeEnum: {type: GraphQLString},authMessage: {type: GraphQLString},avsCode: {type: GraphQLString},authFlag: {type: GraphQLString},cvCode: {type: GraphQLString},authAltRefNum: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -618,7 +618,7 @@ export {processAuthResult};
 
 
 const processCaptureResult = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processCaptureResult method',
   args:{captureResult: {type: GraphQLBoolean},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},captureRefNum: {type: GraphQLString},captureAmount: {type: GraphQLFloat},captureFlag: {type: GraphQLString},currencyUomId: {type: GraphQLString},serviceTypeEnum: {type: GraphQLString},captureAltRefNum: {type: GraphQLString},captureMessage: {type: GraphQLString},invoiceId: {type: GraphQLString},payToPartyId: {type: GraphQLString},captureCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -629,7 +629,7 @@ export {processCaptureResult};
 
 
 const processCaptureSplitPayment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processCaptureSplitPayment method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},splitAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -640,7 +640,7 @@ export {processCaptureSplitPayment};
 
 
 const processCreditResult = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processCreditResult method',
   args:{creditResult: {type: GraphQLBoolean},creditRefNum: {type: GraphQLString},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditAmount: {type: GraphQLFloat},creditMessage: {type: GraphQLString},currencyUomId: {type: GraphQLString},creditCode: {type: GraphQLString},creditFlag: {type: GraphQLString},creditAltRefNum: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -651,7 +651,7 @@ export {processCreditResult};
 
 
 const processPaymentServiceError = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processPaymentServiceError method',
   args:{paymentServiceTypeEnumId: {type: GraphQLString},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},transCodeEnumId: {type: GraphQLString},serviceResultMap: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -662,7 +662,7 @@ export {processPaymentServiceError};
 
 
 const processRefundResult = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processRefundResult method',
   args:{refundResult: {type: GraphQLBoolean},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundRefNum: {type: GraphQLString},refundAmount: {type: GraphQLFloat},refundMessage: {type: GraphQLString},currencyUomId: {type: GraphQLString},serviceTypeEnum: {type: GraphQLString},refundFlag: {type: GraphQLString},invoiceId: {type: GraphQLString},refundAltRefNum: {type: GraphQLString},payFromPartyId: {type: GraphQLString},payToPartyId: {type: GraphQLString},refundCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -673,7 +673,7 @@ export {processRefundResult};
 
 
 const processReleaseResult = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processReleaseResult method',
   args:{releaseAmount: {type: GraphQLFloat},releaseRefNum: {type: GraphQLString},releaseResult: {type: GraphQLBoolean},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},releaseFlag: {type: GraphQLString},currencyUomId: {type: GraphQLString},releaseAltRefNum: {type: GraphQLString},releaseCode: {type: GraphQLString},releaseMessage: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -684,7 +684,7 @@ export {processReleaseResult};
 
 
 const refundOrderPaymentPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz refundOrderPaymentPreference method',
   args:{amount: {type: GraphQLFloat},orderPaymentPreferenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -695,7 +695,7 @@ export {refundOrderPaymentPreference};
 
 
 const refundPayment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz refundPayment method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -706,7 +706,7 @@ export {refundPayment};
 
 
 const releaseOrderPaymentPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz releaseOrderPaymentPreference method',
   args:{orderPaymentPreferenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {releaseOrderPaymentPreference};
 
 
 const releaseOrderPayments = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz releaseOrderPayments method',
   args:{orderId: {type: GraphQLString},orderPaymentPreferenceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {releaseOrderPayments};
 
 
 const retryFailedAuthNsfs = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz retryFailedAuthNsfs method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {retryFailedAuthNsfs};
 
 
 const retryFailedAuths = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz retryFailedAuths method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -750,7 +750,7 @@ export {retryFailedAuths};
 
 
 const retryFailedOrderAuth = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz retryFailedOrderAuth method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -761,7 +761,7 @@ export {retryFailedOrderAuth};
 
 
 const savePaymentGatewayResponse = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz savePaymentGatewayResponse method',
   args:{paymentGatewayResponse: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -772,7 +772,7 @@ export {savePaymentGatewayResponse};
 
 
 const savePaymentGatewayResponseAndMessages = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz savePaymentGatewayResponseAndMessages method',
   args:{paymentGatewayResponse: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -783,7 +783,7 @@ export {savePaymentGatewayResponseAndMessages};
 
 
 const setPaymentMethodAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setPaymentMethodAddress method',
   args:{paymentMethodId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -794,7 +794,7 @@ export {setPaymentMethodAddress};
 
 
 const testCCCapture = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testCCCapture method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},captureAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -805,7 +805,7 @@ export {testCCCapture};
 
 
 const testCCCaptureWithReAuth = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testCCCaptureWithReAuth method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},captureAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -816,7 +816,7 @@ export {testCCCaptureWithReAuth};
 
 
 const testCCProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testCCProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -827,7 +827,7 @@ export {testCCProcessor};
 
 
 const testCCProcessorCaptureAlwaysDecline = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testCCProcessorCaptureAlwaysDecline method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},captureAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -838,7 +838,7 @@ export {testCCProcessorCaptureAlwaysDecline};
 
 
 const testCCProcessorWithCapture = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testCCProcessorWithCapture method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -849,7 +849,7 @@ export {testCCProcessorWithCapture};
 
 
 const testCCRefund = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testCCRefund method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -860,7 +860,7 @@ export {testCCRefund};
 
 
 const testCCRefundFailure = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testCCRefundFailure method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -871,7 +871,7 @@ export {testCCRefundFailure};
 
 
 const testCCRelease = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testCCRelease method',
   args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -882,7 +882,7 @@ export {testCCRelease};
 
 
 const testEFTProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEFTProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},eftAccount: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -893,7 +893,7 @@ export {testEFTProcessor};
 
 
 const testEFTRelease = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEFTRelease method',
   args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -904,7 +904,7 @@ export {testEFTRelease};
 
 
 const testGCRelease = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testGCRelease method',
   args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -915,7 +915,7 @@ export {testGCRelease};
 
 
 const testRandomAuthorize = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testRandomAuthorize method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -926,7 +926,7 @@ export {testRandomAuthorize};
 
 
 const updateCheckAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCheckAccount method',
   args:{nameOnAccount: {type: GraphQLString},paymentMethodId: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},companyNameOnAccount: {type: GraphQLString},routingNumber: {type: GraphQLString},accountType: {type: GraphQLString},description: {type: GraphQLString},bankName: {type: GraphQLString},partyId: {type: GraphQLString},accountNumber: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -937,7 +937,7 @@ export {updateCheckAccount};
 
 
 const updateCreditCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCreditCard method',
   args:{paymentMethodId: {type: GraphQLString},firstNameOnCard: {type: GraphQLString},issueNumber: {type: GraphQLString},cardType: {type: GraphQLString},description: {type: GraphQLString},lastFailedAuthDate: {type: GraphQLString},consecutiveFailedNsf: {type: GraphQLInt},contactMechId: {type: GraphQLString},companyNameOnCard: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},expMonth: {type: GraphQLString},titleOnCard: {type: GraphQLString},lastNameOnCard: {type: GraphQLString},expYear: {type: GraphQLString},middleNameOnCard: {type: GraphQLString},validFromDate: {type: GraphQLString},expireDate: {type: GraphQLString},productStoreId: {type: GraphQLString},consecutiveFailedAuths: {type: GraphQLInt},partyId: {type: GraphQLString},lastFailedNsfDate: {type: GraphQLString},cardNumber: {type: GraphQLString},suffixOnCard: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -948,7 +948,7 @@ export {updateCreditCard};
 
 
 const updateCreditCardAndAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCreditCardAndAddress method',
   args:{paymentMethodId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -959,7 +959,7 @@ export {updateCreditCardAndAddress};
 
 
 const updateCreditCardTypeGlAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCreditCardTypeGlAccount method',
   args:{cardType: {type: GraphQLString},glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -970,7 +970,7 @@ export {updateCreditCardTypeGlAccount};
 
 
 const updateEftAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEftAccount method',
   args:{routingNumber: {type: GraphQLString},nameOnAccount: {type: GraphQLString},paymentMethodId: {type: GraphQLString},accountType: {type: GraphQLString},bankName: {type: GraphQLString},accountNumber: {type: GraphQLString},fromDate: {type: GraphQLString},companyNameOnAccount: {type: GraphQLString},description: {type: GraphQLString},partyId: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -981,7 +981,7 @@ export {updateEftAccount};
 
 
 const updateEftAccountAndAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEftAccountAndAddress method',
   args:{paymentMethodId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -992,7 +992,7 @@ export {updateEftAccountAndAddress};
 
 
 const updateGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateGiftCard method',
   args:{paymentMethodId: {type: GraphQLString},cardNumber: {type: GraphQLString},fromDate: {type: GraphQLString},expMonth: {type: GraphQLString},expYear: {type: GraphQLString},description: {type: GraphQLString},pinNumber: {type: GraphQLString},expireDate: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1003,7 +1003,7 @@ export {updateGiftCard};
 
 
 const updatePayPalPaymentMethod = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePayPalPaymentMethod method',
   args:{paymentMethodId: {type: GraphQLString},expressCheckoutToken: {type: GraphQLString},avsAddr: {type: GraphQLString},payerId: {type: GraphQLString},avsZip: {type: GraphQLString},correlationId: {type: GraphQLString},payerStatus: {type: GraphQLString},contactMechId: {type: GraphQLString},transactionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1014,7 +1014,7 @@ export {updatePayPalPaymentMethod};
 
 
 const updatePaymentGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePaymentGroup method',
   args:{paymentGroupId: {type: GraphQLString},paymentGroupName: {type: GraphQLString},paymentGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1025,7 +1025,7 @@ export {updatePaymentGroup};
 
 
 const updatePaymentGroupMember = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePaymentGroupMember method',
   args:{paymentGroupId: {type: GraphQLString},fromDate: {type: GraphQLString},paymentId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1036,7 +1036,7 @@ export {updatePaymentGroupMember};
 
 
 const updatePaymentMethodAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePaymentMethodAddress method',
   args:{oldContactMechId: {type: GraphQLString},contactMechId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1047,7 +1047,7 @@ export {updatePaymentMethodAddress};
 
 
 const updatePaymentMethodType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePaymentMethodType method',
   args:{paymentMethodTypeId: {type: GraphQLString},defaultGlAccountId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1058,7 +1058,7 @@ export {updatePaymentMethodType};
 
 
 const verifyCreditCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz verifyCreditCard method',
   args:{mode: {type: GraphQLString},paymentMethodId: {type: GraphQLString},oldPaymentMethodId: {type: GraphQLString},productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

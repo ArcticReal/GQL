@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {MimeTypeHtmlTemplateResponseType} from '../../content/MimeTypeHtmlTemplate/MimeTypeHtmlTemplateResponseType.js';
 import {MimeTypeHtmlTemplateInputType} from '../../content/MimeTypeHtmlTemplate/MimeTypeHtmlTemplateInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMimeTypeHtmlTemplate = {
-  type: ResopnseType,
+  type: MimeTypeHtmlTemplateResponseType,
   description: 'mutation for ofbiz createMimeTypeHtmlTemplate method',
-  args:{mimeTypeHtmlTemplateToBeAdded: {type: MimeTypeHtmlTemplateInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/mimeType/mimeTypeHtmlTemplates/add?`, args.mimeTypeHtmlTemplateToBeAdded, req);
+    return postToUrl(`content/mimeType/mimeTypeHtmlTemplates/add?`, null, req);
   }
 };
 export {createMimeTypeHtmlTemplate};
 
 
 const deleteMimeTypeHtmlTemplateByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteMimeTypeHtmlTemplateByIdUpdated method',
   args:{mimeTypeHtmlTemplateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteMimeTypeHtmlTemplateByIdUpdated};
 
 
 const updateMimeTypeHtmlTemplate = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateMimeTypeHtmlTemplate method',
   args:{mimeTypeHtmlTemplateToBeUpdated: {type: MimeTypeHtmlTemplateInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

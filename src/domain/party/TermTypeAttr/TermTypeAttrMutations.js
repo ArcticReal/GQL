@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {TermTypeAttrResponseType} from '../../party/TermTypeAttr/TermTypeAttrResponseType.js';
 import {TermTypeAttrInputType} from '../../party/TermTypeAttr/TermTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTermTypeAttr = {
-  type: ResopnseType,
+  type: TermTypeAttrResponseType,
   description: 'mutation for ofbiz createTermTypeAttr method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createTermTypeAttr};
 
 
 const updateTermTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTermTypeAttr method',
   args:{termTypeAttrToBeUpdated: {type: TermTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTermTypeAttr};
 
 
 const deleteTermTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTermTypeAttrByIdUpdated method',
   args:{termTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

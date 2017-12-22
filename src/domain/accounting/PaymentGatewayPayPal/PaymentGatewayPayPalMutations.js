@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PaymentGatewayPayPalResponseType} from '../../accounting/PaymentGatewayPayPal/PaymentGatewayPayPalResponseType.js';
 import {PaymentGatewayPayPalInputType} from '../../accounting/PaymentGatewayPayPal/PaymentGatewayPayPalInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGatewayPayPal = {
-  type: ResopnseType,
+  type: PaymentGatewayPayPalResponseType,
   description: 'mutation for ofbiz createPaymentGatewayPayPal method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPaymentGatewayPayPal};
 
 
 const updatePaymentGatewayPayPal = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePaymentGatewayPayPal method',
   args:{paymentGatewayPayPalToBeUpdated: {type: PaymentGatewayPayPalInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePaymentGatewayPayPal};
 
 
 const deletePaymentGatewayPayPalByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePaymentGatewayPayPalByIdUpdated method',
   args:{paymentGatewayPayPalId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

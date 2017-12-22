@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addToCart = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz addToCart method',
   args:{allRequestParams: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addToCart};
 
 
 const removeFromCart = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz removeFromCart method',
   args:{allRequestParams: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {

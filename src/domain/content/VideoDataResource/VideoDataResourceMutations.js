@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {VideoDataResourceInputType} from '../../content/VideoDataResource/VideoDataResourceInputType.js';
+import {VideoDataResourceResponseType} from '../../content/VideoDataResource/VideoDataResourceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createVideoDataResource = {
-  type: ResopnseType,
+  type: VideoDataResourceResponseType,
   description: 'mutation for ofbiz createVideoDataResource method',
-  args:{},
+  args:{videoDataResourceToBeAdded: {type: VideoDataResourceInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/dataResource/videoDataResources/add?`, null, req);
+    return postToUrl(`content/dataResource/videoDataResources/add?`, args.videoDataResourceToBeAdded, req);
   }
 };
 export {createVideoDataResource};
 
 
 const updateVideoDataResource = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateVideoDataResource method',
   args:{videoDataResourceToBeUpdated: {type: VideoDataResourceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateVideoDataResource};
 
 
 const deleteVideoDataResourceByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteVideoDataResourceByIdUpdated method',
   args:{videoDataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

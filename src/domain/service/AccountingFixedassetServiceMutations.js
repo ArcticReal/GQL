@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addFixedAssetProduct = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addFixedAssetProduct method',
   args:{productId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},fixedAssetProductTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},comments: {type: GraphQLString},quantity: {type: GraphQLFloat},sequenceNum: {type: GraphQLInt},quantityUomId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addFixedAssetProduct};
 
 
 const calculateFixedAssetDepreciation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz calculateFixedAssetDepreciation method',
   args:{fixedAssetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {calculateFixedAssetDepreciation};
 
 
 const cancelFixedAssetStdCost = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelFixedAssetStdCost method',
   args:{fromDate: {type: GraphQLString},fixedAssetStdCostTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},amountUomId: {type: GraphQLString},amount: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {cancelFixedAssetStdCost};
 
 
 const checkUpdateFixedAssetDepreciation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkUpdateFixedAssetDepreciation method',
   args:{acctgTransId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {checkUpdateFixedAssetDepreciation};
 
 
 const createAccommodationClass = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAccommodationClass method',
   args:{parentClassId: {type: GraphQLString},description: {type: GraphQLString},accommodationClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createAccommodationClass};
 
 
 const createAccommodationMap = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAccommodationMap method',
   args:{accommodationMapId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},numberOfSpaces: {type: GraphQLInt},accommodationClassId: {type: GraphQLString},accommodationMapTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createAccommodationMap};
 
 
 const createAccommodationMapType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAccommodationMapType method',
   args:{description: {type: GraphQLString},accommodationMapTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createAccommodationMapType};
 
 
 const createFixedAsset = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAsset method',
   args:{fixedAssetTypeId: {type: GraphQLString},dateNextService: {type: GraphQLString},roleTypeId: {type: GraphQLString},dateAcquired: {type: GraphQLString},purchaseCost: {type: GraphQLFloat},purchaseCostUomId: {type: GraphQLString},productionCapacity: {type: GraphQLFloat},serialNumber: {type: GraphQLString},classEnumId: {type: GraphQLString},fixedAssetName: {type: GraphQLString},acquireOrderId: {type: GraphQLString},uomId: {type: GraphQLString},locatedAtLocationSeqId: {type: GraphQLString},actualEndOfLife: {type: GraphQLString},dateLastServiced: {type: GraphQLString},acquireOrderItemSeqId: {type: GraphQLString},calendarId: {type: GraphQLString},salvageValue: {type: GraphQLFloat},fixedAssetId: {type: GraphQLString},parentFixedAssetId: {type: GraphQLString},partyId: {type: GraphQLString},expectedEndOfLife: {type: GraphQLString},locatedAtFacilityId: {type: GraphQLString},instanceOfProductId: {type: GraphQLString},depreciation: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createFixedAsset};
 
 
 const createFixedAssetAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetAttribute method',
   args:{fixedAssetId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createFixedAssetAttribute};
 
 
 const createFixedAssetDepMethod = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetDepMethod method',
   args:{fixedAssetId: {type: GraphQLString},depreciationCustomMethodId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createFixedAssetDepMethod};
 
 
 const createFixedAssetGeoPoint = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetGeoPoint method',
   args:{fixedAssetId: {type: GraphQLString},geoPointId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createFixedAssetGeoPoint};
 
 
 const createFixedAssetIdent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetIdent method',
   args:{fixedAssetId: {type: GraphQLString},fixedAssetIdentTypeId: {type: GraphQLString},idValue: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createFixedAssetIdent};
 
 
 const createFixedAssetIdentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetIdentType method',
   args:{description: {type: GraphQLString},fixedAssetIdentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createFixedAssetIdentType};
 
 
 const createFixedAssetMaint = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetMaint method',
   args:{fixedAssetId: {type: GraphQLString},intervalUomId: {type: GraphQLString},statusId: {type: GraphQLString},maintTemplateWorkEffortId: {type: GraphQLString},purchaseOrderId: {type: GraphQLString},estimatedStartDate: {type: GraphQLString},scheduleWorkEffortId: {type: GraphQLString},intervalQuantity: {type: GraphQLFloat},productMaintTypeId: {type: GraphQLString},intervalMeterTypeId: {type: GraphQLString},productMaintSeqId: {type: GraphQLString},estimatedCompletionDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createFixedAssetMaint};
 
 
 const createFixedAssetMaintOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetMaintOrder method',
   args:{orderId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},maintHistSeqId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createFixedAssetMaintOrder};
 
 
 const createFixedAssetMeter = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetMeter method',
   args:{productMeterTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},readingDate: {type: GraphQLString},workEffortId: {type: GraphQLString},readingReasonEnumId: {type: GraphQLString},maintHistSeqId: {type: GraphQLString},meterValue: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createFixedAssetMeter};
 
 
 const createFixedAssetProductType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetProductType method',
   args:{description: {type: GraphQLString},fixedAssetProductTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createFixedAssetProductType};
 
 
 const createFixedAssetRegistration = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetRegistration method',
   args:{fixedAssetId: {type: GraphQLString},fromDate: {type: GraphQLString},registrationNumber: {type: GraphQLString},registrationDate: {type: GraphQLString},licenseNumber: {type: GraphQLString},govAgencyPartyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createFixedAssetRegistration};
 
 
 const createFixedAssetStdCost = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetStdCost method',
   args:{fromDate: {type: GraphQLString},fixedAssetStdCostTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},amountUomId: {type: GraphQLString},amount: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createFixedAssetStdCost};
 
 
 const createFixedAssetStdCostType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetStdCostType method',
   args:{parentTypeId: {type: GraphQLString},fixedAssetStdCostTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {createFixedAssetStdCostType};
 
 
 const createFixedAssetType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},fixedAssetTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {createFixedAssetType};
 
 
 const createFixedAssetTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetTypeAttr method',
   args:{fixedAssetTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {createFixedAssetTypeAttr};
 
 
 const createFixedAssetTypeGlAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFixedAssetTypeGlAccount method',
   args:{organizationPartyId: {type: GraphQLString},depGlAccountId: {type: GraphQLString},fixedAssetTypeId: {type: GraphQLString},profitGlAccountId: {type: GraphQLString},lossGlAccountId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},accDepGlAccountId: {type: GraphQLString},assetGlAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {createFixedAssetTypeGlAccount};
 
 
 const createMaintsFromTimeInterval = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createMaintsFromTimeInterval method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {createMaintsFromTimeInterval};
 
 
 const createPartyFixedAssetAssignment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyFixedAssetAssignment method',
   args:{roleTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},comments: {type: GraphQLString},allocatedDate: {type: GraphQLString},statusId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {createPartyFixedAssetAssignment};
 
 
 const deleteAccommodationClass = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAccommodationClass method',
   args:{accommodationClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {deleteAccommodationClass};
 
 
 const deleteAccommodationMap = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAccommodationMap method',
   args:{accommodationMapId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {deleteAccommodationMap};
 
 
 const deleteAccommodationMapType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAccommodationMapType method',
   args:{accommodationMapTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {deleteAccommodationMapType};
 
 
 const deleteFixedAssetAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetAttribute method',
   args:{fixedAssetId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {deleteFixedAssetAttribute};
 
 
 const deleteFixedAssetDepMethod = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetDepMethod method',
   args:{fixedAssetId: {type: GraphQLString},depreciationCustomMethodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {deleteFixedAssetDepMethod};
 
 
 const deleteFixedAssetGeoPoint = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetGeoPoint method',
   args:{fromDate: {type: GraphQLString},fixedAssetId: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {deleteFixedAssetGeoPoint};
 
 
 const deleteFixedAssetIdentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetIdentType method',
   args:{fixedAssetIdentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {deleteFixedAssetIdentType};
 
 
 const deleteFixedAssetMaint = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetMaint method',
   args:{fixedAssetId: {type: GraphQLString},maintHistSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {deleteFixedAssetMaint};
 
 
 const deleteFixedAssetMaintOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetMaintOrder method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},maintHistSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {deleteFixedAssetMaintOrder};
 
 
 const deleteFixedAssetMeter = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetMeter method',
   args:{productMeterTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},readingDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {deleteFixedAssetMeter};
 
 
 const deleteFixedAssetProductType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetProductType method',
   args:{fixedAssetProductTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {deleteFixedAssetProductType};
 
 
 const deleteFixedAssetRegistration = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetRegistration method',
   args:{fromDate: {type: GraphQLString},fixedAssetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {deleteFixedAssetRegistration};
 
 
 const deleteFixedAssetStdCostType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetStdCostType method',
   args:{fixedAssetStdCostTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {deleteFixedAssetStdCostType};
 
 
 const deleteFixedAssetType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetType method',
   args:{fixedAssetTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {deleteFixedAssetType};
 
 
 const deleteFixedAssetTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetTypeAttr method',
   args:{fixedAssetTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {deleteFixedAssetTypeAttr};
 
 
 const deleteFixedAssetTypeGlAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteFixedAssetTypeGlAccount method',
   args:{fixedAssetTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {deleteFixedAssetTypeGlAccount};
 
 
 const deletePartyFixedAssetAssignment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyFixedAssetAssignment method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {deletePartyFixedAssetAssignment};
 
 
 const doubleDecliningBalanceDepreciation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz doubleDecliningBalanceDepreciation method',
   args:{purchaseCost: {type: GraphQLFloat},assetAcquiredYear: {type: GraphQLInt},usageYears: {type: GraphQLInt},salvageValue: {type: GraphQLFloat},expEndOfLifeYear: {type: GraphQLInt},fixedAssetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {doubleDecliningBalanceDepreciation};
 
 
 const fixedAssetDepCalcInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz fixedAssetDepCalcInterface method',
   args:{purchaseCost: {type: GraphQLFloat},assetAcquiredYear: {type: GraphQLInt},usageYears: {type: GraphQLInt},salvageValue: {type: GraphQLFloat},expEndOfLifeYear: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {fixedAssetDepCalcInterface};
 
 
 const removeFixedAssetIdent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeFixedAssetIdent method',
   args:{fixedAssetId: {type: GraphQLString},fixedAssetIdentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {removeFixedAssetIdent};
 
 
 const removeFixedAssetProduct = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeFixedAssetProduct method',
   args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},fixedAssetProductTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {removeFixedAssetProduct};
 
 
 const straightLineDepreciation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz straightLineDepreciation method',
   args:{purchaseCost: {type: GraphQLFloat},assetAcquiredYear: {type: GraphQLInt},usageYears: {type: GraphQLInt},salvageValue: {type: GraphQLFloat},expEndOfLifeYear: {type: GraphQLInt},fixedAssetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {straightLineDepreciation};
 
 
 const updateAccommodationClass = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAccommodationClass method',
   args:{accommodationClassId: {type: GraphQLString},parentClassId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {updateAccommodationClass};
 
 
 const updateAccommodationMap = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAccommodationMap method',
   args:{accommodationMapId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},numberOfSpaces: {type: GraphQLInt},accommodationClassId: {type: GraphQLString},accommodationMapTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {updateAccommodationMap};
 
 
 const updateAccommodationMapType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAccommodationMapType method',
   args:{accommodationMapTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {updateAccommodationMapType};
 
 
 const updateFixedAsset = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAsset method',
   args:{fixedAssetTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},dateNextService: {type: GraphQLString},roleTypeId: {type: GraphQLString},dateAcquired: {type: GraphQLString},purchaseCost: {type: GraphQLFloat},purchaseCostUomId: {type: GraphQLString},productionCapacity: {type: GraphQLFloat},serialNumber: {type: GraphQLString},classEnumId: {type: GraphQLString},fixedAssetName: {type: GraphQLString},acquireOrderId: {type: GraphQLString},uomId: {type: GraphQLString},locatedAtLocationSeqId: {type: GraphQLString},actualEndOfLife: {type: GraphQLString},dateLastServiced: {type: GraphQLString},acquireOrderItemSeqId: {type: GraphQLString},calendarId: {type: GraphQLString},salvageValue: {type: GraphQLFloat},parentFixedAssetId: {type: GraphQLString},partyId: {type: GraphQLString},expectedEndOfLife: {type: GraphQLString},locatedAtFacilityId: {type: GraphQLString},instanceOfProductId: {type: GraphQLString},depreciation: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {updateFixedAsset};
 
 
 const updateFixedAssetAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetAttribute method',
   args:{fixedAssetId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {updateFixedAssetAttribute};
 
 
 const updateFixedAssetDepMethod = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetDepMethod method',
   args:{fixedAssetId: {type: GraphQLString},depreciationCustomMethodId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,7 +596,7 @@ export {updateFixedAssetDepMethod};
 
 
 const updateFixedAssetGeoPoint = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetGeoPoint method',
   args:{fromDate: {type: GraphQLString},fixedAssetId: {type: GraphQLString},geoPointId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -607,7 +607,7 @@ export {updateFixedAssetGeoPoint};
 
 
 const updateFixedAssetIdent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetIdent method',
   args:{fixedAssetId: {type: GraphQLString},fixedAssetIdentTypeId: {type: GraphQLString},idValue: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -618,7 +618,7 @@ export {updateFixedAssetIdent};
 
 
 const updateFixedAssetIdentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetIdentType method',
   args:{fixedAssetIdentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -629,7 +629,7 @@ export {updateFixedAssetIdentType};
 
 
 const updateFixedAssetMaint = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetMaint method',
   args:{fixedAssetId: {type: GraphQLString},maintHistSeqId: {type: GraphQLString},intervalUomId: {type: GraphQLString},statusId: {type: GraphQLString},purchaseOrderId: {type: GraphQLString},scheduleWorkEffortId: {type: GraphQLString},intervalQuantity: {type: GraphQLFloat},productMaintTypeId: {type: GraphQLString},intervalMeterTypeId: {type: GraphQLString},productMaintSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -640,7 +640,7 @@ export {updateFixedAssetMaint};
 
 
 const updateFixedAssetMeter = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetMeter method',
   args:{productMeterTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},readingDate: {type: GraphQLString},workEffortId: {type: GraphQLString},readingReasonEnumId: {type: GraphQLString},maintHistSeqId: {type: GraphQLString},meterValue: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -651,7 +651,7 @@ export {updateFixedAssetMeter};
 
 
 const updateFixedAssetProduct = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetProduct method',
   args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},fixedAssetProductTypeId: {type: GraphQLString},comments: {type: GraphQLString},quantity: {type: GraphQLFloat},sequenceNum: {type: GraphQLInt},quantityUomId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -662,7 +662,7 @@ export {updateFixedAssetProduct};
 
 
 const updateFixedAssetProductType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetProductType method',
   args:{fixedAssetProductTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -673,7 +673,7 @@ export {updateFixedAssetProductType};
 
 
 const updateFixedAssetRegistration = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetRegistration method',
   args:{fromDate: {type: GraphQLString},fixedAssetId: {type: GraphQLString},registrationNumber: {type: GraphQLString},registrationDate: {type: GraphQLString},licenseNumber: {type: GraphQLString},govAgencyPartyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -684,7 +684,7 @@ export {updateFixedAssetRegistration};
 
 
 const updateFixedAssetStdCost = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetStdCost method',
   args:{fromDate: {type: GraphQLString},fixedAssetStdCostTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},amountUomId: {type: GraphQLString},amount: {type: GraphQLFloat},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -695,7 +695,7 @@ export {updateFixedAssetStdCost};
 
 
 const updateFixedAssetStdCostType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetStdCostType method',
   args:{fixedAssetStdCostTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -706,7 +706,7 @@ export {updateFixedAssetStdCostType};
 
 
 const updateFixedAssetType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetType method',
   args:{fixedAssetTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {updateFixedAssetType};
 
 
 const updateFixedAssetTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetTypeAttr method',
   args:{fixedAssetTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {updateFixedAssetTypeAttr};
 
 
 const updateFixedAssetTypeGlAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFixedAssetTypeGlAccount method',
   args:{fixedAssetTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {updateFixedAssetTypeGlAccount};
 
 
 const updatePartyFixedAssetAssignment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyFixedAssetAssignment method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},partyId: {type: GraphQLString},comments: {type: GraphQLString},allocatedDate: {type: GraphQLString},statusId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

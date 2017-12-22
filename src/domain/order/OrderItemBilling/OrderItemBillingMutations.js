@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderItemBillingInputType} from '../../order/OrderItemBilling/OrderItemBillingInputType.js';
+import {OrderItemBillingResponseType} from '../../order/OrderItemBilling/OrderItemBillingResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderItemBilling = {
-  type: ResopnseType,
+  type: OrderItemBillingResponseType,
   description: 'mutation for ofbiz createOrderItemBilling method',
-  args:{},
+  args:{orderItemBillingToBeAdded: {type: OrderItemBillingInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderItem/orderItemBillings/add?`, null, req);
+    return postToUrl(`order/orderItem/orderItemBillings/add?`, args.orderItemBillingToBeAdded, req);
   }
 };
 export {createOrderItemBilling};
 
 
 const updateOrderItemBilling = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderItemBilling method',
   args:{orderItemBillingToBeUpdated: {type: OrderItemBillingInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderItemBilling};
 
 
 const deleteOrderItemBillingByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderItemBillingByIdUpdated method',
   args:{orderItemBillingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

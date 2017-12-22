@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {CreditCardInputType} from '../../accounting/CreditCard/CreditCardInputType.js';
+import {CreditCardResponseType} from '../../accounting/CreditCard/CreditCardResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCreditCard = {
-  type: ResopnseType,
+  type: CreditCardResponseType,
   description: 'mutation for ofbiz createCreditCard method',
-  args:{},
+  args:{creditCardToBeAdded: {type: CreditCardInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/creditCards/add?`, null, req);
+    return postToUrl(`accounting/creditCards/add?`, args.creditCardToBeAdded, req);
   }
 };
 export {createCreditCard};
 
 
 const deleteCreditCardByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCreditCardByIdUpdated method',
   args:{creditCardId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCreditCardByIdUpdated};
 
 
 const updateCreditCard = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCreditCard method',
   args:{creditCardToBeUpdated: {type: CreditCardInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

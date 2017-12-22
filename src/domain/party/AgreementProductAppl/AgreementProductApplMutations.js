@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {AgreementProductApplInputType} from '../../party/AgreementProductAppl/AgreementProductApplInputType.js';
+import {AgreementProductApplResponseType} from '../../party/AgreementProductAppl/AgreementProductApplResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAgreementProductAppl = {
-  type: ResopnseType,
+  type: AgreementProductApplResponseType,
   description: 'mutation for ofbiz createAgreementProductAppl method',
-  args:{},
+  args:{agreementProductApplToBeAdded: {type: AgreementProductApplInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/agreement/agreementProductAppls/add?`, null, req);
+    return postToUrl(`party/agreement/agreementProductAppls/add?`, args.agreementProductApplToBeAdded, req);
   }
 };
 export {createAgreementProductAppl};
 
 
 const updateAgreementProductAppl = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAgreementProductAppl method',
   args:{agreementProductApplToBeUpdated: {type: AgreementProductApplInputType},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateAgreementProductAppl};
 
 
 const deleteAgreementProductApplByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAgreementProductApplByIdUpdated method',
   args:{agreementProductApplId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

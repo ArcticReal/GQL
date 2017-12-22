@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {WorkEffortInputType} from '../../workeffort/WorkEffort/WorkEffortInputType.js';
+import {WorkEffortResponseType} from '../../workeffort/WorkEffort/WorkEffortResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffort = {
-  type: ResopnseType,
+  type: WorkEffortResponseType,
   description: 'mutation for ofbiz createWorkEffort method',
-  args:{},
+  args:{workEffortToBeAdded: {type: WorkEffortInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEfforts/add?`, null, req);
+    return postToUrl(`workeffort/workEfforts/add?`, args.workEffortToBeAdded, req);
   }
 };
 export {createWorkEffort};
 
 
 const updateWorkEffort = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffort method',
   args:{workEffortToBeUpdated: {type: WorkEffortInputType},workEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffort};
 
 
 const deleteWorkEffortByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortByIdUpdated method',
   args:{workEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

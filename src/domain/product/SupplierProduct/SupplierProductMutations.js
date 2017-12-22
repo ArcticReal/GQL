@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {SupplierProductInputType} from '../../product/SupplierProduct/SupplierProductInputType.js';
+import {SupplierProductResponseType} from '../../product/SupplierProduct/SupplierProductResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSupplierProduct = {
-  type: ResopnseType,
+  type: SupplierProductResponseType,
   description: 'mutation for ofbiz createSupplierProduct method',
   args:{supplierProductToBeAdded: {type: SupplierProductInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createSupplierProduct};
 
 
 const updateSupplierProduct = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSupplierProduct method',
   args:{supplierProductToBeUpdated: {type: SupplierProductInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSupplierProduct};
 
 
 const deleteSupplierProductByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSupplierProductByIdUpdated method',
   args:{supplierProductId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProtectedViewResponseType} from '../../login/ProtectedView/ProtectedViewResponseType.js';
 import {ProtectedViewInputType} from '../../login/ProtectedView/ProtectedViewInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProtectedView = {
-  type: ResopnseType,
+  type: ProtectedViewResponseType,
   description: 'mutation for ofbiz createProtectedView method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProtectedView};
 
 
 const deleteProtectedViewByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProtectedViewByIdUpdated method',
   args:{protectedViewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteProtectedViewByIdUpdated};
 
 
 const updateProtectedView = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProtectedView method',
   args:{protectedViewToBeUpdated: {type: ProtectedViewInputType},viewNameId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PerfReviewInputType} from '../../humanres/PerfReview/PerfReviewInputType.js';
+import {PerfReviewResponseType} from '../../humanres/PerfReview/PerfReviewResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPerfReview = {
-  type: ResopnseType,
+  type: PerfReviewResponseType,
   description: 'mutation for ofbiz createPerfReview method',
-  args:{},
+  args:{perfReviewToBeAdded: {type: PerfReviewInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/perfReviews/add?`, null, req);
+    return postToUrl(`humanres/perfReviews/add?`, args.perfReviewToBeAdded, req);
   }
 };
 export {createPerfReview};
 
 
 const updatePerfReview = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePerfReview method',
   args:{perfReviewToBeUpdated: {type: PerfReviewInputType},perfReviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePerfReview};
 
 
 const deletePerfReviewByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePerfReviewByIdUpdated method',
   args:{perfReviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

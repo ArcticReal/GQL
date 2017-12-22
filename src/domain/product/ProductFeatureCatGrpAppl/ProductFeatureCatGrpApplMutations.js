@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductFeatureCatGrpApplResponseType} from '../../product/ProductFeatureCatGrpAppl/ProductFeatureCatGrpApplResponseType.js';
 import {ProductFeatureCatGrpApplInputType} from '../../product/ProductFeatureCatGrpAppl/ProductFeatureCatGrpApplInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductFeatureCatGrpAppl = {
-  type: ResopnseType,
+  type: ProductFeatureCatGrpApplResponseType,
   description: 'mutation for ofbiz createProductFeatureCatGrpAppl method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductFeatureCatGrpAppl};
 
 
 const updateProductFeatureCatGrpAppl = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductFeatureCatGrpAppl method',
   args:{productFeatureCatGrpApplToBeUpdated: {type: ProductFeatureCatGrpApplInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductFeatureCatGrpAppl};
 
 
 const deleteProductFeatureCatGrpApplByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductFeatureCatGrpApplByIdUpdated method',
   args:{productFeatureCatGrpApplId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

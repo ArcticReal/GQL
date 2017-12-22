@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PaymentGatewayEwayInputType} from '../../accounting/PaymentGatewayEway/PaymentGatewayEwayInputType.js';
+import {PaymentGatewayEwayResponseType} from '../../accounting/PaymentGatewayEway/PaymentGatewayEwayResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGatewayEway = {
-  type: ResopnseType,
+  type: PaymentGatewayEwayResponseType,
   description: 'mutation for ofbiz createPaymentGatewayEway method',
-  args:{},
+  args:{paymentGatewayEwayToBeAdded: {type: PaymentGatewayEwayInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/payment/paymentGatewayEways/add?`, null, req);
+    return postToUrl(`accounting/payment/paymentGatewayEways/add?`, args.paymentGatewayEwayToBeAdded, req);
   }
 };
 export {createPaymentGatewayEway};
 
 
 const updatePaymentGatewayEway = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePaymentGatewayEway method',
   args:{paymentGatewayEwayToBeUpdated: {type: PaymentGatewayEwayInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePaymentGatewayEway};
 
 
 const deletePaymentGatewayEwayByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePaymentGatewayEwayByIdUpdated method',
   args:{paymentGatewayEwayId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

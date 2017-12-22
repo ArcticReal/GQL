@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {AcctgTransTypeAttrResponseType} from '../../accounting/AcctgTransTypeAttr/AcctgTransTypeAttrResponseType.js';
 import {AcctgTransTypeAttrInputType} from '../../accounting/AcctgTransTypeAttr/AcctgTransTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAcctgTransTypeAttr = {
-  type: ResopnseType,
+  type: AcctgTransTypeAttrResponseType,
   description: 'mutation for ofbiz createAcctgTransTypeAttr method',
-  args:{acctgTransTypeAttrToBeAdded: {type: AcctgTransTypeAttrInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/acctgTrans/acctgTransTypeAttrs/add?`, args.acctgTransTypeAttrToBeAdded, req);
+    return postToUrl(`accounting/acctgTrans/acctgTransTypeAttrs/add?`, null, req);
   }
 };
 export {createAcctgTransTypeAttr};
 
 
 const deleteAcctgTransTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAcctgTransTypeAttrByIdUpdated method',
   args:{acctgTransTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteAcctgTransTypeAttrByIdUpdated};
 
 
 const updateAcctgTransTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAcctgTransTypeAttr method',
   args:{acctgTransTypeAttrToBeUpdated: {type: AcctgTransTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

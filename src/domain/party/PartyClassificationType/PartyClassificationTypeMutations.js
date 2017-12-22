@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyClassificationTypeResponseType} from '../../party/PartyClassificationType/PartyClassificationTypeResponseType.js';
 import {PartyClassificationTypeInputType} from '../../party/PartyClassificationType/PartyClassificationTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyClassificationType = {
-  type: ResopnseType,
+  type: PartyClassificationTypeResponseType,
   description: 'mutation for ofbiz createPartyClassificationType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPartyClassificationType};
 
 
 const updatePartyClassificationType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyClassificationType method',
   args:{partyClassificationTypeToBeUpdated: {type: PartyClassificationTypeInputType},partyClassificationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyClassificationType};
 
 
 const deletePartyClassificationTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyClassificationTypeByIdUpdated method',
   args:{partyClassificationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

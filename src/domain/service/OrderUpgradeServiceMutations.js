@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const migrateCustRequestRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz migrateCustRequestRole method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {migrateCustRequestRole};
 
 
 const migrateOrderItemAssociation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz migrateOrderItemAssociation method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {migrateOrderItemAssociation};
 
 
 const migrateOrderShipment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz migrateOrderShipment method',
   args:{},
   resolve: (root, args, {req}) => {

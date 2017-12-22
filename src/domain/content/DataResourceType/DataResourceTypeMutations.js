@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {DataResourceTypeInputType} from '../../content/DataResourceType/DataResourceTypeInputType.js';
+import {DataResourceTypeResponseType} from '../../content/DataResourceType/DataResourceTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDataResourceType = {
-  type: ResopnseType,
+  type: DataResourceTypeResponseType,
   description: 'mutation for ofbiz createDataResourceType method',
-  args:{},
+  args:{dataResourceTypeToBeAdded: {type: DataResourceTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/dataResource/dataResourceTypes/add?`, null, req);
+    return postToUrl(`content/dataResource/dataResourceTypes/add?`, args.dataResourceTypeToBeAdded, req);
   }
 };
 export {createDataResourceType};
 
 
 const updateDataResourceType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDataResourceType method',
   args:{dataResourceTypeToBeUpdated: {type: DataResourceTypeInputType},dataResourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateDataResourceType};
 
 
 const deleteDataResourceTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDataResourceTypeByIdUpdated method',
   args:{dataResourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

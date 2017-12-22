@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ReturnItemInputType} from '../../order/ReturnItem/ReturnItemInputType.js';
+import {ReturnItemResponseType} from '../../order/ReturnItemResponse/ReturnItemResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReturnItem = {
-  type: ResopnseType,
+  type: ReturnItemResponseType,
   description: 'mutation for ofbiz createReturnItem method',
-  args:{},
+  args:{returnItemToBeAdded: {type: ReturnItemInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/returnItems/add?`, null, req);
+    return postToUrl(`order/returnItems/add?`, args.returnItemToBeAdded, req);
   }
 };
 export {createReturnItem};
 
 
 const deleteReturnItemByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteReturnItemByIdUpdated method',
   args:{returnItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteReturnItemByIdUpdated};
 
 
 const updateReturnItem = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateReturnItem method',
   args:{returnItemToBeUpdated: {type: ReturnItemInputType},returnItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {GlAccountGroupMemberResponseType} from '../../accounting/GlAccountGroupMember/GlAccountGroupMemberResponseType.js';
 import {GlAccountGroupMemberInputType} from '../../accounting/GlAccountGroupMember/GlAccountGroupMemberInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlAccountGroupMember = {
-  type: ResopnseType,
+  type: GlAccountGroupMemberResponseType,
   description: 'mutation for ofbiz createGlAccountGroupMember method',
-  args:{glAccountGroupMemberToBeAdded: {type: GlAccountGroupMemberInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/glAccountGroupMembers/add?`, args.glAccountGroupMemberToBeAdded, req);
+    return postToUrl(`accounting/glAccount/glAccountGroupMembers/add?`, null, req);
   }
 };
 export {createGlAccountGroupMember};
 
 
 const deleteGlAccountGroupMemberByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGlAccountGroupMemberByIdUpdated method',
   args:{glAccountGroupMemberId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteGlAccountGroupMemberByIdUpdated};
 
 
 const updateGlAccountGroupMember = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGlAccountGroupMember method',
   args:{glAccountGroupMemberToBeUpdated: {type: GlAccountGroupMemberInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

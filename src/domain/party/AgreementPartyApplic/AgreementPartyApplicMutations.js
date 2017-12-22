@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {AgreementPartyApplicResponseType} from '../../party/AgreementPartyApplic/AgreementPartyApplicResponseType.js';
 import {AgreementPartyApplicInputType} from '../../party/AgreementPartyApplic/AgreementPartyApplicInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAgreementPartyApplic = {
-  type: ResopnseType,
+  type: AgreementPartyApplicResponseType,
   description: 'mutation for ofbiz createAgreementPartyApplic method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createAgreementPartyApplic};
 
 
 const updateAgreementPartyApplic = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAgreementPartyApplic method',
   args:{agreementPartyApplicToBeUpdated: {type: AgreementPartyApplicInputType},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateAgreementPartyApplic};
 
 
 const deleteAgreementPartyApplicByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAgreementPartyApplicByIdUpdated method',
   args:{agreementPartyApplicId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

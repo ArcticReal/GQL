@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {FacilityGroupMemberInputType} from '../../product/FacilityGroupMember/FacilityGroupMemberInputType.js';
+import {FacilityGroupMemberResponseType} from '../../product/FacilityGroupMember/FacilityGroupMemberResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityGroupMember = {
-  type: ResopnseType,
+  type: FacilityGroupMemberResponseType,
   description: 'mutation for ofbiz createFacilityGroupMember method',
   args:{facilityGroupMemberToBeAdded: {type: FacilityGroupMemberInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createFacilityGroupMember};
 
 
 const deleteFacilityGroupMemberByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFacilityGroupMemberByIdUpdated method',
   args:{facilityGroupMemberId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFacilityGroupMemberByIdUpdated};
 
 
 const updateFacilityGroupMember = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFacilityGroupMember method',
   args:{facilityGroupMemberToBeUpdated: {type: FacilityGroupMemberInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FixedAssetMaintOrderResponseType} from '../../accounting/FixedAssetMaintOrder/FixedAssetMaintOrderResponseType.js';
 import {FixedAssetMaintOrderInputType} from '../../accounting/FixedAssetMaintOrder/FixedAssetMaintOrderInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAssetMaintOrder = {
-  type: ResopnseType,
+  type: FixedAssetMaintOrderResponseType,
   description: 'mutation for ofbiz createFixedAssetMaintOrder method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createFixedAssetMaintOrder};
 
 
 const deleteFixedAssetMaintOrderByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFixedAssetMaintOrderByIdUpdated method',
   args:{fixedAssetMaintOrderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFixedAssetMaintOrderByIdUpdated};
 
 
 const updateFixedAssetMaintOrder = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFixedAssetMaintOrder method',
   args:{fixedAssetMaintOrderToBeUpdated: {type: FixedAssetMaintOrderInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PicklistItemResponseType} from '../../shipment/PicklistItem/PicklistItemResponseType.js';
 import {PicklistItemInputType} from '../../shipment/PicklistItem/PicklistItemInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPicklistItem = {
-  type: ResopnseType,
+  type: PicklistItemResponseType,
   description: 'mutation for ofbiz createPicklistItem method',
-  args:{picklistItemToBeAdded: {type: PicklistItemInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/picklist/picklistItems/add?`, args.picklistItemToBeAdded, req);
+    return postToUrl(`shipment/picklist/picklistItems/add?`, null, req);
   }
 };
 export {createPicklistItem};
 
 
 const updatePicklistItem = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePicklistItem method',
   args:{picklistItemToBeUpdated: {type: PicklistItemInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePicklistItem};
 
 
 const deletePicklistItemByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePicklistItemByIdUpdated method',
   args:{picklistItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

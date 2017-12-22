@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductStoreKeywordOvrdInputType} from '../../product/ProductStoreKeywordOvrd/ProductStoreKeywordOvrdInputType.js';
+import {ProductStoreKeywordOvrdResponseType} from '../../product/ProductStoreKeywordOvrd/ProductStoreKeywordOvrdResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreKeywordOvrd = {
-  type: ResopnseType,
+  type: ProductStoreKeywordOvrdResponseType,
   description: 'mutation for ofbiz createProductStoreKeywordOvrd method',
-  args:{},
+  args:{productStoreKeywordOvrdToBeAdded: {type: ProductStoreKeywordOvrdInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStoreKeywordOvrds/add?`, null, req);
+    return postToUrl(`product/product/productStoreKeywordOvrds/add?`, args.productStoreKeywordOvrdToBeAdded, req);
   }
 };
 export {createProductStoreKeywordOvrd};
 
 
 const updateProductStoreKeywordOvrd = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreKeywordOvrd method',
   args:{productStoreKeywordOvrdToBeUpdated: {type: ProductStoreKeywordOvrdInputType},keyword: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStoreKeywordOvrd};
 
 
 const deleteProductStoreKeywordOvrdByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreKeywordOvrdByIdUpdated method',
   args:{productStoreKeywordOvrdId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

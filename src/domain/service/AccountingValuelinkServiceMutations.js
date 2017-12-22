@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const activateGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz activateGiftCard method',
   args:{paymentConfig: {type: GraphQLString},amount: {type: GraphQLFloat},vlPromoCode: {type: GraphQLString},currency: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {activateGiftCard};
 
 
 const assignWorkingKey = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz assignWorkingKey method',
   args:{paymentConfig: {type: GraphQLString},desHexString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {assignWorkingKey};
 
 
 const balanceInquireGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz balanceInquireGiftCard method',
   args:{paymentConfig: {type: GraphQLString},pin: {type: GraphQLString},currency: {type: GraphQLString},cardNumber: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {balanceInquireGiftCard};
 
 
 const createVLKeys = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createVLKeys method',
   args:{paymentConfig: {type: GraphQLString},kekOnly: {type: GraphQLBoolean},kekTest: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createVLKeys};
 
 
 const disableGiftCardPin = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz disableGiftCardPin method',
   args:{paymentConfig: {type: GraphQLString},pin: {type: GraphQLString},cardNumber: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {disableGiftCardPin};
 
 
 const linkPhysicalGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz linkPhysicalGiftCard method',
   args:{paymentConfig: {type: GraphQLString},physicalPin: {type: GraphQLString},physicalCard: {type: GraphQLString},virtualCard: {type: GraphQLString},virtualPin: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {linkPhysicalGiftCard};
 
 
 const redeemGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz redeemGiftCard method',
   args:{paymentConfig: {type: GraphQLString},amount: {type: GraphQLFloat},pin: {type: GraphQLString},currency: {type: GraphQLString},cardNumber: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {redeemGiftCard};
 
 
 const refundGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz refundGiftCard method',
   args:{paymentConfig: {type: GraphQLString},amount: {type: GraphQLFloat},pin: {type: GraphQLString},currency: {type: GraphQLString},cardNumber: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {refundGiftCard};
 
 
 const reloadGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz reloadGiftCard method',
   args:{paymentConfig: {type: GraphQLString},amount: {type: GraphQLFloat},pin: {type: GraphQLString},currency: {type: GraphQLString},cardNumber: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {reloadGiftCard};
 
 
 const testKekEncryption = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testKekEncryption method',
   args:{paymentConfig: {type: GraphQLString},mode: {type: GraphQLInt},kekTest: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {testKekEncryption};
 
 
 const transactionHistoryGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz transactionHistoryGiftCard method',
   args:{paymentConfig: {type: GraphQLString},pin: {type: GraphQLString},cardNumber: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {transactionHistoryGiftCard};
 
 
 const valueLinkGcPurchase = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz valueLinkGcPurchase method',
   args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},orderItem: {type: new GraphQLList(KeyValueInputType)},contentId: {type: GraphQLString},productContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {valueLinkGcPurchase};
 
 
 const valueLinkGcReload = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz valueLinkGcReload method',
   args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},orderItem: {type: new GraphQLList(KeyValueInputType)},contentId: {type: GraphQLString},productContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {valueLinkGcReload};
 
 
 const valueLinkProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz valueLinkProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},giftCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {valueLinkProcessor};
 
 
 const valueLinkRefund = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz valueLinkRefund method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {valueLinkRefund};
 
 
 const valueLinkRelease = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz valueLinkRelease method',
   args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {valueLinkRelease};
 
 
 const vlTimeOutReversal = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz vlTimeOutReversal method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {vlTimeOutReversal};
 
 
 const voidActivateGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz voidActivateGiftCard method',
   args:{paymentConfig: {type: GraphQLString},amount: {type: GraphQLFloat},currency: {type: GraphQLString},pin: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString},cardNumber: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {voidActivateGiftCard};
 
 
 const voidRedeemGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz voidRedeemGiftCard method',
   args:{paymentConfig: {type: GraphQLString},amount: {type: GraphQLFloat},pin: {type: GraphQLString},currency: {type: GraphQLString},cardNumber: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {voidRedeemGiftCard};
 
 
 const voidRefundGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz voidRefundGiftCard method',
   args:{paymentConfig: {type: GraphQLString},amount: {type: GraphQLFloat},pin: {type: GraphQLString},currency: {type: GraphQLString},cardNumber: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {voidRefundGiftCard};
 
 
 const voidReloadGiftCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz voidReloadGiftCard method',
   args:{paymentConfig: {type: GraphQLString},amount: {type: GraphQLFloat},pin: {type: GraphQLString},currency: {type: GraphQLString},cardNumber: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

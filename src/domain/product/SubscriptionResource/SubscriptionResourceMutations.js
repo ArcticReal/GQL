@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {SubscriptionResourceInputType} from '../../product/SubscriptionResource/SubscriptionResourceInputType.js';
+import {SubscriptionResourceResponseType} from '../../product/SubscriptionResource/SubscriptionResourceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSubscriptionResource = {
-  type: ResopnseType,
+  type: SubscriptionResourceResponseType,
   description: 'mutation for ofbiz createSubscriptionResource method',
-  args:{},
+  args:{subscriptionResourceToBeAdded: {type: SubscriptionResourceInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/subscription/subscriptionResources/add?`, null, req);
+    return postToUrl(`product/subscription/subscriptionResources/add?`, args.subscriptionResourceToBeAdded, req);
   }
 };
 export {createSubscriptionResource};
 
 
 const updateSubscriptionResource = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSubscriptionResource method',
   args:{subscriptionResourceToBeUpdated: {type: SubscriptionResourceInputType},subscriptionResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSubscriptionResource};
 
 
 const deleteSubscriptionResourceByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSubscriptionResourceByIdUpdated method',
   args:{subscriptionResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

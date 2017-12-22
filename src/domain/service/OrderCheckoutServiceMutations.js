@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createUpdateBillingAddressAndPaymentMethod = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUpdateBillingAddressAndPaymentMethod method',
   args:{expMonth: {type: GraphQLString},expYear: {type: GraphQLString},lastNameOnCard: {type: GraphQLString},firstNameOnCard: {type: GraphQLString},cardType: {type: GraphQLString},shoppingCart: {type: GraphQLString},cardNumber: {type: GraphQLString},billToCountryCode: {type: GraphQLString},billToAreaCode: {type: GraphQLString},billToPostalCode: {type: GraphQLString},setDefaultBilling: {type: GraphQLString},billToAddress2: {type: GraphQLString},contactMechId: {type: GraphQLString},billToCity: {type: GraphQLString},keepAddressBook: {type: GraphQLString},titleOnCard: {type: GraphQLString},paymentMethodId: {type: GraphQLString},productStoreId: {type: GraphQLString},billToContactNumber: {type: GraphQLString},partyId: {type: GraphQLString},suffixOnCard: {type: GraphQLString},billToStateProvinceGeoId: {type: GraphQLString},billToAttnName: {type: GraphQLString},shipToContactMechId: {type: GraphQLString},billToName: {type: GraphQLString},billToCountryGeoId: {type: GraphQLString},companyNameOnCard: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},billToCardSecurityCode: {type: GraphQLString},billToAddress1: {type: GraphQLString},billToContactMechId: {type: GraphQLString},middleNameOnCard: {type: GraphQLString},useShippingAddressForBilling: {type: GraphQLString},billToExtension: {type: GraphQLString},billToPhoneContactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createUpdateBillingAddressAndPaymentMethod};
 
 
 const createUpdateCustomerAndShippingAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUpdateCustomerAndShippingAddress method',
   args:{shipToCity: {type: GraphQLString},emailAddress: {type: GraphQLString},shipToAddress1: {type: GraphQLString},shipToPostalCode: {type: GraphQLString},shoppingCart: {type: GraphQLString},shipToCountryGeoId: {type: GraphQLString},shipToStateProvinceGeoId: {type: GraphQLString},lastName: {type: GraphQLString},setDefaultShipping: {type: GraphQLString},shipToContactMechId: {type: GraphQLString},shipToPhoneContactMechId: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},emailContactMechId: {type: GraphQLString},keepAddressBook: {type: GraphQLString},firstName: {type: GraphQLString},shipToContactNumber: {type: GraphQLString},shipToAddress2: {type: GraphQLString},billToContactMechId: {type: GraphQLString},shipToCountryCode: {type: GraphQLString},shipToName: {type: GraphQLString},shipToExtension: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},shipToAreaCode: {type: GraphQLString},shipToAttnName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createUpdateCustomerAndShippingAddress};
 
 
 const setAnonUserLogin = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setAnonUserLogin method',
   args:{shoppingCart: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

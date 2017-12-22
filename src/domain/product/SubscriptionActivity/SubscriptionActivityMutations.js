@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {SubscriptionActivityResponseType} from '../../product/SubscriptionActivity/SubscriptionActivityResponseType.js';
 import {SubscriptionActivityInputType} from '../../product/SubscriptionActivity/SubscriptionActivityInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSubscriptionActivity = {
-  type: ResopnseType,
+  type: SubscriptionActivityResponseType,
   description: 'mutation for ofbiz createSubscriptionActivity method',
-  args:{subscriptionActivityToBeAdded: {type: SubscriptionActivityInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/subscription/subscriptionActivitys/add?`, args.subscriptionActivityToBeAdded, req);
+    return postToUrl(`product/subscription/subscriptionActivitys/add?`, null, req);
   }
 };
 export {createSubscriptionActivity};
 
 
 const updateSubscriptionActivity = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSubscriptionActivity method',
   args:{subscriptionActivityToBeUpdated: {type: SubscriptionActivityInputType},subscriptionActivityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSubscriptionActivity};
 
 
 const deleteSubscriptionActivityByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSubscriptionActivityByIdUpdated method',
   args:{subscriptionActivityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

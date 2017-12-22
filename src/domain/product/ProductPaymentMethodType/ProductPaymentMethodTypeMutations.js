@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductPaymentMethodTypeInputType} from '../../product/ProductPaymentMethodType/ProductPaymentMethodTypeInputType.js';
+import {ProductPaymentMethodTypeResponseType} from '../../product/ProductPaymentMethodType/ProductPaymentMethodTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductPaymentMethodType = {
-  type: ResopnseType,
+  type: ProductPaymentMethodTypeResponseType,
   description: 'mutation for ofbiz createProductPaymentMethodType method',
   args:{productPaymentMethodTypeToBeAdded: {type: ProductPaymentMethodTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductPaymentMethodType};
 
 
 const updateProductPaymentMethodType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductPaymentMethodType method',
   args:{productPaymentMethodTypeToBeUpdated: {type: ProductPaymentMethodTypeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductPaymentMethodType};
 
 
 const deleteProductPaymentMethodTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductPaymentMethodTypeByIdUpdated method',
   args:{productPaymentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

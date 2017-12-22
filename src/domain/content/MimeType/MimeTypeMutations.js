@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {MimeTypeResponseType} from '../../content/MimeType/MimeTypeResponseType.js';
 import {MimeTypeInputType} from '../../content/MimeType/MimeTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMimeType = {
-  type: ResopnseType,
+  type: MimeTypeResponseType,
   description: 'mutation for ofbiz createMimeType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createMimeType};
 
 
 const updateMimeType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateMimeType method',
   args:{mimeTypeToBeUpdated: {type: MimeTypeInputType},mimeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateMimeType};
 
 
 const deleteMimeTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteMimeTypeByIdUpdated method',
   args:{mimeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderSummaryEntryInputType} from '../../order/OrderSummaryEntry/OrderSummaryEntryInputType.js';
+import {OrderSummaryEntryResponseType} from '../../order/OrderSummaryEntry/OrderSummaryEntryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderSummaryEntry = {
-  type: ResopnseType,
+  type: OrderSummaryEntryResponseType,
   description: 'mutation for ofbiz createOrderSummaryEntry method',
   args:{orderSummaryEntryToBeAdded: {type: OrderSummaryEntryInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createOrderSummaryEntry};
 
 
 const updateOrderSummaryEntry = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderSummaryEntry method',
   args:{orderSummaryEntryToBeUpdated: {type: OrderSummaryEntryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderSummaryEntry};
 
 
 const deleteOrderSummaryEntryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderSummaryEntryByIdUpdated method',
   args:{orderSummaryEntryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

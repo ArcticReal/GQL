@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ContactListPartyStatusInputType} from '../../marketing/ContactListPartyStatus/ContactListPartyStatusInputType.js';
+import {ContactListPartyStatusResponseType} from '../../marketing/ContactListPartyStatus/ContactListPartyStatusResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContactListPartyStatus = {
-  type: ResopnseType,
+  type: ContactListPartyStatusResponseType,
   description: 'mutation for ofbiz createContactListPartyStatus method',
   args:{contactListPartyStatusToBeAdded: {type: ContactListPartyStatusInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createContactListPartyStatus};
 
 
 const deleteContactListPartyStatusByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContactListPartyStatusByIdUpdated method',
   args:{contactListPartyStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteContactListPartyStatusByIdUpdated};
 
 
 const updateContactListPartyStatus = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContactListPartyStatus method',
   args:{contactListPartyStatusToBeUpdated: {type: ContactListPartyStatusInputType},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

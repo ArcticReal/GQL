@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {TerminationReasonInputType} from '../../humanres/TerminationReason/TerminationReasonInputType.js';
+import {TerminationReasonResponseType} from '../../humanres/TerminationReason/TerminationReasonResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTerminationReason = {
-  type: ResopnseType,
+  type: TerminationReasonResponseType,
   description: 'mutation for ofbiz createTerminationReason method',
-  args:{},
+  args:{terminationReasonToBeAdded: {type: TerminationReasonInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/terminationReasons/add?`, null, req);
+    return postToUrl(`humanres/terminationReasons/add?`, args.terminationReasonToBeAdded, req);
   }
 };
 export {createTerminationReason};
 
 
 const updateTerminationReason = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTerminationReason method',
   args:{terminationReasonToBeUpdated: {type: TerminationReasonInputType},terminationReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTerminationReason};
 
 
 const deleteTerminationReasonByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTerminationReasonByIdUpdated method',
   args:{terminationReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

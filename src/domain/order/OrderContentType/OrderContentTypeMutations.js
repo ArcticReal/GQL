@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderContentTypeInputType} from '../../order/OrderContentType/OrderContentTypeInputType.js';
+import {OrderContentTypeResponseType} from '../../order/OrderContentType/OrderContentTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderContentType = {
-  type: ResopnseType,
+  type: OrderContentTypeResponseType,
   description: 'mutation for ofbiz createOrderContentType method',
-  args:{},
+  args:{orderContentTypeToBeAdded: {type: OrderContentTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderContent/orderContentTypes/add?`, null, req);
+    return postToUrl(`order/orderContent/orderContentTypes/add?`, args.orderContentTypeToBeAdded, req);
   }
 };
 export {createOrderContentType};
 
 
 const updateOrderContentType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderContentType method',
   args:{orderContentTypeToBeUpdated: {type: OrderContentTypeInputType},orderContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderContentType};
 
 
 const deleteOrderContentTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderContentTypeByIdUpdated method',
   args:{orderContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

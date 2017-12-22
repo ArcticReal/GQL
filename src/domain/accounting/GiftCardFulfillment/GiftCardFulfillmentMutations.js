@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {GiftCardFulfillmentResponseType} from '../../accounting/GiftCardFulfillment/GiftCardFulfillmentResponseType.js';
 import {GiftCardFulfillmentInputType} from '../../accounting/GiftCardFulfillment/GiftCardFulfillmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGiftCardFulfillment = {
-  type: ResopnseType,
+  type: GiftCardFulfillmentResponseType,
   description: 'mutation for ofbiz createGiftCardFulfillment method',
-  args:{giftCardFulfillmentToBeAdded: {type: GiftCardFulfillmentInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/giftCard/giftCardFulfillments/add?`, args.giftCardFulfillmentToBeAdded, req);
+    return postToUrl(`accounting/giftCard/giftCardFulfillments/add?`, null, req);
   }
 };
 export {createGiftCardFulfillment};
 
 
 const updateGiftCardFulfillment = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGiftCardFulfillment method',
   args:{giftCardFulfillmentToBeUpdated: {type: GiftCardFulfillmentInputType},fulfillmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateGiftCardFulfillment};
 
 
 const deleteGiftCardFulfillmentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGiftCardFulfillmentByIdUpdated method',
   args:{giftCardFulfillmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

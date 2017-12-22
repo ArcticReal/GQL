@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {SegmentGroupRoleInputType} from '../../marketing/SegmentGroupRole/SegmentGroupRoleInputType.js';
+import {SegmentGroupRoleResponseType} from '../../marketing/SegmentGroupRole/SegmentGroupRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSegmentGroupRole = {
-  type: ResopnseType,
+  type: SegmentGroupRoleResponseType,
   description: 'mutation for ofbiz createSegmentGroupRole method',
   args:{segmentGroupRoleToBeAdded: {type: SegmentGroupRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createSegmentGroupRole};
 
 
 const updateSegmentGroupRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSegmentGroupRole method',
   args:{segmentGroupRoleToBeUpdated: {type: SegmentGroupRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSegmentGroupRole};
 
 
 const deleteSegmentGroupRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSegmentGroupRoleByIdUpdated method',
   args:{segmentGroupRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

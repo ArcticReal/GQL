@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductFeatureCategoryInputType} from '../../product/ProductFeatureCategory/ProductFeatureCategoryInputType.js';
+import {ProductFeatureCategoryResponseType} from '../../product/ProductFeatureCategory/ProductFeatureCategoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductFeatureCategory = {
-  type: ResopnseType,
+  type: ProductFeatureCategoryResponseType,
   description: 'mutation for ofbiz createProductFeatureCategory method',
   args:{productFeatureCategoryToBeAdded: {type: ProductFeatureCategoryInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductFeatureCategory};
 
 
 const updateProductFeatureCategory = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductFeatureCategory method',
   args:{productFeatureCategoryToBeUpdated: {type: ProductFeatureCategoryInputType},productFeatureCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductFeatureCategory};
 
 
 const deleteProductFeatureCategoryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductFeatureCategoryByIdUpdated method',
   args:{productFeatureCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

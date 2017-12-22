@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {DocumentResponseType} from '../../content/Document/DocumentResponseType.js';
 import {DocumentInputType} from '../../content/Document/DocumentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDocument = {
-  type: ResopnseType,
+  type: DocumentResponseType,
   description: 'mutation for ofbiz createDocument method',
-  args:{documentToBeAdded: {type: DocumentInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/documents/add?`, args.documentToBeAdded, req);
+    return postToUrl(`content/documents/add?`, null, req);
   }
 };
 export {createDocument};
 
 
 const updateDocument = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDocument method',
   args:{documentToBeUpdated: {type: DocumentInputType},documentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateDocument};
 
 
 const deleteDocumentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDocumentByIdUpdated method',
   args:{documentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

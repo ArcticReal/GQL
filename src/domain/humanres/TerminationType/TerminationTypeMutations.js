@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {TerminationTypeInputType} from '../../humanres/TerminationType/TerminationTypeInputType.js';
+import {TerminationTypeResponseType} from '../../humanres/TerminationType/TerminationTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTerminationType = {
-  type: ResopnseType,
+  type: TerminationTypeResponseType,
   description: 'mutation for ofbiz createTerminationType method',
   args:{terminationTypeToBeAdded: {type: TerminationTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createTerminationType};
 
 
 const updateTerminationType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTerminationType method',
   args:{terminationTypeToBeUpdated: {type: TerminationTypeInputType},terminationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTerminationType};
 
 
 const deleteTerminationTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTerminationTypeByIdUpdated method',
   args:{terminationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

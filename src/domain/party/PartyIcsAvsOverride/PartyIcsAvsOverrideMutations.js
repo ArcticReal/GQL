@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PartyIcsAvsOverrideInputType} from '../../party/PartyIcsAvsOverride/PartyIcsAvsOverrideInputType.js';
+import {PartyIcsAvsOverrideResponseType} from '../../party/PartyIcsAvsOverride/PartyIcsAvsOverrideResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyIcsAvsOverride = {
-  type: ResopnseType,
+  type: PartyIcsAvsOverrideResponseType,
   description: 'mutation for ofbiz createPartyIcsAvsOverride method',
-  args:{},
+  args:{partyIcsAvsOverrideToBeAdded: {type: PartyIcsAvsOverrideInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyIcsAvsOverrides/add?`, null, req);
+    return postToUrl(`party/party/partyIcsAvsOverrides/add?`, args.partyIcsAvsOverrideToBeAdded, req);
   }
 };
 export {createPartyIcsAvsOverride};
 
 
 const updatePartyIcsAvsOverride = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyIcsAvsOverride method',
   args:{partyIcsAvsOverrideToBeUpdated: {type: PartyIcsAvsOverrideInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyIcsAvsOverride};
 
 
 const deletePartyIcsAvsOverrideByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyIcsAvsOverrideByIdUpdated method',
   args:{partyIcsAvsOverrideId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

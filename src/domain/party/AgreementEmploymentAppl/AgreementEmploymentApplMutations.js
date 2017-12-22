@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {AgreementEmploymentApplResponseType} from '../../party/AgreementEmploymentAppl/AgreementEmploymentApplResponseType.js';
 import {AgreementEmploymentApplInputType} from '../../party/AgreementEmploymentAppl/AgreementEmploymentApplInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAgreementEmploymentAppl = {
-  type: ResopnseType,
+  type: AgreementEmploymentApplResponseType,
   description: 'mutation for ofbiz createAgreementEmploymentAppl method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createAgreementEmploymentAppl};
 
 
 const deleteAgreementEmploymentApplByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAgreementEmploymentApplByIdUpdated method',
   args:{agreementEmploymentApplId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteAgreementEmploymentApplByIdUpdated};
 
 
 const updateAgreementEmploymentAppl = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAgreementEmploymentAppl method',
   args:{agreementEmploymentApplToBeUpdated: {type: AgreementEmploymentApplInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

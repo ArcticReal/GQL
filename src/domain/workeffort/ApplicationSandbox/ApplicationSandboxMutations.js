@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ApplicationSandboxInputType} from '../../workeffort/ApplicationSandbox/ApplicationSandboxInputType.js';
+import {ApplicationSandboxResponseType} from '../../workeffort/ApplicationSandbox/ApplicationSandboxResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createApplicationSandbox = {
-  type: ResopnseType,
+  type: ApplicationSandboxResponseType,
   description: 'mutation for ofbiz createApplicationSandbox method',
-  args:{},
+  args:{applicationSandboxToBeAdded: {type: ApplicationSandboxInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/applicationSandboxs/add?`, null, req);
+    return postToUrl(`workeffort/applicationSandboxs/add?`, args.applicationSandboxToBeAdded, req);
   }
 };
 export {createApplicationSandbox};
 
 
 const updateApplicationSandbox = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateApplicationSandbox method',
   args:{applicationSandboxToBeUpdated: {type: ApplicationSandboxInputType},applicationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateApplicationSandbox};
 
 
 const deleteApplicationSandboxByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteApplicationSandboxByIdUpdated method',
   args:{applicationSandboxId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

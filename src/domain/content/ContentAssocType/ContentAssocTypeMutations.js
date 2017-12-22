@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContentAssocTypeResponseType} from '../../content/ContentAssocType/ContentAssocTypeResponseType.js';
 import {ContentAssocTypeInputType} from '../../content/ContentAssocType/ContentAssocTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentAssocType = {
-  type: ResopnseType,
+  type: ContentAssocTypeResponseType,
   description: 'mutation for ofbiz createContentAssocType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createContentAssocType};
 
 
 const updateContentAssocType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentAssocType method',
   args:{contentAssocTypeToBeUpdated: {type: ContentAssocTypeInputType},contentAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContentAssocType};
 
 
 const deleteContentAssocTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentAssocTypeByIdUpdated method',
   args:{contentAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

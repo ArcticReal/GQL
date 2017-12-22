@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {QuantityBreakTypeInputType} from '../../product/QuantityBreakType/QuantityBreakTypeInputType.js';
+import {QuantityBreakTypeResponseType} from '../../product/QuantityBreakType/QuantityBreakTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuantityBreakType = {
-  type: ResopnseType,
+  type: QuantityBreakTypeResponseType,
   description: 'mutation for ofbiz createQuantityBreakType method',
-  args:{},
+  args:{quantityBreakTypeToBeAdded: {type: QuantityBreakTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/quantityBreak/quantityBreakTypes/add?`, null, req);
+    return postToUrl(`product/quantityBreak/quantityBreakTypes/add?`, args.quantityBreakTypeToBeAdded, req);
   }
 };
 export {createQuantityBreakType};
 
 
 const updateQuantityBreakType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateQuantityBreakType method',
   args:{quantityBreakTypeToBeUpdated: {type: QuantityBreakTypeInputType},quantityBreakTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateQuantityBreakType};
 
 
 const deleteQuantityBreakTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteQuantityBreakTypeByIdUpdated method',
   args:{quantityBreakTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

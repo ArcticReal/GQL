@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderAdjustmentBillingInputType} from '../../order/OrderAdjustmentBilling/OrderAdjustmentBillingInputType.js';
+import {OrderAdjustmentBillingResponseType} from '../../order/OrderAdjustmentBilling/OrderAdjustmentBillingResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderAdjustmentBilling = {
-  type: ResopnseType,
+  type: OrderAdjustmentBillingResponseType,
   description: 'mutation for ofbiz createOrderAdjustmentBilling method',
-  args:{},
+  args:{orderAdjustmentBillingToBeAdded: {type: OrderAdjustmentBillingInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderAdjustment/orderAdjustmentBillings/add?`, null, req);
+    return postToUrl(`order/orderAdjustment/orderAdjustmentBillings/add?`, args.orderAdjustmentBillingToBeAdded, req);
   }
 };
 export {createOrderAdjustmentBilling};
 
 
 const updateOrderAdjustmentBilling = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderAdjustmentBilling method',
   args:{orderAdjustmentBillingToBeUpdated: {type: OrderAdjustmentBillingInputType},invoiceItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderAdjustmentBilling};
 
 
 const deleteOrderAdjustmentBillingByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderAdjustmentBillingByIdUpdated method',
   args:{orderAdjustmentBillingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

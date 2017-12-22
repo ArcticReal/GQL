@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {WorkEffortAssocTypeInputType} from '../../workeffort/WorkEffortAssocType/WorkEffortAssocTypeInputType.js';
+import {WorkEffortAssocTypeResponseType} from '../../workeffort/WorkEffortAssocType/WorkEffortAssocTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortAssocType = {
-  type: ResopnseType,
+  type: WorkEffortAssocTypeResponseType,
   description: 'mutation for ofbiz createWorkEffortAssocType method',
-  args:{},
+  args:{workEffortAssocTypeToBeAdded: {type: WorkEffortAssocTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortAssocTypes/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortAssocTypes/add?`, args.workEffortAssocTypeToBeAdded, req);
   }
 };
 export {createWorkEffortAssocType};
 
 
 const updateWorkEffortAssocType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortAssocType method',
   args:{workEffortAssocTypeToBeUpdated: {type: WorkEffortAssocTypeInputType},workEffortAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortAssocType};
 
 
 const deleteWorkEffortAssocTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortAssocTypeByIdUpdated method',
   args:{workEffortAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

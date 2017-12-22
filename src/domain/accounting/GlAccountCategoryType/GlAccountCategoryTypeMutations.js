@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {GlAccountCategoryTypeInputType} from '../../accounting/GlAccountCategoryType/GlAccountCategoryTypeInputType.js';
+import {GlAccountCategoryTypeResponseType} from '../../accounting/GlAccountCategoryType/GlAccountCategoryTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlAccountCategoryType = {
-  type: ResopnseType,
+  type: GlAccountCategoryTypeResponseType,
   description: 'mutation for ofbiz createGlAccountCategoryType method',
   args:{glAccountCategoryTypeToBeAdded: {type: GlAccountCategoryTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createGlAccountCategoryType};
 
 
 const updateGlAccountCategoryType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGlAccountCategoryType method',
   args:{glAccountCategoryTypeToBeUpdated: {type: GlAccountCategoryTypeInputType},glAccountCategoryTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateGlAccountCategoryType};
 
 
 const deleteGlAccountCategoryTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGlAccountCategoryTypeByIdUpdated method',
   args:{glAccountCategoryTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

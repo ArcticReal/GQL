@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {EmploymentInputType} from '../../humanres/Employment/EmploymentInputType.js';
+import {EmploymentResponseType} from '../../humanres/Employment/EmploymentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEmployment = {
-  type: ResopnseType,
+  type: EmploymentResponseType,
   description: 'mutation for ofbiz createEmployment method',
   args:{employmentToBeAdded: {type: EmploymentInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createEmployment};
 
 
 const deleteEmploymentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteEmploymentByIdUpdated method',
   args:{employmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteEmploymentByIdUpdated};
 
 
 const updateEmployment = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateEmployment method',
   args:{employmentToBeUpdated: {type: EmploymentInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

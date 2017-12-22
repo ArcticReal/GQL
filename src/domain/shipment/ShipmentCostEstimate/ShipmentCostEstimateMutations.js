@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ShipmentCostEstimateResponseType} from '../../shipment/ShipmentCostEstimate/ShipmentCostEstimateResponseType.js';
 import {ShipmentCostEstimateInputType} from '../../shipment/ShipmentCostEstimate/ShipmentCostEstimateInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentCostEstimate = {
-  type: ResopnseType,
+  type: ShipmentCostEstimateResponseType,
   description: 'mutation for ofbiz createShipmentCostEstimate method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createShipmentCostEstimate};
 
 
 const updateShipmentCostEstimate = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShipmentCostEstimate method',
   args:{shipmentCostEstimateToBeUpdated: {type: ShipmentCostEstimateInputType},shipmentCostEstimateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateShipmentCostEstimate};
 
 
 const deleteShipmentCostEstimateByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShipmentCostEstimateByIdUpdated method',
   args:{shipmentCostEstimateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

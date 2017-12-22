@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {AccommodationSpotInputType} from '../../accounting/AccommodationSpot/AccommodationSpotInputType.js';
+import {AccommodationSpotResponseType} from '../../accounting/AccommodationSpot/AccommodationSpotResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAccommodationSpot = {
-  type: ResopnseType,
+  type: AccommodationSpotResponseType,
   description: 'mutation for ofbiz createAccommodationSpot method',
   args:{accommodationSpotToBeAdded: {type: AccommodationSpotInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createAccommodationSpot};
 
 
 const updateAccommodationSpot = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAccommodationSpot method',
   args:{accommodationSpotToBeUpdated: {type: AccommodationSpotInputType},accommodationSpotId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateAccommodationSpot};
 
 
 const deleteAccommodationSpotByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAccommodationSpotByIdUpdated method',
   args:{accommodationSpotId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

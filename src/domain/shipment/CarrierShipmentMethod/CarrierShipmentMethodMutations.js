@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {CarrierShipmentMethodResponseType} from '../../shipment/CarrierShipmentMethod/CarrierShipmentMethodResponseType.js';
 import {CarrierShipmentMethodInputType} from '../../shipment/CarrierShipmentMethod/CarrierShipmentMethodInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCarrierShipmentMethod = {
-  type: ResopnseType,
+  type: CarrierShipmentMethodResponseType,
   description: 'mutation for ofbiz createCarrierShipmentMethod method',
-  args:{carrierShipmentMethodToBeAdded: {type: CarrierShipmentMethodInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/carrierShipmentMethods/add?`, args.carrierShipmentMethodToBeAdded, req);
+    return postToUrl(`shipment/shipment/carrierShipmentMethods/add?`, null, req);
   }
 };
 export {createCarrierShipmentMethod};
 
 
 const deleteCarrierShipmentMethodByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCarrierShipmentMethodByIdUpdated method',
   args:{carrierShipmentMethodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCarrierShipmentMethodByIdUpdated};
 
 
 const updateCarrierShipmentMethod = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCarrierShipmentMethod method',
   args:{carrierShipmentMethodToBeUpdated: {type: CarrierShipmentMethodInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

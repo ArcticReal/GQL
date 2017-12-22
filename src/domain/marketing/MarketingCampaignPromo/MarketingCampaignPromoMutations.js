@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {MarketingCampaignPromoInputType} from '../../marketing/MarketingCampaignPromo/MarketingCampaignPromoInputType.js';
+import {MarketingCampaignPromoResponseType} from '../../marketing/MarketingCampaignPromo/MarketingCampaignPromoResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMarketingCampaignPromo = {
-  type: ResopnseType,
+  type: MarketingCampaignPromoResponseType,
   description: 'mutation for ofbiz createMarketingCampaignPromo method',
-  args:{},
+  args:{marketingCampaignPromoToBeAdded: {type: MarketingCampaignPromoInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/marketingCampaign/marketingCampaignPromos/add?`, null, req);
+    return postToUrl(`marketing/marketingCampaign/marketingCampaignPromos/add?`, args.marketingCampaignPromoToBeAdded, req);
   }
 };
 export {createMarketingCampaignPromo};
 
 
 const deleteMarketingCampaignPromoByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteMarketingCampaignPromoByIdUpdated method',
   args:{marketingCampaignPromoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteMarketingCampaignPromoByIdUpdated};
 
 
 const updateMarketingCampaignPromo = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateMarketingCampaignPromo method',
   args:{marketingCampaignPromoToBeUpdated: {type: MarketingCampaignPromoInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

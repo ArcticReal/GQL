@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {UserLoginSecurityQuestionResponseType} from '../../login/UserLoginSecurityQuestion/UserLoginSecurityQuestionResponseType.js';
 import {UserLoginSecurityQuestionInputType} from '../../login/UserLoginSecurityQuestion/UserLoginSecurityQuestionInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createUserLoginSecurityQuestion = {
-  type: ResopnseType,
+  type: UserLoginSecurityQuestionResponseType,
   description: 'mutation for ofbiz createUserLoginSecurityQuestion method',
-  args:{userLoginSecurityQuestionToBeAdded: {type: UserLoginSecurityQuestionInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`login/userLogin/userLoginSecurityQuestions/add?`, args.userLoginSecurityQuestionToBeAdded, req);
+    return postToUrl(`login/userLogin/userLoginSecurityQuestions/add?`, null, req);
   }
 };
 export {createUserLoginSecurityQuestion};
 
 
 const updateUserLoginSecurityQuestion = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateUserLoginSecurityQuestion method',
   args:{userLoginSecurityQuestionToBeUpdated: {type: UserLoginSecurityQuestionInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateUserLoginSecurityQuestion};
 
 
 const deleteUserLoginSecurityQuestionByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteUserLoginSecurityQuestionByIdUpdated method',
   args:{userLoginSecurityQuestionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

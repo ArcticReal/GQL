@@ -44,7 +44,7 @@ const MapType = new GraphQLObjectType({
   })
 });
 
-const ResopnseType = new GraphQLObjectType({
+const ResponseType = new GraphQLObjectType({
   name: 'ResponseType',
   description: 'this is a response type returned by mutations',
   fields: () => ({
@@ -54,4 +54,4 @@ const ResopnseType = new GraphQLObjectType({
   })
 });
 
-export {KeyValueType, KeyValueInputType, MapType, ResopnseType};
+export {KeyValueType, KeyValueInputType, MapType, ResponseType};

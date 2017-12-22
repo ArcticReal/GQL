@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createRateType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRateType method',
   args:{rateTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createRateType};
 
 
 const deletePartyRate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyRate method',
   args:{fromDate: {type: GraphQLString},rateTypeId: {type: GraphQLString},partyId: {type: GraphQLString},rateAmountFromDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {deletePartyRate};
 
 
 const deleteRateAmount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteRateAmount method',
   args:{fromDate: {type: GraphQLString},rateTypeId: {type: GraphQLString},workEffortId: {type: GraphQLString},periodTypeId: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},rateCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {deleteRateAmount};
 
 
 const deleteRateType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteRateType method',
   args:{rateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {deleteRateType};
 
 
 const filterRateAmountList = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz filterRateAmountList method',
   args:{workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},rateTypeId: {type: GraphQLString},rateAmount: {type: GraphQLFloat},periodTypeId: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},rateCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {filterRateAmountList};
 
 
 const getRateAmount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getRateAmount method',
   args:{rateTypeId: {type: GraphQLString},workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},periodTypeId: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},rateCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {getRateAmount};
 
 
 const getRatesAmountsFromEmplPositionTypeId = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getRatesAmountsFromEmplPositionTypeId method',
   args:{emplPositionTypeId: {type: GraphQLString},workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},rateTypeId: {type: GraphQLString},periodTypeId: {type: GraphQLString},rateCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {getRatesAmountsFromEmplPositionTypeId};
 
 
 const getRatesAmountsFromPartyId = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getRatesAmountsFromPartyId method',
   args:{partyId: {type: GraphQLString},workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},rateTypeId: {type: GraphQLString},periodTypeId: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},rateCurrencyUomId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {getRatesAmountsFromPartyId};
 
 
 const getRatesAmountsFromWorkEffortId = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getRatesAmountsFromWorkEffortId method',
   args:{workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},rateTypeId: {type: GraphQLString},periodTypeId: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},rateCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {getRatesAmountsFromWorkEffortId};
 
 
 const updatePartyRate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyRate method',
   args:{rateTypeId: {type: GraphQLString},periodTypeId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},percentageUsed: {type: GraphQLFloat},defaultRate: {type: GraphQLString},rateAmount: {type: GraphQLFloat},organizationPartyId: {type: GraphQLString},rateCurrencyUomId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {updatePartyRate};
 
 
 const updateRateAmount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRateAmount method',
   args:{rateTypeId: {type: GraphQLString},rateAmount: {type: GraphQLFloat},workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},periodTypeId: {type: GraphQLString},emplPositionTypeId: {type: GraphQLString},rateCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {updateRateAmount};
 
 
 const updateRateType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRateType method',
   args:{rateTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

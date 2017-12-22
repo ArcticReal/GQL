@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PostalAddressResponseType} from '../../party/PostalAddress/PostalAddressResponseType.js';
 import {PostalAddressInputType} from '../../party/PostalAddress/PostalAddressInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPostalAddress = {
-  type: ResopnseType,
+  type: PostalAddressResponseType,
   description: 'mutation for ofbiz createPostalAddress method',
-  args:{postalAddressToBeAdded: {type: PostalAddressInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/postalAddresss/add?`, args.postalAddressToBeAdded, req);
+    return postToUrl(`party/postalAddresss/add?`, null, req);
   }
 };
 export {createPostalAddress};
 
 
 const updatePostalAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePostalAddress method',
   args:{postalAddressToBeUpdated: {type: PostalAddressInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePostalAddress};
 
 
 const deletePostalAddressByIdUpdated = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePostalAddressByIdUpdated method',
   args:{postalAddressId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

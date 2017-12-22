@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FixedAssetRegistrationResponseType} from '../../accounting/FixedAssetRegistration/FixedAssetRegistrationResponseType.js';
 import {FixedAssetRegistrationInputType} from '../../accounting/FixedAssetRegistration/FixedAssetRegistrationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAssetRegistration = {
-  type: ResopnseType,
+  type: FixedAssetRegistrationResponseType,
   description: 'mutation for ofbiz createFixedAssetRegistration method',
-  args:{fixedAssetRegistrationToBeAdded: {type: FixedAssetRegistrationInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/fixedAsset/fixedAssetRegistrations/add?`, args.fixedAssetRegistrationToBeAdded, req);
+    return postToUrl(`accounting/fixedAsset/fixedAssetRegistrations/add?`, null, req);
   }
 };
 export {createFixedAssetRegistration};
 
 
 const deleteFixedAssetRegistrationByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFixedAssetRegistrationByIdUpdated method',
   args:{fixedAssetRegistrationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFixedAssetRegistrationByIdUpdated};
 
 
 const updateFixedAssetRegistration = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFixedAssetRegistration method',
   args:{fixedAssetRegistrationToBeUpdated: {type: FixedAssetRegistrationInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

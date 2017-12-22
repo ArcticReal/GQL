@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {GlXbrlClassResponseType} from '../../accounting/GlXbrlClass/GlXbrlClassResponseType.js';
 import {GlXbrlClassInputType} from '../../accounting/GlXbrlClass/GlXbrlClassInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlXbrlClass = {
-  type: ResopnseType,
+  type: GlXbrlClassResponseType,
   description: 'mutation for ofbiz createGlXbrlClass method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createGlXbrlClass};
 
 
 const updateGlXbrlClass = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGlXbrlClass method',
   args:{glXbrlClassToBeUpdated: {type: GlXbrlClassInputType},glXbrlClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateGlXbrlClass};
 
 
 const deleteGlXbrlClassByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGlXbrlClassByIdUpdated method',
   args:{glXbrlClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

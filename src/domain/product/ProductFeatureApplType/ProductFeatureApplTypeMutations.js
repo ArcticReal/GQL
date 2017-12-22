@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductFeatureApplTypeInputType} from '../../product/ProductFeatureApplType/ProductFeatureApplTypeInputType.js';
+import {ProductFeatureApplTypeResponseType} from '../../product/ProductFeatureApplType/ProductFeatureApplTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductFeatureApplType = {
-  type: ResopnseType,
+  type: ProductFeatureApplTypeResponseType,
   description: 'mutation for ofbiz createProductFeatureApplType method',
-  args:{},
+  args:{productFeatureApplTypeToBeAdded: {type: ProductFeatureApplTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productFeatureApplTypes/add?`, null, req);
+    return postToUrl(`product/product/productFeatureApplTypes/add?`, args.productFeatureApplTypeToBeAdded, req);
   }
 };
 export {createProductFeatureApplType};
 
 
 const updateProductFeatureApplType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductFeatureApplType method',
   args:{productFeatureApplTypeToBeUpdated: {type: ProductFeatureApplTypeInputType},productFeatureApplTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductFeatureApplType};
 
 
 const deleteProductFeatureApplTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductFeatureApplTypeByIdUpdated method',
   args:{productFeatureApplTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

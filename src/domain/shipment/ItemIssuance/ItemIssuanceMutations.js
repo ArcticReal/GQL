@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ItemIssuanceResponseType} from '../../shipment/ItemIssuance/ItemIssuanceResponseType.js';
 import {ItemIssuanceInputType} from '../../shipment/ItemIssuance/ItemIssuanceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createItemIssuance = {
-  type: ResopnseType,
+  type: ItemIssuanceResponseType,
   description: 'mutation for ofbiz createItemIssuance method',
-  args:{itemIssuanceToBeAdded: {type: ItemIssuanceInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/itemIssuances/add?`, args.itemIssuanceToBeAdded, req);
+    return postToUrl(`shipment/itemIssuances/add?`, null, req);
   }
 };
 export {createItemIssuance};
 
 
 const updateItemIssuance = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateItemIssuance method',
   args:{itemIssuanceToBeUpdated: {type: ItemIssuanceInputType},itemIssuanceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateItemIssuance};
 
 
 const deleteItemIssuanceByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteItemIssuanceByIdUpdated method',
   args:{itemIssuanceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

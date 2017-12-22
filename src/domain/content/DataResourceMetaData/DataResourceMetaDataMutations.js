@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {DataResourceMetaDataInputType} from '../../content/DataResourceMetaData/DataResourceMetaDataInputType.js';
+import {DataResourceMetaDataResponseType} from '../../content/DataResourceMetaData/DataResourceMetaDataResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDataResourceMetaData = {
-  type: ResopnseType,
+  type: DataResourceMetaDataResponseType,
   description: 'mutation for ofbiz createDataResourceMetaData method',
   args:{dataResourceMetaDataToBeAdded: {type: DataResourceMetaDataInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createDataResourceMetaData};
 
 
 const deleteDataResourceMetaDataByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDataResourceMetaDataByIdUpdated method',
   args:{dataResourceMetaDataId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteDataResourceMetaDataByIdUpdated};
 
 
 const updateDataResourceMetaData = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDataResourceMetaData method',
   args:{dataResourceMetaDataToBeUpdated: {type: DataResourceMetaDataInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {RequirementTypeResponseType} from '../../order/RequirementType/RequirementTypeResponseType.js';
 import {RequirementTypeInputType} from '../../order/RequirementType/RequirementTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRequirementType = {
-  type: ResopnseType,
+  type: RequirementTypeResponseType,
   description: 'mutation for ofbiz createRequirementType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createRequirementType};
 
 
 const updateRequirementType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateRequirementType method',
   args:{requirementTypeToBeUpdated: {type: RequirementTypeInputType},requirementTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateRequirementType};
 
 
 const deleteRequirementTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteRequirementTypeByIdUpdated method',
   args:{requirementTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

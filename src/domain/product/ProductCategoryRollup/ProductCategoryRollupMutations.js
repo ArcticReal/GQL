@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductCategoryRollupInputType} from '../../product/ProductCategoryRollup/ProductCategoryRollupInputType.js';
+import {ProductCategoryRollupResponseType} from '../../product/ProductCategoryRollup/ProductCategoryRollupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductCategoryRollup = {
-  type: ResopnseType,
+  type: ProductCategoryRollupResponseType,
   description: 'mutation for ofbiz createProductCategoryRollup method',
   args:{productCategoryRollupToBeAdded: {type: ProductCategoryRollupInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductCategoryRollup};
 
 
 const updateProductCategoryRollup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductCategoryRollup method',
   args:{productCategoryRollupToBeUpdated: {type: ProductCategoryRollupInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductCategoryRollup};
 
 
 const deleteProductCategoryRollupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductCategoryRollupByIdUpdated method',
   args:{productCategoryRollupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

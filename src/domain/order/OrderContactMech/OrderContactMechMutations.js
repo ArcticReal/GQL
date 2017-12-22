@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {OrderContactMechResponseType} from '../../order/OrderContactMech/OrderContactMechResponseType.js';
 import {OrderContactMechInputType} from '../../order/OrderContactMech/OrderContactMechInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderContactMech = {
-  type: ResopnseType,
+  type: OrderContactMechResponseType,
   description: 'mutation for ofbiz createOrderContactMech method',
-  args:{orderContactMechToBeAdded: {type: OrderContactMechInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderContactMechs/add?`, args.orderContactMechToBeAdded, req);
+    return postToUrl(`order/orderContactMechs/add?`, null, req);
   }
 };
 export {createOrderContactMech};
 
 
 const updateOrderContactMech = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderContactMech method',
   args:{orderContactMechToBeUpdated: {type: OrderContactMechInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderContactMech};
 
 
 const deleteOrderContactMechByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderContactMechByIdUpdated method',
   args:{orderContactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

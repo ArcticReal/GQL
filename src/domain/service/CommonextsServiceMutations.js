@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createSystemInfoNote = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSystemInfoNote method',
   args:{noteName: {type: GraphQLString},noteDateTime: {type: GraphQLString},noteInfo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createSystemInfoNote};
 
 
 const deleteAllSystemNotes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAllSystemNotes method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {deleteAllSystemNotes};
 
 
 const deleteSystemInfoNote = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSystemInfoNote method',
   args:{noteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {deleteSystemInfoNote};
 
 
 const getLastSystemInfoNote = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getLastSystemInfoNote method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {getLastSystemInfoNote};
 
 
 const getSystemInfoNotes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getSystemInfoNotes method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {getSystemInfoNotes};
 
 
 const getSystemInfoStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getSystemInfoStatus method',
   args:{},
   resolve: (root, args, {req}) => {

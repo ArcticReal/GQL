@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyGlAccountResponseType} from '../../accounting/PartyGlAccount/PartyGlAccountResponseType.js';
 import {PartyGlAccountInputType} from '../../accounting/PartyGlAccount/PartyGlAccountInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyGlAccount = {
-  type: ResopnseType,
+  type: PartyGlAccountResponseType,
   description: 'mutation for ofbiz createPartyGlAccount method',
-  args:{partyGlAccountToBeAdded: {type: PartyGlAccountInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/partyGlAccounts/add?`, args.partyGlAccountToBeAdded, req);
+    return postToUrl(`accounting/glAccount/partyGlAccounts/add?`, null, req);
   }
 };
 export {createPartyGlAccount};
 
 
 const deletePartyGlAccountByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyGlAccountByIdUpdated method',
   args:{partyGlAccountId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deletePartyGlAccountByIdUpdated};
 
 
 const updatePartyGlAccount = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyGlAccount method',
   args:{partyGlAccountToBeUpdated: {type: PartyGlAccountInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

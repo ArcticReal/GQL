@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {WebSiteContactListInputType} from '../../marketing/WebSiteContactList/WebSiteContactListInputType.js';
+import {WebSiteContactListResponseType} from '../../marketing/WebSiteContactList/WebSiteContactListResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWebSiteContactList = {
-  type: ResopnseType,
+  type: WebSiteContactListResponseType,
   description: 'mutation for ofbiz createWebSiteContactList method',
-  args:{},
+  args:{webSiteContactListToBeAdded: {type: WebSiteContactListInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/contactList/webSiteContactLists/add?`, null, req);
+    return postToUrl(`marketing/contactList/webSiteContactLists/add?`, args.webSiteContactListToBeAdded, req);
   }
 };
 export {createWebSiteContactList};
 
 
 const updateWebSiteContactList = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWebSiteContactList method',
   args:{webSiteContactListToBeUpdated: {type: WebSiteContactListInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWebSiteContactList};
 
 
 const deleteWebSiteContactListByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWebSiteContactListByIdUpdated method',
   args:{webSiteContactListId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

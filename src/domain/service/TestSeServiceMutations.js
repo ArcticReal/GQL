@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const testEntityAutoCreateTestingItemPkMissing = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoCreateTestingItemPkMissing method',
   args:{testingId: {type: GraphQLString},testingHistory: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {testEntityAutoCreateTestingItemPkMissing};
 
 
 const testEntityAutoCreateTestingItemPkPresent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoCreateTestingItemPkPresent method',
   args:{testingId: {type: GraphQLString},testingSeqId: {type: GraphQLString},testingHistory: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {testEntityAutoCreateTestingItemPkPresent};
 
 
 const testEntityAutoCreateTestingNodeMemberPkMissing = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoCreateTestingNodeMemberPkMissing method',
   args:{testingId: {type: GraphQLString},testingNodeId: {type: GraphQLString},extendFromDate: {type: GraphQLString},extendThruDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {testEntityAutoCreateTestingNodeMemberPkMissing};
 
 
 const testEntityAutoCreateTestingNodeMemberPkPresent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoCreateTestingNodeMemberPkPresent method',
   args:{fromDate: {type: GraphQLString},testingId: {type: GraphQLString},testingNodeId: {type: GraphQLString},extendFromDate: {type: GraphQLString},extendThruDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {testEntityAutoCreateTestingNodeMemberPkPresent};
 
 
 const testEntityAutoCreateTestingPkMissing = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoCreateTestingPkMissing method',
   args:{comments: {type: GraphQLString},testingTypeId: {type: GraphQLString},testingSize: {type: GraphQLInt},description: {type: GraphQLString},testingDate: {type: GraphQLString},testingName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {testEntityAutoCreateTestingPkMissing};
 
 
 const testEntityAutoCreateTestingPkPresent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoCreateTestingPkPresent method',
   args:{testingId: {type: GraphQLString},comments: {type: GraphQLString},testingTypeId: {type: GraphQLString},testingSize: {type: GraphQLInt},description: {type: GraphQLString},testingDate: {type: GraphQLString},testingName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {testEntityAutoCreateTestingPkPresent};
 
 
 const testEntityAutoCreateTestingStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoCreateTestingStatus method',
   args:{statusId: {type: GraphQLString},testingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {testEntityAutoCreateTestingStatus};
 
 
 const testEntityAutoDeleteTestingStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoDeleteTestingStatus method',
   args:{testingStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {testEntityAutoDeleteTestingStatus};
 
 
 const testEntityAutoExpireTestFieldType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoExpireTestFieldType method',
   args:{testFieldTypeId: {type: GraphQLString},dateTimeField: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {testEntityAutoExpireTestFieldType};
 
 
 const testEntityAutoExpireTestingNodeMember = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoExpireTestingNodeMember method',
   args:{fromDate: {type: GraphQLString},testingId: {type: GraphQLString},testingNodeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {testEntityAutoExpireTestingNodeMember};
 
 
 const testEntityAutoRemoveTesting = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoRemoveTesting method',
   args:{testingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {testEntityAutoRemoveTesting};
 
 
 const testEntityAutoUpdateTesting = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoUpdateTesting method',
   args:{testingId: {type: GraphQLString},comments: {type: GraphQLString},testingTypeId: {type: GraphQLString},testingSize: {type: GraphQLInt},description: {type: GraphQLString},testingDate: {type: GraphQLString},testingName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {testEntityAutoUpdateTesting};
 
 
 const testEntityAutoUpdateTestingStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testEntityAutoUpdateTestingStatus method',
   args:{statusId: {type: GraphQLString},testingStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {testEntityAutoUpdateTestingStatus};
 
 
 const testServiceDeadLockRetry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceDeadLockRetry method',
   args:{test: {type: GraphQLString},testResult: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {testServiceDeadLockRetry};
 
 
 const testServiceDeadLockRetryThreadA = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceDeadLockRetryThreadA method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {testServiceDeadLockRetryThreadA};
 
 
 const testServiceDeadLockRetryThreadB = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceDeadLockRetryThreadB method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {testServiceDeadLockRetryThreadB};
 
 
 const testServiceEcaGlobalEventExec = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceEcaGlobalEventExec method',
   args:{test: {type: GraphQLString},testResult: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {testServiceEcaGlobalEventExec};
 
 
 const testServiceEcaGlobalEventExecOnCommit = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceEcaGlobalEventExecOnCommit method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {testServiceEcaGlobalEventExecOnCommit};
 
 
 const testServiceEcaGlobalEventExecOnRollback = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceEcaGlobalEventExecOnRollback method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {testServiceEcaGlobalEventExecOnRollback};
 
 
 const testServiceEcaGlobalEventExecToRollback = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceEcaGlobalEventExecToRollback method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {testServiceEcaGlobalEventExecToRollback};
 
 
 const testServiceLockWaitTimeoutRetry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceLockWaitTimeoutRetry method',
   args:{test: {type: GraphQLString},testResult: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {testServiceLockWaitTimeoutRetry};
 
 
 const testServiceLockWaitTimeoutRetryCantRecover = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceLockWaitTimeoutRetryCantRecover method',
   args:{test: {type: GraphQLString},testResult: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {testServiceLockWaitTimeoutRetryCantRecover};
 
 
 const testServiceLockWaitTimeoutRetryCantRecoverWaiter = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceLockWaitTimeoutRetryCantRecoverWaiter method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {testServiceLockWaitTimeoutRetryCantRecoverWaiter};
 
 
 const testServiceLockWaitTimeoutRetryGrabber = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceLockWaitTimeoutRetryGrabber method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {testServiceLockWaitTimeoutRetryGrabber};
 
 
 const testServiceLockWaitTimeoutRetryWaiter = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceLockWaitTimeoutRetryWaiter method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {testServiceLockWaitTimeoutRetryWaiter};
 
 
 const testServiceOwnTxSubServiceAfterSetRollbackOnlyInParent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceOwnTxSubServiceAfterSetRollbackOnlyInParent method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {testServiceOwnTxSubServiceAfterSetRollbackOnlyInParent};
 
 
 const testServiceOwnTxSubServiceAfterSetRollbackOnlyInParentErrorCatchWrapper = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceOwnTxSubServiceAfterSetRollbackOnlyInParentErrorCatchWrapper method',
   args:{test: {type: GraphQLString},testResult: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {testServiceOwnTxSubServiceAfterSetRollbackOnlyInParentErrorCatchWrapper}
 
 
 const testServiceOwnTxSubServiceAfterSetRollbackOnlyInParentSubService = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testServiceOwnTxSubServiceAfterSetRollbackOnlyInParentSubService method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {testServiceOwnTxSubServiceAfterSetRollbackOnlyInParentSubService};
 
 
 const testXmlRpcAdd = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testXmlRpcAdd method',
   args:{num1: {type: GraphQLInt},num2: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {testXmlRpcAdd};
 
 
 const testXmlRpcClientAdd = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testXmlRpcClientAdd method',
   args:{test: {type: GraphQLString},testResult: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {testXmlRpcClientAdd};
 
 
 const testXmlRpcLocalEngine = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testXmlRpcLocalEngine method',
   args:{num1: {type: GraphQLInt},num2: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {

@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductFacilityResponseType} from '../../product/ProductFacility/ProductFacilityResponseType.js';
 import {ProductFacilityInputType} from '../../product/ProductFacility/ProductFacilityInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductFacility = {
-  type: ResopnseType,
+  type: ProductFacilityResponseType,
   description: 'mutation for ofbiz createProductFacility method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductFacility};
 
 
 const updateProductFacility = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductFacility method',
   args:{productFacilityToBeUpdated: {type: ProductFacilityInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductFacility};
 
 
 const deleteProductFacilityByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductFacilityByIdUpdated method',
   args:{productFacilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

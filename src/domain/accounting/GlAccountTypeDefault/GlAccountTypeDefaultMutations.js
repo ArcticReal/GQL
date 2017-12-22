@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {GlAccountTypeDefaultInputType} from '../../accounting/GlAccountTypeDefault/GlAccountTypeDefaultInputType.js';
+import {GlAccountTypeDefaultResponseType} from '../../accounting/GlAccountTypeDefault/GlAccountTypeDefaultResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlAccountTypeDefault = {
-  type: ResopnseType,
+  type: GlAccountTypeDefaultResponseType,
   description: 'mutation for ofbiz createGlAccountTypeDefault method',
-  args:{},
+  args:{glAccountTypeDefaultToBeAdded: {type: GlAccountTypeDefaultInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/glAccountTypeDefaults/add?`, null, req);
+    return postToUrl(`accounting/glAccount/glAccountTypeDefaults/add?`, args.glAccountTypeDefaultToBeAdded, req);
   }
 };
 export {createGlAccountTypeDefault};
 
 
 const deleteGlAccountTypeDefaultByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGlAccountTypeDefaultByIdUpdated method',
   args:{glAccountTypeDefaultId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteGlAccountTypeDefaultByIdUpdated};
 
 
 const updateGlAccountTypeDefault = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGlAccountTypeDefault method',
   args:{glAccountTypeDefaultToBeUpdated: {type: GlAccountTypeDefaultInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

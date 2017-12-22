@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createEntityGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEntityGroup method',
   args:{entityGroupId: {type: GraphQLString},entityGroupName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createEntityGroup};
 
 
 const createEntityGroupEntry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEntityGroupEntry method',
   args:{entityOrPackage: {type: GraphQLString},entityGroupId: {type: GraphQLString},applEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createEntityGroupEntry};
 
 
 const deleteEntityGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEntityGroup method',
   args:{entityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {deleteEntityGroup};
 
 
 const deleteEntityGroupEntry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEntityGroupEntry method',
   args:{entityOrPackage: {type: GraphQLString},entityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {deleteEntityGroupEntry};
 
 
 const updateEntityGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEntityGroup method',
   args:{entityGroupId: {type: GraphQLString},entityGroupName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {updateEntityGroup};
 
 
 const updateEntityGroupEntry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEntityGroupEntry method',
   args:{entityOrPackage: {type: GraphQLString},entityGroupId: {type: GraphQLString},applEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

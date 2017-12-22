@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ReturnAdjustmentTypeInputType} from '../../order/ReturnAdjustmentType/ReturnAdjustmentTypeInputType.js';
+import {ReturnAdjustmentTypeResponseType} from '../../order/ReturnAdjustmentType/ReturnAdjustmentTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReturnAdjustmentType = {
-  type: ResopnseType,
+  type: ReturnAdjustmentTypeResponseType,
   description: 'mutation for ofbiz createReturnAdjustmentType method',
-  args:{},
+  args:{returnAdjustmentTypeToBeAdded: {type: ReturnAdjustmentTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/returnAdjustment/returnAdjustmentTypes/add?`, null, req);
+    return postToUrl(`order/returnAdjustment/returnAdjustmentTypes/add?`, args.returnAdjustmentTypeToBeAdded, req);
   }
 };
 export {createReturnAdjustmentType};
 
 
 const updateReturnAdjustmentType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateReturnAdjustmentType method',
   args:{returnAdjustmentTypeToBeUpdated: {type: ReturnAdjustmentTypeInputType},returnAdjustmentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateReturnAdjustmentType};
 
 
 const deleteReturnAdjustmentTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteReturnAdjustmentTypeByIdUpdated method',
   args:{returnAdjustmentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

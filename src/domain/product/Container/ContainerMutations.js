@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ContainerInputType} from '../../product/Container/ContainerInputType.js';
+import {ContainerResponseType} from '../../product/Container/ContainerResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContainer = {
-  type: ResopnseType,
+  type: ContainerResponseType,
   description: 'mutation for ofbiz createContainer method',
-  args:{},
+  args:{containerToBeAdded: {type: ContainerInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/containers/add?`, null, req);
+    return postToUrl(`product/containers/add?`, args.containerToBeAdded, req);
   }
 };
 export {createContainer};
 
 
 const updateContainer = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContainer method',
   args:{containerToBeUpdated: {type: ContainerInputType},containerId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContainer};
 
 
 const deleteContainerByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContainerByIdUpdated method',
   args:{containerId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

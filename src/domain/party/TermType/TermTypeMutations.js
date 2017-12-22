@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {TermTypeResponseType} from '../../party/TermType/TermTypeResponseType.js';
 import {TermTypeInputType} from '../../party/TermType/TermTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTermType = {
-  type: ResopnseType,
+  type: TermTypeResponseType,
   description: 'mutation for ofbiz createTermType method',
-  args:{termTypeToBeAdded: {type: TermTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/termTypes/add?`, args.termTypeToBeAdded, req);
+    return postToUrl(`party/termTypes/add?`, null, req);
   }
 };
 export {createTermType};
 
 
 const updateTermType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTermType method',
   args:{termTypeToBeUpdated: {type: TermTypeInputType},termTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTermType};
 
 
 const deleteTermTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTermTypeByIdUpdated method',
   args:{termTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

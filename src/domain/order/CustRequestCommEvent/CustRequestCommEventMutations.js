@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {CustRequestCommEventInputType} from '../../order/CustRequestCommEvent/CustRequestCommEventInputType.js';
+import {CustRequestCommEventResponseType} from '../../order/CustRequestCommEvent/CustRequestCommEventResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCustRequestCommEvent = {
-  type: ResopnseType,
+  type: CustRequestCommEventResponseType,
   description: 'mutation for ofbiz createCustRequestCommEvent method',
   args:{custRequestCommEventToBeAdded: {type: CustRequestCommEventInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createCustRequestCommEvent};
 
 
 const deleteCustRequestCommEventByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCustRequestCommEventByIdUpdated method',
   args:{custRequestCommEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCustRequestCommEventByIdUpdated};
 
 
 const updateCustRequestCommEvent = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCustRequestCommEvent method',
   args:{custRequestCommEventToBeUpdated: {type: CustRequestCommEventInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

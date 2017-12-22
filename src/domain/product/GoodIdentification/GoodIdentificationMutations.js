@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {GoodIdentificationResponseType} from '../../product/GoodIdentification/GoodIdentificationResponseType.js';
 import {GoodIdentificationInputType} from '../../product/GoodIdentification/GoodIdentificationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGoodIdentification = {
-  type: ResopnseType,
+  type: GoodIdentificationResponseType,
   description: 'mutation for ofbiz createGoodIdentification method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createGoodIdentification};
 
 
 const deleteGoodIdentificationByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGoodIdentificationByIdUpdated method',
   args:{goodIdentificationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteGoodIdentificationByIdUpdated};
 
 
 const updateGoodIdentification = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGoodIdentification method',
   args:{goodIdentificationToBeUpdated: {type: GoodIdentificationInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {InvoiceTermAttributeResponseType} from '../../accounting/InvoiceTermAttribute/InvoiceTermAttributeResponseType.js';
 import {InvoiceTermAttributeInputType} from '../../accounting/InvoiceTermAttribute/InvoiceTermAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoiceTermAttribute = {
-  type: ResopnseType,
+  type: InvoiceTermAttributeResponseType,
   description: 'mutation for ofbiz createInvoiceTermAttribute method',
-  args:{invoiceTermAttributeToBeAdded: {type: InvoiceTermAttributeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceTermAttributes/add?`, args.invoiceTermAttributeToBeAdded, req);
+    return postToUrl(`accounting/invoice/invoiceTermAttributes/add?`, null, req);
   }
 };
 export {createInvoiceTermAttribute};
 
 
 const updateInvoiceTermAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInvoiceTermAttribute method',
   args:{invoiceTermAttributeToBeUpdated: {type: InvoiceTermAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateInvoiceTermAttribute};
 
 
 const deleteInvoiceTermAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInvoiceTermAttributeByIdUpdated method',
   args:{invoiceTermAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

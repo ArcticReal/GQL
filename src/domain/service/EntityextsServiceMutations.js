@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const cleanSyncRemoveInfo = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cleanSyncRemoveInfo method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {cleanSyncRemoveInfo};
 
 
 const clearAllEntityCaches = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz clearAllEntityCaches method',
   args:{distribute: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {clearAllEntityCaches};
 
 
 const clearCacheLineByCondition = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz clearCacheLineByCondition method',
   args:{condition: {type: GraphQLString},entityName: {type: GraphQLString},distribute: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {clearCacheLineByCondition};
 
 
 const clearCacheLineByDummyPK = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz clearCacheLineByDummyPK method',
   args:{dummyPK: {type: new GraphQLList(KeyValueInputType)},distribute: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {clearCacheLineByDummyPK};
 
 
 const clearCacheLineByPrimaryKey = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz clearCacheLineByPrimaryKey method',
   args:{primaryKey: {type: new GraphQLList(KeyValueInputType)},distribute: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {clearCacheLineByPrimaryKey};
 
 
 const clearCacheLineByValue = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz clearCacheLineByValue method',
   args:{value: {type: new GraphQLList(KeyValueInputType)},distribute: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {clearCacheLineByValue};
 
 
 const createBrowserType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createBrowserType method',
   args:{browserVersion: {type: GraphQLString},browserName: {type: GraphQLString},browserTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createBrowserType};
 
 
 const createEntitySync = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEntitySync method',
   args:{targetDelegatorName: {type: GraphQLString},maxRunningNoUpdateMillis: {type: GraphQLInt},lastHistoryStartDate: {type: GraphQLString},preOfflineSynchTime: {type: GraphQLString},forPushOnly: {type: GraphQLString},forPullOnly: {type: GraphQLString},lastSuccessfulSynchTime: {type: GraphQLString},keepRemoveInfoHours: {type: GraphQLFloat},offlineSyncSplitMillis: {type: GraphQLInt},targetServiceName: {type: GraphQLString},runStatusId: {type: GraphQLString},syncSplitMillis: {type: GraphQLInt},syncEndBufferMillis: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createEntitySync};
 
 
 const createEntitySyncHistory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEntitySyncHistory method',
   args:{entitySyncId: {type: GraphQLString},totalRowsExported: {type: GraphQLInt},perSplitMinItems: {type: GraphQLInt},toCreateInserted: {type: GraphQLInt},toStoreUpdated: {type: GraphQLInt},toCreateUpdated: {type: GraphQLInt},toCreateNotUpdated: {type: GraphQLInt},perSplitMinMillis: {type: GraphQLInt},totalStoreCalls: {type: GraphQLInt},perSplitMaxMillis: {type: GraphQLInt},runningTimeMillis: {type: GraphQLInt},beginningSynchTime: {type: GraphQLString},toStoreInserted: {type: GraphQLInt},lastSplitStartTime: {type: GraphQLInt},totalRowsToRemove: {type: GraphQLInt},totalSplits: {type: GraphQLInt},lastSuccessfulSynchTime: {type: GraphQLString},totalRowsToCreate: {type: GraphQLInt},perSplitMaxItems: {type: GraphQLInt},lastCandidateEndTime: {type: GraphQLString},totalRowsToStore: {type: GraphQLInt},toRemoveAlreadyDeleted: {type: GraphQLInt},toStoreNotUpdated: {type: GraphQLInt},toRemoveDeleted: {type: GraphQLInt},runStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createEntitySyncHistory};
 
 
 const createEntitySyncInclude = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEntitySyncInclude method',
   args:{entityOrPackage: {type: GraphQLString},entitySyncId: {type: GraphQLString},applEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createEntitySyncInclude};
 
 
 const createPlatformType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPlatformType method',
   args:{platformVersion: {type: GraphQLString},platformTypeId: {type: GraphQLString},platformName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createPlatformType};
 
 
 const createProtocolType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createProtocolType method',
   args:{protocolTypeId: {type: GraphQLString},protocolName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createProtocolType};
 
 
 const createServerHitType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createServerHitType method',
   args:{hitTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createServerHitType};
 
 
 const createTestingSubtype = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTestingSubtype method',
   args:{testingTypeId: {type: GraphQLString},subtypeDescription: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createTestingSubtype};
 
 
 const createTestingType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTestingType method',
   args:{testingTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createTestingType};
 
 
 const createUserAgentMethodType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUserAgentMethodType method',
   args:{description: {type: GraphQLString},userAgentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createUserAgentMethodType};
 
 
 const createUserAgentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUserAgentType method',
   args:{userAgentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createUserAgentType};
 
 
 const deleteBrowserType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteBrowserType method',
   args:{browserTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {deleteBrowserType};
 
 
 const deleteEntitySyncHistory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEntitySyncHistory method',
   args:{entitySyncId: {type: GraphQLString},startDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {deleteEntitySyncHistory};
 
 
 const deleteEntitySyncInclude = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteEntitySyncInclude method',
   args:{entityOrPackage: {type: GraphQLString},entitySyncId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {deleteEntitySyncInclude};
 
 
 const deletePlatformType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePlatformType method',
   args:{platformTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {deletePlatformType};
 
 
 const deleteProtocolType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteProtocolType method',
   args:{protocolTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {deleteProtocolType};
 
 
 const deleteServerHitType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteServerHitType method',
   args:{hitTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {deleteServerHitType};
 
 
 const deleteTestingSubtype = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteTestingSubtype method',
   args:{testingTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {deleteTestingSubtype};
 
 
 const deleteTestingType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteTestingType method',
   args:{testingTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {deleteTestingType};
 
 
 const deleteUserAgentMethodType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteUserAgentMethodType method',
   args:{userAgentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {deleteUserAgentMethodType};
 
 
 const deleteUserAgentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteUserAgentType method',
   args:{userAgentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {deleteUserAgentType};
 
 
 const distributedClearAllEntityCaches = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz distributedClearAllEntityCaches method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {distributedClearAllEntityCaches};
 
 
 const distributedClearCacheLineByCondition = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz distributedClearCacheLineByCondition method',
   args:{condition: {type: GraphQLString},entityName: {type: GraphQLString},distribute: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {distributedClearCacheLineByCondition};
 
 
 const distributedClearCacheLineByDummyPK = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz distributedClearCacheLineByDummyPK method',
   args:{dummyPK: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {distributedClearCacheLineByDummyPK};
 
 
 const distributedClearCacheLineByPrimaryKey = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz distributedClearCacheLineByPrimaryKey method',
   args:{primaryKey: {type: new GraphQLList(KeyValueInputType)},distribute: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {distributedClearCacheLineByPrimaryKey};
 
 
 const distributedClearCacheLineByValue = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz distributedClearCacheLineByValue method',
   args:{value: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {distributedClearCacheLineByValue};
 
 
 const entitySyncPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz entitySyncPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {entitySyncPermissionCheck};
 
 
 const importDelimitedEntityFile = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz importDelimitedEntityFile method',
   args:{file: {type: GraphQLString},delimiter: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {importDelimitedEntityFile};
 
 
 const importEntityFileDirectory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz importEntityFileDirectory method',
   args:{rootDirectory: {type: GraphQLString},delimiter: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {importEntityFileDirectory};
 
 
 const loadOfflineEntitySyncData = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz loadOfflineEntitySyncData method',
   args:{xmlFileName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {loadOfflineEntitySyncData};
 
 
 const localhostClearAllEntityCaches = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz localhostClearAllEntityCaches method',
   args:{distribute: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {localhostClearAllEntityCaches};
 
 
 const localhostClearCacheLineByDummyPK = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz localhostClearCacheLineByDummyPK method',
   args:{dummyPK: {type: new GraphQLList(KeyValueInputType)},distribute: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {localhostClearCacheLineByDummyPK};
 
 
 const localhostClearCacheLineByPrimaryKey = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz localhostClearCacheLineByPrimaryKey method',
   args:{primaryKey: {type: new GraphQLList(KeyValueInputType)},distribute: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {localhostClearCacheLineByPrimaryKey};
 
 
 const localhostClearCacheLineByValue = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz localhostClearCacheLineByValue method',
   args:{value: {type: new GraphQLList(KeyValueInputType)},distribute: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {localhostClearCacheLineByValue};
 
 
 const pullAndReportEntitySyncData = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz pullAndReportEntitySyncData method',
   args:{entitySyncId: {type: GraphQLString},delegatorName: {type: GraphQLString},toCreateInserted: {type: GraphQLInt},toStoreUpdated: {type: GraphQLInt},toCreateUpdated: {type: GraphQLInt},toCreateNotUpdated: {type: GraphQLInt},toRemoveAlreadyDeleted: {type: GraphQLInt},toStoreNotUpdated: {type: GraphQLInt},toRemoveDeleted: {type: GraphQLInt},toStoreInserted: {type: GraphQLInt},startDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {pullAndReportEntitySyncData};
 
 
 const rebuildEntityIndexesAndKeys = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz rebuildEntityIndexesAndKeys method',
   args:{groupName: {type: GraphQLString},fixColSizes: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {rebuildEntityIndexesAndKeys};
 
 
 const reencryptFields = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz reencryptFields method',
   args:{groupName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {reencryptFields};
 
 
 const reencryptPrivateKeys = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz reencryptPrivateKeys method',
   args:{oldKey: {type: GraphQLString},newKey: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {reencryptPrivateKeys};
 
 
 const remotePullAndReportEntitySyncDataHttp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz remotePullAndReportEntitySyncDataHttp method',
   args:{entitySyncId: {type: GraphQLString},delegatorName: {type: GraphQLString},toCreateInserted: {type: GraphQLInt},toStoreUpdated: {type: GraphQLInt},toCreateUpdated: {type: GraphQLInt},toCreateNotUpdated: {type: GraphQLInt},toRemoveAlreadyDeleted: {type: GraphQLInt},toStoreNotUpdated: {type: GraphQLInt},toRemoveDeleted: {type: GraphQLInt},toStoreInserted: {type: GraphQLInt},startDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {remotePullAndReportEntitySyncDataHttp};
 
 
 const remotePullAndReportEntitySyncDataRmi = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz remotePullAndReportEntitySyncDataRmi method',
   args:{entitySyncId: {type: GraphQLString},delegatorName: {type: GraphQLString},toCreateInserted: {type: GraphQLInt},toStoreUpdated: {type: GraphQLInt},toCreateUpdated: {type: GraphQLInt},toCreateNotUpdated: {type: GraphQLInt},toRemoveAlreadyDeleted: {type: GraphQLInt},toStoreNotUpdated: {type: GraphQLInt},toRemoveDeleted: {type: GraphQLInt},toStoreInserted: {type: GraphQLInt},startDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {remotePullAndReportEntitySyncDataRmi};
 
 
 const remoteStoreEntitySyncDataHttp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz remoteStoreEntitySyncDataHttp method',
   args:{entitySyncId: {type: GraphQLString},delegatorName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {remoteStoreEntitySyncDataHttp};
 
 
 const remoteStoreEntitySyncDataRmi = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz remoteStoreEntitySyncDataRmi method',
   args:{entitySyncId: {type: GraphQLString},delegatorName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {remoteStoreEntitySyncDataRmi};
 
 
 const resetEntitySyncStatusToNotStarted = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz resetEntitySyncStatusToNotStarted method',
   args:{entitySyncId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {resetEntitySyncStatusToNotStarted};
 
 
 const runEntitySync = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz runEntitySync method',
   args:{entitySyncId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {runEntitySync};
 
 
 const runOfflineEntitySync = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz runOfflineEntitySync method',
   args:{entitySyncId: {type: GraphQLString},fileName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {runOfflineEntitySync};
 
 
 const runPullEntitySync = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz runPullEntitySync method',
   args:{entitySyncId: {type: GraphQLString},remotePullAndReportEntitySyncDataName: {type: GraphQLString},remoteDelegatorName: {type: GraphQLString},localDelegatorName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {runPullEntitySync};
 
 
 const storeEntitySyncData = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz storeEntitySyncData method',
   args:{entitySyncId: {type: GraphQLString},delegatorName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,7 +596,7 @@ export {storeEntitySyncData};
 
 
 const unwrapByteWrappers = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz unwrapByteWrappers method',
   args:{fieldName: {type: GraphQLString},entityName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -607,7 +607,7 @@ export {unwrapByteWrappers};
 
 
 const updateBrowserType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateBrowserType method',
   args:{browserTypeId: {type: GraphQLString},browserVersion: {type: GraphQLString},browserName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -618,7 +618,7 @@ export {updateBrowserType};
 
 
 const updateEntitySync = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEntitySync method',
   args:{entitySyncId: {type: GraphQLString},targetDelegatorName: {type: GraphQLString},maxRunningNoUpdateMillis: {type: GraphQLInt},lastHistoryStartDate: {type: GraphQLString},preOfflineSynchTime: {type: GraphQLString},forPushOnly: {type: GraphQLString},forPullOnly: {type: GraphQLString},lastSuccessfulSynchTime: {type: GraphQLString},keepRemoveInfoHours: {type: GraphQLFloat},offlineSyncSplitMillis: {type: GraphQLInt},targetServiceName: {type: GraphQLString},runStatusId: {type: GraphQLString},syncSplitMillis: {type: GraphQLInt},syncEndBufferMillis: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -629,7 +629,7 @@ export {updateEntitySync};
 
 
 const updateEntitySyncHistory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEntitySyncHistory method',
   args:{entitySyncId: {type: GraphQLString},startDate: {type: GraphQLString},totalRowsExported: {type: GraphQLInt},perSplitMinItems: {type: GraphQLInt},toCreateInserted: {type: GraphQLInt},toStoreUpdated: {type: GraphQLInt},toCreateUpdated: {type: GraphQLInt},toCreateNotUpdated: {type: GraphQLInt},perSplitMinMillis: {type: GraphQLInt},totalStoreCalls: {type: GraphQLInt},perSplitMaxMillis: {type: GraphQLInt},runningTimeMillis: {type: GraphQLInt},beginningSynchTime: {type: GraphQLString},toStoreInserted: {type: GraphQLInt},lastSplitStartTime: {type: GraphQLInt},totalRowsToRemove: {type: GraphQLInt},totalSplits: {type: GraphQLInt},lastSuccessfulSynchTime: {type: GraphQLString},totalRowsToCreate: {type: GraphQLInt},perSplitMaxItems: {type: GraphQLInt},lastCandidateEndTime: {type: GraphQLString},totalRowsToStore: {type: GraphQLInt},toRemoveAlreadyDeleted: {type: GraphQLInt},toStoreNotUpdated: {type: GraphQLInt},toRemoveDeleted: {type: GraphQLInt},runStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -640,7 +640,7 @@ export {updateEntitySyncHistory};
 
 
 const updateEntitySyncInclude = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEntitySyncInclude method',
   args:{entityOrPackage: {type: GraphQLString},entitySyncId: {type: GraphQLString},applEnumId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -651,7 +651,7 @@ export {updateEntitySyncInclude};
 
 
 const updateEntitySyncRunning = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEntitySyncRunning method',
   args:{entitySyncId: {type: GraphQLString},targetDelegatorName: {type: GraphQLString},maxRunningNoUpdateMillis: {type: GraphQLInt},lastHistoryStartDate: {type: GraphQLString},preOfflineSynchTime: {type: GraphQLString},forPushOnly: {type: GraphQLString},forPullOnly: {type: GraphQLString},lastSuccessfulSynchTime: {type: GraphQLString},keepRemoveInfoHours: {type: GraphQLFloat},offlineSyncSplitMillis: {type: GraphQLInt},targetServiceName: {type: GraphQLString},runStatusId: {type: GraphQLString},syncSplitMillis: {type: GraphQLInt},syncEndBufferMillis: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -662,7 +662,7 @@ export {updateEntitySyncRunning};
 
 
 const updateOfflineEntitySync = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOfflineEntitySync method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -673,7 +673,7 @@ export {updateOfflineEntitySync};
 
 
 const updatePlatformType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePlatformType method',
   args:{platformTypeId: {type: GraphQLString},platformVersion: {type: GraphQLString},platformName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -684,7 +684,7 @@ export {updatePlatformType};
 
 
 const updateProtocolType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateProtocolType method',
   args:{protocolTypeId: {type: GraphQLString},protocolName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -695,7 +695,7 @@ export {updateProtocolType};
 
 
 const updateServerHitType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateServerHitType method',
   args:{hitTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -706,7 +706,7 @@ export {updateServerHitType};
 
 
 const updateTestingSubtype = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTestingSubtype method',
   args:{testingTypeId: {type: GraphQLString},subtypeDescription: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {updateTestingSubtype};
 
 
 const updateTestingType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTestingType method',
   args:{testingTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {updateTestingType};
 
 
 const updateUserAgentMethodType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateUserAgentMethodType method',
   args:{userAgentMethodTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {updateUserAgentMethodType};
 
 
 const updateUserAgentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateUserAgentType method',
   args:{userAgentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -750,7 +750,7 @@ export {updateUserAgentType};
 
 
 const watchEntity = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz watchEntity method',
   args:{newValue: {type: new GraphQLList(KeyValueInputType)},fieldName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

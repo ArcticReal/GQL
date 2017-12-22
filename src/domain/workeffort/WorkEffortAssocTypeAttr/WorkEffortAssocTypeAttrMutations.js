@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortAssocTypeAttrResponseType} from '../../workeffort/WorkEffortAssocTypeAttr/WorkEffortAssocTypeAttrResponseType.js';
 import {WorkEffortAssocTypeAttrInputType} from '../../workeffort/WorkEffortAssocTypeAttr/WorkEffortAssocTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortAssocTypeAttr = {
-  type: ResopnseType,
+  type: WorkEffortAssocTypeAttrResponseType,
   description: 'mutation for ofbiz createWorkEffortAssocTypeAttr method',
-  args:{workEffortAssocTypeAttrToBeAdded: {type: WorkEffortAssocTypeAttrInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortAssocTypeAttrs/add?`, args.workEffortAssocTypeAttrToBeAdded, req);
+    return postToUrl(`workeffort/workEffort/workEffortAssocTypeAttrs/add?`, null, req);
   }
 };
 export {createWorkEffortAssocTypeAttr};
 
 
 const updateWorkEffortAssocTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortAssocTypeAttr method',
   args:{workEffortAssocTypeAttrToBeUpdated: {type: WorkEffortAssocTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortAssocTypeAttr};
 
 
 const deleteWorkEffortAssocTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortAssocTypeAttrByIdUpdated method',
   args:{workEffortAssocTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

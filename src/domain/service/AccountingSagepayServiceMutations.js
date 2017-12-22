@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const SagePayPaymentAuthentication = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz SagePayPaymentAuthentication method',
   args:{expiryDate: {type: GraphQLString},amount: {type: GraphQLString},vendorTxCode: {type: GraphQLString},cardType: {type: GraphQLString},cardHolder: {type: GraphQLString},description: {type: GraphQLString},currency: {type: GraphQLString},billingAddress: {type: GraphQLString},billingPostCode: {type: GraphQLString},cardNumber: {type: GraphQLString},deliveryPhone: {type: GraphQLString},deliveryCity: {type: GraphQLString},basket: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},issueNumber: {type: GraphQLString},deliveryAddress2: {type: GraphQLString},billingFirstnames: {type: GraphQLString},billingState: {type: GraphQLString},deliverySurname: {type: GraphQLString},billingAddress2: {type: GraphQLString},deliveryPostCode: {type: GraphQLString},deliveryAddress: {type: GraphQLString},deliveryCountry: {type: GraphQLString},deliveryState: {type: GraphQLString},billingSurname: {type: GraphQLString},billingCountry: {type: GraphQLString},isBillingSameAsDelivery: {type: GraphQLBoolean},deliveryFirstnames: {type: GraphQLString},billingCity: {type: GraphQLString},billingPhone: {type: GraphQLString},cv2: {type: GraphQLString},startDate: {type: GraphQLString},clientIPAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {SagePayPaymentAuthentication};
 
 
 const SagePayPaymentAuthorisation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz SagePayPaymentAuthorisation method',
   args:{amount: {type: GraphQLString},vendorTxCode: {type: GraphQLString},vpsTxId: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},securityKey: {type: GraphQLString},txAuthNo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {SagePayPaymentAuthorisation};
 
 
 const SagePayPaymentRefund = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz SagePayPaymentRefund method',
   args:{relatedVendorTxCode: {type: GraphQLString},amount: {type: GraphQLString},vendorTxCode: {type: GraphQLString},description: {type: GraphQLString},currency: {type: GraphQLString},relatedTxAuthNo: {type: GraphQLString},relatedVPSTxId: {type: GraphQLString},relatedSecurityKey: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {SagePayPaymentRefund};
 
 
 const SagePayPaymentRelease = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz SagePayPaymentRelease method',
   args:{releaseAmount: {type: GraphQLString},vpsTxId: {type: GraphQLString},vendorTxCode: {type: GraphQLString},securityKey: {type: GraphQLString},txAuthNo: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {SagePayPaymentRelease};
 
 
 const SagePayPaymentVoid = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz SagePayPaymentVoid method',
   args:{vpsTxId: {type: GraphQLString},vendorTxCode: {type: GraphQLString},securityKey: {type: GraphQLString},txAuthNo: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {SagePayPaymentVoid};
 
 
 const sagepayCCAuth = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sagepayCCAuth method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},creditCard: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},cardSecurityCode: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {sagepayCCAuth};
 
 
 const sagepayCCCapture = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sagepayCCCapture method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},captureAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {sagepayCCCapture};
 
 
 const sagepayCCRefund = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sagepayCCRefund method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {sagepayCCRefund};
 
 
 const sagepayCCRelease = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sagepayCCRelease method',
   args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

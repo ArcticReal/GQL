@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {GlBudgetXrefResponseType} from '../../accounting/GlBudgetXref/GlBudgetXrefResponseType.js';
 import {GlBudgetXrefInputType} from '../../accounting/GlBudgetXref/GlBudgetXrefInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlBudgetXref = {
-  type: ResopnseType,
+  type: GlBudgetXrefResponseType,
   description: 'mutation for ofbiz createGlBudgetXref method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createGlBudgetXref};
 
 
 const deleteGlBudgetXrefByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGlBudgetXrefByIdUpdated method',
   args:{glBudgetXrefId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteGlBudgetXrefByIdUpdated};
 
 
 const updateGlBudgetXref = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGlBudgetXref method',
   args:{glBudgetXrefToBeUpdated: {type: GlBudgetXrefInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

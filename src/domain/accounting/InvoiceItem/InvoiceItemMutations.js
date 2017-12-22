@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {InvoiceItemResponseType} from '../../accounting/InvoiceItem/InvoiceItemResponseType.js';
 import {InvoiceItemInputType} from '../../accounting/InvoiceItem/InvoiceItemInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoiceItem = {
-  type: ResopnseType,
+  type: InvoiceItemResponseType,
   description: 'mutation for ofbiz createInvoiceItem method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createInvoiceItem};
 
 
 const deleteInvoiceItemByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInvoiceItemByIdUpdated method',
   args:{invoiceItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteInvoiceItemByIdUpdated};
 
 
 const updateInvoiceItem = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInvoiceItem method',
   args:{invoiceItemToBeUpdated: {type: InvoiceItemInputType},invoiceItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

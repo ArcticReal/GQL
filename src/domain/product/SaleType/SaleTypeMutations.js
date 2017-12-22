@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {SaleTypeResponseType} from '../../product/SaleType/SaleTypeResponseType.js';
 import {SaleTypeInputType} from '../../product/SaleType/SaleTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSaleType = {
-  type: ResopnseType,
+  type: SaleTypeResponseType,
   description: 'mutation for ofbiz createSaleType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createSaleType};
 
 
 const updateSaleType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSaleType method',
   args:{saleTypeToBeUpdated: {type: SaleTypeInputType},saleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSaleType};
 
 
 const deleteSaleTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSaleTypeByIdUpdated method',
   args:{saleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

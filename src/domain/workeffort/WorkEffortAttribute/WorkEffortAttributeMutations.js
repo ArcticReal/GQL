@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortAttributeResponseType} from '../../workeffort/WorkEffortAttribute/WorkEffortAttributeResponseType.js';
 import {WorkEffortAttributeInputType} from '../../workeffort/WorkEffortAttribute/WorkEffortAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortAttribute = {
-  type: ResopnseType,
+  type: WorkEffortAttributeResponseType,
   description: 'mutation for ofbiz createWorkEffortAttribute method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createWorkEffortAttribute};
 
 
 const updateWorkEffortAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortAttribute method',
   args:{workEffortAttributeToBeUpdated: {type: WorkEffortAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortAttribute};
 
 
 const deleteWorkEffortAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortAttributeByIdUpdated method',
   args:{workEffortAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

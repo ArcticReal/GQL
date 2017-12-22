@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductStoreFacilityResponseType} from '../../product/ProductStoreFacility/ProductStoreFacilityResponseType.js';
 import {ProductStoreFacilityInputType} from '../../product/ProductStoreFacility/ProductStoreFacilityInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreFacility = {
-  type: ResopnseType,
+  type: ProductStoreFacilityResponseType,
   description: 'mutation for ofbiz createProductStoreFacility method',
-  args:{productStoreFacilityToBeAdded: {type: ProductStoreFacilityInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/productStoreFacilitys/add?`, args.productStoreFacilityToBeAdded, req);
+    return postToUrl(`product/facility/productStoreFacilitys/add?`, null, req);
   }
 };
 export {createProductStoreFacility};
 
 
 const updateProductStoreFacility = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreFacility method',
   args:{productStoreFacilityToBeUpdated: {type: ProductStoreFacilityInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStoreFacility};
 
 
 const deleteProductStoreFacilityByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreFacilityByIdUpdated method',
   args:{productStoreFacilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

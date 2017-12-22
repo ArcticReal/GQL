@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ReturnStatusResponseType} from '../../order/ReturnStatus/ReturnStatusResponseType.js';
 import {ReturnStatusInputType} from '../../order/ReturnStatus/ReturnStatusInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReturnStatus = {
-  type: ResopnseType,
+  type: ReturnStatusResponseType,
   description: 'mutation for ofbiz createReturnStatus method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createReturnStatus};
 
 
 const updateReturnStatus = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateReturnStatus method',
   args:{returnStatusToBeUpdated: {type: ReturnStatusInputType},returnStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateReturnStatus};
 
 
 const deleteReturnStatusByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteReturnStatusByIdUpdated method',
   args:{returnStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

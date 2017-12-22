@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductAssocTypeInputType} from '../../product/ProductAssocType/ProductAssocTypeInputType.js';
+import {ProductAssocTypeResponseType} from '../../product/ProductAssocType/ProductAssocTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductAssocType = {
-  type: ResopnseType,
+  type: ProductAssocTypeResponseType,
   description: 'mutation for ofbiz createProductAssocType method',
-  args:{},
+  args:{productAssocTypeToBeAdded: {type: ProductAssocTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productAssocTypes/add?`, null, req);
+    return postToUrl(`product/product/productAssocTypes/add?`, args.productAssocTypeToBeAdded, req);
   }
 };
 export {createProductAssocType};
 
 
 const updateProductAssocType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductAssocType method',
   args:{productAssocTypeToBeUpdated: {type: ProductAssocTypeInputType},productAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductAssocType};
 
 
 const deleteProductAssocTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductAssocTypeByIdUpdated method',
   args:{productAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

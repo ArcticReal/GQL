@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ContactMechLinkInputType} from '../../party/ContactMechLink/ContactMechLinkInputType.js';
+import {ContactMechLinkResponseType} from '../../party/ContactMechLink/ContactMechLinkResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContactMechLink = {
-  type: ResopnseType,
+  type: ContactMechLinkResponseType,
   description: 'mutation for ofbiz createContactMechLink method',
-  args:{},
+  args:{contactMechLinkToBeAdded: {type: ContactMechLinkInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/contactMech/contactMechLinks/add?`, null, req);
+    return postToUrl(`party/contactMech/contactMechLinks/add?`, args.contactMechLinkToBeAdded, req);
   }
 };
 export {createContactMechLink};
 
 
 const deleteContactMechLinkByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContactMechLinkByIdUpdated method',
   args:{contactMechLinkId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteContactMechLinkByIdUpdated};
 
 
 const updateContactMechLink = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContactMechLink method',
   args:{contactMechLinkToBeUpdated: {type: ContactMechLinkInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

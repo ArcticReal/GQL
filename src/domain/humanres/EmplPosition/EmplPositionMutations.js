@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {EmplPositionInputType} from '../../humanres/EmplPosition/EmplPositionInputType.js';
+import {EmplPositionResponseType} from '../../humanres/EmplPosition/EmplPositionResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEmplPosition = {
-  type: ResopnseType,
+  type: EmplPositionResponseType,
   description: 'mutation for ofbiz createEmplPosition method',
   args:{emplPositionToBeAdded: {type: EmplPositionInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createEmplPosition};
 
 
 const updateEmplPosition = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateEmplPosition method',
   args:{emplPositionToBeUpdated: {type: EmplPositionInputType},emplPositionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateEmplPosition};
 
 
 const deleteEmplPositionByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteEmplPositionByIdUpdated method',
   args:{emplPositionId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

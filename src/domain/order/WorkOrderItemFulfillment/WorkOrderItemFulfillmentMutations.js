@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkOrderItemFulfillmentResponseType} from '../../order/WorkOrderItemFulfillment/WorkOrderItemFulfillmentResponseType.js';
 import {WorkOrderItemFulfillmentInputType} from '../../order/WorkOrderItemFulfillment/WorkOrderItemFulfillmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkOrderItemFulfillment = {
-  type: ResopnseType,
+  type: WorkOrderItemFulfillmentResponseType,
   description: 'mutation for ofbiz createWorkOrderItemFulfillment method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createWorkOrderItemFulfillment};
 
 
 const updateWorkOrderItemFulfillment = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkOrderItemFulfillment method',
   args:{workOrderItemFulfillmentToBeUpdated: {type: WorkOrderItemFulfillmentInputType},orderItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkOrderItemFulfillment};
 
 
 const deleteWorkOrderItemFulfillmentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkOrderItemFulfillmentByIdUpdated method',
   args:{workOrderItemFulfillmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

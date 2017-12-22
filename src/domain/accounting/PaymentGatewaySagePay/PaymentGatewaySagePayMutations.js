@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PaymentGatewaySagePayResponseType} from '../../accounting/PaymentGatewaySagePay/PaymentGatewaySagePayResponseType.js';
 import {PaymentGatewaySagePayInputType} from '../../accounting/PaymentGatewaySagePay/PaymentGatewaySagePayInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGatewaySagePay = {
-  type: ResopnseType,
+  type: PaymentGatewaySagePayResponseType,
   description: 'mutation for ofbiz createPaymentGatewaySagePay method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPaymentGatewaySagePay};
 
 
 const updatePaymentGatewaySagePay = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePaymentGatewaySagePay method',
   args:{paymentGatewaySagePayToBeUpdated: {type: PaymentGatewaySagePayInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePaymentGatewaySagePay};
 
 
 const deletePaymentGatewaySagePayByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePaymentGatewaySagePayByIdUpdated method',
   args:{paymentGatewaySagePayId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

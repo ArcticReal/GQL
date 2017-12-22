@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductPromoCodePartyInputType} from '../../product/ProductPromoCodeParty/ProductPromoCodePartyInputType.js';
+import {ProductPromoCodePartyResponseType} from '../../product/ProductPromoCodeParty/ProductPromoCodePartyResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductPromoCodeParty = {
-  type: ResopnseType,
+  type: ProductPromoCodePartyResponseType,
   description: 'mutation for ofbiz createProductPromoCodeParty method',
   args:{productPromoCodePartyToBeAdded: {type: ProductPromoCodePartyInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductPromoCodeParty};
 
 
 const updateProductPromoCodeParty = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductPromoCodeParty method',
   args:{productPromoCodePartyToBeUpdated: {type: ProductPromoCodePartyInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductPromoCodeParty};
 
 
 const deleteProductPromoCodePartyByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductPromoCodePartyByIdUpdated method',
   args:{productPromoCodePartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

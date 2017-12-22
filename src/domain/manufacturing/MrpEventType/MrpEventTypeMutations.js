@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {MrpEventTypeResponseType} from '../../manufacturing/MrpEventType/MrpEventTypeResponseType.js';
 import {MrpEventTypeInputType} from '../../manufacturing/MrpEventType/MrpEventTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMrpEventType = {
-  type: ResopnseType,
+  type: MrpEventTypeResponseType,
   description: 'mutation for ofbiz createMrpEventType method',
-  args:{mrpEventTypeToBeAdded: {type: MrpEventTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`manufacturing/mrpEvent/mrpEventTypes/add?`, args.mrpEventTypeToBeAdded, req);
+    return postToUrl(`manufacturing/mrpEvent/mrpEventTypes/add?`, null, req);
   }
 };
 export {createMrpEventType};
 
 
 const updateMrpEventType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateMrpEventType method',
   args:{mrpEventTypeToBeUpdated: {type: MrpEventTypeInputType},mrpEventTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateMrpEventType};
 
 
 const deleteMrpEventTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteMrpEventTypeByIdUpdated method',
   args:{mrpEventTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

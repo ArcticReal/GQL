@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductStoreGroupInputType} from '../../product/ProductStoreGroup/ProductStoreGroupInputType.js';
+import {ProductStoreGroupResponseType} from '../../product/ProductStoreGroup/ProductStoreGroupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreGroup = {
-  type: ResopnseType,
+  type: ProductStoreGroupResponseType,
   description: 'mutation for ofbiz createProductStoreGroup method',
-  args:{},
+  args:{productStoreGroupToBeAdded: {type: ProductStoreGroupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStoreGroups/add?`, null, req);
+    return postToUrl(`product/product/productStoreGroups/add?`, args.productStoreGroupToBeAdded, req);
   }
 };
 export {createProductStoreGroup};
 
 
 const updateProductStoreGroup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreGroup method',
   args:{productStoreGroupToBeUpdated: {type: ProductStoreGroupInputType},productStoreGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStoreGroup};
 
 
 const deleteProductStoreGroupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreGroupByIdUpdated method',
   args:{productStoreGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

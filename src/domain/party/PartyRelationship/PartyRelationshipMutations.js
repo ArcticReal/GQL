@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyRelationshipResponseType} from '../../party/PartyRelationship/PartyRelationshipResponseType.js';
 import {PartyRelationshipInputType} from '../../party/PartyRelationship/PartyRelationshipInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyRelationship = {
-  type: ResopnseType,
+  type: PartyRelationshipResponseType,
   description: 'mutation for ofbiz createPartyRelationship method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPartyRelationship};
 
 
 const updatePartyRelationship = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyRelationship method',
   args:{partyRelationshipToBeUpdated: {type: PartyRelationshipInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyRelationship};
 
 
 const deletePartyRelationshipByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyRelationshipByIdUpdated method',
   args:{partyRelationshipId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

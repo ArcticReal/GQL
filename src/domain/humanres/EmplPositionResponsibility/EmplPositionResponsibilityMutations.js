@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {EmplPositionResponsibilityResponseType} from '../../humanres/EmplPositionResponsibility/EmplPositionResponsibilityResponseType.js';
 import {EmplPositionResponsibilityInputType} from '../../humanres/EmplPositionResponsibility/EmplPositionResponsibilityInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEmplPositionResponsibility = {
-  type: ResopnseType,
+  type: EmplPositionResponsibilityResponseType,
   description: 'mutation for ofbiz createEmplPositionResponsibility method',
-  args:{emplPositionResponsibilityToBeAdded: {type: EmplPositionResponsibilityInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/emplPosition/emplPositionResponsibilitys/add?`, args.emplPositionResponsibilityToBeAdded, req);
+    return postToUrl(`humanres/emplPosition/emplPositionResponsibilitys/add?`, null, req);
   }
 };
 export {createEmplPositionResponsibility};
 
 
 const deleteEmplPositionResponsibilityByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteEmplPositionResponsibilityByIdUpdated method',
   args:{emplPositionResponsibilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteEmplPositionResponsibilityByIdUpdated};
 
 
 const updateEmplPositionResponsibility = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateEmplPositionResponsibility method',
   args:{emplPositionResponsibilityToBeUpdated: {type: EmplPositionResponsibilityInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

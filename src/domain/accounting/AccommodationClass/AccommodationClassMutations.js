@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {AccommodationClassInputType} from '../../accounting/AccommodationClass/AccommodationClassInputType.js';
+import {AccommodationClassResponseType} from '../../accounting/AccommodationClass/AccommodationClassResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAccommodationClass = {
-  type: ResopnseType,
+  type: AccommodationClassResponseType,
   description: 'mutation for ofbiz createAccommodationClass method',
-  args:{},
+  args:{accommodationClassToBeAdded: {type: AccommodationClassInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/accommodationClasss/add?`, null, req);
+    return postToUrl(`accounting/accommodationClasss/add?`, args.accommodationClassToBeAdded, req);
   }
 };
 export {createAccommodationClass};
 
 
 const updateAccommodationClass = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAccommodationClass method',
   args:{accommodationClassToBeUpdated: {type: AccommodationClassInputType},accommodationClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateAccommodationClass};
 
 
 const deleteAccommodationClassByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAccommodationClassByIdUpdated method',
   args:{accommodationClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

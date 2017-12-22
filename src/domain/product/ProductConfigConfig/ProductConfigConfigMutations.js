@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductConfigConfigResponseType} from '../../product/ProductConfigConfig/ProductConfigConfigResponseType.js';
 import {ProductConfigConfigInputType} from '../../product/ProductConfigConfig/ProductConfigConfigInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductConfigConfig = {
-  type: ResopnseType,
+  type: ProductConfigConfigResponseType,
   description: 'mutation for ofbiz createProductConfigConfig method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductConfigConfig};
 
 
 const updateProductConfigConfig = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductConfigConfig method',
   args:{productConfigConfigToBeUpdated: {type: ProductConfigConfigInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductConfigConfig};
 
 
 const deleteProductConfigConfigByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductConfigConfigByIdUpdated method',
   args:{productConfigConfigId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

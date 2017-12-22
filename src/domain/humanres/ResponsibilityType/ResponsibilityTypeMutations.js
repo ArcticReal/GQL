@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ResponsibilityTypeResponseType} from '../../humanres/ResponsibilityType/ResponsibilityTypeResponseType.js';
 import {ResponsibilityTypeInputType} from '../../humanres/ResponsibilityType/ResponsibilityTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createResponsibilityType = {
-  type: ResopnseType,
+  type: ResponsibilityTypeResponseType,
   description: 'mutation for ofbiz createResponsibilityType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createResponsibilityType};
 
 
 const updateResponsibilityType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateResponsibilityType method',
   args:{responsibilityTypeToBeUpdated: {type: ResponsibilityTypeInputType},responsibilityTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateResponsibilityType};
 
 
 const deleteResponsibilityTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteResponsibilityTypeByIdUpdated method',
   args:{responsibilityTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PaymentMethodTypeResponseType} from '../../accounting/PaymentMethodType/PaymentMethodTypeResponseType.js';
 import {PaymentMethodTypeInputType} from '../../accounting/PaymentMethodType/PaymentMethodTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentMethodType = {
-  type: ResopnseType,
+  type: PaymentMethodTypeResponseType,
   description: 'mutation for ofbiz createPaymentMethodType method',
-  args:{paymentMethodTypeToBeAdded: {type: PaymentMethodTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/payment/paymentMethodTypes/add?`, args.paymentMethodTypeToBeAdded, req);
+    return postToUrl(`accounting/payment/paymentMethodTypes/add?`, null, req);
   }
 };
 export {createPaymentMethodType};
 
 
 const updatePaymentMethodType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePaymentMethodType method',
   args:{paymentMethodTypeToBeUpdated: {type: PaymentMethodTypeInputType},paymentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePaymentMethodType};
 
 
 const deletePaymentMethodTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePaymentMethodTypeByIdUpdated method',
   args:{paymentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

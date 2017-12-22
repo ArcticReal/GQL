@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderNotificationInputType} from '../../order/OrderNotification/OrderNotificationInputType.js';
+import {OrderNotificationResponseType} from '../../order/OrderNotification/OrderNotificationResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderNotification = {
-  type: ResopnseType,
+  type: OrderNotificationResponseType,
   description: 'mutation for ofbiz createOrderNotification method',
-  args:{},
+  args:{orderNotificationToBeAdded: {type: OrderNotificationInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderNotifications/add?`, null, req);
+    return postToUrl(`order/orderNotifications/add?`, args.orderNotificationToBeAdded, req);
   }
 };
 export {createOrderNotification};
 
 
 const updateOrderNotification = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderNotification method',
   args:{orderNotificationToBeUpdated: {type: OrderNotificationInputType},orderNotificationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderNotification};
 
 
 const deleteOrderNotificationByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderNotificationByIdUpdated method',
   args:{orderNotificationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

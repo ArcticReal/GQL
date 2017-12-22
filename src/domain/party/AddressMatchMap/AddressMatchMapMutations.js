@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {AddressMatchMapInputType} from '../../party/AddressMatchMap/AddressMatchMapInputType.js';
+import {AddressMatchMapResponseType} from '../../party/AddressMatchMap/AddressMatchMapResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAddressMatchMap = {
-  type: ResopnseType,
+  type: AddressMatchMapResponseType,
   description: 'mutation for ofbiz createAddressMatchMap method',
-  args:{},
+  args:{addressMatchMapToBeAdded: {type: AddressMatchMapInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/addressMatchMaps/add?`, null, req);
+    return postToUrl(`party/addressMatchMaps/add?`, args.addressMatchMapToBeAdded, req);
   }
 };
 export {createAddressMatchMap};
 
 
 const deleteAddressMatchMapByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAddressMatchMapByIdUpdated method',
   args:{addressMatchMapId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteAddressMatchMapByIdUpdated};
 
 
 const updateAddressMatchMap = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAddressMatchMap method',
   args:{addressMatchMapToBeUpdated: {type: AddressMatchMapInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

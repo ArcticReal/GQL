@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const cancelAgreement = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelAgreement method',
   args:{agreementId: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},textData: {type: GraphQLString},productId: {type: GraphQLString},agreementDate: {type: GraphQLString},agreementTypeId: {type: GraphQLString},description: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {cancelAgreement};
 
 
 const copyAgreement = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz copyAgreement method',
   args:{agreementId: {type: GraphQLString},copyAgreementParties: {type: GraphQLString},copyAgreementProducts: {type: GraphQLString},copyAgreementFacilities: {type: GraphQLString},copyAgreementTerms: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {copyAgreement};
 
 
 const createAgreement = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreement method',
   args:{roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},textData: {type: GraphQLString},productId: {type: GraphQLString},agreementDate: {type: GraphQLString},agreementTypeId: {type: GraphQLString},description: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createAgreement};
 
 
 const createAgreementContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementContent method',
   args:{agreementId: {type: GraphQLString},contentId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},agreementContentTypeId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createAgreementContent};
 
 
 const createAgreementFacilityAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementFacilityAppl method',
   args:{facilityId: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createAgreementFacilityAppl};
 
 
 const createAgreementGeographicalApplic = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementGeographicalApplic method',
   args:{geoId: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createAgreementGeographicalApplic};
 
 
 const createAgreementItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementItem method',
   args:{agreementId: {type: GraphQLString},currencyUomId: {type: GraphQLString},agreementText: {type: GraphQLString},agreementImage: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},agreementItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createAgreementItem};
 
 
 const createAgreementItemAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementItemAttribute method',
   args:{agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createAgreementItemAttribute};
 
 
 const createAgreementPartyApplic = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementPartyApplic method',
   args:{agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createAgreementPartyApplic};
 
 
 const createAgreementProductAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementProductAppl method',
   args:{productId: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},price: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createAgreementProductAppl};
 
 
 const createAgreementPromoAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementPromoAppl method',
   args:{fromDate: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},productPromoId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createAgreementPromoAppl};
 
 
 const createAgreementRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementRole method',
   args:{roleTypeId: {type: GraphQLString},agreementId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createAgreementRole};
 
 
 const createAgreementTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementTerm method',
   args:{textValue: {type: GraphQLString},termDays: {type: GraphQLInt},maxQuantity: {type: GraphQLFloat},termTypeId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},description: {type: GraphQLString},agreementTermId: {type: GraphQLString},termValue: {type: GraphQLFloat},invoiceItemTypeId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},minQuantity: {type: GraphQLFloat},agreementId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createAgreementTerm};
 
 
 const createAgreementType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},agreementTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createAgreementType};
 
 
 const createAgreementTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementTypeAttr method',
   args:{agreementTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createAgreementTypeAttr};
 
 
 const createAgreementWorkEffortApplic = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementWorkEffortApplic method',
   args:{workEffortId: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createAgreementWorkEffortApplic};
 
 
 const deleteAgreementItemAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAgreementItemAttribute method',
   args:{agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {deleteAgreementItemAttribute};
 
 
 const deleteAgreementRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAgreementRole method',
   args:{roleTypeId: {type: GraphQLString},agreementId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {deleteAgreementRole};
 
 
 const deleteAgreementTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAgreementTerm method',
   args:{agreementTermId: {type: GraphQLString},fromDate: {type: GraphQLString},textValue: {type: GraphQLString},minQuantity: {type: GraphQLFloat},termDays: {type: GraphQLInt},maxQuantity: {type: GraphQLFloat},agreementId: {type: GraphQLString},termTypeId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},description: {type: GraphQLString},termValue: {type: GraphQLFloat},invoiceItemTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {deleteAgreementTerm};
 
 
 const deleteAgreementWorkEffortApplic = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAgreementWorkEffortApplic method',
   args:{workEffortId: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {deleteAgreementWorkEffortApplic};
 
 
 const getCommissionForProduct = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getCommissionForProduct method',
   args:{amount: {type: GraphQLFloat},productId: {type: GraphQLString},invoiceItemTypeId: {type: GraphQLString},quantity: {type: GraphQLFloat},invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {getCommissionForProduct};
 
 
 const removeAgreementContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeAgreementContent method',
   args:{fromDate: {type: GraphQLString},agreementId: {type: GraphQLString},contentId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},agreementContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {removeAgreementContent};
 
 
 const removeAgreementFacilityAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeAgreementFacilityAppl method',
   args:{facilityId: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {removeAgreementFacilityAppl};
 
 
 const removeAgreementGeographicalApplic = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeAgreementGeographicalApplic method',
   args:{geoId: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {removeAgreementGeographicalApplic};
 
 
 const removeAgreementItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeAgreementItem method',
   args:{agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},currencyUomId: {type: GraphQLString},agreementText: {type: GraphQLString},agreementImage: {type: GraphQLString},agreementItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {removeAgreementItem};
 
 
 const removeAgreementPartyApplic = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeAgreementPartyApplic method',
   args:{agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {removeAgreementPartyApplic};
 
 
 const removeAgreementProductAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeAgreementProductAppl method',
   args:{productId: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},price: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {removeAgreementProductAppl};
 
 
 const removeAgreementPromoAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeAgreementPromoAppl method',
   args:{fromDate: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},productPromoId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {removeAgreementPromoAppl};
 
 
 const removeAgreementType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeAgreementType method',
   args:{agreementTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {removeAgreementType};
 
 
 const removeAgreementTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeAgreementTypeAttr method',
   args:{agreementTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {removeAgreementTypeAttr};
 
 
 const updateAgreement = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreement method',
   args:{agreementId: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},partyIdFrom: {type: GraphQLString},textData: {type: GraphQLString},productId: {type: GraphQLString},agreementDate: {type: GraphQLString},agreementTypeId: {type: GraphQLString},description: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {updateAgreement};
 
 
 const updateAgreementContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementContent method',
   args:{fromDate: {type: GraphQLString},agreementId: {type: GraphQLString},contentId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},agreementContentTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {updateAgreementContent};
 
 
 const updateAgreementFacilityAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementFacilityAppl method',
   args:{facilityId: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {updateAgreementFacilityAppl};
 
 
 const updateAgreementGeographicalApplic = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementGeographicalApplic method',
   args:{geoId: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {updateAgreementGeographicalApplic};
 
 
 const updateAgreementItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementItem method',
   args:{agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},currencyUomId: {type: GraphQLString},agreementText: {type: GraphQLString},agreementImage: {type: GraphQLString},agreementItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {updateAgreementItem};
 
 
 const updateAgreementItemAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementItemAttribute method',
   args:{agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {updateAgreementItemAttribute};
 
 
 const updateAgreementPartyApplic = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementPartyApplic method',
   args:{agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {updateAgreementPartyApplic};
 
 
 const updateAgreementProductAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementProductAppl method',
   args:{productId: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},price: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {updateAgreementProductAppl};
 
 
 const updateAgreementPromoAppl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementPromoAppl method',
   args:{fromDate: {type: GraphQLString},agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},productPromoId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {updateAgreementPromoAppl};
 
 
 const updateAgreementRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementRole method',
   args:{roleTypeId: {type: GraphQLString},agreementId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {updateAgreementRole};
 
 
 const updateAgreementTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementTerm method',
   args:{agreementTermId: {type: GraphQLString},fromDate: {type: GraphQLString},textValue: {type: GraphQLString},minQuantity: {type: GraphQLFloat},termDays: {type: GraphQLInt},maxQuantity: {type: GraphQLFloat},agreementId: {type: GraphQLString},termTypeId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},description: {type: GraphQLString},termValue: {type: GraphQLFloat},invoiceItemTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {updateAgreementTerm};
 
 
 const updateAgreementType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementType method',
   args:{agreementTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {updateAgreementType};
 
 
 const updateAgreementTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementTypeAttr method',
   args:{agreementTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {updateAgreementTypeAttr};
 
 
 const uploadAgreementContentFile = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz uploadAgreementContentFile method',
   args:{agreementId: {type: GraphQLString},agreementItemSeqId: {type: GraphQLString},agreementContentTypeId: {type: GraphQLString},surveyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},ownerContentId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},privilegeEnumId: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString},dataResourceId: {type: GraphQLString},objectInfo: {type: GraphQLString},partyId: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},instanceOfContentId: {type: GraphQLString},contentPurposeString: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},contentIdFrom: {type: GraphQLString},_uploadedFile_fileName: {type: GraphQLString},childBranchCount: {type: GraphQLInt},contentIdTo: {type: GraphQLString},contentTypeId: {type: GraphQLString},contentId: {type: GraphQLString},description: {type: GraphQLString},childLeafCount: {type: GraphQLInt},contentPurposeTypeId: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},_uploadedFile_contentType: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},uploadedFile: {type: GraphQLString},roleTypeId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},templateDataResourceId: {type: GraphQLString},mapKey: {type: GraphQLString},serviceName: {type: GraphQLString},characterSetId: {type: GraphQLString},customMethodId: {type: GraphQLString},contentName: {type: GraphQLInt},createdDate: {type: GraphQLString},localeString: {type: GraphQLString},decoratorContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

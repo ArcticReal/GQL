@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {InventoryItemVarianceInputType} from '../../product/InventoryItemVariance/InventoryItemVarianceInputType.js';
+import {InventoryItemVarianceResponseType} from '../../product/InventoryItemVariance/InventoryItemVarianceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInventoryItemVariance = {
-  type: ResopnseType,
+  type: InventoryItemVarianceResponseType,
   description: 'mutation for ofbiz createInventoryItemVariance method',
   args:{inventoryItemVarianceToBeAdded: {type: InventoryItemVarianceInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createInventoryItemVariance};
 
 
 const deleteInventoryItemVarianceByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInventoryItemVarianceByIdUpdated method',
   args:{inventoryItemVarianceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteInventoryItemVarianceByIdUpdated};
 
 
 const updateInventoryItemVariance = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInventoryItemVariance method',
   args:{inventoryItemVarianceToBeUpdated: {type: InventoryItemVarianceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

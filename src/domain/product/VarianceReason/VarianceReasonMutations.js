@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {VarianceReasonResponseType} from '../../product/VarianceReason/VarianceReasonResponseType.js';
 import {VarianceReasonInputType} from '../../product/VarianceReason/VarianceReasonInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createVarianceReason = {
-  type: ResopnseType,
+  type: VarianceReasonResponseType,
   description: 'mutation for ofbiz createVarianceReason method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createVarianceReason};
 
 
 const updateVarianceReason = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateVarianceReason method',
   args:{varianceReasonToBeUpdated: {type: VarianceReasonInputType},varianceReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateVarianceReason};
 
 
 const deleteVarianceReasonByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteVarianceReasonByIdUpdated method',
   args:{varianceReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

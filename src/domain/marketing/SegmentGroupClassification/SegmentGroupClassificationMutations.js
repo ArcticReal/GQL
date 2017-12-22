@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {SegmentGroupClassificationResponseType} from '../../marketing/SegmentGroupClassification/SegmentGroupClassificationResponseType.js';
 import {SegmentGroupClassificationInputType} from '../../marketing/SegmentGroupClassification/SegmentGroupClassificationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSegmentGroupClassification = {
-  type: ResopnseType,
+  type: SegmentGroupClassificationResponseType,
   description: 'mutation for ofbiz createSegmentGroupClassification method',
-  args:{segmentGroupClassificationToBeAdded: {type: SegmentGroupClassificationInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/segmentGroup/segmentGroupClassifications/add?`, args.segmentGroupClassificationToBeAdded, req);
+    return postToUrl(`marketing/segmentGroup/segmentGroupClassifications/add?`, null, req);
   }
 };
 export {createSegmentGroupClassification};
 
 
 const updateSegmentGroupClassification = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSegmentGroupClassification method',
   args:{segmentGroupClassificationToBeUpdated: {type: SegmentGroupClassificationInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSegmentGroupClassification};
 
 
 const deleteSegmentGroupClassificationByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSegmentGroupClassificationByIdUpdated method',
   args:{segmentGroupClassificationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

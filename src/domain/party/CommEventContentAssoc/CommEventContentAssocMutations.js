@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {CommEventContentAssocResponseType} from '../../party/CommEventContentAssoc/CommEventContentAssocResponseType.js';
 import {CommEventContentAssocInputType} from '../../party/CommEventContentAssoc/CommEventContentAssocInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCommEventContentAssoc = {
-  type: ResopnseType,
+  type: CommEventContentAssocResponseType,
   description: 'mutation for ofbiz createCommEventContentAssoc method',
-  args:{commEventContentAssocToBeAdded: {type: CommEventContentAssocInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/commEventContentAssocs/add?`, args.commEventContentAssocToBeAdded, req);
+    return postToUrl(`party/commEventContentAssocs/add?`, null, req);
   }
 };
 export {createCommEventContentAssoc};
 
 
 const deleteCommEventContentAssocByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCommEventContentAssocByIdUpdated method',
   args:{commEventContentAssocId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCommEventContentAssocByIdUpdated};
 
 
 const updateCommEventContentAssoc = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCommEventContentAssoc method',
   args:{commEventContentAssocToBeUpdated: {type: CommEventContentAssocInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

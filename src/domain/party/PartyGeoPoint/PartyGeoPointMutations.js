@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PartyGeoPointInputType} from '../../party/PartyGeoPoint/PartyGeoPointInputType.js';
+import {PartyGeoPointResponseType} from '../../party/PartyGeoPoint/PartyGeoPointResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyGeoPoint = {
-  type: ResopnseType,
+  type: PartyGeoPointResponseType,
   description: 'mutation for ofbiz createPartyGeoPoint method',
-  args:{},
+  args:{partyGeoPointToBeAdded: {type: PartyGeoPointInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyGeoPoints/add?`, null, req);
+    return postToUrl(`party/party/partyGeoPoints/add?`, args.partyGeoPointToBeAdded, req);
   }
 };
 export {createPartyGeoPoint};
 
 
 const updatePartyGeoPoint = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyGeoPoint method',
   args:{partyGeoPointToBeUpdated: {type: PartyGeoPointInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyGeoPoint};
 
 
 const deletePartyGeoPointByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyGeoPointByIdUpdated method',
   args:{partyGeoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyInvitationRoleAssocResponseType} from '../../party/PartyInvitationRoleAssoc/PartyInvitationRoleAssocResponseType.js';
 import {PartyInvitationRoleAssocInputType} from '../../party/PartyInvitationRoleAssoc/PartyInvitationRoleAssocInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyInvitationRoleAssoc = {
-  type: ResopnseType,
+  type: PartyInvitationRoleAssocResponseType,
   description: 'mutation for ofbiz createPartyInvitationRoleAssoc method',
-  args:{partyInvitationRoleAssocToBeAdded: {type: PartyInvitationRoleAssocInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyInvitationRoleAssocs/add?`, args.partyInvitationRoleAssocToBeAdded, req);
+    return postToUrl(`party/party/partyInvitationRoleAssocs/add?`, null, req);
   }
 };
 export {createPartyInvitationRoleAssoc};
 
 
 const updatePartyInvitationRoleAssoc = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyInvitationRoleAssoc method',
   args:{partyInvitationRoleAssocToBeUpdated: {type: PartyInvitationRoleAssocInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyInvitationRoleAssoc};
 
 
 const deletePartyInvitationRoleAssocByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyInvitationRoleAssocByIdUpdated method',
   args:{partyInvitationRoleAssocId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

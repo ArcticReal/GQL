@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {CommunicationEventOrderResponseType} from '../../order/CommunicationEventOrder/CommunicationEventOrderResponseType.js';
 import {CommunicationEventOrderInputType} from '../../order/CommunicationEventOrder/CommunicationEventOrderInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCommunicationEventOrder = {
-  type: ResopnseType,
+  type: CommunicationEventOrderResponseType,
   description: 'mutation for ofbiz createCommunicationEventOrder method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createCommunicationEventOrder};
 
 
 const deleteCommunicationEventOrderByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCommunicationEventOrderByIdUpdated method',
   args:{communicationEventOrderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCommunicationEventOrderByIdUpdated};
 
 
 const updateCommunicationEventOrder = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCommunicationEventOrder method',
   args:{communicationEventOrderToBeUpdated: {type: CommunicationEventOrderInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {EmploymentAppSourceTypeInputType} from '../../humanres/EmploymentAppSourceType/EmploymentAppSourceTypeInputType.js';
+import {EmploymentAppSourceTypeResponseType} from '../../humanres/EmploymentAppSourceType/EmploymentAppSourceTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEmploymentAppSourceType = {
-  type: ResopnseType,
+  type: EmploymentAppSourceTypeResponseType,
   description: 'mutation for ofbiz createEmploymentAppSourceType method',
-  args:{},
+  args:{employmentAppSourceTypeToBeAdded: {type: EmploymentAppSourceTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/employment/employmentAppSourceTypes/add?`, null, req);
+    return postToUrl(`humanres/employment/employmentAppSourceTypes/add?`, args.employmentAppSourceTypeToBeAdded, req);
   }
 };
 export {createEmploymentAppSourceType};
 
 
 const updateEmploymentAppSourceType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateEmploymentAppSourceType method',
   args:{employmentAppSourceTypeToBeUpdated: {type: EmploymentAppSourceTypeInputType},employmentAppSourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateEmploymentAppSourceType};
 
 
 const deleteEmploymentAppSourceTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteEmploymentAppSourceTypeByIdUpdated method',
   args:{employmentAppSourceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

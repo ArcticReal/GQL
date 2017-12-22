@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {EmplLeaveReasonTypeInputType} from '../../humanres/EmplLeaveReasonType/EmplLeaveReasonTypeInputType.js';
+import {EmplLeaveReasonTypeResponseType} from '../../humanres/EmplLeaveReasonType/EmplLeaveReasonTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEmplLeaveReasonType = {
-  type: ResopnseType,
+  type: EmplLeaveReasonTypeResponseType,
   description: 'mutation for ofbiz createEmplLeaveReasonType method',
-  args:{},
+  args:{emplLeaveReasonTypeToBeAdded: {type: EmplLeaveReasonTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/emplLeave/emplLeaveReasonTypes/add?`, null, req);
+    return postToUrl(`humanres/emplLeave/emplLeaveReasonTypes/add?`, args.emplLeaveReasonTypeToBeAdded, req);
   }
 };
 export {createEmplLeaveReasonType};
 
 
 const updateEmplLeaveReasonType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateEmplLeaveReasonType method',
   args:{emplLeaveReasonTypeToBeUpdated: {type: EmplLeaveReasonTypeInputType},emplLeaveReasonTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateEmplLeaveReasonType};
 
 
 const deleteEmplLeaveReasonTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteEmplLeaveReasonTypeByIdUpdated method',
   args:{emplLeaveReasonTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PartyFixedAssetAssignmentInputType} from '../../accounting/PartyFixedAssetAssignment/PartyFixedAssetAssignmentInputType.js';
+import {PartyFixedAssetAssignmentResponseType} from '../../accounting/PartyFixedAssetAssignment/PartyFixedAssetAssignmentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyFixedAssetAssignment = {
-  type: ResopnseType,
+  type: PartyFixedAssetAssignmentResponseType,
   description: 'mutation for ofbiz createPartyFixedAssetAssignment method',
   args:{partyFixedAssetAssignmentToBeAdded: {type: PartyFixedAssetAssignmentInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPartyFixedAssetAssignment};
 
 
 const deletePartyFixedAssetAssignmentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyFixedAssetAssignmentByIdUpdated method',
   args:{partyFixedAssetAssignmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deletePartyFixedAssetAssignmentByIdUpdated};
 
 
 const updatePartyFixedAssetAssignment = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyFixedAssetAssignment method',
   args:{partyFixedAssetAssignmentToBeUpdated: {type: PartyFixedAssetAssignmentInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

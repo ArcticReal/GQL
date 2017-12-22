@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const changeLeafToNode = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz changeLeafToNode method',
   args:{contentId: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {changeLeafToNode};
 
 
 const checkContentAssocIds = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkContentAssocIds method',
   args:{contentIdTo: {type: GraphQLString},contentIdFrom: {type: GraphQLString},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {checkContentAssocIds};
 
 
 const checkForWaitingApprovals = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkForWaitingApprovals method',
   args:{thisUserLogin: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {checkForWaitingApprovals};
 
 
 const clearContentAssocDataResourceViewCache = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz clearContentAssocDataResourceViewCache method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {clearContentAssocDataResourceViewCache};
 
 
 const clearContentAssocViewCache = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz clearContentAssocViewCache method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {clearContentAssocViewCache};
 
 
 const cloneInstanceContentApprovals = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cloneInstanceContentApprovals method',
   args:{contentId: {type: GraphQLString},contentRevisionSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {cloneInstanceContentApprovals};
 
 
 const cloneTemplateContentApprovals = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cloneTemplateContentApprovals method',
   args:{contentId: {type: GraphQLString},contentRevisionSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {cloneTemplateContentApprovals};
 
 
 const contentManagerPermission = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz contentManagerPermission method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {contentManagerPermission};
 
 
 const contentManagerRolePermission = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz contentManagerRolePermission method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {contentManagerRolePermission};
 
 
 const createArticleContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createArticleContent method',
   args:{pubPtContentId: {type: GraphQLString},surveyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},ownerContentId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},privilegeEnumId: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString},dataResourceId: {type: GraphQLString},objectInfo: {type: GraphQLString},partyId: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},instanceOfContentId: {type: GraphQLString},contentPurposeString: {type: GraphQLString},summaryData: {type: GraphQLString},fromDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},contentIdFrom: {type: GraphQLString},_uploadedFile_fileName: {type: GraphQLString},childBranchCount: {type: GraphQLInt},contentIdTo: {type: GraphQLString},contentTypeId: {type: GraphQLString},contentId: {type: GraphQLString},description: {type: GraphQLString},childLeafCount: {type: GraphQLInt},contentPurposeTypeId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},_uploadedFile_contentType: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},uploadedFile: {type: GraphQLString},roleTypeId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},templateDataResourceId: {type: GraphQLString},mapKey: {type: GraphQLString},serviceName: {type: GraphQLString},characterSetId: {type: GraphQLString},customMethodId: {type: GraphQLString},contentName: {type: GraphQLInt},threadContentId: {type: GraphQLString},createdDate: {type: GraphQLString},localeString: {type: GraphQLString},decoratorContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createArticleContent};
 
 
 const createBlogEntry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createBlogEntry method',
   args:{blogContentId: {type: GraphQLString},_uploadedFile_contentType: {type: GraphQLString},statusId: {type: GraphQLString},templateDataResourceId: {type: GraphQLString},description: {type: GraphQLString},articleData: {type: GraphQLString},summaryData: {type: GraphQLString},uploadedFile: {type: GraphQLString},_uploadedFile_fileName: {type: GraphQLString},contentName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createBlogEntry};
 
 
 const createContentAlternativeUrl = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContentAlternativeUrl method',
   args:{contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createContentAlternativeUrl};
 
 
 const createDataCategory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDataCategory method',
   args:{dataCategoryId: {type: GraphQLString},parentCategoryId: {type: GraphQLString},categoryName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createDataCategory};
 
 
 const createDataResourceAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDataResourceAttribute method',
   args:{dataResourceId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createDataResourceAttribute};
 
 
 const createDataResourceRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDataResourceRole method',
   args:{roleTypeId: {type: GraphQLString},dataResourceId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createDataResourceRole};
 
 
 const createDownloadContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDownloadContent method',
   args:{file: {type: GraphQLString},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createDownloadContent};
 
 
 const createEmailContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmailContent method',
   args:{subject: {type: GraphQLString},plainBody: {type: GraphQLString},htmlBody: {type: GraphQLString},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createEmailContent};
 
 
 const createImage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createImage method',
   args:{imageData: {type: GraphQLString},dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createImage};
 
 
 const createSimpleTextContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSimpleTextContent method',
   args:{text: {type: GraphQLString},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createSimpleTextContent};
 
 
 const createTopic = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTopic method',
   args:{newTopicId: {type: GraphQLString},newTopicDescription: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {createTopic};
 
 
 const createWebPreferenceType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWebPreferenceType method',
   args:{contentId: {type: GraphQLString},description: {type: GraphQLString},contentRevisionSeqId: {type: GraphQLString},itemContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {createWebPreferenceType};
 
 
 const deactivateAssocs = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deactivateAssocs method',
   args:{contentAssocTypeId: {type: GraphQLString},contentIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},mapKey: {type: GraphQLString},activeContentId: {type: GraphQLString},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {deactivateAssocs};
 
 
 const deactivateContentAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deactivateContentAssoc method',
   args:{fromDate: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString},contentIdTo: {type: GraphQLString},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {deactivateContentAssoc};
 
 
 const decrementContentChildStats = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz decrementContentChildStats method',
   args:{contentId: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {decrementContentChildStats};
 
 
 const deleteWebPreferenceType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWebPreferenceType method',
   args:{webPreferenceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {deleteWebPreferenceType};
 
 
 const findAssocContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findAssocContent method',
   args:{contentId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},ContentAssoc: {type: GraphQLString},ownerContentId: {type: GraphQLString},contentIdTo: {type: GraphQLString},upperCoordinate: {type: GraphQLInt},leftCoordinate: {type: GraphQLInt},contentTypeId: {type: GraphQLString},description: {type: GraphQLString},mimeTypeId: {type: GraphQLString},childLeafCount: {type: GraphQLInt},privilegeEnumId: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},contentAssocPredicateId: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString},dataResourceId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},templateDataResourceId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},instanceOfContentId: {type: GraphQLString},mapKey: {type: GraphQLString},serviceName: {type: GraphQLString},customMethodId: {type: GraphQLString},characterSetId: {type: GraphQLString},contentName: {type: GraphQLInt},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},localeString: {type: GraphQLString},Content: {type: GraphQLString},decoratorContentId: {type: GraphQLString},childBranchCount: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {findAssocContent};
 
 
 const findContentParents = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findContentParents method',
   args:{contentAssocTypeId: {type: GraphQLString},contentId: {type: GraphQLString},direction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {findContentParents};
 
 
 const findSubNodes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findSubNodes method',
   args:{contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {findSubNodes};
 
 
 const followNodeChildren = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz followNodeChildren method',
   args:{contentId: {type: GraphQLString},serviceName: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {followNodeChildren};
 
 
 const genCompDocInstance = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz genCompDocInstance method',
   args:{instanceOfContentId: {type: GraphQLString},rootInstanceContentId: {type: GraphQLString},contentName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {genCompDocInstance};
 
 
 const generateBlogRssFeed = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz generateBlogRssFeed method',
   args:{entryLink: {type: GraphQLString},feedType: {type: GraphQLString},mainLink: {type: GraphQLString},blogContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {generateBlogRssFeed};
 
 
 const genericContentPermission = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz genericContentPermission method',
   args:{contentPurposeTypeId: {type: GraphQLString},statusId: {type: GraphQLString},primaryPermission: {type: GraphQLString},ownerContentId: {type: GraphQLString},contentOperationId: {type: GraphQLString},contentIdTo: {type: GraphQLString},altPermission: {type: GraphQLString},contentIdFrom: {type: GraphQLString},contentId: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {genericContentPermission};
 
 
 const genericDataResourcePermission = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz genericDataResourcePermission method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},dataResourceId: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {genericDataResourcePermission};
 
 
 const getApprovalsWithPermissions = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getApprovalsWithPermissions method',
   args:{userLogin: {type: new GraphQLList(KeyValueInputType)},contentRevisionSeqId: {type: GraphQLString},rootContentId: {type: GraphQLString},checkPermission: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {getApprovalsWithPermissions};
 
 
 const getAssocAndContentAndDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getAssocAndContentAndDataResource method',
   args:{fromDate: {type: GraphQLString},nullThruDatesOnly: {type: GraphQLBoolean},thruDateStr: {type: GraphQLString},fromDateStr: {type: GraphQLString},mapKey: {type: GraphQLString},contentId: {type: GraphQLString},direction: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {getAssocAndContentAndDataResource};
 
 
 const getAssocAndContentAndDataResourceCache = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getAssocAndContentAndDataResourceCache method',
   args:{fromDateStr: {type: GraphQLString},mapKey: {type: GraphQLString},contentId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},nullThruDatesOnly: {type: GraphQLBoolean},contentAssocPredicateId: {type: GraphQLString},thruDateStr: {type: GraphQLString},contentTypesString: {type: GraphQLString},contentIdFrom: {type: GraphQLString},assocTypesString: {type: GraphQLString},direction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {getAssocAndContentAndDataResourceCache};
 
 
 const getBlogEntry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getBlogEntry method',
   args:{blogContentId: {type: GraphQLString},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {getBlogEntry};
 
 
 const getContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getContent method',
   args:{contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {getContent};
 
 
 const getContentAndDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getContentAndDataResource method',
   args:{contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {getContentAndDataResource};
 
 
 const getDataResource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getDataResource method',
   args:{dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {getDataResource};
 
 
 const getFinalApprovalStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getFinalApprovalStatus method',
   args:{contentId: {type: GraphQLString},contentRevisionSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {getFinalApprovalStatus};
 
 
 const getMostRecentRevision = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getMostRecentRevision method',
   args:{contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {getMostRecentRevision};
 
 
 const getOwnedOrPublishedBlogEntries = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getOwnedOrPublishedBlogEntries method',
   args:{userLogin: {type: new GraphQLList(KeyValueInputType)},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {getOwnedOrPublishedBlogEntries};
 
 
 const getPrefixedMembers = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPrefixedMembers method',
   args:{prefix: {type: GraphQLString},mapIn: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {getPrefixedMembers};
 
 
 const getPublicForumMessage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPublicForumMessage method',
   args:{contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {getPublicForumMessage};
 
 
 const getSubContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getSubContent method',
   args:{fromDate: {type: GraphQLString},mapKey: {type: GraphQLString},contentId: {type: GraphQLString},subContentId: {type: GraphQLString},assocTypesString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {getSubContent};
 
 
 const getSubContentWithPermCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getSubContentWithPermCheck method',
   args:{contentId: {type: GraphQLString},filterByDate: {type: GraphQLBoolean},contentAssocTypeId: {type: GraphQLString},contentOperationId: {type: GraphQLString},useCache: {type: GraphQLBoolean},mapKey: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {getSubContentWithPermCheck};
 
 
 const getSubSubContentWithPermCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getSubSubContentWithPermCheck method',
   args:{contentId: {type: GraphQLString},filterByDate: {type: GraphQLBoolean},contentAssocTypeId: {type: GraphQLString},contentOperationId: {type: GraphQLString},useCache: {type: GraphQLBoolean},mapKey: {type: GraphQLString},subMapKey: {type: GraphQLString},mainAction: {type: GraphQLString},subContentAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {getSubSubContentWithPermCheck};
 
 
 const hasApprovalPermission = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz hasApprovalPermission method',
   args:{userLogin: {type: new GraphQLList(KeyValueInputType)},contentApprovalId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {hasApprovalPermission};
 
 
 const incrementContentChildStats = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz incrementContentChildStats method',
   args:{contentId: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {incrementContentChildStats};
 
 
 const initContentChildCounts = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz initContentChildCounts method',
   args:{content: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {initContentChildCounts};
 
 
 const joinString = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz joinString method',
   args:{delimiter: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {joinString};
 
 
 const linkContentToPubPt = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz linkContentToPubPt method',
   args:{contentIdTo: {type: GraphQLString},contentId: {type: GraphQLString},privilegeEnumId: {type: GraphQLString},statusId: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString},publish: {type: GraphQLString},mapKey: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,7 +596,7 @@ export {linkContentToPubPt};
 
 
 const persistCompDoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz persistCompDoc method',
   args:{caFromDate: {type: GraphQLString},surveyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},caContentId: {type: GraphQLString},ownerContentId: {type: GraphQLString},imageData: {type: GraphQLString},upperCoordinate: {type: GraphQLInt},leftCoordinate: {type: GraphQLInt},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},rootContentId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},contentAssocPredicateId: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},deactivateExisting: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},caContentAssocTypeId: {type: GraphQLString},caSequenceNum: {type: GraphQLInt},dataTemplateTypeId: {type: GraphQLString},forceElectronicText: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},contentPurposeString: {type: GraphQLString},mapKey: {type: GraphQLString},DataResource: {type: GraphQLString},characterSetId: {type: GraphQLString},_imageData_fileName: {type: GraphQLString},thruDate: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},localeString: {type: GraphQLString},Content: {type: GraphQLString},_imageData_contentType: {type: GraphQLString},caContentIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -607,7 +607,7 @@ export {persistCompDoc};
 
 
 const persistCompDocContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz persistCompDocContent method',
   args:{surveyId: {type: GraphQLString},imageData: {type: GraphQLString},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},rootContentId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},forceElectronicText: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},contentPurposeString: {type: GraphQLString},DataResource: {type: GraphQLString},characterSetId: {type: GraphQLString},_imageData_fileName: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},localeString: {type: GraphQLString},Content: {type: GraphQLString},_imageData_contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -618,7 +618,7 @@ export {persistCompDocContent};
 
 
 const persistCompDocPdf2Survey = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz persistCompDocPdf2Survey method',
   args:{surveyId: {type: GraphQLString},imageData: {type: GraphQLString},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},rootContentId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},forceElectronicText: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},contentPurposeString: {type: GraphQLString},DataResource: {type: GraphQLString},characterSetId: {type: GraphQLString},_imageData_fileName: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},localeString: {type: GraphQLString},Content: {type: GraphQLString},_imageData_contentType: {type: GraphQLString},pdfName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -629,7 +629,7 @@ export {persistCompDocPdf2Survey};
 
 
 const persistContentAndAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz persistContentAndAssoc method',
   args:{caFromDate: {type: GraphQLString},surveyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},caContentId: {type: GraphQLString},ownerContentId: {type: GraphQLString},imageData: {type: GraphQLString},upperCoordinate: {type: GraphQLInt},leftCoordinate: {type: GraphQLInt},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},contentAssocPredicateId: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},deactivateExisting: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},caContentAssocTypeId: {type: GraphQLString},caSequenceNum: {type: GraphQLInt},dataTemplateTypeId: {type: GraphQLString},forceElectronicText: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},contentPurposeString: {type: GraphQLString},mapKey: {type: GraphQLString},DataResource: {type: GraphQLString},characterSetId: {type: GraphQLString},_imageData_fileName: {type: GraphQLString},thruDate: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},localeString: {type: GraphQLString},Content: {type: GraphQLString},_imageData_contentType: {type: GraphQLString},caContentIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -640,7 +640,7 @@ export {persistContentAndAssoc};
 
 
 const persistContentRevisionAndItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz persistContentRevisionAndItem method',
   args:{oldDataResourceId: {type: GraphQLString},comments: {type: GraphQLString},contentId: {type: GraphQLString},newDataResourceId: {type: GraphQLString},itemContentId: {type: GraphQLString},committedByPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -651,7 +651,7 @@ export {persistContentRevisionAndItem};
 
 
 const persistContentWithRevision = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz persistContentWithRevision method',
   args:{masterRevisionContentId: {type: GraphQLString},caFromDate: {type: GraphQLString},surveyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},caContentId: {type: GraphQLString},ownerContentId: {type: GraphQLString},imageData: {type: GraphQLString},upperCoordinate: {type: GraphQLInt},leftCoordinate: {type: GraphQLInt},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},contentAssocPredicateId: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},deactivateExisting: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},caContentAssocTypeId: {type: GraphQLString},caSequenceNum: {type: GraphQLInt},dataTemplateTypeId: {type: GraphQLString},forceElectronicText: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},contentPurposeString: {type: GraphQLString},mapKey: {type: GraphQLString},DataResource: {type: GraphQLString},characterSetId: {type: GraphQLString},_imageData_fileName: {type: GraphQLString},thruDate: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},localeString: {type: GraphQLString},Content: {type: GraphQLString},_imageData_contentType: {type: GraphQLString},caContentIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -662,7 +662,7 @@ export {persistContentWithRevision};
 
 
 const persistDataResourceAndData = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz persistDataResourceAndData method',
   args:{surveyId: {type: GraphQLString},imageData: {type: GraphQLString},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},objectInfo: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},forceElectronicText: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},contentPurposeString: {type: GraphQLString},DataResource: {type: GraphQLString},characterSetId: {type: GraphQLString},_imageData_fileName: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},localeString: {type: GraphQLString},Content: {type: GraphQLString},_imageData_contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -673,7 +673,7 @@ export {persistDataResourceAndData};
 
 
 const prepForApproval = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz prepForApproval method',
   args:{rootContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -684,7 +684,7 @@ export {prepForApproval};
 
 
 const publishContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz publishContent method',
   args:{content: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -695,7 +695,7 @@ export {publishContent};
 
 
 const removeDataCategory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeDataCategory method',
   args:{dataCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -706,7 +706,7 @@ export {removeDataCategory};
 
 
 const removeDataResourceAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeDataResourceAttribute method',
   args:{dataResourceId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {removeDataResourceAttribute};
 
 
 const removeDataResourceRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeDataResourceRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},dataResourceId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {removeDataResourceRole};
 
 
 const renderCompDocPdf = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz renderCompDocPdf method',
   args:{contentId: {type: GraphQLString},rootDir: {type: GraphQLString},contentRevisionSeqId: {type: GraphQLString},https: {type: GraphQLString},locale: {type: GraphQLString},webSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {renderCompDocPdf};
 
 
 const renderContentAsText = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz renderContentAsText method',
   args:{templateContext: {type: GraphQLString},outWriter: {type: GraphQLString},contentId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},subContentDataResourceView: {type: new GraphQLList(KeyValueInputType)},locale: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -750,7 +750,7 @@ export {renderContentAsText};
 
 
 const renderContentPdf = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz renderContentPdf method',
   args:{contentId: {type: GraphQLString},rootDir: {type: GraphQLString},contentRevisionSeqId: {type: GraphQLString},https: {type: GraphQLString},locale: {type: GraphQLString},webSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -761,7 +761,7 @@ export {renderContentPdf};
 
 
 const renderDataResourceAsText = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz renderDataResourceAsText method',
   args:{templateContext: {type: GraphQLString},outWriter: {type: GraphQLString},dataResourceId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},subContentDataResourceView: {type: new GraphQLList(KeyValueInputType)},locale: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -772,7 +772,7 @@ export {renderDataResourceAsText};
 
 
 const renderSubContentAsText = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz renderSubContentAsText method',
   args:{templateContext: {type: GraphQLString},outWriter: {type: GraphQLString},fromDate: {type: GraphQLString},contentId: {type: GraphQLString},mapKey: {type: GraphQLString},mimeTypeId: {type: GraphQLString},subContentId: {type: GraphQLString},subContentDataResourceView: {type: new GraphQLList(KeyValueInputType)},locale: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -783,7 +783,7 @@ export {renderSubContentAsText};
 
 
 const resequence = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz resequence method',
   args:{contentIdTo: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString},contentId: {type: GraphQLString},dir: {type: GraphQLString},seqInc: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -794,7 +794,7 @@ export {resequence};
 
 
 const resetToOutlineMode = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz resetToOutlineMode method',
   args:{contentId: {type: GraphQLString},pageMode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -805,7 +805,7 @@ export {resetToOutlineMode};
 
 
 const splitString = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz splitString method',
   args:{delimiter: {type: GraphQLString},inputString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -816,7 +816,7 @@ export {splitString};
 
 
 const traverseContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz traverseContent method',
   args:{contentId: {type: GraphQLString},followWhen: {type: GraphQLString},thruDateStr: {type: GraphQLString},pickWhen: {type: GraphQLString},fromDateStr: {type: GraphQLString},returnBeforePickWhen: {type: GraphQLString},returnAfterPickWhen: {type: GraphQLString},direction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -827,7 +827,7 @@ export {traverseContent};
 
 
 const updateBlogEntry = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateBlogEntry method',
   args:{contentId: {type: GraphQLString},blogContentId: {type: GraphQLString},_uploadedFile_contentType: {type: GraphQLString},statusId: {type: GraphQLString},templateDataResourceId: {type: GraphQLString},description: {type: GraphQLString},articleData: {type: GraphQLString},summaryData: {type: GraphQLString},uploadedFile: {type: GraphQLString},_uploadedFile_fileName: {type: GraphQLString},contentName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -838,7 +838,7 @@ export {updateBlogEntry};
 
 
 const updateContentChildStats = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContentChildStats method',
   args:{contentId: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -849,7 +849,7 @@ export {updateContentChildStats};
 
 
 const updateContentSubscription = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContentSubscription method',
   args:{useTimeUomId: {type: GraphQLString},useTime: {type: GraphQLInt},partyId: {type: GraphQLString},useRoleTypeId: {type: GraphQLString},contentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -860,7 +860,7 @@ export {updateContentSubscription};
 
 
 const updateContentSubscriptionByOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContentSubscriptionByOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -871,7 +871,7 @@ export {updateContentSubscriptionByOrder};
 
 
 const updateContentSubscriptionByProduct = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContentSubscriptionByProduct method',
   args:{quantity: {type: GraphQLInt},productId: {type: GraphQLString},partyId: {type: GraphQLString},orderCreatedDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -882,7 +882,7 @@ export {updateContentSubscriptionByProduct};
 
 
 const updateDataCategory = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDataCategory method',
   args:{dataCategoryId: {type: GraphQLString},parentCategoryId: {type: GraphQLString},categoryName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -893,7 +893,7 @@ export {updateDataCategory};
 
 
 const updateDataResourceAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDataResourceAttribute method',
   args:{dataResourceId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -904,7 +904,7 @@ export {updateDataResourceAttribute};
 
 
 const updateDataResourceRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDataResourceRole method',
   args:{fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},dataResourceId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -915,7 +915,7 @@ export {updateDataResourceRole};
 
 
 const updateDownloadContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDownloadContent method',
   args:{file: {type: GraphQLString},fileDataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -926,7 +926,7 @@ export {updateDownloadContent};
 
 
 const updateEmailContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmailContent method',
   args:{plainBodyDataResourceId: {type: GraphQLString},htmlBodyDataResourceId: {type: GraphQLString},htmlBody: {type: GraphQLString},subjectDataResourceId: {type: GraphQLString},subject: {type: GraphQLString},plainBody: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -937,7 +937,7 @@ export {updateEmailContent};
 
 
 const updateImage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateImage method',
   args:{imageData: {type: GraphQLString},dataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -948,7 +948,7 @@ export {updateImage};
 
 
 const updateOrRemove = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrRemove method',
   args:{entityName: {type: GraphQLString},pkFieldCount: {type: GraphQLString},fieldName0: {type: GraphQLString},fieldName2: {type: GraphQLString},fieldName1: {type: GraphQLString},fieldName3: {type: GraphQLString},action: {type: GraphQLString},fieldValue3: {type: GraphQLString},fieldValue2: {type: GraphQLString},fieldValue1: {type: GraphQLString},fieldValue0: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -959,7 +959,7 @@ export {updateOrRemove};
 
 
 const updatePageType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePageType method',
   args:{contentId: {type: GraphQLString},pageMode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -970,7 +970,7 @@ export {updatePageType};
 
 
 const updateSimpleTextContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSimpleTextContent method',
   args:{text: {type: GraphQLString},textDataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -981,7 +981,7 @@ export {updateSimpleTextContent};
 
 
 const updateSiteRoles = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSiteRoles method',
   args:{blogPublisher: {type: GraphQLString},blogAuthorFromDate: {type: GraphQLString},blogAdmin: {type: GraphQLString},blogEditorFromDate: {type: GraphQLString},blogAdminFromDate: {type: GraphQLString},contentId: {type: GraphQLString},partyId: {type: GraphQLString},blogUser: {type: GraphQLString},blogUserFromDate: {type: GraphQLString},blogPublisherFromDate: {type: GraphQLString},blogEditor: {type: GraphQLString},blogAuthor: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -992,7 +992,7 @@ export {updateSiteRoles};
 
 
 const updateSiteRolesDyn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSiteRolesDyn method',
   args:{contentId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1003,7 +1003,7 @@ export {updateSiteRolesDyn};
 
 
 const updateWebPreferenceType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWebPreferenceType method',
   args:{webPreferenceTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1014,7 +1014,7 @@ export {updateWebPreferenceType};
 
 
 const uploadFileInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz uploadFileInterface method',
   args:{_uploadedFile_contentType: {type: GraphQLString},uploadedFile: {type: GraphQLString},_uploadedFile_fileName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1025,7 +1025,7 @@ export {uploadFileInterface};
 
 
 const urlEncodeArgs = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz urlEncodeArgs method',
   args:{mapIn: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

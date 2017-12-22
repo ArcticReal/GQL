@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {QuoteRoleInputType} from '../../order/QuoteRole/QuoteRoleInputType.js';
+import {QuoteRoleResponseType} from '../../order/QuoteRole/QuoteRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuoteRole = {
-  type: ResopnseType,
+  type: QuoteRoleResponseType,
   description: 'mutation for ofbiz createQuoteRole method',
   args:{quoteRoleToBeAdded: {type: QuoteRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createQuoteRole};
 
 
 const deleteQuoteRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteQuoteRoleByIdUpdated method',
   args:{quoteRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteQuoteRoleByIdUpdated};
 
 
 const updateQuoteRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateQuoteRole method',
   args:{quoteRoleToBeUpdated: {type: QuoteRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

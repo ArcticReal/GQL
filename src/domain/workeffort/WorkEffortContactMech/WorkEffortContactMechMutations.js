@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortContactMechResponseType} from '../../workeffort/WorkEffortContactMech/WorkEffortContactMechResponseType.js';
 import {WorkEffortContactMechInputType} from '../../workeffort/WorkEffortContactMech/WorkEffortContactMechInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortContactMech = {
-  type: ResopnseType,
+  type: WorkEffortContactMechResponseType,
   description: 'mutation for ofbiz createWorkEffortContactMech method',
-  args:{workEffortContactMechToBeAdded: {type: WorkEffortContactMechInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortContactMechs/add?`, args.workEffortContactMechToBeAdded, req);
+    return postToUrl(`workeffort/workEffort/workEffortContactMechs/add?`, null, req);
   }
 };
 export {createWorkEffortContactMech};
 
 
 const updateWorkEffortContactMech = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortContactMech method',
   args:{workEffortContactMechToBeUpdated: {type: WorkEffortContactMechInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortContactMech};
 
 
 const deleteWorkEffortContactMechByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortContactMechByIdUpdated method',
   args:{workEffortContactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

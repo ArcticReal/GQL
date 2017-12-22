@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PartyQualTypeInputType} from '../../humanres/PartyQualType/PartyQualTypeInputType.js';
+import {PartyQualTypeResponseType} from '../../humanres/PartyQualType/PartyQualTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyQualType = {
-  type: ResopnseType,
+  type: PartyQualTypeResponseType,
   description: 'mutation for ofbiz createPartyQualType method',
   args:{partyQualTypeToBeAdded: {type: PartyQualTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPartyQualType};
 
 
 const updatePartyQualType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyQualType method',
   args:{partyQualTypeToBeUpdated: {type: PartyQualTypeInputType},partyQualTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyQualType};
 
 
 const deletePartyQualTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyQualTypeByIdUpdated method',
   args:{partyQualTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

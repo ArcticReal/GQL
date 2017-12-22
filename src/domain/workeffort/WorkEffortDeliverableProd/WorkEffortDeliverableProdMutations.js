@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortDeliverableProdResponseType} from '../../workeffort/WorkEffortDeliverableProd/WorkEffortDeliverableProdResponseType.js';
 import {WorkEffortDeliverableProdInputType} from '../../workeffort/WorkEffortDeliverableProd/WorkEffortDeliverableProdInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortDeliverableProd = {
-  type: ResopnseType,
+  type: WorkEffortDeliverableProdResponseType,
   description: 'mutation for ofbiz createWorkEffortDeliverableProd method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createWorkEffortDeliverableProd};
 
 
 const updateWorkEffortDeliverableProd = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortDeliverableProd method',
   args:{workEffortDeliverableProdToBeUpdated: {type: WorkEffortDeliverableProdInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortDeliverableProd};
 
 
 const deleteWorkEffortDeliverableProdByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortDeliverableProdByIdUpdated method',
   args:{workEffortDeliverableProdId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

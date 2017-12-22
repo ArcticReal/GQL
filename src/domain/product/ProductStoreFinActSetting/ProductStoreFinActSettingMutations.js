@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductStoreFinActSettingResponseType} from '../../product/ProductStoreFinActSetting/ProductStoreFinActSettingResponseType.js';
 import {ProductStoreFinActSettingInputType} from '../../product/ProductStoreFinActSetting/ProductStoreFinActSettingInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreFinActSetting = {
-  type: ResopnseType,
+  type: ProductStoreFinActSettingResponseType,
   description: 'mutation for ofbiz createProductStoreFinActSetting method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductStoreFinActSetting};
 
 
 const updateProductStoreFinActSetting = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreFinActSetting method',
   args:{productStoreFinActSettingToBeUpdated: {type: ProductStoreFinActSettingInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStoreFinActSetting};
 
 
 const deleteProductStoreFinActSettingByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreFinActSettingByIdUpdated method',
   args:{productStoreFinActSettingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

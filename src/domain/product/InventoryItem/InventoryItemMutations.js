@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {InventoryItemResponseType} from '../../product/InventoryItem/InventoryItemResponseType.js';
 import {InventoryItemInputType} from '../../product/InventoryItem/InventoryItemInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInventoryItem = {
-  type: ResopnseType,
+  type: InventoryItemResponseType,
   description: 'mutation for ofbiz createInventoryItem method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createInventoryItem};
 
 
 const updateInventoryItem = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInventoryItem method',
   args:{inventoryItemToBeUpdated: {type: InventoryItemInputType},inventoryItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateInventoryItem};
 
 
 const deleteInventoryItemByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInventoryItemByIdUpdated method',
   args:{inventoryItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

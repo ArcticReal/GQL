@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {DataCategoryResponseType} from '../../content/DataCategory/DataCategoryResponseType.js';
 import {DataCategoryInputType} from '../../content/DataCategory/DataCategoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDataCategory = {
-  type: ResopnseType,
+  type: DataCategoryResponseType,
   description: 'mutation for ofbiz createDataCategory method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createDataCategory};
 
 
 const updateDataCategory = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDataCategory method',
   args:{dataCategoryToBeUpdated: {type: DataCategoryInputType},dataCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateDataCategory};
 
 
 const deleteDataCategoryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDataCategoryByIdUpdated method',
   args:{dataCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

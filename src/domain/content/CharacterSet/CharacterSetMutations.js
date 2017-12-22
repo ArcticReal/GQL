@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {CharacterSetInputType} from '../../content/CharacterSet/CharacterSetInputType.js';
+import {CharacterSetResponseType} from '../../content/CharacterSet/CharacterSetResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCharacterSet = {
-  type: ResopnseType,
+  type: CharacterSetResponseType,
   description: 'mutation for ofbiz createCharacterSet method',
-  args:{},
+  args:{characterSetToBeAdded: {type: CharacterSetInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/characterSets/add?`, null, req);
+    return postToUrl(`content/characterSets/add?`, args.characterSetToBeAdded, req);
   }
 };
 export {createCharacterSet};
 
 
 const updateCharacterSet = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCharacterSet method',
   args:{characterSetToBeUpdated: {type: CharacterSetInputType},characterSetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateCharacterSet};
 
 
 const deleteCharacterSetByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCharacterSetByIdUpdated method',
   args:{characterSetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

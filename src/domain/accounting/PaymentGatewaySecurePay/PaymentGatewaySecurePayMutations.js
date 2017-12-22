@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PaymentGatewaySecurePayResponseType} from '../../accounting/PaymentGatewaySecurePay/PaymentGatewaySecurePayResponseType.js';
 import {PaymentGatewaySecurePayInputType} from '../../accounting/PaymentGatewaySecurePay/PaymentGatewaySecurePayInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGatewaySecurePay = {
-  type: ResopnseType,
+  type: PaymentGatewaySecurePayResponseType,
   description: 'mutation for ofbiz createPaymentGatewaySecurePay method',
-  args:{paymentGatewaySecurePayToBeAdded: {type: PaymentGatewaySecurePayInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/payment/paymentGatewaySecurePays/add?`, args.paymentGatewaySecurePayToBeAdded, req);
+    return postToUrl(`accounting/payment/paymentGatewaySecurePays/add?`, null, req);
   }
 };
 export {createPaymentGatewaySecurePay};
 
 
 const updatePaymentGatewaySecurePay = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePaymentGatewaySecurePay method',
   args:{paymentGatewaySecurePayToBeUpdated: {type: PaymentGatewaySecurePayInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePaymentGatewaySecurePay};
 
 
 const deletePaymentGatewaySecurePayByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePaymentGatewaySecurePayByIdUpdated method',
   args:{paymentGatewaySecurePayId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

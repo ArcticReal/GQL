@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {GlAccountGroupInputType} from '../../accounting/GlAccountGroup/GlAccountGroupInputType.js';
+import {GlAccountGroupResponseType} from '../../accounting/GlAccountGroup/GlAccountGroupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlAccountGroup = {
-  type: ResopnseType,
+  type: GlAccountGroupResponseType,
   description: 'mutation for ofbiz createGlAccountGroup method',
-  args:{},
+  args:{glAccountGroupToBeAdded: {type: GlAccountGroupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/glAccountGroups/add?`, null, req);
+    return postToUrl(`accounting/glAccount/glAccountGroups/add?`, args.glAccountGroupToBeAdded, req);
   }
 };
 export {createGlAccountGroup};
 
 
 const updateGlAccountGroup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGlAccountGroup method',
   args:{glAccountGroupToBeUpdated: {type: GlAccountGroupInputType},glAccountGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateGlAccountGroup};
 
 
 const deleteGlAccountGroupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGlAccountGroupByIdUpdated method',
   args:{glAccountGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

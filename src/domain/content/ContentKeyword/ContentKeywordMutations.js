@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContentKeywordResponseType} from '../../content/ContentKeyword/ContentKeywordResponseType.js';
 import {ContentKeywordInputType} from '../../content/ContentKeyword/ContentKeywordInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentKeyword = {
-  type: ResopnseType,
+  type: ContentKeywordResponseType,
   description: 'mutation for ofbiz createContentKeyword method',
-  args:{contentKeywordToBeAdded: {type: ContentKeywordInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentKeywords/add?`, args.contentKeywordToBeAdded, req);
+    return postToUrl(`content/content/contentKeywords/add?`, null, req);
   }
 };
 export {createContentKeyword};
 
 
 const deleteContentKeywordByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentKeywordByIdUpdated method',
   args:{contentKeywordId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteContentKeywordByIdUpdated};
 
 
 const updateContentKeyword = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentKeyword method',
   args:{contentKeywordToBeUpdated: {type: ContentKeywordInputType},keyword: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

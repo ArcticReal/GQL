@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ShipmentItemBillingResponseType} from '../../shipment/ShipmentItemBilling/ShipmentItemBillingResponseType.js';
 import {ShipmentItemBillingInputType} from '../../shipment/ShipmentItemBilling/ShipmentItemBillingInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentItemBilling = {
-  type: ResopnseType,
+  type: ShipmentItemBillingResponseType,
   description: 'mutation for ofbiz createShipmentItemBilling method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createShipmentItemBilling};
 
 
 const updateShipmentItemBilling = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShipmentItemBilling method',
   args:{shipmentItemBillingToBeUpdated: {type: ShipmentItemBillingInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateShipmentItemBilling};
 
 
 const deleteShipmentItemBillingByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShipmentItemBillingByIdUpdated method',
   args:{shipmentItemBillingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

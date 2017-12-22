@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createFileFromScreen = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createFileFromScreen method',
   args:{fileName: {type: GraphQLString},screenLocation: {type: GraphQLString},screenContext: {type: GraphQLString},filePath: {type: GraphQLString},contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createFileFromScreen};
 
 
 const sendPrintFromScreen = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendPrintFromScreen method',
   args:{screenLocation: {type: GraphQLString},screenContext: {type: GraphQLString},printerName: {type: GraphQLString},contentType: {type: GraphQLString},printerContentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

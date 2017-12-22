@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {OrderTermAttributeResponseType} from '../../order/OrderTermAttribute/OrderTermAttributeResponseType.js';
 import {OrderTermAttributeInputType} from '../../order/OrderTermAttribute/OrderTermAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderTermAttribute = {
-  type: ResopnseType,
+  type: OrderTermAttributeResponseType,
   description: 'mutation for ofbiz createOrderTermAttribute method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createOrderTermAttribute};
 
 
 const updateOrderTermAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderTermAttribute method',
   args:{orderTermAttributeToBeUpdated: {type: OrderTermAttributeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderTermAttribute};
 
 
 const deleteOrderTermAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderTermAttributeByIdUpdated method',
   args:{orderTermAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

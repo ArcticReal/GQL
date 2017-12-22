@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {TechDataCalendarWeekResponseType} from '../../manufacturing/TechDataCalendarWeek/TechDataCalendarWeekResponseType.js';
 import {TechDataCalendarWeekInputType} from '../../manufacturing/TechDataCalendarWeek/TechDataCalendarWeekInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTechDataCalendarWeek = {
-  type: ResopnseType,
+  type: TechDataCalendarWeekResponseType,
   description: 'mutation for ofbiz createTechDataCalendarWeek method',
-  args:{techDataCalendarWeekToBeAdded: {type: TechDataCalendarWeekInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`manufacturing/techDataCalendar/techDataCalendarWeeks/add?`, args.techDataCalendarWeekToBeAdded, req);
+    return postToUrl(`manufacturing/techDataCalendar/techDataCalendarWeeks/add?`, null, req);
   }
 };
 export {createTechDataCalendarWeek};
 
 
 const updateTechDataCalendarWeek = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTechDataCalendarWeek method',
   args:{techDataCalendarWeekToBeUpdated: {type: TechDataCalendarWeekInputType},calendarWeekId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTechDataCalendarWeek};
 
 
 const deleteTechDataCalendarWeekByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTechDataCalendarWeekByIdUpdated method',
   args:{techDataCalendarWeekId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

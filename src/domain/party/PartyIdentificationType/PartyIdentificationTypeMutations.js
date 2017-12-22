@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyIdentificationTypeResponseType} from '../../party/PartyIdentificationType/PartyIdentificationTypeResponseType.js';
 import {PartyIdentificationTypeInputType} from '../../party/PartyIdentificationType/PartyIdentificationTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyIdentificationType = {
-  type: ResopnseType,
+  type: PartyIdentificationTypeResponseType,
   description: 'mutation for ofbiz createPartyIdentificationType method',
-  args:{partyIdentificationTypeToBeAdded: {type: PartyIdentificationTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyIdentificationTypes/add?`, args.partyIdentificationTypeToBeAdded, req);
+    return postToUrl(`party/party/partyIdentificationTypes/add?`, null, req);
   }
 };
 export {createPartyIdentificationType};
 
 
 const updatePartyIdentificationType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyIdentificationType method',
   args:{partyIdentificationTypeToBeUpdated: {type: PartyIdentificationTypeInputType},partyIdentificationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyIdentificationType};
 
 
 const deletePartyIdentificationTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyIdentificationTypeByIdUpdated method',
   args:{partyIdentificationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

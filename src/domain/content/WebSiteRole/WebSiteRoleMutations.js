@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {WebSiteRoleInputType} from '../../content/WebSiteRole/WebSiteRoleInputType.js';
+import {WebSiteRoleResponseType} from '../../content/WebSiteRole/WebSiteRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWebSiteRole = {
-  type: ResopnseType,
+  type: WebSiteRoleResponseType,
   description: 'mutation for ofbiz createWebSiteRole method',
-  args:{},
+  args:{webSiteRoleToBeAdded: {type: WebSiteRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/webSiteRoles/add?`, null, req);
+    return postToUrl(`content/webSiteRoles/add?`, args.webSiteRoleToBeAdded, req);
   }
 };
 export {createWebSiteRole};
 
 
 const updateWebSiteRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWebSiteRole method',
   args:{webSiteRoleToBeUpdated: {type: WebSiteRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWebSiteRole};
 
 
 const deleteWebSiteRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWebSiteRoleByIdUpdated method',
   args:{webSiteRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

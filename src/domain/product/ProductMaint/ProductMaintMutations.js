@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductMaintInputType} from '../../product/ProductMaint/ProductMaintInputType.js';
+import {ProductMaintResponseType} from '../../product/ProductMaint/ProductMaintResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductMaint = {
-  type: ResopnseType,
+  type: ProductMaintResponseType,
   description: 'mutation for ofbiz createProductMaint method',
   args:{productMaintToBeAdded: {type: ProductMaintInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductMaint};
 
 
 const deleteProductMaintByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductMaintByIdUpdated method',
   args:{productMaintId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteProductMaintByIdUpdated};
 
 
 const updateProductMaint = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductMaint method',
   args:{productMaintToBeUpdated: {type: ProductMaintInputType},productMaintSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

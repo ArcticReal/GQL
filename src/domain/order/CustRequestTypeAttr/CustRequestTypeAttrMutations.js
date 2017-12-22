@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {CustRequestTypeAttrResponseType} from '../../order/CustRequestTypeAttr/CustRequestTypeAttrResponseType.js';
 import {CustRequestTypeAttrInputType} from '../../order/CustRequestTypeAttr/CustRequestTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCustRequestTypeAttr = {
-  type: ResopnseType,
+  type: CustRequestTypeAttrResponseType,
   description: 'mutation for ofbiz createCustRequestTypeAttr method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createCustRequestTypeAttr};
 
 
 const updateCustRequestTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCustRequestTypeAttr method',
   args:{custRequestTypeAttrToBeUpdated: {type: CustRequestTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateCustRequestTypeAttr};
 
 
 const deleteCustRequestTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCustRequestTypeAttrByIdUpdated method',
   args:{custRequestTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

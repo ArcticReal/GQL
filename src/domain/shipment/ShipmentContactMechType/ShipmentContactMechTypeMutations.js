@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ShipmentContactMechTypeInputType} from '../../shipment/ShipmentContactMechType/ShipmentContactMechTypeInputType.js';
+import {ShipmentContactMechTypeResponseType} from '../../shipment/ShipmentContactMechType/ShipmentContactMechTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentContactMechType = {
-  type: ResopnseType,
+  type: ShipmentContactMechTypeResponseType,
   description: 'mutation for ofbiz createShipmentContactMechType method',
   args:{shipmentContactMechTypeToBeAdded: {type: ShipmentContactMechTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createShipmentContactMechType};
 
 
 const updateShipmentContactMechType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShipmentContactMechType method',
   args:{shipmentContactMechTypeToBeUpdated: {type: ShipmentContactMechTypeInputType},shipmentContactMechTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateShipmentContactMechType};
 
 
 const deleteShipmentContactMechTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShipmentContactMechTypeByIdUpdated method',
   args:{shipmentContactMechTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

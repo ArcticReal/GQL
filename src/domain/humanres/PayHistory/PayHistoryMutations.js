@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PayHistoryInputType} from '../../humanres/PayHistory/PayHistoryInputType.js';
+import {PayHistoryResponseType} from '../../humanres/PayHistory/PayHistoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPayHistory = {
-  type: ResopnseType,
+  type: PayHistoryResponseType,
   description: 'mutation for ofbiz createPayHistory method',
-  args:{},
+  args:{payHistoryToBeAdded: {type: PayHistoryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/payHistorys/add?`, null, req);
+    return postToUrl(`humanres/payHistorys/add?`, args.payHistoryToBeAdded, req);
   }
 };
 export {createPayHistory};
 
 
 const updatePayHistory = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePayHistory method',
   args:{payHistoryToBeUpdated: {type: PayHistoryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePayHistory};
 
 
 const deletePayHistoryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePayHistoryByIdUpdated method',
   args:{payHistoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

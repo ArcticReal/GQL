@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ContentAttributeInputType} from '../../content/ContentAttribute/ContentAttributeInputType.js';
+import {ContentAttributeResponseType} from '../../content/ContentAttribute/ContentAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentAttribute = {
-  type: ResopnseType,
+  type: ContentAttributeResponseType,
   description: 'mutation for ofbiz createContentAttribute method',
-  args:{},
+  args:{contentAttributeToBeAdded: {type: ContentAttributeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentAttributes/add?`, null, req);
+    return postToUrl(`content/content/contentAttributes/add?`, args.contentAttributeToBeAdded, req);
   }
 };
 export {createContentAttribute};
 
 
 const updateContentAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentAttribute method',
   args:{contentAttributeToBeUpdated: {type: ContentAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContentAttribute};
 
 
 const deleteContentAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentAttributeByIdUpdated method',
   args:{contentAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

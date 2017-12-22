@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const accAndDecPartyInvitationPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz accAndDecPartyInvitationPermissionCheck method',
   args:{partyInvitationId: {type: GraphQLString},primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {accAndDecPartyInvitationPermissionCheck};
 
 
 const acceptPartyInvitation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz acceptPartyInvitation method',
   args:{partyId: {type: GraphQLString},partyInvitationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {acceptPartyInvitation};
 
 
 const cancelPartyInvitation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelPartyInvitation method',
   args:{partyInvitationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {cancelPartyInvitation};
 
 
 const cancelPartyInvitationPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelPartyInvitationPermissionCheck method',
   args:{partyInvitationId: {type: GraphQLString},primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {cancelPartyInvitationPermissionCheck};
 
 
 const clearAddressMatchMap = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz clearAddressMatchMap method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {clearAddressMatchMap};
 
 
 const copyPartyContactMechs = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz copyPartyContactMechs method',
   args:{partyIdFrom: {type: GraphQLString},partyIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {copyPartyContactMechs};
 
 
 const createAddressMatchMap = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAddressMatchMap method',
   args:{mapValue: {type: GraphQLString},mapKey: {type: GraphQLString},sequenceNum: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createAddressMatchMap};
 
 
 const createAffiliate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAffiliate method',
   args:{affiliateName: {type: GraphQLString},partyId: {type: GraphQLString},yearEstablished: {type: GraphQLString},affiliateDescription: {type: GraphQLString},sitePageViews: {type: GraphQLString},siteVisitors: {type: GraphQLString},siteType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createAffiliate};
 
 
 const createAgreementAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementAttribute method',
   args:{agreementId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createAgreementAttribute};
 
 
 const createAgreementItemTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAgreementItemTypeAttr method',
   args:{agreementItemTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createAgreementItemTypeAttr};
 
 
 const createCommEventFromEmail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommEventFromEmail method',
   args:{sendTo: {type: GraphQLString},subject: {type: GraphQLString},sendFrom: {type: GraphQLString},statusId: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString},contentType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createCommEventFromEmail};
 
 
 const createCommEventWorkEffort = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommEventWorkEffort method',
   args:{workEffortTypeId: {type: GraphQLString},communicationEventId: {type: GraphQLString},currentStatusId: {type: GraphQLString},workEffortName: {type: GraphQLString},workEffortId: {type: GraphQLString},totalMoneyAllowed: {type: GraphQLFloat},recurrenceInfoId: {type: GraphQLString},reservPersons: {type: GraphQLFloat},estimateCalcMethod: {type: GraphQLString},revisionNumber: {type: GraphQLInt},workEffortParentId: {type: GraphQLString},description: {type: GraphQLString},moneyUomId: {type: GraphQLString},tempExprId: {type: GraphQLString},reservNthPPPerc: {type: GraphQLFloat},showAsEnumId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},infoUrl: {type: GraphQLString},universalId: {type: GraphQLString},accommodationMapId: {type: GraphQLString},locationDesc: {type: GraphQLString},actualStartDate: {type: GraphQLString},scopeEnumId: {type: GraphQLString},quantityProduced: {type: GraphQLFloat},createdByUserLogin: {type: GraphQLString},actualMilliSeconds: {type: GraphQLFloat},quantityToProduce: {type: GraphQLFloat},facilityId: {type: GraphQLString},estimatedSetupMillis: {type: GraphQLFloat},workEffortPurposeTypeId: {type: GraphQLString},serviceLoaderName: {type: GraphQLString},accommodationSpotId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},estimatedStartDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},lastStatusUpdate: {type: GraphQLString},sendNotificationEmail: {type: GraphQLString},noteId: {type: GraphQLString},percentComplete: {type: GraphQLInt},quantityRejected: {type: GraphQLFloat},priority: {type: GraphQLInt},totalMilliSecondsAllowed: {type: GraphQLFloat},runtimeDataId: {type: GraphQLString},estimatedMilliSeconds: {type: GraphQLFloat},specialTerms: {type: GraphQLString},createdDate: {type: GraphQLString},timeTransparency: {type: GraphQLInt},actualCompletionDate: {type: GraphQLString},fixedAssetId: {type: GraphQLString},reserv2ndPPPerc: {type: GraphQLFloat},actualSetupMillis: {type: GraphQLFloat},estimatedCompletionDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createCommEventWorkEffort};
 
 
 const createCommunicationEvent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommunicationEvent method',
   args:{partyIdFrom: {type: GraphQLString},note: {type: GraphQLString},orderId: {type: GraphQLString},subject: {type: GraphQLString},ccString: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},communicationEventTypeId: {type: GraphQLString},content: {type: GraphQLString},contentMimeTypeId: {type: GraphQLString},datetimeStarted: {type: GraphQLString},contactListId: {type: GraphQLString},custRequestId: {type: GraphQLString},action: {type: GraphQLString},contactMechIdFrom: {type: GraphQLString},reasonEnumId: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},productId: {type: GraphQLString},parentCommEventId: {type: GraphQLString},entryDate: {type: GraphQLString},datetimeEnded: {type: GraphQLString},origCommEventId: {type: GraphQLString},messageId: {type: GraphQLInt},roleTypeIdFrom: {type: GraphQLString},contactMechIdTo: {type: GraphQLString},headerString: {type: GraphQLString},statusId: {type: GraphQLString},bccString: {type: GraphQLString},communicationEventId: {type: GraphQLString},partyIdTo: {type: GraphQLString},toString: {type: GraphQLString},fromString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createCommunicationEvent};
 
 
 const createCommunicationEventInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommunicationEventInterface method',
   args:{partyIdFrom: {type: GraphQLString},note: {type: GraphQLString},orderId: {type: GraphQLString},subject: {type: GraphQLString},ccString: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},communicationEventTypeId: {type: GraphQLString},content: {type: GraphQLString},contentMimeTypeId: {type: GraphQLString},datetimeStarted: {type: GraphQLString},contactListId: {type: GraphQLString},custRequestId: {type: GraphQLString},action: {type: GraphQLString},contactMechIdFrom: {type: GraphQLString},reasonEnumId: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},productId: {type: GraphQLString},parentCommEventId: {type: GraphQLString},entryDate: {type: GraphQLString},datetimeEnded: {type: GraphQLString},origCommEventId: {type: GraphQLString},messageId: {type: GraphQLInt},roleTypeIdFrom: {type: GraphQLString},contactMechIdTo: {type: GraphQLString},headerString: {type: GraphQLString},statusId: {type: GraphQLString},bccString: {type: GraphQLString},communicationEventId: {type: GraphQLString},partyIdTo: {type: GraphQLString},toString: {type: GraphQLString},fromString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createCommunicationEventInterface};
 
 
 const createCommunicationEventPrpTyp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommunicationEventPrpTyp method',
   args:{communicationEventPrpTypId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createCommunicationEventPrpTyp};
 
 
 const createCommunicationEventPurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommunicationEventPurpose method',
   args:{communicationEventPrpTypId: {type: GraphQLString},communicationEventId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createCommunicationEventPurpose};
 
 
 const createCommunicationEventRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommunicationEventRole method',
   args:{roleTypeId: {type: GraphQLString},communicationEventId: {type: GraphQLString},partyId: {type: GraphQLString},statusId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createCommunicationEventRole};
 
 
 const createCommunicationEventRoleInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommunicationEventRoleInterface method',
   args:{roleTypeId: {type: GraphQLString},communicationEventId: {type: GraphQLString},partyId: {type: GraphQLString},statusId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createCommunicationEventRoleInterface};
 
 
 const createCommunicationEventRoleWithoutPermission = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommunicationEventRoleWithoutPermission method',
   args:{roleTypeId: {type: GraphQLString},communicationEventId: {type: GraphQLString},partyId: {type: GraphQLString},statusId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createCommunicationEventRoleWithoutPermission};
 
 
 const createCommunicationEventWithoutPermission = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommunicationEventWithoutPermission method',
   args:{partyIdFrom: {type: GraphQLString},note: {type: GraphQLString},orderId: {type: GraphQLString},subject: {type: GraphQLString},ccString: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},communicationEventTypeId: {type: GraphQLString},content: {type: GraphQLString},contentMimeTypeId: {type: GraphQLString},datetimeStarted: {type: GraphQLString},contactListId: {type: GraphQLString},custRequestId: {type: GraphQLString},action: {type: GraphQLString},contactMechIdFrom: {type: GraphQLString},reasonEnumId: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},productId: {type: GraphQLString},parentCommEventId: {type: GraphQLString},entryDate: {type: GraphQLString},datetimeEnded: {type: GraphQLString},origCommEventId: {type: GraphQLString},messageId: {type: GraphQLInt},roleTypeIdFrom: {type: GraphQLString},contactMechIdTo: {type: GraphQLString},headerString: {type: GraphQLString},statusId: {type: GraphQLString},bccString: {type: GraphQLString},communicationEventId: {type: GraphQLString},partyIdTo: {type: GraphQLString},toString: {type: GraphQLString},fromString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {createCommunicationEventWithoutPermission};
 
 
 const createContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContactMech method',
   args:{contactMechTypeId: {type: GraphQLString},infoString: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {createContactMech};
 
 
 const createContactMechAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContactMechAttribute method',
   args:{fromDate: {type: GraphQLString},partyId: {type: GraphQLString},contactMechId: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {createContactMechAttribute};
 
 
 const createContactMechLink = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContactMechLink method',
   args:{contactMechIdFrom: {type: GraphQLString},contactMechIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {createContactMechLink};
 
 
 const createCustRequestCommEvent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCustRequestCommEvent method',
   args:{custRequestId: {type: GraphQLString},communicationEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {createCustRequestCommEvent};
 
 
 const createEmailAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmailAddress method',
   args:{emailAddress: {type: GraphQLString},infoString: {type: GraphQLString},contactMechTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {createEmailAddress};
 
 
 const createEmailAddressVerification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createEmailAddressVerification method',
   args:{emailAddress: {type: GraphQLString},expireDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {createEmailAddressVerification};
 
 
 const createNeedType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createNeedType method',
   args:{needTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {createNeedType};
 
 
 const createPartyAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyAttribute method',
   args:{productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {createPartyAttribute};
 
 
 const createPartyCarrierAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyCarrierAccount method',
   args:{fromDate: {type: GraphQLString},carrierPartyId: {type: GraphQLString},partyId: {type: GraphQLString},accountNumber: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {createPartyCarrierAccount};
 
 
 const createPartyClassification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyClassification method',
   args:{partyClassificationGroupId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {createPartyClassification};
 
 
 const createPartyClassificationGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyClassificationGroup method',
   args:{parentGroupId: {type: GraphQLString},description: {type: GraphQLString},partyClassificationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {createPartyClassificationGroup};
 
 
 const createPartyContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyContactMech method',
   args:{roleTypeId: {type: GraphQLString},extension: {type: GraphQLString},comments: {type: GraphQLString},verified: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},allowSolicitation: {type: GraphQLString},infoString: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},contactMechPurposeTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {createPartyContactMech};
 
 
 const createPartyContactMechPurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyContactMechPurpose method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},contactMechId: {type: GraphQLString},fromDate: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {createPartyContactMechPurpose};
 
 
 const createPartyContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyContent method',
   args:{partyContentTypeId: {type: GraphQLString},contentId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {createPartyContent};
 
 
 const createPartyDataSource = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyDataSource method',
   args:{dataSourceId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {createPartyDataSource};
 
 
 const createPartyEmailAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyEmailAddress method',
   args:{emailAddress: {type: GraphQLString},roleTypeId: {type: GraphQLString},extension: {type: GraphQLString},comments: {type: GraphQLString},verified: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},allowSolicitation: {type: GraphQLString},infoString: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},contactMechPurposeTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {createPartyEmailAddress};
 
 
 const createPartyGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyGroup method',
   args:{groupName: {type: GraphQLString},comments: {type: GraphQLString},description: {type: GraphQLString},externalId: {type: GraphQLString},tickerSymbol: {type: GraphQLString},logoImageUrl: {type: GraphQLString},partyTypeId: {type: GraphQLString},groupNameLocal: {type: GraphQLString},numEmployees: {type: GraphQLInt},statusId: {type: GraphQLString},preferredCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString},officeSiteName: {type: GraphQLString},annualRevenue: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {createPartyGroup};
 
 
 const createPartyIdentification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyIdentification method',
   args:{partyIdentificationTypeId: {type: GraphQLString},partyId: {type: GraphQLString},idValue: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {createPartyIdentification};
 
 
 const createPartyIdentifications = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyIdentifications method',
   args:{partyId: {type: GraphQLString},identifications: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {createPartyIdentifications};
 
 
 const createPartyInvitation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyInvitation method',
   args:{partyIdFrom: {type: GraphQLString},emailAddress: {type: GraphQLString},statusId: {type: GraphQLString},toName: {type: GraphQLString},lastInviteDate: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {createPartyInvitation};
 
 
 const createPartyInvitationGroupAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyInvitationGroupAssoc method',
   args:{partyIdTo: {type: GraphQLString},partyInvitationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {createPartyInvitationGroupAssoc};
 
 
 const createPartyInvitationRoleAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyInvitationRoleAssoc method',
   args:{roleTypeId: {type: GraphQLString},partyInvitationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {createPartyInvitationRoleAssoc};
 
 
 const createPartyNote = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyNote method',
   args:{partyId: {type: GraphQLString},note: {type: GraphQLString},noteName: {type: GraphQLString},noteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {createPartyNote};
 
 
 const createPartyPostalAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyPostalAddress method',
   args:{city: {type: GraphQLString},address1: {type: GraphQLString},postalCode: {type: GraphQLString},houseNumberExt: {type: GraphQLString},extension: {type: GraphQLString},postalCodeGeoId: {type: GraphQLString},houseNumber: {type: GraphQLInt},postalCodeExt: {type: GraphQLString},contactMechId: {type: GraphQLString},attnName: {type: GraphQLString},countyGeoId: {type: GraphQLString},toName: {type: GraphQLString},cityGeoId: {type: GraphQLString},paymentMethodId: {type: GraphQLString},partyId: {type: GraphQLString},countryGeoId: {type: GraphQLString},roleTypeId: {type: GraphQLString},comments: {type: GraphQLString},address2: {type: GraphQLString},verified: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},allowSolicitation: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},directions: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},municipalityGeoId: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {createPartyPostalAddress};
 
 
 const createPartyRelationship = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyRelationship method',
   args:{partyIdTo: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},partyIdFrom: {type: GraphQLString},positionTitle: {type: GraphQLString},comments: {type: GraphQLString},priorityTypeId: {type: GraphQLString},permissionsEnumId: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},relationshipName: {type: GraphQLString},securityGroupId: {type: GraphQLString},partyRelationshipTypeId: {type: GraphQLString},statusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {createPartyRelationship};
 
 
 const createPartyRelationshipAndRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyRelationshipAndRole method',
   args:{partyIdFrom: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},relationshipName: {type: GraphQLString},securityGroupId: {type: GraphQLString},partyRelationshipTypeId: {type: GraphQLString},positionTitle: {type: GraphQLString},comments: {type: GraphQLString},statusId: {type: GraphQLString},priorityTypeId: {type: GraphQLString},permissionsEnumId: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {createPartyRelationshipAndRole};
 
 
 const createPartyRelationshipContactAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyRelationshipContactAccount method',
   args:{contactPartyId: {type: GraphQLString},accountPartyId: {type: GraphQLString},comments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {createPartyRelationshipContactAccount};
 
 
 const createPartyRelationshipType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyRelationshipType method',
   args:{partyRelationshipName: {type: GraphQLString},partyRelationshipTypeId: {type: GraphQLString},roleTypeIdValidTo: {type: GraphQLString},roleTypeIdValidFrom: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {createPartyRelationshipType};
 
 
 const createPartyRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyRole method',
   args:{roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {createPartyRole};
 
 
 const createPartyTelecomNumber = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyTelecomNumber method',
   args:{roleTypeId: {type: GraphQLString},extension: {type: GraphQLString},askForName: {type: GraphQLString},comments: {type: GraphQLString},verified: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},allowSolicitation: {type: GraphQLString},areaCode: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},contactMechPurposeTypeId: {type: GraphQLString},countryCode: {type: GraphQLString},contactNumber: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {createPartyTelecomNumber};
 
 
 const createPartyTextContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyTextContent method',
   args:{partyContentTypeId: {type: GraphQLString},surveyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},ownerContentId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},privilegeEnumId: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString},dataResourceId: {type: GraphQLString},objectInfo: {type: GraphQLString},partyId: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},instanceOfContentId: {type: GraphQLString},contentPurposeString: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},contentIdFrom: {type: GraphQLString},childBranchCount: {type: GraphQLInt},contentIdTo: {type: GraphQLString},contentTypeId: {type: GraphQLString},contentId: {type: GraphQLString},description: {type: GraphQLString},childLeafCount: {type: GraphQLInt},contentPurposeTypeId: {type: GraphQLString},textData: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},uploadedFile: {type: GraphQLString},roleTypeId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},templateDataResourceId: {type: GraphQLString},mapKey: {type: GraphQLString},serviceName: {type: GraphQLString},characterSetId: {type: GraphQLString},customMethodId: {type: GraphQLString},contentName: {type: GraphQLInt},createdDate: {type: GraphQLString},localeString: {type: GraphQLString},decoratorContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {createPartyTextContent};
 
 
 const createPerson = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPerson method',
   args:{firstName: {type: GraphQLString},lastName: {type: GraphQLString},yearsWithEmployer: {type: GraphQLInt},occupation: {type: GraphQLString},gender: {type: GraphQLString},employmentStatusEnumId: {type: GraphQLString},socialSecurityNumber: {type: GraphQLString},description: {type: GraphQLString},suffix: {type: GraphQLString},mothersMaidenName: {type: GraphQLString},middleNameLocal: {type: GraphQLString},existingCustomer: {type: GraphQLString},residenceStatusEnumId: {type: GraphQLString},nickname: {type: GraphQLString},preferredCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString},memberId: {type: GraphQLString},height: {type: GraphQLFloat},passportNumber: {type: GraphQLString},lastNameLocal: {type: GraphQLString},comments: {type: GraphQLString},monthsWithEmployer: {type: GraphQLInt},weight: {type: GraphQLFloat},externalId: {type: GraphQLString},birthDate: {type: GraphQLString},otherLocal: {type: GraphQLString},statusId: {type: GraphQLString},cardId: {type: GraphQLString},middleName: {type: GraphQLString},firstNameLocal: {type: GraphQLString},passportExpireDate: {type: GraphQLString},salutation: {type: GraphQLString},personalTitle: {type: GraphQLString},deceasedDate: {type: GraphQLString},totalYearsWorkExperience: {type: GraphQLFloat},maritalStatus: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {createPerson};
 
 
 const createPersonAndUserLogin = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPersonAndUserLogin method',
   args:{userLoginId: {type: GraphQLString},currentPasswordVerify: {type: GraphQLString},currentPassword: {type: GraphQLString},occupation: {type: GraphQLString},passwordHint: {type: GraphQLString},suffix: {type: GraphQLString},mothersMaidenName: {type: GraphQLString},existingCustomer: {type: GraphQLString},partyTypeId: {type: GraphQLString},preferredCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},memberId: {type: GraphQLString},height: {type: GraphQLFloat},passportNumber: {type: GraphQLString},lastNameLocal: {type: GraphQLString},monthsWithEmployer: {type: GraphQLInt},weight: {type: GraphQLFloat},otherLocal: {type: GraphQLString},firstName: {type: GraphQLString},statusId: {type: GraphQLString},cardId: {type: GraphQLString},requirePasswordChange: {type: GraphQLString},salutation: {type: GraphQLString},totalYearsWorkExperience: {type: GraphQLFloat},maritalStatus: {type: GraphQLString},yearsWithEmployer: {type: GraphQLInt},lastName: {type: GraphQLString},gender: {type: GraphQLString},employmentStatusEnumId: {type: GraphQLString},securityAnswer: {type: GraphQLString},socialSecurityNumber: {type: GraphQLString},externalAuthId: {type: GraphQLString},description: {type: GraphQLString},enabled: {type: GraphQLString},middleNameLocal: {type: GraphQLString},residenceStatusEnumId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},dataSourceId: {type: GraphQLString},nickname: {type: GraphQLString},comments: {type: GraphQLString},securityQuestion: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},externalId: {type: GraphQLString},birthDate: {type: GraphQLString},isUnread: {type: GraphQLString},createdDate: {type: GraphQLString},middleName: {type: GraphQLString},firstNameLocal: {type: GraphQLString},passportExpireDate: {type: GraphQLString},personalTitle: {type: GraphQLString},deceasedDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,7 +596,7 @@ export {createPersonAndUserLogin};
 
 
 const createPostalAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPostalAddress method',
   args:{city: {type: GraphQLString},address1: {type: GraphQLString},postalCode: {type: GraphQLString},countryGeoId: {type: GraphQLString},houseNumberExt: {type: GraphQLString},address2: {type: GraphQLString},postalCodeGeoId: {type: GraphQLString},houseNumber: {type: GraphQLInt},postalCodeExt: {type: GraphQLString},contactMechId: {type: GraphQLString},attnName: {type: GraphQLString},directions: {type: GraphQLString},countyGeoId: {type: GraphQLString},toName: {type: GraphQLString},cityGeoId: {type: GraphQLString},municipalityGeoId: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -607,7 +607,7 @@ export {createPostalAddress};
 
 
 const createPostalAddressAndPurposes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPostalAddressAndPurposes method',
   args:{houseNumberExt: {type: GraphQLString},extension: {type: GraphQLString},city: {type: GraphQLString},postalCode: {type: GraphQLString},postalCodeGeoId: {type: GraphQLString},houseNumber: {type: GraphQLInt},postalCodeExt: {type: GraphQLString},contactMechId: {type: GraphQLString},attnName: {type: GraphQLString},setShippingPurpose: {type: GraphQLString},countyGeoId: {type: GraphQLString},toName: {type: GraphQLString},cityGeoId: {type: GraphQLString},paymentMethodId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},countryGeoId: {type: GraphQLString},roleTypeId: {type: GraphQLString},comments: {type: GraphQLString},address2: {type: GraphQLString},address1: {type: GraphQLString},verified: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},setBillingPurpose: {type: GraphQLString},allowSolicitation: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},directions: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},municipalityGeoId: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -618,7 +618,7 @@ export {createPostalAddressAndPurposes};
 
 
 const createPostalAddressBoundary = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPostalAddressBoundary method',
   args:{geoId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -629,7 +629,7 @@ export {createPostalAddressBoundary};
 
 
 const createRoleType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRoleType method',
   args:{roleTypeId: {type: GraphQLString},description: {type: GraphQLString},parentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -640,7 +640,7 @@ export {createRoleType};
 
 
 const createRoleTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createRoleTypeAttr method',
   args:{roleTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -651,7 +651,7 @@ export {createRoleTypeAttr};
 
 
 const createTelecomNumber = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTelecomNumber method',
   args:{areaCode: {type: GraphQLString},askForName: {type: GraphQLString},countryCode: {type: GraphQLString},contactNumber: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -662,7 +662,7 @@ export {createTelecomNumber};
 
 
 const createUpdatePartyEmailAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUpdatePartyEmailAddress method',
   args:{emailAddress: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},contactMechPurposeTypeId: {type: GraphQLString},partyId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -673,7 +673,7 @@ export {createUpdatePartyEmailAddress};
 
 
 const createUpdatePartyPostalAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUpdatePartyPostalAddress method',
   args:{city: {type: GraphQLString},address1: {type: GraphQLString},postalCode: {type: GraphQLString},partyId: {type: GraphQLString},houseNumberExt: {type: GraphQLString},extension: {type: GraphQLString},postalCodeGeoId: {type: GraphQLString},houseNumber: {type: GraphQLInt},postalCodeExt: {type: GraphQLString},contactMechId: {type: GraphQLString},attnName: {type: GraphQLString},countyGeoId: {type: GraphQLString},toName: {type: GraphQLString},cityGeoId: {type: GraphQLString},countryGeoId: {type: GraphQLString},roleTypeId: {type: GraphQLString},comments: {type: GraphQLString},address2: {type: GraphQLString},verified: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},allowSolicitation: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},directions: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},municipalityGeoId: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -684,7 +684,7 @@ export {createUpdatePartyPostalAddress};
 
 
 const createUpdatePartyRelationshipAndRoles = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUpdatePartyRelationshipAndRoles method',
   args:{roleTypeIdTo: {type: GraphQLString},partyIdFrom: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},relationshipName: {type: GraphQLString},securityGroupId: {type: GraphQLString},partyRelationshipTypeId: {type: GraphQLString},positionTitle: {type: GraphQLString},comments: {type: GraphQLString},statusId: {type: GraphQLString},priorityTypeId: {type: GraphQLString},permissionsEnumId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -695,7 +695,7 @@ export {createUpdatePartyRelationshipAndRoles};
 
 
 const createUpdatePartyTelecomNumber = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUpdatePartyTelecomNumber method',
   args:{partyId: {type: GraphQLString},roleTypeId: {type: GraphQLString},extension: {type: GraphQLString},askForName: {type: GraphQLString},comments: {type: GraphQLString},verified: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},allowSolicitation: {type: GraphQLString},areaCode: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},contactMechPurposeTypeId: {type: GraphQLString},countryCode: {type: GraphQLString},contactNumber: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -706,7 +706,7 @@ export {createUpdatePartyTelecomNumber};
 
 
 const createUpdatePerson = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUpdatePerson method',
   args:{firstName: {type: GraphQLString},lastName: {type: GraphQLString},yearsWithEmployer: {type: GraphQLInt},occupation: {type: GraphQLString},gender: {type: GraphQLString},employmentStatusEnumId: {type: GraphQLString},socialSecurityNumber: {type: GraphQLString},suffix: {type: GraphQLString},mothersMaidenName: {type: GraphQLString},middleNameLocal: {type: GraphQLString},existingCustomer: {type: GraphQLString},residenceStatusEnumId: {type: GraphQLString},nickname: {type: GraphQLString},partyId: {type: GraphQLString},memberId: {type: GraphQLString},height: {type: GraphQLFloat},passportNumber: {type: GraphQLString},lastNameLocal: {type: GraphQLString},comments: {type: GraphQLString},monthsWithEmployer: {type: GraphQLInt},weight: {type: GraphQLFloat},birthDate: {type: GraphQLString},otherLocal: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},cardId: {type: GraphQLString},middleName: {type: GraphQLString},firstNameLocal: {type: GraphQLString},passportExpireDate: {type: GraphQLString},salutation: {type: GraphQLString},personalTitle: {type: GraphQLString},deceasedDate: {type: GraphQLString},totalYearsWorkExperience: {type: GraphQLFloat},maritalStatus: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {createUpdatePerson};
 
 
 const createVendor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createVendor method',
   args:{partyId: {type: GraphQLString},manifestCompanyTitle: {type: GraphQLString},manifestPolicies: {type: GraphQLString},manifestLogoUrl: {type: GraphQLString},manifestCompanyName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {createVendor};
 
 
 const declinePartyInvitation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz declinePartyInvitation method',
   args:{partyInvitationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {declinePartyInvitation};
 
 
 const deleteAgreementAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAgreementAttribute method',
   args:{agreementId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -750,7 +750,7 @@ export {deleteAgreementAttribute};
 
 
 const deleteAgreementItemTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAgreementItemTypeAttr method',
   args:{agreementItemTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -761,7 +761,7 @@ export {deleteAgreementItemTypeAttr};
 
 
 const deleteCommunicationEvent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCommunicationEvent method',
   args:{communicationEventId: {type: GraphQLString},delContentDataResource: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -772,7 +772,7 @@ export {deleteCommunicationEvent};
 
 
 const deleteCommunicationEventPrpTyp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCommunicationEventPrpTyp method',
   args:{communicationEventPrpTypId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -783,7 +783,7 @@ export {deleteCommunicationEventPrpTyp};
 
 
 const deleteCommunicationEventWorkEffort = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCommunicationEventWorkEffort method',
   args:{communicationEventId: {type: GraphQLString},delContentDataResource: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -794,7 +794,7 @@ export {deleteCommunicationEventWorkEffort};
 
 
 const deleteContactMechLink = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteContactMechLink method',
   args:{contactMechIdFrom: {type: GraphQLString},contactMechIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -805,7 +805,7 @@ export {deleteContactMechLink};
 
 
 const deleteCustRequestCommEvent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCustRequestCommEvent method',
   args:{custRequestId: {type: GraphQLString},communicationEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -816,7 +816,7 @@ export {deleteCustRequestCommEvent};
 
 
 const deleteNeedType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteNeedType method',
   args:{needTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -827,7 +827,7 @@ export {deleteNeedType};
 
 
 const deleteParty = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteParty method',
   args:{partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -838,7 +838,7 @@ export {deleteParty};
 
 
 const deletePartyClassification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyClassification method',
   args:{fromDate: {type: GraphQLString},partyClassificationGroupId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -849,7 +849,7 @@ export {deletePartyClassification};
 
 
 const deletePartyClassificationGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyClassificationGroup method',
   args:{partyClassificationGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -860,7 +860,7 @@ export {deletePartyClassificationGroup};
 
 
 const deletePartyContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyContactMech method',
   args:{contactMechId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -871,7 +871,7 @@ export {deletePartyContactMech};
 
 
 const deletePartyContactMechPurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyContactMechPurpose method',
   args:{fromDate: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},contactMechId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -882,7 +882,7 @@ export {deletePartyContactMechPurpose};
 
 
 const deletePartyContactMechPurposeIfExists = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyContactMechPurposeIfExists method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},contactMechId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -893,7 +893,7 @@ export {deletePartyContactMechPurposeIfExists};
 
 
 const deletePartyIdentification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyIdentification method',
   args:{partyIdentificationTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -904,7 +904,7 @@ export {deletePartyIdentification};
 
 
 const deletePartyInvitation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyInvitation method',
   args:{partyInvitationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -915,7 +915,7 @@ export {deletePartyInvitation};
 
 
 const deletePartyInvitationGroupAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyInvitationGroupAssoc method',
   args:{partyIdTo: {type: GraphQLString},partyInvitationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -926,7 +926,7 @@ export {deletePartyInvitationGroupAssoc};
 
 
 const deletePartyInvitationRoleAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyInvitationRoleAssoc method',
   args:{roleTypeId: {type: GraphQLString},partyInvitationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -937,7 +937,7 @@ export {deletePartyInvitationRoleAssoc};
 
 
 const deletePartyRelationship = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyRelationship method',
   args:{fromDate: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},partyIdFrom: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -948,7 +948,7 @@ export {deletePartyRelationship};
 
 
 const deletePartyRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePartyRole method',
   args:{roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -959,7 +959,7 @@ export {deletePartyRole};
 
 
 const deletePostalAddressBoundary = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deletePostalAddressBoundary method',
   args:{geoId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -970,7 +970,7 @@ export {deletePostalAddressBoundary};
 
 
 const deleteRoleType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteRoleType method',
   args:{roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -981,7 +981,7 @@ export {deleteRoleType};
 
 
 const deleteRoleTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteRoleTypeAttr method',
   args:{roleTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -992,7 +992,7 @@ export {deleteRoleTypeAttr};
 
 
 const deleteVendor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteVendor method',
   args:{partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1003,7 +1003,7 @@ export {deleteVendor};
 
 
 const ensureNaPartyRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz ensureNaPartyRole method',
   args:{partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1014,7 +1014,7 @@ export {ensureNaPartyRole};
 
 
 const ensurePartyRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz ensurePartyRole method',
   args:{roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1025,7 +1025,7 @@ export {ensurePartyRole};
 
 
 const ensurePartyRoleFrom = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz ensurePartyRoleFrom method',
   args:{partyIdFrom: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1036,7 +1036,7 @@ export {ensurePartyRoleFrom};
 
 
 const ensurePartyRoleTo = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz ensurePartyRoleTo method',
   args:{partyIdTo: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1047,7 +1047,7 @@ export {ensurePartyRoleTo};
 
 
 const findPartiesById = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findPartiesById method',
   args:{idToFind: {type: GraphQLString},searchAllId: {type: GraphQLString},partyIdentificationTypeId: {type: GraphQLString},searchPartyFirst: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1058,7 +1058,7 @@ export {findPartiesById};
 
 
 const findPartyFromEmailAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findPartyFromEmailAddress method',
   args:{address: {type: GraphQLString},fromDate: {type: GraphQLString},caseInsensitive: {type: GraphQLString},personal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1069,7 +1069,7 @@ export {findPartyFromEmailAddress};
 
 
 const findPartyFromTelephone = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findPartyFromTelephone method',
   args:{telno: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1080,7 +1080,7 @@ export {findPartyFromTelephone};
 
 
 const findPartyFromTelephoneComplete = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findPartyFromTelephoneComplete method',
   args:{telno: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1091,7 +1091,7 @@ export {findPartyFromTelephoneComplete};
 
 
 const getPartyEmail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyEmail method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1102,7 +1102,7 @@ export {getPartyEmail};
 
 
 const getPartyMainRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyMainRole method',
   args:{partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1113,7 +1113,7 @@ export {getPartyMainRole};
 
 
 const getPartyNameForDate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyNameForDate method',
   args:{partyId: {type: GraphQLString},compareDate: {type: GraphQLString},lastNameFirst: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1124,7 +1124,7 @@ export {getPartyNameForDate};
 
 
 const getPartyPostalAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyPostalAddress method',
   args:{partyId: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1135,7 +1135,7 @@ export {getPartyPostalAddress};
 
 
 const getPartyTelephone = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyTelephone method',
   args:{partyId: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1146,7 +1146,7 @@ export {getPartyTelephone};
 
 
 const importAddressMatchMapCsv = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz importAddressMatchMapCsv method',
   args:{_uploadedFile_contentType: {type: GraphQLString},uploadedFile: {type: GraphQLString},_uploadedFile_fileName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1157,7 +1157,7 @@ export {importAddressMatchMapCsv};
 
 
 const importParty = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz importParty method',
   args:{uploadedFile: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1168,7 +1168,7 @@ export {importParty};
 
 
 const linkPartyRecord = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz linkPartyRecord method',
   args:{partyIdTo: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1179,7 +1179,7 @@ export {linkPartyRecord};
 
 
 const logIncomingMessage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz logIncomingMessage method',
   args:{messageWrapper: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1190,7 +1190,7 @@ export {logIncomingMessage};
 
 
 const lookupParty = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz lookupParty method',
   args:{firstName: {type: GraphQLString},lastName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1201,7 +1201,7 @@ export {lookupParty};
 
 
 const partyBasePermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz partyBasePermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1212,7 +1212,7 @@ export {partyBasePermissionCheck};
 
 
 const partyCommunicationEventPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz partyCommunicationEventPermissionCheck method',
   args:{partyIdFrom: {type: GraphQLString},primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},partyIdTo: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1223,7 +1223,7 @@ export {partyCommunicationEventPermissionCheck};
 
 
 const partyContactMechPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz partyContactMechPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},partyId: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1234,7 +1234,7 @@ export {partyContactMechPermissionCheck};
 
 
 const partyDatasourcePermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz partyDatasourcePermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1245,7 +1245,7 @@ export {partyDatasourcePermissionCheck};
 
 
 const partyGroupPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz partyGroupPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},partyId: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1256,7 +1256,7 @@ export {partyGroupPermissionCheck};
 
 
 const partyIdPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz partyIdPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},partyId: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1267,7 +1267,7 @@ export {partyIdPermissionCheck};
 
 
 const partyRelationshipPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz partyRelationshipPermissionCheck method',
   args:{partyIdFrom: {type: GraphQLString},primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1278,7 +1278,7 @@ export {partyRelationshipPermissionCheck};
 
 
 const partyRolePermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz partyRolePermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},partyId: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1289,7 +1289,7 @@ export {partyRolePermissionCheck};
 
 
 const partyStatusPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz partyStatusPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},partyId: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1300,7 +1300,7 @@ export {partyStatusPermissionCheck};
 
 
 const processBouncedMessage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processBouncedMessage method',
   args:{messageWrapper: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1311,7 +1311,7 @@ export {processBouncedMessage};
 
 
 const quickCreateCustomer = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz quickCreateCustomer method',
   args:{firstName: {type: GraphQLString},lastName: {type: GraphQLString},emailAddress: {type: GraphQLString},subscribeContactList: {type: GraphQLString},contactListId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1322,7 +1322,7 @@ export {quickCreateCustomer};
 
 
 const removeAddressMatchMap = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeAddressMatchMap method',
   args:{mapValue: {type: GraphQLString},mapKey: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1333,7 +1333,7 @@ export {removeAddressMatchMap};
 
 
 const removeCommunicationEventPurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeCommunicationEventPurpose method',
   args:{communicationEventPrpTypId: {type: GraphQLString},communicationEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1344,7 +1344,7 @@ export {removeCommunicationEventPurpose};
 
 
 const removeCommunicationEventRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeCommunicationEventRole method',
   args:{roleTypeId: {type: GraphQLString},communicationEventId: {type: GraphQLString},partyId: {type: GraphQLString},deleteCommEventIfLast: {type: GraphQLString},delContentDataResource: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1355,7 +1355,7 @@ export {removeCommunicationEventRole};
 
 
 const removeContactMechAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeContactMechAttribute method',
   args:{contactMechId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1366,7 +1366,7 @@ export {removeContactMechAttribute};
 
 
 const removePartyAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removePartyAttribute method',
   args:{partyId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1377,7 +1377,7 @@ export {removePartyAttribute};
 
 
 const removePartyContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removePartyContent method',
   args:{fromDate: {type: GraphQLString},partyContentTypeId: {type: GraphQLString},contentId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1388,7 +1388,7 @@ export {removePartyContent};
 
 
 const savePartyNameChange = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz savePartyNameChange method',
   args:{firstName: {type: GraphQLString},lastName: {type: GraphQLString},groupName: {type: GraphQLString},middleName: {type: GraphQLString},partyId: {type: GraphQLString},personalTitle: {type: GraphQLString},suffix: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1399,7 +1399,7 @@ export {savePartyNameChange};
 
 
 const sendAccountActivatedEmailNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendAccountActivatedEmailNotification method',
   args:{userLoginId: {type: GraphQLString},productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1410,7 +1410,7 @@ export {sendAccountActivatedEmailNotification};
 
 
 const sendCommEventAsEmail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendCommEventAsEmail method',
   args:{communicationEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1421,7 +1421,7 @@ export {sendCommEventAsEmail};
 
 
 const sendContactUsEmailToCompany = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendContactUsEmailToCompany method',
   args:{partyIdTo: {type: GraphQLString},partyIdFrom: {type: GraphQLString},note: {type: GraphQLString},lastName: {type: GraphQLString},orderId: {type: GraphQLString},subject: {type: GraphQLString},ccString: {type: GraphQLString},postalCode: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},communicationEventTypeId: {type: GraphQLString},content: {type: GraphQLString},emailAddress: {type: GraphQLString},contentMimeTypeId: {type: GraphQLString},datetimeStarted: {type: GraphQLString},emailType: {type: GraphQLString},countryCode: {type: GraphQLString},contactListId: {type: GraphQLString},custRequestId: {type: GraphQLString},action: {type: GraphQLString},contactMechIdFrom: {type: GraphQLString},reasonEnumId: {type: GraphQLString},productStoreId: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},productId: {type: GraphQLString},parentCommEventId: {type: GraphQLString},entryDate: {type: GraphQLString},datetimeEnded: {type: GraphQLString},origCommEventId: {type: GraphQLString},messageId: {type: GraphQLInt},roleTypeIdFrom: {type: GraphQLString},contactMechIdTo: {type: GraphQLString},firstName: {type: GraphQLString},headerString: {type: GraphQLString},statusId: {type: GraphQLString},bccString: {type: GraphQLString},communicationEventId: {type: GraphQLString},toString: {type: GraphQLString},fromString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1432,7 +1432,7 @@ export {sendContactUsEmailToCompany};
 
 
 const sendCreatePartyEmailNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendCreatePartyEmailNotification method',
   args:{emailAddress: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1443,7 +1443,7 @@ export {sendCreatePartyEmailNotification};
 
 
 const sendEmailDated = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendEmailDated method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -1454,7 +1454,7 @@ export {sendEmailDated};
 
 
 const sendEmailToContactList = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendEmailToContactList method',
   args:{contactListId: {type: GraphQLString},communicationEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1465,7 +1465,7 @@ export {sendEmailToContactList};
 
 
 const sendUpdatePersonalInfoEmailNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendUpdatePersonalInfoEmailNotification method',
   args:{updatedUserLogin: {type: new GraphQLList(KeyValueInputType)},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1476,7 +1476,7 @@ export {sendUpdatePersonalInfoEmailNotification};
 
 
 const sendVerifyEmailAddressNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendVerifyEmailAddressNotification method',
   args:{emailAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1487,7 +1487,7 @@ export {sendVerifyEmailAddressNotification};
 
 
 const setCommEventComplete = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setCommEventComplete method',
   args:{communicationEventId: {type: GraphQLString},partyIdFrom: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1498,7 +1498,7 @@ export {setCommEventComplete};
 
 
 const setCommEventRoleToRead = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setCommEventRoleToRead method',
   args:{communicationEventId: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1509,7 +1509,7 @@ export {setCommEventRoleToRead};
 
 
 const setCommunicationEventRoleStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setCommunicationEventRoleStatus method',
   args:{roleTypeId: {type: GraphQLString},statusId: {type: GraphQLString},communicationEventId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1520,7 +1520,7 @@ export {setCommunicationEventRoleStatus};
 
 
 const setCommunicationEventStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setCommunicationEventStatus method',
   args:{statusId: {type: GraphQLString},communicationEventId: {type: GraphQLString},setRoleStatusToComplete: {type: GraphQLString},partyIdFrom: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1531,7 +1531,7 @@ export {setCommunicationEventStatus};
 
 
 const setPartyProfileDefaults = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setPartyProfileDefaults method',
   args:{productStoreId: {type: GraphQLString},defaultPayMeth: {type: GraphQLString},defaultShipAddr: {type: GraphQLString},defaultShipMeth: {type: GraphQLString},partyId: {type: GraphQLString},defaultBillAddr: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1542,7 +1542,7 @@ export {setPartyProfileDefaults};
 
 
 const setPartyStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setPartyStatus method',
   args:{statusId: {type: GraphQLString},partyId: {type: GraphQLString},statusDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1553,7 +1553,7 @@ export {setPartyStatus};
 
 
 const storeIncomingEmail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz storeIncomingEmail method',
   args:{messageWrapper: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1564,7 +1564,7 @@ export {storeIncomingEmail};
 
 
 const updateAffiliate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAffiliate method',
   args:{affiliateName: {type: GraphQLString},yearEstablished: {type: GraphQLString},affiliateDescription: {type: GraphQLString},sitePageViews: {type: GraphQLString},partyId: {type: GraphQLString},siteVisitors: {type: GraphQLString},siteType: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1575,7 +1575,7 @@ export {updateAffiliate};
 
 
 const updateAgreementAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementAttribute method',
   args:{agreementId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1586,7 +1586,7 @@ export {updateAgreementAttribute};
 
 
 const updateAgreementItemTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAgreementItemTypeAttr method',
   args:{agreementItemTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1597,7 +1597,7 @@ export {updateAgreementItemTypeAttr};
 
 
 const updateCommEventAfterEmail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCommEventAfterEmail method',
   args:{messageWrapper: {type: GraphQLString},communicationEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1608,7 +1608,7 @@ export {updateCommEventAfterEmail};
 
 
 const updateCommunicationEvent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCommunicationEvent method',
   args:{communicationEventId: {type: GraphQLString},partyIdFrom: {type: GraphQLString},note: {type: GraphQLString},subject: {type: GraphQLString},ccString: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},communicationEventTypeId: {type: GraphQLString},content: {type: GraphQLString},contentMimeTypeId: {type: GraphQLString},datetimeStarted: {type: GraphQLString},contactListId: {type: GraphQLString},contactMechIdFrom: {type: GraphQLString},reasonEnumId: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},parentCommEventId: {type: GraphQLString},entryDate: {type: GraphQLString},datetimeEnded: {type: GraphQLString},origCommEventId: {type: GraphQLString},messageId: {type: GraphQLInt},roleTypeIdFrom: {type: GraphQLString},contactMechIdTo: {type: GraphQLString},headerString: {type: GraphQLString},statusId: {type: GraphQLString},contactMechPurposeTypeIdFrom: {type: GraphQLString},bccString: {type: GraphQLString},partyIdTo: {type: GraphQLString},toString: {type: GraphQLString},fromString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1619,7 +1619,7 @@ export {updateCommunicationEvent};
 
 
 const updateCommunicationEventPrpTyp = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCommunicationEventPrpTyp method',
   args:{communicationEventPrpTypId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1630,7 +1630,7 @@ export {updateCommunicationEventPrpTyp};
 
 
 const updateCommunicationEventPurpose = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCommunicationEventPurpose method',
   args:{communicationEventPrpTypId: {type: GraphQLString},communicationEventId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1641,7 +1641,7 @@ export {updateCommunicationEventPurpose};
 
 
 const updateCommunicationEventRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCommunicationEventRole method',
   args:{roleTypeId: {type: GraphQLString},communicationEventId: {type: GraphQLString},partyId: {type: GraphQLString},statusId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1652,7 +1652,7 @@ export {updateCommunicationEventRole};
 
 
 const updateContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactMech method',
   args:{contactMechTypeId: {type: GraphQLString},contactMechId: {type: GraphQLString},infoString: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1663,7 +1663,7 @@ export {updateContactMech};
 
 
 const updateContactMechAndPurposes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactMechAndPurposes method',
   args:{houseNumberExt: {type: GraphQLString},extension: {type: GraphQLString},askForName: {type: GraphQLString},city: {type: GraphQLString},postalCode: {type: GraphQLString},postalCodeGeoId: {type: GraphQLString},houseNumber: {type: GraphQLInt},postalCodeExt: {type: GraphQLString},contactMechId: {type: GraphQLString},attnName: {type: GraphQLString},setShippingPurpose: {type: GraphQLString},countyGeoId: {type: GraphQLString},toName: {type: GraphQLString},cityGeoId: {type: GraphQLString},countryCode: {type: GraphQLString},contactNumber: {type: GraphQLString},phoneContactMechId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},countryGeoId: {type: GraphQLString},roleTypeId: {type: GraphQLString},comments: {type: GraphQLString},address2: {type: GraphQLString},address1: {type: GraphQLString},verified: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},setBillingPurpose: {type: GraphQLString},allowSolicitation: {type: GraphQLString},areaCode: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},directions: {type: GraphQLString},municipalityGeoId: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1674,7 +1674,7 @@ export {updateContactMechAndPurposes};
 
 
 const updateContactMechAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactMechAttribute method',
   args:{contactMechId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1685,7 +1685,7 @@ export {updateContactMechAttribute};
 
 
 const updateEmailAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateEmailAddress method',
   args:{emailAddress: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1696,7 +1696,7 @@ export {updateEmailAddress};
 
 
 const updateNeedType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateNeedType method',
   args:{needTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1707,7 +1707,7 @@ export {updateNeedType};
 
 
 const updatePartyAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyAttribute method',
   args:{partyId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1718,7 +1718,7 @@ export {updatePartyAttribute};
 
 
 const updatePartyCarrierAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyCarrierAccount method',
   args:{fromDate: {type: GraphQLString},carrierPartyId: {type: GraphQLString},partyId: {type: GraphQLString},accountNumber: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1729,7 +1729,7 @@ export {updatePartyCarrierAccount};
 
 
 const updatePartyClassification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyClassification method',
   args:{fromDate: {type: GraphQLString},partyClassificationGroupId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1740,7 +1740,7 @@ export {updatePartyClassification};
 
 
 const updatePartyClassificationGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyClassificationGroup method',
   args:{partyClassificationGroupId: {type: GraphQLString},parentGroupId: {type: GraphQLString},description: {type: GraphQLString},partyClassificationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1751,7 +1751,7 @@ export {updatePartyClassificationGroup};
 
 
 const updatePartyContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyContactMech method',
   args:{contactMechTypeId: {type: GraphQLString},roleTypeId: {type: GraphQLString},extension: {type: GraphQLString},comments: {type: GraphQLString},verified: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},allowSolicitation: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},infoString: {type: GraphQLString},newContactMechId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1762,7 +1762,7 @@ export {updatePartyContactMech};
 
 
 const updatePartyContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyContent method',
   args:{fromDate: {type: GraphQLString},partyContentTypeId: {type: GraphQLString},contentId: {type: GraphQLString},partyId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1773,7 +1773,7 @@ export {updatePartyContent};
 
 
 const updatePartyEmailAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyEmailAddress method',
   args:{emailAddress: {type: GraphQLString},fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},allowSolicitation: {type: GraphQLString},extension: {type: GraphQLString},comments: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},verified: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},partyId: {type: GraphQLString},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1784,7 +1784,7 @@ export {updatePartyEmailAddress};
 
 
 const updatePartyGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyGroup method',
   args:{comments: {type: GraphQLString},description: {type: GraphQLString},externalId: {type: GraphQLString},tickerSymbol: {type: GraphQLString},logoImageUrl: {type: GraphQLString},partyTypeId: {type: GraphQLString},groupName: {type: GraphQLString},groupNameLocal: {type: GraphQLString},numEmployees: {type: GraphQLInt},statusId: {type: GraphQLString},preferredCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString},officeSiteName: {type: GraphQLString},annualRevenue: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -1795,7 +1795,7 @@ export {updatePartyGroup};
 
 
 const updatePartyIdentification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyIdentification method',
   args:{partyIdentificationTypeId: {type: GraphQLString},partyId: {type: GraphQLString},idValue: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1806,7 +1806,7 @@ export {updatePartyIdentification};
 
 
 const updatePartyInvitation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyInvitation method',
   args:{partyInvitationId: {type: GraphQLString},partyIdFrom: {type: GraphQLString},emailAddress: {type: GraphQLString},statusId: {type: GraphQLString},toName: {type: GraphQLString},lastInviteDate: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1817,7 +1817,7 @@ export {updatePartyInvitation};
 
 
 const updatePartyPostalAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyPostalAddress method',
   args:{city: {type: GraphQLString},address1: {type: GraphQLString},postalCode: {type: GraphQLString},houseNumberExt: {type: GraphQLString},extension: {type: GraphQLString},postalCodeGeoId: {type: GraphQLString},houseNumber: {type: GraphQLInt},postalCodeExt: {type: GraphQLString},contactMechId: {type: GraphQLString},attnName: {type: GraphQLString},countyGeoId: {type: GraphQLString},toName: {type: GraphQLString},cityGeoId: {type: GraphQLString},partyId: {type: GraphQLString},countryGeoId: {type: GraphQLString},roleTypeId: {type: GraphQLString},comments: {type: GraphQLString},address2: {type: GraphQLString},verified: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},allowSolicitation: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},directions: {type: GraphQLString},municipalityGeoId: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1828,7 +1828,7 @@ export {updatePartyPostalAddress};
 
 
 const updatePartyRelationship = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyRelationship method',
   args:{fromDate: {type: GraphQLString},partyIdTo: {type: GraphQLString},roleTypeIdTo: {type: GraphQLString},relationshipName: {type: GraphQLString},securityGroupId: {type: GraphQLString},partyIdFrom: {type: GraphQLString},partyRelationshipTypeId: {type: GraphQLString},positionTitle: {type: GraphQLString},comments: {type: GraphQLString},statusId: {type: GraphQLString},priorityTypeId: {type: GraphQLString},permissionsEnumId: {type: GraphQLString},roleTypeIdFrom: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1839,7 +1839,7 @@ export {updatePartyRelationship};
 
 
 const updatePartyTelecomNumber = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyTelecomNumber method',
   args:{roleTypeId: {type: GraphQLString},extension: {type: GraphQLString},askForName: {type: GraphQLString},comments: {type: GraphQLString},verified: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},contactMechId: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},allowSolicitation: {type: GraphQLString},areaCode: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},countryCode: {type: GraphQLString},contactNumber: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1850,7 +1850,7 @@ export {updatePartyTelecomNumber};
 
 
 const updatePerson = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePerson method',
   args:{firstName: {type: GraphQLString},lastName: {type: GraphQLString},yearsWithEmployer: {type: GraphQLInt},occupation: {type: GraphQLString},gender: {type: GraphQLString},employmentStatusEnumId: {type: GraphQLString},socialSecurityNumber: {type: GraphQLString},description: {type: GraphQLString},suffix: {type: GraphQLString},mothersMaidenName: {type: GraphQLString},middleNameLocal: {type: GraphQLString},existingCustomer: {type: GraphQLString},residenceStatusEnumId: {type: GraphQLString},nickname: {type: GraphQLString},preferredCurrencyUomId: {type: GraphQLString},partyId: {type: GraphQLString},memberId: {type: GraphQLString},height: {type: GraphQLFloat},passportNumber: {type: GraphQLString},lastNameLocal: {type: GraphQLString},comments: {type: GraphQLString},monthsWithEmployer: {type: GraphQLInt},weight: {type: GraphQLFloat},externalId: {type: GraphQLString},birthDate: {type: GraphQLString},otherLocal: {type: GraphQLString},statusId: {type: GraphQLString},cardId: {type: GraphQLString},middleName: {type: GraphQLString},firstNameLocal: {type: GraphQLString},passportExpireDate: {type: GraphQLString},salutation: {type: GraphQLString},personalTitle: {type: GraphQLString},deceasedDate: {type: GraphQLString},totalYearsWorkExperience: {type: GraphQLFloat},maritalStatus: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1861,7 +1861,7 @@ export {updatePerson};
 
 
 const updatePostalAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePostalAddress method',
   args:{city: {type: GraphQLString},address1: {type: GraphQLString},postalCode: {type: GraphQLString},contactMechId: {type: GraphQLString},countryGeoId: {type: GraphQLString},houseNumberExt: {type: GraphQLString},address2: {type: GraphQLString},postalCodeGeoId: {type: GraphQLString},houseNumber: {type: GraphQLInt},postalCodeExt: {type: GraphQLString},attnName: {type: GraphQLString},directions: {type: GraphQLString},countyGeoId: {type: GraphQLString},toName: {type: GraphQLString},cityGeoId: {type: GraphQLString},municipalityGeoId: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},geoPointId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1872,7 +1872,7 @@ export {updatePostalAddress};
 
 
 const updatePostalAddressAndPurposes = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePostalAddressAndPurposes method',
   args:{contactMechId: {type: GraphQLString},houseNumberExt: {type: GraphQLString},extension: {type: GraphQLString},city: {type: GraphQLString},postalCode: {type: GraphQLString},postalCodeGeoId: {type: GraphQLString},houseNumber: {type: GraphQLInt},postalCodeExt: {type: GraphQLString},attnName: {type: GraphQLString},setShippingPurpose: {type: GraphQLString},countyGeoId: {type: GraphQLString},toName: {type: GraphQLString},cityGeoId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},countryGeoId: {type: GraphQLString},roleTypeId: {type: GraphQLString},comments: {type: GraphQLString},address2: {type: GraphQLString},address1: {type: GraphQLString},verified: {type: GraphQLString},monthsWithContactMech: {type: GraphQLInt},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},setBillingPurpose: {type: GraphQLString},allowSolicitation: {type: GraphQLString},yearsWithContactMech: {type: GraphQLInt},directions: {type: GraphQLString},municipalityGeoId: {type: GraphQLString},stateProvinceGeoId: {type: GraphQLString},geoPointId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1883,7 +1883,7 @@ export {updatePostalAddressAndPurposes};
 
 
 const updateRoleType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRoleType method',
   args:{roleTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1894,7 +1894,7 @@ export {updateRoleType};
 
 
 const updateRoleTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateRoleTypeAttr method',
   args:{roleTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1905,7 +1905,7 @@ export {updateRoleTypeAttr};
 
 
 const updateTelecomNumber = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTelecomNumber method',
   args:{contactMechId: {type: GraphQLString},areaCode: {type: GraphQLString},askForName: {type: GraphQLString},countryCode: {type: GraphQLString},contactNumber: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1916,7 +1916,7 @@ export {updateTelecomNumber};
 
 
 const updateVendor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateVendor method',
   args:{partyId: {type: GraphQLString},manifestCompanyTitle: {type: GraphQLString},manifestPolicies: {type: GraphQLString},manifestLogoUrl: {type: GraphQLString},manifestCompanyName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1927,7 +1927,7 @@ export {updateVendor};
 
 
 const uploadPartyContentFile = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz uploadPartyContentFile method',
   args:{partyContentTypeId: {type: GraphQLString},surveyId: {type: GraphQLString},sequenceNum: {type: GraphQLInt},ownerContentId: {type: GraphQLString},mimeTypeId: {type: GraphQLString},rootDir: {type: GraphQLString},dataCategoryId: {type: GraphQLString},surveyResponseId: {type: GraphQLString},privilegeEnumId: {type: GraphQLString},contentAssocTypeId: {type: GraphQLString},dataResourceId: {type: GraphQLString},objectInfo: {type: GraphQLString},partyId: {type: GraphQLString},dataResourceTypeId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},dataResourceName: {type: GraphQLInt},targetOperationString: {type: GraphQLString},skipPermissionCheck: {type: GraphQLString},instanceOfContentId: {type: GraphQLString},contentPurposeString: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},statusId: {type: GraphQLString},displayFailCond: {type: GraphQLBoolean},contentIdFrom: {type: GraphQLString},_uploadedFile_fileName: {type: GraphQLString},childBranchCount: {type: GraphQLInt},contentIdTo: {type: GraphQLString},contentTypeId: {type: GraphQLString},contentId: {type: GraphQLString},description: {type: GraphQLString},childLeafCount: {type: GraphQLInt},contentPurposeTypeId: {type: GraphQLString},dataSourceId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},_uploadedFile_contentType: {type: GraphQLString},relatedDetailId: {type: GraphQLString},isPublic: {type: GraphQLString},uploadedFile: {type: GraphQLString},roleTypeId: {type: GraphQLString},dataTemplateTypeId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},templateDataResourceId: {type: GraphQLString},mapKey: {type: GraphQLString},serviceName: {type: GraphQLString},characterSetId: {type: GraphQLString},customMethodId: {type: GraphQLString},contentName: {type: GraphQLInt},createdDate: {type: GraphQLString},localeString: {type: GraphQLString},decoratorContentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1938,7 +1938,7 @@ export {uploadPartyContentFile};
 
 
 const verifyEmailAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz verifyEmailAddress method',
   args:{verifyHash: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

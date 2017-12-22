@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PaymentGatewayOrbitalInputType} from '../../accounting/PaymentGatewayOrbital/PaymentGatewayOrbitalInputType.js';
+import {PaymentGatewayOrbitalResponseType} from '../../accounting/PaymentGatewayOrbital/PaymentGatewayOrbitalResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPaymentGatewayOrbital = {
-  type: ResopnseType,
+  type: PaymentGatewayOrbitalResponseType,
   description: 'mutation for ofbiz createPaymentGatewayOrbital method',
   args:{paymentGatewayOrbitalToBeAdded: {type: PaymentGatewayOrbitalInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPaymentGatewayOrbital};
 
 
 const updatePaymentGatewayOrbital = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePaymentGatewayOrbital method',
   args:{paymentGatewayOrbitalToBeUpdated: {type: PaymentGatewayOrbitalInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePaymentGatewayOrbital};
 
 
 const deletePaymentGatewayOrbitalByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePaymentGatewayOrbitalByIdUpdated method',
   args:{paymentGatewayOrbitalId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

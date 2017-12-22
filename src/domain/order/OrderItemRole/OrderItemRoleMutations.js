@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {OrderItemRoleInputType} from '../../order/OrderItemRole/OrderItemRoleInputType.js';
+import {OrderItemRoleResponseType} from '../../order/OrderItemRole/OrderItemRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderItemRole = {
-  type: ResopnseType,
+  type: OrderItemRoleResponseType,
   description: 'mutation for ofbiz createOrderItemRole method',
-  args:{},
+  args:{orderItemRoleToBeAdded: {type: OrderItemRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderItem/orderItemRoles/add?`, null, req);
+    return postToUrl(`order/orderItem/orderItemRoles/add?`, args.orderItemRoleToBeAdded, req);
   }
 };
 export {createOrderItemRole};
 
 
 const updateOrderItemRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderItemRole method',
   args:{orderItemRoleToBeUpdated: {type: OrderItemRoleInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderItemRole};
 
 
 const deleteOrderItemRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderItemRoleByIdUpdated method',
   args:{orderItemRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

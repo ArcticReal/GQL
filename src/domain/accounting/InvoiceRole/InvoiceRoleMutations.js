@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {InvoiceRoleResponseType} from '../../accounting/InvoiceRole/InvoiceRoleResponseType.js';
 import {InvoiceRoleInputType} from '../../accounting/InvoiceRole/InvoiceRoleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoiceRole = {
-  type: ResopnseType,
+  type: InvoiceRoleResponseType,
   description: 'mutation for ofbiz createInvoiceRole method',
-  args:{invoiceRoleToBeAdded: {type: InvoiceRoleInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceRoles/add?`, args.invoiceRoleToBeAdded, req);
+    return postToUrl(`accounting/invoice/invoiceRoles/add?`, null, req);
   }
 };
 export {createInvoiceRole};
 
 
 const deleteInvoiceRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInvoiceRoleByIdUpdated method',
   args:{invoiceRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteInvoiceRoleByIdUpdated};
 
 
 const updateInvoiceRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInvoiceRole method',
   args:{invoiceRoleToBeUpdated: {type: InvoiceRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ValidResponsibilityInputType} from '../../humanres/ValidResponsibility/ValidResponsibilityInputType.js';
+import {ValidResponsibilityResponseType} from '../../humanres/ValidResponsibility/ValidResponsibilityResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createValidResponsibility = {
-  type: ResopnseType,
+  type: ValidResponsibilityResponseType,
   description: 'mutation for ofbiz createValidResponsibility method',
   args:{validResponsibilityToBeAdded: {type: ValidResponsibilityInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createValidResponsibility};
 
 
 const updateValidResponsibility = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateValidResponsibility method',
   args:{validResponsibilityToBeUpdated: {type: ValidResponsibilityInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateValidResponsibility};
 
 
 const deleteValidResponsibilityByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteValidResponsibilityByIdUpdated method',
   args:{validResponsibilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

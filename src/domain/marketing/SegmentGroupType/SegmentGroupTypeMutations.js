@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {SegmentGroupTypeResponseType} from '../../marketing/SegmentGroupType/SegmentGroupTypeResponseType.js';
 import {SegmentGroupTypeInputType} from '../../marketing/SegmentGroupType/SegmentGroupTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSegmentGroupType = {
-  type: ResopnseType,
+  type: SegmentGroupTypeResponseType,
   description: 'mutation for ofbiz createSegmentGroupType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createSegmentGroupType};
 
 
 const updateSegmentGroupType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSegmentGroupType method',
   args:{segmentGroupTypeToBeUpdated: {type: SegmentGroupTypeInputType},segmentGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSegmentGroupType};
 
 
 const deleteSegmentGroupTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSegmentGroupTypeByIdUpdated method',
   args:{segmentGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

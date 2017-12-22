@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductFeaturePriceInputType} from '../../product/ProductFeaturePrice/ProductFeaturePriceInputType.js';
+import {ProductFeaturePriceResponseType} from '../../product/ProductFeaturePrice/ProductFeaturePriceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductFeaturePrice = {
-  type: ResopnseType,
+  type: ProductFeaturePriceResponseType,
   description: 'mutation for ofbiz createProductFeaturePrice method',
   args:{productFeaturePriceToBeAdded: {type: ProductFeaturePriceInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductFeaturePrice};
 
 
 const updateProductFeaturePrice = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductFeaturePrice method',
   args:{productFeaturePriceToBeUpdated: {type: ProductFeaturePriceInputType},productFeatureId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductFeaturePrice};
 
 
 const deleteProductFeaturePriceByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductFeaturePriceByIdUpdated method',
   args:{productFeaturePriceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

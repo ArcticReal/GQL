@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {RequirementTypeAttrInputType} from '../../order/RequirementTypeAttr/RequirementTypeAttrInputType.js';
+import {RequirementTypeAttrResponseType} from '../../order/RequirementTypeAttr/RequirementTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRequirementTypeAttr = {
-  type: ResopnseType,
+  type: RequirementTypeAttrResponseType,
   description: 'mutation for ofbiz createRequirementTypeAttr method',
   args:{requirementTypeAttrToBeAdded: {type: RequirementTypeAttrInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createRequirementTypeAttr};
 
 
 const updateRequirementTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateRequirementTypeAttr method',
   args:{requirementTypeAttrToBeUpdated: {type: RequirementTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateRequirementTypeAttr};
 
 
 const deleteRequirementTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteRequirementTypeAttrByIdUpdated method',
   args:{requirementTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

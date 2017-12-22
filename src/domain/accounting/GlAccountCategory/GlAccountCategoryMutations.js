@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {GlAccountCategoryInputType} from '../../accounting/GlAccountCategory/GlAccountCategoryInputType.js';
+import {GlAccountCategoryResponseType} from '../../accounting/GlAccountCategory/GlAccountCategoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlAccountCategory = {
-  type: ResopnseType,
+  type: GlAccountCategoryResponseType,
   description: 'mutation for ofbiz createGlAccountCategory method',
-  args:{},
+  args:{glAccountCategoryToBeAdded: {type: GlAccountCategoryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/glAccountCategorys/add?`, null, req);
+    return postToUrl(`accounting/glAccount/glAccountCategorys/add?`, args.glAccountCategoryToBeAdded, req);
   }
 };
 export {createGlAccountCategory};
 
 
 const updateGlAccountCategory = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGlAccountCategory method',
   args:{glAccountCategoryToBeUpdated: {type: GlAccountCategoryInputType},glAccountCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateGlAccountCategory};
 
 
 const deleteGlAccountCategoryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGlAccountCategoryByIdUpdated method',
   args:{glAccountCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

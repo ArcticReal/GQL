@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createAccommodationSpot = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAccommodationSpot method',
   args:{accommodationSpotId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},numberOfSpaces: {type: GraphQLInt},description: {type: GraphQLString},accommodationClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createAccommodationSpot};
 
 
 const deleteAccommodationSpot = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteAccommodationSpot method',
   args:{accommodationSpotId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {deleteAccommodationSpot};
 
 
 const updateAccommodationSpot = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateAccommodationSpot method',
   args:{accommodationSpotId: {type: GraphQLString},fixedAssetId: {type: GraphQLString},numberOfSpaces: {type: GraphQLInt},description: {type: GraphQLString},accommodationClassId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

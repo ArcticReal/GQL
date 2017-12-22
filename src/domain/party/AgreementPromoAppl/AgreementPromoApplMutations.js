@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {AgreementPromoApplInputType} from '../../party/AgreementPromoAppl/AgreementPromoApplInputType.js';
+import {AgreementPromoApplResponseType} from '../../party/AgreementPromoAppl/AgreementPromoApplResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAgreementPromoAppl = {
-  type: ResopnseType,
+  type: AgreementPromoApplResponseType,
   description: 'mutation for ofbiz createAgreementPromoAppl method',
   args:{agreementPromoApplToBeAdded: {type: AgreementPromoApplInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createAgreementPromoAppl};
 
 
 const updateAgreementPromoAppl = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAgreementPromoAppl method',
   args:{agreementPromoApplToBeUpdated: {type: AgreementPromoApplInputType},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateAgreementPromoAppl};
 
 
 const deleteAgreementPromoApplByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAgreementPromoApplByIdUpdated method',
   args:{agreementPromoApplId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

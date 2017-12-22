@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ReorderGuidelineInputType} from '../../product/ReorderGuideline/ReorderGuidelineInputType.js';
+import {ReorderGuidelineResponseType} from '../../product/ReorderGuideline/ReorderGuidelineResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReorderGuideline = {
-  type: ResopnseType,
+  type: ReorderGuidelineResponseType,
   description: 'mutation for ofbiz createReorderGuideline method',
-  args:{},
+  args:{reorderGuidelineToBeAdded: {type: ReorderGuidelineInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/reorderGuidelines/add?`, null, req);
+    return postToUrl(`product/reorderGuidelines/add?`, args.reorderGuidelineToBeAdded, req);
   }
 };
 export {createReorderGuideline};
 
 
 const updateReorderGuideline = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateReorderGuideline method',
   args:{reorderGuidelineToBeUpdated: {type: ReorderGuidelineInputType},reorderGuidelineId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateReorderGuideline};
 
 
 const deleteReorderGuidelineByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteReorderGuidelineByIdUpdated method',
   args:{reorderGuidelineId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

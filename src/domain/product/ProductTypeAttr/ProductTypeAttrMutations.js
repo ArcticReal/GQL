@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductTypeAttrInputType} from '../../product/ProductTypeAttr/ProductTypeAttrInputType.js';
+import {ProductTypeAttrResponseType} from '../../product/ProductTypeAttr/ProductTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductTypeAttr = {
-  type: ResopnseType,
+  type: ProductTypeAttrResponseType,
   description: 'mutation for ofbiz createProductTypeAttr method',
   args:{productTypeAttrToBeAdded: {type: ProductTypeAttrInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductTypeAttr};
 
 
 const updateProductTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductTypeAttr method',
   args:{productTypeAttrToBeUpdated: {type: ProductTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductTypeAttr};
 
 
 const deleteProductTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductTypeAttrByIdUpdated method',
   args:{productTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {CostComponentTypeInputType} from '../../product/CostComponentType/CostComponentTypeInputType.js';
+import {CostComponentTypeResponseType} from '../../product/CostComponentType/CostComponentTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCostComponentType = {
-  type: ResopnseType,
+  type: CostComponentTypeResponseType,
   description: 'mutation for ofbiz createCostComponentType method',
-  args:{},
+  args:{costComponentTypeToBeAdded: {type: CostComponentTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/costComponent/costComponentTypes/add?`, null, req);
+    return postToUrl(`product/costComponent/costComponentTypes/add?`, args.costComponentTypeToBeAdded, req);
   }
 };
 export {createCostComponentType};
 
 
 const updateCostComponentType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCostComponentType method',
   args:{costComponentTypeToBeUpdated: {type: CostComponentTypeInputType},costComponentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateCostComponentType};
 
 
 const deleteCostComponentTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCostComponentTypeByIdUpdated method',
   args:{costComponentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

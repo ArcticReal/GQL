@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {PartyStatusResponseType} from '../../party/PartyStatus/PartyStatusResponseType.js';
 import {PartyStatusInputType} from '../../party/PartyStatus/PartyStatusInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyStatus = {
-  type: ResopnseType,
+  type: PartyStatusResponseType,
   description: 'mutation for ofbiz createPartyStatus method',
-  args:{partyStatusToBeAdded: {type: PartyStatusInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyStatuss/add?`, args.partyStatusToBeAdded, req);
+    return postToUrl(`party/party/partyStatuss/add?`, null, req);
   }
 };
 export {createPartyStatus};
 
 
 const updatePartyStatus = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyStatus method',
   args:{partyStatusToBeUpdated: {type: PartyStatusInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyStatus};
 
 
 const deletePartyStatusByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyStatusByIdUpdated method',
   args:{partyStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

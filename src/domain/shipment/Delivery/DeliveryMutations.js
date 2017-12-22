@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {DeliveryResponseType} from '../../shipment/Delivery/DeliveryResponseType.js';
 import {DeliveryInputType} from '../../shipment/Delivery/DeliveryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDelivery = {
-  type: ResopnseType,
+  type: DeliveryResponseType,
   description: 'mutation for ofbiz createDelivery method',
-  args:{deliveryToBeAdded: {type: DeliveryInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/deliverys/add?`, args.deliveryToBeAdded, req);
+    return postToUrl(`shipment/deliverys/add?`, null, req);
   }
 };
 export {createDelivery};
 
 
 const updateDelivery = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDelivery method',
   args:{deliveryToBeUpdated: {type: DeliveryInputType},deliveryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateDelivery};
 
 
 const deleteDeliveryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDeliveryByIdUpdated method',
   args:{deliveryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

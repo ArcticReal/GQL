@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {FixedAssetDepMethodInputType} from '../../accounting/FixedAssetDepMethod/FixedAssetDepMethodInputType.js';
+import {FixedAssetDepMethodResponseType} from '../../accounting/FixedAssetDepMethod/FixedAssetDepMethodResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAssetDepMethod = {
-  type: ResopnseType,
+  type: FixedAssetDepMethodResponseType,
   description: 'mutation for ofbiz createFixedAssetDepMethod method',
   args:{fixedAssetDepMethodToBeAdded: {type: FixedAssetDepMethodInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createFixedAssetDepMethod};
 
 
 const deleteFixedAssetDepMethodByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFixedAssetDepMethodByIdUpdated method',
   args:{fixedAssetDepMethodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteFixedAssetDepMethodByIdUpdated};
 
 
 const updateFixedAssetDepMethod = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFixedAssetDepMethod method',
   args:{fixedAssetDepMethodToBeUpdated: {type: FixedAssetDepMethodInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

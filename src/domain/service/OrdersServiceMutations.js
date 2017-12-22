@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const MoveItemBetweenShipGroups = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz MoveItemBetweenShipGroups method',
   args:{orderItemSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat},orderId: {type: GraphQLString},fromGroupIndex: {type: GraphQLString},toGroupIndex: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {MoveItemBetweenShipGroups};
 
 
 const addOrderItemShipGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addOrderItemShipGroup method',
   args:{orderId: {type: GraphQLString},facilityId: {type: GraphQLString},giftMessage: {type: GraphQLString},shippingInstructions: {type: GraphQLString},maySplit: {type: GraphQLString},shipByDate: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},estimatedDeliveryDate: {type: GraphQLString},vendorPartyId: {type: GraphQLString},contactMechId: {type: GraphQLString},telecomContactMechId: {type: GraphQLString},shipAfterDate: {type: GraphQLString},carrierPartyId: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},isGift: {type: GraphQLString},estimatedShipDate: {type: GraphQLString},supplierPartyId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},trackingNumber: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {addOrderItemShipGroup};
 
 
 const addOrderItemShipGroupAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addOrderItemShipGroupAssoc method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},facilityId: {type: GraphQLString},quantity: {type: GraphQLFloat},giftMessage: {type: GraphQLString},shippingInstructions: {type: GraphQLString},maySplit: {type: GraphQLString},shipByDate: {type: GraphQLString},estimatedDeliveryDate: {type: GraphQLString},vendorPartyId: {type: GraphQLString},contactMechId: {type: GraphQLString},cancelQuantity: {type: GraphQLFloat},telecomContactMechId: {type: GraphQLString},shipAfterDate: {type: GraphQLString},carrierPartyId: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},isGift: {type: GraphQLString},estimatedShipDate: {type: GraphQLString},supplierPartyId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},trackingNumber: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {addOrderItemShipGroupAssoc};
 
 
 const addOrderRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addOrderRole method',
   args:{roleTypeId: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString},removeOld: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {addOrderRole};
 
 
 const addPaymentMethodToOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addPaymentMethodToOrder method',
   args:{orderId: {type: GraphQLString},paymentMethodId: {type: GraphQLString},maxAmount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {addPaymentMethodToOrder};
 
 
 const appendOrderItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz appendOrderItem method',
   args:{quantity: {type: GraphQLFloat},productId: {type: GraphQLString},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},amount: {type: GraphQLFloat},itemAttributesMap: {type: GraphQLString},overridePrice: {type: GraphQLString},changeComments: {type: GraphQLString},calcTax: {type: GraphQLBoolean},reasonEnumId: {type: GraphQLString},itemDesiredDeliveryDate: {type: GraphQLString},prodCatalogId: {type: GraphQLString},basePrice: {type: GraphQLFloat},orderItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {appendOrderItem};
 
 
 const autoCancelOrderItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz autoCancelOrderItems method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {autoCancelOrderItems};
 
 
 const callProcessOrderPayments = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz callProcessOrderPayments method',
   args:{shoppingCart: {type: GraphQLString},manualHold: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {callProcessOrderPayments};
 
 
 const cancelAllBackOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelAllBackOrders method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {cancelAllBackOrders};
 
 
 const cancelOrderItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelOrderItem method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},itemReasonMap: {type: GraphQLString},itemCommentMap: {type: GraphQLString},itemQtyMap: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},cancelQuantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {cancelOrderItem};
 
 
 const cancelOrderItemNoActions = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelOrderItemNoActions method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},cancelQuantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {cancelOrderItemNoActions};
 
 
 const cancelRemainingPurchaseOrderItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz cancelRemainingPurchaseOrderItems method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {cancelRemainingPurchaseOrderItems};
 
 
 const changeOrderItemStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz changeOrderItemStatus method',
   args:{statusId: {type: GraphQLString},orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},changeReason: {type: GraphQLString},statusDateTime: {type: GraphQLString},fromStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {changeOrderItemStatus};
 
 
 const changeOrderPaymentStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz changeOrderPaymentStatus method',
   args:{orderPaymentPreferenceId: {type: GraphQLString},changeReason: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {changeOrderPaymentStatus};
 
 
 const changeOrderStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz changeOrderStatus method',
   args:{statusId: {type: GraphQLString},orderId: {type: GraphQLString},setItemStatus: {type: GraphQLString},changeReason: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {changeOrderStatus};
 
 
 const checkCreateDropShipPurchaseOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkCreateDropShipPurchaseOrders method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {checkCreateDropShipPurchaseOrders};
 
 
 const checkDigitalItemFulfillment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkDigitalItemFulfillment method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {checkDigitalItemFulfillment};
 
 
 const checkOrderIsOnBackOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkOrderIsOnBackOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {checkOrderIsOnBackOrder};
 
 
 const checkOrderItemStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkOrderItemStatus method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {checkOrderItemStatus};
 
 
 const checkSupplierRelatedOrderPermission = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz checkSupplierRelatedOrderPermission method',
   args:{orderId: {type: GraphQLString},checkAction: {type: GraphQLString},callingMethodName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {checkSupplierRelatedOrderPermission};
 
 
 const completePurchaseOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz completePurchaseOrder method',
   args:{facilityId: {type: GraphQLString},orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {completePurchaseOrder};
 
 
 const countProductQuantityOrdered = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz countProductQuantityOrdered method',
   args:{quantity: {type: GraphQLFloat},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {countProductQuantityOrdered};
 
 
 const createAlsoBoughtProductAssocs = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAlsoBoughtProductAssocs method',
   args:{processAllOrders: {type: GraphQLBoolean},orderEntryFromDateTime: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {createAlsoBoughtProductAssocs};
 
 
 const createAlsoBoughtProductAssocsForOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAlsoBoughtProductAssocsForOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {createAlsoBoughtProductAssocsForOrder};
 
 
 const createCommunicationEventOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommunicationEventOrder method',
   args:{orderId: {type: GraphQLString},communicationEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {createCommunicationEventOrder};
 
 
 const createOrderAdjustment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderAdjustment method',
   args:{orderId: {type: GraphQLString},orderAdjustmentTypeId: {type: GraphQLString},customerReferenceId: {type: GraphQLString},correspondingProductId: {type: GraphQLString},includeInShipping: {type: GraphQLString},description: {type: GraphQLString},exemptAmount: {type: GraphQLFloat},productPromoId: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},oldPercentage: {type: GraphQLFloat},primaryGeoId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},originalAdjustmentId: {type: GraphQLString},secondaryGeoId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},amountAlreadyIncluded: {type: GraphQLFloat},orderItemSeqId: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},recurringAmount: {type: GraphQLFloat},lastModifiedDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},isManual: {type: GraphQLString},productFeatureId: {type: GraphQLString},taxAuthorityRateSeqId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},oldAmountPerQuantity: {type: GraphQLFloat},shipGroupSeqId: {type: GraphQLString},includeInTax: {type: GraphQLString},createdDate: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},sourcePercentage: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {createOrderAdjustment};
 
 
 const createOrderAdjustmentBilling = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderAdjustmentBilling method',
   args:{invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},orderAdjustmentId: {type: GraphQLString},amount: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {createOrderAdjustmentBilling};
 
 
 const createOrderAdjustmentTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderAdjustmentTypeAttr method',
   args:{orderAdjustmentTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {createOrderAdjustmentTypeAttr};
 
 
 const createOrderContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderContactMech method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},orderId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {createOrderContactMech};
 
 
 const createOrderContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderContent method',
   args:{orderItemSeqId: {type: GraphQLString},fromDate: {type: GraphQLString},orderId: {type: GraphQLString},contentId: {type: GraphQLString},orderContentTypeId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {createOrderContent};
 
 
 const createOrderDeliverySchedule = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderDeliverySchedule method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},skidsPallets: {type: GraphQLInt},unitsPieces: {type: GraphQLFloat},statusId: {type: GraphQLString},totalWeight: {type: GraphQLFloat},totalCubicSize: {type: GraphQLFloat},totalWeightUomId: {type: GraphQLString},estimatedReadyDate: {type: GraphQLString},totalCubicUomId: {type: GraphQLString},cartons: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {createOrderDeliverySchedule};
 
 
 const createOrderFromShoppingCart = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderFromShoppingCart method',
   args:{shoppingCart: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {createOrderFromShoppingCart};
 
 
 const createOrderHeader = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderHeader method',
   args:{invoicePerShipment: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},orderId: {type: GraphQLString},orderTypeId: {type: GraphQLString},billingAccountId: {type: GraphQLString},terminalId: {type: GraphQLString},isViewed: {type: GraphQLString},visitId: {type: GraphQLString},productStoreId: {type: GraphQLString},remainingSubTotal: {type: GraphQLFloat},orderName: {type: GraphQLString},webSiteId: {type: GraphQLString},isRushOrder: {type: GraphQLString},entryDate: {type: GraphQLString},grandTotal: {type: GraphQLFloat},autoOrderShoppingListId: {type: GraphQLString},externalId: {type: GraphQLString},priority: {type: GraphQLString},transactionId: {type: GraphQLString},firstAttemptOrderId: {type: GraphQLString},originFacilityId: {type: GraphQLString},statusId: {type: GraphQLString},createdBy: {type: GraphQLString},currencyUom: {type: GraphQLString},syncStatusId: {type: GraphQLString},pickSheetPrintedDate: {type: GraphQLString},needsInventoryIssuance: {type: GraphQLString},orderDate: {type: GraphQLString},internalCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {createOrderHeader};
 
 
 const createOrderItemAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderItemAttribute method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {createOrderItemAttribute};
 
 
 const createOrderItemBilling = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderItemBilling method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},amount: {type: GraphQLFloat},quantity: {type: GraphQLFloat},itemIssuanceId: {type: GraphQLString},shipmentReceiptId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {createOrderItemBilling};
 
 
 const createOrderItemChange = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderItemChange method',
   args:{orderItemSeqId: {type: GraphQLString},changeTypeEnumId: {type: GraphQLString},orderId: {type: GraphQLString},unitPrice: {type: GraphQLFloat},changeUserLogin: {type: GraphQLString},quantity: {type: GraphQLFloat},changeComments: {type: GraphQLString},itemDescription: {type: GraphQLString},reasonEnumId: {type: GraphQLString},cancelQuantity: {type: GraphQLFloat},changeDatetime: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {createOrderItemChange};
 
 
 const createOrderItemGroupOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderItemGroupOrder method',
   args:{orderItemSeqId: {type: GraphQLString},groupOrderId: {type: GraphQLString},orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {createOrderItemGroupOrder};
 
 
 const createOrderItemShipGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderItemShipGroup method',
   args:{orderId: {type: GraphQLString},facilityId: {type: GraphQLString},giftMessage: {type: GraphQLString},shippingInstructions: {type: GraphQLString},maySplit: {type: GraphQLString},shipByDate: {type: GraphQLString},estimatedDeliveryDate: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},vendorPartyId: {type: GraphQLString},contactMechId: {type: GraphQLString},telecomContactMechId: {type: GraphQLString},shipAfterDate: {type: GraphQLString},carrierPartyId: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},isGift: {type: GraphQLString},estimatedShipDate: {type: GraphQLString},supplierPartyId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},trackingNumber: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {createOrderItemShipGroup};
 
 
 const createOrderNote = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderNote method',
   args:{note: {type: GraphQLString},orderId: {type: GraphQLString},internalNote: {type: GraphQLString},noteName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {createOrderNote};
 
 
 const createOrderNotificationLog = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderNotificationLog method',
   args:{orderId: {type: GraphQLString},emailType: {type: GraphQLString},comments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {createOrderNotificationLog};
 
 
 const createOrderPaymentApplication = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderPaymentApplication method',
   args:{paymentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {createOrderPaymentApplication};
 
 
 const createOrderPaymentPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderPaymentPreference method',
   args:{orderItemSeqId: {type: GraphQLString},track2: {type: GraphQLString},orderId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},manualRefNum: {type: GraphQLString},swipedFlag: {type: GraphQLString},manualAuthCode: {type: GraphQLString},securityCode: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},processAttempt: {type: GraphQLInt},needsNsfRetry: {type: GraphQLString},finAccountId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},paymentMethodId: {type: GraphQLString},billingPostalCode: {type: GraphQLString},overflowFlag: {type: GraphQLString},productPricePurposeId: {type: GraphQLString},maxAmount: {type: GraphQLFloat},createdByUserLogin: {type: GraphQLString},presentFlag: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {createOrderPaymentPreference};
 
 
 const createOrderShipment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderShipment method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},shipmentId: {type: GraphQLString},shipmentItemSeqId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {createOrderShipment};
 
 
 const createOrderTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createOrderTerm method',
   args:{orderId: {type: GraphQLString},termTypeId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},textValue: {type: GraphQLString},termDays: {type: GraphQLInt},description: {type: GraphQLString},uomId: {type: GraphQLString},termValue: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {createOrderTerm};
 
 
 const createPaymentFromPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPaymentFromPreference method',
   args:{orderPaymentPreferenceId: {type: GraphQLString},comments: {type: GraphQLString},paymentRefNum: {type: GraphQLString},paymentFromId: {type: GraphQLString},eventDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {createPaymentFromPreference};
 
 
 const createProductOrderItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createProductOrderItem method',
   args:{orderItemSeqId: {type: GraphQLString},engagementItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},engagementId: {type: GraphQLString},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {createProductOrderItem};
 
 
 const createQuoteTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createQuoteTerm method',
   args:{termTypeId: {type: GraphQLString},quoteId: {type: GraphQLString},textValue: {type: GraphQLString},termDays: {type: GraphQLInt},quoteItemSeqId: {type: GraphQLString},description: {type: GraphQLString},uomId: {type: GraphQLString},termValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {createQuoteTerm};
 
 
 const createSalesOrderItemFact = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSalesOrderItemFact method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {createSalesOrderItemFact};
 
 
 const createSimpleNonProductSalesOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSimpleNonProductSalesOrder method',
   args:{paymentMethodId: {type: GraphQLString},currency: {type: GraphQLString},productStoreId: {type: GraphQLString},itemMap: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {createSimpleNonProductSalesOrder};
 
 
 const createTestOrderRentalProduct = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTestOrderRentalProduct method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {createTestOrderRentalProduct};
 
 
 const createTestSalesOrderSingle = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTestSalesOrderSingle method',
   args:{shipOrder: {type: GraphQLBoolean},productCategoryId: {type: GraphQLString},currencyUomId: {type: GraphQLString},numberOfProductsPerOrder: {type: GraphQLInt},productId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},salesChannel: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {createTestSalesOrderSingle};
 
 
 const createTestSalesOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTestSalesOrders method',
   args:{shipOrder: {type: GraphQLBoolean},productCategoryId: {type: GraphQLString},currencyUomId: {type: GraphQLString},numberOfProductsPerOrder: {type: GraphQLInt},productStoreId: {type: GraphQLString},numberOfOrders: {type: GraphQLInt},partyId: {type: GraphQLString},salesChannel: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {createTestSalesOrders};
 
 
 const createUpdateBillingAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUpdateBillingAddress method',
   args:{billToAttnName: {type: GraphQLString},billToPostalCode: {type: GraphQLString},shipToContactMechId: {type: GraphQLString},setDefaultBilling: {type: GraphQLString},billToName: {type: GraphQLString},billToAddress2: {type: GraphQLString},billToCountryGeoId: {type: GraphQLString},billToCity: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},keepAddressBook: {type: GraphQLString},billToAddress1: {type: GraphQLString},billToContactMechId: {type: GraphQLString},productStoreId: {type: GraphQLString},useShippingAddressForBilling: {type: GraphQLString},partyId: {type: GraphQLString},billToStateProvinceGeoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,7 +596,7 @@ export {createUpdateBillingAddress};
 
 
 const createUpdateCreditCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUpdateCreditCard method',
   args:{expMonth: {type: GraphQLString},expYear: {type: GraphQLString},lastNameOnCard: {type: GraphQLString},firstNameOnCard: {type: GraphQLString},cardType: {type: GraphQLString},cardNumber: {type: GraphQLString},titleOnCard: {type: GraphQLString},paymentMethodId: {type: GraphQLString},middleNameOnCard: {type: GraphQLString},partyId: {type: GraphQLString},suffixOnCard: {type: GraphQLString},contactMechId: {type: GraphQLString},companyNameOnCard: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -607,7 +607,7 @@ export {createUpdateCreditCard};
 
 
 const createUpdateShippingAddress = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createUpdateShippingAddress method',
   args:{shipToCity: {type: GraphQLString},shipToAddress1: {type: GraphQLString},shipToPostalCode: {type: GraphQLString},shipToCountryGeoId: {type: GraphQLString},shipToStateProvinceGeoId: {type: GraphQLString},userLogin: {type: new GraphQLList(KeyValueInputType)},keepAddressBook: {type: GraphQLString},setDefaultShipping: {type: GraphQLString},shipToAddress2: {type: GraphQLString},billToContactMechId: {type: GraphQLString},shipToContactMechId: {type: GraphQLString},shipToName: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},shipToAttnName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -618,7 +618,7 @@ export {createUpdateShippingAddress};
 
 
 const deleteOrderAdjustment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteOrderAdjustment method',
   args:{orderId: {type: GraphQLString},orderAdjustmentId: {type: GraphQLString},productPromoCodeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -629,7 +629,7 @@ export {deleteOrderAdjustment};
 
 
 const deleteOrderAdjustmentTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteOrderAdjustmentTypeAttr method',
   args:{orderAdjustmentTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -640,7 +640,7 @@ export {deleteOrderAdjustmentTypeAttr};
 
 
 const deleteOrderItemAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteOrderItemAttribute method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -651,7 +651,7 @@ export {deleteOrderItemAttribute};
 
 
 const deleteOrderItemShipGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteOrderItemShipGroup method',
   args:{orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -662,7 +662,7 @@ export {deleteOrderItemShipGroup};
 
 
 const deleteOrderItemShipGroupAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteOrderItemShipGroupAssoc method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -673,7 +673,7 @@ export {deleteOrderItemShipGroupAssoc};
 
 
 const deleteOrderShipment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteOrderShipment method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},shipmentId: {type: GraphQLString},shipmentItemSeqId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -684,7 +684,7 @@ export {deleteOrderShipment};
 
 
 const deleteProductOrderItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteProductOrderItem method',
   args:{orderItemSeqId: {type: GraphQLString},engagementItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},engagementId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -695,7 +695,7 @@ export {deleteProductOrderItem};
 
 
 const deleteQuoteTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteQuoteTerm method',
   args:{quoteItemSeqId: {type: GraphQLString},termTypeId: {type: GraphQLString},quoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -706,7 +706,7 @@ export {deleteQuoteTerm};
 
 
 const deleteSalesOrderItemFact = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSalesOrderItemFact method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {deleteSalesOrderItemFact};
 
 
 const expireOrderContent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz expireOrderContent method',
   args:{orderItemSeqId: {type: GraphQLString},fromDate: {type: GraphQLString},orderId: {type: GraphQLString},contentId: {type: GraphQLString},orderContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {expireOrderContent};
 
 
 const findOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz findOrders method',
   args:{viewSize: {type: GraphQLInt},minDate: {type: GraphQLString},orderId: {type: GraphQLString},useEntryDate: {type: GraphQLString},softIdentifier: {type: GraphQLString},filterInventoryProblems: {type: GraphQLString},billingAccountId: {type: GraphQLString},terminalId: {type: GraphQLString},paymentStatusId: {type: GraphQLString},isViewed: {type: GraphQLString},shipmentMethod: {type: GraphQLString},hasBackOrders: {type: GraphQLString},showAll: {type: GraphQLString},filterPOsWithRejectedItems: {type: GraphQLString},partyId: {type: GraphQLString},orderName: {type: GraphQLString},gatewayScoreResult: {type: GraphQLString},countryGeoId: {type: GraphQLString},serialNumber: {type: GraphQLString},productId: {type: GraphQLString},goodIdentificationTypeId: {type: GraphQLString},externalId: {type: GraphQLString},viewIndex: {type: GraphQLInt},budgetId: {type: GraphQLString},includeCountry: {type: GraphQLString},accountNumber: {type: GraphQLString},correspondingPoId: {type: GraphQLString},goodIdentificationIdValue: {type: GraphQLString},filterPartiallyReceivedPOs: {type: GraphQLString},transactionId: {type: GraphQLString},quoteId: {type: GraphQLString},filterPOsOpenPastTheirETA: {type: GraphQLString},userLoginId: {type: GraphQLString},inventoryItemId: {type: GraphQLString},finAccountId: {type: GraphQLString},createdBy: {type: GraphQLString},shipmentId: {type: GraphQLString},gatewayAvsResult: {type: GraphQLString},maxDate: {type: GraphQLString},subscriptionId: {type: GraphQLString},internalCode: {type: GraphQLString},cardNumber: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {findOrders};
 
 
 const fulfillDigitalItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz fulfillDigitalItems method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -750,7 +750,7 @@ export {fulfillDigitalItems};
 
 
 const generateReqsFromCancelledPOItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz generateReqsFromCancelledPOItems method',
   args:{facilityId: {type: GraphQLString},orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -761,7 +761,7 @@ export {generateReqsFromCancelledPOItems};
 
 
 const getNextOrderId = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getNextOrderId method',
   args:{currencyUom: {type: GraphQLString},orderTypeId: {type: GraphQLString},partyId: {type: GraphQLString},workEffortId: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},orderId: {type: GraphQLString},billToCustomerPartyId: {type: GraphQLString},shipFromVendorPartyId: {type: GraphQLString},billingAccountId: {type: GraphQLString},terminalId: {type: GraphQLString},visitId: {type: GraphQLString},shippingAmount: {type: GraphQLFloat},productStoreId: {type: GraphQLString},supplierAgentPartyId: {type: GraphQLString},originOrderId: {type: GraphQLString},orderName: {type: GraphQLString},webSiteId: {type: GraphQLString},billFromVendorPartyId: {type: GraphQLString},grandTotal: {type: GraphQLFloat},distributorId: {type: GraphQLString},autoOrderShoppingListId: {type: GraphQLString},externalId: {type: GraphQLString},endUserCustomerPartyId: {type: GraphQLString},affiliateId: {type: GraphQLString},placingCustomerPartyId: {type: GraphQLString},transactionId: {type: GraphQLString},originFacilityId: {type: GraphQLString},firstAttemptOrderId: {type: GraphQLString},orderAdditionalPartyRoleMap: {type: GraphQLString},shipToCustomerPartyId: {type: GraphQLString},supplierPartyId: {type: GraphQLString},taxAmount: {type: GraphQLFloat},orderDate: {type: GraphQLString},internalCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -772,7 +772,7 @@ export {getNextOrderId};
 
 
 const getOrderHeaderInformation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getOrderHeaderInformation method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -783,7 +783,7 @@ export {getOrderHeaderInformation};
 
 
 const getOrderItemInvoicedAmountAndQuantity = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getOrderItemInvoicedAmountAndQuantity method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -794,7 +794,7 @@ export {getOrderItemInvoicedAmountAndQuantity};
 
 
 const getOrderItemShipGroupEstimatedShipDate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getOrderItemShipGroupEstimatedShipDate method',
   args:{orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -805,7 +805,7 @@ export {getOrderItemShipGroupEstimatedShipDate};
 
 
 const getOrderShippingAmount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getOrderShippingAmount method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -816,7 +816,7 @@ export {getOrderShippingAmount};
 
 
 const getOrderStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getOrderStatus method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -827,7 +827,7 @@ export {getOrderStatus};
 
 
 const getOrderedSummaryInformation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getOrderedSummaryInformation method',
   args:{partyId: {type: GraphQLString},fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},statusId: {type: GraphQLString},orderTypeId: {type: GraphQLString},monthsToInclude: {type: GraphQLInt},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -838,7 +838,7 @@ export {getOrderedSummaryInformation};
 
 
 const invoiceServiceItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz invoiceServiceItems method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -849,7 +849,7 @@ export {invoiceServiceItems};
 
 
 const itemFulfillmentInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz itemFulfillmentInterface method',
   args:{fromDate: {type: GraphQLString},productId: {type: GraphQLString},orderItem: {type: new GraphQLList(KeyValueInputType)},contentId: {type: GraphQLString},productContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -860,7 +860,7 @@ export {itemFulfillmentInterface};
 
 
 const loadCartForUpdate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz loadCartForUpdate method',
   args:{userLogin: {type: GraphQLString},orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -871,7 +871,7 @@ export {loadCartForUpdate};
 
 
 const massCancelOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz massCancelOrders method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -882,7 +882,7 @@ export {massCancelOrders};
 
 
 const massCancelRemainingPurchaseOrderItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz massCancelRemainingPurchaseOrderItems method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -893,7 +893,7 @@ export {massCancelRemainingPurchaseOrderItems};
 
 
 const massChangeOrderApproved = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz massChangeOrderApproved method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -904,7 +904,7 @@ export {massChangeOrderApproved};
 
 
 const massCreateFileForOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz massCreateFileForOrders method',
   args:{screenLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -915,7 +915,7 @@ export {massCreateFileForOrders};
 
 
 const massHoldOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz massHoldOrders method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -926,7 +926,7 @@ export {massHoldOrders};
 
 
 const massOrderChangeInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz massOrderChangeInterface method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -937,7 +937,7 @@ export {massOrderChangeInterface};
 
 
 const massPickOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz massPickOrders method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -948,7 +948,7 @@ export {massPickOrders};
 
 
 const massPrintOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz massPrintOrders method',
   args:{screenLocation: {type: GraphQLString},printerName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -959,7 +959,7 @@ export {massPrintOrders};
 
 
 const massProcessOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz massProcessOrders method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -970,7 +970,7 @@ export {massProcessOrders};
 
 
 const massQuickShipOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz massQuickShipOrders method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -981,7 +981,7 @@ export {massQuickShipOrders};
 
 
 const massRejectOrders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz massRejectOrders method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -992,7 +992,7 @@ export {massRejectOrders};
 
 
 const orderAdjustmentPermissionCheck = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz orderAdjustmentPermissionCheck method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1003,7 +1003,7 @@ export {orderAdjustmentPermissionCheck};
 
 
 const orderNotificationInterface = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz orderNotificationInterface method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},note: {type: GraphQLString},comments: {type: GraphQLString},sendTo: {type: GraphQLString},screenUri: {type: GraphQLString},sendCc: {type: GraphQLString},temporaryAnonymousUserLogin: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -1014,7 +1014,7 @@ export {orderNotificationInterface};
 
 
 const orderSequence_enforced = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz orderSequence_enforced method',
   args:{currencyUom: {type: GraphQLString},orderTypeId: {type: GraphQLString},partyId: {type: GraphQLString},partyAcctgPreference: {type: new GraphQLList(KeyValueInputType)},workEffortId: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},billToCustomerPartyId: {type: GraphQLString},shipFromVendorPartyId: {type: GraphQLString},billingAccountId: {type: GraphQLString},terminalId: {type: GraphQLString},visitId: {type: GraphQLString},shippingAmount: {type: GraphQLFloat},productStoreId: {type: GraphQLString},supplierAgentPartyId: {type: GraphQLString},originOrderId: {type: GraphQLString},orderName: {type: GraphQLString},webSiteId: {type: GraphQLString},billFromVendorPartyId: {type: GraphQLString},grandTotal: {type: GraphQLFloat},distributorId: {type: GraphQLString},autoOrderShoppingListId: {type: GraphQLString},externalId: {type: GraphQLString},endUserCustomerPartyId: {type: GraphQLString},affiliateId: {type: GraphQLString},placingCustomerPartyId: {type: GraphQLString},transactionId: {type: GraphQLString},originFacilityId: {type: GraphQLString},firstAttemptOrderId: {type: GraphQLString},orderAdditionalPartyRoleMap: {type: GraphQLString},shipToCustomerPartyId: {type: GraphQLString},supplierPartyId: {type: GraphQLString},taxAmount: {type: GraphQLFloat},orderDate: {type: GraphQLString},internalCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1025,7 +1025,7 @@ export {orderSequence_enforced};
 
 
 const processOrderPayments = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz processOrderPayments method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1036,7 +1036,7 @@ export {processOrderPayments};
 
 
 const productAvailabalityByFacility = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz productAvailabalityByFacility method',
   args:{productId: {type: GraphQLString},ownerPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1047,7 +1047,7 @@ export {productAvailabalityByFacility};
 
 
 const recalcShippingTotal = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz recalcShippingTotal method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1058,7 +1058,7 @@ export {recalcShippingTotal};
 
 
 const recalcTaxTotal = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz recalcTaxTotal method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1069,7 +1069,7 @@ export {recalcTaxTotal};
 
 
 const recreateOrderAdjustments = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz recreateOrderAdjustments method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1080,7 +1080,7 @@ export {recreateOrderAdjustments};
 
 
 const removeCommunicationEventOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeCommunicationEventOrder method',
   args:{orderId: {type: GraphQLString},communicationEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1091,7 +1091,7 @@ export {removeCommunicationEventOrder};
 
 
 const removeOrderContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeOrderContactMech method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},orderId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1102,7 +1102,7 @@ export {removeOrderContactMech};
 
 
 const removeOrderRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeOrderRole method',
   args:{roleTypeId: {type: GraphQLString},orderId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1113,7 +1113,7 @@ export {removeOrderRole};
 
 
 const removeOrderTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeOrderTerm method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},termTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1124,7 +1124,7 @@ export {removeOrderTerm};
 
 
 const resetGrandTotal = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz resetGrandTotal method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1135,7 +1135,7 @@ export {resetGrandTotal};
 
 
 const runSubscriptionAutoReorders = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz runSubscriptionAutoReorders method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -1146,7 +1146,7 @@ export {runSubscriptionAutoReorders};
 
 
 const saveUpdatedCartToOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz saveUpdatedCartToOrder method',
   args:{changeMap: {type: GraphQLString},orderId: {type: GraphQLString},shoppingCart: {type: GraphQLString},calcTax: {type: GraphQLBoolean},deleteItems: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -1157,7 +1157,7 @@ export {saveUpdatedCartToOrder};
 
 
 const sendOrderBackorderNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendOrderBackorderNotification method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},note: {type: GraphQLString},comments: {type: GraphQLString},sendTo: {type: GraphQLString},screenUri: {type: GraphQLString},sendCc: {type: GraphQLString},temporaryAnonymousUserLogin: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -1168,7 +1168,7 @@ export {sendOrderBackorderNotification};
 
 
 const sendOrderChangeNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendOrderChangeNotification method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},note: {type: GraphQLString},comments: {type: GraphQLString},sendTo: {type: GraphQLString},screenUri: {type: GraphQLString},sendCc: {type: GraphQLString},temporaryAnonymousUserLogin: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -1179,7 +1179,7 @@ export {sendOrderChangeNotification};
 
 
 const sendOrderCompleteNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendOrderCompleteNotification method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},note: {type: GraphQLString},comments: {type: GraphQLString},sendTo: {type: GraphQLString},screenUri: {type: GraphQLString},sendCc: {type: GraphQLString},temporaryAnonymousUserLogin: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -1190,7 +1190,7 @@ export {sendOrderCompleteNotification};
 
 
 const sendOrderConfirmation = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendOrderConfirmation method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},note: {type: GraphQLString},comments: {type: GraphQLString},sendTo: {type: GraphQLString},screenUri: {type: GraphQLString},sendCc: {type: GraphQLString},temporaryAnonymousUserLogin: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -1201,7 +1201,7 @@ export {sendOrderConfirmation};
 
 
 const sendOrderDeliveryScheduleNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendOrderDeliveryScheduleNotification method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1212,7 +1212,7 @@ export {sendOrderDeliveryScheduleNotification};
 
 
 const sendOrderPayRetryNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendOrderPayRetryNotification method',
   args:{orderId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},note: {type: GraphQLString},comments: {type: GraphQLString},sendTo: {type: GraphQLString},screenUri: {type: GraphQLString},sendCc: {type: GraphQLString},temporaryAnonymousUserLogin: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -1223,7 +1223,7 @@ export {sendOrderPayRetryNotification};
 
 
 const sendProcessNotification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendProcessNotification method',
   args:{workEffortId: {type: GraphQLString},adminEmailList: {type: GraphQLString},assignedRoleTypeId: {type: GraphQLString},assignedPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1234,7 +1234,7 @@ export {sendProcessNotification};
 
 
 const setAllowOrderSplit = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setAllowOrderSplit method',
   args:{orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1245,7 +1245,7 @@ export {setAllowOrderSplit};
 
 
 const setEmptyGrandTotals = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setEmptyGrandTotals method',
   args:{forceAll: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
@@ -1256,7 +1256,7 @@ export {setEmptyGrandTotals};
 
 
 const setGiftMessage = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setGiftMessage method',
   args:{orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},giftMessage: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1267,7 +1267,7 @@ export {setGiftMessage};
 
 
 const setShippingInstructions = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setShippingInstructions method',
   args:{orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},shippingInstructions: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1278,7 +1278,7 @@ export {setShippingInstructions};
 
 
 const setUnitPriceAsLastPrice = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setUnitPriceAsLastPrice method',
   args:{facilityId: {type: GraphQLString},productId: {type: GraphQLString},orderId: {type: GraphQLString},unitCost: {type: GraphQLString},itemPriceMap: {type: GraphQLString},overridePriceMap: {type: GraphQLString},orderCurrencyUnitPrice: {type: GraphQLString},orderTypeId: {type: GraphQLString},supplierPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1289,7 +1289,7 @@ export {setUnitPriceAsLastPrice};
 
 
 const shoppingCartRemoteTest = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz shoppingCartRemoteTest method',
   args:{cart: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1300,7 +1300,7 @@ export {shoppingCartRemoteTest};
 
 
 const shoppingCartTest = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz shoppingCartTest method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -1311,7 +1311,7 @@ export {shoppingCartTest};
 
 
 const storeOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz storeOrder method',
   args:{currencyUom: {type: GraphQLString},orderTypeId: {type: GraphQLString},partyId: {type: GraphQLString},workEffortId: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},orderId: {type: GraphQLString},billToCustomerPartyId: {type: GraphQLString},shipFromVendorPartyId: {type: GraphQLString},billingAccountId: {type: GraphQLString},terminalId: {type: GraphQLString},visitId: {type: GraphQLString},shippingAmount: {type: GraphQLFloat},productStoreId: {type: GraphQLString},supplierAgentPartyId: {type: GraphQLString},originOrderId: {type: GraphQLString},orderName: {type: GraphQLString},webSiteId: {type: GraphQLString},billFromVendorPartyId: {type: GraphQLString},grandTotal: {type: GraphQLFloat},distributorId: {type: GraphQLString},autoOrderShoppingListId: {type: GraphQLString},externalId: {type: GraphQLString},endUserCustomerPartyId: {type: GraphQLString},affiliateId: {type: GraphQLString},placingCustomerPartyId: {type: GraphQLString},transactionId: {type: GraphQLString},originFacilityId: {type: GraphQLString},firstAttemptOrderId: {type: GraphQLString},orderAdditionalPartyRoleMap: {type: GraphQLString},shipToCustomerPartyId: {type: GraphQLString},supplierPartyId: {type: GraphQLString},taxAmount: {type: GraphQLFloat},orderDate: {type: GraphQLString},internalCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1322,7 +1322,7 @@ export {storeOrder};
 
 
 const testCreateShoppinCartAndOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz testCreateShoppinCartAndOrder method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -1333,7 +1333,7 @@ export {testCreateShoppinCartAndOrder};
 
 
 const updateOrderAdjustment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderAdjustment method',
   args:{orderId: {type: GraphQLString},orderAdjustmentId: {type: GraphQLString},customerReferenceId: {type: GraphQLString},correspondingProductId: {type: GraphQLString},includeInShipping: {type: GraphQLString},description: {type: GraphQLString},exemptAmount: {type: GraphQLFloat},productPromoId: {type: GraphQLString},taxAuthPartyId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},oldPercentage: {type: GraphQLFloat},primaryGeoId: {type: GraphQLString},taxAuthGeoId: {type: GraphQLString},originalAdjustmentId: {type: GraphQLString},secondaryGeoId: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},amountAlreadyIncluded: {type: GraphQLFloat},orderItemSeqId: {type: GraphQLString},amount: {type: GraphQLFloat},comments: {type: GraphQLString},recurringAmount: {type: GraphQLFloat},lastModifiedDate: {type: GraphQLString},sourceReferenceId: {type: GraphQLString},orderAdjustmentTypeId: {type: GraphQLString},productPromoRuleId: {type: GraphQLString},isManual: {type: GraphQLString},productFeatureId: {type: GraphQLString},taxAuthorityRateSeqId: {type: GraphQLString},overrideGlAccountId: {type: GraphQLString},oldAmountPerQuantity: {type: GraphQLFloat},shipGroupSeqId: {type: GraphQLString},includeInTax: {type: GraphQLString},createdDate: {type: GraphQLString},productPromoActionSeqId: {type: GraphQLString},sourcePercentage: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -1344,7 +1344,7 @@ export {updateOrderAdjustment};
 
 
 const updateOrderAdjustmentTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderAdjustmentTypeAttr method',
   args:{orderAdjustmentTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1355,7 +1355,7 @@ export {updateOrderAdjustmentTypeAttr};
 
 
 const updateOrderContactMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderContactMech method',
   args:{contactMechPurposeTypeId: {type: GraphQLString},orderId: {type: GraphQLString},contactMechId: {type: GraphQLString},oldContactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1366,7 +1366,7 @@ export {updateOrderContactMech};
 
 
 const updateOrderDeliverySchedule = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderDeliverySchedule method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},skidsPallets: {type: GraphQLInt},unitsPieces: {type: GraphQLFloat},statusId: {type: GraphQLString},totalWeight: {type: GraphQLFloat},totalCubicSize: {type: GraphQLFloat},totalWeightUomId: {type: GraphQLString},estimatedReadyDate: {type: GraphQLString},totalCubicUomId: {type: GraphQLString},cartons: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1377,7 +1377,7 @@ export {updateOrderDeliverySchedule};
 
 
 const updateOrderHeader = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderHeader method',
   args:{orderId: {type: GraphQLString},invoicePerShipment: {type: GraphQLString},salesChannelEnumId: {type: GraphQLString},orderTypeId: {type: GraphQLString},billingAccountId: {type: GraphQLString},terminalId: {type: GraphQLString},isViewed: {type: GraphQLString},visitId: {type: GraphQLString},productStoreId: {type: GraphQLString},remainingSubTotal: {type: GraphQLFloat},orderName: {type: GraphQLString},webSiteId: {type: GraphQLString},isRushOrder: {type: GraphQLString},entryDate: {type: GraphQLString},grandTotal: {type: GraphQLFloat},autoOrderShoppingListId: {type: GraphQLString},externalId: {type: GraphQLString},priority: {type: GraphQLString},transactionId: {type: GraphQLString},firstAttemptOrderId: {type: GraphQLString},originFacilityId: {type: GraphQLString},statusId: {type: GraphQLString},createdBy: {type: GraphQLString},currencyUom: {type: GraphQLString},syncStatusId: {type: GraphQLString},pickSheetPrintedDate: {type: GraphQLString},needsInventoryIssuance: {type: GraphQLString},orderDate: {type: GraphQLString},internalCode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1388,7 +1388,7 @@ export {updateOrderHeader};
 
 
 const updateOrderItemAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderItemAttribute method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},attrName: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1399,7 +1399,7 @@ export {updateOrderItemAttribute};
 
 
 const updateOrderItemShipGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderItemShipGroup method',
   args:{orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},facilityId: {type: GraphQLString},giftMessage: {type: GraphQLString},shippingInstructions: {type: GraphQLString},maySplit: {type: GraphQLString},shipByDate: {type: GraphQLString},estimatedDeliveryDate: {type: GraphQLString},vendorPartyId: {type: GraphQLString},contactMechId: {type: GraphQLString},telecomContactMechId: {type: GraphQLString},shipAfterDate: {type: GraphQLString},shipmentMethod: {type: GraphQLString},carrierPartyId: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},carrierRoleTypeId: {type: GraphQLString},isGift: {type: GraphQLString},estimatedShipDate: {type: GraphQLString},oldContactMechId: {type: GraphQLString},supplierPartyId: {type: GraphQLString},shipmentMethodTypeId: {type: GraphQLString},trackingNumber: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1410,7 +1410,7 @@ export {updateOrderItemShipGroup};
 
 
 const updateOrderItemShipGroupAssoc = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderItemShipGroupAssoc method',
   args:{orderItemSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat},totalQuantity: {type: GraphQLFloat},orderId: {type: GraphQLString},rowCount: {type: GraphQLInt},rowNumber: {type: GraphQLInt},shipGroupSeqId: {type: GraphQLString},cancelQuantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -1421,7 +1421,7 @@ export {updateOrderItemShipGroupAssoc};
 
 
 const updateOrderItems = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderItems method',
   args:{orderId: {type: GraphQLString},itemPriceMap: {type: GraphQLString},overridePriceMap: {type: GraphQLString},itemQtyMap: {type: GraphQLString},itemReasonMap: {type: GraphQLString},itemAttributesMap: {type: GraphQLString},itemDeliveryDateMap: {type: GraphQLString},itemCommentMap: {type: GraphQLString},orderTypeId: {type: GraphQLString},calcTax: {type: GraphQLBoolean},supplierPartyId: {type: GraphQLString},itemDescriptionMap: {type: GraphQLString},itemShipDateMap: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1432,7 +1432,7 @@ export {updateOrderItems};
 
 
 const updateOrderNote = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderNote method',
   args:{orderId: {type: GraphQLString},internalNote: {type: GraphQLString},noteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1443,7 +1443,7 @@ export {updateOrderNote};
 
 
 const updateOrderPaymentPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderPaymentPreference method',
   args:{orderPaymentPreferenceId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},track2: {type: GraphQLString},orderId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},manualRefNum: {type: GraphQLString},swipedFlag: {type: GraphQLString},manualAuthCode: {type: GraphQLString},securityCode: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},checkOutPaymentId: {type: GraphQLString},processAttempt: {type: GraphQLInt},needsNsfRetry: {type: GraphQLString},finAccountId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},statusId: {type: GraphQLString},paymentMethodId: {type: GraphQLString},billingPostalCode: {type: GraphQLString},overflowFlag: {type: GraphQLString},productPricePurposeId: {type: GraphQLString},maxAmount: {type: GraphQLFloat},createdByUserLogin: {type: GraphQLString},presentFlag: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1454,7 +1454,7 @@ export {updateOrderPaymentPreference};
 
 
 const updateOrderShipment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderShipment method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},shipmentId: {type: GraphQLString},shipmentItemSeqId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},quantity: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -1465,7 +1465,7 @@ export {updateOrderShipment};
 
 
 const updateOrderStatusFromReceipt = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderStatusFromReceipt method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1476,7 +1476,7 @@ export {updateOrderStatusFromReceipt};
 
 
 const updateOrderTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateOrderTerm method',
   args:{orderItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},termTypeId: {type: GraphQLString},textValue: {type: GraphQLString},termDays: {type: GraphQLInt},description: {type: GraphQLString},uomId: {type: GraphQLString},termValue: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -1487,7 +1487,7 @@ export {updateOrderTerm};
 
 
 const updateProductOrderItem = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateProductOrderItem method',
   args:{orderItemSeqId: {type: GraphQLString},engagementItemSeqId: {type: GraphQLString},orderId: {type: GraphQLString},engagementId: {type: GraphQLString},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1498,7 +1498,7 @@ export {updateProductOrderItem};
 
 
 const updateQuoteTerm = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateQuoteTerm method',
   args:{quoteItemSeqId: {type: GraphQLString},termTypeId: {type: GraphQLString},quoteId: {type: GraphQLString},textValue: {type: GraphQLString},termDays: {type: GraphQLInt},description: {type: GraphQLString},uomId: {type: GraphQLString},termValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -1509,7 +1509,7 @@ export {updateQuoteTerm};
 
 
 const updateSalesOrderItemFact = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSalesOrderItemFact method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -1520,7 +1520,7 @@ export {updateSalesOrderItemFact};
 
 
 const updateShipGroupShipInfo = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateShipGroupShipInfo method',
   args:{contactMechId: {type: GraphQLString},shipmentMethod: {type: GraphQLString},orderId: {type: GraphQLString},oldContactMechId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1531,7 +1531,7 @@ export {updateShipGroupShipInfo};
 
 
 const updateShippingMethodAndCharges = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateShippingMethodAndCharges method',
   args:{shipmentRouteSegmentId: {type: GraphQLString},contactMechPurposeTypeId: {type: GraphQLString},orderId: {type: GraphQLString},shipmentId: {type: GraphQLString},oldContactMechId: {type: GraphQLString},shippingAmount: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},shipmentMethodAndAmount: {type: GraphQLString},orderAdjustmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1542,7 +1542,7 @@ export {updateShippingMethodAndCharges};
 
 
 const updateShoppingListQuantitiesFromOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateShoppingListQuantitiesFromOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -1553,7 +1553,7 @@ export {updateShoppingListQuantitiesFromOrder};
 
 
 const updateTrackingNumber = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTrackingNumber method',
   args:{orderId: {type: GraphQLString},shipGroupSeqId: {type: GraphQLString},trackingNumber: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

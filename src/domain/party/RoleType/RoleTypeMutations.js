@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {RoleTypeResponseType} from '../../party/RoleType/RoleTypeResponseType.js';
 import {RoleTypeInputType} from '../../party/RoleType/RoleTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRoleType = {
-  type: ResopnseType,
+  type: RoleTypeResponseType,
   description: 'mutation for ofbiz createRoleType method',
-  args:{roleTypeToBeAdded: {type: RoleTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/roleTypes/add?`, args.roleTypeToBeAdded, req);
+    return postToUrl(`party/roleTypes/add?`, null, req);
   }
 };
 export {createRoleType};
 
 
 const updateRoleType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateRoleType method',
   args:{roleTypeToBeUpdated: {type: RoleTypeInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateRoleType};
 
 
 const deleteRoleTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteRoleTypeByIdUpdated method',
   args:{roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

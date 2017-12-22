@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortPurposeTypeResponseType} from '../../workeffort/WorkEffortPurposeType/WorkEffortPurposeTypeResponseType.js';
 import {WorkEffortPurposeTypeInputType} from '../../workeffort/WorkEffortPurposeType/WorkEffortPurposeTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortPurposeType = {
-  type: ResopnseType,
+  type: WorkEffortPurposeTypeResponseType,
   description: 'mutation for ofbiz createWorkEffortPurposeType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createWorkEffortPurposeType};
 
 
 const updateWorkEffortPurposeType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortPurposeType method',
   args:{workEffortPurposeTypeToBeUpdated: {type: WorkEffortPurposeTypeInputType},workEffortPurposeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortPurposeType};
 
 
 const deleteWorkEffortPurposeTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortPurposeTypeByIdUpdated method',
   args:{workEffortPurposeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {GoodIdentificationTypeInputType} from '../../product/GoodIdentificationType/GoodIdentificationTypeInputType.js';
+import {GoodIdentificationTypeResponseType} from '../../product/GoodIdentificationType/GoodIdentificationTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGoodIdentificationType = {
-  type: ResopnseType,
+  type: GoodIdentificationTypeResponseType,
   description: 'mutation for ofbiz createGoodIdentificationType method',
-  args:{},
+  args:{goodIdentificationTypeToBeAdded: {type: GoodIdentificationTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/goodIdentification/goodIdentificationTypes/add?`, null, req);
+    return postToUrl(`product/goodIdentification/goodIdentificationTypes/add?`, args.goodIdentificationTypeToBeAdded, req);
   }
 };
 export {createGoodIdentificationType};
 
 
 const updateGoodIdentificationType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGoodIdentificationType method',
   args:{goodIdentificationTypeToBeUpdated: {type: GoodIdentificationTypeInputType},goodIdentificationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateGoodIdentificationType};
 
 
 const deleteGoodIdentificationTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGoodIdentificationTypeByIdUpdated method',
   args:{goodIdentificationTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

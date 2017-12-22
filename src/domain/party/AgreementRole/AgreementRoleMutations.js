@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {AgreementRoleInputType} from '../../party/AgreementRole/AgreementRoleInputType.js';
+import {AgreementRoleResponseType} from '../../party/AgreementRole/AgreementRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAgreementRole = {
-  type: ResopnseType,
+  type: AgreementRoleResponseType,
   description: 'mutation for ofbiz createAgreementRole method',
   args:{agreementRoleToBeAdded: {type: AgreementRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createAgreementRole};
 
 
 const deleteAgreementRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAgreementRoleByIdUpdated method',
   args:{agreementRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteAgreementRoleByIdUpdated};
 
 
 const updateAgreementRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAgreementRole method',
   args:{agreementRoleToBeUpdated: {type: AgreementRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

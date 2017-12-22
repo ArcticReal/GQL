@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortSearchResultResponseType} from '../../workeffort/WorkEffortSearchResult/WorkEffortSearchResultResponseType.js';
 import {WorkEffortSearchResultInputType} from '../../workeffort/WorkEffortSearchResult/WorkEffortSearchResultInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortSearchResult = {
-  type: ResopnseType,
+  type: WorkEffortSearchResultResponseType,
   description: 'mutation for ofbiz createWorkEffortSearchResult method',
-  args:{workEffortSearchResultToBeAdded: {type: WorkEffortSearchResultInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortSearchResults/add?`, args.workEffortSearchResultToBeAdded, req);
+    return postToUrl(`workeffort/workEffort/workEffortSearchResults/add?`, null, req);
   }
 };
 export {createWorkEffortSearchResult};
 
 
 const updateWorkEffortSearchResult = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortSearchResult method',
   args:{workEffortSearchResultToBeUpdated: {type: WorkEffortSearchResultInputType},workEffortSearchResultId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortSearchResult};
 
 
 const deleteWorkEffortSearchResultByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortSearchResultByIdUpdated method',
   args:{workEffortSearchResultId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

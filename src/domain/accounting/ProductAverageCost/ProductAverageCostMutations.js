@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductAverageCostResponseType} from '../../accounting/ProductAverageCost/ProductAverageCostResponseType.js';
 import {ProductAverageCostInputType} from '../../accounting/ProductAverageCost/ProductAverageCostInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductAverageCost = {
-  type: ResopnseType,
+  type: ProductAverageCostResponseType,
   description: 'mutation for ofbiz createProductAverageCost method',
-  args:{productAverageCostToBeAdded: {type: ProductAverageCostInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/productAverageCosts/add?`, args.productAverageCostToBeAdded, req);
+    return postToUrl(`accounting/productAverageCosts/add?`, null, req);
   }
 };
 export {createProductAverageCost};
 
 
 const updateProductAverageCost = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductAverageCost method',
   args:{productAverageCostToBeUpdated: {type: ProductAverageCostInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductAverageCost};
 
 
 const deleteProductAverageCostByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductAverageCostByIdUpdated method',
   args:{productAverageCostId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {InvoiceAttributeInputType} from '../../accounting/InvoiceAttribute/InvoiceAttributeInputType.js';
+import {InvoiceAttributeResponseType} from '../../accounting/InvoiceAttribute/InvoiceAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoiceAttribute = {
-  type: ResopnseType,
+  type: InvoiceAttributeResponseType,
   description: 'mutation for ofbiz createInvoiceAttribute method',
-  args:{},
+  args:{invoiceAttributeToBeAdded: {type: InvoiceAttributeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceAttributes/add?`, null, req);
+    return postToUrl(`accounting/invoice/invoiceAttributes/add?`, args.invoiceAttributeToBeAdded, req);
   }
 };
 export {createInvoiceAttribute};
 
 
 const updateInvoiceAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInvoiceAttribute method',
   args:{invoiceAttributeToBeUpdated: {type: InvoiceAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateInvoiceAttribute};
 
 
 const deleteInvoiceAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInvoiceAttributeByIdUpdated method',
   args:{invoiceAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

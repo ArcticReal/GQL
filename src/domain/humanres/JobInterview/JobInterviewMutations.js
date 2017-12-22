@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {JobInterviewResponseType} from '../../humanres/JobInterview/JobInterviewResponseType.js';
 import {JobInterviewInputType} from '../../humanres/JobInterview/JobInterviewInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createJobInterview = {
-  type: ResopnseType,
+  type: JobInterviewResponseType,
   description: 'mutation for ofbiz createJobInterview method',
-  args:{jobInterviewToBeAdded: {type: JobInterviewInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/jobInterviews/add?`, args.jobInterviewToBeAdded, req);
+    return postToUrl(`humanres/jobInterviews/add?`, null, req);
   }
 };
 export {createJobInterview};
 
 
 const updateJobInterview = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateJobInterview method',
   args:{jobInterviewToBeUpdated: {type: JobInterviewInputType},jobInterviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateJobInterview};
 
 
 const deleteJobInterviewByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteJobInterviewByIdUpdated method',
   args:{jobInterviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

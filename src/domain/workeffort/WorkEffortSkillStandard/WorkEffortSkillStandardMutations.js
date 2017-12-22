@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortSkillStandardResponseType} from '../../workeffort/WorkEffortSkillStandard/WorkEffortSkillStandardResponseType.js';
 import {WorkEffortSkillStandardInputType} from '../../workeffort/WorkEffortSkillStandard/WorkEffortSkillStandardInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortSkillStandard = {
-  type: ResopnseType,
+  type: WorkEffortSkillStandardResponseType,
   description: 'mutation for ofbiz createWorkEffortSkillStandard method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createWorkEffortSkillStandard};
 
 
 const updateWorkEffortSkillStandard = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortSkillStandard method',
   args:{workEffortSkillStandardToBeUpdated: {type: WorkEffortSkillStandardInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortSkillStandard};
 
 
 const deleteWorkEffortSkillStandardByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortSkillStandardByIdUpdated method',
   args:{workEffortSkillStandardId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

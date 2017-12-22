@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {EmploymentAppInputType} from '../../humanres/EmploymentApp/EmploymentAppInputType.js';
+import {EmploymentAppResponseType} from '../../humanres/EmploymentApp/EmploymentAppResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEmploymentApp = {
-  type: ResopnseType,
+  type: EmploymentAppResponseType,
   description: 'mutation for ofbiz createEmploymentApp method',
   args:{employmentAppToBeAdded: {type: EmploymentAppInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createEmploymentApp};
 
 
 const updateEmploymentApp = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateEmploymentApp method',
   args:{employmentAppToBeUpdated: {type: EmploymentAppInputType},applicationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateEmploymentApp};
 
 
 const deleteEmploymentAppByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteEmploymentAppByIdUpdated method',
   args:{employmentAppId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

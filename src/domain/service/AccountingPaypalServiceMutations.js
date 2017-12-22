@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const payPalCapture = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalCapture method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},captureAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {payPalCapture};
 
 
 const payPalCheckoutUpdate = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalCheckoutUpdate method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {payPalCheckoutUpdate};
 
 
 const payPalDoExpressCheckout = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalDoExpressCheckout method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {payPalDoExpressCheckout};
 
 
 const payPalGetExpressCheckout = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalGetExpressCheckout method',
   args:{cart: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {payPalGetExpressCheckout};
 
 
 const payPalProcessor = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalProcessor method',
   args:{billToParty: {type: new GraphQLList(KeyValueInputType)},orderId: {type: GraphQLString},processAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},payPalPaymentMethod: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},billToEmail: {type: new GraphQLList(KeyValueInputType)},paymentGatewayConfigId: {type: GraphQLString},shippingAddress: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString},billingAddress: {type: new GraphQLList(KeyValueInputType)},customerIpAddress: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {payPalProcessor};
 
 
 const payPalRefund = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalRefund method',
   args:{orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},refundAmount: {type: GraphQLFloat},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {payPalRefund};
 
 
 const payPalSetExpressCheckout = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalSetExpressCheckout method',
   args:{cart: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {payPalSetExpressCheckout};
 
 
 const payPalVoid = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz payPalVoid method',
   args:{releaseAmount: {type: GraphQLFloat},orderPaymentPreference: {type: new GraphQLList(KeyValueInputType)},paymentConfig: {type: GraphQLString},paymentGatewayConfigId: {type: GraphQLString},authTrans: {type: new GraphQLList(KeyValueInputType)},currency: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {AccommodationMapInputType} from '../../accounting/AccommodationMap/AccommodationMapInputType.js';
+import {AccommodationMapResponseType} from '../../accounting/AccommodationMap/AccommodationMapResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAccommodationMap = {
-  type: ResopnseType,
+  type: AccommodationMapResponseType,
   description: 'mutation for ofbiz createAccommodationMap method',
   args:{accommodationMapToBeAdded: {type: AccommodationMapInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createAccommodationMap};
 
 
 const updateAccommodationMap = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAccommodationMap method',
   args:{accommodationMapToBeUpdated: {type: AccommodationMapInputType},accommodationMapId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateAccommodationMap};
 
 
 const deleteAccommodationMapByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAccommodationMapByIdUpdated method',
   args:{accommodationMapId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

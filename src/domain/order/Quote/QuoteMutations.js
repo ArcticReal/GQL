@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {QuoteInputType} from '../../order/Quote/QuoteInputType.js';
+import {QuoteResponseType} from '../../order/Quote/QuoteResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuote = {
-  type: ResopnseType,
+  type: QuoteResponseType,
   description: 'mutation for ofbiz createQuote method',
-  args:{},
+  args:{quoteToBeAdded: {type: QuoteInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/quotes/add?`, null, req);
+    return postToUrl(`order/quotes/add?`, args.quoteToBeAdded, req);
   }
 };
 export {createQuote};
 
 
 const updateQuote = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateQuote method',
   args:{quoteToBeUpdated: {type: QuoteInputType},quoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateQuote};
 
 
 const deleteQuoteByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteQuoteByIdUpdated method',
   args:{quoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PartyContactMechPurposeInputType} from '../../party/PartyContactMechPurpose/PartyContactMechPurposeInputType.js';
+import {PartyContactMechPurposeResponseType} from '../../party/PartyContactMechPurpose/PartyContactMechPurposeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyContactMechPurpose = {
-  type: ResopnseType,
+  type: PartyContactMechPurposeResponseType,
   description: 'mutation for ofbiz createPartyContactMechPurpose method',
-  args:{},
+  args:{partyContactMechPurposeToBeAdded: {type: PartyContactMechPurposeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/contactMech/partyContactMechPurposes/add?`, null, req);
+    return postToUrl(`party/contactMech/partyContactMechPurposes/add?`, args.partyContactMechPurposeToBeAdded, req);
   }
 };
 export {createPartyContactMechPurpose};
 
 
 const updatePartyContactMechPurpose = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyContactMechPurpose method',
   args:{partyContactMechPurposeToBeUpdated: {type: PartyContactMechPurposeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyContactMechPurpose};
 
 
 const deletePartyContactMechPurposeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyContactMechPurposeByIdUpdated method',
   args:{partyContactMechPurposeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

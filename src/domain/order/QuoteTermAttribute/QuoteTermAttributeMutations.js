@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {QuoteTermAttributeResponseType} from '../../order/QuoteTermAttribute/QuoteTermAttributeResponseType.js';
 import {QuoteTermAttributeInputType} from '../../order/QuoteTermAttribute/QuoteTermAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuoteTermAttribute = {
-  type: ResopnseType,
+  type: QuoteTermAttributeResponseType,
   description: 'mutation for ofbiz createQuoteTermAttribute method',
-  args:{quoteTermAttributeToBeAdded: {type: QuoteTermAttributeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/quote/quoteTermAttributes/add?`, args.quoteTermAttributeToBeAdded, req);
+    return postToUrl(`order/quote/quoteTermAttributes/add?`, null, req);
   }
 };
 export {createQuoteTermAttribute};
 
 
 const updateQuoteTermAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateQuoteTermAttribute method',
   args:{quoteTermAttributeToBeUpdated: {type: QuoteTermAttributeInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateQuoteTermAttribute};
 
 
 const deleteQuoteTermAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteQuoteTermAttributeByIdUpdated method',
   args:{quoteTermAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

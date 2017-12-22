@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {GlAccountTypeResponseType} from '../../accounting/GlAccountType/GlAccountTypeResponseType.js';
 import {GlAccountTypeInputType} from '../../accounting/GlAccountType/GlAccountTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlAccountType = {
-  type: ResopnseType,
+  type: GlAccountTypeResponseType,
   description: 'mutation for ofbiz createGlAccountType method',
-  args:{glAccountTypeToBeAdded: {type: GlAccountTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/glAccountTypes/add?`, args.glAccountTypeToBeAdded, req);
+    return postToUrl(`accounting/glAccount/glAccountTypes/add?`, null, req);
   }
 };
 export {createGlAccountType};
 
 
 const updateGlAccountType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGlAccountType method',
   args:{glAccountTypeToBeUpdated: {type: GlAccountTypeInputType},glAccountTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateGlAccountType};
 
 
 const deleteGlAccountTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGlAccountTypeByIdUpdated method',
   args:{glAccountTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {DocumentTypeResponseType} from '../../content/DocumentType/DocumentTypeResponseType.js';
 import {DocumentTypeInputType} from '../../content/DocumentType/DocumentTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDocumentType = {
-  type: ResopnseType,
+  type: DocumentTypeResponseType,
   description: 'mutation for ofbiz createDocumentType method',
-  args:{documentTypeToBeAdded: {type: DocumentTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/document/documentTypes/add?`, args.documentTypeToBeAdded, req);
+    return postToUrl(`content/document/documentTypes/add?`, null, req);
   }
 };
 export {createDocumentType};
 
 
 const updateDocumentType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDocumentType method',
   args:{documentTypeToBeUpdated: {type: DocumentTypeInputType},documentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateDocumentType};
 
 
 const deleteDocumentTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDocumentTypeByIdUpdated method',
   args:{documentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

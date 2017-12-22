@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {DataTemplateTypeResponseType} from '../../content/DataTemplateType/DataTemplateTypeResponseType.js';
 import {DataTemplateTypeInputType} from '../../content/DataTemplateType/DataTemplateTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDataTemplateType = {
-  type: ResopnseType,
+  type: DataTemplateTypeResponseType,
   description: 'mutation for ofbiz createDataTemplateType method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createDataTemplateType};
 
 
 const updateDataTemplateType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDataTemplateType method',
   args:{dataTemplateTypeToBeUpdated: {type: DataTemplateTypeInputType},dataTemplateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateDataTemplateType};
 
 
 const deleteDataTemplateTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDataTemplateTypeByIdUpdated method',
   args:{dataTemplateTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

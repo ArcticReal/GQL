@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {TaxAuthorityRateProductInputType} from '../../accounting/TaxAuthorityRateProduct/TaxAuthorityRateProductInputType.js';
+import {TaxAuthorityRateProductResponseType} from '../../accounting/TaxAuthorityRateProduct/TaxAuthorityRateProductResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTaxAuthorityRateProduct = {
-  type: ResopnseType,
+  type: TaxAuthorityRateProductResponseType,
   description: 'mutation for ofbiz createTaxAuthorityRateProduct method',
   args:{taxAuthorityRateProductToBeAdded: {type: TaxAuthorityRateProductInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createTaxAuthorityRateProduct};
 
 
 const deleteTaxAuthorityRateProductByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTaxAuthorityRateProductByIdUpdated method',
   args:{taxAuthorityRateProductId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteTaxAuthorityRateProductByIdUpdated};
 
 
 const updateTaxAuthorityRateProduct = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTaxAuthorityRateProduct method',
   args:{taxAuthorityRateProductToBeUpdated: {type: TaxAuthorityRateProductInputType},taxAuthorityRateSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

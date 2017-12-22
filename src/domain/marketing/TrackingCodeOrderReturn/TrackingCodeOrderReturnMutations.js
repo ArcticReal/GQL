@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {TrackingCodeOrderReturnInputType} from '../../marketing/TrackingCodeOrderReturn/TrackingCodeOrderReturnInputType.js';
+import {TrackingCodeOrderReturnResponseType} from '../../marketing/TrackingCodeOrderReturn/TrackingCodeOrderReturnResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createTrackingCodeOrderReturn = {
-  type: ResopnseType,
+  type: TrackingCodeOrderReturnResponseType,
   description: 'mutation for ofbiz createTrackingCodeOrderReturn method',
-  args:{},
+  args:{trackingCodeOrderReturnToBeAdded: {type: TrackingCodeOrderReturnInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/trackingCode/trackingCodeOrderReturns/add?`, null, req);
+    return postToUrl(`marketing/trackingCode/trackingCodeOrderReturns/add?`, args.trackingCodeOrderReturnToBeAdded, req);
   }
 };
 export {createTrackingCodeOrderReturn};
 
 
 const updateTrackingCodeOrderReturn = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateTrackingCodeOrderReturn method',
   args:{trackingCodeOrderReturnToBeUpdated: {type: TrackingCodeOrderReturnInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateTrackingCodeOrderReturn};
 
 
 const deleteTrackingCodeOrderReturnByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteTrackingCodeOrderReturnByIdUpdated method',
   args:{trackingCodeOrderReturnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

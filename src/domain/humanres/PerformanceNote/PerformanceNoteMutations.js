@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PerformanceNoteInputType} from '../../humanres/PerformanceNote/PerformanceNoteInputType.js';
+import {PerformanceNoteResponseType} from '../../humanres/PerformanceNote/PerformanceNoteResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPerformanceNote = {
-  type: ResopnseType,
+  type: PerformanceNoteResponseType,
   description: 'mutation for ofbiz createPerformanceNote method',
-  args:{},
+  args:{performanceNoteToBeAdded: {type: PerformanceNoteInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/performanceNotes/add?`, null, req);
+    return postToUrl(`humanres/performanceNotes/add?`, args.performanceNoteToBeAdded, req);
   }
 };
 export {createPerformanceNote};
 
 
 const deletePerformanceNoteByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePerformanceNoteByIdUpdated method',
   args:{performanceNoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deletePerformanceNoteByIdUpdated};
 
 
 const updatePerformanceNote = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePerformanceNote method',
   args:{performanceNoteToBeUpdated: {type: PerformanceNoteInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {AgreementGeographicalApplicResponseType} from '../../party/AgreementGeographicalApplic/AgreementGeographicalApplicResponseType.js';
 import {AgreementGeographicalApplicInputType} from '../../party/AgreementGeographicalApplic/AgreementGeographicalApplicInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAgreementGeographicalApplic = {
-  type: ResopnseType,
+  type: AgreementGeographicalApplicResponseType,
   description: 'mutation for ofbiz createAgreementGeographicalApplic method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createAgreementGeographicalApplic};
 
 
 const deleteAgreementGeographicalApplicByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAgreementGeographicalApplicByIdUpdated method',
   args:{agreementGeographicalApplicId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteAgreementGeographicalApplicByIdUpdated};
 
 
 const updateAgreementGeographicalApplic = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAgreementGeographicalApplic method',
   args:{agreementGeographicalApplicToBeUpdated: {type: AgreementGeographicalApplicInputType},agreementItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

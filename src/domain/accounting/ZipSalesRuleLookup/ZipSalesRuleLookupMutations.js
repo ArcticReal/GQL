@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ZipSalesRuleLookupResponseType} from '../../accounting/ZipSalesRuleLookup/ZipSalesRuleLookupResponseType.js';
 import {ZipSalesRuleLookupInputType} from '../../accounting/ZipSalesRuleLookup/ZipSalesRuleLookupInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createZipSalesRuleLookup = {
-  type: ResopnseType,
+  type: ZipSalesRuleLookupResponseType,
   description: 'mutation for ofbiz createZipSalesRuleLookup method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createZipSalesRuleLookup};
 
 
 const updateZipSalesRuleLookup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateZipSalesRuleLookup method',
   args:{zipSalesRuleLookupToBeUpdated: {type: ZipSalesRuleLookupInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateZipSalesRuleLookup};
 
 
 const deleteZipSalesRuleLookupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteZipSalesRuleLookupByIdUpdated method',
   args:{zipSalesRuleLookupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

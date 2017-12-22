@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {EmplPositionReportingStructResponseType} from '../../humanres/EmplPositionReportingStruct/EmplPositionReportingStructResponseType.js';
 import {EmplPositionReportingStructInputType} from '../../humanres/EmplPositionReportingStruct/EmplPositionReportingStructInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createEmplPositionReportingStruct = {
-  type: ResopnseType,
+  type: EmplPositionReportingStructResponseType,
   description: 'mutation for ofbiz createEmplPositionReportingStruct method',
-  args:{emplPositionReportingStructToBeAdded: {type: EmplPositionReportingStructInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/emplPosition/emplPositionReportingStructs/add?`, args.emplPositionReportingStructToBeAdded, req);
+    return postToUrl(`humanres/emplPosition/emplPositionReportingStructs/add?`, null, req);
   }
 };
 export {createEmplPositionReportingStruct};
 
 
 const deleteEmplPositionReportingStructByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteEmplPositionReportingStructByIdUpdated method',
   args:{emplPositionReportingStructId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteEmplPositionReportingStructByIdUpdated};
 
 
 const updateEmplPositionReportingStruct = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateEmplPositionReportingStruct method',
   args:{emplPositionReportingStructToBeUpdated: {type: EmplPositionReportingStructInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

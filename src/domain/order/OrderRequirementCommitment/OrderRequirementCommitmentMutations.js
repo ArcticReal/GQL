@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {OrderRequirementCommitmentResponseType} from '../../order/OrderRequirementCommitment/OrderRequirementCommitmentResponseType.js';
 import {OrderRequirementCommitmentInputType} from '../../order/OrderRequirementCommitment/OrderRequirementCommitmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderRequirementCommitment = {
-  type: ResopnseType,
+  type: OrderRequirementCommitmentResponseType,
   description: 'mutation for ofbiz createOrderRequirementCommitment method',
-  args:{orderRequirementCommitmentToBeAdded: {type: OrderRequirementCommitmentInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/requirement/orderRequirementCommitments/add?`, args.orderRequirementCommitmentToBeAdded, req);
+    return postToUrl(`order/requirement/orderRequirementCommitments/add?`, null, req);
   }
 };
 export {createOrderRequirementCommitment};
 
 
 const updateOrderRequirementCommitment = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderRequirementCommitment method',
   args:{orderRequirementCommitmentToBeUpdated: {type: OrderRequirementCommitmentInputType},orderItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderRequirementCommitment};
 
 
 const deleteOrderRequirementCommitmentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderRequirementCommitmentByIdUpdated method',
   args:{orderRequirementCommitmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductCategoryAttributeResponseType} from '../../product/ProductCategoryAttribute/ProductCategoryAttributeResponseType.js';
 import {ProductCategoryAttributeInputType} from '../../product/ProductCategoryAttribute/ProductCategoryAttributeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductCategoryAttribute = {
-  type: ResopnseType,
+  type: ProductCategoryAttributeResponseType,
   description: 'mutation for ofbiz createProductCategoryAttribute method',
-  args:{productCategoryAttributeToBeAdded: {type: ProductCategoryAttributeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productCategoryAttributes/add?`, args.productCategoryAttributeToBeAdded, req);
+    return postToUrl(`product/product/productCategoryAttributes/add?`, null, req);
   }
 };
 export {createProductCategoryAttribute};
 
 
 const updateProductCategoryAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductCategoryAttribute method',
   args:{productCategoryAttributeToBeUpdated: {type: ProductCategoryAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductCategoryAttribute};
 
 
 const deleteProductCategoryAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductCategoryAttributeByIdUpdated method',
   args:{productCategoryAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

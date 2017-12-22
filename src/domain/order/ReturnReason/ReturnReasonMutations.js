@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ReturnReasonInputType} from '../../order/ReturnReason/ReturnReasonInputType.js';
+import {ReturnReasonResponseType} from '../../order/ReturnReason/ReturnReasonResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createReturnReason = {
-  type: ResopnseType,
+  type: ReturnReasonResponseType,
   description: 'mutation for ofbiz createReturnReason method',
   args:{returnReasonToBeAdded: {type: ReturnReasonInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createReturnReason};
 
 
 const updateReturnReason = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateReturnReason method',
   args:{returnReasonToBeUpdated: {type: ReturnReasonInputType},returnReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateReturnReason};
 
 
 const deleteReturnReasonByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteReturnReasonByIdUpdated method',
   args:{returnReasonId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ShipmentGatewayFedexInputType} from '../../shipment/ShipmentGatewayFedex/ShipmentGatewayFedexInputType.js';
+import {ShipmentGatewayFedexResponseType} from '../../shipment/ShipmentGatewayFedex/ShipmentGatewayFedexResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentGatewayFedex = {
-  type: ResopnseType,
+  type: ShipmentGatewayFedexResponseType,
   description: 'mutation for ofbiz createShipmentGatewayFedex method',
   args:{shipmentGatewayFedexToBeAdded: {type: ShipmentGatewayFedexInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createShipmentGatewayFedex};
 
 
 const updateShipmentGatewayFedex = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShipmentGatewayFedex method',
   args:{shipmentGatewayFedexToBeUpdated: {type: ShipmentGatewayFedexInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateShipmentGatewayFedex};
 
 
 const deleteShipmentGatewayFedexByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShipmentGatewayFedexByIdUpdated method',
   args:{shipmentGatewayFedexId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

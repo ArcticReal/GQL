@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ContentSearchResultInputType} from '../../content/ContentSearchResult/ContentSearchResultInputType.js';
+import {ContentSearchResultResponseType} from '../../content/ContentSearchResult/ContentSearchResultResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentSearchResult = {
-  type: ResopnseType,
+  type: ContentSearchResultResponseType,
   description: 'mutation for ofbiz createContentSearchResult method',
   args:{contentSearchResultToBeAdded: {type: ContentSearchResultInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createContentSearchResult};
 
 
 const updateContentSearchResult = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentSearchResult method',
   args:{contentSearchResultToBeUpdated: {type: ContentSearchResultInputType},contentSearchResultId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContentSearchResult};
 
 
 const deleteContentSearchResultByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentSearchResultByIdUpdated method',
   args:{contentSearchResultId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

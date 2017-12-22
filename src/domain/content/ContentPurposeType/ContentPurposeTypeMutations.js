@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContentPurposeTypeResponseType} from '../../content/ContentPurposeType/ContentPurposeTypeResponseType.js';
 import {ContentPurposeTypeInputType} from '../../content/ContentPurposeType/ContentPurposeTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentPurposeType = {
-  type: ResopnseType,
+  type: ContentPurposeTypeResponseType,
   description: 'mutation for ofbiz createContentPurposeType method',
-  args:{contentPurposeTypeToBeAdded: {type: ContentPurposeTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentPurposeTypes/add?`, args.contentPurposeTypeToBeAdded, req);
+    return postToUrl(`content/content/contentPurposeTypes/add?`, null, req);
   }
 };
 export {createContentPurposeType};
 
 
 const updateContentPurposeType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentPurposeType method',
   args:{contentPurposeTypeToBeUpdated: {type: ContentPurposeTypeInputType},contentPurposeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContentPurposeType};
 
 
 const deleteContentPurposeTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentPurposeTypeByIdUpdated method',
   args:{contentPurposeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

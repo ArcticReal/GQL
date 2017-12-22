@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductFeatureDataResourceResponseType} from '../../product/ProductFeatureDataResource/ProductFeatureDataResourceResponseType.js';
 import {ProductFeatureDataResourceInputType} from '../../product/ProductFeatureDataResource/ProductFeatureDataResourceInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductFeatureDataResource = {
-  type: ResopnseType,
+  type: ProductFeatureDataResourceResponseType,
   description: 'mutation for ofbiz createProductFeatureDataResource method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductFeatureDataResource};
 
 
 const updateProductFeatureDataResource = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductFeatureDataResource method',
   args:{productFeatureDataResourceToBeUpdated: {type: ProductFeatureDataResourceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductFeatureDataResource};
 
 
 const deleteProductFeatureDataResourceByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductFeatureDataResourceByIdUpdated method',
   args:{productFeatureDataResourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

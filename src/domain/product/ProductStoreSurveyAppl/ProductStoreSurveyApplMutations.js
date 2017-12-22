@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductStoreSurveyApplInputType} from '../../product/ProductStoreSurveyAppl/ProductStoreSurveyApplInputType.js';
+import {ProductStoreSurveyApplResponseType} from '../../product/ProductStoreSurveyAppl/ProductStoreSurveyApplResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreSurveyAppl = {
-  type: ResopnseType,
+  type: ProductStoreSurveyApplResponseType,
   description: 'mutation for ofbiz createProductStoreSurveyAppl method',
   args:{productStoreSurveyApplToBeAdded: {type: ProductStoreSurveyApplInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductStoreSurveyAppl};
 
 
 const deleteProductStoreSurveyApplByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreSurveyApplByIdUpdated method',
   args:{productStoreSurveyApplId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteProductStoreSurveyApplByIdUpdated};
 
 
 const updateProductStoreSurveyAppl = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreSurveyAppl method',
   args:{productStoreSurveyApplToBeUpdated: {type: ProductStoreSurveyApplInputType},productStoreSurveyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductManufacturingRuleResponseType} from '../../manufacturing/ProductManufacturingRule/ProductManufacturingRuleResponseType.js';
 import {ProductManufacturingRuleInputType} from '../../manufacturing/ProductManufacturingRule/ProductManufacturingRuleInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductManufacturingRule = {
-  type: ResopnseType,
+  type: ProductManufacturingRuleResponseType,
   description: 'mutation for ofbiz createProductManufacturingRule method',
-  args:{productManufacturingRuleToBeAdded: {type: ProductManufacturingRuleInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`manufacturing/productManufacturingRules/add?`, args.productManufacturingRuleToBeAdded, req);
+    return postToUrl(`manufacturing/productManufacturingRules/add?`, null, req);
   }
 };
 export {createProductManufacturingRule};
 
 
 const deleteProductManufacturingRuleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductManufacturingRuleByIdUpdated method',
   args:{productManufacturingRuleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteProductManufacturingRuleByIdUpdated};
 
 
 const updateProductManufacturingRule = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductManufacturingRule method',
   args:{productManufacturingRuleToBeUpdated: {type: ProductManufacturingRuleInputType},ruleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -29,7 +29,12 @@ function fetchArrayFromUrl(relativeURL, req){
           }
           return json;
         })
-        .catch(err => {});
+        .catch((err) => {
+          if (err.code==='ECONNREFUSED') {
+            throw new GraphQLError('Connection refused');
+          }
+          throw err;
+        });
 }
 
 function fetchOneFromUrl(relativeURL, req){
@@ -49,7 +54,12 @@ function fetchOneFromUrl(relativeURL, req){
 
           return json;
         })
-        .catch(err => {throw err;});
+        .catch((err) => {
+          if (err.code==='ECONNREFUSED') {
+            throw new GraphQLError('Connection refused');
+          }
+          throw err;
+        });
 
 }
 
@@ -57,11 +67,7 @@ function postToUrl(relativeURL, body, req){
   console.log('post to URL: ' + relativeURL);
   return fetch(`${BASE_URL}${relativeURL}`, {method: 'POST', body: JSON.stringify(body), headers: {'Cookie': getCookie(req), 'Content-Type': 'application/JSON'}})
         .then(res => {
-          return {
-            body: res.text(),
-            status: res.status,
-            contentType: res.headers.get('Content-Type')
-          };
+          return resolveResponse(res);
         })
         .catch((err) => {
           if (err.code==='ECONNREFUSED') {
@@ -73,13 +79,9 @@ function postToUrl(relativeURL, body, req){
 
 function putToUrl(relativeURL, body, req){
   console.log('put to URL: ' + relativeURL);
-  return fetch(`${BASE_URL}${relativeURL}`, {method: 'PUT', body: body, headers: {'Cookie': getCookie(req)}})
+  return fetch(`${BASE_URL}${relativeURL}`, {method: 'PUT', body: JSON.stringify(body), headers: {'Cookie': getCookie(req), 'Content-Type': 'application/JSON'}})
         .then(res => {
-          return {
-            body: res.text(),
-            status: res.status,
-            contentType: res.headers.get('Content-Type')
-          };
+          return resolveResponse(res);
         })
         .catch(err => {
           if (err.code==='ECONNREFUSED') {
@@ -91,14 +93,10 @@ function putToUrl(relativeURL, body, req){
 }
 
 function deleteToUrl(relativeURL, body, req){
-  console.log('put to URL: ' + relativeURL);
-  return fetch(`${BASE_URL}${relativeURL}`, {method: 'DELETE', body: body, headers: {'Cookie': getCookie(req)}})
+  console.log('delete to URL: ' + relativeURL);
+  return fetch(`${BASE_URL}${relativeURL}`, {method: 'DELETE', body: JSON.stringify(body), headers: {'Cookie': getCookie(req), 'Content-Type': 'application/JSON'}})
         .then(res => {
-          return {
-            body: res.text(),
-            status: res.status,
-            contentType: res.headers.get('Content-Type')
-          };
+          return resolveResponse(res);
         })
         .catch(err => {
           if (err.code==='ECONNREFUSED') {
@@ -106,6 +104,22 @@ function deleteToUrl(relativeURL, body, req){
           }
           throw err;
         });
+}
+
+function resolveResponse(res){
+  var status = res.status;
+  console.log("Response. \nStatus:", status);
+  if (status >= 300) {
+    throw new GraphQLError(status);
+  }
+  var contentType = res.headers.get('Content-Type');
+  console.log("Content-Type: ", contentType);
+  if (contentType !== null) {
+    if(contentType.includes("json")){
+      return res.json();
+    }
+  }
+  return res.text();
 }
 
 
@@ -128,7 +142,12 @@ function login(relativeURL, username, password){
           const response = result.promise;
           return {message: response.then(r => {return r.text();}), status: response.then(r => {return r.status;}), setCookie: result.setCookie};
         })
-        .catch(err => {console.log(err);});
+        .catch((err) => {
+          if (err.code==='ECONNREFUSED') {
+            throw new GraphQLError('Connection refused');
+          }
+          throw err;
+        });
 
 }
 

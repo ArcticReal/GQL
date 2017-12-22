@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {GlAccountCategoryMemberInputType} from '../../accounting/GlAccountCategoryMember/GlAccountCategoryMemberInputType.js';
+import {GlAccountCategoryMemberResponseType} from '../../accounting/GlAccountCategoryMember/GlAccountCategoryMemberResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createGlAccountCategoryMember = {
-  type: ResopnseType,
+  type: GlAccountCategoryMemberResponseType,
   description: 'mutation for ofbiz createGlAccountCategoryMember method',
-  args:{},
+  args:{glAccountCategoryMemberToBeAdded: {type: GlAccountCategoryMemberInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/glAccountCategoryMembers/add?`, null, req);
+    return postToUrl(`accounting/glAccount/glAccountCategoryMembers/add?`, args.glAccountCategoryMemberToBeAdded, req);
   }
 };
 export {createGlAccountCategoryMember};
 
 
 const deleteGlAccountCategoryMemberByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteGlAccountCategoryMemberByIdUpdated method',
   args:{glAccountCategoryMemberId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteGlAccountCategoryMemberByIdUpdated};
 
 
 const updateGlAccountCategoryMember = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateGlAccountCategoryMember method',
   args:{glAccountCategoryMemberToBeUpdated: {type: GlAccountCategoryMemberInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

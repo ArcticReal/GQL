@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addInvoiceItemTypeGlAssignment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addInvoiceItemTypeGlAssignment method',
   args:{glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},invoiceItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addInvoiceItemTypeGlAssignment};
 
 
 const addPaymentMethodTypeGlAssignment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addPaymentMethodTypeGlAssignment method',
   args:{glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {addPaymentMethodTypeGlAssignment};
 
 
 const addPaymentTypeGlAssignment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addPaymentTypeGlAssignment method',
   args:{paymentTypeId: {type: GraphQLString},glAccountTypeId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {addPaymentTypeGlAssignment};
 
 
 const createGlAccountTypeDefault = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createGlAccountTypeDefault method',
   args:{glAccountTypeId: {type: GraphQLString},glAccountId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createGlAccountTypeDefault};
 
 
 const createPartyAcctgPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createPartyAcctgPreference method',
   args:{partyId: {type: GraphQLString},cogsMethodId: {type: GraphQLString},oldInvoiceSequenceEnumId: {type: GraphQLString},baseCurrencyUomId: {type: GraphQLString},lastInvoiceRestartDate: {type: GraphQLString},quoteSeqCustMethId: {type: GraphQLString},lastQuoteNumber: {type: GraphQLInt},errorGlJournalId: {type: GraphQLString},orderIdPrefix: {type: GraphQLString},fiscalYearStartDay: {type: GraphQLInt},oldQuoteSequenceEnumId: {type: GraphQLString},lastInvoiceNumber: {type: GraphQLInt},taxFormId: {type: GraphQLString},refundPaymentMethodId: {type: GraphQLString},useInvoiceIdForReturns: {type: GraphQLString},invoiceIdPrefix: {type: GraphQLString},lastOrderNumber: {type: GraphQLInt},orderSeqCustMethId: {type: GraphQLString},fiscalYearStartMonth: {type: GraphQLInt},quoteIdPrefix: {type: GraphQLString},oldOrderSequenceEnumId: {type: GraphQLString},invoiceSeqCustMethId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createPartyAcctgPreference};
 
 
 const getFXConversion = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getFXConversion method',
   args:{uomId: {type: GraphQLString},uomIdTo: {type: GraphQLString},asOfTimestamp: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {getFXConversion};
 
 
 const getPartyAccountingPreferences = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz getPartyAccountingPreferences method',
   args:{organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {getPartyAccountingPreferences};
 
 
 const removeGlAccountTypeDefault = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeGlAccountTypeDefault method',
   args:{glAccountTypeId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {removeGlAccountTypeDefault};
 
 
 const removeInvoiceItemTypeGlAssignment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeInvoiceItemTypeGlAssignment method',
   args:{organizationPartyId: {type: GraphQLString},invoiceItemTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {removeInvoiceItemTypeGlAssignment};
 
 
 const removePaymentMethodTypeGlAssignment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removePaymentMethodTypeGlAssignment method',
   args:{organizationPartyId: {type: GraphQLString},paymentMethodTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {removePaymentMethodTypeGlAssignment};
 
 
 const removePaymentTypeGlAssignment = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removePaymentTypeGlAssignment method',
   args:{paymentTypeId: {type: GraphQLString},organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {removePaymentTypeGlAssignment};
 
 
 const setAcctgCompany = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz setAcctgCompany method',
   args:{organizationPartyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {setAcctgCompany};
 
 
 const updateFXConversion = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateFXConversion method',
   args:{conversionFactor: {type: GraphQLFloat},uomId: {type: GraphQLString},uomIdTo: {type: GraphQLString},fromDate: {type: GraphQLString},purposeEnumId: {type: GraphQLString},asOfTimestamp: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {updateFXConversion};
 
 
 const updatePartyAcctgPreference = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyAcctgPreference method',
   args:{partyId: {type: GraphQLString},errorGlJournalId: {type: GraphQLString},refundPaymentMethodId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

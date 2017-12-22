@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContentApprovalResponseType} from '../../content/ContentApproval/ContentApprovalResponseType.js';
 import {ContentApprovalInputType} from '../../content/ContentApproval/ContentApprovalInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentApproval = {
-  type: ResopnseType,
+  type: ContentApprovalResponseType,
   description: 'mutation for ofbiz createContentApproval method',
-  args:{contentApprovalToBeAdded: {type: ContentApprovalInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentApprovals/add?`, args.contentApprovalToBeAdded, req);
+    return postToUrl(`content/content/contentApprovals/add?`, null, req);
   }
 };
 export {createContentApproval};
 
 
 const updateContentApproval = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentApproval method',
   args:{contentApprovalToBeUpdated: {type: ContentApprovalInputType},contentApprovalId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContentApproval};
 
 
 const deleteContentApprovalByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentApprovalByIdUpdated method',
   args:{contentApprovalId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

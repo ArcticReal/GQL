@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {RequirementRoleInputType} from '../../order/RequirementRole/RequirementRoleInputType.js';
+import {RequirementRoleResponseType} from '../../order/RequirementRole/RequirementRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRequirementRole = {
-  type: ResopnseType,
+  type: RequirementRoleResponseType,
   description: 'mutation for ofbiz createRequirementRole method',
   args:{requirementRoleToBeAdded: {type: RequirementRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createRequirementRole};
 
 
 const deleteRequirementRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteRequirementRoleByIdUpdated method',
   args:{requirementRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteRequirementRoleByIdUpdated};
 
 
 const updateRequirementRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateRequirementRole method',
   args:{requirementRoleToBeUpdated: {type: RequirementRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

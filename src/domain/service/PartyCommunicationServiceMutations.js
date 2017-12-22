@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createCommunicationEventType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createCommunicationEventType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},communicationEventTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createCommunicationEventType};
 
 
 const deleteCommunicationEventType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteCommunicationEventType method',
   args:{communicationEventTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},contactMechTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {deleteCommunicationEventType};
 
 
 const updateCommunicationEventType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCommunicationEventType method',
   args:{communicationEventTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},contactMechTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

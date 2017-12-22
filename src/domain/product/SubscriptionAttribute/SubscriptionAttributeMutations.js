@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {SubscriptionAttributeInputType} from '../../product/SubscriptionAttribute/SubscriptionAttributeInputType.js';
+import {SubscriptionAttributeResponseType} from '../../product/SubscriptionAttribute/SubscriptionAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSubscriptionAttribute = {
-  type: ResopnseType,
+  type: SubscriptionAttributeResponseType,
   description: 'mutation for ofbiz createSubscriptionAttribute method',
   args:{subscriptionAttributeToBeAdded: {type: SubscriptionAttributeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createSubscriptionAttribute};
 
 
 const updateSubscriptionAttribute = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSubscriptionAttribute method',
   args:{subscriptionAttributeToBeUpdated: {type: SubscriptionAttributeInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSubscriptionAttribute};
 
 
 const deleteSubscriptionAttributeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSubscriptionAttributeByIdUpdated method',
   args:{subscriptionAttributeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

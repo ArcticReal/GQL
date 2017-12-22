@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FinAccountTransTypeAttrResponseType} from '../../accounting/FinAccountTransTypeAttr/FinAccountTransTypeAttrResponseType.js';
 import {FinAccountTransTypeAttrInputType} from '../../accounting/FinAccountTransTypeAttr/FinAccountTransTypeAttrInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFinAccountTransTypeAttr = {
-  type: ResopnseType,
+  type: FinAccountTransTypeAttrResponseType,
   description: 'mutation for ofbiz createFinAccountTransTypeAttr method',
-  args:{finAccountTransTypeAttrToBeAdded: {type: FinAccountTransTypeAttrInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/finAccount/finAccountTransTypeAttrs/add?`, args.finAccountTransTypeAttrToBeAdded, req);
+    return postToUrl(`accounting/finAccount/finAccountTransTypeAttrs/add?`, null, req);
   }
 };
 export {createFinAccountTransTypeAttr};
 
 
 const updateFinAccountTransTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFinAccountTransTypeAttr method',
   args:{finAccountTransTypeAttrToBeUpdated: {type: FinAccountTransTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateFinAccountTransTypeAttr};
 
 
 const deleteFinAccountTransTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFinAccountTransTypeAttrByIdUpdated method',
   args:{finAccountTransTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

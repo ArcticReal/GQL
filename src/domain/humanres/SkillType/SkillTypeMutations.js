@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {SkillTypeInputType} from '../../humanres/SkillType/SkillTypeInputType.js';
+import {SkillTypeResponseType} from '../../humanres/SkillType/SkillTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSkillType = {
-  type: ResopnseType,
+  type: SkillTypeResponseType,
   description: 'mutation for ofbiz createSkillType method',
   args:{skillTypeToBeAdded: {type: SkillTypeInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createSkillType};
 
 
 const updateSkillType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSkillType method',
   args:{skillTypeToBeUpdated: {type: SkillTypeInputType},skillTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSkillType};
 
 
 const deleteSkillTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSkillTypeByIdUpdated method',
   args:{skillTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

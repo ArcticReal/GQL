@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductGeoResponseType} from '../../product/ProductGeo/ProductGeoResponseType.js';
 import {ProductGeoInputType} from '../../product/ProductGeo/ProductGeoInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductGeo = {
-  type: ResopnseType,
+  type: ProductGeoResponseType,
   description: 'mutation for ofbiz createProductGeo method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductGeo};
 
 
 const updateProductGeo = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductGeo method',
   args:{productGeoToBeUpdated: {type: ProductGeoInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductGeo};
 
 
 const deleteProductGeoByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductGeoByIdUpdated method',
   args:{productGeoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

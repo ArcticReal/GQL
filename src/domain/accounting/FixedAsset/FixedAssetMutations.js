@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {FixedAssetResponseType} from '../../accounting/FixedAsset/FixedAssetResponseType.js';
 import {FixedAssetInputType} from '../../accounting/FixedAsset/FixedAssetInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFixedAsset = {
-  type: ResopnseType,
+  type: FixedAssetResponseType,
   description: 'mutation for ofbiz createFixedAsset method',
-  args:{fixedAssetToBeAdded: {type: FixedAssetInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/fixedAssets/add?`, args.fixedAssetToBeAdded, req);
+    return postToUrl(`accounting/fixedAssets/add?`, null, req);
   }
 };
 export {createFixedAsset};
 
 
 const updateFixedAsset = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFixedAsset method',
   args:{fixedAssetToBeUpdated: {type: FixedAssetInputType},fixedAssetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateFixedAsset};
 
 
 const deleteFixedAssetByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFixedAssetByIdUpdated method',
   args:{fixedAssetId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

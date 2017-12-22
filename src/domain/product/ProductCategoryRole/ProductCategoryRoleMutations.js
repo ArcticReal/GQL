@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductCategoryRoleInputType} from '../../product/ProductCategoryRole/ProductCategoryRoleInputType.js';
+import {ProductCategoryRoleResponseType} from '../../product/ProductCategoryRole/ProductCategoryRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductCategoryRole = {
-  type: ResopnseType,
+  type: ProductCategoryRoleResponseType,
   description: 'mutation for ofbiz createProductCategoryRole method',
-  args:{},
+  args:{productCategoryRoleToBeAdded: {type: ProductCategoryRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productCategoryRoles/add?`, null, req);
+    return postToUrl(`product/product/productCategoryRoles/add?`, args.productCategoryRoleToBeAdded, req);
   }
 };
 export {createProductCategoryRole};
 
 
 const deleteProductCategoryRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductCategoryRoleByIdUpdated method',
   args:{productCategoryRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteProductCategoryRoleByIdUpdated};
 
 
 const updateProductCategoryRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductCategoryRole method',
   args:{productCategoryRoleToBeUpdated: {type: ProductCategoryRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

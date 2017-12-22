@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {UserLoginSecurityGroupResponseType} from '../../login/UserLoginSecurityGroup/UserLoginSecurityGroupResponseType.js';
 import {UserLoginSecurityGroupInputType} from '../../login/UserLoginSecurityGroup/UserLoginSecurityGroupInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createUserLoginSecurityGroup = {
-  type: ResopnseType,
+  type: UserLoginSecurityGroupResponseType,
   description: 'mutation for ofbiz createUserLoginSecurityGroup method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createUserLoginSecurityGroup};
 
 
 const updateUserLoginSecurityGroup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateUserLoginSecurityGroup method',
   args:{userLoginSecurityGroupToBeUpdated: {type: UserLoginSecurityGroupInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateUserLoginSecurityGroup};
 
 
 const deleteUserLoginSecurityGroupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteUserLoginSecurityGroupByIdUpdated method',
   args:{userLoginSecurityGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

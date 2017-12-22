@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductFeatureGroupInputType} from '../../product/ProductFeatureGroup/ProductFeatureGroupInputType.js';
+import {ProductFeatureGroupResponseType} from '../../product/ProductFeatureGroup/ProductFeatureGroupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductFeatureGroup = {
-  type: ResopnseType,
+  type: ProductFeatureGroupResponseType,
   description: 'mutation for ofbiz createProductFeatureGroup method',
-  args:{},
+  args:{productFeatureGroupToBeAdded: {type: ProductFeatureGroupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productFeatureGroups/add?`, null, req);
+    return postToUrl(`product/product/productFeatureGroups/add?`, args.productFeatureGroupToBeAdded, req);
   }
 };
 export {createProductFeatureGroup};
 
 
 const updateProductFeatureGroup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductFeatureGroup method',
   args:{productFeatureGroupToBeUpdated: {type: ProductFeatureGroupInputType},productFeatureGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductFeatureGroup};
 
 
 const deleteProductFeatureGroupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductFeatureGroupByIdUpdated method',
   args:{productFeatureGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

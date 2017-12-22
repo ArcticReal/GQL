@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductStorePaymentSettingInputType} from '../../product/ProductStorePaymentSetting/ProductStorePaymentSettingInputType.js';
+import {ProductStorePaymentSettingResponseType} from '../../product/ProductStorePaymentSetting/ProductStorePaymentSettingResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStorePaymentSetting = {
-  type: ResopnseType,
+  type: ProductStorePaymentSettingResponseType,
   description: 'mutation for ofbiz createProductStorePaymentSetting method',
-  args:{},
+  args:{productStorePaymentSettingToBeAdded: {type: ProductStorePaymentSettingInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStorePaymentSettings/add?`, null, req);
+    return postToUrl(`product/product/productStorePaymentSettings/add?`, args.productStorePaymentSettingToBeAdded, req);
   }
 };
 export {createProductStorePaymentSetting};
 
 
 const updateProductStorePaymentSetting = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStorePaymentSetting method',
   args:{productStorePaymentSettingToBeUpdated: {type: ProductStorePaymentSettingInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStorePaymentSetting};
 
 
 const deleteProductStorePaymentSettingByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStorePaymentSettingByIdUpdated method',
   args:{productStorePaymentSettingId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

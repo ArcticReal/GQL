@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {OrderShipmentResponseType} from '../../order/OrderShipment/OrderShipmentResponseType.js';
 import {OrderShipmentInputType} from '../../order/OrderShipment/OrderShipmentInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderShipment = {
-  type: ResopnseType,
+  type: OrderShipmentResponseType,
   description: 'mutation for ofbiz createOrderShipment method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createOrderShipment};
 
 
 const updateOrderShipment = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderShipment method',
   args:{orderShipmentToBeUpdated: {type: OrderShipmentInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderShipment};
 
 
 const deleteOrderShipmentByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderShipmentByIdUpdated method',
   args:{orderShipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

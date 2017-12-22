@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductStoreCatalogInputType} from '../../product/ProductStoreCatalog/ProductStoreCatalogInputType.js';
+import {ProductStoreCatalogResponseType} from '../../product/ProductStoreCatalog/ProductStoreCatalogResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductStoreCatalog = {
-  type: ResopnseType,
+  type: ProductStoreCatalogResponseType,
   description: 'mutation for ofbiz createProductStoreCatalog method',
-  args:{},
+  args:{productStoreCatalogToBeAdded: {type: ProductStoreCatalogInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStoreCatalogs/add?`, null, req);
+    return postToUrl(`product/product/productStoreCatalogs/add?`, args.productStoreCatalogToBeAdded, req);
   }
 };
 export {createProductStoreCatalog};
 
 
 const updateProductStoreCatalog = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductStoreCatalog method',
   args:{productStoreCatalogToBeUpdated: {type: ProductStoreCatalogInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductStoreCatalog};
 
 
 const deleteProductStoreCatalogByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductStoreCatalogByIdUpdated method',
   args:{productStoreCatalogId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

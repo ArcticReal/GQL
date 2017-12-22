@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ShipmentStatusResponseType} from '../../shipment/ShipmentStatus/ShipmentStatusResponseType.js';
 import {ShipmentStatusInputType} from '../../shipment/ShipmentStatus/ShipmentStatusInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentStatus = {
-  type: ResopnseType,
+  type: ShipmentStatusResponseType,
   description: 'mutation for ofbiz createShipmentStatus method',
-  args:{shipmentStatusToBeAdded: {type: ShipmentStatusInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/shipmentStatuss/add?`, args.shipmentStatusToBeAdded, req);
+    return postToUrl(`shipment/shipment/shipmentStatuss/add?`, null, req);
   }
 };
 export {createShipmentStatus};
 
 
 const updateShipmentStatus = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShipmentStatus method',
   args:{shipmentStatusToBeUpdated: {type: ShipmentStatusInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateShipmentStatus};
 
 
 const deleteShipmentStatusByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShipmentStatusByIdUpdated method',
   args:{shipmentStatusId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

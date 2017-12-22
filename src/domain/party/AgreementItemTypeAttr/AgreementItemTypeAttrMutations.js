@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {AgreementItemTypeAttrInputType} from '../../party/AgreementItemTypeAttr/AgreementItemTypeAttrInputType.js';
+import {AgreementItemTypeAttrResponseType} from '../../party/AgreementItemTypeAttr/AgreementItemTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createAgreementItemTypeAttr = {
-  type: ResopnseType,
+  type: AgreementItemTypeAttrResponseType,
   description: 'mutation for ofbiz createAgreementItemTypeAttr method',
   args:{agreementItemTypeAttrToBeAdded: {type: AgreementItemTypeAttrInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createAgreementItemTypeAttr};
 
 
 const deleteAgreementItemTypeAttrByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteAgreementItemTypeAttrByIdUpdated method',
   args:{agreementItemTypeAttrId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteAgreementItemTypeAttrByIdUpdated};
 
 
 const updateAgreementItemTypeAttr = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateAgreementItemTypeAttr method',
   args:{agreementItemTypeAttrToBeUpdated: {type: AgreementItemTypeAttrInputType},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

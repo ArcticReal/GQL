@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const createApplicationSandbox = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createApplicationSandbox method',
   args:{workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},applicationId: {type: GraphQLString},partyId: {type: GraphQLString},runtimeDataId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {createApplicationSandbox};
 
 
 const createDeliverable = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDeliverable method',
   args:{deliverableName: {type: GraphQLString},deliverableTypeId: {type: GraphQLString},description: {type: GraphQLString},deliverableId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {createDeliverable};
 
 
 const createDeliverableType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createDeliverableType method',
   args:{deliverableTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {createDeliverableType};
 
 
 const createWorkEffortAssocAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWorkEffortAssocAttribute method',
   args:{workEffortIdTo: {type: GraphQLString},workEffortIdFrom: {type: GraphQLString},workEffortAssocTypeId: {type: GraphQLString},attrName: {type: GraphQLString},fromDate: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {createWorkEffortAssocAttribute};
 
 
 const createWorkEffortAssocType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWorkEffortAssocType method',
   args:{parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString},workEffortAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createWorkEffortAssocType};
 
 
 const createWorkEffortAssocTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWorkEffortAssocTypeAttr method',
   args:{workEffortAssocTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createWorkEffortAssocTypeAttr};
 
 
 const createWorkEffortBilling = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWorkEffortBilling method',
   args:{workEffortId: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},percentage: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createWorkEffortBilling};
 
 
 const createWorkEffortContentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWorkEffortContentType method',
   args:{workEffortContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createWorkEffortContentType};
 
 
 const createWorkEffortGoodStandardType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWorkEffortGoodStandardType method',
   args:{workEffortGoodStdTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createWorkEffortGoodStandardType};
 
 
 const createWorkEffortPurposeType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWorkEffortPurposeType method',
   args:{parentTypeId: {type: GraphQLString},workEffortPurposeTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createWorkEffortPurposeType};
 
 
 const createWorkEffortType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWorkEffortType method',
   args:{parentTypeId: {type: GraphQLString},workEffortTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createWorkEffortType};
 
 
 const createWorkEffortTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWorkEffortTypeAttr method',
   args:{workEffortTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createWorkEffortTypeAttr};
 
 
 const deleteApplicationSandbox = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteApplicationSandbox method',
   args:{applicationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {deleteApplicationSandbox};
 
 
 const deleteDeliverable = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteDeliverable method',
   args:{deliverableId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {deleteDeliverable};
 
 
 const deleteDeliverableType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteDeliverableType method',
   args:{deliverableTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {deleteDeliverableType};
 
 
 const deleteWorkEffortAssocAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWorkEffortAssocAttribute method',
   args:{workEffortIdTo: {type: GraphQLString},workEffortIdFrom: {type: GraphQLString},workEffortAssocTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {deleteWorkEffortAssocAttribute};
 
 
 const deleteWorkEffortAssocType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWorkEffortAssocType method',
   args:{workEffortAssocTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {deleteWorkEffortAssocType};
 
 
 const deleteWorkEffortAssocTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWorkEffortAssocTypeAttr method',
   args:{workEffortAssocTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {deleteWorkEffortAssocTypeAttr};
 
 
 const deleteWorkEffortBilling = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWorkEffortBilling method',
   args:{workEffortId: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {deleteWorkEffortBilling};
 
 
 const deleteWorkEffortContentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWorkEffortContentType method',
   args:{workEffortContentTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {deleteWorkEffortContentType};
 
 
 const deleteWorkEffortGoodStandardType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWorkEffortGoodStandardType method',
   args:{workEffortGoodStdTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {deleteWorkEffortGoodStandardType};
 
 
 const deleteWorkEffortPurposeType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWorkEffortPurposeType method',
   args:{workEffortPurposeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {deleteWorkEffortPurposeType};
 
 
 const deleteWorkEffortType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWorkEffortType method',
   args:{workEffortTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {deleteWorkEffortType};
 
 
 const deleteWorkEffortTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWorkEffortTypeAttr method',
   args:{workEffortTypeId: {type: GraphQLString},attrName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {deleteWorkEffortTypeAttr};
 
 
 const updateApplicationSandbox = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateApplicationSandbox method',
   args:{applicationId: {type: GraphQLString},workEffortId: {type: GraphQLString},fromDate: {type: GraphQLString},roleTypeId: {type: GraphQLString},partyId: {type: GraphQLString},runtimeDataId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {updateApplicationSandbox};
 
 
 const updateDeliverable = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDeliverable method',
   args:{deliverableId: {type: GraphQLString},deliverableName: {type: GraphQLString},deliverableTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {updateDeliverable};
 
 
 const updateDeliverableType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateDeliverableType method',
   args:{deliverableTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {updateDeliverableType};
 
 
 const updateWorkEffortAssocAttribute = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWorkEffortAssocAttribute method',
   args:{workEffortIdTo: {type: GraphQLString},workEffortIdFrom: {type: GraphQLString},workEffortAssocTypeId: {type: GraphQLString},attrName: {type: GraphQLString},fromDate: {type: GraphQLString},attrDescription: {type: GraphQLString},attrValue: {type: GraphQLInt}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {updateWorkEffortAssocAttribute};
 
 
 const updateWorkEffortAssocType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWorkEffortAssocType method',
   args:{workEffortAssocTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {updateWorkEffortAssocType};
 
 
 const updateWorkEffortAssocTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWorkEffortAssocTypeAttr method',
   args:{workEffortAssocTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {updateWorkEffortAssocTypeAttr};
 
 
 const updateWorkEffortBilling = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWorkEffortBilling method',
   args:{workEffortId: {type: GraphQLString},invoiceId: {type: GraphQLString},invoiceItemSeqId: {type: GraphQLString},percentage: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {updateWorkEffortBilling};
 
 
 const updateWorkEffortContentType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWorkEffortContentType method',
   args:{workEffortContentTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {updateWorkEffortContentType};
 
 
 const updateWorkEffortGoodStandardType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWorkEffortGoodStandardType method',
   args:{workEffortGoodStdTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {updateWorkEffortGoodStandardType};
 
 
 const updateWorkEffortPurposeType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWorkEffortPurposeType method',
   args:{workEffortPurposeTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {updateWorkEffortPurposeType};
 
 
 const updateWorkEffortType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWorkEffortType method',
   args:{workEffortTypeId: {type: GraphQLString},parentTypeId: {type: GraphQLString},hasTable: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {updateWorkEffortType};
 
 
 const updateWorkEffortTypeAttr = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWorkEffortTypeAttr method',
   args:{workEffortTypeId: {type: GraphQLString},attrName: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

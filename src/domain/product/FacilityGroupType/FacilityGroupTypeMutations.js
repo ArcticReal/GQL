@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {FacilityGroupTypeInputType} from '../../product/FacilityGroupType/FacilityGroupTypeInputType.js';
+import {FacilityGroupTypeResponseType} from '../../product/FacilityGroupType/FacilityGroupTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacilityGroupType = {
-  type: ResopnseType,
+  type: FacilityGroupTypeResponseType,
   description: 'mutation for ofbiz createFacilityGroupType method',
-  args:{},
+  args:{facilityGroupTypeToBeAdded: {type: FacilityGroupTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityGroupTypes/add?`, null, req);
+    return postToUrl(`product/facility/facilityGroupTypes/add?`, args.facilityGroupTypeToBeAdded, req);
   }
 };
 export {createFacilityGroupType};
 
 
 const updateFacilityGroupType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFacilityGroupType method',
   args:{facilityGroupTypeToBeUpdated: {type: FacilityGroupTypeInputType},facilityGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateFacilityGroupType};
 
 
 const deleteFacilityGroupTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFacilityGroupTypeByIdUpdated method',
   args:{facilityGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

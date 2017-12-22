@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {WorkEffortFixedAssetStdResponseType} from '../../workeffort/WorkEffortFixedAssetStd/WorkEffortFixedAssetStdResponseType.js';
 import {WorkEffortFixedAssetStdInputType} from '../../workeffort/WorkEffortFixedAssetStd/WorkEffortFixedAssetStdInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortFixedAssetStd = {
-  type: ResopnseType,
+  type: WorkEffortFixedAssetStdResponseType,
   description: 'mutation for ofbiz createWorkEffortFixedAssetStd method',
-  args:{workEffortFixedAssetStdToBeAdded: {type: WorkEffortFixedAssetStdInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortFixedAssetStds/add?`, args.workEffortFixedAssetStdToBeAdded, req);
+    return postToUrl(`workeffort/workEffort/workEffortFixedAssetStds/add?`, null, req);
   }
 };
 export {createWorkEffortFixedAssetStd};
 
 
 const updateWorkEffortFixedAssetStd = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortFixedAssetStd method',
   args:{workEffortFixedAssetStdToBeUpdated: {type: WorkEffortFixedAssetStdInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortFixedAssetStd};
 
 
 const deleteWorkEffortFixedAssetStdByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortFixedAssetStdByIdUpdated method',
   args:{workEffortFixedAssetStdId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PartyDataSourceInputType} from '../../party/PartyDataSource/PartyDataSourceInputType.js';
+import {PartyDataSourceResponseType} from '../../party/PartyDataSource/PartyDataSourceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPartyDataSource = {
-  type: ResopnseType,
+  type: PartyDataSourceResponseType,
   description: 'mutation for ofbiz createPartyDataSource method',
   args:{partyDataSourceToBeAdded: {type: PartyDataSourceInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPartyDataSource};
 
 
 const updatePartyDataSource = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePartyDataSource method',
   args:{partyDataSourceToBeUpdated: {type: PartyDataSourceInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePartyDataSource};
 
 
 const deletePartyDataSourceByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePartyDataSourceByIdUpdated method',
   args:{partyDataSourceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

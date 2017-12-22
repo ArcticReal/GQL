@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PicklistInputType} from '../../shipment/Picklist/PicklistInputType.js';
+import {PicklistResponseType} from '../../shipment/Picklist/PicklistResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPicklist = {
-  type: ResopnseType,
+  type: PicklistResponseType,
   description: 'mutation for ofbiz createPicklist method',
   args:{picklistToBeAdded: {type: PicklistInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPicklist};
 
 
 const updatePicklist = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePicklist method',
   args:{picklistToBeUpdated: {type: PicklistInputType},picklistId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePicklist};
 
 
 const deletePicklistByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePicklistByIdUpdated method',
   args:{picklistId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

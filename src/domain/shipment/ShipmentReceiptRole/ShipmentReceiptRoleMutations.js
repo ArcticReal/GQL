@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ShipmentReceiptRoleInputType} from '../../shipment/ShipmentReceiptRole/ShipmentReceiptRoleInputType.js';
+import {ShipmentReceiptRoleResponseType} from '../../shipment/ShipmentReceiptRole/ShipmentReceiptRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createShipmentReceiptRole = {
-  type: ResopnseType,
+  type: ShipmentReceiptRoleResponseType,
   description: 'mutation for ofbiz createShipmentReceiptRole method',
   args:{shipmentReceiptRoleToBeAdded: {type: ShipmentReceiptRoleInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createShipmentReceiptRole};
 
 
 const updateShipmentReceiptRole = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateShipmentReceiptRole method',
   args:{shipmentReceiptRoleToBeUpdated: {type: ShipmentReceiptRoleInputType},roleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateShipmentReceiptRole};
 
 
 const deleteShipmentReceiptRoleByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteShipmentReceiptRoleByIdUpdated method',
   args:{shipmentReceiptRoleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

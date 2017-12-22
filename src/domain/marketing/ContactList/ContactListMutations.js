@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ContactListInputType} from '../../marketing/ContactList/ContactListInputType.js';
+import {ContactListResponseType} from '../../marketing/ContactList/ContactListResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContactList = {
-  type: ResopnseType,
+  type: ContactListResponseType,
   description: 'mutation for ofbiz createContactList method',
-  args:{},
+  args:{contactListToBeAdded: {type: ContactListInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/contactLists/add?`, null, req);
+    return postToUrl(`marketing/contactLists/add?`, args.contactListToBeAdded, req);
   }
 };
 export {createContactList};
 
 
 const updateContactList = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContactList method',
   args:{contactListToBeUpdated: {type: ContactListInputType},contactListId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContactList};
 
 
 const deleteContactListByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContactListByIdUpdated method',
   args:{contactListId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {UserLoginPasswordHistoryResponseType} from '../../login/UserLoginPasswordHistory/UserLoginPasswordHistoryResponseType.js';
 import {UserLoginPasswordHistoryInputType} from '../../login/UserLoginPasswordHistory/UserLoginPasswordHistoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createUserLoginPasswordHistory = {
-  type: ResopnseType,
+  type: UserLoginPasswordHistoryResponseType,
   description: 'mutation for ofbiz createUserLoginPasswordHistory method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createUserLoginPasswordHistory};
 
 
 const updateUserLoginPasswordHistory = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateUserLoginPasswordHistory method',
   args:{userLoginPasswordHistoryToBeUpdated: {type: UserLoginPasswordHistoryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateUserLoginPasswordHistory};
 
 
 const deleteUserLoginPasswordHistoryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteUserLoginPasswordHistoryByIdUpdated method',
   args:{userLoginPasswordHistoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

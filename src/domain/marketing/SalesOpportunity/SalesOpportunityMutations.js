@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {SalesOpportunityResponseType} from '../../marketing/SalesOpportunity/SalesOpportunityResponseType.js';
 import {SalesOpportunityInputType} from '../../marketing/SalesOpportunity/SalesOpportunityInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSalesOpportunity = {
-  type: ResopnseType,
+  type: SalesOpportunityResponseType,
   description: 'mutation for ofbiz createSalesOpportunity method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createSalesOpportunity};
 
 
 const updateSalesOpportunity = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSalesOpportunity method',
   args:{salesOpportunityToBeUpdated: {type: SalesOpportunityInputType},salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSalesOpportunity};
 
 
 const deleteSalesOpportunityByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSalesOpportunityByIdUpdated method',
   args:{salesOpportunityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

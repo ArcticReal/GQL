@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {DeliverableInputType} from '../../workeffort/Deliverable/DeliverableInputType.js';
+import {DeliverableResponseType} from '../../workeffort/Deliverable/DeliverableResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDeliverable = {
-  type: ResopnseType,
+  type: DeliverableResponseType,
   description: 'mutation for ofbiz createDeliverable method',
-  args:{},
+  args:{deliverableToBeAdded: {type: DeliverableInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/deliverables/add?`, null, req);
+    return postToUrl(`workeffort/deliverables/add?`, args.deliverableToBeAdded, req);
   }
 };
 export {createDeliverable};
 
 
 const updateDeliverable = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDeliverable method',
   args:{deliverableToBeUpdated: {type: DeliverableInputType},deliverableId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateDeliverable};
 
 
 const deleteDeliverableByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDeliverableByIdUpdated method',
   args:{deliverableId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

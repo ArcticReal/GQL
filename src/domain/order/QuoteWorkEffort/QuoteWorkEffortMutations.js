@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {QuoteWorkEffortResponseType} from '../../order/QuoteWorkEffort/QuoteWorkEffortResponseType.js';
 import {QuoteWorkEffortInputType} from '../../order/QuoteWorkEffort/QuoteWorkEffortInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createQuoteWorkEffort = {
-  type: ResopnseType,
+  type: QuoteWorkEffortResponseType,
   description: 'mutation for ofbiz createQuoteWorkEffort method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createQuoteWorkEffort};
 
 
 const updateQuoteWorkEffort = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateQuoteWorkEffort method',
   args:{quoteWorkEffortToBeUpdated: {type: QuoteWorkEffortInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateQuoteWorkEffort};
 
 
 const deleteQuoteWorkEffortByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteQuoteWorkEffortByIdUpdated method',
   args:{quoteWorkEffortId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

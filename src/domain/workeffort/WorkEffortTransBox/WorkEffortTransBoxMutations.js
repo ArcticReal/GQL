@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {WorkEffortTransBoxInputType} from '../../workeffort/WorkEffortTransBox/WorkEffortTransBoxInputType.js';
+import {WorkEffortTransBoxResponseType} from '../../workeffort/WorkEffortTransBox/WorkEffortTransBoxResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createWorkEffortTransBox = {
-  type: ResopnseType,
+  type: WorkEffortTransBoxResponseType,
   description: 'mutation for ofbiz createWorkEffortTransBox method',
-  args:{},
+  args:{workEffortTransBoxToBeAdded: {type: WorkEffortTransBoxInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortTransBoxs/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortTransBoxs/add?`, args.workEffortTransBoxToBeAdded, req);
   }
 };
 export {createWorkEffortTransBox};
 
 
 const updateWorkEffortTransBox = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateWorkEffortTransBox method',
   args:{workEffortTransBoxToBeUpdated: {type: WorkEffortTransBoxInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateWorkEffortTransBox};
 
 
 const deleteWorkEffortTransBoxByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteWorkEffortTransBoxByIdUpdated method',
   args:{workEffortTransBoxId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

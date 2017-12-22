@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ProductAssocInputType} from '../../product/ProductAssoc/ProductAssocInputType.js';
+import {ProductAssocResponseType} from '../../product/ProductAssoc/ProductAssocResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductAssoc = {
-  type: ResopnseType,
+  type: ProductAssocResponseType,
   description: 'mutation for ofbiz createProductAssoc method',
-  args:{},
+  args:{productAssocToBeAdded: {type: ProductAssocInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productAssocs/add?`, null, req);
+    return postToUrl(`product/product/productAssocs/add?`, args.productAssocToBeAdded, req);
   }
 };
 export {createProductAssoc};
 
 
 const updateProductAssoc = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductAssoc method',
   args:{productAssocToBeUpdated: {type: ProductAssocInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductAssoc};
 
 
 const deleteProductAssocByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductAssocByIdUpdated method',
   args:{productAssocId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

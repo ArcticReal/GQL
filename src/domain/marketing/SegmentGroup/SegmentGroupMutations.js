@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {SegmentGroupInputType} from '../../marketing/SegmentGroup/SegmentGroupInputType.js';
+import {SegmentGroupResponseType} from '../../marketing/SegmentGroup/SegmentGroupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSegmentGroup = {
-  type: ResopnseType,
+  type: SegmentGroupResponseType,
   description: 'mutation for ofbiz createSegmentGroup method',
-  args:{},
+  args:{segmentGroupToBeAdded: {type: SegmentGroupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/segmentGroups/add?`, null, req);
+    return postToUrl(`marketing/segmentGroups/add?`, args.segmentGroupToBeAdded, req);
   }
 };
 export {createSegmentGroup};
 
 
 const updateSegmentGroup = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSegmentGroup method',
   args:{segmentGroupToBeUpdated: {type: SegmentGroupInputType},segmentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSegmentGroup};
 
 
 const deleteSegmentGroupByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSegmentGroupByIdUpdated method',
   args:{segmentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

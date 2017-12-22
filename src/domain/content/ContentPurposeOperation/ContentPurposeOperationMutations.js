@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContentPurposeOperationResponseType} from '../../content/ContentPurposeOperation/ContentPurposeOperationResponseType.js';
 import {ContentPurposeOperationInputType} from '../../content/ContentPurposeOperation/ContentPurposeOperationInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentPurposeOperation = {
-  type: ResopnseType,
+  type: ContentPurposeOperationResponseType,
   description: 'mutation for ofbiz createContentPurposeOperation method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createContentPurposeOperation};
 
 
 const deleteContentPurposeOperationByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentPurposeOperationByIdUpdated method',
   args:{contentPurposeOperationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteContentPurposeOperationByIdUpdated};
 
 
 const updateContentPurposeOperation = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentPurposeOperation method',
   args:{contentPurposeOperationToBeUpdated: {type: ContentPurposeOperationInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

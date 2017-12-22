@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {OrderBlacklistTypeResponseType} from '../../order/OrderBlacklistType/OrderBlacklistTypeResponseType.js';
 import {OrderBlacklistTypeInputType} from '../../order/OrderBlacklistType/OrderBlacklistTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createOrderBlacklistType = {
-  type: ResopnseType,
+  type: OrderBlacklistTypeResponseType,
   description: 'mutation for ofbiz createOrderBlacklistType method',
-  args:{orderBlacklistTypeToBeAdded: {type: OrderBlacklistTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderBlacklist/orderBlacklistTypes/add?`, args.orderBlacklistTypeToBeAdded, req);
+    return postToUrl(`order/orderBlacklist/orderBlacklistTypes/add?`, null, req);
   }
 };
 export {createOrderBlacklistType};
 
 
 const updateOrderBlacklistType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateOrderBlacklistType method',
   args:{orderBlacklistTypeToBeUpdated: {type: OrderBlacklistTypeInputType},orderBlacklistTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateOrderBlacklistType};
 
 
 const deleteOrderBlacklistTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteOrderBlacklistTypeByIdUpdated method',
   args:{orderBlacklistTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

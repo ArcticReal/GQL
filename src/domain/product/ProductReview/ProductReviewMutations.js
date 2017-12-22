@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ProductReviewResponseType} from '../../product/ProductReview/ProductReviewResponseType.js';
 import {ProductReviewInputType} from '../../product/ProductReview/ProductReviewInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createProductReview = {
-  type: ResopnseType,
+  type: ProductReviewResponseType,
   description: 'mutation for ofbiz createProductReview method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createProductReview};
 
 
 const updateProductReview = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateProductReview method',
   args:{productReviewToBeUpdated: {type: ProductReviewInputType},productReviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateProductReview};
 
 
 const deleteProductReviewByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteProductReviewByIdUpdated method',
   args:{productReviewId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

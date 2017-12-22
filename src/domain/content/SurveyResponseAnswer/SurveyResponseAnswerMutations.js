@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {SurveyResponseAnswerInputType} from '../../content/SurveyResponseAnswer/SurveyResponseAnswerInputType.js';
+import {SurveyResponseAnswerResponseType} from '../../content/SurveyResponseAnswer/SurveyResponseAnswerResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSurveyResponseAnswer = {
-  type: ResopnseType,
+  type: SurveyResponseAnswerResponseType,
   description: 'mutation for ofbiz createSurveyResponseAnswer method',
-  args:{},
+  args:{surveyResponseAnswerToBeAdded: {type: SurveyResponseAnswerInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/survey/surveyResponseAnswers/add?`, null, req);
+    return postToUrl(`content/survey/surveyResponseAnswers/add?`, args.surveyResponseAnswerToBeAdded, req);
   }
 };
 export {createSurveyResponseAnswer};
 
 
 const updateSurveyResponseAnswer = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSurveyResponseAnswer method',
   args:{surveyResponseAnswerToBeUpdated: {type: SurveyResponseAnswerInputType},surveyMultiRespColId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSurveyResponseAnswer};
 
 
 const deleteSurveyResponseAnswerByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSurveyResponseAnswerByIdUpdated method',
   args:{surveyResponseAnswerId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

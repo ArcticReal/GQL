@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {InventoryTransferResponseType} from '../../product/InventoryTransfer/InventoryTransferResponseType.js';
 import {InventoryTransferInputType} from '../../product/InventoryTransfer/InventoryTransferInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInventoryTransfer = {
-  type: ResopnseType,
+  type: InventoryTransferResponseType,
   description: 'mutation for ofbiz createInventoryTransfer method',
-  args:{inventoryTransferToBeAdded: {type: InventoryTransferInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/inventoryTransfers/add?`, args.inventoryTransferToBeAdded, req);
+    return postToUrl(`product/inventoryTransfers/add?`, null, req);
   }
 };
 export {createInventoryTransfer};
 
 
 const updateInventoryTransfer = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInventoryTransfer method',
   args:{inventoryTransferToBeUpdated: {type: InventoryTransferInputType},inventoryTransferId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateInventoryTransfer};
 
 
 const deleteInventoryTransferByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInventoryTransferByIdUpdated method',
   args:{inventoryTransferId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

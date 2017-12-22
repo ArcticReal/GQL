@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {DeliverableTypeResponseType} from '../../workeffort/DeliverableType/DeliverableTypeResponseType.js';
 import {DeliverableTypeInputType} from '../../workeffort/DeliverableType/DeliverableTypeInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createDeliverableType = {
-  type: ResopnseType,
+  type: DeliverableTypeResponseType,
   description: 'mutation for ofbiz createDeliverableType method',
-  args:{deliverableTypeToBeAdded: {type: DeliverableTypeInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/deliverable/deliverableTypes/add?`, args.deliverableTypeToBeAdded, req);
+    return postToUrl(`workeffort/deliverable/deliverableTypes/add?`, null, req);
   }
 };
 export {createDeliverableType};
 
 
 const updateDeliverableType = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateDeliverableType method',
   args:{deliverableTypeToBeUpdated: {type: DeliverableTypeInputType},deliverableTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateDeliverableType};
 
 
 const deleteDeliverableTypeByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteDeliverableTypeByIdUpdated method',
   args:{deliverableTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {FacilityInputType} from '../../product/Facility/FacilityInputType.js';
+import {FacilityResponseType} from '../../product/Facility/FacilityResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createFacility = {
-  type: ResopnseType,
+  type: FacilityResponseType,
   description: 'mutation for ofbiz createFacility method',
-  args:{},
+  args:{facilityToBeAdded: {type: FacilityInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facilitys/add?`, null, req);
+    return postToUrl(`product/facilitys/add?`, args.facilityToBeAdded, req);
   }
 };
 export {createFacility};
 
 
 const updateFacility = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateFacility method',
   args:{facilityToBeUpdated: {type: FacilityInputType},facilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateFacility};
 
 
 const deleteFacilityByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteFacilityByIdUpdated method',
   args:{facilityId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

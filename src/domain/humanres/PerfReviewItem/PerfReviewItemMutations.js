@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {PerfReviewItemInputType} from '../../humanres/PerfReviewItem/PerfReviewItemInputType.js';
+import {PerfReviewItemResponseType} from '../../humanres/PerfReviewItem/PerfReviewItemResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createPerfReviewItem = {
-  type: ResopnseType,
+  type: PerfReviewItemResponseType,
   description: 'mutation for ofbiz createPerfReviewItem method',
   args:{perfReviewItemToBeAdded: {type: PerfReviewItemInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createPerfReviewItem};
 
 
 const updatePerfReviewItem = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updatePerfReviewItem method',
   args:{perfReviewItemToBeUpdated: {type: PerfReviewItemInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updatePerfReviewItem};
 
 
 const deletePerfReviewItemByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deletePerfReviewItemByIdUpdated method',
   args:{perfReviewItemId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

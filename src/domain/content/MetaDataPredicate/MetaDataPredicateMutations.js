@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {MetaDataPredicateResponseType} from '../../content/MetaDataPredicate/MetaDataPredicateResponseType.js';
 import {MetaDataPredicateInputType} from '../../content/MetaDataPredicate/MetaDataPredicateInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createMetaDataPredicate = {
-  type: ResopnseType,
+  type: MetaDataPredicateResponseType,
   description: 'mutation for ofbiz createMetaDataPredicate method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createMetaDataPredicate};
 
 
 const updateMetaDataPredicate = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateMetaDataPredicate method',
   args:{metaDataPredicateToBeUpdated: {type: MetaDataPredicateInputType},metaDataPredicateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateMetaDataPredicate};
 
 
 const deleteMetaDataPredicateByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteMetaDataPredicateByIdUpdated method',
   args:{metaDataPredicateId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

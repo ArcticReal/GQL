@@ -9,23 +9,24 @@ import {
   GraphQLList,
 } from 'graphql';
 import {InvoiceInputType} from '../../accounting/Invoice/InvoiceInputType.js';
+import {InvoiceResponseType} from '../../accounting/Invoice/InvoiceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createInvoice = {
-  type: ResopnseType,
+  type: InvoiceResponseType,
   description: 'mutation for ofbiz createInvoice method',
-  args:{},
+  args:{invoiceToBeAdded: {type: InvoiceInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoices/add?`, null, req);
+    return postToUrl(`accounting/invoices/add?`, args.invoiceToBeAdded, req);
   }
 };
 export {createInvoice};
 
 
 const updateInvoice = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateInvoice method',
   args:{invoiceToBeUpdated: {type: InvoiceInputType},invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateInvoice};
 
 
 const deleteInvoiceByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteInvoiceByIdUpdated method',
   args:{invoiceId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

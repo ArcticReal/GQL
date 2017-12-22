@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {ContentSearchConstraintResponseType} from '../../content/ContentSearchConstraint/ContentSearchConstraintResponseType.js';
 import {ContentSearchConstraintInputType} from '../../content/ContentSearchConstraint/ContentSearchConstraintInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createContentSearchConstraint = {
-  type: ResopnseType,
+  type: ContentSearchConstraintResponseType,
   description: 'mutation for ofbiz createContentSearchConstraint method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createContentSearchConstraint};
 
 
 const updateContentSearchConstraint = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateContentSearchConstraint method',
   args:{contentSearchConstraintToBeUpdated: {type: ContentSearchConstraintInputType},constraintSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateContentSearchConstraint};
 
 
 const deleteContentSearchConstraintByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteContentSearchConstraintByIdUpdated method',
   args:{contentSearchConstraintId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {RequirementBudgetAllocationInputType} from '../../order/RequirementBudgetAllocation/RequirementBudgetAllocationInputType.js';
+import {RequirementBudgetAllocationResponseType} from '../../order/RequirementBudgetAllocation/RequirementBudgetAllocationResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createRequirementBudgetAllocation = {
-  type: ResopnseType,
+  type: RequirementBudgetAllocationResponseType,
   description: 'mutation for ofbiz createRequirementBudgetAllocation method',
   args:{requirementBudgetAllocationToBeAdded: {type: RequirementBudgetAllocationInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createRequirementBudgetAllocation};
 
 
 const updateRequirementBudgetAllocation = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateRequirementBudgetAllocation method',
   args:{requirementBudgetAllocationToBeUpdated: {type: RequirementBudgetAllocationInputType},budgetItemSeqId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateRequirementBudgetAllocation};
 
 
 const deleteRequirementBudgetAllocationByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteRequirementBudgetAllocationByIdUpdated method',
   args:{requirementBudgetAllocationId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

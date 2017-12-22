@@ -9,12 +9,13 @@ import {
   GraphQLList,
 } from 'graphql';
 import {SurveyResponseInputType} from '../../content/SurveyResponse/SurveyResponseInputType.js';
+import {SurveyResponseResponseType} from '../../content/SurveyResponse/SurveyResponseResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSurveyResponse = {
-  type: ResopnseType,
+  type: SurveyResponseResponseType,
   description: 'mutation for ofbiz createSurveyResponse method',
   args:{surveyResponseToBeAdded: {type: SurveyResponseInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createSurveyResponse};
 
 
 const updateSurveyResponse = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSurveyResponse method',
   args:{surveyResponseToBeUpdated: {type: SurveyResponseInputType},surveyResponseId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSurveyResponse};
 
 
 const deleteSurveyResponseByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSurveyResponseByIdUpdated method',
   args:{surveyResponseId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

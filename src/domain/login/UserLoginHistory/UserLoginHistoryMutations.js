@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {UserLoginHistoryResponseType} from '../../login/UserLoginHistory/UserLoginHistoryResponseType.js';
 import {UserLoginHistoryInputType} from '../../login/UserLoginHistory/UserLoginHistoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createUserLoginHistory = {
-  type: ResopnseType,
+  type: UserLoginHistoryResponseType,
   description: 'mutation for ofbiz createUserLoginHistory method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createUserLoginHistory};
 
 
 const updateUserLoginHistory = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateUserLoginHistory method',
   args:{userLoginHistoryToBeUpdated: {type: UserLoginHistoryInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateUserLoginHistory};
 
 
 const deleteUserLoginHistoryByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteUserLoginHistoryByIdUpdated method',
   args:{userLoginHistoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

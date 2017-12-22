@@ -8,13 +8,14 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {CustRequestNoteResponseType} from '../../order/CustRequestNote/CustRequestNoteResponseType.js';
 import {CustRequestNoteInputType} from '../../order/CustRequestNote/CustRequestNoteInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createCustRequestNote = {
-  type: ResopnseType,
+  type: CustRequestNoteResponseType,
   description: 'mutation for ofbiz createCustRequestNote method',
   args:{},
   resolve: (root, args, {req}) => {
@@ -25,7 +26,7 @@ export {createCustRequestNote};
 
 
 const deleteCustRequestNoteByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteCustRequestNoteByIdUpdated method',
   args:{custRequestNoteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {deleteCustRequestNoteByIdUpdated};
 
 
 const updateCustRequestNote = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateCustRequestNote method',
   args:{custRequestNoteToBeUpdated: {type: CustRequestNoteInputType},nullVal: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

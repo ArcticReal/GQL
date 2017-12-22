@@ -9,11 +9,11 @@ import {
   GraphQLList,
 } from 'graphql';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const addPriceRuleToMarketingCampaign = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addPriceRuleToMarketingCampaign method',
   args:{marketingCampaignId: {type: GraphQLString},productPriceRuleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -24,7 +24,7 @@ export {addPriceRuleToMarketingCampaign};
 
 
 const addPromoToMarketingCampaign = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz addPromoToMarketingCampaign method',
   args:{marketingCampaignId: {type: GraphQLString},productPromoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -35,7 +35,7 @@ export {addPromoToMarketingCampaign};
 
 
 const arePartiesRelatedThroughSegmentGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz arePartiesRelatedThroughSegmentGroup method',
   args:{partyId: {type: GraphQLString},toPartyId: {type: GraphQLString},roleTypeId: {type: GraphQLString},toRoleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -46,7 +46,7 @@ export {arePartiesRelatedThroughSegmentGroup};
 
 
 const convertLeadToContact = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz convertLeadToContact method',
   args:{partyId: {type: GraphQLString},partyGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -57,7 +57,7 @@ export {convertLeadToContact};
 
 
 const createAccount = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createAccount method',
   args:{emailAddress: {type: GraphQLString},extension: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -68,7 +68,7 @@ export {createAccount};
 
 
 const createContact = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContact method',
   args:{partyIdFrom: {type: GraphQLString},emailAddress: {type: GraphQLString},extension: {type: GraphQLString},contactListId: {type: GraphQLString},quickAdd: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -79,7 +79,7 @@ export {createContact};
 
 
 const createContactList = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContactList method',
   args:{contactListName: {type: GraphQLString},contactListTypeId: {type: GraphQLString},verifyEmailSubject: {type: GraphQLString},comments: {type: GraphQLString},marketingCampaignId: {type: GraphQLString},optOutScreen: {type: GraphQLString},description: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},verifyEmailFrom: {type: GraphQLString},ownerPartyId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},singleUse: {type: GraphQLString},contactListId: {type: GraphQLString},isPublic: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},verifyEmailScreen: {type: GraphQLString},verifyEmailWebSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -90,7 +90,7 @@ export {createContactList};
 
 
 const createContactListParty = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContactListParty method',
   args:{statusId: {type: GraphQLString},contactListId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},baseLocation: {type: GraphQLString},preferredContactMechId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -101,7 +101,7 @@ export {createContactListParty};
 
 
 const createContactListPartyStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createContactListPartyStatus method',
   args:{statusId: {type: GraphQLString},contactListId: {type: GraphQLString},preferredContactMechId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},optInVerifyCode: {type: GraphQLString},baseLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -112,7 +112,7 @@ export {createContactListPartyStatus};
 
 
 const createLead = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createLead method',
   args:{partyIdFrom: {type: GraphQLString},emailAddress: {type: GraphQLString},groupName: {type: GraphQLString},dataSourceId: {type: GraphQLString},extension: {type: GraphQLString},numEmployees: {type: GraphQLString},contactListId: {type: GraphQLString},title: {type: GraphQLString},officeSiteName: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -123,7 +123,7 @@ export {createLead};
 
 
 const createMarketingCampaign = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createMarketingCampaign method',
   args:{expectedResponsePercent: {type: GraphQLFloat},expectedRevenue: {type: GraphQLFloat},convertedLeads: {type: GraphQLString},campaignSummary: {type: GraphQLString},numSent: {type: GraphQLInt},parentCampaignId: {type: GraphQLString},estimatedCost: {type: GraphQLFloat},isActive: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},budgetedCost: {type: GraphQLFloat},campaignName: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},startDate: {type: GraphQLString},actualCost: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -134,7 +134,7 @@ export {createMarketingCampaign};
 
 
 const createMarketingCampaignNote = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createMarketingCampaignNote method',
   args:{marketingCampaignId: {type: GraphQLString},noteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -145,7 +145,7 @@ export {createMarketingCampaignNote};
 
 
 const createMarketingCampaignRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createMarketingCampaignRole method',
   args:{roleTypeId: {type: GraphQLString},marketingCampaignId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -156,7 +156,7 @@ export {createMarketingCampaignRole};
 
 
 const createSegmentGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSegmentGroup method',
   args:{description: {type: GraphQLString},productStoreId: {type: GraphQLString},segmentGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -167,7 +167,7 @@ export {createSegmentGroup};
 
 
 const createSegmentGroupClassification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSegmentGroupClassification method',
   args:{partyClassificationGroupId: {type: GraphQLString},segmentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -178,7 +178,7 @@ export {createSegmentGroupClassification};
 
 
 const createSegmentGroupGeo = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSegmentGroupGeo method',
   args:{geoId: {type: GraphQLString},segmentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -189,7 +189,7 @@ export {createSegmentGroupGeo};
 
 
 const createSegmentGroupRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSegmentGroupRole method',
   args:{roleTypeId: {type: GraphQLString},segmentGroupId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -200,7 +200,7 @@ export {createSegmentGroupRole};
 
 
 const createSegmentGroupType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createSegmentGroupType method',
   args:{description: {type: GraphQLString},segmentGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -211,7 +211,7 @@ export {createSegmentGroupType};
 
 
 const createTrackingCode = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTrackingCode method',
   args:{trackingCodeId: {type: GraphQLString},trackingCodeTypeId: {type: GraphQLString},trackableLifetime: {type: GraphQLInt},redirectUrl: {type: GraphQLString},comments: {type: GraphQLString},marketingCampaignId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},overrideLogo: {type: GraphQLString},groupId: {type: GraphQLString},description: {type: GraphQLString},billableLifetime: {type: GraphQLInt},thruDate: {type: GraphQLString},subgroupId: {type: GraphQLString},fromDate: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},overrideCss: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},prodCatalogId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -222,7 +222,7 @@ export {createTrackingCode};
 
 
 const createTrackingCodeOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTrackingCodeOrder method',
   args:{orderId: {type: GraphQLString},trackingCodeTypeId: {type: GraphQLString},trackingCodeId: {type: GraphQLString},siteId: {type: GraphQLString},hasExported: {type: GraphQLString},affiliateReferredTimeStamp: {type: GraphQLString},isBillable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -233,7 +233,7 @@ export {createTrackingCodeOrder};
 
 
 const createTrackingCodeOrderReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTrackingCodeOrderReturn method',
   args:{orderId: {type: GraphQLString},trackingCodeTypeId: {type: GraphQLString},returnId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},trackingCodeId: {type: GraphQLString},siteId: {type: GraphQLString},hasExported: {type: GraphQLString},affiliateReferredTimeStamp: {type: GraphQLString},isBillable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -244,7 +244,7 @@ export {createTrackingCodeOrderReturn};
 
 
 const createTrackingCodeOrderReturns = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTrackingCodeOrderReturns method',
   args:{returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -255,7 +255,7 @@ export {createTrackingCodeOrderReturns};
 
 
 const createTrackingCodeType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createTrackingCodeType method',
   args:{trackingCodeTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -266,7 +266,7 @@ export {createTrackingCodeType};
 
 
 const createWebSiteContactList = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz createWebSiteContactList method',
   args:{fromDate: {type: GraphQLString},contactListId: {type: GraphQLString},webSiteId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -277,7 +277,7 @@ export {createWebSiteContactList};
 
 
 const deleteContactListParty = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteContactListParty method',
   args:{fromDate: {type: GraphQLString},contactListId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -288,7 +288,7 @@ export {deleteContactListParty};
 
 
 const deleteMarketingCampaign = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteMarketingCampaign method',
   args:{marketingCampaignId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -299,7 +299,7 @@ export {deleteMarketingCampaign};
 
 
 const deleteMarketingCampaignNote = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteMarketingCampaignNote method',
   args:{marketingCampaignId: {type: GraphQLString},noteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -310,7 +310,7 @@ export {deleteMarketingCampaignNote};
 
 
 const deleteMarketingCampaignRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteMarketingCampaignRole method',
   args:{roleTypeId: {type: GraphQLString},marketingCampaignId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -321,7 +321,7 @@ export {deleteMarketingCampaignRole};
 
 
 const deleteSegmentGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSegmentGroup method',
   args:{segmentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -332,7 +332,7 @@ export {deleteSegmentGroup};
 
 
 const deleteSegmentGroupClassification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSegmentGroupClassification method',
   args:{partyClassificationGroupId: {type: GraphQLString},segmentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -343,7 +343,7 @@ export {deleteSegmentGroupClassification};
 
 
 const deleteSegmentGroupGeo = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSegmentGroupGeo method',
   args:{geoId: {type: GraphQLString},segmentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -354,7 +354,7 @@ export {deleteSegmentGroupGeo};
 
 
 const deleteSegmentGroupRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSegmentGroupRole method',
   args:{roleTypeId: {type: GraphQLString},segmentGroupId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -365,7 +365,7 @@ export {deleteSegmentGroupRole};
 
 
 const deleteSegmentGroupType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteSegmentGroupType method',
   args:{segmentGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -376,7 +376,7 @@ export {deleteSegmentGroupType};
 
 
 const deleteTrackingCode = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteTrackingCode method',
   args:{trackingCodeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -387,7 +387,7 @@ export {deleteTrackingCode};
 
 
 const deleteTrackingCodeOrderReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteTrackingCodeOrderReturn method',
   args:{orderId: {type: GraphQLString},trackingCodeTypeId: {type: GraphQLString},returnId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -398,7 +398,7 @@ export {deleteTrackingCodeOrderReturn};
 
 
 const deleteTrackingCodeType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteTrackingCodeType method',
   args:{trackingCodeTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -409,7 +409,7 @@ export {deleteTrackingCodeType};
 
 
 const deleteWebSiteContactList = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz deleteWebSiteContactList method',
   args:{fromDate: {type: GraphQLString},contactListId: {type: GraphQLString},webSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -420,7 +420,7 @@ export {deleteWebSiteContactList};
 
 
 const exportVCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz exportVCard method',
   args:{partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -431,7 +431,7 @@ export {exportVCard};
 
 
 const importVCard = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz importVCard method',
   args:{infile: {type: GraphQLString},serviceName: {type: GraphQLString},partyType: {type: GraphQLString},serviceContext: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -442,7 +442,7 @@ export {importVCard};
 
 
 const marketingPermissionService = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz marketingPermissionService method',
   args:{primaryPermission: {type: GraphQLString},altPermission: {type: GraphQLString},resourceDescription: {type: GraphQLString},mainAction: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -453,7 +453,7 @@ export {marketingPermissionService};
 
 
 const mergeContacts = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz mergeContacts method',
   args:{partyIdTo: {type: GraphQLString},partyId: {type: GraphQLString},emailContactMechId: {type: GraphQLString},addrContactMechId: {type: GraphQLString},useEmail2: {type: GraphQLString},useContactNum2: {type: GraphQLString},phoneContactMechIdTo: {type: GraphQLString},emailContactMechIdTo: {type: GraphQLString},addrContactMechIdTo: {type: GraphQLString},phoneContactMechId: {type: GraphQLString},useAddress2: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -464,7 +464,7 @@ export {mergeContacts};
 
 
 const optOutOfListFromCommEvent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz optOutOfListFromCommEvent method',
   args:{communicationEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -475,7 +475,7 @@ export {optOutOfListFromCommEvent};
 
 
 const removeContactList = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removeContactList method',
   args:{contactListId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -486,7 +486,7 @@ export {removeContactList};
 
 
 const removePriceRuleFromMarketingCampaign = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removePriceRuleFromMarketingCampaign method',
   args:{marketingCampaignId: {type: GraphQLString},productPriceRuleId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -497,7 +497,7 @@ export {removePriceRuleFromMarketingCampaign};
 
 
 const removePromoFromMarketingCampaign = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz removePromoFromMarketingCampaign method',
   args:{marketingCampaignId: {type: GraphQLString},productPromoId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -508,7 +508,7 @@ export {removePromoFromMarketingCampaign};
 
 
 const sendContactListPartySubscribeEmail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendContactListPartySubscribeEmail method',
   args:{preferredContactMechId: {type: GraphQLString},fromDate: {type: GraphQLString},statusId: {type: GraphQLString},baseLocation: {type: GraphQLString},contactListId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -519,7 +519,7 @@ export {sendContactListPartySubscribeEmail};
 
 
 const sendContactListPartyUnSubscribeEmail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendContactListPartyUnSubscribeEmail method',
   args:{preferredContactMechId: {type: GraphQLString},fromDate: {type: GraphQLString},statusId: {type: GraphQLString},contactListId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -530,7 +530,7 @@ export {sendContactListPartyUnSubscribeEmail};
 
 
 const sendContactListPartyUnSubscribeVerifyEmail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendContactListPartyUnSubscribeVerifyEmail method',
   args:{preferredContactMechId: {type: GraphQLString},fromDate: {type: GraphQLString},statusId: {type: GraphQLString},baseLocation: {type: GraphQLString},contactListId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -541,7 +541,7 @@ export {sendContactListPartyUnSubscribeVerifyEmail};
 
 
 const sendContactListPartyVerifyEmail = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz sendContactListPartyVerifyEmail method',
   args:{fromDate: {type: GraphQLString},contactListId: {type: GraphQLString},partyId: {type: GraphQLString},baseLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -552,7 +552,7 @@ export {sendContactListPartyVerifyEmail};
 
 
 const signUpForContactList = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz signUpForContactList method',
   args:{contactListId: {type: GraphQLString},email: {type: GraphQLString},baseLocation: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -563,7 +563,7 @@ export {signUpForContactList};
 
 
 const unsubscribeContactListParty = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz unsubscribeContactListParty method',
   args:{contactListId: {type: GraphQLString},email: {type: GraphQLString},baseLocation: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -574,7 +574,7 @@ export {unsubscribeContactListParty};
 
 
 const unsubscribeContactListPartyContachMech = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz unsubscribeContactListPartyContachMech method',
   args:{contactListId: {type: GraphQLString},preferredContactMechId: {type: GraphQLString},baseLocation: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -585,7 +585,7 @@ export {unsubscribeContactListPartyContachMech};
 
 
 const updateCommStatusFromCommEvent = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateCommStatusFromCommEvent method',
   args:{statusId: {type: GraphQLString},communicationEventId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -596,7 +596,7 @@ export {updateCommStatusFromCommEvent};
 
 
 const updateContactList = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactList method',
   args:{contactListId: {type: GraphQLString},verifyEmailSubject: {type: GraphQLString},comments: {type: GraphQLString},contactListName: {type: GraphQLString},marketingCampaignId: {type: GraphQLString},optOutScreen: {type: GraphQLString},description: {type: GraphQLString},contactMechTypeId: {type: GraphQLString},contactListTypeId: {type: GraphQLString},verifyEmailFrom: {type: GraphQLString},ownerPartyId: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},singleUse: {type: GraphQLString},isPublic: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},verifyEmailScreen: {type: GraphQLString},verifyEmailWebSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -607,7 +607,7 @@ export {updateContactList};
 
 
 const updateContactListCommStatus = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactListCommStatus method',
   args:{statusId: {type: GraphQLString},contactListId: {type: GraphQLString},communicationEventId: {type: GraphQLString},contactMechId: {type: GraphQLString},messageId: {type: GraphQLInt},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -618,7 +618,7 @@ export {updateContactListCommStatus};
 
 
 const updateContactListParty = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactListParty method',
   args:{contactListId: {type: GraphQLString},partyId: {type: GraphQLString},fromDate: {type: GraphQLString},optInVerifyCode: {type: GraphQLString},statusId: {type: GraphQLString},baseLocation: {type: GraphQLString},preferredContactMechId: {type: GraphQLString},productStoreId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -629,7 +629,7 @@ export {updateContactListParty};
 
 
 const updateContactListPartyNoUserLogin = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateContactListPartyNoUserLogin method',
   args:{contactListId: {type: GraphQLString},fromDate: {type: GraphQLString},optInVerifyCode: {type: GraphQLString},statusId: {type: GraphQLString},baseLocation: {type: GraphQLString},preferredContactMechId: {type: GraphQLString},productStoreId: {type: GraphQLString},partyId: {type: GraphQLString},email: {type: GraphQLString},thruDate: {type: GraphQLString},webSiteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -640,7 +640,7 @@ export {updateContactListPartyNoUserLogin};
 
 
 const updateMarketingCampaign = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateMarketingCampaign method',
   args:{marketingCampaignId: {type: GraphQLString},expectedResponsePercent: {type: GraphQLFloat},expectedRevenue: {type: GraphQLFloat},convertedLeads: {type: GraphQLString},campaignSummary: {type: GraphQLString},numSent: {type: GraphQLInt},parentCampaignId: {type: GraphQLString},estimatedCost: {type: GraphQLFloat},isActive: {type: GraphQLString},thruDate: {type: GraphQLString},fromDate: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},currencyUomId: {type: GraphQLString},statusId: {type: GraphQLString},budgetedCost: {type: GraphQLFloat},campaignName: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},startDate: {type: GraphQLString},actualCost: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
@@ -651,7 +651,7 @@ export {updateMarketingCampaign};
 
 
 const updatePartyEmailContactListParty = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updatePartyEmailContactListParty method',
   args:{oldContactMechId: {type: GraphQLString},contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -662,7 +662,7 @@ export {updatePartyEmailContactListParty};
 
 
 const updateSegmentGroup = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSegmentGroup method',
   args:{segmentGroupId: {type: GraphQLString},description: {type: GraphQLString},productStoreId: {type: GraphQLString},segmentGroupTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -673,7 +673,7 @@ export {updateSegmentGroup};
 
 
 const updateSegmentGroupClassification = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSegmentGroupClassification method',
   args:{partyClassificationGroupId: {type: GraphQLString},segmentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -684,7 +684,7 @@ export {updateSegmentGroupClassification};
 
 
 const updateSegmentGroupGeo = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSegmentGroupGeo method',
   args:{geoId: {type: GraphQLString},segmentGroupId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -695,7 +695,7 @@ export {updateSegmentGroupGeo};
 
 
 const updateSegmentGroupRole = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSegmentGroupRole method',
   args:{roleTypeId: {type: GraphQLString},segmentGroupId: {type: GraphQLString},partyId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -706,7 +706,7 @@ export {updateSegmentGroupRole};
 
 
 const updateSegmentGroupType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateSegmentGroupType method',
   args:{segmentGroupTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -717,7 +717,7 @@ export {updateSegmentGroupType};
 
 
 const updateTrackingCode = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTrackingCode method',
   args:{trackingCodeId: {type: GraphQLString},trackableLifetime: {type: GraphQLInt},redirectUrl: {type: GraphQLString},comments: {type: GraphQLString},marketingCampaignId: {type: GraphQLString},lastModifiedDate: {type: GraphQLString},overrideLogo: {type: GraphQLString},groupId: {type: GraphQLString},description: {type: GraphQLString},billableLifetime: {type: GraphQLInt},thruDate: {type: GraphQLString},subgroupId: {type: GraphQLString},fromDate: {type: GraphQLString},lastModifiedByUserLogin: {type: GraphQLString},createdDate: {type: GraphQLString},trackingCodeTypeId: {type: GraphQLString},overrideCss: {type: GraphQLString},createdByUserLogin: {type: GraphQLString},prodCatalogId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -728,7 +728,7 @@ export {updateTrackingCode};
 
 
 const updateTrackingCodeOrder = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTrackingCodeOrder method',
   args:{orderId: {type: GraphQLString},trackingCodeTypeId: {type: GraphQLString},trackingCodeId: {type: GraphQLString},siteId: {type: GraphQLString},hasExported: {type: GraphQLString},affiliateReferredTimeStamp: {type: GraphQLString},isBillable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -739,7 +739,7 @@ export {updateTrackingCodeOrder};
 
 
 const updateTrackingCodeOrderReturn = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTrackingCodeOrderReturn method',
   args:{orderId: {type: GraphQLString},trackingCodeTypeId: {type: GraphQLString},returnId: {type: GraphQLString},orderItemSeqId: {type: GraphQLString},trackingCodeId: {type: GraphQLString},siteId: {type: GraphQLString},hasExported: {type: GraphQLString},affiliateReferredTimeStamp: {type: GraphQLString},isBillable: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -750,7 +750,7 @@ export {updateTrackingCodeOrderReturn};
 
 
 const updateTrackingCodeType = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateTrackingCodeType method',
   args:{trackingCodeTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -761,7 +761,7 @@ export {updateTrackingCodeType};
 
 
 const updateWebSiteContactList = {
-  type: ResopnseType,
+  type: ResponseType,
   description: 'mutation for ofbiz updateWebSiteContactList method',
   args:{fromDate: {type: GraphQLString},contactListId: {type: GraphQLString},webSiteId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

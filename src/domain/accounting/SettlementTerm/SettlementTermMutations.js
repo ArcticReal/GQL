@@ -8,24 +8,25 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
+import {SettlementTermResponseType} from '../../accounting/SettlementTerm/SettlementTermResponseType.js';
 import {SettlementTermInputType} from '../../accounting/SettlementTerm/SettlementTermInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
 
 const createSettlementTerm = {
-  type: ResopnseType,
+  type: SettlementTermResponseType,
   description: 'mutation for ofbiz createSettlementTerm method',
-  args:{settlementTermToBeAdded: {type: SettlementTermInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/settlementTerms/add?`, args.settlementTermToBeAdded, req);
+    return postToUrl(`accounting/settlementTerms/add?`, null, req);
   }
 };
 export {createSettlementTerm};
 
 
 const updateSettlementTerm = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz updateSettlementTerm method',
   args:{settlementTermToBeUpdated: {type: SettlementTermInputType},settlementTermId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +37,7 @@ export {updateSettlementTerm};
 
 
 const deleteSettlementTermByIdUpdated = {
-  type: ResopnseType,
+  type: GraphQLString,
   description: 'mutation for ofbiz deleteSettlementTermByIdUpdated method',
   args:{settlementTermId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

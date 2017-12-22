@@ -9,12 +9,14 @@ import {
   GraphQLList,
 } from 'graphql';
 import {ContactDTOInputType} from '../dto/ContactDTOInputType.js';
+import {OrderDetailsDTOResponseType} from '../dto/OrderDetailsDTOResponseType.js';
+import {OrderHeaderResponseType} from '../order/OrderHeader/OrderHeaderResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../framework/ofbizCon.js';
-import {ResopnseType,KeyValueInputType} from '../../framework/helpTypes.js';
+import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 
 
 const finishOrder = {
-  type: ResopnseType,
+  type: OrderDetailsDTOResponseType,
   description: 'mutation for ofbiz finishOrder method',
   args:{contact: {type: ContactDTOInputType}},
   resolve: (root, args, {req}) => {
@@ -25,7 +27,7 @@ export {finishOrder};
 
 
 const approveOrder = {
-  type: ResopnseType,
+  type: OrderHeaderResponseType,
   description: 'mutation for ofbiz approveOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -36,7 +38,7 @@ export {approveOrder};
 
 
 const cancelOrder = {
-  type: ResopnseType,
+  type: OrderHeaderResponseType,
   description: 'mutation for ofbiz cancelOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -47,7 +49,7 @@ export {cancelOrder};
 
 
 const completeOrder = {
-  type: ResopnseType,
+  type: OrderHeaderResponseType,
   description: 'mutation for ofbiz completeOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -58,7 +60,7 @@ export {completeOrder};
 
 
 const createOrder = {
-  type: ResopnseType,
+  type: OrderHeaderResponseType,
   description: 'mutation for ofbiz createOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -69,7 +71,7 @@ export {createOrder};
 
 
 const holdOrder = {
-  type: ResopnseType,
+  type: OrderHeaderResponseType,
   description: 'mutation for ofbiz holdOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -80,7 +82,7 @@ export {holdOrder};
 
 
 const rejectOrder = {
-  type: ResopnseType,
+  type: OrderHeaderResponseType,
   description: 'mutation for ofbiz rejectOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
@@ -91,7 +93,7 @@ export {rejectOrder};
 
 
 const sendOrder = {
-  type: ResopnseType,
+  type: OrderHeaderResponseType,
   description: 'mutation for ofbiz sendOrder method',
   args:{orderId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {

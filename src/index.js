@@ -11,7 +11,7 @@ import {fetchOneFromUrl, fetchArrayFromUrl, postToUrl} from './framework/ofbizCo
 const alexServerURI = "http://192.168.49.60:3000";
 
 function loggingMiddleWare(req, res, next){
-  console.log('\nrequest: \nmethod: ', req.method,
+  console.log('\nrequest: ',
               '\n'+'cookie: ', req.headers.cookie);
   next();
 }
