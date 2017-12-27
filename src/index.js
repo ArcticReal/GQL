@@ -8,7 +8,7 @@ import cors from 'cors';
 import schema from './schema.js';
 import {fetchOneFromUrl, fetchArrayFromUrl, postToUrl} from './framework/ofbizCon.js';
 
-const alexServerURI = "http://192.168.49.60:3000";
+const alexServerURI = "http://192.168.49.55:3000";
 
 function loggingMiddleWare(req, res, next){
   console.log('\nrequest: ',
