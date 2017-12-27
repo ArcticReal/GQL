@@ -17,7 +17,7 @@ const convertUomProduct = {
   description: 'mutation for ofbiz convertUomProduct method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productUom/convertUomProduct?arguments=${args.arguments}`, null, req);
+    return postToUrl(`service/productUom/convertUomProduct?arguments=${args.arguments}&`, null, req);
   }
 };
 export {convertUomProduct};
@@ -28,7 +28,7 @@ const interfaceUomFormula = {
   description: 'mutation for ofbiz interfaceUomFormula method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productUom/interfaceUomFormula?arguments=${args.arguments}`, null, req);
+    return postToUrl(`service/productUom/interfaceUomFormula?arguments=${args.arguments}&`, null, req);
   }
 };
 export {interfaceUomFormula};

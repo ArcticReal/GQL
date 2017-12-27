@@ -136,7 +136,7 @@ function login(relativeURL, username, password){
           const setCookie = res.headers.get('set-cookie').replace('/eCommerce; Secure; ', '/; ');
           console.log('Set-Cookie: ', setCookie, '\n');
 
-          return {promise: fetch(res.headers.get('Location')), setCookie: setCookie};
+          return {promise: fetch(res.headers.get('Location'), {headers: {'Cookie': setCookie.replace('Path=/' , 'Path=/eCommerce; Secure; ')}}), setCookie: setCookie};
         })
         .then(result => {
           const response = result.promise;

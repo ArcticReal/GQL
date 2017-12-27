@@ -17,7 +17,7 @@ const createComponent = {
   description: 'mutation for ofbiz createComponent method',
   args:{componentName: {type: GraphQLString},rootLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/entityextTenant/createComponent?componentName=${args.componentName}rootLocation=${args.rootLocation}`, null, req);
+    return postToUrl(`service/entityextTenant/createComponent?componentName=${args.componentName}&rootLocation=${args.rootLocation}&`, null, req);
   }
 };
 export {createComponent};
@@ -28,7 +28,7 @@ const deleteComponent = {
   description: 'mutation for ofbiz deleteComponent method',
   args:{componentName: {type: GraphQLString},rootLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/entityextTenant/deleteComponent?componentName=${args.componentName}rootLocation=${args.rootLocation}`, null, req);
+    return postToUrl(`service/entityextTenant/deleteComponent?componentName=${args.componentName}&rootLocation=${args.rootLocation}&`, null, req);
   }
 };
 export {deleteComponent};
@@ -39,7 +39,7 @@ const updateComponent = {
   description: 'mutation for ofbiz updateComponent method',
   args:{componentName: {type: GraphQLString},rootLocation: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/entityextTenant/updateComponent?componentName=${args.componentName}rootLocation=${args.rootLocation}`, null, req);
+    return postToUrl(`service/entityextTenant/updateComponent?componentName=${args.componentName}&rootLocation=${args.rootLocation}&`, null, req);
   }
 };
 export {updateComponent};

@@ -43,7 +43,6 @@ const updateProduct = {
   description: 'mutation for ofbiz updateProduct method',
   args:{productToBeUpdated: {type: ProductInputType},productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    console.log(args.productToBeUpdated);
     return putToUrl(`products/${args.productId}?`, args.productToBeUpdated, req);
   }
 };

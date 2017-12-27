@@ -17,7 +17,7 @@ const attachProductFeaturesToCategory = {
   description: 'mutation for ofbiz attachProductFeaturesToCategory method',
   args:{productCategoryId: {type: GraphQLString},doSubCategories: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/attachProductFeaturesToCategory?productCategoryId=${args.productCategoryId}doSubCategories=${args.doSubCategories}`, null, req);
+    return postToUrl(`service/productMaint/attachProductFeaturesToCategory?productCategoryId=${args.productCategoryId}&doSubCategories=${args.doSubCategories}&`, null, req);
   }
 };
 export {attachProductFeaturesToCategory};
@@ -28,7 +28,7 @@ const checkImageUrl = {
   description: 'mutation for ofbiz checkImageUrl method',
   args:{imageUrl: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/checkImageUrl?imageUrl=${args.imageUrl}`, null, req);
+    return postToUrl(`service/productMaint/checkImageUrl?imageUrl=${args.imageUrl}&`, null, req);
   }
 };
 export {checkImageUrl};
@@ -39,7 +39,7 @@ const checkImageUrlForAllCategories = {
   description: 'mutation for ofbiz checkImageUrlForAllCategories method',
   args:{excludeEmpty: {type: GraphQLBoolean},topCategory: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/checkImageUrlForAllCategories?excludeEmpty=${args.excludeEmpty}topCategory=${args.topCategory}`, null, req);
+    return postToUrl(`service/productMaint/checkImageUrlForAllCategories?excludeEmpty=${args.excludeEmpty}&topCategory=${args.topCategory}&`, null, req);
   }
 };
 export {checkImageUrlForAllCategories};
@@ -50,7 +50,7 @@ const checkImageUrlForCategory = {
   description: 'mutation for ofbiz checkImageUrlForCategory method',
   args:{categoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/checkImageUrlForCategory?categoryId=${args.categoryId}`, null, req);
+    return postToUrl(`service/productMaint/checkImageUrlForCategory?categoryId=${args.categoryId}&`, null, req);
   }
 };
 export {checkImageUrlForCategory};
@@ -61,7 +61,7 @@ const checkImageUrlForCategoryAndProduct = {
   description: 'mutation for ofbiz checkImageUrlForCategoryAndProduct method',
   args:{categoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/checkImageUrlForCategoryAndProduct?categoryId=${args.categoryId}`, null, req);
+    return postToUrl(`service/productMaint/checkImageUrlForCategoryAndProduct?categoryId=${args.categoryId}&`, null, req);
   }
 };
 export {checkImageUrlForCategoryAndProduct};
@@ -72,7 +72,7 @@ const checkImageUrlForProduct = {
   description: 'mutation for ofbiz checkImageUrlForProduct method',
   args:{productId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/checkImageUrlForProduct?productId=${args.productId}`, null, req);
+    return postToUrl(`service/productMaint/checkImageUrlForProduct?productId=${args.productId}&`, null, req);
   }
 };
 export {checkImageUrlForProduct};
@@ -94,7 +94,7 @@ const copyCategoryProductMembers = {
   description: 'mutation for ofbiz copyCategoryProductMembers method',
   args:{productCategoryId: {type: GraphQLString},productCategoryIdTo: {type: GraphQLString},validDate: {type: GraphQLString},recurse: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/copyCategoryProductMembers?productCategoryId=${args.productCategoryId}productCategoryIdTo=${args.productCategoryIdTo}validDate=${args.validDate}recurse=${args.recurse}`, null, req);
+    return postToUrl(`service/productMaint/copyCategoryProductMembers?productCategoryId=${args.productCategoryId}&productCategoryIdTo=${args.productCategoryIdTo}&validDate=${args.validDate}&recurse=${args.recurse}&`, null, req);
   }
 };
 export {copyCategoryProductMembers};
@@ -116,7 +116,7 @@ const expireAllCategoryProductMembers = {
   description: 'mutation for ofbiz expireAllCategoryProductMembers method',
   args:{productCategoryId: {type: GraphQLString},thruDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/expireAllCategoryProductMembers?productCategoryId=${args.productCategoryId}thruDate=${args.thruDate}`, null, req);
+    return postToUrl(`service/productMaint/expireAllCategoryProductMembers?productCategoryId=${args.productCategoryId}&thruDate=${args.thruDate}&`, null, req);
   }
 };
 export {expireAllCategoryProductMembers};
@@ -127,7 +127,7 @@ const getAllCategories = {
   description: 'mutation for ofbiz getAllCategories method',
   args:{topCategory: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/getAllCategories?topCategory=${args.topCategory}`, null, req);
+    return postToUrl(`service/productMaint/getAllCategories?topCategory=${args.topCategory}&`, null, req);
   }
 };
 export {getAllCategories};
@@ -138,7 +138,7 @@ const getCategoryTrail = {
   description: 'mutation for ofbiz getCategoryTrail method',
   args:{productCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/getCategoryTrail?productCategoryId=${args.productCategoryId}`, null, req);
+    return postToUrl(`service/productMaint/getCategoryTrail?productCategoryId=${args.productCategoryId}&`, null, req);
   }
 };
 export {getCategoryTrail};
@@ -149,7 +149,7 @@ const getRelatedCategories = {
   description: 'mutation for ofbiz getRelatedCategories method',
   args:{parentProductCategoryId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/getRelatedCategories?parentProductCategoryId=${args.parentProductCategoryId}categories=${args.categories}`, null, req);
+    return postToUrl(`service/productMaint/getRelatedCategories?parentProductCategoryId=${args.parentProductCategoryId}&categories=${args.categories}&`, null, req);
   }
 };
 export {getRelatedCategories};
@@ -171,7 +171,7 @@ const mergeVirtualWithSingleVariant = {
   description: 'mutation for ofbiz mergeVirtualWithSingleVariant method',
   args:{productId: {type: GraphQLString},removeOld: {type: GraphQLBoolean},test: {type: GraphQLBoolean}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/mergeVirtualWithSingleVariant?productId=${args.productId}removeOld=${args.removeOld}test=${args.test}`, null, req);
+    return postToUrl(`service/productMaint/mergeVirtualWithSingleVariant?productId=${args.productId}&removeOld=${args.removeOld}&test=${args.test}&`, null, req);
   }
 };
 export {mergeVirtualWithSingleVariant};
@@ -182,7 +182,7 @@ const purgeOldStoreAutoPromos = {
   description: 'mutation for ofbiz purgeOldStoreAutoPromos method',
   args:{productStoreId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/purgeOldStoreAutoPromos?productStoreId=${args.productStoreId}`, null, req);
+    return postToUrl(`service/productMaint/purgeOldStoreAutoPromos?productStoreId=${args.productStoreId}&`, null, req);
   }
 };
 export {purgeOldStoreAutoPromos};
@@ -215,7 +215,7 @@ const removeExpiredCategoryProductMembers = {
   description: 'mutation for ofbiz removeExpiredCategoryProductMembers method',
   args:{productCategoryId: {type: GraphQLString},validDate: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/removeExpiredCategoryProductMembers?productCategoryId=${args.productCategoryId}validDate=${args.validDate}`, null, req);
+    return postToUrl(`service/productMaint/removeExpiredCategoryProductMembers?productCategoryId=${args.productCategoryId}&validDate=${args.validDate}&`, null, req);
   }
 };
 export {removeExpiredCategoryProductMembers};
@@ -226,7 +226,7 @@ const setAllProductImageNames = {
   description: 'mutation for ofbiz setAllProductImageNames method',
   args:{pattern: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/setAllProductImageNames?pattern=${args.pattern}`, null, req);
+    return postToUrl(`service/productMaint/setAllProductImageNames?pattern=${args.pattern}&`, null, req);
   }
 };
 export {setAllProductImageNames};
@@ -248,7 +248,7 @@ const updateOldInventoryToDetailSingle = {
   description: 'mutation for ofbiz updateOldInventoryToDetailSingle method',
   args:{inventoryItem: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productMaint/updateOldInventoryToDetailSingle?inventoryItem=${args.inventoryItem}`, null, req);
+    return postToUrl(`service/productMaint/updateOldInventoryToDetailSingle?inventoryItem=${args.inventoryItem}&`, null, req);
   }
 };
 export {updateOldInventoryToDetailSingle};

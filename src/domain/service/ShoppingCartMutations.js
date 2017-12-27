@@ -17,7 +17,7 @@ const addToCart = {
   description: 'mutation for ofbiz addToCart method',
   args:{allRequestParams: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`cart/add?allRequestParams=${args.allRequestParams}`, null, req);
+    return postToUrl(`cart/add?allRequestParams=${args.allRequestParams}&`, null, req);
   }
 };
 export {addToCart};
@@ -28,7 +28,7 @@ const removeFromCart = {
   description: 'mutation for ofbiz removeFromCart method',
   args:{allRequestParams: {type: new GraphQLList(KeyValueInputType)}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`cart/remove?allRequestParams=${args.allRequestParams}`, null, req);
+    return postToUrl(`cart/remove?allRequestParams=${args.allRequestParams}&`, null, req);
   }
 };
 export {removeFromCart};

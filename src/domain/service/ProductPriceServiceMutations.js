@@ -17,7 +17,7 @@ const createProductPricePurpose = {
   description: 'mutation for ofbiz createProductPricePurpose method',
   args:{description: {type: GraphQLString},productPricePurposeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/createProductPricePurpose?description=${args.description}productPricePurposeId=${args.productPricePurposeId}`, null, req);
+    return postToUrl(`service/productPrice/createProductPricePurpose?description=${args.description}&productPricePurposeId=${args.productPricePurposeId}&`, null, req);
   }
 };
 export {createProductPricePurpose};
@@ -28,7 +28,7 @@ const createProductPriceType = {
   description: 'mutation for ofbiz createProductPriceType method',
   args:{description: {type: GraphQLString},productPriceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/createProductPriceType?description=${args.description}productPriceTypeId=${args.productPriceTypeId}`, null, req);
+    return postToUrl(`service/productPrice/createProductPriceType?description=${args.description}&productPriceTypeId=${args.productPriceTypeId}&`, null, req);
   }
 };
 export {createProductPriceType};
@@ -39,7 +39,7 @@ const createQuantityBreakType = {
   description: 'mutation for ofbiz createQuantityBreakType method',
   args:{quantityBreakTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/createQuantityBreakType?quantityBreakTypeId=${args.quantityBreakTypeId}description=${args.description}`, null, req);
+    return postToUrl(`service/productPrice/createQuantityBreakType?quantityBreakTypeId=${args.quantityBreakTypeId}&description=${args.description}&`, null, req);
   }
 };
 export {createQuantityBreakType};
@@ -50,7 +50,7 @@ const createSaleType = {
   description: 'mutation for ofbiz createSaleType method',
   args:{saleTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/createSaleType?saleTypeId=${args.saleTypeId}description=${args.description}`, null, req);
+    return postToUrl(`service/productPrice/createSaleType?saleTypeId=${args.saleTypeId}&description=${args.description}&`, null, req);
   }
 };
 export {createSaleType};
@@ -61,7 +61,7 @@ const deleteProductPricePurpose = {
   description: 'mutation for ofbiz deleteProductPricePurpose method',
   args:{productPricePurposeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/deleteProductPricePurpose?productPricePurposeId=${args.productPricePurposeId}`, null, req);
+    return postToUrl(`service/productPrice/deleteProductPricePurpose?productPricePurposeId=${args.productPricePurposeId}&`, null, req);
   }
 };
 export {deleteProductPricePurpose};
@@ -72,7 +72,7 @@ const deleteProductPriceType = {
   description: 'mutation for ofbiz deleteProductPriceType method',
   args:{productPriceTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/deleteProductPriceType?productPriceTypeId=${args.productPriceTypeId}`, null, req);
+    return postToUrl(`service/productPrice/deleteProductPriceType?productPriceTypeId=${args.productPriceTypeId}&`, null, req);
   }
 };
 export {deleteProductPriceType};
@@ -83,7 +83,7 @@ const deleteQuantityBreakType = {
   description: 'mutation for ofbiz deleteQuantityBreakType method',
   args:{quantityBreakTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/deleteQuantityBreakType?quantityBreakTypeId=${args.quantityBreakTypeId}`, null, req);
+    return postToUrl(`service/productPrice/deleteQuantityBreakType?quantityBreakTypeId=${args.quantityBreakTypeId}&`, null, req);
   }
 };
 export {deleteQuantityBreakType};
@@ -94,7 +94,7 @@ const deleteSaleType = {
   description: 'mutation for ofbiz deleteSaleType method',
   args:{saleTypeId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/deleteSaleType?saleTypeId=${args.saleTypeId}`, null, req);
+    return postToUrl(`service/productPrice/deleteSaleType?saleTypeId=${args.saleTypeId}&`, null, req);
   }
 };
 export {deleteSaleType};
@@ -105,7 +105,7 @@ const updateProductPricePurpose = {
   description: 'mutation for ofbiz updateProductPricePurpose method',
   args:{productPricePurposeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/updateProductPricePurpose?productPricePurposeId=${args.productPricePurposeId}description=${args.description}`, null, req);
+    return postToUrl(`service/productPrice/updateProductPricePurpose?productPricePurposeId=${args.productPricePurposeId}&description=${args.description}&`, null, req);
   }
 };
 export {updateProductPricePurpose};
@@ -116,7 +116,7 @@ const updateProductPriceType = {
   description: 'mutation for ofbiz updateProductPriceType method',
   args:{productPriceTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/updateProductPriceType?productPriceTypeId=${args.productPriceTypeId}description=${args.description}`, null, req);
+    return postToUrl(`service/productPrice/updateProductPriceType?productPriceTypeId=${args.productPriceTypeId}&description=${args.description}&`, null, req);
   }
 };
 export {updateProductPriceType};
@@ -127,7 +127,7 @@ const updateQuantityBreakType = {
   description: 'mutation for ofbiz updateQuantityBreakType method',
   args:{quantityBreakTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/updateQuantityBreakType?quantityBreakTypeId=${args.quantityBreakTypeId}description=${args.description}`, null, req);
+    return postToUrl(`service/productPrice/updateQuantityBreakType?quantityBreakTypeId=${args.quantityBreakTypeId}&description=${args.description}&`, null, req);
   }
 };
 export {updateQuantityBreakType};
@@ -138,7 +138,7 @@ const updateSaleType = {
   description: 'mutation for ofbiz updateSaleType method',
   args:{saleTypeId: {type: GraphQLString},description: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/productPrice/updateSaleType?saleTypeId=${args.saleTypeId}description=${args.description}`, null, req);
+    return postToUrl(`service/productPrice/updateSaleType?saleTypeId=${args.saleTypeId}&description=${args.description}&`, null, req);
   }
 };
 export {updateSaleType};

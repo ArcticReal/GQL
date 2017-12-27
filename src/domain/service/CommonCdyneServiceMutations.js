@@ -17,7 +17,7 @@ const cdynePostalAddressFillInCounty = {
   description: 'mutation for ofbiz cdynePostalAddressFillInCounty method',
   args:{contactMechId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/commonCdyne/cdynePostalAddressFillInCounty?contactMechId=${args.contactMechId}`, null, req);
+    return postToUrl(`service/commonCdyne/cdynePostalAddressFillInCounty?contactMechId=${args.contactMechId}&`, null, req);
   }
 };
 export {cdynePostalAddressFillInCounty};
@@ -28,7 +28,7 @@ const cdyneReturnCityState = {
   description: 'mutation for ofbiz cdyneReturnCityState method',
   args:{zipcode: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/commonCdyne/cdyneReturnCityState?zipcode=${args.zipcode}`, null, req);
+    return postToUrl(`service/commonCdyne/cdyneReturnCityState?zipcode=${args.zipcode}&`, null, req);
   }
 };
 export {cdyneReturnCityState};

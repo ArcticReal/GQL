@@ -17,7 +17,7 @@ const createSystemInfoNote = {
   description: 'mutation for ofbiz createSystemInfoNote method',
   args:{noteName: {type: GraphQLString},noteDateTime: {type: GraphQLString},noteInfo: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/commonexts/createSystemInfoNote?noteName=${args.noteName}noteDateTime=${args.noteDateTime}noteInfo=${args.noteInfo}`, null, req);
+    return postToUrl(`service/commonexts/createSystemInfoNote?noteName=${args.noteName}&noteDateTime=${args.noteDateTime}&noteInfo=${args.noteInfo}&`, null, req);
   }
 };
 export {createSystemInfoNote};
@@ -39,7 +39,7 @@ const deleteSystemInfoNote = {
   description: 'mutation for ofbiz deleteSystemInfoNote method',
   args:{noteId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/commonexts/deleteSystemInfoNote?noteId=${args.noteId}`, null, req);
+    return postToUrl(`service/commonexts/deleteSystemInfoNote?noteId=${args.noteId}&`, null, req);
   }
 };
 export {deleteSystemInfoNote};

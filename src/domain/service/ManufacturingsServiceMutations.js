@@ -17,7 +17,7 @@ const createShipmentPackages = {
   description: 'mutation for ofbiz createShipmentPackages method',
   args:{shipmentId: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/manufacturings/createShipmentPackages?shipmentId=${args.shipmentId}`, null, req);
+    return postToUrl(`service/manufacturings/createShipmentPackages?shipmentId=${args.shipmentId}&`, null, req);
   }
 };
 export {createShipmentPackages};

@@ -17,7 +17,7 @@ const exampleComponentFormula = {
   description: 'mutation for ofbiz exampleComponentFormula method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/manufacturingFormula/exampleComponentFormula?arguments=${args.arguments}`, null, req);
+    return postToUrl(`service/manufacturingFormula/exampleComponentFormula?arguments=${args.arguments}&`, null, req);
   }
 };
 export {exampleComponentFormula};
@@ -28,7 +28,7 @@ const exampleTaskFormula = {
   description: 'mutation for ofbiz exampleTaskFormula method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/manufacturingFormula/exampleTaskFormula?arguments=${args.arguments}`, null, req);
+    return postToUrl(`service/manufacturingFormula/exampleTaskFormula?arguments=${args.arguments}&`, null, req);
   }
 };
 export {exampleTaskFormula};
@@ -39,7 +39,7 @@ const interfaceBomFormula = {
   description: 'mutation for ofbiz interfaceBomFormula method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/manufacturingFormula/interfaceBomFormula?arguments=${args.arguments}`, null, req);
+    return postToUrl(`service/manufacturingFormula/interfaceBomFormula?arguments=${args.arguments}&`, null, req);
   }
 };
 export {interfaceBomFormula};
@@ -50,7 +50,7 @@ const interfaceTaskFormula = {
   description: 'mutation for ofbiz interfaceTaskFormula method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/manufacturingFormula/interfaceTaskFormula?arguments=${args.arguments}`, null, req);
+    return postToUrl(`service/manufacturingFormula/interfaceTaskFormula?arguments=${args.arguments}&`, null, req);
   }
 };
 export {interfaceTaskFormula};
@@ -61,7 +61,7 @@ const linearComponentFormula = {
   description: 'mutation for ofbiz linearComponentFormula method',
   args:{arguments: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/manufacturingFormula/linearComponentFormula?arguments=${args.arguments}`, null, req);
+    return postToUrl(`service/manufacturingFormula/linearComponentFormula?arguments=${args.arguments}&`, null, req);
   }
 };
 export {linearComponentFormula};

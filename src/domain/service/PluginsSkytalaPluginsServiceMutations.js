@@ -39,7 +39,7 @@ const getallproducts = {
   description: 'mutation for ofbiz getallproducts method',
   args:{ID: {type: GraphQLString},Name: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/pluginsSkytalaPlugins/getallproducts?ID=${args.ID}Name=${args.Name}`, null, req);
+    return postToUrl(`service/pluginsSkytalaPlugins/getallproducts?ID=${args.ID}&Name=${args.Name}&`, null, req);
   }
 };
 export {getallproducts};
@@ -50,7 +50,7 @@ const simplesoap = {
   description: 'mutation for ofbiz simplesoap method',
   args:{defaultValue: {type: GraphQLFloat},message: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/pluginsSkytalaPlugins/simplesoap?defaultValue=${args.defaultValue}message=${args.message}`, null, req);
+    return postToUrl(`service/pluginsSkytalaPlugins/simplesoap?defaultValue=${args.defaultValue}&message=${args.message}&`, null, req);
   }
 };
 export {simplesoap};
@@ -61,7 +61,7 @@ const simpletest = {
   description: 'mutation for ofbiz simpletest method',
   args:{eingabe: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/pluginsSkytalaPlugins/simpletest?eingabe=${args.eingabe}`, null, req);
+    return postToUrl(`service/pluginsSkytalaPlugins/simpletest?eingabe=${args.eingabe}&`, null, req);
   }
 };
 export {simpletest};
@@ -72,7 +72,7 @@ const testservicedie2te = {
   description: 'mutation for ofbiz testservicedie2te method',
   args:{name: {type: GraphQLString},Id: {type: GraphQLString}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`service/pluginsSkytalaPlugins/testservicedie2te?name=${args.name}Id=${args.Id}`, null, req);
+    return postToUrl(`service/pluginsSkytalaPlugins/testservicedie2te?name=${args.name}&Id=${args.Id}&`, null, req);
   }
 };
 export {testservicedie2te};
