@@ -26,6 +26,7 @@ const LoggedInPersonType = new GraphQLObjectType({
     city: { type: GraphQLString },
     countryGeoId: { type: GraphQLString },
     stateGeoId: { type: GraphQLString },
+    partyId: {type: GraphQLString},
     authorities: { type: new GraphQLList(GraphQLString) }
   })
 });
