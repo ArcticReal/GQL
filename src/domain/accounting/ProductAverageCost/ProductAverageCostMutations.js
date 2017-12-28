@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductAverageCostResponseType} from '../../accounting/ProductAverageCost/ProductAverageCostResponseType.js';
 import {ProductAverageCostInputType} from '../../accounting/ProductAverageCost/ProductAverageCostInputType.js';
+import {ProductAverageCostResponseType} from '../../accounting/ProductAverageCost/ProductAverageCostResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductAverageCost = {
   type: ProductAverageCostResponseType,
   description: 'mutation for ofbiz createProductAverageCost method',
-  args:{},
+  args:{productAverageCostToBeAdded: {type: ProductAverageCostInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/productAverageCosts/add?`, null, req);
+    return postToUrl(`accounting/productAverageCosts/add?`, args.productAverageCostToBeAdded, req);
   }
 };
 export {createProductAverageCost};

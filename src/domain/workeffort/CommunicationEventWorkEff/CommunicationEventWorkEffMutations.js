@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {CommunicationEventWorkEffResponseType} from '../../workeffort/CommunicationEventWorkEff/CommunicationEventWorkEffResponseType.js';
 import {CommunicationEventWorkEffInputType} from '../../workeffort/CommunicationEventWorkEff/CommunicationEventWorkEffInputType.js';
+import {CommunicationEventWorkEffResponseType} from '../../workeffort/CommunicationEventWorkEff/CommunicationEventWorkEffResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createCommunicationEventWorkEff = {
   type: CommunicationEventWorkEffResponseType,
   description: 'mutation for ofbiz createCommunicationEventWorkEff method',
-  args:{},
+  args:{communicationEventWorkEffToBeAdded: {type: CommunicationEventWorkEffInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/communicationEventWorkEffs/add?`, null, req);
+    return postToUrl(`workeffort/communicationEventWorkEffs/add?`, args.communicationEventWorkEffToBeAdded, req);
   }
 };
 export {createCommunicationEventWorkEff};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortReviewResponseType} from '../../workeffort/WorkEffortReview/WorkEffortReviewResponseType.js';
 import {WorkEffortReviewInputType} from '../../workeffort/WorkEffortReview/WorkEffortReviewInputType.js';
+import {WorkEffortReviewResponseType} from '../../workeffort/WorkEffortReview/WorkEffortReviewResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortReview = {
   type: WorkEffortReviewResponseType,
   description: 'mutation for ofbiz createWorkEffortReview method',
-  args:{},
+  args:{workEffortReviewToBeAdded: {type: WorkEffortReviewInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortReviews/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortReviews/add?`, args.workEffortReviewToBeAdded, req);
   }
 };
 export {createWorkEffortReview};

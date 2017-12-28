@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ResponsibilityTypeResponseType} from '../../humanres/ResponsibilityType/ResponsibilityTypeResponseType.js';
 import {ResponsibilityTypeInputType} from '../../humanres/ResponsibilityType/ResponsibilityTypeInputType.js';
+import {ResponsibilityTypeResponseType} from '../../humanres/ResponsibilityType/ResponsibilityTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createResponsibilityType = {
   type: ResponsibilityTypeResponseType,
   description: 'mutation for ofbiz createResponsibilityType method',
-  args:{},
+  args:{responsibilityTypeToBeAdded: {type: ResponsibilityTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/responsibilityTypes/add?`, null, req);
+    return postToUrl(`humanres/responsibilityTypes/add?`, args.responsibilityTypeToBeAdded, req);
   }
 };
 export {createResponsibilityType};

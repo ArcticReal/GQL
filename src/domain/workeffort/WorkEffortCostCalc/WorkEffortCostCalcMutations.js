@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortCostCalcResponseType} from '../../workeffort/WorkEffortCostCalc/WorkEffortCostCalcResponseType.js';
 import {WorkEffortCostCalcInputType} from '../../workeffort/WorkEffortCostCalc/WorkEffortCostCalcInputType.js';
+import {WorkEffortCostCalcResponseType} from '../../workeffort/WorkEffortCostCalc/WorkEffortCostCalcResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortCostCalc = {
   type: WorkEffortCostCalcResponseType,
   description: 'mutation for ofbiz createWorkEffortCostCalc method',
-  args:{},
+  args:{workEffortCostCalcToBeAdded: {type: WorkEffortCostCalcInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortCostCalcs/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortCostCalcs/add?`, args.workEffortCostCalcToBeAdded, req);
   }
 };
 export {createWorkEffortCostCalc};

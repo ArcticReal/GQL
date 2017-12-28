@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ShipmentGatewayUspsResponseType} from '../../shipment/ShipmentGatewayUsps/ShipmentGatewayUspsResponseType.js';
 import {ShipmentGatewayUspsInputType} from '../../shipment/ShipmentGatewayUsps/ShipmentGatewayUspsInputType.js';
+import {ShipmentGatewayUspsResponseType} from '../../shipment/ShipmentGatewayUsps/ShipmentGatewayUspsResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createShipmentGatewayUsps = {
   type: ShipmentGatewayUspsResponseType,
   description: 'mutation for ofbiz createShipmentGatewayUsps method',
-  args:{},
+  args:{shipmentGatewayUspsToBeAdded: {type: ShipmentGatewayUspsInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/shipmentGatewayUspss/add?`, null, req);
+    return postToUrl(`shipment/shipment/shipmentGatewayUspss/add?`, args.shipmentGatewayUspsToBeAdded, req);
   }
 };
 export {createShipmentGatewayUsps};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductStoreGroupTypeResponseType} from '../../product/ProductStoreGroupType/ProductStoreGroupTypeResponseType.js';
 import {ProductStoreGroupTypeInputType} from '../../product/ProductStoreGroupType/ProductStoreGroupTypeInputType.js';
+import {ProductStoreGroupTypeResponseType} from '../../product/ProductStoreGroupType/ProductStoreGroupTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductStoreGroupType = {
   type: ProductStoreGroupTypeResponseType,
   description: 'mutation for ofbiz createProductStoreGroupType method',
-  args:{},
+  args:{productStoreGroupTypeToBeAdded: {type: ProductStoreGroupTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStoreGroupTypes/add?`, null, req);
+    return postToUrl(`product/product/productStoreGroupTypes/add?`, args.productStoreGroupTypeToBeAdded, req);
   }
 };
 export {createProductStoreGroupType};

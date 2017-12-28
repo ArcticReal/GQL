@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ItemIssuanceResponseType} from '../../shipment/ItemIssuance/ItemIssuanceResponseType.js';
 import {ItemIssuanceInputType} from '../../shipment/ItemIssuance/ItemIssuanceInputType.js';
+import {ItemIssuanceResponseType} from '../../shipment/ItemIssuance/ItemIssuanceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createItemIssuance = {
   type: ItemIssuanceResponseType,
   description: 'mutation for ofbiz createItemIssuance method',
-  args:{},
+  args:{itemIssuanceToBeAdded: {type: ItemIssuanceInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/itemIssuances/add?`, null, req);
+    return postToUrl(`shipment/itemIssuances/add?`, args.itemIssuanceToBeAdded, req);
   }
 };
 export {createItemIssuance};

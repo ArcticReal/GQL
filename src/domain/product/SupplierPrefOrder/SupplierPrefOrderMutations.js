@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SupplierPrefOrderResponseType} from '../../product/SupplierPrefOrder/SupplierPrefOrderResponseType.js';
 import {SupplierPrefOrderInputType} from '../../product/SupplierPrefOrder/SupplierPrefOrderInputType.js';
+import {SupplierPrefOrderResponseType} from '../../product/SupplierPrefOrder/SupplierPrefOrderResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSupplierPrefOrder = {
   type: SupplierPrefOrderResponseType,
   description: 'mutation for ofbiz createSupplierPrefOrder method',
-  args:{},
+  args:{supplierPrefOrderToBeAdded: {type: SupplierPrefOrderInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/supplierPrefOrders/add?`, null, req);
+    return postToUrl(`product/supplierPrefOrders/add?`, args.supplierPrefOrderToBeAdded, req);
   }
 };
 export {createSupplierPrefOrder};

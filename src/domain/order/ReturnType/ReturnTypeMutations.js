@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ReturnTypeResponseType} from '../../order/ReturnType/ReturnTypeResponseType.js';
 import {ReturnTypeInputType} from '../../order/ReturnType/ReturnTypeInputType.js';
+import {ReturnTypeResponseType} from '../../order/ReturnType/ReturnTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createReturnType = {
   type: ReturnTypeResponseType,
   description: 'mutation for ofbiz createReturnType method',
-  args:{},
+  args:{returnTypeToBeAdded: {type: ReturnTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/returnTypes/add?`, null, req);
+    return postToUrl(`order/returnTypes/add?`, args.returnTypeToBeAdded, req);
   }
 };
 export {createReturnType};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {InvoiceTermAttributeResponseType} from '../../accounting/InvoiceTermAttribute/InvoiceTermAttributeResponseType.js';
 import {InvoiceTermAttributeInputType} from '../../accounting/InvoiceTermAttribute/InvoiceTermAttributeInputType.js';
+import {InvoiceTermAttributeResponseType} from '../../accounting/InvoiceTermAttribute/InvoiceTermAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createInvoiceTermAttribute = {
   type: InvoiceTermAttributeResponseType,
   description: 'mutation for ofbiz createInvoiceTermAttribute method',
-  args:{},
+  args:{invoiceTermAttributeToBeAdded: {type: InvoiceTermAttributeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceTermAttributes/add?`, null, req);
+    return postToUrl(`accounting/invoice/invoiceTermAttributes/add?`, args.invoiceTermAttributeToBeAdded, req);
   }
 };
 export {createInvoiceTermAttribute};

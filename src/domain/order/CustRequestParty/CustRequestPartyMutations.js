@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {CustRequestPartyResponseType} from '../../order/CustRequestParty/CustRequestPartyResponseType.js';
 import {CustRequestPartyInputType} from '../../order/CustRequestParty/CustRequestPartyInputType.js';
+import {CustRequestPartyResponseType} from '../../order/CustRequestParty/CustRequestPartyResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createCustRequestParty = {
   type: CustRequestPartyResponseType,
   description: 'mutation for ofbiz createCustRequestParty method',
-  args:{},
+  args:{custRequestPartyToBeAdded: {type: CustRequestPartyInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/custRequest/custRequestPartys/add?`, null, req);
+    return postToUrl(`order/custRequest/custRequestPartys/add?`, args.custRequestPartyToBeAdded, req);
   }
 };
 export {createCustRequestParty};

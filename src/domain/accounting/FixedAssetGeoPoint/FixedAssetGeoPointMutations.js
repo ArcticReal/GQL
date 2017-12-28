@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FixedAssetGeoPointResponseType} from '../../accounting/FixedAssetGeoPoint/FixedAssetGeoPointResponseType.js';
 import {FixedAssetGeoPointInputType} from '../../accounting/FixedAssetGeoPoint/FixedAssetGeoPointInputType.js';
+import {FixedAssetGeoPointResponseType} from '../../accounting/FixedAssetGeoPoint/FixedAssetGeoPointResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFixedAssetGeoPoint = {
   type: FixedAssetGeoPointResponseType,
   description: 'mutation for ofbiz createFixedAssetGeoPoint method',
-  args:{},
+  args:{fixedAssetGeoPointToBeAdded: {type: FixedAssetGeoPointInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/fixedAsset/fixedAssetGeoPoints/add?`, null, req);
+    return postToUrl(`accounting/fixedAsset/fixedAssetGeoPoints/add?`, args.fixedAssetGeoPointToBeAdded, req);
   }
 };
 export {createFixedAssetGeoPoint};

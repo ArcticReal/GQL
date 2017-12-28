@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {CommEventContentAssocResponseType} from '../../party/CommEventContentAssoc/CommEventContentAssocResponseType.js';
 import {CommEventContentAssocInputType} from '../../party/CommEventContentAssoc/CommEventContentAssocInputType.js';
+import {CommEventContentAssocResponseType} from '../../party/CommEventContentAssoc/CommEventContentAssocResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createCommEventContentAssoc = {
   type: CommEventContentAssocResponseType,
   description: 'mutation for ofbiz createCommEventContentAssoc method',
-  args:{},
+  args:{commEventContentAssocToBeAdded: {type: CommEventContentAssocInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/commEventContentAssocs/add?`, null, req);
+    return postToUrl(`party/commEventContentAssocs/add?`, args.commEventContentAssocToBeAdded, req);
   }
 };
 export {createCommEventContentAssoc};

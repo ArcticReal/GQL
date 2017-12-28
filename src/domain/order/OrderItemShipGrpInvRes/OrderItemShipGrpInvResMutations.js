@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {OrderItemShipGrpInvResResponseType} from '../../order/OrderItemShipGrpInvRes/OrderItemShipGrpInvResResponseType.js';
 import {OrderItemShipGrpInvResInputType} from '../../order/OrderItemShipGrpInvRes/OrderItemShipGrpInvResInputType.js';
+import {OrderItemShipGrpInvResResponseType} from '../../order/OrderItemShipGrpInvRes/OrderItemShipGrpInvResResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createOrderItemShipGrpInvRes = {
   type: OrderItemShipGrpInvResResponseType,
   description: 'mutation for ofbiz createOrderItemShipGrpInvRes method',
-  args:{},
+  args:{orderItemShipGrpInvResToBeAdded: {type: OrderItemShipGrpInvResInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderItem/orderItemShipGrpInvRess/add?`, null, req);
+    return postToUrl(`order/orderItem/orderItemShipGrpInvRess/add?`, args.orderItemShipGrpInvResToBeAdded, req);
   }
 };
 export {createOrderItemShipGrpInvRes};

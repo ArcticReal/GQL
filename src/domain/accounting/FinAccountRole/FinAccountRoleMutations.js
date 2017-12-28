@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FinAccountRoleResponseType} from '../../accounting/FinAccountRole/FinAccountRoleResponseType.js';
 import {FinAccountRoleInputType} from '../../accounting/FinAccountRole/FinAccountRoleInputType.js';
+import {FinAccountRoleResponseType} from '../../accounting/FinAccountRole/FinAccountRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFinAccountRole = {
   type: FinAccountRoleResponseType,
   description: 'mutation for ofbiz createFinAccountRole method',
-  args:{},
+  args:{finAccountRoleToBeAdded: {type: FinAccountRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/finAccount/finAccountRoles/add?`, null, req);
+    return postToUrl(`accounting/finAccount/finAccountRoles/add?`, args.finAccountRoleToBeAdded, req);
   }
 };
 export {createFinAccountRole};

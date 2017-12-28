@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {BudgetTypeResponseType} from '../../accounting/BudgetType/BudgetTypeResponseType.js';
 import {BudgetTypeInputType} from '../../accounting/BudgetType/BudgetTypeInputType.js';
+import {BudgetTypeResponseType} from '../../accounting/BudgetType/BudgetTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createBudgetType = {
   type: BudgetTypeResponseType,
   description: 'mutation for ofbiz createBudgetType method',
-  args:{},
+  args:{budgetTypeToBeAdded: {type: BudgetTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/budget/budgetTypes/add?`, null, req);
+    return postToUrl(`accounting/budget/budgetTypes/add?`, args.budgetTypeToBeAdded, req);
   }
 };
 export {createBudgetType};

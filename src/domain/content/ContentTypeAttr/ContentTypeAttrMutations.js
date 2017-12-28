@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContentTypeAttrResponseType} from '../../content/ContentTypeAttr/ContentTypeAttrResponseType.js';
 import {ContentTypeAttrInputType} from '../../content/ContentTypeAttr/ContentTypeAttrInputType.js';
+import {ContentTypeAttrResponseType} from '../../content/ContentTypeAttr/ContentTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContentTypeAttr = {
   type: ContentTypeAttrResponseType,
   description: 'mutation for ofbiz createContentTypeAttr method',
-  args:{},
+  args:{contentTypeAttrToBeAdded: {type: ContentTypeAttrInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentTypeAttrs/add?`, null, req);
+    return postToUrl(`content/content/contentTypeAttrs/add?`, args.contentTypeAttrToBeAdded, req);
   }
 };
 export {createContentTypeAttr};

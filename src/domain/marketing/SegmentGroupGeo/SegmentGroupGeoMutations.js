@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SegmentGroupGeoResponseType} from '../../marketing/SegmentGroupGeo/SegmentGroupGeoResponseType.js';
 import {SegmentGroupGeoInputType} from '../../marketing/SegmentGroupGeo/SegmentGroupGeoInputType.js';
+import {SegmentGroupGeoResponseType} from '../../marketing/SegmentGroupGeo/SegmentGroupGeoResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSegmentGroupGeo = {
   type: SegmentGroupGeoResponseType,
   description: 'mutation for ofbiz createSegmentGroupGeo method',
-  args:{},
+  args:{segmentGroupGeoToBeAdded: {type: SegmentGroupGeoInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/segmentGroup/segmentGroupGeos/add?`, null, req);
+    return postToUrl(`marketing/segmentGroup/segmentGroupGeos/add?`, args.segmentGroupGeoToBeAdded, req);
   }
 };
 export {createSegmentGroupGeo};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {GiftCardFulfillmentResponseType} from '../../accounting/GiftCardFulfillment/GiftCardFulfillmentResponseType.js';
 import {GiftCardFulfillmentInputType} from '../../accounting/GiftCardFulfillment/GiftCardFulfillmentInputType.js';
+import {GiftCardFulfillmentResponseType} from '../../accounting/GiftCardFulfillment/GiftCardFulfillmentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createGiftCardFulfillment = {
   type: GiftCardFulfillmentResponseType,
   description: 'mutation for ofbiz createGiftCardFulfillment method',
-  args:{},
+  args:{giftCardFulfillmentToBeAdded: {type: GiftCardFulfillmentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/giftCard/giftCardFulfillments/add?`, null, req);
+    return postToUrl(`accounting/giftCard/giftCardFulfillments/add?`, args.giftCardFulfillmentToBeAdded, req);
   }
 };
 export {createGiftCardFulfillment};

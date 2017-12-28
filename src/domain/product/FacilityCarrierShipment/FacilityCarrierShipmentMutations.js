@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FacilityCarrierShipmentResponseType} from '../../product/FacilityCarrierShipment/FacilityCarrierShipmentResponseType.js';
 import {FacilityCarrierShipmentInputType} from '../../product/FacilityCarrierShipment/FacilityCarrierShipmentInputType.js';
+import {FacilityCarrierShipmentResponseType} from '../../product/FacilityCarrierShipment/FacilityCarrierShipmentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFacilityCarrierShipment = {
   type: FacilityCarrierShipmentResponseType,
   description: 'mutation for ofbiz createFacilityCarrierShipment method',
-  args:{},
+  args:{facilityCarrierShipmentToBeAdded: {type: FacilityCarrierShipmentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityCarrierShipments/add?`, null, req);
+    return postToUrl(`product/facility/facilityCarrierShipments/add?`, args.facilityCarrierShipmentToBeAdded, req);
   }
 };
 export {createFacilityCarrierShipment};

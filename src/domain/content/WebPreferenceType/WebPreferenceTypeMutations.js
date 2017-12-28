@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WebPreferenceTypeResponseType} from '../../content/WebPreferenceType/WebPreferenceTypeResponseType.js';
 import {WebPreferenceTypeInputType} from '../../content/WebPreferenceType/WebPreferenceTypeInputType.js';
+import {WebPreferenceTypeResponseType} from '../../content/WebPreferenceType/WebPreferenceTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWebPreferenceType = {
   type: WebPreferenceTypeResponseType,
   description: 'mutation for ofbiz createWebPreferenceType method',
-  args:{},
+  args:{webPreferenceTypeToBeAdded: {type: WebPreferenceTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/webPreferenceTypes/add?`, null, req);
+    return postToUrl(`content/webPreferenceTypes/add?`, args.webPreferenceTypeToBeAdded, req);
   }
 };
 export {createWebPreferenceType};

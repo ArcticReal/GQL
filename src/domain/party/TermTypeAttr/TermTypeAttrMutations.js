@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {TermTypeAttrResponseType} from '../../party/TermTypeAttr/TermTypeAttrResponseType.js';
 import {TermTypeAttrInputType} from '../../party/TermTypeAttr/TermTypeAttrInputType.js';
+import {TermTypeAttrResponseType} from '../../party/TermTypeAttr/TermTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createTermTypeAttr = {
   type: TermTypeAttrResponseType,
   description: 'mutation for ofbiz createTermTypeAttr method',
-  args:{},
+  args:{termTypeAttrToBeAdded: {type: TermTypeAttrInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/termType/termTypeAttrs/add?`, null, req);
+    return postToUrl(`party/termType/termTypeAttrs/add?`, args.termTypeAttrToBeAdded, req);
   }
 };
 export {createTermTypeAttr};

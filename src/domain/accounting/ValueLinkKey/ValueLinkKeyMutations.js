@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ValueLinkKeyResponseType} from '../../accounting/ValueLinkKey/ValueLinkKeyResponseType.js';
 import {ValueLinkKeyInputType} from '../../accounting/ValueLinkKey/ValueLinkKeyInputType.js';
+import {ValueLinkKeyResponseType} from '../../accounting/ValueLinkKey/ValueLinkKeyResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createValueLinkKey = {
   type: ValueLinkKeyResponseType,
   description: 'mutation for ofbiz createValueLinkKey method',
-  args:{},
+  args:{valueLinkKeyToBeAdded: {type: ValueLinkKeyInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/valueLinkKeys/add?`, null, req);
+    return postToUrl(`accounting/valueLinkKeys/add?`, args.valueLinkKeyToBeAdded, req);
   }
 };
 export {createValueLinkKey};

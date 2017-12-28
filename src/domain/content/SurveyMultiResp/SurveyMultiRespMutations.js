@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SurveyMultiRespResponseType} from '../../content/SurveyMultiResp/SurveyMultiRespResponseType.js';
 import {SurveyMultiRespInputType} from '../../content/SurveyMultiResp/SurveyMultiRespInputType.js';
+import {SurveyMultiRespResponseType} from '../../content/SurveyMultiResp/SurveyMultiRespResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSurveyMultiResp = {
   type: SurveyMultiRespResponseType,
   description: 'mutation for ofbiz createSurveyMultiResp method',
-  args:{},
+  args:{surveyMultiRespToBeAdded: {type: SurveyMultiRespInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/survey/surveyMultiResps/add?`, null, req);
+    return postToUrl(`content/survey/surveyMultiResps/add?`, args.surveyMultiRespToBeAdded, req);
   }
 };
 export {createSurveyMultiResp};

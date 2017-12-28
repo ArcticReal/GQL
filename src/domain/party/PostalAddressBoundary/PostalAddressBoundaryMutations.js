@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PostalAddressBoundaryResponseType} from '../../party/PostalAddressBoundary/PostalAddressBoundaryResponseType.js';
 import {PostalAddressBoundaryInputType} from '../../party/PostalAddressBoundary/PostalAddressBoundaryInputType.js';
+import {PostalAddressBoundaryResponseType} from '../../party/PostalAddressBoundary/PostalAddressBoundaryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPostalAddressBoundary = {
   type: PostalAddressBoundaryResponseType,
   description: 'mutation for ofbiz createPostalAddressBoundary method',
-  args:{},
+  args:{postalAddressBoundaryToBeAdded: {type: PostalAddressBoundaryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/postalAddress/postalAddressBoundarys/add?`, null, req);
+    return postToUrl(`party/postalAddress/postalAddressBoundarys/add?`, args.postalAddressBoundaryToBeAdded, req);
   }
 };
 export {createPostalAddressBoundary};

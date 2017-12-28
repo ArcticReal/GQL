@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortEventReminderResponseType} from '../../workeffort/WorkEffortEventReminder/WorkEffortEventReminderResponseType.js';
 import {WorkEffortEventReminderInputType} from '../../workeffort/WorkEffortEventReminder/WorkEffortEventReminderInputType.js';
+import {WorkEffortEventReminderResponseType} from '../../workeffort/WorkEffortEventReminder/WorkEffortEventReminderResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortEventReminder = {
   type: WorkEffortEventReminderResponseType,
   description: 'mutation for ofbiz createWorkEffortEventReminder method',
-  args:{},
+  args:{workEffortEventReminderToBeAdded: {type: WorkEffortEventReminderInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortEventReminders/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortEventReminders/add?`, args.workEffortEventReminderToBeAdded, req);
   }
 };
 export {createWorkEffortEventReminder};

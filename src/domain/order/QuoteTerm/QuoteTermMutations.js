@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {QuoteTermResponseType} from '../../order/QuoteTerm/QuoteTermResponseType.js';
 import {QuoteTermInputType} from '../../order/QuoteTerm/QuoteTermInputType.js';
+import {QuoteTermResponseType} from '../../order/QuoteTerm/QuoteTermResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createQuoteTerm = {
   type: QuoteTermResponseType,
   description: 'mutation for ofbiz createQuoteTerm method',
-  args:{},
+  args:{quoteTermToBeAdded: {type: QuoteTermInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/quote/quoteTerms/add?`, null, req);
+    return postToUrl(`order/quote/quoteTerms/add?`, args.quoteTermToBeAdded, req);
   }
 };
 export {createQuoteTerm};

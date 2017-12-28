@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {DataResourceRoleResponseType} from '../../content/DataResourceRole/DataResourceRoleResponseType.js';
 import {DataResourceRoleInputType} from '../../content/DataResourceRole/DataResourceRoleInputType.js';
+import {DataResourceRoleResponseType} from '../../content/DataResourceRole/DataResourceRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createDataResourceRole = {
   type: DataResourceRoleResponseType,
   description: 'mutation for ofbiz createDataResourceRole method',
-  args:{},
+  args:{dataResourceRoleToBeAdded: {type: DataResourceRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/dataResource/dataResourceRoles/add?`, null, req);
+    return postToUrl(`content/dataResource/dataResourceRoles/add?`, args.dataResourceRoleToBeAdded, req);
   }
 };
 export {createDataResourceRole};

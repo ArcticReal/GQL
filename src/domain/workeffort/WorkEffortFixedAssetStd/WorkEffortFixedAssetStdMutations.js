@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortFixedAssetStdResponseType} from '../../workeffort/WorkEffortFixedAssetStd/WorkEffortFixedAssetStdResponseType.js';
 import {WorkEffortFixedAssetStdInputType} from '../../workeffort/WorkEffortFixedAssetStd/WorkEffortFixedAssetStdInputType.js';
+import {WorkEffortFixedAssetStdResponseType} from '../../workeffort/WorkEffortFixedAssetStd/WorkEffortFixedAssetStdResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortFixedAssetStd = {
   type: WorkEffortFixedAssetStdResponseType,
   description: 'mutation for ofbiz createWorkEffortFixedAssetStd method',
-  args:{},
+  args:{workEffortFixedAssetStdToBeAdded: {type: WorkEffortFixedAssetStdInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortFixedAssetStds/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortFixedAssetStds/add?`, args.workEffortFixedAssetStdToBeAdded, req);
   }
 };
 export {createWorkEffortFixedAssetStd};

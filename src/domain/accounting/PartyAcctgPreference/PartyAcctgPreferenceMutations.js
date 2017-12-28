@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyAcctgPreferenceResponseType} from '../../accounting/PartyAcctgPreference/PartyAcctgPreferenceResponseType.js';
 import {PartyAcctgPreferenceInputType} from '../../accounting/PartyAcctgPreference/PartyAcctgPreferenceInputType.js';
+import {PartyAcctgPreferenceResponseType} from '../../accounting/PartyAcctgPreference/PartyAcctgPreferenceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyAcctgPreference = {
   type: PartyAcctgPreferenceResponseType,
   description: 'mutation for ofbiz createPartyAcctgPreference method',
-  args:{},
+  args:{partyAcctgPreferenceToBeAdded: {type: PartyAcctgPreferenceInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/partyAcctgPreferences/add?`, null, req);
+    return postToUrl(`accounting/partyAcctgPreferences/add?`, args.partyAcctgPreferenceToBeAdded, req);
   }
 };
 export {createPartyAcctgPreference};

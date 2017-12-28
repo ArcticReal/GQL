@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {EmplPositionTypeRateResponseType} from '../../humanres/EmplPositionTypeRate/EmplPositionTypeRateResponseType.js';
 import {EmplPositionTypeRateInputType} from '../../humanres/EmplPositionTypeRate/EmplPositionTypeRateInputType.js';
+import {EmplPositionTypeRateResponseType} from '../../humanres/EmplPositionTypeRate/EmplPositionTypeRateResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createEmplPositionTypeRate = {
   type: EmplPositionTypeRateResponseType,
   description: 'mutation for ofbiz createEmplPositionTypeRate method',
-  args:{},
+  args:{emplPositionTypeRateToBeAdded: {type: EmplPositionTypeRateInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/emplPosition/emplPositionTypeRates/add?`, null, req);
+    return postToUrl(`humanres/emplPosition/emplPositionTypeRates/add?`, args.emplPositionTypeRateToBeAdded, req);
   }
 };
 export {createEmplPositionTypeRate};

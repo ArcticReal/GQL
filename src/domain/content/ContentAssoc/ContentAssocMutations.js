@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContentAssocResponseType} from '../../content/ContentAssoc/ContentAssocResponseType.js';
 import {ContentAssocInputType} from '../../content/ContentAssoc/ContentAssocInputType.js';
+import {ContentAssocResponseType} from '../../content/ContentAssoc/ContentAssocResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContentAssoc = {
   type: ContentAssocResponseType,
   description: 'mutation for ofbiz createContentAssoc method',
-  args:{},
+  args:{contentAssocToBeAdded: {type: ContentAssocInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentAssocs/add?`, null, req);
+    return postToUrl(`content/content/contentAssocs/add?`, args.contentAssocToBeAdded, req);
   }
 };
 export {createContentAssoc};

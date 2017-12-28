@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {MimeTypeResponseType} from '../../content/MimeType/MimeTypeResponseType.js';
 import {MimeTypeInputType} from '../../content/MimeType/MimeTypeInputType.js';
+import {MimeTypeResponseType} from '../../content/MimeType/MimeTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createMimeType = {
   type: MimeTypeResponseType,
   description: 'mutation for ofbiz createMimeType method',
-  args:{},
+  args:{mimeTypeToBeAdded: {type: MimeTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/mimeTypes/add?`, null, req);
+    return postToUrl(`content/mimeTypes/add?`, args.mimeTypeToBeAdded, req);
   }
 };
 export {createMimeType};

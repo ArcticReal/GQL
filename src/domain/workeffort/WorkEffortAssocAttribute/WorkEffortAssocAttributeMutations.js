@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortAssocAttributeResponseType} from '../../workeffort/WorkEffortAssocAttribute/WorkEffortAssocAttributeResponseType.js';
 import {WorkEffortAssocAttributeInputType} from '../../workeffort/WorkEffortAssocAttribute/WorkEffortAssocAttributeInputType.js';
+import {WorkEffortAssocAttributeResponseType} from '../../workeffort/WorkEffortAssocAttribute/WorkEffortAssocAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortAssocAttribute = {
   type: WorkEffortAssocAttributeResponseType,
   description: 'mutation for ofbiz createWorkEffortAssocAttribute method',
-  args:{},
+  args:{workEffortAssocAttributeToBeAdded: {type: WorkEffortAssocAttributeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortAssocAttributes/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortAssocAttributes/add?`, args.workEffortAssocAttributeToBeAdded, req);
   }
 };
 export {createWorkEffortAssocAttribute};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ShipmentAttributeResponseType} from '../../shipment/ShipmentAttribute/ShipmentAttributeResponseType.js';
 import {ShipmentAttributeInputType} from '../../shipment/ShipmentAttribute/ShipmentAttributeInputType.js';
+import {ShipmentAttributeResponseType} from '../../shipment/ShipmentAttribute/ShipmentAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createShipmentAttribute = {
   type: ShipmentAttributeResponseType,
   description: 'mutation for ofbiz createShipmentAttribute method',
-  args:{},
+  args:{shipmentAttributeToBeAdded: {type: ShipmentAttributeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/shipmentAttributes/add?`, null, req);
+    return postToUrl(`shipment/shipment/shipmentAttributes/add?`, args.shipmentAttributeToBeAdded, req);
   }
 };
 export {createShipmentAttribute};

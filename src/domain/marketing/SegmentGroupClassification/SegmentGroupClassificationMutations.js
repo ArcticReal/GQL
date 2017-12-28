@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SegmentGroupClassificationResponseType} from '../../marketing/SegmentGroupClassification/SegmentGroupClassificationResponseType.js';
 import {SegmentGroupClassificationInputType} from '../../marketing/SegmentGroupClassification/SegmentGroupClassificationInputType.js';
+import {SegmentGroupClassificationResponseType} from '../../marketing/SegmentGroupClassification/SegmentGroupClassificationResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSegmentGroupClassification = {
   type: SegmentGroupClassificationResponseType,
   description: 'mutation for ofbiz createSegmentGroupClassification method',
-  args:{},
+  args:{segmentGroupClassificationToBeAdded: {type: SegmentGroupClassificationInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/segmentGroup/segmentGroupClassifications/add?`, null, req);
+    return postToUrl(`marketing/segmentGroup/segmentGroupClassifications/add?`, args.segmentGroupClassificationToBeAdded, req);
   }
 };
 export {createSegmentGroupClassification};

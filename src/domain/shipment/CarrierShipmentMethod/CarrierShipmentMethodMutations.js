@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {CarrierShipmentMethodResponseType} from '../../shipment/CarrierShipmentMethod/CarrierShipmentMethodResponseType.js';
 import {CarrierShipmentMethodInputType} from '../../shipment/CarrierShipmentMethod/CarrierShipmentMethodInputType.js';
+import {CarrierShipmentMethodResponseType} from '../../shipment/CarrierShipmentMethod/CarrierShipmentMethodResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createCarrierShipmentMethod = {
   type: CarrierShipmentMethodResponseType,
   description: 'mutation for ofbiz createCarrierShipmentMethod method',
-  args:{},
+  args:{carrierShipmentMethodToBeAdded: {type: CarrierShipmentMethodInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/carrierShipmentMethods/add?`, null, req);
+    return postToUrl(`shipment/shipment/carrierShipmentMethods/add?`, args.carrierShipmentMethodToBeAdded, req);
   }
 };
 export {createCarrierShipmentMethod};

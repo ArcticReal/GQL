@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {UserLoginHistoryResponseType} from '../../login/UserLoginHistory/UserLoginHistoryResponseType.js';
 import {UserLoginHistoryInputType} from '../../login/UserLoginHistory/UserLoginHistoryInputType.js';
+import {UserLoginHistoryResponseType} from '../../login/UserLoginHistory/UserLoginHistoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createUserLoginHistory = {
   type: UserLoginHistoryResponseType,
   description: 'mutation for ofbiz createUserLoginHistory method',
-  args:{},
+  args:{userLoginHistoryToBeAdded: {type: UserLoginHistoryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`login/userLogin/userLoginHistorys/add?`, null, req);
+    return postToUrl(`login/userLogin/userLoginHistorys/add?`, args.userLoginHistoryToBeAdded, req);
   }
 };
 export {createUserLoginHistory};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortSurveyApplResponseType} from '../../workeffort/WorkEffortSurveyAppl/WorkEffortSurveyApplResponseType.js';
 import {WorkEffortSurveyApplInputType} from '../../workeffort/WorkEffortSurveyAppl/WorkEffortSurveyApplInputType.js';
+import {WorkEffortSurveyApplResponseType} from '../../workeffort/WorkEffortSurveyAppl/WorkEffortSurveyApplResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortSurveyAppl = {
   type: WorkEffortSurveyApplResponseType,
   description: 'mutation for ofbiz createWorkEffortSurveyAppl method',
-  args:{},
+  args:{workEffortSurveyApplToBeAdded: {type: WorkEffortSurveyApplInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortSurveyAppls/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortSurveyAppls/add?`, args.workEffortSurveyApplToBeAdded, req);
   }
 };
 export {createWorkEffortSurveyAppl};

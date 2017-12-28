@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyContentResponseType} from '../../party/PartyContent/PartyContentResponseType.js';
 import {PartyContentInputType} from '../../party/PartyContent/PartyContentInputType.js';
+import {PartyContentResponseType} from '../../party/PartyContent/PartyContentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyContent = {
   type: PartyContentResponseType,
   description: 'mutation for ofbiz createPartyContent method',
-  args:{},
+  args:{partyContentToBeAdded: {type: PartyContentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyContents/add?`, null, req);
+    return postToUrl(`party/party/partyContents/add?`, args.partyContentToBeAdded, req);
   }
 };
 export {createPartyContent};

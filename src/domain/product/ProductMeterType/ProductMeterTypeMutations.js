@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductMeterTypeResponseType} from '../../product/ProductMeterType/ProductMeterTypeResponseType.js';
 import {ProductMeterTypeInputType} from '../../product/ProductMeterType/ProductMeterTypeInputType.js';
+import {ProductMeterTypeResponseType} from '../../product/ProductMeterType/ProductMeterTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductMeterType = {
   type: ProductMeterTypeResponseType,
   description: 'mutation for ofbiz createProductMeterType method',
-  args:{},
+  args:{productMeterTypeToBeAdded: {type: ProductMeterTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productMeterTypes/add?`, null, req);
+    return postToUrl(`product/product/productMeterTypes/add?`, args.productMeterTypeToBeAdded, req);
   }
 };
 export {createProductMeterType};

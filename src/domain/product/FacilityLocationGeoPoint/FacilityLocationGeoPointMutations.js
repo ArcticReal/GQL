@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FacilityLocationGeoPointResponseType} from '../../product/FacilityLocationGeoPoint/FacilityLocationGeoPointResponseType.js';
 import {FacilityLocationGeoPointInputType} from '../../product/FacilityLocationGeoPoint/FacilityLocationGeoPointInputType.js';
+import {FacilityLocationGeoPointResponseType} from '../../product/FacilityLocationGeoPoint/FacilityLocationGeoPointResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFacilityLocationGeoPoint = {
   type: FacilityLocationGeoPointResponseType,
   description: 'mutation for ofbiz createFacilityLocationGeoPoint method',
-  args:{},
+  args:{facilityLocationGeoPointToBeAdded: {type: FacilityLocationGeoPointInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityLocationGeoPoints/add?`, null, req);
+    return postToUrl(`product/facility/facilityLocationGeoPoints/add?`, args.facilityLocationGeoPointToBeAdded, req);
   }
 };
 export {createFacilityLocationGeoPoint};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {InventoryItemLabelResponseType} from '../../product/InventoryItemLabel/InventoryItemLabelResponseType.js';
 import {InventoryItemLabelInputType} from '../../product/InventoryItemLabel/InventoryItemLabelInputType.js';
+import {InventoryItemLabelResponseType} from '../../product/InventoryItemLabel/InventoryItemLabelResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createInventoryItemLabel = {
   type: InventoryItemLabelResponseType,
   description: 'mutation for ofbiz createInventoryItemLabel method',
-  args:{},
+  args:{inventoryItemLabelToBeAdded: {type: InventoryItemLabelInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/inventoryItem/inventoryItemLabels/add?`, null, req);
+    return postToUrl(`product/inventoryItem/inventoryItemLabels/add?`, args.inventoryItemLabelToBeAdded, req);
   }
 };
 export {createInventoryItemLabel};

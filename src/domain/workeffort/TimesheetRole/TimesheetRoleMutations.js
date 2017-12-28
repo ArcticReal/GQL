@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {TimesheetRoleResponseType} from '../../workeffort/TimesheetRole/TimesheetRoleResponseType.js';
 import {TimesheetRoleInputType} from '../../workeffort/TimesheetRole/TimesheetRoleInputType.js';
+import {TimesheetRoleResponseType} from '../../workeffort/TimesheetRole/TimesheetRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createTimesheetRole = {
   type: TimesheetRoleResponseType,
   description: 'mutation for ofbiz createTimesheetRole method',
-  args:{},
+  args:{timesheetRoleToBeAdded: {type: TimesheetRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/timesheet/timesheetRoles/add?`, null, req);
+    return postToUrl(`workeffort/timesheet/timesheetRoles/add?`, args.timesheetRoleToBeAdded, req);
   }
 };
 export {createTimesheetRole};

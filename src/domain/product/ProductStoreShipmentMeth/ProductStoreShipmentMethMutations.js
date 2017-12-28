@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductStoreShipmentMethResponseType} from '../../product/ProductStoreShipmentMeth/ProductStoreShipmentMethResponseType.js';
 import {ProductStoreShipmentMethInputType} from '../../product/ProductStoreShipmentMeth/ProductStoreShipmentMethInputType.js';
+import {ProductStoreShipmentMethResponseType} from '../../product/ProductStoreShipmentMeth/ProductStoreShipmentMethResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductStoreShipmentMeth = {
   type: ProductStoreShipmentMethResponseType,
   description: 'mutation for ofbiz createProductStoreShipmentMeth method',
-  args:{},
+  args:{productStoreShipmentMethToBeAdded: {type: ProductStoreShipmentMethInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStoreShipmentMeths/add?`, null, req);
+    return postToUrl(`product/product/productStoreShipmentMeths/add?`, args.productStoreShipmentMethToBeAdded, req);
   }
 };
 export {createProductStoreShipmentMeth};

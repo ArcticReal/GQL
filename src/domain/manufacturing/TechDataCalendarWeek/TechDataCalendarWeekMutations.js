@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {TechDataCalendarWeekResponseType} from '../../manufacturing/TechDataCalendarWeek/TechDataCalendarWeekResponseType.js';
 import {TechDataCalendarWeekInputType} from '../../manufacturing/TechDataCalendarWeek/TechDataCalendarWeekInputType.js';
+import {TechDataCalendarWeekResponseType} from '../../manufacturing/TechDataCalendarWeek/TechDataCalendarWeekResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createTechDataCalendarWeek = {
   type: TechDataCalendarWeekResponseType,
   description: 'mutation for ofbiz createTechDataCalendarWeek method',
-  args:{},
+  args:{techDataCalendarWeekToBeAdded: {type: TechDataCalendarWeekInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`manufacturing/techDataCalendar/techDataCalendarWeeks/add?`, null, req);
+    return postToUrl(`manufacturing/techDataCalendar/techDataCalendarWeeks/add?`, args.techDataCalendarWeekToBeAdded, req);
   }
 };
 export {createTechDataCalendarWeek};

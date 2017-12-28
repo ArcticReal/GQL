@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductPriceCondResponseType} from '../../product/ProductPriceCond/ProductPriceCondResponseType.js';
 import {ProductPriceCondInputType} from '../../product/ProductPriceCond/ProductPriceCondInputType.js';
+import {ProductPriceCondResponseType} from '../../product/ProductPriceCond/ProductPriceCondResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductPriceCond = {
   type: ProductPriceCondResponseType,
   description: 'mutation for ofbiz createProductPriceCond method',
-  args:{},
+  args:{productPriceCondToBeAdded: {type: ProductPriceCondInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productPriceConds/add?`, null, req);
+    return postToUrl(`product/product/productPriceConds/add?`, args.productPriceCondToBeAdded, req);
   }
 };
 export {createProductPriceCond};

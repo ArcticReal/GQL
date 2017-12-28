@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyClassificationTypeResponseType} from '../../party/PartyClassificationType/PartyClassificationTypeResponseType.js';
 import {PartyClassificationTypeInputType} from '../../party/PartyClassificationType/PartyClassificationTypeInputType.js';
+import {PartyClassificationTypeResponseType} from '../../party/PartyClassificationType/PartyClassificationTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyClassificationType = {
   type: PartyClassificationTypeResponseType,
   description: 'mutation for ofbiz createPartyClassificationType method',
-  args:{},
+  args:{partyClassificationTypeToBeAdded: {type: PartyClassificationTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyClassificationTypes/add?`, null, req);
+    return postToUrl(`party/party/partyClassificationTypes/add?`, args.partyClassificationTypeToBeAdded, req);
   }
 };
 export {createPartyClassificationType};

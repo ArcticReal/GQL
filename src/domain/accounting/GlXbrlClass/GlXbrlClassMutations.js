@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {GlXbrlClassResponseType} from '../../accounting/GlXbrlClass/GlXbrlClassResponseType.js';
 import {GlXbrlClassInputType} from '../../accounting/GlXbrlClass/GlXbrlClassInputType.js';
+import {GlXbrlClassResponseType} from '../../accounting/GlXbrlClass/GlXbrlClassResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createGlXbrlClass = {
   type: GlXbrlClassResponseType,
   description: 'mutation for ofbiz createGlXbrlClass method',
-  args:{},
+  args:{glXbrlClassToBeAdded: {type: GlXbrlClassInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glXbrlClasss/add?`, null, req);
+    return postToUrl(`accounting/glXbrlClasss/add?`, args.glXbrlClassToBeAdded, req);
   }
 };
 export {createGlXbrlClass};

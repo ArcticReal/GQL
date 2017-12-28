@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {OrderAdjustmentAttributeResponseType} from '../../order/OrderAdjustmentAttribute/OrderAdjustmentAttributeResponseType.js';
 import {OrderAdjustmentAttributeInputType} from '../../order/OrderAdjustmentAttribute/OrderAdjustmentAttributeInputType.js';
+import {OrderAdjustmentAttributeResponseType} from '../../order/OrderAdjustmentAttribute/OrderAdjustmentAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createOrderAdjustmentAttribute = {
   type: OrderAdjustmentAttributeResponseType,
   description: 'mutation for ofbiz createOrderAdjustmentAttribute method',
-  args:{},
+  args:{orderAdjustmentAttributeToBeAdded: {type: OrderAdjustmentAttributeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderAdjustment/orderAdjustmentAttributes/add?`, null, req);
+    return postToUrl(`order/orderAdjustment/orderAdjustmentAttributes/add?`, args.orderAdjustmentAttributeToBeAdded, req);
   }
 };
 export {createOrderAdjustmentAttribute};

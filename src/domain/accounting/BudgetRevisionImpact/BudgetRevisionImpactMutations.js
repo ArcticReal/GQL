@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {BudgetRevisionImpactResponseType} from '../../accounting/BudgetRevisionImpact/BudgetRevisionImpactResponseType.js';
 import {BudgetRevisionImpactInputType} from '../../accounting/BudgetRevisionImpact/BudgetRevisionImpactInputType.js';
+import {BudgetRevisionImpactResponseType} from '../../accounting/BudgetRevisionImpact/BudgetRevisionImpactResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createBudgetRevisionImpact = {
   type: BudgetRevisionImpactResponseType,
   description: 'mutation for ofbiz createBudgetRevisionImpact method',
-  args:{},
+  args:{budgetRevisionImpactToBeAdded: {type: BudgetRevisionImpactInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/budget/budgetRevisionImpacts/add?`, null, req);
+    return postToUrl(`accounting/budget/budgetRevisionImpacts/add?`, args.budgetRevisionImpactToBeAdded, req);
   }
 };
 export {createBudgetRevisionImpact};

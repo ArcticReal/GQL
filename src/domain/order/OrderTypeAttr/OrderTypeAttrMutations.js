@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {OrderTypeAttrResponseType} from '../../order/OrderTypeAttr/OrderTypeAttrResponseType.js';
 import {OrderTypeAttrInputType} from '../../order/OrderTypeAttr/OrderTypeAttrInputType.js';
+import {OrderTypeAttrResponseType} from '../../order/OrderTypeAttr/OrderTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createOrderTypeAttr = {
   type: OrderTypeAttrResponseType,
   description: 'mutation for ofbiz createOrderTypeAttr method',
-  args:{},
+  args:{orderTypeAttrToBeAdded: {type: OrderTypeAttrInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderType/orderTypeAttrs/add?`, null, req);
+    return postToUrl(`order/orderType/orderTypeAttrs/add?`, args.orderTypeAttrToBeAdded, req);
   }
 };
 export {createOrderTypeAttr};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PaymentGatewayClearCommerceResponseType} from '../../accounting/PaymentGatewayClearCommerce/PaymentGatewayClearCommerceResponseType.js';
 import {PaymentGatewayClearCommerceInputType} from '../../accounting/PaymentGatewayClearCommerce/PaymentGatewayClearCommerceInputType.js';
+import {PaymentGatewayClearCommerceResponseType} from '../../accounting/PaymentGatewayClearCommerce/PaymentGatewayClearCommerceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPaymentGatewayClearCommerce = {
   type: PaymentGatewayClearCommerceResponseType,
   description: 'mutation for ofbiz createPaymentGatewayClearCommerce method',
-  args:{},
+  args:{paymentGatewayClearCommerceToBeAdded: {type: PaymentGatewayClearCommerceInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/payment/paymentGatewayClearCommerces/add?`, null, req);
+    return postToUrl(`accounting/payment/paymentGatewayClearCommerces/add?`, args.paymentGatewayClearCommerceToBeAdded, req);
   }
 };
 export {createPaymentGatewayClearCommerce};

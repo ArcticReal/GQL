@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {CommunicationEventPurposeResponseType} from '../../party/CommunicationEventPurpose/CommunicationEventPurposeResponseType.js';
 import {CommunicationEventPurposeInputType} from '../../party/CommunicationEventPurpose/CommunicationEventPurposeInputType.js';
+import {CommunicationEventPurposeResponseType} from '../../party/CommunicationEventPurpose/CommunicationEventPurposeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createCommunicationEventPurpose = {
   type: CommunicationEventPurposeResponseType,
   description: 'mutation for ofbiz createCommunicationEventPurpose method',
-  args:{},
+  args:{communicationEventPurposeToBeAdded: {type: CommunicationEventPurposeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/communicationEvent/communicationEventPurposes/add?`, null, req);
+    return postToUrl(`party/communicationEvent/communicationEventPurposes/add?`, args.communicationEventPurposeToBeAdded, req);
   }
 };
 export {createCommunicationEventPurpose};

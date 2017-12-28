@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {OrderDeliveryScheduleResponseType} from '../../order/OrderDeliverySchedule/OrderDeliveryScheduleResponseType.js';
 import {OrderDeliveryScheduleInputType} from '../../order/OrderDeliverySchedule/OrderDeliveryScheduleInputType.js';
+import {OrderDeliveryScheduleResponseType} from '../../order/OrderDeliverySchedule/OrderDeliveryScheduleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createOrderDeliverySchedule = {
   type: OrderDeliveryScheduleResponseType,
   description: 'mutation for ofbiz createOrderDeliverySchedule method',
-  args:{},
+  args:{orderDeliveryScheduleToBeAdded: {type: OrderDeliveryScheduleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderDeliverySchedules/add?`, null, req);
+    return postToUrl(`order/orderDeliverySchedules/add?`, args.orderDeliveryScheduleToBeAdded, req);
   }
 };
 export {createOrderDeliverySchedule};

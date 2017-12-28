@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {EftAccountResponseType} from '../../accounting/EftAccount/EftAccountResponseType.js';
 import {EftAccountInputType} from '../../accounting/EftAccount/EftAccountInputType.js';
+import {EftAccountResponseType} from '../../accounting/EftAccount/EftAccountResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createEftAccount = {
   type: EftAccountResponseType,
   description: 'mutation for ofbiz createEftAccount method',
-  args:{},
+  args:{eftAccountToBeAdded: {type: EftAccountInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/eftAccounts/add?`, null, req);
+    return postToUrl(`accounting/eftAccounts/add?`, args.eftAccountToBeAdded, req);
   }
 };
 export {createEftAccount};

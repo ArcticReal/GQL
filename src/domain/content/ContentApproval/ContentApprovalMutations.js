@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContentApprovalResponseType} from '../../content/ContentApproval/ContentApprovalResponseType.js';
 import {ContentApprovalInputType} from '../../content/ContentApproval/ContentApprovalInputType.js';
+import {ContentApprovalResponseType} from '../../content/ContentApproval/ContentApprovalResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContentApproval = {
   type: ContentApprovalResponseType,
   description: 'mutation for ofbiz createContentApproval method',
-  args:{},
+  args:{contentApprovalToBeAdded: {type: ContentApprovalInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentApprovals/add?`, null, req);
+    return postToUrl(`content/content/contentApprovals/add?`, args.contentApprovalToBeAdded, req);
   }
 };
 export {createContentApproval};

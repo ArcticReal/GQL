@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProdCatalogInvFacilityResponseType} from '../../product/ProdCatalogInvFacility/ProdCatalogInvFacilityResponseType.js';
 import {ProdCatalogInvFacilityInputType} from '../../product/ProdCatalogInvFacility/ProdCatalogInvFacilityInputType.js';
+import {ProdCatalogInvFacilityResponseType} from '../../product/ProdCatalogInvFacility/ProdCatalogInvFacilityResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProdCatalogInvFacility = {
   type: ProdCatalogInvFacilityResponseType,
   description: 'mutation for ofbiz createProdCatalogInvFacility method',
-  args:{},
+  args:{prodCatalogInvFacilityToBeAdded: {type: ProdCatalogInvFacilityInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/prodCatalog/prodCatalogInvFacilitys/add?`, null, req);
+    return postToUrl(`product/prodCatalog/prodCatalogInvFacilitys/add?`, args.prodCatalogInvFacilityToBeAdded, req);
   }
 };
 export {createProdCatalogInvFacility};

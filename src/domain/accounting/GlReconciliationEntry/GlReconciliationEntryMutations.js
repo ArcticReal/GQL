@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {GlReconciliationEntryResponseType} from '../../accounting/GlReconciliationEntry/GlReconciliationEntryResponseType.js';
 import {GlReconciliationEntryInputType} from '../../accounting/GlReconciliationEntry/GlReconciliationEntryInputType.js';
+import {GlReconciliationEntryResponseType} from '../../accounting/GlReconciliationEntry/GlReconciliationEntryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createGlReconciliationEntry = {
   type: GlReconciliationEntryResponseType,
   description: 'mutation for ofbiz createGlReconciliationEntry method',
-  args:{},
+  args:{glReconciliationEntryToBeAdded: {type: GlReconciliationEntryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glReconciliation/glReconciliationEntrys/add?`, null, req);
+    return postToUrl(`accounting/glReconciliation/glReconciliationEntrys/add?`, args.glReconciliationEntryToBeAdded, req);
   }
 };
 export {createGlReconciliationEntry};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {RequirementStatusResponseType} from '../../order/RequirementStatus/RequirementStatusResponseType.js';
 import {RequirementStatusInputType} from '../../order/RequirementStatus/RequirementStatusInputType.js';
+import {RequirementStatusResponseType} from '../../order/RequirementStatus/RequirementStatusResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createRequirementStatus = {
   type: RequirementStatusResponseType,
   description: 'mutation for ofbiz createRequirementStatus method',
-  args:{},
+  args:{requirementStatusToBeAdded: {type: RequirementStatusInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/requirement/requirementStatuss/add?`, null, req);
+    return postToUrl(`order/requirement/requirementStatuss/add?`, args.requirementStatusToBeAdded, req);
   }
 };
 export {createRequirementStatus};

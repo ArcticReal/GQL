@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {DeliverableTypeResponseType} from '../../workeffort/DeliverableType/DeliverableTypeResponseType.js';
 import {DeliverableTypeInputType} from '../../workeffort/DeliverableType/DeliverableTypeInputType.js';
+import {DeliverableTypeResponseType} from '../../workeffort/DeliverableType/DeliverableTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createDeliverableType = {
   type: DeliverableTypeResponseType,
   description: 'mutation for ofbiz createDeliverableType method',
-  args:{},
+  args:{deliverableTypeToBeAdded: {type: DeliverableTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/deliverable/deliverableTypes/add?`, null, req);
+    return postToUrl(`workeffort/deliverable/deliverableTypes/add?`, args.deliverableTypeToBeAdded, req);
   }
 };
 export {createDeliverableType};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {OrderItemPriceInfoResponseType} from '../../order/OrderItemPriceInfo/OrderItemPriceInfoResponseType.js';
 import {OrderItemPriceInfoInputType} from '../../order/OrderItemPriceInfo/OrderItemPriceInfoInputType.js';
+import {OrderItemPriceInfoResponseType} from '../../order/OrderItemPriceInfo/OrderItemPriceInfoResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createOrderItemPriceInfo = {
   type: OrderItemPriceInfoResponseType,
   description: 'mutation for ofbiz createOrderItemPriceInfo method',
-  args:{},
+  args:{orderItemPriceInfoToBeAdded: {type: OrderItemPriceInfoInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderItem/orderItemPriceInfos/add?`, null, req);
+    return postToUrl(`order/orderItem/orderItemPriceInfos/add?`, args.orderItemPriceInfoToBeAdded, req);
   }
 };
 export {createOrderItemPriceInfo};

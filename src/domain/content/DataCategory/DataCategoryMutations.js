@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {DataCategoryResponseType} from '../../content/DataCategory/DataCategoryResponseType.js';
 import {DataCategoryInputType} from '../../content/DataCategory/DataCategoryInputType.js';
+import {DataCategoryResponseType} from '../../content/DataCategory/DataCategoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createDataCategory = {
   type: DataCategoryResponseType,
   description: 'mutation for ofbiz createDataCategory method',
-  args:{},
+  args:{dataCategoryToBeAdded: {type: DataCategoryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/dataCategorys/add?`, null, req);
+    return postToUrl(`content/dataCategorys/add?`, args.dataCategoryToBeAdded, req);
   }
 };
 export {createDataCategory};

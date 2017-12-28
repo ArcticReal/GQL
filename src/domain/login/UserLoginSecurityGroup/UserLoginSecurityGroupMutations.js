@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {UserLoginSecurityGroupResponseType} from '../../login/UserLoginSecurityGroup/UserLoginSecurityGroupResponseType.js';
 import {UserLoginSecurityGroupInputType} from '../../login/UserLoginSecurityGroup/UserLoginSecurityGroupInputType.js';
+import {UserLoginSecurityGroupResponseType} from '../../login/UserLoginSecurityGroup/UserLoginSecurityGroupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createUserLoginSecurityGroup = {
   type: UserLoginSecurityGroupResponseType,
   description: 'mutation for ofbiz createUserLoginSecurityGroup method',
-  args:{},
+  args:{userLoginSecurityGroupToBeAdded: {type: UserLoginSecurityGroupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`login/userLogin/userLoginSecurityGroups/add?`, null, req);
+    return postToUrl(`login/userLogin/userLoginSecurityGroups/add?`, args.userLoginSecurityGroupToBeAdded, req);
   }
 };
 export {createUserLoginSecurityGroup};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {OrderBlacklistTypeResponseType} from '../../order/OrderBlacklistType/OrderBlacklistTypeResponseType.js';
 import {OrderBlacklistTypeInputType} from '../../order/OrderBlacklistType/OrderBlacklistTypeInputType.js';
+import {OrderBlacklistTypeResponseType} from '../../order/OrderBlacklistType/OrderBlacklistTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createOrderBlacklistType = {
   type: OrderBlacklistTypeResponseType,
   description: 'mutation for ofbiz createOrderBlacklistType method',
-  args:{},
+  args:{orderBlacklistTypeToBeAdded: {type: OrderBlacklistTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderBlacklist/orderBlacklistTypes/add?`, null, req);
+    return postToUrl(`order/orderBlacklist/orderBlacklistTypes/add?`, args.orderBlacklistTypeToBeAdded, req);
   }
 };
 export {createOrderBlacklistType};

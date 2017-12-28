@@ -16,9 +16,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createShipment = {
   type: ResponseType,
   description: 'mutation for ofbiz createShipment method',
-  args:{},
+  args:{shipmentToBeAdded: {type: ShipmentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipments/add?`, null, req);
+    return postToUrl(`shipments/add?`, args.shipmentToBeAdded, req);
   }
 };
 export {createShipment};

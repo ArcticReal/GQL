@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PayGradeResponseType} from '../../humanres/PayGrade/PayGradeResponseType.js';
 import {PayGradeInputType} from '../../humanres/PayGrade/PayGradeInputType.js';
+import {PayGradeResponseType} from '../../humanres/PayGrade/PayGradeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPayGrade = {
   type: PayGradeResponseType,
   description: 'mutation for ofbiz createPayGrade method',
-  args:{},
+  args:{payGradeToBeAdded: {type: PayGradeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/payGrades/add?`, null, req);
+    return postToUrl(`humanres/payGrades/add?`, args.payGradeToBeAdded, req);
   }
 };
 export {createPayGrade};

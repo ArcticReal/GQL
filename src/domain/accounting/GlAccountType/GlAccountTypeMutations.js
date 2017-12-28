@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {GlAccountTypeResponseType} from '../../accounting/GlAccountType/GlAccountTypeResponseType.js';
 import {GlAccountTypeInputType} from '../../accounting/GlAccountType/GlAccountTypeInputType.js';
+import {GlAccountTypeResponseType} from '../../accounting/GlAccountType/GlAccountTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createGlAccountType = {
   type: GlAccountTypeResponseType,
   description: 'mutation for ofbiz createGlAccountType method',
-  args:{},
+  args:{glAccountTypeToBeAdded: {type: GlAccountTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/glAccountTypes/add?`, null, req);
+    return postToUrl(`accounting/glAccount/glAccountTypes/add?`, args.glAccountTypeToBeAdded, req);
   }
 };
 export {createGlAccountType};

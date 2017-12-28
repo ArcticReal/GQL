@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductPriceActionTypeResponseType} from '../../product/ProductPriceActionType/ProductPriceActionTypeResponseType.js';
 import {ProductPriceActionTypeInputType} from '../../product/ProductPriceActionType/ProductPriceActionTypeInputType.js';
+import {ProductPriceActionTypeResponseType} from '../../product/ProductPriceActionType/ProductPriceActionTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductPriceActionType = {
   type: ProductPriceActionTypeResponseType,
   description: 'mutation for ofbiz createProductPriceActionType method',
-  args:{},
+  args:{productPriceActionTypeToBeAdded: {type: ProductPriceActionTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productPriceActionTypes/add?`, null, req);
+    return postToUrl(`product/product/productPriceActionTypes/add?`, args.productPriceActionTypeToBeAdded, req);
   }
 };
 export {createProductPriceActionType};

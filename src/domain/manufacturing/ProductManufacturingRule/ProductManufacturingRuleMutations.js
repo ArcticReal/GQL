@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductManufacturingRuleResponseType} from '../../manufacturing/ProductManufacturingRule/ProductManufacturingRuleResponseType.js';
 import {ProductManufacturingRuleInputType} from '../../manufacturing/ProductManufacturingRule/ProductManufacturingRuleInputType.js';
+import {ProductManufacturingRuleResponseType} from '../../manufacturing/ProductManufacturingRule/ProductManufacturingRuleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductManufacturingRule = {
   type: ProductManufacturingRuleResponseType,
   description: 'mutation for ofbiz createProductManufacturingRule method',
-  args:{},
+  args:{productManufacturingRuleToBeAdded: {type: ProductManufacturingRuleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`manufacturing/productManufacturingRules/add?`, null, req);
+    return postToUrl(`manufacturing/productManufacturingRules/add?`, args.productManufacturingRuleToBeAdded, req);
   }
 };
 export {createProductManufacturingRule};

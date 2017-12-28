@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {AcctgTransTypeAttrResponseType} from '../../accounting/AcctgTransTypeAttr/AcctgTransTypeAttrResponseType.js';
 import {AcctgTransTypeAttrInputType} from '../../accounting/AcctgTransTypeAttr/AcctgTransTypeAttrInputType.js';
+import {AcctgTransTypeAttrResponseType} from '../../accounting/AcctgTransTypeAttr/AcctgTransTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createAcctgTransTypeAttr = {
   type: AcctgTransTypeAttrResponseType,
   description: 'mutation for ofbiz createAcctgTransTypeAttr method',
-  args:{},
+  args:{acctgTransTypeAttrToBeAdded: {type: AcctgTransTypeAttrInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/acctgTrans/acctgTransTypeAttrs/add?`, null, req);
+    return postToUrl(`accounting/acctgTrans/acctgTransTypeAttrs/add?`, args.acctgTransTypeAttrToBeAdded, req);
   }
 };
 export {createAcctgTransTypeAttr};

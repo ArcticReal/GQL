@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {MrpEventResponseType} from '../../manufacturing/MrpEvent/MrpEventResponseType.js';
 import {MrpEventInputType} from '../../manufacturing/MrpEvent/MrpEventInputType.js';
+import {MrpEventResponseType} from '../../manufacturing/MrpEvent/MrpEventResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createMrpEvent = {
   type: MrpEventResponseType,
   description: 'mutation for ofbiz createMrpEvent method',
-  args:{},
+  args:{mrpEventToBeAdded: {type: MrpEventInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`manufacturing/mrpEvents/add?`, null, req);
+    return postToUrl(`manufacturing/mrpEvents/add?`, args.mrpEventToBeAdded, req);
   }
 };
 export {createMrpEvent};

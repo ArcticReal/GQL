@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ElectronicTextResponseType} from '../../content/ElectronicText/ElectronicTextResponseType.js';
 import {ElectronicTextInputType} from '../../content/ElectronicText/ElectronicTextInputType.js';
+import {ElectronicTextResponseType} from '../../content/ElectronicText/ElectronicTextResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createElectronicText = {
   type: ElectronicTextResponseType,
   description: 'mutation for ofbiz createElectronicText method',
-  args:{},
+  args:{electronicTextToBeAdded: {type: ElectronicTextInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/electronicTexts/add?`, null, req);
+    return postToUrl(`content/electronicTexts/add?`, args.electronicTextToBeAdded, req);
   }
 };
 export {createElectronicText};

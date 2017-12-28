@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SalesOpportunityResponseType} from '../../marketing/SalesOpportunity/SalesOpportunityResponseType.js';
 import {SalesOpportunityInputType} from '../../marketing/SalesOpportunity/SalesOpportunityInputType.js';
+import {SalesOpportunityResponseType} from '../../marketing/SalesOpportunity/SalesOpportunityResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSalesOpportunity = {
   type: SalesOpportunityResponseType,
   description: 'mutation for ofbiz createSalesOpportunity method',
-  args:{},
+  args:{salesOpportunityToBeAdded: {type: SalesOpportunityInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/salesOpportunitys/add?`, null, req);
+    return postToUrl(`marketing/salesOpportunitys/add?`, args.salesOpportunityToBeAdded, req);
   }
 };
 export {createSalesOpportunity};

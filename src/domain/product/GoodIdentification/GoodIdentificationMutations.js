@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {GoodIdentificationResponseType} from '../../product/GoodIdentification/GoodIdentificationResponseType.js';
 import {GoodIdentificationInputType} from '../../product/GoodIdentification/GoodIdentificationInputType.js';
+import {GoodIdentificationResponseType} from '../../product/GoodIdentification/GoodIdentificationResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createGoodIdentification = {
   type: GoodIdentificationResponseType,
   description: 'mutation for ofbiz createGoodIdentification method',
-  args:{},
+  args:{goodIdentificationToBeAdded: {type: GoodIdentificationInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/goodIdentifications/add?`, null, req);
+    return postToUrl(`product/goodIdentifications/add?`, args.goodIdentificationToBeAdded, req);
   }
 };
 export {createGoodIdentification};

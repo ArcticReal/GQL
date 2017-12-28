@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PersonInputType} from '../../party/Person/PersonInputType.js';
 import {PersonResponseType} from '../../party/Person/PersonResponseType.js';
+import {PersonInputType} from '../../party/Person/PersonInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPerson = {
   type: PersonResponseType,
   description: 'mutation for ofbiz createPerson method',
-  args:{personToBeAdded: {type: PersonInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/persons/add?`, args.personToBeAdded, req);
+    return postToUrl(`party/persons/add?`, null, req);
   }
 };
 export {createPerson};

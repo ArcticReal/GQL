@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ReturnItemBillingResponseType} from '../../order/ReturnItemBilling/ReturnItemBillingResponseType.js';
 import {ReturnItemBillingInputType} from '../../order/ReturnItemBilling/ReturnItemBillingInputType.js';
+import {ReturnItemBillingResponseType} from '../../order/ReturnItemBilling/ReturnItemBillingResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createReturnItemBilling = {
   type: ReturnItemBillingResponseType,
   description: 'mutation for ofbiz createReturnItemBilling method',
-  args:{},
+  args:{returnItemBillingToBeAdded: {type: ReturnItemBillingInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/returnItem/returnItemBillings/add?`, null, req);
+    return postToUrl(`order/returnItem/returnItemBillings/add?`, args.returnItemBillingToBeAdded, req);
   }
 };
 export {createReturnItemBilling};

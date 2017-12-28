@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ShipmentCostEstimateResponseType} from '../../shipment/ShipmentCostEstimate/ShipmentCostEstimateResponseType.js';
 import {ShipmentCostEstimateInputType} from '../../shipment/ShipmentCostEstimate/ShipmentCostEstimateInputType.js';
+import {ShipmentCostEstimateResponseType} from '../../shipment/ShipmentCostEstimate/ShipmentCostEstimateResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createShipmentCostEstimate = {
   type: ShipmentCostEstimateResponseType,
   description: 'mutation for ofbiz createShipmentCostEstimate method',
-  args:{},
+  args:{shipmentCostEstimateToBeAdded: {type: ShipmentCostEstimateInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/shipmentCostEstimates/add?`, null, req);
+    return postToUrl(`shipment/shipment/shipmentCostEstimates/add?`, args.shipmentCostEstimateToBeAdded, req);
   }
 };
 export {createShipmentCostEstimate};

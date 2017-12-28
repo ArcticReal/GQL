@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FacilityContactMechPurposeResponseType} from '../../product/FacilityContactMechPurpose/FacilityContactMechPurposeResponseType.js';
 import {FacilityContactMechPurposeInputType} from '../../product/FacilityContactMechPurpose/FacilityContactMechPurposeInputType.js';
+import {FacilityContactMechPurposeResponseType} from '../../product/FacilityContactMechPurpose/FacilityContactMechPurposeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFacilityContactMechPurpose = {
   type: FacilityContactMechPurposeResponseType,
   description: 'mutation for ofbiz createFacilityContactMechPurpose method',
-  args:{},
+  args:{facilityContactMechPurposeToBeAdded: {type: FacilityContactMechPurposeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityContactMechPurposes/add?`, null, req);
+    return postToUrl(`product/facility/facilityContactMechPurposes/add?`, args.facilityContactMechPurposeToBeAdded, req);
   }
 };
 export {createFacilityContactMechPurpose};

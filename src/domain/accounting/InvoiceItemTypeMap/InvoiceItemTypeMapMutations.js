@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {InvoiceItemTypeMapResponseType} from '../../accounting/InvoiceItemTypeMap/InvoiceItemTypeMapResponseType.js';
 import {InvoiceItemTypeMapInputType} from '../../accounting/InvoiceItemTypeMap/InvoiceItemTypeMapInputType.js';
+import {InvoiceItemTypeMapResponseType} from '../../accounting/InvoiceItemTypeMap/InvoiceItemTypeMapResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createInvoiceItemTypeMap = {
   type: InvoiceItemTypeMapResponseType,
   description: 'mutation for ofbiz createInvoiceItemTypeMap method',
-  args:{},
+  args:{invoiceItemTypeMapToBeAdded: {type: InvoiceItemTypeMapInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceItemTypeMaps/add?`, null, req);
+    return postToUrl(`accounting/invoice/invoiceItemTypeMaps/add?`, args.invoiceItemTypeMapToBeAdded, req);
   }
 };
 export {createInvoiceItemTypeMap};

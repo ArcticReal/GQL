@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {CommunicationEventProductResponseType} from '../../party/CommunicationEventProduct/CommunicationEventProductResponseType.js';
 import {CommunicationEventProductInputType} from '../../party/CommunicationEventProduct/CommunicationEventProductInputType.js';
+import {CommunicationEventProductResponseType} from '../../party/CommunicationEventProduct/CommunicationEventProductResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createCommunicationEventProduct = {
   type: CommunicationEventProductResponseType,
   description: 'mutation for ofbiz createCommunicationEventProduct method',
-  args:{},
+  args:{communicationEventProductToBeAdded: {type: CommunicationEventProductInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/communicationEvent/communicationEventProducts/add?`, null, req);
+    return postToUrl(`party/communicationEvent/communicationEventProducts/add?`, args.communicationEventProductToBeAdded, req);
   }
 };
 export {createCommunicationEventProduct};

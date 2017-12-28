@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {VarianceReasonResponseType} from '../../product/VarianceReason/VarianceReasonResponseType.js';
 import {VarianceReasonInputType} from '../../product/VarianceReason/VarianceReasonInputType.js';
+import {VarianceReasonResponseType} from '../../product/VarianceReason/VarianceReasonResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createVarianceReason = {
   type: VarianceReasonResponseType,
   description: 'mutation for ofbiz createVarianceReason method',
-  args:{},
+  args:{varianceReasonToBeAdded: {type: VarianceReasonInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/varianceReasons/add?`, null, req);
+    return postToUrl(`product/varianceReasons/add?`, args.varianceReasonToBeAdded, req);
   }
 };
 export {createVarianceReason};

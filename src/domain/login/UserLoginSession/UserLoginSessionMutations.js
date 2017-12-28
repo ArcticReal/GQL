@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {UserLoginSessionResponseType} from '../../login/UserLoginSession/UserLoginSessionResponseType.js';
 import {UserLoginSessionInputType} from '../../login/UserLoginSession/UserLoginSessionInputType.js';
+import {UserLoginSessionResponseType} from '../../login/UserLoginSession/UserLoginSessionResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createUserLoginSession = {
   type: UserLoginSessionResponseType,
   description: 'mutation for ofbiz createUserLoginSession method',
-  args:{},
+  args:{userLoginSessionToBeAdded: {type: UserLoginSessionInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`login/userLogin/userLoginSessions/add?`, null, req);
+    return postToUrl(`login/userLogin/userLoginSessions/add?`, args.userLoginSessionToBeAdded, req);
   }
 };
 export {createUserLoginSession};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyResumeResponseType} from '../../humanres/PartyResume/PartyResumeResponseType.js';
 import {PartyResumeInputType} from '../../humanres/PartyResume/PartyResumeInputType.js';
+import {PartyResumeResponseType} from '../../humanres/PartyResume/PartyResumeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyResume = {
   type: PartyResumeResponseType,
   description: 'mutation for ofbiz createPartyResume method',
-  args:{},
+  args:{partyResumeToBeAdded: {type: PartyResumeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/partyResumes/add?`, null, req);
+    return postToUrl(`humanres/partyResumes/add?`, args.partyResumeToBeAdded, req);
   }
 };
 export {createPartyResume};

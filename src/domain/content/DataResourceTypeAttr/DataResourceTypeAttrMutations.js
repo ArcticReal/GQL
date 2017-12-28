@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {DataResourceTypeAttrResponseType} from '../../content/DataResourceTypeAttr/DataResourceTypeAttrResponseType.js';
 import {DataResourceTypeAttrInputType} from '../../content/DataResourceTypeAttr/DataResourceTypeAttrInputType.js';
+import {DataResourceTypeAttrResponseType} from '../../content/DataResourceTypeAttr/DataResourceTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createDataResourceTypeAttr = {
   type: DataResourceTypeAttrResponseType,
   description: 'mutation for ofbiz createDataResourceTypeAttr method',
-  args:{},
+  args:{dataResourceTypeAttrToBeAdded: {type: DataResourceTypeAttrInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/dataResource/dataResourceTypeAttrs/add?`, null, req);
+    return postToUrl(`content/dataResource/dataResourceTypeAttrs/add?`, args.dataResourceTypeAttrToBeAdded, req);
   }
 };
 export {createDataResourceTypeAttr};

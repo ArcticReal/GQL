@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ReturnHeaderTypeResponseType} from '../../order/ReturnHeaderType/ReturnHeaderTypeResponseType.js';
 import {ReturnHeaderTypeInputType} from '../../order/ReturnHeaderType/ReturnHeaderTypeInputType.js';
+import {ReturnHeaderTypeResponseType} from '../../order/ReturnHeaderType/ReturnHeaderTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createReturnHeaderType = {
   type: ReturnHeaderTypeResponseType,
   description: 'mutation for ofbiz createReturnHeaderType method',
-  args:{},
+  args:{returnHeaderTypeToBeAdded: {type: ReturnHeaderTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/returnHeader/returnHeaderTypes/add?`, null, req);
+    return postToUrl(`order/returnHeader/returnHeaderTypes/add?`, args.returnHeaderTypeToBeAdded, req);
   }
 };
 export {createReturnHeaderType};

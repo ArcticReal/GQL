@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {TermTypeResponseType} from '../../party/TermType/TermTypeResponseType.js';
 import {TermTypeInputType} from '../../party/TermType/TermTypeInputType.js';
+import {TermTypeResponseType} from '../../party/TermType/TermTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createTermType = {
   type: TermTypeResponseType,
   description: 'mutation for ofbiz createTermType method',
-  args:{},
+  args:{termTypeToBeAdded: {type: TermTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/termTypes/add?`, null, req);
+    return postToUrl(`party/termTypes/add?`, args.termTypeToBeAdded, req);
   }
 };
 export {createTermType};

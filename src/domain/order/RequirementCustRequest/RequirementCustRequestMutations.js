@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {RequirementCustRequestResponseType} from '../../order/RequirementCustRequest/RequirementCustRequestResponseType.js';
 import {RequirementCustRequestInputType} from '../../order/RequirementCustRequest/RequirementCustRequestInputType.js';
+import {RequirementCustRequestResponseType} from '../../order/RequirementCustRequest/RequirementCustRequestResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createRequirementCustRequest = {
   type: RequirementCustRequestResponseType,
   description: 'mutation for ofbiz createRequirementCustRequest method',
-  args:{},
+  args:{requirementCustRequestToBeAdded: {type: RequirementCustRequestInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/custRequest/requirementCustRequests/add?`, null, req);
+    return postToUrl(`order/custRequest/requirementCustRequests/add?`, args.requirementCustRequestToBeAdded, req);
   }
 };
 export {createRequirementCustRequest};

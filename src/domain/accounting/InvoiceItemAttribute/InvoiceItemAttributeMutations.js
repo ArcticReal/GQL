@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {InvoiceItemAttributeResponseType} from '../../accounting/InvoiceItemAttribute/InvoiceItemAttributeResponseType.js';
 import {InvoiceItemAttributeInputType} from '../../accounting/InvoiceItemAttribute/InvoiceItemAttributeInputType.js';
+import {InvoiceItemAttributeResponseType} from '../../accounting/InvoiceItemAttribute/InvoiceItemAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createInvoiceItemAttribute = {
   type: InvoiceItemAttributeResponseType,
   description: 'mutation for ofbiz createInvoiceItemAttribute method',
-  args:{},
+  args:{invoiceItemAttributeToBeAdded: {type: InvoiceItemAttributeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceItemAttributes/add?`, null, req);
+    return postToUrl(`accounting/invoice/invoiceItemAttributes/add?`, args.invoiceItemAttributeToBeAdded, req);
   }
 };
 export {createInvoiceItemAttribute};

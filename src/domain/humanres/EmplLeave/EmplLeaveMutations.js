@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {EmplLeaveResponseType} from '../../humanres/EmplLeave/EmplLeaveResponseType.js';
 import {EmplLeaveInputType} from '../../humanres/EmplLeave/EmplLeaveInputType.js';
+import {EmplLeaveResponseType} from '../../humanres/EmplLeave/EmplLeaveResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createEmplLeave = {
   type: EmplLeaveResponseType,
   description: 'mutation for ofbiz createEmplLeave method',
-  args:{},
+  args:{emplLeaveToBeAdded: {type: EmplLeaveInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/emplLeaves/add?`, null, req);
+    return postToUrl(`humanres/emplLeaves/add?`, args.emplLeaveToBeAdded, req);
   }
 };
 export {createEmplLeave};

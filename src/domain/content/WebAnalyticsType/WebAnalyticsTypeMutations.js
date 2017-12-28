@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WebAnalyticsTypeResponseType} from '../../content/WebAnalyticsType/WebAnalyticsTypeResponseType.js';
 import {WebAnalyticsTypeInputType} from '../../content/WebAnalyticsType/WebAnalyticsTypeInputType.js';
+import {WebAnalyticsTypeResponseType} from '../../content/WebAnalyticsType/WebAnalyticsTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWebAnalyticsType = {
   type: WebAnalyticsTypeResponseType,
   description: 'mutation for ofbiz createWebAnalyticsType method',
-  args:{},
+  args:{webAnalyticsTypeToBeAdded: {type: WebAnalyticsTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/webAnalyticsTypes/add?`, null, req);
+    return postToUrl(`content/webAnalyticsTypes/add?`, args.webAnalyticsTypeToBeAdded, req);
   }
 };
 export {createWebAnalyticsType};

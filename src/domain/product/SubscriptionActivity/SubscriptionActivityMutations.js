@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SubscriptionActivityResponseType} from '../../product/SubscriptionActivity/SubscriptionActivityResponseType.js';
 import {SubscriptionActivityInputType} from '../../product/SubscriptionActivity/SubscriptionActivityInputType.js';
+import {SubscriptionActivityResponseType} from '../../product/SubscriptionActivity/SubscriptionActivityResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSubscriptionActivity = {
   type: SubscriptionActivityResponseType,
   description: 'mutation for ofbiz createSubscriptionActivity method',
-  args:{},
+  args:{subscriptionActivityToBeAdded: {type: SubscriptionActivityInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/subscription/subscriptionActivitys/add?`, null, req);
+    return postToUrl(`product/subscription/subscriptionActivitys/add?`, args.subscriptionActivityToBeAdded, req);
   }
 };
 export {createSubscriptionActivity};

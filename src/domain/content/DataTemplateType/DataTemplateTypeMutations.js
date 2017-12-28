@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {DataTemplateTypeResponseType} from '../../content/DataTemplateType/DataTemplateTypeResponseType.js';
 import {DataTemplateTypeInputType} from '../../content/DataTemplateType/DataTemplateTypeInputType.js';
+import {DataTemplateTypeResponseType} from '../../content/DataTemplateType/DataTemplateTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createDataTemplateType = {
   type: DataTemplateTypeResponseType,
   description: 'mutation for ofbiz createDataTemplateType method',
-  args:{},
+  args:{dataTemplateTypeToBeAdded: {type: DataTemplateTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/dataTemplateTypes/add?`, null, req);
+    return postToUrl(`content/dataTemplateTypes/add?`, args.dataTemplateTypeToBeAdded, req);
   }
 };
 export {createDataTemplateType};

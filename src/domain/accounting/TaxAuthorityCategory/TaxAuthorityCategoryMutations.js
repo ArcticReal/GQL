@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {TaxAuthorityCategoryResponseType} from '../../accounting/TaxAuthorityCategory/TaxAuthorityCategoryResponseType.js';
 import {TaxAuthorityCategoryInputType} from '../../accounting/TaxAuthorityCategory/TaxAuthorityCategoryInputType.js';
+import {TaxAuthorityCategoryResponseType} from '../../accounting/TaxAuthorityCategory/TaxAuthorityCategoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createTaxAuthorityCategory = {
   type: TaxAuthorityCategoryResponseType,
   description: 'mutation for ofbiz createTaxAuthorityCategory method',
-  args:{},
+  args:{taxAuthorityCategoryToBeAdded: {type: TaxAuthorityCategoryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/taxAuthority/taxAuthorityCategorys/add?`, null, req);
+    return postToUrl(`accounting/taxAuthority/taxAuthorityCategorys/add?`, args.taxAuthorityCategoryToBeAdded, req);
   }
 };
 export {createTaxAuthorityCategory};

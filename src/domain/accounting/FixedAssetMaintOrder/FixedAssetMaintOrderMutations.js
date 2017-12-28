@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FixedAssetMaintOrderResponseType} from '../../accounting/FixedAssetMaintOrder/FixedAssetMaintOrderResponseType.js';
 import {FixedAssetMaintOrderInputType} from '../../accounting/FixedAssetMaintOrder/FixedAssetMaintOrderInputType.js';
+import {FixedAssetMaintOrderResponseType} from '../../accounting/FixedAssetMaintOrder/FixedAssetMaintOrderResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFixedAssetMaintOrder = {
   type: FixedAssetMaintOrderResponseType,
   description: 'mutation for ofbiz createFixedAssetMaintOrder method',
-  args:{},
+  args:{fixedAssetMaintOrderToBeAdded: {type: FixedAssetMaintOrderInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/fixedAsset/fixedAssetMaintOrders/add?`, null, req);
+    return postToUrl(`accounting/fixedAsset/fixedAssetMaintOrders/add?`, args.fixedAssetMaintOrderToBeAdded, req);
   }
 };
 export {createFixedAssetMaintOrder};

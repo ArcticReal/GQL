@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductStoreVendorPaymentResponseType} from '../../product/ProductStoreVendorPayment/ProductStoreVendorPaymentResponseType.js';
 import {ProductStoreVendorPaymentInputType} from '../../product/ProductStoreVendorPayment/ProductStoreVendorPaymentInputType.js';
+import {ProductStoreVendorPaymentResponseType} from '../../product/ProductStoreVendorPayment/ProductStoreVendorPaymentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductStoreVendorPayment = {
   type: ProductStoreVendorPaymentResponseType,
   description: 'mutation for ofbiz createProductStoreVendorPayment method',
-  args:{},
+  args:{productStoreVendorPaymentToBeAdded: {type: ProductStoreVendorPaymentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStoreVendorPayments/add?`, null, req);
+    return postToUrl(`product/product/productStoreVendorPayments/add?`, args.productStoreVendorPaymentToBeAdded, req);
   }
 };
 export {createProductStoreVendorPayment};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductSearchResultResponseType} from '../../product/ProductSearchResult/ProductSearchResultResponseType.js';
 import {ProductSearchResultInputType} from '../../product/ProductSearchResult/ProductSearchResultInputType.js';
+import {ProductSearchResultResponseType} from '../../product/ProductSearchResult/ProductSearchResultResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductSearchResult = {
   type: ProductSearchResultResponseType,
   description: 'mutation for ofbiz createProductSearchResult method',
-  args:{},
+  args:{productSearchResultToBeAdded: {type: ProductSearchResultInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productSearchResults/add?`, null, req);
+    return postToUrl(`product/product/productSearchResults/add?`, args.productSearchResultToBeAdded, req);
   }
 };
 export {createProductSearchResult};

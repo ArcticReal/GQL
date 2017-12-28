@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {AgreementFacilityApplResponseType} from '../../party/AgreementFacilityAppl/AgreementFacilityApplResponseType.js';
 import {AgreementFacilityApplInputType} from '../../party/AgreementFacilityAppl/AgreementFacilityApplInputType.js';
+import {AgreementFacilityApplResponseType} from '../../party/AgreementFacilityAppl/AgreementFacilityApplResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createAgreementFacilityAppl = {
   type: AgreementFacilityApplResponseType,
   description: 'mutation for ofbiz createAgreementFacilityAppl method',
-  args:{},
+  args:{agreementFacilityApplToBeAdded: {type: AgreementFacilityApplInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/agreement/agreementFacilityAppls/add?`, null, req);
+    return postToUrl(`party/agreement/agreementFacilityAppls/add?`, args.agreementFacilityApplToBeAdded, req);
   }
 };
 export {createAgreementFacilityAppl};

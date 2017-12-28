@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductFeatureCatGrpApplResponseType} from '../../product/ProductFeatureCatGrpAppl/ProductFeatureCatGrpApplResponseType.js';
 import {ProductFeatureCatGrpApplInputType} from '../../product/ProductFeatureCatGrpAppl/ProductFeatureCatGrpApplInputType.js';
+import {ProductFeatureCatGrpApplResponseType} from '../../product/ProductFeatureCatGrpAppl/ProductFeatureCatGrpApplResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductFeatureCatGrpAppl = {
   type: ProductFeatureCatGrpApplResponseType,
   description: 'mutation for ofbiz createProductFeatureCatGrpAppl method',
-  args:{},
+  args:{productFeatureCatGrpApplToBeAdded: {type: ProductFeatureCatGrpApplInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productFeatureCatGrpAppls/add?`, null, req);
+    return postToUrl(`product/product/productFeatureCatGrpAppls/add?`, args.productFeatureCatGrpApplToBeAdded, req);
   }
 };
 export {createProductFeatureCatGrpAppl};

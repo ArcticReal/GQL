@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortDeliverableProdResponseType} from '../../workeffort/WorkEffortDeliverableProd/WorkEffortDeliverableProdResponseType.js';
 import {WorkEffortDeliverableProdInputType} from '../../workeffort/WorkEffortDeliverableProd/WorkEffortDeliverableProdInputType.js';
+import {WorkEffortDeliverableProdResponseType} from '../../workeffort/WorkEffortDeliverableProd/WorkEffortDeliverableProdResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortDeliverableProd = {
   type: WorkEffortDeliverableProdResponseType,
   description: 'mutation for ofbiz createWorkEffortDeliverableProd method',
-  args:{},
+  args:{workEffortDeliverableProdToBeAdded: {type: WorkEffortDeliverableProdInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/deliverable/workEffortDeliverableProds/add?`, null, req);
+    return postToUrl(`workeffort/deliverable/workEffortDeliverableProds/add?`, args.workEffortDeliverableProdToBeAdded, req);
   }
 };
 export {createWorkEffortDeliverableProd};

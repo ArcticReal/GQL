@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProdConfItemContentResponseType} from '../../product/ProdConfItemContent/ProdConfItemContentResponseType.js';
 import {ProdConfItemContentInputType} from '../../product/ProdConfItemContent/ProdConfItemContentInputType.js';
+import {ProdConfItemContentResponseType} from '../../product/ProdConfItemContent/ProdConfItemContentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProdConfItemContent = {
   type: ProdConfItemContentResponseType,
   description: 'mutation for ofbiz createProdConfItemContent method',
-  args:{},
+  args:{prodConfItemContentToBeAdded: {type: ProdConfItemContentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/prodConfItemContents/add?`, null, req);
+    return postToUrl(`product/prodConfItemContents/add?`, args.prodConfItemContentToBeAdded, req);
   }
 };
 export {createProdConfItemContent};

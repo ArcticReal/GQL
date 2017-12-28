@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {GlAccountGroupMemberResponseType} from '../../accounting/GlAccountGroupMember/GlAccountGroupMemberResponseType.js';
 import {GlAccountGroupMemberInputType} from '../../accounting/GlAccountGroupMember/GlAccountGroupMemberInputType.js';
+import {GlAccountGroupMemberResponseType} from '../../accounting/GlAccountGroupMember/GlAccountGroupMemberResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createGlAccountGroupMember = {
   type: GlAccountGroupMemberResponseType,
   description: 'mutation for ofbiz createGlAccountGroupMember method',
-  args:{},
+  args:{glAccountGroupMemberToBeAdded: {type: GlAccountGroupMemberInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/glAccountGroupMembers/add?`, null, req);
+    return postToUrl(`accounting/glAccount/glAccountGroupMembers/add?`, args.glAccountGroupMemberToBeAdded, req);
   }
 };
 export {createGlAccountGroupMember};

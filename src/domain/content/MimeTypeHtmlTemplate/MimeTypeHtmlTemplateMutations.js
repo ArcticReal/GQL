@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {MimeTypeHtmlTemplateResponseType} from '../../content/MimeTypeHtmlTemplate/MimeTypeHtmlTemplateResponseType.js';
 import {MimeTypeHtmlTemplateInputType} from '../../content/MimeTypeHtmlTemplate/MimeTypeHtmlTemplateInputType.js';
+import {MimeTypeHtmlTemplateResponseType} from '../../content/MimeTypeHtmlTemplate/MimeTypeHtmlTemplateResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createMimeTypeHtmlTemplate = {
   type: MimeTypeHtmlTemplateResponseType,
   description: 'mutation for ofbiz createMimeTypeHtmlTemplate method',
-  args:{},
+  args:{mimeTypeHtmlTemplateToBeAdded: {type: MimeTypeHtmlTemplateInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/mimeType/mimeTypeHtmlTemplates/add?`, null, req);
+    return postToUrl(`content/mimeType/mimeTypeHtmlTemplates/add?`, args.mimeTypeHtmlTemplateToBeAdded, req);
   }
 };
 export {createMimeTypeHtmlTemplate};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PhysicalInventoryResponseType} from '../../product/PhysicalInventory/PhysicalInventoryResponseType.js';
 import {PhysicalInventoryInputType} from '../../product/PhysicalInventory/PhysicalInventoryInputType.js';
+import {PhysicalInventoryResponseType} from '../../product/PhysicalInventory/PhysicalInventoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPhysicalInventory = {
   type: PhysicalInventoryResponseType,
   description: 'mutation for ofbiz createPhysicalInventory method',
-  args:{},
+  args:{physicalInventoryToBeAdded: {type: PhysicalInventoryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/physicalInventorys/add?`, null, req);
+    return postToUrl(`product/physicalInventorys/add?`, args.physicalInventoryToBeAdded, req);
   }
 };
 export {createPhysicalInventory};

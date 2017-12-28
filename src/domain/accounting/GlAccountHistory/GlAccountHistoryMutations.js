@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {GlAccountHistoryResponseType} from '../../accounting/GlAccountHistory/GlAccountHistoryResponseType.js';
 import {GlAccountHistoryInputType} from '../../accounting/GlAccountHistory/GlAccountHistoryInputType.js';
+import {GlAccountHistoryResponseType} from '../../accounting/GlAccountHistory/GlAccountHistoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createGlAccountHistory = {
   type: GlAccountHistoryResponseType,
   description: 'mutation for ofbiz createGlAccountHistory method',
-  args:{},
+  args:{glAccountHistoryToBeAdded: {type: GlAccountHistoryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/glAccountHistorys/add?`, null, req);
+    return postToUrl(`accounting/glAccount/glAccountHistorys/add?`, args.glAccountHistoryToBeAdded, req);
   }
 };
 export {createGlAccountHistory};

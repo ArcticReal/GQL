@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SalesForecastHistoryResponseType} from '../../marketing/SalesForecastHistory/SalesForecastHistoryResponseType.js';
 import {SalesForecastHistoryInputType} from '../../marketing/SalesForecastHistory/SalesForecastHistoryInputType.js';
+import {SalesForecastHistoryResponseType} from '../../marketing/SalesForecastHistory/SalesForecastHistoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSalesForecastHistory = {
   type: SalesForecastHistoryResponseType,
   description: 'mutation for ofbiz createSalesForecastHistory method',
-  args:{},
+  args:{salesForecastHistoryToBeAdded: {type: SalesForecastHistoryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/salesForecast/salesForecastHistorys/add?`, null, req);
+    return postToUrl(`marketing/salesForecast/salesForecastHistorys/add?`, args.salesForecastHistoryToBeAdded, req);
   }
 };
 export {createSalesForecastHistory};

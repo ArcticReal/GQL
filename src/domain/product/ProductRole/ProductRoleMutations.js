@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductRoleResponseType} from '../../product/ProductRole/ProductRoleResponseType.js';
 import {ProductRoleInputType} from '../../product/ProductRole/ProductRoleInputType.js';
+import {ProductRoleResponseType} from '../../product/ProductRole/ProductRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductRole = {
   type: ProductRoleResponseType,
   description: 'mutation for ofbiz createProductRole method',
-  args:{},
+  args:{productRoleToBeAdded: {type: ProductRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productRoles/add?`, null, req);
+    return postToUrl(`product/product/productRoles/add?`, args.productRoleToBeAdded, req);
   }
 };
 export {createProductRole};

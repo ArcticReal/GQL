@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {CustRequestTypeAttrResponseType} from '../../order/CustRequestTypeAttr/CustRequestTypeAttrResponseType.js';
 import {CustRequestTypeAttrInputType} from '../../order/CustRequestTypeAttr/CustRequestTypeAttrInputType.js';
+import {CustRequestTypeAttrResponseType} from '../../order/CustRequestTypeAttr/CustRequestTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createCustRequestTypeAttr = {
   type: CustRequestTypeAttrResponseType,
   description: 'mutation for ofbiz createCustRequestTypeAttr method',
-  args:{},
+  args:{custRequestTypeAttrToBeAdded: {type: CustRequestTypeAttrInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/custRequest/custRequestTypeAttrs/add?`, null, req);
+    return postToUrl(`order/custRequest/custRequestTypeAttrs/add?`, args.custRequestTypeAttrToBeAdded, req);
   }
 };
 export {createCustRequestTypeAttr};

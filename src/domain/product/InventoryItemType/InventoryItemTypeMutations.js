@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {InventoryItemTypeResponseType} from '../../product/InventoryItemType/InventoryItemTypeResponseType.js';
 import {InventoryItemTypeInputType} from '../../product/InventoryItemType/InventoryItemTypeInputType.js';
+import {InventoryItemTypeResponseType} from '../../product/InventoryItemType/InventoryItemTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createInventoryItemType = {
   type: InventoryItemTypeResponseType,
   description: 'mutation for ofbiz createInventoryItemType method',
-  args:{},
+  args:{inventoryItemTypeToBeAdded: {type: InventoryItemTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/inventoryItem/inventoryItemTypes/add?`, null, req);
+    return postToUrl(`product/inventoryItem/inventoryItemTypes/add?`, args.inventoryItemTypeToBeAdded, req);
   }
 };
 export {createInventoryItemType};

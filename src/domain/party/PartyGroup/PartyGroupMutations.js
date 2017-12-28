@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyGroupResponseType} from '../../party/PartyGroup/PartyGroupResponseType.js';
 import {PartyGroupInputType} from '../../party/PartyGroup/PartyGroupInputType.js';
+import {PartyGroupResponseType} from '../../party/PartyGroup/PartyGroupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyGroup = {
   type: PartyGroupResponseType,
   description: 'mutation for ofbiz createPartyGroup method',
-  args:{},
+  args:{partyGroupToBeAdded: {type: PartyGroupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyGroups/add?`, null, req);
+    return postToUrl(`party/party/partyGroups/add?`, args.partyGroupToBeAdded, req);
   }
 };
 export {createPartyGroup};

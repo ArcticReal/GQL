@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {OrderRequirementCommitmentResponseType} from '../../order/OrderRequirementCommitment/OrderRequirementCommitmentResponseType.js';
 import {OrderRequirementCommitmentInputType} from '../../order/OrderRequirementCommitment/OrderRequirementCommitmentInputType.js';
+import {OrderRequirementCommitmentResponseType} from '../../order/OrderRequirementCommitment/OrderRequirementCommitmentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createOrderRequirementCommitment = {
   type: OrderRequirementCommitmentResponseType,
   description: 'mutation for ofbiz createOrderRequirementCommitment method',
-  args:{},
+  args:{orderRequirementCommitmentToBeAdded: {type: OrderRequirementCommitmentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/requirement/orderRequirementCommitments/add?`, null, req);
+    return postToUrl(`order/requirement/orderRequirementCommitments/add?`, args.orderRequirementCommitmentToBeAdded, req);
   }
 };
 export {createOrderRequirementCommitment};

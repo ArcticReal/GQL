@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContainerGeoPointResponseType} from '../../product/ContainerGeoPoint/ContainerGeoPointResponseType.js';
 import {ContainerGeoPointInputType} from '../../product/ContainerGeoPoint/ContainerGeoPointInputType.js';
+import {ContainerGeoPointResponseType} from '../../product/ContainerGeoPoint/ContainerGeoPointResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContainerGeoPoint = {
   type: ContainerGeoPointResponseType,
   description: 'mutation for ofbiz createContainerGeoPoint method',
-  args:{},
+  args:{containerGeoPointToBeAdded: {type: ContainerGeoPointInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/container/containerGeoPoints/add?`, null, req);
+    return postToUrl(`product/container/containerGeoPoints/add?`, args.containerGeoPointToBeAdded, req);
   }
 };
 export {createContainerGeoPoint};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SettlementTermResponseType} from '../../accounting/SettlementTerm/SettlementTermResponseType.js';
 import {SettlementTermInputType} from '../../accounting/SettlementTerm/SettlementTermInputType.js';
+import {SettlementTermResponseType} from '../../accounting/SettlementTerm/SettlementTermResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSettlementTerm = {
   type: SettlementTermResponseType,
   description: 'mutation for ofbiz createSettlementTerm method',
-  args:{},
+  args:{settlementTermToBeAdded: {type: SettlementTermInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/settlementTerms/add?`, null, req);
+    return postToUrl(`accounting/settlementTerms/add?`, args.settlementTermToBeAdded, req);
   }
 };
 export {createSettlementTerm};

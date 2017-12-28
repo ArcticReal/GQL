@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {MarketingCampaignNoteResponseType} from '../../marketing/MarketingCampaignNote/MarketingCampaignNoteResponseType.js';
 import {MarketingCampaignNoteInputType} from '../../marketing/MarketingCampaignNote/MarketingCampaignNoteInputType.js';
+import {MarketingCampaignNoteResponseType} from '../../marketing/MarketingCampaignNote/MarketingCampaignNoteResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createMarketingCampaignNote = {
   type: MarketingCampaignNoteResponseType,
   description: 'mutation for ofbiz createMarketingCampaignNote method',
-  args:{},
+  args:{marketingCampaignNoteToBeAdded: {type: MarketingCampaignNoteInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/marketingCampaign/marketingCampaignNotes/add?`, null, req);
+    return postToUrl(`marketing/marketingCampaign/marketingCampaignNotes/add?`, args.marketingCampaignNoteToBeAdded, req);
   }
 };
 export {createMarketingCampaignNote};

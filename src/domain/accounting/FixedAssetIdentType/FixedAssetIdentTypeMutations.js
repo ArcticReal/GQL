@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FixedAssetIdentTypeResponseType} from '../../accounting/FixedAssetIdentType/FixedAssetIdentTypeResponseType.js';
 import {FixedAssetIdentTypeInputType} from '../../accounting/FixedAssetIdentType/FixedAssetIdentTypeInputType.js';
+import {FixedAssetIdentTypeResponseType} from '../../accounting/FixedAssetIdentType/FixedAssetIdentTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFixedAssetIdentType = {
   type: FixedAssetIdentTypeResponseType,
   description: 'mutation for ofbiz createFixedAssetIdentType method',
-  args:{},
+  args:{fixedAssetIdentTypeToBeAdded: {type: FixedAssetIdentTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/fixedAsset/fixedAssetIdentTypes/add?`, null, req);
+    return postToUrl(`accounting/fixedAsset/fixedAssetIdentTypes/add?`, args.fixedAssetIdentTypeToBeAdded, req);
   }
 };
 export {createFixedAssetIdentType};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortContactMechResponseType} from '../../workeffort/WorkEffortContactMech/WorkEffortContactMechResponseType.js';
 import {WorkEffortContactMechInputType} from '../../workeffort/WorkEffortContactMech/WorkEffortContactMechInputType.js';
+import {WorkEffortContactMechResponseType} from '../../workeffort/WorkEffortContactMech/WorkEffortContactMechResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortContactMech = {
   type: WorkEffortContactMechResponseType,
   description: 'mutation for ofbiz createWorkEffortContactMech method',
-  args:{},
+  args:{workEffortContactMechToBeAdded: {type: WorkEffortContactMechInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortContactMechs/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortContactMechs/add?`, args.workEffortContactMechToBeAdded, req);
   }
 };
 export {createWorkEffortContactMech};

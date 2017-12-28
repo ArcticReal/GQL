@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PaymentGatewayWorldPayResponseType} from '../../accounting/PaymentGatewayWorldPay/PaymentGatewayWorldPayResponseType.js';
 import {PaymentGatewayWorldPayInputType} from '../../accounting/PaymentGatewayWorldPay/PaymentGatewayWorldPayInputType.js';
+import {PaymentGatewayWorldPayResponseType} from '../../accounting/PaymentGatewayWorldPay/PaymentGatewayWorldPayResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPaymentGatewayWorldPay = {
   type: PaymentGatewayWorldPayResponseType,
   description: 'mutation for ofbiz createPaymentGatewayWorldPay method',
-  args:{},
+  args:{paymentGatewayWorldPayToBeAdded: {type: PaymentGatewayWorldPayInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/payment/paymentGatewayWorldPays/add?`, null, req);
+    return postToUrl(`accounting/payment/paymentGatewayWorldPays/add?`, args.paymentGatewayWorldPayToBeAdded, req);
   }
 };
 export {createPaymentGatewayWorldPay};

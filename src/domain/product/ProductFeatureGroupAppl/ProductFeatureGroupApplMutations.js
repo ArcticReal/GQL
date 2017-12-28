@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductFeatureGroupApplResponseType} from '../../product/ProductFeatureGroupAppl/ProductFeatureGroupApplResponseType.js';
 import {ProductFeatureGroupApplInputType} from '../../product/ProductFeatureGroupAppl/ProductFeatureGroupApplInputType.js';
+import {ProductFeatureGroupApplResponseType} from '../../product/ProductFeatureGroupAppl/ProductFeatureGroupApplResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductFeatureGroupAppl = {
   type: ProductFeatureGroupApplResponseType,
   description: 'mutation for ofbiz createProductFeatureGroupAppl method',
-  args:{},
+  args:{productFeatureGroupApplToBeAdded: {type: ProductFeatureGroupApplInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productFeatureGroupAppls/add?`, null, req);
+    return postToUrl(`product/product/productFeatureGroupAppls/add?`, args.productFeatureGroupApplToBeAdded, req);
   }
 };
 export {createProductFeatureGroupAppl};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {OrderItemShipGroupResponseType} from '../../order/OrderItemShipGroup/OrderItemShipGroupResponseType.js';
 import {OrderItemShipGroupInputType} from '../../order/OrderItemShipGroup/OrderItemShipGroupInputType.js';
+import {OrderItemShipGroupResponseType} from '../../order/OrderItemShipGroup/OrderItemShipGroupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createOrderItemShipGroup = {
   type: OrderItemShipGroupResponseType,
   description: 'mutation for ofbiz createOrderItemShipGroup method',
-  args:{},
+  args:{orderItemShipGroupToBeAdded: {type: OrderItemShipGroupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderItem/orderItemShipGroups/add?`, null, req);
+    return postToUrl(`order/orderItem/orderItemShipGroups/add?`, args.orderItemShipGroupToBeAdded, req);
   }
 };
 export {createOrderItemShipGroup};

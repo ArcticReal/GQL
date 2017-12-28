@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkOrderItemFulfillmentResponseType} from '../../order/WorkOrderItemFulfillment/WorkOrderItemFulfillmentResponseType.js';
 import {WorkOrderItemFulfillmentInputType} from '../../order/WorkOrderItemFulfillment/WorkOrderItemFulfillmentInputType.js';
+import {WorkOrderItemFulfillmentResponseType} from '../../order/WorkOrderItemFulfillment/WorkOrderItemFulfillmentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkOrderItemFulfillment = {
   type: WorkOrderItemFulfillmentResponseType,
   description: 'mutation for ofbiz createWorkOrderItemFulfillment method',
-  args:{},
+  args:{workOrderItemFulfillmentToBeAdded: {type: WorkOrderItemFulfillmentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderItem/workOrderItemFulfillments/add?`, null, req);
+    return postToUrl(`order/orderItem/workOrderItemFulfillments/add?`, args.workOrderItemFulfillmentToBeAdded, req);
   }
 };
 export {createWorkOrderItemFulfillment};

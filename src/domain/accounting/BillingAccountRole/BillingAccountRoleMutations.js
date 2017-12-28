@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {BillingAccountRoleResponseType} from '../../accounting/BillingAccountRole/BillingAccountRoleResponseType.js';
 import {BillingAccountRoleInputType} from '../../accounting/BillingAccountRole/BillingAccountRoleInputType.js';
+import {BillingAccountRoleResponseType} from '../../accounting/BillingAccountRole/BillingAccountRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createBillingAccountRole = {
   type: BillingAccountRoleResponseType,
   description: 'mutation for ofbiz createBillingAccountRole method',
-  args:{},
+  args:{billingAccountRoleToBeAdded: {type: BillingAccountRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/billingAccount/billingAccountRoles/add?`, null, req);
+    return postToUrl(`accounting/billingAccount/billingAccountRoles/add?`, args.billingAccountRoleToBeAdded, req);
   }
 };
 export {createBillingAccountRole};

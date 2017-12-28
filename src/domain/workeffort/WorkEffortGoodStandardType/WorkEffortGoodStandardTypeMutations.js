@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortGoodStandardTypeResponseType} from '../../workeffort/WorkEffortGoodStandardType/WorkEffortGoodStandardTypeResponseType.js';
 import {WorkEffortGoodStandardTypeInputType} from '../../workeffort/WorkEffortGoodStandardType/WorkEffortGoodStandardTypeInputType.js';
+import {WorkEffortGoodStandardTypeResponseType} from '../../workeffort/WorkEffortGoodStandardType/WorkEffortGoodStandardTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortGoodStandardType = {
   type: WorkEffortGoodStandardTypeResponseType,
   description: 'mutation for ofbiz createWorkEffortGoodStandardType method',
-  args:{},
+  args:{workEffortGoodStandardTypeToBeAdded: {type: WorkEffortGoodStandardTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortGoodStandardTypes/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortGoodStandardTypes/add?`, args.workEffortGoodStandardTypeToBeAdded, req);
   }
 };
 export {createWorkEffortGoodStandardType};

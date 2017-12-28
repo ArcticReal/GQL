@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FixedAssetStdCostTypeResponseType} from '../../accounting/FixedAssetStdCostType/FixedAssetStdCostTypeResponseType.js';
 import {FixedAssetStdCostTypeInputType} from '../../accounting/FixedAssetStdCostType/FixedAssetStdCostTypeInputType.js';
+import {FixedAssetStdCostTypeResponseType} from '../../accounting/FixedAssetStdCostType/FixedAssetStdCostTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFixedAssetStdCostType = {
   type: FixedAssetStdCostTypeResponseType,
   description: 'mutation for ofbiz createFixedAssetStdCostType method',
-  args:{},
+  args:{fixedAssetStdCostTypeToBeAdded: {type: FixedAssetStdCostTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/fixedAsset/fixedAssetStdCostTypes/add?`, null, req);
+    return postToUrl(`accounting/fixedAsset/fixedAssetStdCostTypes/add?`, args.fixedAssetStdCostTypeToBeAdded, req);
   }
 };
 export {createFixedAssetStdCostType};

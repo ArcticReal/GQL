@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyCarrierAccountResponseType} from '../../party/PartyCarrierAccount/PartyCarrierAccountResponseType.js';
 import {PartyCarrierAccountInputType} from '../../party/PartyCarrierAccount/PartyCarrierAccountInputType.js';
+import {PartyCarrierAccountResponseType} from '../../party/PartyCarrierAccount/PartyCarrierAccountResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyCarrierAccount = {
   type: PartyCarrierAccountResponseType,
   description: 'mutation for ofbiz createPartyCarrierAccount method',
-  args:{},
+  args:{partyCarrierAccountToBeAdded: {type: PartyCarrierAccountInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyCarrierAccounts/add?`, null, req);
+    return postToUrl(`party/party/partyCarrierAccounts/add?`, args.partyCarrierAccountToBeAdded, req);
   }
 };
 export {createPartyCarrierAccount};

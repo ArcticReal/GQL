@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PaymentMethodTypeResponseType} from '../../accounting/PaymentMethodType/PaymentMethodTypeResponseType.js';
 import {PaymentMethodTypeInputType} from '../../accounting/PaymentMethodType/PaymentMethodTypeInputType.js';
+import {PaymentMethodTypeResponseType} from '../../accounting/PaymentMethodType/PaymentMethodTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPaymentMethodType = {
   type: PaymentMethodTypeResponseType,
   description: 'mutation for ofbiz createPaymentMethodType method',
-  args:{},
+  args:{paymentMethodTypeToBeAdded: {type: PaymentMethodTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/payment/paymentMethodTypes/add?`, null, req);
+    return postToUrl(`accounting/payment/paymentMethodTypes/add?`, args.paymentMethodTypeToBeAdded, req);
   }
 };
 export {createPaymentMethodType};

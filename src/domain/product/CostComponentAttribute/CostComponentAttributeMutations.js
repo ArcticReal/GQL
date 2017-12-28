@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {CostComponentAttributeResponseType} from '../../product/CostComponentAttribute/CostComponentAttributeResponseType.js';
 import {CostComponentAttributeInputType} from '../../product/CostComponentAttribute/CostComponentAttributeInputType.js';
+import {CostComponentAttributeResponseType} from '../../product/CostComponentAttribute/CostComponentAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createCostComponentAttribute = {
   type: CostComponentAttributeResponseType,
   description: 'mutation for ofbiz createCostComponentAttribute method',
-  args:{},
+  args:{costComponentAttributeToBeAdded: {type: CostComponentAttributeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/costComponent/costComponentAttributes/add?`, null, req);
+    return postToUrl(`product/costComponent/costComponentAttributes/add?`, args.costComponentAttributeToBeAdded, req);
   }
 };
 export {createCostComponentAttribute};

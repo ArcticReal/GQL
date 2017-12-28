@@ -15,9 +15,9 @@ import {ResponseType,KeyValueInputType} from '../../framework/helpTypes.js';
 const addToCart = {
   type: GraphQLString,
   description: 'mutation for ofbiz addToCart method',
-  args:{allRequestParams: {type: new GraphQLList(KeyValueInputType)}},
+  args:{productId: {type: GraphQLString},count: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`cart/add?allRequestParams=${args.allRequestParams}&`, null, req);
+    return postToUrl(`cart/add?productId=${args.productId}&count=${args.count}&`, null, req);
   }
 };
 export {addToCart};
@@ -26,9 +26,9 @@ export {addToCart};
 const removeFromCart = {
   type: GraphQLString,
   description: 'mutation for ofbiz removeFromCart method',
-  args:{allRequestParams: {type: new GraphQLList(KeyValueInputType)}},
+  args:{productId: {type: GraphQLString},count: {type: GraphQLFloat}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`cart/remove?allRequestParams=${args.allRequestParams}&`, null, req);
+    return postToUrl(`cart/remove?productId=${args.productId}&count=${args.count}&`, null, req);
   }
 };
 export {removeFromCart};

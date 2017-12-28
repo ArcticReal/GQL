@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyTaxAuthInfoResponseType} from '../../accounting/PartyTaxAuthInfo/PartyTaxAuthInfoResponseType.js';
 import {PartyTaxAuthInfoInputType} from '../../accounting/PartyTaxAuthInfo/PartyTaxAuthInfoInputType.js';
+import {PartyTaxAuthInfoResponseType} from '../../accounting/PartyTaxAuthInfo/PartyTaxAuthInfoResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyTaxAuthInfo = {
   type: PartyTaxAuthInfoResponseType,
   description: 'mutation for ofbiz createPartyTaxAuthInfo method',
-  args:{},
+  args:{partyTaxAuthInfoToBeAdded: {type: PartyTaxAuthInfoInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/partyTaxAuthInfos/add?`, null, req);
+    return postToUrl(`accounting/partyTaxAuthInfos/add?`, args.partyTaxAuthInfoToBeAdded, req);
   }
 };
 export {createPartyTaxAuthInfo};

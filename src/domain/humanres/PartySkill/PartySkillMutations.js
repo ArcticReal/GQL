@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartySkillResponseType} from '../../humanres/PartySkill/PartySkillResponseType.js';
 import {PartySkillInputType} from '../../humanres/PartySkill/PartySkillInputType.js';
+import {PartySkillResponseType} from '../../humanres/PartySkill/PartySkillResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartySkill = {
   type: PartySkillResponseType,
   description: 'mutation for ofbiz createPartySkill method',
-  args:{},
+  args:{partySkillToBeAdded: {type: PartySkillInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/partySkills/add?`, null, req);
+    return postToUrl(`humanres/partySkills/add?`, args.partySkillToBeAdded, req);
   }
 };
 export {createPartySkill};

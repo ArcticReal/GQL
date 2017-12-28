@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ShoppingListItemSurveyResponseType} from '../../order/ShoppingListItemSurvey/ShoppingListItemSurveyResponseType.js';
 import {ShoppingListItemSurveyInputType} from '../../order/ShoppingListItemSurvey/ShoppingListItemSurveyInputType.js';
+import {ShoppingListItemSurveyResponseType} from '../../order/ShoppingListItemSurvey/ShoppingListItemSurveyResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createShoppingListItemSurvey = {
   type: ShoppingListItemSurveyResponseType,
   description: 'mutation for ofbiz createShoppingListItemSurvey method',
-  args:{},
+  args:{shoppingListItemSurveyToBeAdded: {type: ShoppingListItemSurveyInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/shoppingList/shoppingListItemSurveys/add?`, null, req);
+    return postToUrl(`order/shoppingList/shoppingListItemSurveys/add?`, args.shoppingListItemSurveyToBeAdded, req);
   }
 };
 export {createShoppingListItemSurvey};

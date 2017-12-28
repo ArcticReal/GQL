@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {GlAccountGroupTypeResponseType} from '../../accounting/GlAccountGroupType/GlAccountGroupTypeResponseType.js';
 import {GlAccountGroupTypeInputType} from '../../accounting/GlAccountGroupType/GlAccountGroupTypeInputType.js';
+import {GlAccountGroupTypeResponseType} from '../../accounting/GlAccountGroupType/GlAccountGroupTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createGlAccountGroupType = {
   type: GlAccountGroupTypeResponseType,
   description: 'mutation for ofbiz createGlAccountGroupType method',
-  args:{},
+  args:{glAccountGroupTypeToBeAdded: {type: GlAccountGroupTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/glAccountGroupTypes/add?`, null, req);
+    return postToUrl(`accounting/glAccount/glAccountGroupTypes/add?`, args.glAccountGroupTypeToBeAdded, req);
   }
 };
 export {createGlAccountGroupType};

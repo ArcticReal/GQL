@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {TrackingCodeOrderResponseType} from '../../marketing/TrackingCodeOrder/TrackingCodeOrderResponseType.js';
 import {TrackingCodeOrderInputType} from '../../marketing/TrackingCodeOrder/TrackingCodeOrderInputType.js';
+import {TrackingCodeOrderResponseType} from '../../marketing/TrackingCodeOrder/TrackingCodeOrderResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createTrackingCodeOrder = {
   type: TrackingCodeOrderResponseType,
   description: 'mutation for ofbiz createTrackingCodeOrder method',
-  args:{},
+  args:{trackingCodeOrderToBeAdded: {type: TrackingCodeOrderInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/trackingCode/trackingCodeOrders/add?`, null, req);
+    return postToUrl(`marketing/trackingCode/trackingCodeOrders/add?`, args.trackingCodeOrderToBeAdded, req);
   }
 };
 export {createTrackingCodeOrder};

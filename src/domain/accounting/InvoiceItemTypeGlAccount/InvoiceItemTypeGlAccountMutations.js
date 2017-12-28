@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {InvoiceItemTypeGlAccountResponseType} from '../../accounting/InvoiceItemTypeGlAccount/InvoiceItemTypeGlAccountResponseType.js';
 import {InvoiceItemTypeGlAccountInputType} from '../../accounting/InvoiceItemTypeGlAccount/InvoiceItemTypeGlAccountInputType.js';
+import {InvoiceItemTypeGlAccountResponseType} from '../../accounting/InvoiceItemTypeGlAccount/InvoiceItemTypeGlAccountResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createInvoiceItemTypeGlAccount = {
   type: InvoiceItemTypeGlAccountResponseType,
   description: 'mutation for ofbiz createInvoiceItemTypeGlAccount method',
-  args:{},
+  args:{invoiceItemTypeGlAccountToBeAdded: {type: InvoiceItemTypeGlAccountInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceItemTypeGlAccounts/add?`, null, req);
+    return postToUrl(`accounting/invoice/invoiceItemTypeGlAccounts/add?`, args.invoiceItemTypeGlAccountToBeAdded, req);
   }
 };
 export {createInvoiceItemTypeGlAccount};

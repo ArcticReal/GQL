@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {MarketingCampaignRoleResponseType} from '../../marketing/MarketingCampaignRole/MarketingCampaignRoleResponseType.js';
 import {MarketingCampaignRoleInputType} from '../../marketing/MarketingCampaignRole/MarketingCampaignRoleInputType.js';
+import {MarketingCampaignRoleResponseType} from '../../marketing/MarketingCampaignRole/MarketingCampaignRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createMarketingCampaignRole = {
   type: MarketingCampaignRoleResponseType,
   description: 'mutation for ofbiz createMarketingCampaignRole method',
-  args:{},
+  args:{marketingCampaignRoleToBeAdded: {type: MarketingCampaignRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/marketingCampaign/marketingCampaignRoles/add?`, null, req);
+    return postToUrl(`marketing/marketingCampaign/marketingCampaignRoles/add?`, args.marketingCampaignRoleToBeAdded, req);
   }
 };
 export {createMarketingCampaignRole};

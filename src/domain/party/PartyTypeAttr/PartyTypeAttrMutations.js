@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyTypeAttrResponseType} from '../../party/PartyTypeAttr/PartyTypeAttrResponseType.js';
 import {PartyTypeAttrInputType} from '../../party/PartyTypeAttr/PartyTypeAttrInputType.js';
+import {PartyTypeAttrResponseType} from '../../party/PartyTypeAttr/PartyTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyTypeAttr = {
   type: PartyTypeAttrResponseType,
   description: 'mutation for ofbiz createPartyTypeAttr method',
-  args:{},
+  args:{partyTypeAttrToBeAdded: {type: PartyTypeAttrInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyTypeAttrs/add?`, null, req);
+    return postToUrl(`party/party/partyTypeAttrs/add?`, args.partyTypeAttrToBeAdded, req);
   }
 };
 export {createPartyTypeAttr};

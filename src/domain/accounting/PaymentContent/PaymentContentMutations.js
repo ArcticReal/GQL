@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PaymentContentResponseType} from '../../accounting/PaymentContent/PaymentContentResponseType.js';
 import {PaymentContentInputType} from '../../accounting/PaymentContent/PaymentContentInputType.js';
+import {PaymentContentResponseType} from '../../accounting/PaymentContent/PaymentContentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPaymentContent = {
   type: PaymentContentResponseType,
   description: 'mutation for ofbiz createPaymentContent method',
-  args:{},
+  args:{paymentContentToBeAdded: {type: PaymentContentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/payment/paymentContents/add?`, null, req);
+    return postToUrl(`accounting/payment/paymentContents/add?`, args.paymentContentToBeAdded, req);
   }
 };
 export {createPaymentContent};

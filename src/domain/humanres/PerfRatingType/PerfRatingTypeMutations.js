@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PerfRatingTypeResponseType} from '../../humanres/PerfRatingType/PerfRatingTypeResponseType.js';
 import {PerfRatingTypeInputType} from '../../humanres/PerfRatingType/PerfRatingTypeInputType.js';
+import {PerfRatingTypeResponseType} from '../../humanres/PerfRatingType/PerfRatingTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPerfRatingType = {
   type: PerfRatingTypeResponseType,
   description: 'mutation for ofbiz createPerfRatingType method',
-  args:{},
+  args:{perfRatingTypeToBeAdded: {type: PerfRatingTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/perfRatingTypes/add?`, null, req);
+    return postToUrl(`humanres/perfRatingTypes/add?`, args.perfRatingTypeToBeAdded, req);
   }
 };
 export {createPerfRatingType};

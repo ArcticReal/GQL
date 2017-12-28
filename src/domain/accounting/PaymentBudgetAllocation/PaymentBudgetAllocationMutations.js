@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PaymentBudgetAllocationResponseType} from '../../accounting/PaymentBudgetAllocation/PaymentBudgetAllocationResponseType.js';
 import {PaymentBudgetAllocationInputType} from '../../accounting/PaymentBudgetAllocation/PaymentBudgetAllocationInputType.js';
+import {PaymentBudgetAllocationResponseType} from '../../accounting/PaymentBudgetAllocation/PaymentBudgetAllocationResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPaymentBudgetAllocation = {
   type: PaymentBudgetAllocationResponseType,
   description: 'mutation for ofbiz createPaymentBudgetAllocation method',
-  args:{},
+  args:{paymentBudgetAllocationToBeAdded: {type: PaymentBudgetAllocationInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/budget/paymentBudgetAllocations/add?`, null, req);
+    return postToUrl(`accounting/budget/paymentBudgetAllocations/add?`, args.paymentBudgetAllocationToBeAdded, req);
   }
 };
 export {createPaymentBudgetAllocation};

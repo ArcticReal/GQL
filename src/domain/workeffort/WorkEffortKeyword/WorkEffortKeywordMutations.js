@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortKeywordResponseType} from '../../workeffort/WorkEffortKeyword/WorkEffortKeywordResponseType.js';
 import {WorkEffortKeywordInputType} from '../../workeffort/WorkEffortKeyword/WorkEffortKeywordInputType.js';
+import {WorkEffortKeywordResponseType} from '../../workeffort/WorkEffortKeyword/WorkEffortKeywordResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortKeyword = {
   type: WorkEffortKeywordResponseType,
   description: 'mutation for ofbiz createWorkEffortKeyword method',
-  args:{},
+  args:{workEffortKeywordToBeAdded: {type: WorkEffortKeywordInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortKeywords/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortKeywords/add?`, args.workEffortKeywordToBeAdded, req);
   }
 };
 export {createWorkEffortKeyword};

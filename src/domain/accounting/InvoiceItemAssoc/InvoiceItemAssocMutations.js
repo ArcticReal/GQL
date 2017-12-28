@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {InvoiceItemAssocResponseType} from '../../accounting/InvoiceItemAssoc/InvoiceItemAssocResponseType.js';
 import {InvoiceItemAssocInputType} from '../../accounting/InvoiceItemAssoc/InvoiceItemAssocInputType.js';
+import {InvoiceItemAssocResponseType} from '../../accounting/InvoiceItemAssoc/InvoiceItemAssocResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createInvoiceItemAssoc = {
   type: InvoiceItemAssocResponseType,
   description: 'mutation for ofbiz createInvoiceItemAssoc method',
-  args:{},
+  args:{invoiceItemAssocToBeAdded: {type: InvoiceItemAssocInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceItemAssocs/add?`, null, req);
+    return postToUrl(`accounting/invoice/invoiceItemAssocs/add?`, args.invoiceItemAssocToBeAdded, req);
   }
 };
 export {createInvoiceItemAssoc};

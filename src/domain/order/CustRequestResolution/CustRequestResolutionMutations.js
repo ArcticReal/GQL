@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {CustRequestResolutionResponseType} from '../../order/CustRequestResolution/CustRequestResolutionResponseType.js';
 import {CustRequestResolutionInputType} from '../../order/CustRequestResolution/CustRequestResolutionInputType.js';
+import {CustRequestResolutionResponseType} from '../../order/CustRequestResolution/CustRequestResolutionResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createCustRequestResolution = {
   type: CustRequestResolutionResponseType,
   description: 'mutation for ofbiz createCustRequestResolution method',
-  args:{},
+  args:{custRequestResolutionToBeAdded: {type: CustRequestResolutionInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/custRequest/custRequestResolutions/add?`, null, req);
+    return postToUrl(`order/custRequest/custRequestResolutions/add?`, args.custRequestResolutionToBeAdded, req);
   }
 };
 export {createCustRequestResolution};

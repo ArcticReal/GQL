@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContentKeywordResponseType} from '../../content/ContentKeyword/ContentKeywordResponseType.js';
 import {ContentKeywordInputType} from '../../content/ContentKeyword/ContentKeywordInputType.js';
+import {ContentKeywordResponseType} from '../../content/ContentKeyword/ContentKeywordResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContentKeyword = {
   type: ContentKeywordResponseType,
   description: 'mutation for ofbiz createContentKeyword method',
-  args:{},
+  args:{contentKeywordToBeAdded: {type: ContentKeywordInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentKeywords/add?`, null, req);
+    return postToUrl(`content/content/contentKeywords/add?`, args.contentKeywordToBeAdded, req);
   }
 };
 export {createContentKeyword};

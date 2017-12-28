@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PaymentGatewayPayflowProResponseType} from '../../accounting/PaymentGatewayPayflowPro/PaymentGatewayPayflowProResponseType.js';
 import {PaymentGatewayPayflowProInputType} from '../../accounting/PaymentGatewayPayflowPro/PaymentGatewayPayflowProInputType.js';
+import {PaymentGatewayPayflowProResponseType} from '../../accounting/PaymentGatewayPayflowPro/PaymentGatewayPayflowProResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPaymentGatewayPayflowPro = {
   type: PaymentGatewayPayflowProResponseType,
   description: 'mutation for ofbiz createPaymentGatewayPayflowPro method',
-  args:{},
+  args:{paymentGatewayPayflowProToBeAdded: {type: PaymentGatewayPayflowProInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/payment/paymentGatewayPayflowPros/add?`, null, req);
+    return postToUrl(`accounting/payment/paymentGatewayPayflowPros/add?`, args.paymentGatewayPayflowProToBeAdded, req);
   }
 };
 export {createPaymentGatewayPayflowPro};

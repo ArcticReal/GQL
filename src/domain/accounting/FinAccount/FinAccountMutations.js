@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FinAccountResponseType} from '../../accounting/FinAccount/FinAccountResponseType.js';
 import {FinAccountInputType} from '../../accounting/FinAccount/FinAccountInputType.js';
+import {FinAccountResponseType} from '../../accounting/FinAccount/FinAccountResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFinAccount = {
   type: FinAccountResponseType,
   description: 'mutation for ofbiz createFinAccount method',
-  args:{},
+  args:{finAccountToBeAdded: {type: FinAccountInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/finAccounts/add?`, null, req);
+    return postToUrl(`accounting/finAccounts/add?`, args.finAccountToBeAdded, req);
   }
 };
 export {createFinAccount};

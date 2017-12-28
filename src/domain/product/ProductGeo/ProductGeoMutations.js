@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductGeoResponseType} from '../../product/ProductGeo/ProductGeoResponseType.js';
 import {ProductGeoInputType} from '../../product/ProductGeo/ProductGeoInputType.js';
+import {ProductGeoResponseType} from '../../product/ProductGeo/ProductGeoResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductGeo = {
   type: ProductGeoResponseType,
   description: 'mutation for ofbiz createProductGeo method',
-  args:{},
+  args:{productGeoToBeAdded: {type: ProductGeoInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productGeos/add?`, null, req);
+    return postToUrl(`product/product/productGeos/add?`, args.productGeoToBeAdded, req);
   }
 };
 export {createProductGeo};

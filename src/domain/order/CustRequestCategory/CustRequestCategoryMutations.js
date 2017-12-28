@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {CustRequestCategoryResponseType} from '../../order/CustRequestCategory/CustRequestCategoryResponseType.js';
 import {CustRequestCategoryInputType} from '../../order/CustRequestCategory/CustRequestCategoryInputType.js';
+import {CustRequestCategoryResponseType} from '../../order/CustRequestCategory/CustRequestCategoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createCustRequestCategory = {
   type: CustRequestCategoryResponseType,
   description: 'mutation for ofbiz createCustRequestCategory method',
-  args:{},
+  args:{custRequestCategoryToBeAdded: {type: CustRequestCategoryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/custRequest/custRequestCategorys/add?`, null, req);
+    return postToUrl(`order/custRequest/custRequestCategorys/add?`, args.custRequestCategoryToBeAdded, req);
   }
 };
 export {createCustRequestCategory};

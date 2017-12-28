@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductGlAccountResponseType} from '../../product/ProductGlAccount/ProductGlAccountResponseType.js';
 import {ProductGlAccountInputType} from '../../product/ProductGlAccount/ProductGlAccountInputType.js';
+import {ProductGlAccountResponseType} from '../../product/ProductGlAccount/ProductGlAccountResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductGlAccount = {
   type: ProductGlAccountResponseType,
   description: 'mutation for ofbiz createProductGlAccount method',
-  args:{},
+  args:{productGlAccountToBeAdded: {type: ProductGlAccountInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productGlAccounts/add?`, null, req);
+    return postToUrl(`product/product/productGlAccounts/add?`, args.productGlAccountToBeAdded, req);
   }
 };
 export {createProductGlAccount};

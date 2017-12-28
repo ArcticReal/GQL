@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FacilityTypeAttrResponseType} from '../../product/FacilityTypeAttr/FacilityTypeAttrResponseType.js';
 import {FacilityTypeAttrInputType} from '../../product/FacilityTypeAttr/FacilityTypeAttrInputType.js';
+import {FacilityTypeAttrResponseType} from '../../product/FacilityTypeAttr/FacilityTypeAttrResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFacilityTypeAttr = {
   type: FacilityTypeAttrResponseType,
   description: 'mutation for ofbiz createFacilityTypeAttr method',
-  args:{},
+  args:{facilityTypeAttrToBeAdded: {type: FacilityTypeAttrInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityTypeAttrs/add?`, null, req);
+    return postToUrl(`product/facility/facilityTypeAttrs/add?`, args.facilityTypeAttrToBeAdded, req);
   }
 };
 export {createFacilityTypeAttr};

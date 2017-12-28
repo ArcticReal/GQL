@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortAttributeResponseType} from '../../workeffort/WorkEffortAttribute/WorkEffortAttributeResponseType.js';
 import {WorkEffortAttributeInputType} from '../../workeffort/WorkEffortAttribute/WorkEffortAttributeInputType.js';
+import {WorkEffortAttributeResponseType} from '../../workeffort/WorkEffortAttribute/WorkEffortAttributeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortAttribute = {
   type: WorkEffortAttributeResponseType,
   description: 'mutation for ofbiz createWorkEffortAttribute method',
-  args:{},
+  args:{workEffortAttributeToBeAdded: {type: WorkEffortAttributeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortAttributes/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortAttributes/add?`, args.workEffortAttributeToBeAdded, req);
   }
 };
 export {createWorkEffortAttribute};

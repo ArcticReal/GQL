@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ItemIssuanceRoleResponseType} from '../../shipment/ItemIssuanceRole/ItemIssuanceRoleResponseType.js';
 import {ItemIssuanceRoleInputType} from '../../shipment/ItemIssuanceRole/ItemIssuanceRoleInputType.js';
+import {ItemIssuanceRoleResponseType} from '../../shipment/ItemIssuanceRole/ItemIssuanceRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createItemIssuanceRole = {
   type: ItemIssuanceRoleResponseType,
   description: 'mutation for ofbiz createItemIssuanceRole method',
-  args:{},
+  args:{itemIssuanceRoleToBeAdded: {type: ItemIssuanceRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/itemIssuance/itemIssuanceRoles/add?`, null, req);
+    return postToUrl(`shipment/itemIssuance/itemIssuanceRoles/add?`, args.itemIssuanceRoleToBeAdded, req);
   }
 };
 export {createItemIssuanceRole};

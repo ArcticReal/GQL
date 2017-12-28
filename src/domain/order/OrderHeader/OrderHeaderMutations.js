@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {OrderHeaderInputType} from '../../order/OrderHeader/OrderHeaderInputType.js';
 import {OrderHeaderResponseType} from '../../order/OrderHeader/OrderHeaderResponseType.js';
+import {OrderHeaderInputType} from '../../order/OrderHeader/OrderHeaderInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createOrderHeader = {
   type: OrderHeaderResponseType,
   description: 'mutation for ofbiz createOrderHeader method',
-  args:{orderHeaderToBeAdded: {type: OrderHeaderInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderHeaders/add?`, args.orderHeaderToBeAdded, req);
+    return postToUrl(`order/orderHeaders/add?`, null, req);
   }
 };
 export {createOrderHeader};

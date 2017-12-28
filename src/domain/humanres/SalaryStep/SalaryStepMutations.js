@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SalaryStepResponseType} from '../../humanres/SalaryStep/SalaryStepResponseType.js';
 import {SalaryStepInputType} from '../../humanres/SalaryStep/SalaryStepInputType.js';
+import {SalaryStepResponseType} from '../../humanres/SalaryStep/SalaryStepResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSalaryStep = {
   type: SalaryStepResponseType,
   description: 'mutation for ofbiz createSalaryStep method',
-  args:{},
+  args:{salaryStepToBeAdded: {type: SalaryStepInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/salarySteps/add?`, null, req);
+    return postToUrl(`humanres/salarySteps/add?`, args.salaryStepToBeAdded, req);
   }
 };
 export {createSalaryStep};

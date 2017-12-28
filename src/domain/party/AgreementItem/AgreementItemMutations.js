@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {AgreementItemResponseType} from '../../party/AgreementItem/AgreementItemResponseType.js';
 import {AgreementItemInputType} from '../../party/AgreementItem/AgreementItemInputType.js';
+import {AgreementItemResponseType} from '../../party/AgreementItem/AgreementItemResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createAgreementItem = {
   type: AgreementItemResponseType,
   description: 'mutation for ofbiz createAgreementItem method',
-  args:{},
+  args:{agreementItemToBeAdded: {type: AgreementItemInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/agreement/agreementItems/add?`, null, req);
+    return postToUrl(`party/agreement/agreementItems/add?`, args.agreementItemToBeAdded, req);
   }
 };
 export {createAgreementItem};

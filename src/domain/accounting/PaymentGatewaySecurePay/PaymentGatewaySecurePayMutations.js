@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PaymentGatewaySecurePayResponseType} from '../../accounting/PaymentGatewaySecurePay/PaymentGatewaySecurePayResponseType.js';
 import {PaymentGatewaySecurePayInputType} from '../../accounting/PaymentGatewaySecurePay/PaymentGatewaySecurePayInputType.js';
+import {PaymentGatewaySecurePayResponseType} from '../../accounting/PaymentGatewaySecurePay/PaymentGatewaySecurePayResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPaymentGatewaySecurePay = {
   type: PaymentGatewaySecurePayResponseType,
   description: 'mutation for ofbiz createPaymentGatewaySecurePay method',
-  args:{},
+  args:{paymentGatewaySecurePayToBeAdded: {type: PaymentGatewaySecurePayInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/payment/paymentGatewaySecurePays/add?`, null, req);
+    return postToUrl(`accounting/payment/paymentGatewaySecurePays/add?`, args.paymentGatewaySecurePayToBeAdded, req);
   }
 };
 export {createPaymentGatewaySecurePay};

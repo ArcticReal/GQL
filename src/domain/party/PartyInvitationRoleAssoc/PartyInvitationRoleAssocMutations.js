@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyInvitationRoleAssocResponseType} from '../../party/PartyInvitationRoleAssoc/PartyInvitationRoleAssocResponseType.js';
 import {PartyInvitationRoleAssocInputType} from '../../party/PartyInvitationRoleAssoc/PartyInvitationRoleAssocInputType.js';
+import {PartyInvitationRoleAssocResponseType} from '../../party/PartyInvitationRoleAssoc/PartyInvitationRoleAssocResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyInvitationRoleAssoc = {
   type: PartyInvitationRoleAssocResponseType,
   description: 'mutation for ofbiz createPartyInvitationRoleAssoc method',
-  args:{},
+  args:{partyInvitationRoleAssocToBeAdded: {type: PartyInvitationRoleAssocInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyInvitationRoleAssocs/add?`, null, req);
+    return postToUrl(`party/party/partyInvitationRoleAssocs/add?`, args.partyInvitationRoleAssocToBeAdded, req);
   }
 };
 export {createPartyInvitationRoleAssoc};

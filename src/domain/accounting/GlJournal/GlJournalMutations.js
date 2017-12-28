@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {GlJournalResponseType} from '../../accounting/GlJournal/GlJournalResponseType.js';
 import {GlJournalInputType} from '../../accounting/GlJournal/GlJournalInputType.js';
+import {GlJournalResponseType} from '../../accounting/GlJournal/GlJournalResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createGlJournal = {
   type: GlJournalResponseType,
   description: 'mutation for ofbiz createGlJournal method',
-  args:{},
+  args:{glJournalToBeAdded: {type: GlJournalInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glJournals/add?`, null, req);
+    return postToUrl(`accounting/glJournals/add?`, args.glJournalToBeAdded, req);
   }
 };
 export {createGlJournal};

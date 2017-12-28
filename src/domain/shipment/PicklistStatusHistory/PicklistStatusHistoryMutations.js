@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PicklistStatusHistoryResponseType} from '../../shipment/PicklistStatusHistory/PicklistStatusHistoryResponseType.js';
 import {PicklistStatusHistoryInputType} from '../../shipment/PicklistStatusHistory/PicklistStatusHistoryInputType.js';
+import {PicklistStatusHistoryResponseType} from '../../shipment/PicklistStatusHistory/PicklistStatusHistoryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPicklistStatusHistory = {
   type: PicklistStatusHistoryResponseType,
   description: 'mutation for ofbiz createPicklistStatusHistory method',
-  args:{},
+  args:{picklistStatusHistoryToBeAdded: {type: PicklistStatusHistoryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/picklist/picklistStatusHistorys/add?`, null, req);
+    return postToUrl(`shipment/picklist/picklistStatusHistorys/add?`, args.picklistStatusHistoryToBeAdded, req);
   }
 };
 export {createPicklistStatusHistory};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {EmplPositionReportingStructResponseType} from '../../humanres/EmplPositionReportingStruct/EmplPositionReportingStructResponseType.js';
 import {EmplPositionReportingStructInputType} from '../../humanres/EmplPositionReportingStruct/EmplPositionReportingStructInputType.js';
+import {EmplPositionReportingStructResponseType} from '../../humanres/EmplPositionReportingStruct/EmplPositionReportingStructResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createEmplPositionReportingStruct = {
   type: EmplPositionReportingStructResponseType,
   description: 'mutation for ofbiz createEmplPositionReportingStruct method',
-  args:{},
+  args:{emplPositionReportingStructToBeAdded: {type: EmplPositionReportingStructInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/emplPosition/emplPositionReportingStructs/add?`, null, req);
+    return postToUrl(`humanres/emplPosition/emplPositionReportingStructs/add?`, args.emplPositionReportingStructToBeAdded, req);
   }
 };
 export {createEmplPositionReportingStruct};

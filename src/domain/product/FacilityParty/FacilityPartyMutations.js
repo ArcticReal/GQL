@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FacilityPartyResponseType} from '../../product/FacilityParty/FacilityPartyResponseType.js';
 import {FacilityPartyInputType} from '../../product/FacilityParty/FacilityPartyInputType.js';
+import {FacilityPartyResponseType} from '../../product/FacilityParty/FacilityPartyResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFacilityParty = {
   type: FacilityPartyResponseType,
   description: 'mutation for ofbiz createFacilityParty method',
-  args:{},
+  args:{facilityPartyToBeAdded: {type: FacilityPartyInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityPartys/add?`, null, req);
+    return postToUrl(`product/facility/facilityPartys/add?`, args.facilityPartyToBeAdded, req);
   }
 };
 export {createFacilityParty};

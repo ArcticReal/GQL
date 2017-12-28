@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {TechDataCalendarExcDayResponseType} from '../../manufacturing/TechDataCalendarExcDay/TechDataCalendarExcDayResponseType.js';
 import {TechDataCalendarExcDayInputType} from '../../manufacturing/TechDataCalendarExcDay/TechDataCalendarExcDayInputType.js';
+import {TechDataCalendarExcDayResponseType} from '../../manufacturing/TechDataCalendarExcDay/TechDataCalendarExcDayResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createTechDataCalendarExcDay = {
   type: TechDataCalendarExcDayResponseType,
   description: 'mutation for ofbiz createTechDataCalendarExcDay method',
-  args:{},
+  args:{techDataCalendarExcDayToBeAdded: {type: TechDataCalendarExcDayInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`manufacturing/techDataCalendar/techDataCalendarExcDays/add?`, null, req);
+    return postToUrl(`manufacturing/techDataCalendar/techDataCalendarExcDays/add?`, args.techDataCalendarExcDayToBeAdded, req);
   }
 };
 export {createTechDataCalendarExcDay};

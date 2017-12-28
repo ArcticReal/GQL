@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {QuoteWorkEffortResponseType} from '../../order/QuoteWorkEffort/QuoteWorkEffortResponseType.js';
 import {QuoteWorkEffortInputType} from '../../order/QuoteWorkEffort/QuoteWorkEffortInputType.js';
+import {QuoteWorkEffortResponseType} from '../../order/QuoteWorkEffort/QuoteWorkEffortResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createQuoteWorkEffort = {
   type: QuoteWorkEffortResponseType,
   description: 'mutation for ofbiz createQuoteWorkEffort method',
-  args:{},
+  args:{quoteWorkEffortToBeAdded: {type: QuoteWorkEffortInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/quote/quoteWorkEfforts/add?`, null, req);
+    return postToUrl(`order/quote/quoteWorkEfforts/add?`, args.quoteWorkEffortToBeAdded, req);
   }
 };
 export {createQuoteWorkEffort};

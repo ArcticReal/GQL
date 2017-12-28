@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FacilityGroupRollupResponseType} from '../../product/FacilityGroupRollup/FacilityGroupRollupResponseType.js';
 import {FacilityGroupRollupInputType} from '../../product/FacilityGroupRollup/FacilityGroupRollupInputType.js';
+import {FacilityGroupRollupResponseType} from '../../product/FacilityGroupRollup/FacilityGroupRollupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFacilityGroupRollup = {
   type: FacilityGroupRollupResponseType,
   description: 'mutation for ofbiz createFacilityGroupRollup method',
-  args:{},
+  args:{facilityGroupRollupToBeAdded: {type: FacilityGroupRollupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityGroupRollups/add?`, null, req);
+    return postToUrl(`product/facility/facilityGroupRollups/add?`, args.facilityGroupRollupToBeAdded, req);
   }
 };
 export {createFacilityGroupRollup};

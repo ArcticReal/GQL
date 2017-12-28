@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {RequirementResponseType} from '../../order/Requirement/RequirementResponseType.js';
 import {RequirementInputType} from '../../order/Requirement/RequirementInputType.js';
+import {RequirementResponseType} from '../../order/Requirement/RequirementResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createRequirement = {
   type: RequirementResponseType,
   description: 'mutation for ofbiz createRequirement method',
-  args:{},
+  args:{requirementToBeAdded: {type: RequirementInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/requirements/add?`, null, req);
+    return postToUrl(`order/requirements/add?`, args.requirementToBeAdded, req);
   }
 };
 export {createRequirement};

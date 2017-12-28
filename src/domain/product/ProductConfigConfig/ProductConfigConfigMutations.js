@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductConfigConfigResponseType} from '../../product/ProductConfigConfig/ProductConfigConfigResponseType.js';
 import {ProductConfigConfigInputType} from '../../product/ProductConfigConfig/ProductConfigConfigInputType.js';
+import {ProductConfigConfigResponseType} from '../../product/ProductConfigConfig/ProductConfigConfigResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductConfigConfig = {
   type: ProductConfigConfigResponseType,
   description: 'mutation for ofbiz createProductConfigConfig method',
-  args:{},
+  args:{productConfigConfigToBeAdded: {type: ProductConfigConfigInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productConfigConfigs/add?`, null, req);
+    return postToUrl(`product/product/productConfigConfigs/add?`, args.productConfigConfigToBeAdded, req);
   }
 };
 export {createProductConfigConfig};

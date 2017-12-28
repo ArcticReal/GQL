@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {InventoryItemTempResResponseType} from '../../product/InventoryItemTempRes/InventoryItemTempResResponseType.js';
 import {InventoryItemTempResInputType} from '../../product/InventoryItemTempRes/InventoryItemTempResInputType.js';
+import {InventoryItemTempResResponseType} from '../../product/InventoryItemTempRes/InventoryItemTempResResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createInventoryItemTempRes = {
   type: InventoryItemTempResResponseType,
   description: 'mutation for ofbiz createInventoryItemTempRes method',
-  args:{},
+  args:{inventoryItemTempResToBeAdded: {type: InventoryItemTempResInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/inventoryItem/inventoryItemTempRess/add?`, null, req);
+    return postToUrl(`product/inventoryItem/inventoryItemTempRess/add?`, args.inventoryItemTempResToBeAdded, req);
   }
 };
 export {createInventoryItemTempRes};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PicklistItemResponseType} from '../../shipment/PicklistItem/PicklistItemResponseType.js';
 import {PicklistItemInputType} from '../../shipment/PicklistItem/PicklistItemInputType.js';
+import {PicklistItemResponseType} from '../../shipment/PicklistItem/PicklistItemResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPicklistItem = {
   type: PicklistItemResponseType,
   description: 'mutation for ofbiz createPicklistItem method',
-  args:{},
+  args:{picklistItemToBeAdded: {type: PicklistItemInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/picklist/picklistItems/add?`, null, req);
+    return postToUrl(`shipment/picklist/picklistItems/add?`, args.picklistItemToBeAdded, req);
   }
 };
 export {createPicklistItem};

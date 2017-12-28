@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {AgreementGeographicalApplicResponseType} from '../../party/AgreementGeographicalApplic/AgreementGeographicalApplicResponseType.js';
 import {AgreementGeographicalApplicInputType} from '../../party/AgreementGeographicalApplic/AgreementGeographicalApplicInputType.js';
+import {AgreementGeographicalApplicResponseType} from '../../party/AgreementGeographicalApplic/AgreementGeographicalApplicResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createAgreementGeographicalApplic = {
   type: AgreementGeographicalApplicResponseType,
   description: 'mutation for ofbiz createAgreementGeographicalApplic method',
-  args:{},
+  args:{agreementGeographicalApplicToBeAdded: {type: AgreementGeographicalApplicInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/agreement/agreementGeographicalApplics/add?`, null, req);
+    return postToUrl(`party/agreement/agreementGeographicalApplics/add?`, args.agreementGeographicalApplicToBeAdded, req);
   }
 };
 export {createAgreementGeographicalApplic};

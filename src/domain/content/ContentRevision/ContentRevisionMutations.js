@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContentRevisionResponseType} from '../../content/ContentRevision/ContentRevisionResponseType.js';
 import {ContentRevisionInputType} from '../../content/ContentRevision/ContentRevisionInputType.js';
+import {ContentRevisionResponseType} from '../../content/ContentRevision/ContentRevisionResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContentRevision = {
   type: ContentRevisionResponseType,
   description: 'mutation for ofbiz createContentRevision method',
-  args:{},
+  args:{contentRevisionToBeAdded: {type: ContentRevisionInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentRevisions/add?`, null, req);
+    return postToUrl(`content/content/contentRevisions/add?`, args.contentRevisionToBeAdded, req);
   }
 };
 export {createContentRevision};

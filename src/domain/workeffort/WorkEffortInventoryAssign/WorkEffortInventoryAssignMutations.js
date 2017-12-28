@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortInventoryAssignResponseType} from '../../workeffort/WorkEffortInventoryAssign/WorkEffortInventoryAssignResponseType.js';
 import {WorkEffortInventoryAssignInputType} from '../../workeffort/WorkEffortInventoryAssign/WorkEffortInventoryAssignInputType.js';
+import {WorkEffortInventoryAssignResponseType} from '../../workeffort/WorkEffortInventoryAssign/WorkEffortInventoryAssignResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortInventoryAssign = {
   type: WorkEffortInventoryAssignResponseType,
   description: 'mutation for ofbiz createWorkEffortInventoryAssign method',
-  args:{},
+  args:{workEffortInventoryAssignToBeAdded: {type: WorkEffortInventoryAssignInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortInventoryAssigns/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortInventoryAssigns/add?`, args.workEffortInventoryAssignToBeAdded, req);
   }
 };
 export {createWorkEffortInventoryAssign};

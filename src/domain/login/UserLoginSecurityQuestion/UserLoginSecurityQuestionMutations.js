@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {UserLoginSecurityQuestionResponseType} from '../../login/UserLoginSecurityQuestion/UserLoginSecurityQuestionResponseType.js';
 import {UserLoginSecurityQuestionInputType} from '../../login/UserLoginSecurityQuestion/UserLoginSecurityQuestionInputType.js';
+import {UserLoginSecurityQuestionResponseType} from '../../login/UserLoginSecurityQuestion/UserLoginSecurityQuestionResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createUserLoginSecurityQuestion = {
   type: UserLoginSecurityQuestionResponseType,
   description: 'mutation for ofbiz createUserLoginSecurityQuestion method',
-  args:{},
+  args:{userLoginSecurityQuestionToBeAdded: {type: UserLoginSecurityQuestionInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`login/userLogin/userLoginSecurityQuestions/add?`, null, req);
+    return postToUrl(`login/userLogin/userLoginSecurityQuestions/add?`, args.userLoginSecurityQuestionToBeAdded, req);
   }
 };
 export {createUserLoginSecurityQuestion};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {AddendumResponseType} from '../../party/Addendum/AddendumResponseType.js';
 import {AddendumInputType} from '../../party/Addendum/AddendumInputType.js';
+import {AddendumResponseType} from '../../party/Addendum/AddendumResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createAddendum = {
   type: AddendumResponseType,
   description: 'mutation for ofbiz createAddendum method',
-  args:{},
+  args:{addendumToBeAdded: {type: AddendumInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/addendums/add?`, null, req);
+    return postToUrl(`party/addendums/add?`, args.addendumToBeAdded, req);
   }
 };
 export {createAddendum};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {OrderProductPromoCodeResponseType} from '../../order/OrderProductPromoCode/OrderProductPromoCodeResponseType.js';
 import {OrderProductPromoCodeInputType} from '../../order/OrderProductPromoCode/OrderProductPromoCodeInputType.js';
+import {OrderProductPromoCodeResponseType} from '../../order/OrderProductPromoCode/OrderProductPromoCodeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createOrderProductPromoCode = {
   type: OrderProductPromoCodeResponseType,
   description: 'mutation for ofbiz createOrderProductPromoCode method',
-  args:{},
+  args:{orderProductPromoCodeToBeAdded: {type: OrderProductPromoCodeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/orderProductPromoCodes/add?`, null, req);
+    return postToUrl(`order/orderProductPromoCodes/add?`, args.orderProductPromoCodeToBeAdded, req);
   }
 };
 export {createOrderProductPromoCode};

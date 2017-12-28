@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {AudioDataResourceResponseType} from '../../content/AudioDataResource/AudioDataResourceResponseType.js';
 import {AudioDataResourceInputType} from '../../content/AudioDataResource/AudioDataResourceInputType.js';
+import {AudioDataResourceResponseType} from '../../content/AudioDataResource/AudioDataResourceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createAudioDataResource = {
   type: AudioDataResourceResponseType,
   description: 'mutation for ofbiz createAudioDataResource method',
-  args:{},
+  args:{audioDataResourceToBeAdded: {type: AudioDataResourceInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/dataResource/audioDataResources/add?`, null, req);
+    return postToUrl(`content/dataResource/audioDataResources/add?`, args.audioDataResourceToBeAdded, req);
   }
 };
 export {createAudioDataResource};

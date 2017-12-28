@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ShipmentGatewayConfigTypeResponseType} from '../../shipment/ShipmentGatewayConfigType/ShipmentGatewayConfigTypeResponseType.js';
 import {ShipmentGatewayConfigTypeInputType} from '../../shipment/ShipmentGatewayConfigType/ShipmentGatewayConfigTypeInputType.js';
+import {ShipmentGatewayConfigTypeResponseType} from '../../shipment/ShipmentGatewayConfigType/ShipmentGatewayConfigTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createShipmentGatewayConfigType = {
   type: ShipmentGatewayConfigTypeResponseType,
   description: 'mutation for ofbiz createShipmentGatewayConfigType method',
-  args:{},
+  args:{shipmentGatewayConfigTypeToBeAdded: {type: ShipmentGatewayConfigTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/shipmentGatewayConfigTypes/add?`, null, req);
+    return postToUrl(`shipment/shipment/shipmentGatewayConfigTypes/add?`, args.shipmentGatewayConfigTypeToBeAdded, req);
   }
 };
 export {createShipmentGatewayConfigType};

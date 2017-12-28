@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortSearchResultResponseType} from '../../workeffort/WorkEffortSearchResult/WorkEffortSearchResultResponseType.js';
 import {WorkEffortSearchResultInputType} from '../../workeffort/WorkEffortSearchResult/WorkEffortSearchResultInputType.js';
+import {WorkEffortSearchResultResponseType} from '../../workeffort/WorkEffortSearchResult/WorkEffortSearchResultResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortSearchResult = {
   type: WorkEffortSearchResultResponseType,
   description: 'mutation for ofbiz createWorkEffortSearchResult method',
-  args:{},
+  args:{workEffortSearchResultToBeAdded: {type: WorkEffortSearchResultInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortSearchResults/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortSearchResults/add?`, args.workEffortSearchResultToBeAdded, req);
   }
 };
 export {createWorkEffortSearchResult};

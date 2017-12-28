@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SalesOpportunityCompetitorResponseType} from '../../marketing/SalesOpportunityCompetitor/SalesOpportunityCompetitorResponseType.js';
 import {SalesOpportunityCompetitorInputType} from '../../marketing/SalesOpportunityCompetitor/SalesOpportunityCompetitorInputType.js';
+import {SalesOpportunityCompetitorResponseType} from '../../marketing/SalesOpportunityCompetitor/SalesOpportunityCompetitorResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSalesOpportunityCompetitor = {
   type: SalesOpportunityCompetitorResponseType,
   description: 'mutation for ofbiz createSalesOpportunityCompetitor method',
-  args:{},
+  args:{salesOpportunityCompetitorToBeAdded: {type: SalesOpportunityCompetitorInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/salesOpportunity/salesOpportunityCompetitors/add?`, null, req);
+    return postToUrl(`marketing/salesOpportunity/salesOpportunityCompetitors/add?`, args.salesOpportunityCompetitorToBeAdded, req);
   }
 };
 export {createSalesOpportunityCompetitor};

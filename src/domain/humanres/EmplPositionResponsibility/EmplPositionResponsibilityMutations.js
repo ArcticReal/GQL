@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {EmplPositionResponsibilityResponseType} from '../../humanres/EmplPositionResponsibility/EmplPositionResponsibilityResponseType.js';
 import {EmplPositionResponsibilityInputType} from '../../humanres/EmplPositionResponsibility/EmplPositionResponsibilityInputType.js';
+import {EmplPositionResponsibilityResponseType} from '../../humanres/EmplPositionResponsibility/EmplPositionResponsibilityResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createEmplPositionResponsibility = {
   type: EmplPositionResponsibilityResponseType,
   description: 'mutation for ofbiz createEmplPositionResponsibility method',
-  args:{},
+  args:{emplPositionResponsibilityToBeAdded: {type: EmplPositionResponsibilityInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/emplPosition/emplPositionResponsibilitys/add?`, null, req);
+    return postToUrl(`humanres/emplPosition/emplPositionResponsibilitys/add?`, args.emplPositionResponsibilityToBeAdded, req);
   }
 };
 export {createEmplPositionResponsibility};

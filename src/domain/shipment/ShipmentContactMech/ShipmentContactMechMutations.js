@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ShipmentContactMechResponseType} from '../../shipment/ShipmentContactMech/ShipmentContactMechResponseType.js';
 import {ShipmentContactMechInputType} from '../../shipment/ShipmentContactMech/ShipmentContactMechInputType.js';
+import {ShipmentContactMechResponseType} from '../../shipment/ShipmentContactMech/ShipmentContactMechResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createShipmentContactMech = {
   type: ShipmentContactMechResponseType,
   description: 'mutation for ofbiz createShipmentContactMech method',
-  args:{},
+  args:{shipmentContactMechToBeAdded: {type: ShipmentContactMechInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/shipmentContactMechs/add?`, null, req);
+    return postToUrl(`shipment/shipment/shipmentContactMechs/add?`, args.shipmentContactMechToBeAdded, req);
   }
 };
 export {createShipmentContactMech};

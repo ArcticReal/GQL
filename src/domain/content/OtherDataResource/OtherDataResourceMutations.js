@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {OtherDataResourceResponseType} from '../../content/OtherDataResource/OtherDataResourceResponseType.js';
 import {OtherDataResourceInputType} from '../../content/OtherDataResource/OtherDataResourceInputType.js';
+import {OtherDataResourceResponseType} from '../../content/OtherDataResource/OtherDataResourceResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createOtherDataResource = {
   type: OtherDataResourceResponseType,
   description: 'mutation for ofbiz createOtherDataResource method',
-  args:{},
+  args:{otherDataResourceToBeAdded: {type: OtherDataResourceInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/dataResource/otherDataResources/add?`, null, req);
+    return postToUrl(`content/dataResource/otherDataResources/add?`, args.otherDataResourceToBeAdded, req);
   }
 };
 export {createOtherDataResource};

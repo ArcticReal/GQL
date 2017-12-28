@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {RoleTypeResponseType} from '../../party/RoleType/RoleTypeResponseType.js';
 import {RoleTypeInputType} from '../../party/RoleType/RoleTypeInputType.js';
+import {RoleTypeResponseType} from '../../party/RoleType/RoleTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createRoleType = {
   type: RoleTypeResponseType,
   description: 'mutation for ofbiz createRoleType method',
-  args:{},
+  args:{roleTypeToBeAdded: {type: RoleTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/roleTypes/add?`, null, req);
+    return postToUrl(`party/roleTypes/add?`, args.roleTypeToBeAdded, req);
   }
 };
 export {createRoleType};

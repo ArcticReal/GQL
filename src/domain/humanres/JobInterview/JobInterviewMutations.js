@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {JobInterviewResponseType} from '../../humanres/JobInterview/JobInterviewResponseType.js';
 import {JobInterviewInputType} from '../../humanres/JobInterview/JobInterviewInputType.js';
+import {JobInterviewResponseType} from '../../humanres/JobInterview/JobInterviewResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createJobInterview = {
   type: JobInterviewResponseType,
   description: 'mutation for ofbiz createJobInterview method',
-  args:{},
+  args:{jobInterviewToBeAdded: {type: JobInterviewInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/jobInterviews/add?`, null, req);
+    return postToUrl(`humanres/jobInterviews/add?`, args.jobInterviewToBeAdded, req);
   }
 };
 export {createJobInterview};

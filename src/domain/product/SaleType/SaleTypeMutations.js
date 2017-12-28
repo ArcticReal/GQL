@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SaleTypeResponseType} from '../../product/SaleType/SaleTypeResponseType.js';
 import {SaleTypeInputType} from '../../product/SaleType/SaleTypeInputType.js';
+import {SaleTypeResponseType} from '../../product/SaleType/SaleTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSaleType = {
   type: SaleTypeResponseType,
   description: 'mutation for ofbiz createSaleType method',
-  args:{},
+  args:{saleTypeToBeAdded: {type: SaleTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/saleTypes/add?`, null, req);
+    return postToUrl(`product/saleTypes/add?`, args.saleTypeToBeAdded, req);
   }
 };
 export {createSaleType};

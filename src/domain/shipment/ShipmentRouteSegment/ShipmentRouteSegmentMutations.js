@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ShipmentRouteSegmentResponseType} from '../../shipment/ShipmentRouteSegment/ShipmentRouteSegmentResponseType.js';
 import {ShipmentRouteSegmentInputType} from '../../shipment/ShipmentRouteSegment/ShipmentRouteSegmentInputType.js';
+import {ShipmentRouteSegmentResponseType} from '../../shipment/ShipmentRouteSegment/ShipmentRouteSegmentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createShipmentRouteSegment = {
   type: ShipmentRouteSegmentResponseType,
   description: 'mutation for ofbiz createShipmentRouteSegment method',
-  args:{},
+  args:{shipmentRouteSegmentToBeAdded: {type: ShipmentRouteSegmentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/shipmentRouteSegments/add?`, null, req);
+    return postToUrl(`shipment/shipment/shipmentRouteSegments/add?`, args.shipmentRouteSegmentToBeAdded, req);
   }
 };
 export {createShipmentRouteSegment};

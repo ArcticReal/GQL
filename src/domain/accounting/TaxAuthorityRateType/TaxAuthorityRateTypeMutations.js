@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {TaxAuthorityRateTypeResponseType} from '../../accounting/TaxAuthorityRateType/TaxAuthorityRateTypeResponseType.js';
 import {TaxAuthorityRateTypeInputType} from '../../accounting/TaxAuthorityRateType/TaxAuthorityRateTypeInputType.js';
+import {TaxAuthorityRateTypeResponseType} from '../../accounting/TaxAuthorityRateType/TaxAuthorityRateTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createTaxAuthorityRateType = {
   type: TaxAuthorityRateTypeResponseType,
   description: 'mutation for ofbiz createTaxAuthorityRateType method',
-  args:{},
+  args:{taxAuthorityRateTypeToBeAdded: {type: TaxAuthorityRateTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/taxAuthority/taxAuthorityRateTypes/add?`, null, req);
+    return postToUrl(`accounting/taxAuthority/taxAuthorityRateTypes/add?`, args.taxAuthorityRateTypeToBeAdded, req);
   }
 };
 export {createTaxAuthorityRateType};

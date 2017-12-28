@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProtectedViewResponseType} from '../../login/ProtectedView/ProtectedViewResponseType.js';
 import {ProtectedViewInputType} from '../../login/ProtectedView/ProtectedViewInputType.js';
+import {ProtectedViewResponseType} from '../../login/ProtectedView/ProtectedViewResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProtectedView = {
   type: ProtectedViewResponseType,
   description: 'mutation for ofbiz createProtectedView method',
-  args:{},
+  args:{protectedViewToBeAdded: {type: ProtectedViewInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`login/protectedViews/add?`, null, req);
+    return postToUrl(`login/protectedViews/add?`, args.protectedViewToBeAdded, req);
   }
 };
 export {createProtectedView};

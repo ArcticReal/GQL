@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ZipSalesTaxLookupResponseType} from '../../accounting/ZipSalesTaxLookup/ZipSalesTaxLookupResponseType.js';
 import {ZipSalesTaxLookupInputType} from '../../accounting/ZipSalesTaxLookup/ZipSalesTaxLookupInputType.js';
+import {ZipSalesTaxLookupResponseType} from '../../accounting/ZipSalesTaxLookup/ZipSalesTaxLookupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createZipSalesTaxLookup = {
   type: ZipSalesTaxLookupResponseType,
   description: 'mutation for ofbiz createZipSalesTaxLookup method',
-  args:{},
+  args:{zipSalesTaxLookupToBeAdded: {type: ZipSalesTaxLookupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/zipSalesTaxLookups/add?`, null, req);
+    return postToUrl(`accounting/zipSalesTaxLookups/add?`, args.zipSalesTaxLookupToBeAdded, req);
   }
 };
 export {createZipSalesTaxLookup};

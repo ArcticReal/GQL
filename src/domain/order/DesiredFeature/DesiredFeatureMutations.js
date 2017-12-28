@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {DesiredFeatureResponseType} from '../../order/DesiredFeature/DesiredFeatureResponseType.js';
 import {DesiredFeatureInputType} from '../../order/DesiredFeature/DesiredFeatureInputType.js';
+import {DesiredFeatureResponseType} from '../../order/DesiredFeature/DesiredFeatureResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createDesiredFeature = {
   type: DesiredFeatureResponseType,
   description: 'mutation for ofbiz createDesiredFeature method',
-  args:{},
+  args:{desiredFeatureToBeAdded: {type: DesiredFeatureInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/desiredFeatures/add?`, null, req);
+    return postToUrl(`order/desiredFeatures/add?`, args.desiredFeatureToBeAdded, req);
   }
 };
 export {createDesiredFeature};

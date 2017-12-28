@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {DeductionResponseType} from '../../accounting/Deduction/DeductionResponseType.js';
 import {DeductionInputType} from '../../accounting/Deduction/DeductionInputType.js';
+import {DeductionResponseType} from '../../accounting/Deduction/DeductionResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createDeduction = {
   type: DeductionResponseType,
   description: 'mutation for ofbiz createDeduction method',
-  args:{},
+  args:{deductionToBeAdded: {type: DeductionInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/deductions/add?`, null, req);
+    return postToUrl(`accounting/deductions/add?`, args.deductionToBeAdded, req);
   }
 };
 export {createDeduction};

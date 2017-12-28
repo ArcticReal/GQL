@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContentMetaDataResponseType} from '../../content/ContentMetaData/ContentMetaDataResponseType.js';
 import {ContentMetaDataInputType} from '../../content/ContentMetaData/ContentMetaDataInputType.js';
+import {ContentMetaDataResponseType} from '../../content/ContentMetaData/ContentMetaDataResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContentMetaData = {
   type: ContentMetaDataResponseType,
   description: 'mutation for ofbiz createContentMetaData method',
-  args:{},
+  args:{contentMetaDataToBeAdded: {type: ContentMetaDataInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentMetaDatas/add?`, null, req);
+    return postToUrl(`content/content/contentMetaDatas/add?`, args.contentMetaDataToBeAdded, req);
   }
 };
 export {createContentMetaData};

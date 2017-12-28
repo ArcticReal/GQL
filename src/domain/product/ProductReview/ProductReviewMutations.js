@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductReviewResponseType} from '../../product/ProductReview/ProductReviewResponseType.js';
 import {ProductReviewInputType} from '../../product/ProductReview/ProductReviewInputType.js';
+import {ProductReviewResponseType} from '../../product/ProductReview/ProductReviewResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductReview = {
   type: ProductReviewResponseType,
   description: 'mutation for ofbiz createProductReview method',
-  args:{},
+  args:{productReviewToBeAdded: {type: ProductReviewInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productReviews/add?`, null, req);
+    return postToUrl(`product/product/productReviews/add?`, args.productReviewToBeAdded, req);
   }
 };
 export {createProductReview};

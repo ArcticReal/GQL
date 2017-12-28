@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {TelecomNumberResponseType} from '../../party/TelecomNumber/TelecomNumberResponseType.js';
 import {TelecomNumberInputType} from '../../party/TelecomNumber/TelecomNumberInputType.js';
+import {TelecomNumberResponseType} from '../../party/TelecomNumber/TelecomNumberResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createTelecomNumber = {
   type: TelecomNumberResponseType,
   description: 'mutation for ofbiz createTelecomNumber method',
-  args:{},
+  args:{telecomNumberToBeAdded: {type: TelecomNumberInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/telecomNumbers/add?`, null, req);
+    return postToUrl(`party/telecomNumbers/add?`, args.telecomNumberToBeAdded, req);
   }
 };
 export {createTelecomNumber};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {QuoteCoefficientResponseType} from '../../order/QuoteCoefficient/QuoteCoefficientResponseType.js';
 import {QuoteCoefficientInputType} from '../../order/QuoteCoefficient/QuoteCoefficientInputType.js';
+import {QuoteCoefficientResponseType} from '../../order/QuoteCoefficient/QuoteCoefficientResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createQuoteCoefficient = {
   type: QuoteCoefficientResponseType,
   description: 'mutation for ofbiz createQuoteCoefficient method',
-  args:{},
+  args:{quoteCoefficientToBeAdded: {type: QuoteCoefficientInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/quote/quoteCoefficients/add?`, null, req);
+    return postToUrl(`order/quote/quoteCoefficients/add?`, args.quoteCoefficientToBeAdded, req);
   }
 };
 export {createQuoteCoefficient};

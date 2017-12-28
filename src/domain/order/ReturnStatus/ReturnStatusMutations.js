@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ReturnStatusResponseType} from '../../order/ReturnStatus/ReturnStatusResponseType.js';
 import {ReturnStatusInputType} from '../../order/ReturnStatus/ReturnStatusInputType.js';
+import {ReturnStatusResponseType} from '../../order/ReturnStatus/ReturnStatusResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createReturnStatus = {
   type: ReturnStatusResponseType,
   description: 'mutation for ofbiz createReturnStatus method',
-  args:{},
+  args:{returnStatusToBeAdded: {type: ReturnStatusInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/returnStatuss/add?`, null, req);
+    return postToUrl(`order/returnStatuss/add?`, args.returnStatusToBeAdded, req);
   }
 };
 export {createReturnStatus};

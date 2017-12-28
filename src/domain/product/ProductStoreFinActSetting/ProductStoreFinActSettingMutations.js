@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductStoreFinActSettingResponseType} from '../../product/ProductStoreFinActSetting/ProductStoreFinActSettingResponseType.js';
 import {ProductStoreFinActSettingInputType} from '../../product/ProductStoreFinActSetting/ProductStoreFinActSettingInputType.js';
+import {ProductStoreFinActSettingResponseType} from '../../product/ProductStoreFinActSetting/ProductStoreFinActSettingResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductStoreFinActSetting = {
   type: ProductStoreFinActSettingResponseType,
   description: 'mutation for ofbiz createProductStoreFinActSetting method',
-  args:{},
+  args:{productStoreFinActSettingToBeAdded: {type: ProductStoreFinActSettingInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStoreFinActSettings/add?`, null, req);
+    return postToUrl(`product/product/productStoreFinActSettings/add?`, args.productStoreFinActSettingToBeAdded, req);
   }
 };
 export {createProductStoreFinActSetting};

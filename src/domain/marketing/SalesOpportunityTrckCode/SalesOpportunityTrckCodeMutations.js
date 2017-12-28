@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SalesOpportunityTrckCodeResponseType} from '../../marketing/SalesOpportunityTrckCode/SalesOpportunityTrckCodeResponseType.js';
 import {SalesOpportunityTrckCodeInputType} from '../../marketing/SalesOpportunityTrckCode/SalesOpportunityTrckCodeInputType.js';
+import {SalesOpportunityTrckCodeResponseType} from '../../marketing/SalesOpportunityTrckCode/SalesOpportunityTrckCodeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSalesOpportunityTrckCode = {
   type: SalesOpportunityTrckCodeResponseType,
   description: 'mutation for ofbiz createSalesOpportunityTrckCode method',
-  args:{},
+  args:{salesOpportunityTrckCodeToBeAdded: {type: SalesOpportunityTrckCodeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/salesOpportunity/salesOpportunityTrckCodes/add?`, null, req);
+    return postToUrl(`marketing/salesOpportunity/salesOpportunityTrckCodes/add?`, args.salesOpportunityTrckCodeToBeAdded, req);
   }
 };
 export {createSalesOpportunityTrckCode};

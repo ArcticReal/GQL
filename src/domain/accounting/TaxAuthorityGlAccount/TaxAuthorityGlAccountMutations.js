@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {TaxAuthorityGlAccountResponseType} from '../../accounting/TaxAuthorityGlAccount/TaxAuthorityGlAccountResponseType.js';
 import {TaxAuthorityGlAccountInputType} from '../../accounting/TaxAuthorityGlAccount/TaxAuthorityGlAccountInputType.js';
+import {TaxAuthorityGlAccountResponseType} from '../../accounting/TaxAuthorityGlAccount/TaxAuthorityGlAccountResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createTaxAuthorityGlAccount = {
   type: TaxAuthorityGlAccountResponseType,
   description: 'mutation for ofbiz createTaxAuthorityGlAccount method',
-  args:{},
+  args:{taxAuthorityGlAccountToBeAdded: {type: TaxAuthorityGlAccountInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/taxAuthorityGlAccounts/add?`, null, req);
+    return postToUrl(`accounting/glAccount/taxAuthorityGlAccounts/add?`, args.taxAuthorityGlAccountToBeAdded, req);
   }
 };
 export {createTaxAuthorityGlAccount};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContentSearchConstraintResponseType} from '../../content/ContentSearchConstraint/ContentSearchConstraintResponseType.js';
 import {ContentSearchConstraintInputType} from '../../content/ContentSearchConstraint/ContentSearchConstraintInputType.js';
+import {ContentSearchConstraintResponseType} from '../../content/ContentSearchConstraint/ContentSearchConstraintResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContentSearchConstraint = {
   type: ContentSearchConstraintResponseType,
   description: 'mutation for ofbiz createContentSearchConstraint method',
-  args:{},
+  args:{contentSearchConstraintToBeAdded: {type: ContentSearchConstraintInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentSearchConstraints/add?`, null, req);
+    return postToUrl(`content/content/contentSearchConstraints/add?`, args.contentSearchConstraintToBeAdded, req);
   }
 };
 export {createContentSearchConstraint};

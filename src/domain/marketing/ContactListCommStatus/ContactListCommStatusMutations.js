@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContactListCommStatusResponseType} from '../../marketing/ContactListCommStatus/ContactListCommStatusResponseType.js';
 import {ContactListCommStatusInputType} from '../../marketing/ContactListCommStatus/ContactListCommStatusInputType.js';
+import {ContactListCommStatusResponseType} from '../../marketing/ContactListCommStatus/ContactListCommStatusResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContactListCommStatus = {
   type: ContactListCommStatusResponseType,
   description: 'mutation for ofbiz createContactListCommStatus method',
-  args:{},
+  args:{contactListCommStatusToBeAdded: {type: ContactListCommStatusInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/contactList/contactListCommStatuss/add?`, null, req);
+    return postToUrl(`marketing/contactList/contactListCommStatuss/add?`, args.contactListCommStatusToBeAdded, req);
   }
 };
 export {createContactListCommStatus};

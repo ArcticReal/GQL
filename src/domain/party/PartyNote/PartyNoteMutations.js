@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyNoteResponseType} from '../../party/PartyNote/PartyNoteResponseType.js';
 import {PartyNoteInputType} from '../../party/PartyNote/PartyNoteInputType.js';
+import {PartyNoteResponseType} from '../../party/PartyNote/PartyNoteResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyNote = {
   type: PartyNoteResponseType,
   description: 'mutation for ofbiz createPartyNote method',
-  args:{},
+  args:{partyNoteToBeAdded: {type: PartyNoteInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyNotes/add?`, null, req);
+    return postToUrl(`party/party/partyNotes/add?`, args.partyNoteToBeAdded, req);
   }
 };
 export {createPartyNote};

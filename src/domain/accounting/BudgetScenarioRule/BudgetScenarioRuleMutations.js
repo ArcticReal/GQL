@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {BudgetScenarioRuleResponseType} from '../../accounting/BudgetScenarioRule/BudgetScenarioRuleResponseType.js';
 import {BudgetScenarioRuleInputType} from '../../accounting/BudgetScenarioRule/BudgetScenarioRuleInputType.js';
+import {BudgetScenarioRuleResponseType} from '../../accounting/BudgetScenarioRule/BudgetScenarioRuleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createBudgetScenarioRule = {
   type: BudgetScenarioRuleResponseType,
   description: 'mutation for ofbiz createBudgetScenarioRule method',
-  args:{},
+  args:{budgetScenarioRuleToBeAdded: {type: BudgetScenarioRuleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/budget/budgetScenarioRules/add?`, null, req);
+    return postToUrl(`accounting/budget/budgetScenarioRules/add?`, args.budgetScenarioRuleToBeAdded, req);
   }
 };
 export {createBudgetScenarioRule};

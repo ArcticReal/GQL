@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyProfileDefaultResponseType} from '../../party/PartyProfileDefault/PartyProfileDefaultResponseType.js';
 import {PartyProfileDefaultInputType} from '../../party/PartyProfileDefault/PartyProfileDefaultInputType.js';
+import {PartyProfileDefaultResponseType} from '../../party/PartyProfileDefault/PartyProfileDefaultResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyProfileDefault = {
   type: PartyProfileDefaultResponseType,
   description: 'mutation for ofbiz createPartyProfileDefault method',
-  args:{},
+  args:{partyProfileDefaultToBeAdded: {type: PartyProfileDefaultInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/party/partyProfileDefaults/add?`, null, req);
+    return postToUrl(`party/party/partyProfileDefaults/add?`, args.partyProfileDefaultToBeAdded, req);
   }
 };
 export {createPartyProfileDefault};

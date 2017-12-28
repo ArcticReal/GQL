@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SurveyApplTypeResponseType} from '../../content/SurveyApplType/SurveyApplTypeResponseType.js';
 import {SurveyApplTypeInputType} from '../../content/SurveyApplType/SurveyApplTypeInputType.js';
+import {SurveyApplTypeResponseType} from '../../content/SurveyApplType/SurveyApplTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSurveyApplType = {
   type: SurveyApplTypeResponseType,
   description: 'mutation for ofbiz createSurveyApplType method',
-  args:{},
+  args:{surveyApplTypeToBeAdded: {type: SurveyApplTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/survey/surveyApplTypes/add?`, null, req);
+    return postToUrl(`content/survey/surveyApplTypes/add?`, args.surveyApplTypeToBeAdded, req);
   }
 };
 export {createSurveyApplType};

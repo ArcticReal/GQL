@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductFeatureIactnResponseType} from '../../product/ProductFeatureIactn/ProductFeatureIactnResponseType.js';
 import {ProductFeatureIactnInputType} from '../../product/ProductFeatureIactn/ProductFeatureIactnInputType.js';
+import {ProductFeatureIactnResponseType} from '../../product/ProductFeatureIactn/ProductFeatureIactnResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductFeatureIactn = {
   type: ProductFeatureIactnResponseType,
   description: 'mutation for ofbiz createProductFeatureIactn method',
-  args:{},
+  args:{productFeatureIactnToBeAdded: {type: ProductFeatureIactnInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productFeatureIactns/add?`, null, req);
+    return postToUrl(`product/product/productFeatureIactns/add?`, args.productFeatureIactnToBeAdded, req);
   }
 };
 export {createProductFeatureIactn};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ZipSalesRuleLookupResponseType} from '../../accounting/ZipSalesRuleLookup/ZipSalesRuleLookupResponseType.js';
 import {ZipSalesRuleLookupInputType} from '../../accounting/ZipSalesRuleLookup/ZipSalesRuleLookupInputType.js';
+import {ZipSalesRuleLookupResponseType} from '../../accounting/ZipSalesRuleLookup/ZipSalesRuleLookupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createZipSalesRuleLookup = {
   type: ZipSalesRuleLookupResponseType,
   description: 'mutation for ofbiz createZipSalesRuleLookup method',
-  args:{},
+  args:{zipSalesRuleLookupToBeAdded: {type: ZipSalesRuleLookupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/zipSalesRuleLookups/add?`, null, req);
+    return postToUrl(`accounting/zipSalesRuleLookups/add?`, args.zipSalesRuleLookupToBeAdded, req);
   }
 };
 export {createZipSalesRuleLookup};

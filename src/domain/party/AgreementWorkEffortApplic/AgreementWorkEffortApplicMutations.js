@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {AgreementWorkEffortApplicResponseType} from '../../party/AgreementWorkEffortApplic/AgreementWorkEffortApplicResponseType.js';
 import {AgreementWorkEffortApplicInputType} from '../../party/AgreementWorkEffortApplic/AgreementWorkEffortApplicInputType.js';
+import {AgreementWorkEffortApplicResponseType} from '../../party/AgreementWorkEffortApplic/AgreementWorkEffortApplicResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createAgreementWorkEffortApplic = {
   type: AgreementWorkEffortApplicResponseType,
   description: 'mutation for ofbiz createAgreementWorkEffortApplic method',
-  args:{},
+  args:{agreementWorkEffortApplicToBeAdded: {type: AgreementWorkEffortApplicInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`party/agreement/agreementWorkEffortApplics/add?`, null, req);
+    return postToUrl(`party/agreement/agreementWorkEffortApplics/add?`, args.agreementWorkEffortApplicToBeAdded, req);
   }
 };
 export {createAgreementWorkEffortApplic};

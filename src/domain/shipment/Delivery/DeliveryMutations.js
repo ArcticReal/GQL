@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {DeliveryResponseType} from '../../shipment/Delivery/DeliveryResponseType.js';
 import {DeliveryInputType} from '../../shipment/Delivery/DeliveryInputType.js';
+import {DeliveryResponseType} from '../../shipment/Delivery/DeliveryResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createDelivery = {
   type: DeliveryResponseType,
   description: 'mutation for ofbiz createDelivery method',
-  args:{},
+  args:{deliveryToBeAdded: {type: DeliveryInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/deliverys/add?`, null, req);
+    return postToUrl(`shipment/deliverys/add?`, args.deliveryToBeAdded, req);
   }
 };
 export {createDelivery};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {TaxAuthorityAssocTypeResponseType} from '../../accounting/TaxAuthorityAssocType/TaxAuthorityAssocTypeResponseType.js';
 import {TaxAuthorityAssocTypeInputType} from '../../accounting/TaxAuthorityAssocType/TaxAuthorityAssocTypeInputType.js';
+import {TaxAuthorityAssocTypeResponseType} from '../../accounting/TaxAuthorityAssocType/TaxAuthorityAssocTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createTaxAuthorityAssocType = {
   type: TaxAuthorityAssocTypeResponseType,
   description: 'mutation for ofbiz createTaxAuthorityAssocType method',
-  args:{},
+  args:{taxAuthorityAssocTypeToBeAdded: {type: TaxAuthorityAssocTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/taxAuthority/taxAuthorityAssocTypes/add?`, null, req);
+    return postToUrl(`accounting/taxAuthority/taxAuthorityAssocTypes/add?`, args.taxAuthorityAssocTypeToBeAdded, req);
   }
 };
 export {createTaxAuthorityAssocType};

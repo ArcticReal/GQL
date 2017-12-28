@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductCategoryInputType} from '../../product/ProductCategory/ProductCategoryInputType.js';
 import {ProductCategoryResponseType} from '../../product/ProductCategory/ProductCategoryResponseType.js';
+import {ProductCategoryInputType} from '../../product/ProductCategory/ProductCategoryInputType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductCategory = {
   type: ProductCategoryResponseType,
   description: 'mutation for ofbiz createProductCategory method',
-  args:{productCategoryToBeAdded: {type: ProductCategoryInputType}},
+  args:{},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productCategorys/add?`, args.productCategoryToBeAdded, req);
+    return postToUrl(`product/product/productCategorys/add?`, null, req);
   }
 };
 export {createProductCategory};

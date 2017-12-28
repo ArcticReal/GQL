@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductStoreRoleResponseType} from '../../product/ProductStoreRole/ProductStoreRoleResponseType.js';
 import {ProductStoreRoleInputType} from '../../product/ProductStoreRole/ProductStoreRoleInputType.js';
+import {ProductStoreRoleResponseType} from '../../product/ProductStoreRole/ProductStoreRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductStoreRole = {
   type: ProductStoreRoleResponseType,
   description: 'mutation for ofbiz createProductStoreRole method',
-  args:{},
+  args:{productStoreRoleToBeAdded: {type: ProductStoreRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStoreRoles/add?`, null, req);
+    return postToUrl(`product/product/productStoreRoles/add?`, args.productStoreRoleToBeAdded, req);
   }
 };
 export {createProductStoreRole};

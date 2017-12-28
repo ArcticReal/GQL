@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {InvoiceRoleResponseType} from '../../accounting/InvoiceRole/InvoiceRoleResponseType.js';
 import {InvoiceRoleInputType} from '../../accounting/InvoiceRole/InvoiceRoleInputType.js';
+import {InvoiceRoleResponseType} from '../../accounting/InvoiceRole/InvoiceRoleResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createInvoiceRole = {
   type: InvoiceRoleResponseType,
   description: 'mutation for ofbiz createInvoiceRole method',
-  args:{},
+  args:{invoiceRoleToBeAdded: {type: InvoiceRoleInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/invoice/invoiceRoles/add?`, null, req);
+    return postToUrl(`accounting/invoice/invoiceRoles/add?`, args.invoiceRoleToBeAdded, req);
   }
 };
 export {createInvoiceRole};

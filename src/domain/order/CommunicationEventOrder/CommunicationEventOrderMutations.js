@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {CommunicationEventOrderResponseType} from '../../order/CommunicationEventOrder/CommunicationEventOrderResponseType.js';
 import {CommunicationEventOrderInputType} from '../../order/CommunicationEventOrder/CommunicationEventOrderInputType.js';
+import {CommunicationEventOrderResponseType} from '../../order/CommunicationEventOrder/CommunicationEventOrderResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createCommunicationEventOrder = {
   type: CommunicationEventOrderResponseType,
   description: 'mutation for ofbiz createCommunicationEventOrder method',
-  args:{},
+  args:{communicationEventOrderToBeAdded: {type: CommunicationEventOrderInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`order/communicationEventOrders/add?`, null, req);
+    return postToUrl(`order/communicationEventOrders/add?`, args.communicationEventOrderToBeAdded, req);
   }
 };
 export {createCommunicationEventOrder};

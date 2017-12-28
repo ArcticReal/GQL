@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WebSitePathAliasResponseType} from '../../content/WebSitePathAlias/WebSitePathAliasResponseType.js';
 import {WebSitePathAliasInputType} from '../../content/WebSitePathAlias/WebSitePathAliasInputType.js';
+import {WebSitePathAliasResponseType} from '../../content/WebSitePathAlias/WebSitePathAliasResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWebSitePathAlias = {
   type: WebSitePathAliasResponseType,
   description: 'mutation for ofbiz createWebSitePathAlias method',
-  args:{},
+  args:{webSitePathAliasToBeAdded: {type: WebSitePathAliasInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/webSitePathAliass/add?`, null, req);
+    return postToUrl(`content/webSitePathAliass/add?`, args.webSitePathAliasToBeAdded, req);
   }
 };
 export {createWebSitePathAlias};

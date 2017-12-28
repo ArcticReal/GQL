@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {DocumentTypeResponseType} from '../../content/DocumentType/DocumentTypeResponseType.js';
 import {DocumentTypeInputType} from '../../content/DocumentType/DocumentTypeInputType.js';
+import {DocumentTypeResponseType} from '../../content/DocumentType/DocumentTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createDocumentType = {
   type: DocumentTypeResponseType,
   description: 'mutation for ofbiz createDocumentType method',
-  args:{},
+  args:{documentTypeToBeAdded: {type: DocumentTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/document/documentTypes/add?`, null, req);
+    return postToUrl(`content/document/documentTypes/add?`, args.documentTypeToBeAdded, req);
   }
 };
 export {createDocumentType};

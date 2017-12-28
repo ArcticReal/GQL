@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FacilityContentResponseType} from '../../product/FacilityContent/FacilityContentResponseType.js';
 import {FacilityContentInputType} from '../../product/FacilityContent/FacilityContentInputType.js';
+import {FacilityContentResponseType} from '../../product/FacilityContent/FacilityContentResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFacilityContent = {
   type: FacilityContentResponseType,
   description: 'mutation for ofbiz createFacilityContent method',
-  args:{},
+  args:{facilityContentToBeAdded: {type: FacilityContentInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/facilityContents/add?`, null, req);
+    return postToUrl(`product/facility/facilityContents/add?`, args.facilityContentToBeAdded, req);
   }
 };
 export {createFacilityContent};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContainerTypeResponseType} from '../../product/ContainerType/ContainerTypeResponseType.js';
 import {ContainerTypeInputType} from '../../product/ContainerType/ContainerTypeInputType.js';
+import {ContainerTypeResponseType} from '../../product/ContainerType/ContainerTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContainerType = {
   type: ContainerTypeResponseType,
   description: 'mutation for ofbiz createContainerType method',
-  args:{},
+  args:{containerTypeToBeAdded: {type: ContainerTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/container/containerTypes/add?`, null, req);
+    return postToUrl(`product/container/containerTypes/add?`, args.containerTypeToBeAdded, req);
   }
 };
 export {createContainerType};

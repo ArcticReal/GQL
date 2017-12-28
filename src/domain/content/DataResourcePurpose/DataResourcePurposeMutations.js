@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {DataResourcePurposeResponseType} from '../../content/DataResourcePurpose/DataResourcePurposeResponseType.js';
 import {DataResourcePurposeInputType} from '../../content/DataResourcePurpose/DataResourcePurposeInputType.js';
+import {DataResourcePurposeResponseType} from '../../content/DataResourcePurpose/DataResourcePurposeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createDataResourcePurpose = {
   type: DataResourcePurposeResponseType,
   description: 'mutation for ofbiz createDataResourcePurpose method',
-  args:{},
+  args:{dataResourcePurposeToBeAdded: {type: DataResourcePurposeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/dataResource/dataResourcePurposes/add?`, null, req);
+    return postToUrl(`content/dataResource/dataResourcePurposes/add?`, args.dataResourcePurposeToBeAdded, req);
   }
 };
 export {createDataResourcePurpose};

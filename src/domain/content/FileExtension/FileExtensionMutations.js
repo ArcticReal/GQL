@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {FileExtensionResponseType} from '../../content/FileExtension/FileExtensionResponseType.js';
 import {FileExtensionInputType} from '../../content/FileExtension/FileExtensionInputType.js';
+import {FileExtensionResponseType} from '../../content/FileExtension/FileExtensionResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createFileExtension = {
   type: FileExtensionResponseType,
   description: 'mutation for ofbiz createFileExtension method',
-  args:{},
+  args:{fileExtensionToBeAdded: {type: FileExtensionInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/fileExtensions/add?`, null, req);
+    return postToUrl(`content/fileExtensions/add?`, args.fileExtensionToBeAdded, req);
   }
 };
 export {createFileExtension};

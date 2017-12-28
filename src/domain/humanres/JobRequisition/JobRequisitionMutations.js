@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {JobRequisitionResponseType} from '../../humanres/JobRequisition/JobRequisitionResponseType.js';
 import {JobRequisitionInputType} from '../../humanres/JobRequisition/JobRequisitionInputType.js';
+import {JobRequisitionResponseType} from '../../humanres/JobRequisition/JobRequisitionResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createJobRequisition = {
   type: JobRequisitionResponseType,
   description: 'mutation for ofbiz createJobRequisition method',
-  args:{},
+  args:{jobRequisitionToBeAdded: {type: JobRequisitionInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`humanres/jobRequisitions/add?`, null, req);
+    return postToUrl(`humanres/jobRequisitions/add?`, args.jobRequisitionToBeAdded, req);
   }
 };
 export {createJobRequisition};

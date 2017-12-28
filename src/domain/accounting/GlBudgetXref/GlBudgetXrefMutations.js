@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {GlBudgetXrefResponseType} from '../../accounting/GlBudgetXref/GlBudgetXrefResponseType.js';
 import {GlBudgetXrefInputType} from '../../accounting/GlBudgetXref/GlBudgetXrefInputType.js';
+import {GlBudgetXrefResponseType} from '../../accounting/GlBudgetXref/GlBudgetXrefResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createGlBudgetXref = {
   type: GlBudgetXrefResponseType,
   description: 'mutation for ofbiz createGlBudgetXref method',
-  args:{},
+  args:{glBudgetXrefToBeAdded: {type: GlBudgetXrefInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/budget/glBudgetXrefs/add?`, null, req);
+    return postToUrl(`accounting/budget/glBudgetXrefs/add?`, args.glBudgetXrefToBeAdded, req);
   }
 };
 export {createGlBudgetXref};

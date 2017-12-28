@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortPurposeTypeResponseType} from '../../workeffort/WorkEffortPurposeType/WorkEffortPurposeTypeResponseType.js';
 import {WorkEffortPurposeTypeInputType} from '../../workeffort/WorkEffortPurposeType/WorkEffortPurposeTypeInputType.js';
+import {WorkEffortPurposeTypeResponseType} from '../../workeffort/WorkEffortPurposeType/WorkEffortPurposeTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortPurposeType = {
   type: WorkEffortPurposeTypeResponseType,
   description: 'mutation for ofbiz createWorkEffortPurposeType method',
-  args:{},
+  args:{workEffortPurposeTypeToBeAdded: {type: WorkEffortPurposeTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortPurposeTypes/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortPurposeTypes/add?`, args.workEffortPurposeTypeToBeAdded, req);
   }
 };
 export {createWorkEffortPurposeType};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SalesOpportunityWorkEffortResponseType} from '../../marketing/SalesOpportunityWorkEffort/SalesOpportunityWorkEffortResponseType.js';
 import {SalesOpportunityWorkEffortInputType} from '../../marketing/SalesOpportunityWorkEffort/SalesOpportunityWorkEffortInputType.js';
+import {SalesOpportunityWorkEffortResponseType} from '../../marketing/SalesOpportunityWorkEffort/SalesOpportunityWorkEffortResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSalesOpportunityWorkEffort = {
   type: SalesOpportunityWorkEffortResponseType,
   description: 'mutation for ofbiz createSalesOpportunityWorkEffort method',
-  args:{},
+  args:{salesOpportunityWorkEffortToBeAdded: {type: SalesOpportunityWorkEffortInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/salesOpportunity/salesOpportunityWorkEfforts/add?`, null, req);
+    return postToUrl(`marketing/salesOpportunity/salesOpportunityWorkEfforts/add?`, args.salesOpportunityWorkEffortToBeAdded, req);
   }
 };
 export {createSalesOpportunityWorkEffort};

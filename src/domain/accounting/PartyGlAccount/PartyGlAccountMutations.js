@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PartyGlAccountResponseType} from '../../accounting/PartyGlAccount/PartyGlAccountResponseType.js';
 import {PartyGlAccountInputType} from '../../accounting/PartyGlAccount/PartyGlAccountInputType.js';
+import {PartyGlAccountResponseType} from '../../accounting/PartyGlAccount/PartyGlAccountResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPartyGlAccount = {
   type: PartyGlAccountResponseType,
   description: 'mutation for ofbiz createPartyGlAccount method',
-  args:{},
+  args:{partyGlAccountToBeAdded: {type: PartyGlAccountInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/glAccount/partyGlAccounts/add?`, null, req);
+    return postToUrl(`accounting/glAccount/partyGlAccounts/add?`, args.partyGlAccountToBeAdded, req);
   }
 };
 export {createPartyGlAccount};

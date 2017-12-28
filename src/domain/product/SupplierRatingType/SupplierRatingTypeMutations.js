@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {SupplierRatingTypeResponseType} from '../../product/SupplierRatingType/SupplierRatingTypeResponseType.js';
 import {SupplierRatingTypeInputType} from '../../product/SupplierRatingType/SupplierRatingTypeInputType.js';
+import {SupplierRatingTypeResponseType} from '../../product/SupplierRatingType/SupplierRatingTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createSupplierRatingType = {
   type: SupplierRatingTypeResponseType,
   description: 'mutation for ofbiz createSupplierRatingType method',
-  args:{},
+  args:{supplierRatingTypeToBeAdded: {type: SupplierRatingTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/supplierRatingTypes/add?`, null, req);
+    return postToUrl(`product/supplierRatingTypes/add?`, args.supplierRatingTypeToBeAdded, req);
   }
 };
 export {createSupplierRatingType};

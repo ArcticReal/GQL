@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {MetaDataPredicateResponseType} from '../../content/MetaDataPredicate/MetaDataPredicateResponseType.js';
 import {MetaDataPredicateInputType} from '../../content/MetaDataPredicate/MetaDataPredicateInputType.js';
+import {MetaDataPredicateResponseType} from '../../content/MetaDataPredicate/MetaDataPredicateResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createMetaDataPredicate = {
   type: MetaDataPredicateResponseType,
   description: 'mutation for ofbiz createMetaDataPredicate method',
-  args:{},
+  args:{metaDataPredicateToBeAdded: {type: MetaDataPredicateInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/metaDataPredicates/add?`, null, req);
+    return postToUrl(`content/metaDataPredicates/add?`, args.metaDataPredicateToBeAdded, req);
   }
 };
 export {createMetaDataPredicate};

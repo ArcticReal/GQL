@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContactListPartyResponseType} from '../../marketing/ContactListParty/ContactListPartyResponseType.js';
 import {ContactListPartyInputType} from '../../marketing/ContactListParty/ContactListPartyInputType.js';
+import {ContactListPartyResponseType} from '../../marketing/ContactListParty/ContactListPartyResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContactListParty = {
   type: ContactListPartyResponseType,
   description: 'mutation for ofbiz createContactListParty method',
-  args:{},
+  args:{contactListPartyToBeAdded: {type: ContactListPartyInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`marketing/contactList/contactListPartys/add?`, null, req);
+    return postToUrl(`marketing/contactList/contactListPartys/add?`, args.contactListPartyToBeAdded, req);
   }
 };
 export {createContactListParty};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductFacilityResponseType} from '../../product/ProductFacility/ProductFacilityResponseType.js';
 import {ProductFacilityInputType} from '../../product/ProductFacility/ProductFacilityInputType.js';
+import {ProductFacilityResponseType} from '../../product/ProductFacility/ProductFacilityResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductFacility = {
   type: ProductFacilityResponseType,
   description: 'mutation for ofbiz createProductFacility method',
-  args:{},
+  args:{productFacilityToBeAdded: {type: ProductFacilityInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/facility/productFacilitys/add?`, null, req);
+    return postToUrl(`product/facility/productFacilitys/add?`, args.productFacilityToBeAdded, req);
   }
 };
 export {createProductFacility};

@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {PaymentGroupResponseType} from '../../accounting/PaymentGroup/PaymentGroupResponseType.js';
 import {PaymentGroupInputType} from '../../accounting/PaymentGroup/PaymentGroupInputType.js';
+import {PaymentGroupResponseType} from '../../accounting/PaymentGroup/PaymentGroupResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createPaymentGroup = {
   type: PaymentGroupResponseType,
   description: 'mutation for ofbiz createPaymentGroup method',
-  args:{},
+  args:{paymentGroupToBeAdded: {type: PaymentGroupInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`accounting/payment/paymentGroups/add?`, null, req);
+    return postToUrl(`accounting/payment/paymentGroups/add?`, args.paymentGroupToBeAdded, req);
   }
 };
 export {createPaymentGroup};

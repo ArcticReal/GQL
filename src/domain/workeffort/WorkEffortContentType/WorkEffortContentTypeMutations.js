@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {WorkEffortContentTypeResponseType} from '../../workeffort/WorkEffortContentType/WorkEffortContentTypeResponseType.js';
 import {WorkEffortContentTypeInputType} from '../../workeffort/WorkEffortContentType/WorkEffortContentTypeInputType.js';
+import {WorkEffortContentTypeResponseType} from '../../workeffort/WorkEffortContentType/WorkEffortContentTypeResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createWorkEffortContentType = {
   type: WorkEffortContentTypeResponseType,
   description: 'mutation for ofbiz createWorkEffortContentType method',
-  args:{},
+  args:{workEffortContentTypeToBeAdded: {type: WorkEffortContentTypeInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`workeffort/workEffort/workEffortContentTypes/add?`, null, req);
+    return postToUrl(`workeffort/workEffort/workEffortContentTypes/add?`, args.workEffortContentTypeToBeAdded, req);
   }
 };
 export {createWorkEffortContentType};

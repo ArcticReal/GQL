@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ShipmentItemBillingResponseType} from '../../shipment/ShipmentItemBilling/ShipmentItemBillingResponseType.js';
 import {ShipmentItemBillingInputType} from '../../shipment/ShipmentItemBilling/ShipmentItemBillingInputType.js';
+import {ShipmentItemBillingResponseType} from '../../shipment/ShipmentItemBilling/ShipmentItemBillingResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createShipmentItemBilling = {
   type: ShipmentItemBillingResponseType,
   description: 'mutation for ofbiz createShipmentItemBilling method',
-  args:{},
+  args:{shipmentItemBillingToBeAdded: {type: ShipmentItemBillingInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`shipment/shipment/shipmentItemBillings/add?`, null, req);
+    return postToUrl(`shipment/shipment/shipmentItemBillings/add?`, args.shipmentItemBillingToBeAdded, req);
   }
 };
 export {createShipmentItemBilling};

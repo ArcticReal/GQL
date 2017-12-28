@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ContentPurposeOperationResponseType} from '../../content/ContentPurposeOperation/ContentPurposeOperationResponseType.js';
 import {ContentPurposeOperationInputType} from '../../content/ContentPurposeOperation/ContentPurposeOperationInputType.js';
+import {ContentPurposeOperationResponseType} from '../../content/ContentPurposeOperation/ContentPurposeOperationResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createContentPurposeOperation = {
   type: ContentPurposeOperationResponseType,
   description: 'mutation for ofbiz createContentPurposeOperation method',
-  args:{},
+  args:{contentPurposeOperationToBeAdded: {type: ContentPurposeOperationInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`content/content/contentPurposeOperations/add?`, null, req);
+    return postToUrl(`content/content/contentPurposeOperations/add?`, args.contentPurposeOperationToBeAdded, req);
   }
 };
 export {createContentPurposeOperation};

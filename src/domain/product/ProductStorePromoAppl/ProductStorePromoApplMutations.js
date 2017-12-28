@@ -8,8 +8,8 @@ import {
   GraphQLBoolean,
   GraphQLList,
 } from 'graphql';
-import {ProductStorePromoApplResponseType} from '../../product/ProductStorePromoAppl/ProductStorePromoApplResponseType.js';
 import {ProductStorePromoApplInputType} from '../../product/ProductStorePromoAppl/ProductStorePromoApplInputType.js';
+import {ProductStorePromoApplResponseType} from '../../product/ProductStorePromoAppl/ProductStorePromoApplResponseType.js';
 import {postToUrl,deleteToUrl,putToUrl} from '../../../framework/ofbizCon.js';
 import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 
@@ -17,9 +17,9 @@ import {ResponseType,KeyValueInputType} from '../../../framework/helpTypes.js';
 const createProductStorePromoAppl = {
   type: ProductStorePromoApplResponseType,
   description: 'mutation for ofbiz createProductStorePromoAppl method',
-  args:{},
+  args:{productStorePromoApplToBeAdded: {type: ProductStorePromoApplInputType}},
   resolve: (root, args, {req}) => {
-    return postToUrl(`product/product/productStorePromoAppls/add?`, null, req);
+    return postToUrl(`product/product/productStorePromoAppls/add?`, args.productStorePromoApplToBeAdded, req);
   }
 };
 export {createProductStorePromoAppl};
