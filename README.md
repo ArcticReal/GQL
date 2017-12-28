@@ -14,6 +14,9 @@ This project uses npm and its node-fetch, babel and express-graphql modules. Whe
 
 Changes will only be allowed to make to files in the src folder as the files in the lib folder will be created by babel and possibly overwritten.
 
+### Usage tutorials ###
+
+There is (or at least is going to be) a [wiki](#) that will show how to use this graphQl Server. It includes installation guides as well as tutorials on forming graphQl mutations and queries.
 
 ### Who do I talk to? ###
 
