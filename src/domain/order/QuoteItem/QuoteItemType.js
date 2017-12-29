@@ -36,7 +36,7 @@ const QuoteItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${quoteItem.productId}`)
+      resolve: (quoteItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${quoteItem.productId}`)
     },
     reservPersons: {type: GraphQLFloat},
     deliverableType: {

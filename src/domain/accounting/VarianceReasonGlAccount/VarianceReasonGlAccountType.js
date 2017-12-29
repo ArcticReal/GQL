@@ -33,7 +33,7 @@ const VarianceReasonGlAccountType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (varianceReasonGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${varianceReasonGlAccount.organizationPartyId}`)
+      resolve: (varianceReasonGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${varianceReasonGlAccount.organizationPartyId}`)
     }
   })
 });

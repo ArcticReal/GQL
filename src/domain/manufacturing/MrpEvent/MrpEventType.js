@@ -35,7 +35,7 @@ const MrpEventType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (mrpEvent, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${mrpEvent.productId}`)
+      resolve: (mrpEvent, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${mrpEvent.productId}`)
     },
     isLate: {type: GraphQLBoolean},
     eventName: {type: GraphQLString},

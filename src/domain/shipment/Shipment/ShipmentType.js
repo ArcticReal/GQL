@@ -38,7 +38,7 @@ const ShipmentType = new GraphQLObjectType({
     partyFrom: {
       type: PartyType,
       args : {partyIdFrom: {type: GraphQLString}},
-      resolve: (shipment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${shipment.partyIdFrom}`)
+      resolve: (shipment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${shipment.partyIdFrom}`)
     },
     latestCancelDate: {type: GraphQLString},
     estimatedReadyDate: {type: GraphQLString},
@@ -106,7 +106,7 @@ const ShipmentType = new GraphQLObjectType({
     partyTo: {
       type: PartyType,
       args : {partyIdTo: {type: GraphQLString}},
-      resolve: (shipment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${shipment.partyIdTo}`)
+      resolve: (shipment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${shipment.partyIdTo}`)
     },
     shipmentType: {
       type: ShipmentTypeType,

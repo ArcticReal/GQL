@@ -34,7 +34,7 @@ const BudgetReviewType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (budgetReview, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${budgetReview.partyId}`)
+      resolve: (budgetReview, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${budgetReview.partyId}`)
     },
     budgetReviewId: {type: GraphQLString}
   })

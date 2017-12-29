@@ -28,7 +28,7 @@ const FinAccountTypeGlAccountType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (finAccountTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${finAccountTypeGlAccount.organizationPartyId}`)
+      resolve: (finAccountTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${finAccountTypeGlAccount.organizationPartyId}`)
     },
     finAccountType: {
       type: FinAccountTypeType,

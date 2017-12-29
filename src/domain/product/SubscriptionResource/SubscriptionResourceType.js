@@ -25,7 +25,7 @@ const SubscriptionResourceType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (subscriptionResource, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${subscriptionResource.contentId}`)
+      resolve: (subscriptionResource, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${subscriptionResource.contentId}`)
     },
     description: {type: GraphQLString},
     parentResource: {

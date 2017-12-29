@@ -66,7 +66,7 @@ const SubscriptionType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${subscription.partyId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${subscription.partyId}`)
     },
     orderItemSeqId: {type: GraphQLString},
     roleType: {
@@ -83,7 +83,7 @@ const SubscriptionType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${subscription.productId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${subscription.productId}`)
     },
     useCountLimit: {type: GraphQLInt},
     expirationCompletedDate: {type: GraphQLString},
@@ -105,7 +105,7 @@ const SubscriptionType = new GraphQLObjectType({
     originatedFromParty: {
       type: PartyType,
       args : {originatedFromPartyId: {type: GraphQLString}},
-      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${subscription.originatedFromPartyId}`)
+      resolve: (subscription, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${subscription.originatedFromPartyId}`)
     },
     communicationEventId: {type: GraphQLString},
     maxLifeTime: {type: GraphQLInt},

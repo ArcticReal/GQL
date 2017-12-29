@@ -75,7 +75,7 @@ const FacilityType = new GraphQLObjectType({
     ownerParty: {
       type: PartyType,
       args : {ownerPartyId: {type: GraphQLString}},
-      resolve: (facility, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${facility.ownerPartyId}`)
+      resolve: (facility, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${facility.ownerPartyId}`)
     },
     facilitySize: {type: GraphQLFloat},
     facilitySizeUomId: {type: GraphQLString},
@@ -139,7 +139,7 @@ const FacilityType = new GraphQLObjectType({
     products: {
       type: new GraphQLList(ProductType),
       args : {},
-      resolve: (facility, args, {loaders}) => loaders.ofbizArray.load(`/products/find?facilityId=${facility.facilityId}`)
+      resolve: (facility, args, {loaders}) => loaders.ofbizArray.load(`products/find?facilityId=${facility.facilityId}`)
     },
     containers: {
       type: new GraphQLList(ContainerType),
@@ -164,7 +164,7 @@ const FacilityType = new GraphQLObjectType({
     shipments: {
       type: new GraphQLList(ShipmentType),
       args : {},
-      resolve: (facility, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?facilityId=${facility.facilityId}`)
+      resolve: (facility, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?facilityId=${facility.facilityId}`)
     },
     workEffortPartyAssignments: {
       type: new GraphQLList(WorkEffortPartyAssignmentType),

@@ -26,7 +26,7 @@ const ProductFeatureApplType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productFeatureAppl.productId}`)
+      resolve: (productFeatureAppl, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productFeatureAppl.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     recurringAmount: {type: GraphQLFloat},

@@ -29,7 +29,7 @@ const PartyContactMechPurposeType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyContactMechPurpose, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyContactMechPurpose.partyId}`)
+      resolve: (partyContactMechPurpose, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyContactMechPurpose.partyId}`)
     },
     contactMech: {
       type: ContactMechType,

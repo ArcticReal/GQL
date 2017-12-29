@@ -47,7 +47,7 @@ const InventoryItemTypeType = new GraphQLObjectType({
     products: {
       type: new GraphQLList(ProductType),
       args : {},
-      resolve: (inventoryItemType, args, {loaders}) => loaders.ofbizArray.load(`/products/find?inventoryItemTypeId=${inventoryItemType.inventoryItemTypeId}`)
+      resolve: (inventoryItemType, args, {loaders}) => loaders.ofbizArray.load(`products/find?inventoryItemTypeId=${inventoryItemType.inventoryItemTypeId}`)
     },
     inventoryItems: {
       type: new GraphQLList(InventoryItemType),

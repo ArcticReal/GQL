@@ -34,7 +34,7 @@ const FixedAssetTypeGlAccountType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (fixedAssetTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${fixedAssetTypeGlAccount.organizationPartyId}`)
+      resolve: (fixedAssetTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${fixedAssetTypeGlAccount.organizationPartyId}`)
     },
     lossGlAccount: {
       type: GlAccountType,

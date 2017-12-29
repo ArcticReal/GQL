@@ -31,7 +31,7 @@ const SurveyResponseAnswerType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (surveyResponseAnswer, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${surveyResponseAnswer.contentId}`)
+      resolve: (surveyResponseAnswer, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${surveyResponseAnswer.contentId}`)
     },
     durationUomId: {type: GraphQLString},
     currencyResponse: {type: GraphQLFloat},

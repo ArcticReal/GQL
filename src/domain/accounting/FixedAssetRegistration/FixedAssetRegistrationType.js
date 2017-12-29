@@ -31,7 +31,7 @@ const FixedAssetRegistrationType = new GraphQLObjectType({
     govAgencyParty: {
       type: PartyType,
       args : {govAgencyPartyId: {type: GraphQLString}},
-      resolve: (fixedAssetRegistration, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${fixedAssetRegistration.govAgencyPartyId}`)
+      resolve: (fixedAssetRegistration, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${fixedAssetRegistration.govAgencyPartyId}`)
     },
     thruDate: {type: GraphQLString}
   })

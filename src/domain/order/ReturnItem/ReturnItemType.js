@@ -32,7 +32,7 @@ const ReturnItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (returnItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${returnItem.productId}`)
+      resolve: (returnItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${returnItem.productId}`)
     },
     order: {
       type: new GraphQLList(OrderItemShipGrpInvResType),

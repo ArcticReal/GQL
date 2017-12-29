@@ -38,7 +38,7 @@ const SalesForecastType = new GraphQLObjectType({
     internalParty: {
       type: PartyType,
       args : {internalPartyId: {type: GraphQLString}},
-      resolve: (salesForecast, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${salesForecast.internalPartyId}`)
+      resolve: (salesForecast, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${salesForecast.internalPartyId}`)
     },
     closedAmount: {type: GraphQLFloat},
     salesForecastId: {type: GraphQLString},
@@ -52,7 +52,7 @@ const SalesForecastType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (salesForecast, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${salesForecast.organizationPartyId}`)
+      resolve: (salesForecast, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${salesForecast.organizationPartyId}`)
     },
     percentOfQuotaClosed: {type: GraphQLFloat},
     customTimePeriodId: {type: GraphQLString},

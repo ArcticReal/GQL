@@ -39,7 +39,7 @@ const CostComponentType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (costComponent, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${costComponent.productId}`)
+      resolve: (costComponent, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${costComponent.productId}`)
     },
     productFeature: {
       type: ProductFeatureType,
@@ -64,7 +64,7 @@ const CostComponentType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (costComponent, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${costComponent.partyId}`)
+      resolve: (costComponent, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${costComponent.partyId}`)
     },
     costComponentAttributes: {
       type: new GraphQLList(CostComponentAttributeType),

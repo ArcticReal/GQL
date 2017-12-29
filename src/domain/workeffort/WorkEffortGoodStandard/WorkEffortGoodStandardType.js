@@ -34,7 +34,7 @@ const WorkEffortGoodStandardType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (workEffortGoodStandard, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${workEffortGoodStandard.productId}`)
+      resolve: (workEffortGoodStandard, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${workEffortGoodStandard.productId}`)
     },
     statusId: {type: GraphQLString},
     estimatedQuantity: {type: GraphQLFloat},

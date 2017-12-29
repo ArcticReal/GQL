@@ -37,7 +37,7 @@ const PicklistBinType = new GraphQLObjectType({
     shipments: {
       type: new GraphQLList(ShipmentType),
       args : {},
-      resolve: (picklistBin, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?picklistBinId=${picklistBin.picklistBinId}`)
+      resolve: (picklistBin, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?picklistBinId=${picklistBin.picklistBinId}`)
     },
     picklistItems: {
       type: new GraphQLList(PicklistItemType),

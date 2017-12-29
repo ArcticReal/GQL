@@ -30,7 +30,7 @@ const GlAccountHistoryType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (glAccountHistory, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${glAccountHistory.organizationPartyId}`)
+      resolve: (glAccountHistory, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${glAccountHistory.organizationPartyId}`)
     },
     customTimePeriodId: {type: GraphQLString},
     openingBalance: {type: GraphQLFloat}

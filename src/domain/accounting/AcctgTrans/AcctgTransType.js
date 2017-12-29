@@ -57,7 +57,7 @@ const AcctgTransType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${acctgTrans.partyId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${acctgTrans.partyId}`)
     },
     receipt: {
       type: ShipmentReceiptType,
@@ -104,7 +104,7 @@ const AcctgTransType = new GraphQLObjectType({
     shipment: {
       type: ShipmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`/shipments/find?shipmentId=${acctgTrans.shipmentId}`)
+      resolve: (acctgTrans, args, {loaders}) => loaders.ofbiz.load(`shipments/find?shipmentId=${acctgTrans.shipmentId}`)
     },
     fixedAsset: {
       type: FixedAssetType,

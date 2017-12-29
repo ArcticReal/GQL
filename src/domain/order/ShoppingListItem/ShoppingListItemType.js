@@ -30,7 +30,7 @@ const ShoppingListItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (shoppingListItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${shoppingListItem.productId}`)
+      resolve: (shoppingListItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${shoppingListItem.productId}`)
     },
     reservPersons: {type: GraphQLFloat},
     reservStart: {type: GraphQLString},

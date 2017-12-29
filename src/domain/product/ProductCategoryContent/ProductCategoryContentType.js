@@ -35,7 +35,7 @@ const ProductCategoryContentType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (productCategoryContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${productCategoryContent.contentId}`)
+      resolve: (productCategoryContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${productCategoryContent.contentId}`)
     },
     useDaysLimit: {type: GraphQLFloat},
     purchaseThruDate: {type: GraphQLString},

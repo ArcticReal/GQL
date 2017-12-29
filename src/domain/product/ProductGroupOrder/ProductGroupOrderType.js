@@ -25,7 +25,7 @@ const ProductGroupOrderType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productGroupOrder, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productGroupOrder.productId}`)
+      resolve: (productGroupOrder, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productGroupOrder.productId}`)
     },
     statusId: {type: GraphQLString},
     reqOrderQty: {type: GraphQLFloat},

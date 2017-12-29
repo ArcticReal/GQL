@@ -29,7 +29,7 @@ const EmplPositionFulfillmentType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (emplPositionFulfillment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${emplPositionFulfillment.partyId}`)
+      resolve: (emplPositionFulfillment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${emplPositionFulfillment.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

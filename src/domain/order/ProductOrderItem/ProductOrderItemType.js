@@ -24,7 +24,7 @@ const ProductOrderItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productOrderItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productOrderItem.productId}`)
+      resolve: (productOrderItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productOrderItem.productId}`)
     },
     order: {
       type: OrderItemType,

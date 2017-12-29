@@ -28,7 +28,7 @@ const AgreementPartyApplicType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (agreementPartyApplic, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${agreementPartyApplic.partyId}`)
+      resolve: (agreementPartyApplic, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${agreementPartyApplic.partyId}`)
     }
   })
 });

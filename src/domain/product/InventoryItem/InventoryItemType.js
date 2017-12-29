@@ -50,7 +50,7 @@ const InventoryItemType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (inventoryItem, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${inventoryItem.partyId}`)
+      resolve: (inventoryItem, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${inventoryItem.partyId}`)
     },
     container: {
       type: ContainerType,
@@ -74,7 +74,7 @@ const InventoryItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (inventoryItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${inventoryItem.productId}`)
+      resolve: (inventoryItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${inventoryItem.productId}`)
     },
     lot: {
       type: LotType,
@@ -87,7 +87,7 @@ const InventoryItemType = new GraphQLObjectType({
     ownerParty: {
       type: PartyType,
       args : {ownerPartyId: {type: GraphQLString}},
-      resolve: (inventoryItem, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${inventoryItem.ownerPartyId}`)
+      resolve: (inventoryItem, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${inventoryItem.ownerPartyId}`)
     },
     activationValidThru: {type: GraphQLString},
     activationNumber: {type: GraphQLString},

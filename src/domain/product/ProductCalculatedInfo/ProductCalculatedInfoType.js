@@ -22,7 +22,7 @@ const ProductCalculatedInfoType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productCalculatedInfo, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productCalculatedInfo.productId}`)
+      resolve: (productCalculatedInfo, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productCalculatedInfo.productId}`)
     },
     totalTimesViewed: {type: GraphQLInt},
     totalQuantityOrdered: {type: GraphQLFloat}

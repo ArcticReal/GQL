@@ -32,7 +32,7 @@ const WorkEffortEventReminderType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (workEffortEventReminder, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${workEffortEventReminder.partyId}`)
+      resolve: (workEffortEventReminder, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${workEffortEventReminder.partyId}`)
     },
     reminderOffset: {type: GraphQLInt},
     sequenceId: {type: GraphQLString},

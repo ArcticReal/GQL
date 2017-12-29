@@ -35,7 +35,7 @@ const WebUserPreferenceType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (webUserPreference, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${webUserPreference.partyId}`)
+      resolve: (webUserPreference, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${webUserPreference.partyId}`)
     }
   })
 });

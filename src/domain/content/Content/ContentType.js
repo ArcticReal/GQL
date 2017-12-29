@@ -53,7 +53,7 @@ const ContentType = new GraphQLObjectType({
     ownerContent: {
       type: ContentType,
       args : {ownerContentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${content.ownerContentId}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${content.ownerContentId}`)
     },
     templateDataResource: {
       type: DataResourceType,
@@ -64,7 +64,7 @@ const ContentType = new GraphQLObjectType({
     instanceOfContent: {
       type: ContentType,
       args : {instanceOfContentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${content.instanceOfContentId}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${content.instanceOfContentId}`)
     },
     contentId: {type: GraphQLString},
     contentType: {
@@ -101,7 +101,7 @@ const ContentType = new GraphQLObjectType({
     decoratorContent: {
       type: ContentType,
       args : {decoratorContentId: {type: GraphQLString}},
-      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${content.decoratorContentId}`)
+      resolve: (content, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${content.decoratorContentId}`)
     },
     createdByUserLogin: {
       type: UserLoginType,
@@ -207,7 +207,7 @@ const ContentType = new GraphQLObjectType({
     contents: {
       type: new GraphQLList(ContentType),
       args : {},
-      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`/contents/find?contentId=${content.contentId}`)
+      resolve: (content, args, {loaders}) => loaders.ofbizArray.load(`contents/find?contentId=${content.contentId}`)
     },
     invoiceContents: {
       type: new GraphQLList(InvoiceContentType),

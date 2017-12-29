@@ -30,7 +30,7 @@ const GlAccountOrganizationType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (glAccountOrganization, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${glAccountOrganization.organizationPartyId}`)
+      resolve: (glAccountOrganization, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${glAccountOrganization.organizationPartyId}`)
     },
     thruDate: {type: GraphQLString},
     acctgTransEntries: {

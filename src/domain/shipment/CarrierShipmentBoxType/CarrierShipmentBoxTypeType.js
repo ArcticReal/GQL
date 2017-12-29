@@ -24,7 +24,7 @@ const CarrierShipmentBoxTypeType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (carrierShipmentBoxType, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${carrierShipmentBoxType.partyId}`)
+      resolve: (carrierShipmentBoxType, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${carrierShipmentBoxType.partyId}`)
     },
     shipmentBoxType: {
       type: ShipmentBoxTypeType,

@@ -29,7 +29,7 @@ const InvoiceContentType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (invoiceContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${invoiceContent.contentId}`)
+      resolve: (invoiceContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${invoiceContent.contentId}`)
     },
     invoice: {
       type: InvoiceType,

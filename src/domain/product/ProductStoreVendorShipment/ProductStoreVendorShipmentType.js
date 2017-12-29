@@ -23,7 +23,7 @@ const ProductStoreVendorShipmentType = new GraphQLObjectType({
     carrierParty: {
       type: PartyType,
       args : {carrierPartyId: {type: GraphQLString}},
-      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productStoreVendorShipment.carrierPartyId}`)
+      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productStoreVendorShipment.carrierPartyId}`)
     },
     productStore: {
       type: ProductStoreType,
@@ -38,7 +38,7 @@ const ProductStoreVendorShipmentType = new GraphQLObjectType({
     vendorParty: {
       type: PartyType,
       args : {vendorPartyId: {type: GraphQLString}},
-      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productStoreVendorShipment.vendorPartyId}`)
+      resolve: (productStoreVendorShipment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productStoreVendorShipment.vendorPartyId}`)
     }
   })
 });

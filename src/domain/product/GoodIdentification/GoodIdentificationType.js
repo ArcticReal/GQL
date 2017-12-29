@@ -22,7 +22,7 @@ const GoodIdentificationType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (goodIdentification, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${goodIdentification.productId}`)
+      resolve: (goodIdentification, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${goodIdentification.productId}`)
     },
     goodentificationType: {
       type: GoodIdentificationTypeType,

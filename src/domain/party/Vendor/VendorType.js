@@ -24,7 +24,7 @@ const VendorType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (vendor, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${vendor.partyId}`)
+      resolve: (vendor, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${vendor.partyId}`)
     },
     manifestCompanyName: {type: GraphQLString}
   })

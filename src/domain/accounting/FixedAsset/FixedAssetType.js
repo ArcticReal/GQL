@@ -58,7 +58,7 @@ const FixedAssetType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (fixedAsset, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${fixedAsset.partyId}`)
+      resolve: (fixedAsset, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${fixedAsset.partyId}`)
     },
     locatedAtFacility: {
       type: FacilityType,
@@ -98,7 +98,7 @@ const FixedAssetType = new GraphQLObjectType({
     instanceOfProduct: {
       type: ProductType,
       args : {instanceOfProductId: {type: GraphQLString}},
-      resolve: (fixedAsset, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${fixedAsset.instanceOfProductId}`)
+      resolve: (fixedAsset, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${fixedAsset.instanceOfProductId}`)
     },
     glAccountCategoryTypes: {
       type: new GraphQLList(GlAccountCategoryTypeType),

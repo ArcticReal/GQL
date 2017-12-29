@@ -32,14 +32,14 @@ const ReorderGuidelineType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (reorderGuideline, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${reorderGuideline.productId}`)
+      resolve: (reorderGuideline, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${reorderGuideline.productId}`)
     },
     geoId: {type: GraphQLString},
     reorderQuantity: {type: GraphQLFloat},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (reorderGuideline, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${reorderGuideline.partyId}`)
+      resolve: (reorderGuideline, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${reorderGuideline.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

@@ -30,7 +30,7 @@ const ShipmentPackageContentType = new GraphQLObjectType({
     subProduct: {
       type: ProductType,
       args : {subProductId: {type: GraphQLString}},
-      resolve: (shipmentPackageContent, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${shipmentPackageContent.subProductId}`)
+      resolve: (shipmentPackageContent, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${shipmentPackageContent.subProductId}`)
     },
     shipmentItemSeqId: {type: GraphQLString}
   })

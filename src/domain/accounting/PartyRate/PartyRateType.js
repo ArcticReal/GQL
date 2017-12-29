@@ -30,7 +30,7 @@ const PartyRateType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyRate, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyRate.partyId}`)
+      resolve: (partyRate, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyRate.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

@@ -23,7 +23,7 @@ const ShipmentContactMechType = new GraphQLObjectType({
     shipment: {
       type: ShipmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentContactMech, args, {loaders}) => loaders.ofbiz.load(`/shipments/find?shipmentId=${shipmentContactMech.shipmentId}`)
+      resolve: (shipmentContactMech, args, {loaders}) => loaders.ofbiz.load(`shipments/find?shipmentId=${shipmentContactMech.shipmentId}`)
     },
     shipmentContactMechType: {
       type: ShipmentContactMechTypeType,

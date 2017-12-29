@@ -124,7 +124,7 @@ const OrderHeaderType = new GraphQLObjectType({
     shipments: {
       type: new GraphQLList(ShipmentType),
       args : {},
-      resolve: (orderHeader, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?orderId=${orderHeader.orderId}`)
+      resolve: (orderHeader, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?orderId=${orderHeader.orderId}`)
     },
     orderNotifications: {
       type: new GraphQLList(OrderNotificationType),

@@ -283,7 +283,7 @@ const WorkEffortType = new GraphQLObjectType({
     shipments: {
       type: new GraphQLList(ShipmentType),
       args : {},
-      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?workEffortId=${workEffort.workEffortId}`)
+      resolve: (workEffort, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?workEffortId=${workEffort.workEffortId}`)
     },
     inventoryItemDetails: {
       type: new GraphQLList(InventoryItemDetailType),

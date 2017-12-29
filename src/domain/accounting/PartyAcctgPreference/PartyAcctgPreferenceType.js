@@ -49,7 +49,7 @@ const PartyAcctgPreferenceType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyAcctgPreference, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyAcctgPreference.partyId}`)
+      resolve: (partyAcctgPreference, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyAcctgPreference.partyId}`)
     },
     quoteIdPrefix: {type: GraphQLString},
     oldOrderSequenceEnumId: {type: GraphQLString/*this was a type I didn't find TODO find a solution*/},

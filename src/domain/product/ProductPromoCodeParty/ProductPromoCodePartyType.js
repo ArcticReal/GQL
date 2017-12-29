@@ -27,7 +27,7 @@ const ProductPromoCodePartyType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (productPromoCodeParty, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productPromoCodeParty.partyId}`)
+      resolve: (productPromoCodeParty, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productPromoCodeParty.partyId}`)
     }
   })
 });

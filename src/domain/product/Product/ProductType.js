@@ -107,7 +107,7 @@ const ProductType = new GraphQLObjectType({
     manufacturerParty: {
       type: PartyType,
       args : {manufacturerPartyId: {type: GraphQLString}},
-      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${product.manufacturerPartyId}`)
+      resolve: (product, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${product.manufacturerPartyId}`)
     },
     brandName: {type: GraphQLString},
     requireAmount: {type: GraphQLBoolean},

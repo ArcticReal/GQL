@@ -76,7 +76,7 @@ const ShipmentRouteSegmentType = new GraphQLObjectType({
     carrierParty: {
       type: PartyType,
       args : {carrierPartyId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${shipmentRouteSegment.carrierPartyId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${shipmentRouteSegment.carrierPartyId}`)
     },
     lastUpdatedDate: {type: GraphQLString},
     currencyUomId: {type: GraphQLString},
@@ -84,7 +84,7 @@ const ShipmentRouteSegmentType = new GraphQLObjectType({
     shipment: {
       type: ShipmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`/shipments/find?shipmentId=${shipmentRouteSegment.shipmentId}`)
+      resolve: (shipmentRouteSegment, args, {loaders}) => loaders.ofbiz.load(`shipments/find?shipmentId=${shipmentRouteSegment.shipmentId}`)
     },
     originTelecomNumber: {
       type: TelecomNumberType,

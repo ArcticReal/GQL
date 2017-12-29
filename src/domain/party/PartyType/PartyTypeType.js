@@ -31,7 +31,7 @@ const PartyTypeType = new GraphQLObjectType({
     parties: {
       type: new GraphQLList(PartyType),
       args : {},
-      resolve: (partyType, args, {loaders}) => loaders.ofbizArray.load(`/partys/find?partyTypeId=${partyType.partyTypeId}`)
+      resolve: (partyType, args, {loaders}) => loaders.ofbizArray.load(`partys/find?partyTypeId=${partyType.partyTypeId}`)
     },
     partyNeeds: {
       type: new GraphQLList(PartyNeedType),

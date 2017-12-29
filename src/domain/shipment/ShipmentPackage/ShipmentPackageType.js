@@ -28,7 +28,7 @@ const ShipmentPackageType = new GraphQLObjectType({
     shipment: {
       type: ShipmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbiz.load(`/shipments/find?shipmentId=${shipmentPackage.shipmentId}`)
+      resolve: (shipmentPackage, args, {loaders}) => loaders.ofbiz.load(`shipments/find?shipmentId=${shipmentPackage.shipmentId}`)
     },
     dimensionUomId: {type: GraphQLString},
     insuredValue: {type: GraphQLFloat},

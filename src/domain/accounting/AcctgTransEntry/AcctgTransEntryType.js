@@ -45,7 +45,7 @@ const AcctgTransEntryType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${acctgTransEntry.partyId}`)
+      resolve: (acctgTransEntry, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${acctgTransEntry.partyId}`)
     },
     roleType: {
       type: RoleTypeType,

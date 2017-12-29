@@ -33,7 +33,7 @@ const GlAccountTypeDefaultType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (glAccountTypeDefault, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${glAccountTypeDefault.organizationPartyId}`)
+      resolve: (glAccountTypeDefault, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${glAccountTypeDefault.organizationPartyId}`)
     }
   })
 });

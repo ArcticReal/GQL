@@ -37,7 +37,7 @@ const ContactListCommStatusType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${contactListCommStatus.partyId}`)
+      resolve: (contactListCommStatus, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${contactListCommStatus.partyId}`)
     },
     contactMech: {
       type: ContactMechType,

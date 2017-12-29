@@ -24,13 +24,13 @@ const ContentRevisionType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (contentRevision, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentRevision.contentId}`)
+      resolve: (contentRevision, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentRevision.contentId}`)
     },
     contentRevisionSeqId: {type: GraphQLString},
     committedByParty: {
       type: PartyType,
       args : {committedByPartyId: {type: GraphQLString}},
-      resolve: (contentRevision, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${contentRevision.committedByPartyId}`)
+      resolve: (contentRevision, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${contentRevision.committedByPartyId}`)
     },
     contentRevisionItems: {
       type: new GraphQLList(ContentRevisionItemType),

@@ -25,7 +25,7 @@ const ProductRoleType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productRole, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productRole.productId}`)
+      resolve: (productRole, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productRole.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     party: {

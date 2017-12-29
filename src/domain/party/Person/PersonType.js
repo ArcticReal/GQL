@@ -34,7 +34,7 @@ const PersonType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (person, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${person.partyId}`)
+      resolve: (person, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${person.partyId}`)
     },
     memberId: {type: GraphQLString},
     height: {type: GraphQLFloat},

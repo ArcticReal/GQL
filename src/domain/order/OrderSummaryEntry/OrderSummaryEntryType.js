@@ -29,7 +29,7 @@ const OrderSummaryEntryType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (orderSummaryEntry, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${orderSummaryEntry.productId}`)
+      resolve: (orderSummaryEntry, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${orderSummaryEntry.productId}`)
     },
     entryDate: {type: GraphQLString},
     grossSales: {type: GraphQLFloat}

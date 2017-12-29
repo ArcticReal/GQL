@@ -47,7 +47,7 @@ const QuoteType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (quote, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${quote.partyId}`)
+      resolve: (quote, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${quote.partyId}`)
     },
     issueDate: {type: GraphQLString},
     quoteId: {type: GraphQLString},

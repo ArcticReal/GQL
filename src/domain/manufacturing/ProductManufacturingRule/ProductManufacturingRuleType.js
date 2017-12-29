@@ -26,24 +26,24 @@ const ProductManufacturingRuleType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productManufacturingRule, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productManufacturingRule.productId}`)
+      resolve: (productManufacturingRule, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productManufacturingRule.productId}`)
     },
     productFor: {
       type: ProductType,
       args : {productIdFor: {type: GraphQLString}},
-      resolve: (productManufacturingRule, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productManufacturingRule.productIdFor}`)
+      resolve: (productManufacturingRule, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productManufacturingRule.productIdFor}`)
     },
     productInSubst: {
       type: ProductType,
       args : {productIdInSubst: {type: GraphQLString}},
-      resolve: (productManufacturingRule, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productManufacturingRule.productIdInSubst}`)
+      resolve: (productManufacturingRule, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productManufacturingRule.productIdInSubst}`)
     },
     description: {type: GraphQLString},
     ruleId: {type: GraphQLString},
     productIn: {
       type: ProductType,
       args : {productIdIn: {type: GraphQLString}},
-      resolve: (productManufacturingRule, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productManufacturingRule.productIdIn}`)
+      resolve: (productManufacturingRule, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productManufacturingRule.productIdIn}`)
     },
     productFeature: {
       type: ProductFeatureType,

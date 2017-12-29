@@ -25,7 +25,7 @@ const GlJournalType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (glJournal, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${glJournal.organizationPartyId}`)
+      resolve: (glJournal, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${glJournal.organizationPartyId}`)
     },
     glJournalId: {type: GraphQLString},
     postedDate: {type: GraphQLString},

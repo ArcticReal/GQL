@@ -33,12 +33,12 @@ const TimesheetType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (timesheet, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${timesheet.partyId}`)
+      resolve: (timesheet, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${timesheet.partyId}`)
     },
     clientParty: {
       type: PartyType,
       args : {clientPartyId: {type: GraphQLString}},
-      resolve: (timesheet, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${timesheet.clientPartyId}`)
+      resolve: (timesheet, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${timesheet.clientPartyId}`)
     },
     thruDate: {type: GraphQLString},
     timeEntries: {

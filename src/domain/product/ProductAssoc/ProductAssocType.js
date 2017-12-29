@@ -27,7 +27,7 @@ const ProductAssocType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productAssoc.productId}`)
+      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productAssoc.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     estimateCalcMethod: {type: GraphQLString},
@@ -37,7 +37,7 @@ const ProductAssocType = new GraphQLObjectType({
     productTo: {
       type: ProductType,
       args : {productIdTo: {type: GraphQLString}},
-      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productAssoc.productIdTo}`)
+      resolve: (productAssoc, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productAssoc.productIdTo}`)
     },
     productAssocType: {
       type: ProductAssocTypeType,

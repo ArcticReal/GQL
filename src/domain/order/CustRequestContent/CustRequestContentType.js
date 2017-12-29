@@ -23,7 +23,7 @@ const CustRequestContentType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (custRequestContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${custRequestContent.contentId}`)
+      resolve: (custRequestContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${custRequestContent.contentId}`)
     },
     custRequest: {
       type: CustRequestType,

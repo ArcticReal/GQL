@@ -327,7 +327,7 @@ const PartyType = new GraphQLObjectType({
     shipments: {
       type: new GraphQLList(ShipmentType),
       args : {},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?partyId=${party.partyId}`)
+      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?partyId=${party.partyId}`)
     },
     carrierShipmentBoxTypes: {
       type: new GraphQLList(CarrierShipmentBoxTypeType),
@@ -652,7 +652,7 @@ const PartyType = new GraphQLObjectType({
     products: {
       type: new GraphQLList(ProductType),
       args : {},
-      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`/products/find?partyId=${party.partyId}`)
+      resolve: (party, args, {loaders}) => loaders.ofbizArray.load(`products/find?partyId=${party.partyId}`)
     },
     payrollPreferences: {
       type: new GraphQLList(PayrollPreferenceType),

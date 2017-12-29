@@ -35,7 +35,7 @@ const CustRequestItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (custRequestItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${custRequestItem.productId}`)
+      resolve: (custRequestItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${custRequestItem.productId}`)
     },
     reservPersons: {type: GraphQLFloat},
     maximumAmount: {type: GraphQLFloat},

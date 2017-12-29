@@ -29,7 +29,7 @@ const RespondingPartyType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (respondingParty, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${respondingParty.partyId}`)
+      resolve: (respondingParty, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${respondingParty.partyId}`)
     },
     dateSent: {type: GraphQLString},
     contactMech: {

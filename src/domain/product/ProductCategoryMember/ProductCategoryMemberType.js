@@ -30,7 +30,7 @@ const ProductCategoryMemberType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productCategoryMember, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productCategoryMember.productId}`)
+      resolve: (productCategoryMember, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productCategoryMember.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     thruDate: {type: GraphQLString}

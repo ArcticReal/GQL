@@ -48,7 +48,7 @@ const PaymentType = new GraphQLObjectType({
     partyFrom: {
       type: PartyType,
       args : {partyIdFrom: {type: GraphQLString}},
-      resolve: (payment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${payment.partyIdFrom}`)
+      resolve: (payment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${payment.partyIdFrom}`)
     },
     amount: {type: GraphQLFloat},
     paymentPreference: {
@@ -91,7 +91,7 @@ const PaymentType = new GraphQLObjectType({
     partyTo: {
       type: PartyType,
       args : {partyIdTo: {type: GraphQLString}},
-      resolve: (payment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${payment.partyIdTo}`)
+      resolve: (payment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${payment.partyIdTo}`)
     },
     effectiveDate: {type: GraphQLString},
     paymentBudgetAllocations: {

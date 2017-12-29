@@ -63,7 +63,7 @@ const PostalAddressType = new GraphQLObjectType({
     shipments: {
       type: new GraphQLList(ShipmentType),
       args : {},
-      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?contactMechId=${postalAddress.contactMechId}`)
+      resolve: (postalAddress, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?contactMechId=${postalAddress.contactMechId}`)
     },
     shipmentRouteSegments: {
       type: new GraphQLList(ShipmentRouteSegmentType),

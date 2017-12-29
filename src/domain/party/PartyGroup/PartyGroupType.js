@@ -28,7 +28,7 @@ const PartyGroupType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyGroup, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyGroup.partyId}`)
+      resolve: (partyGroup, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyGroup.partyId}`)
     },
     officeSiteName: {type: GraphQLString},
     annualRevenue: {type: GraphQLFloat},

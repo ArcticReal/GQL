@@ -34,7 +34,7 @@ const ProdConfItemContentType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (prodConfItemContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${prodConfItemContent.contentId}`)
+      resolve: (prodConfItemContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${prodConfItemContent.contentId}`)
     },
     thruDate: {type: GraphQLString}
   })

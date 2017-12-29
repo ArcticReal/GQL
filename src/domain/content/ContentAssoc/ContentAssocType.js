@@ -26,14 +26,14 @@ const ContentAssocType = new GraphQLObjectType({
     contentTo: {
       type: ContentType,
       args : {contentIdTo: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentAssoc.contentIdTo}`)
+      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentAssoc.contentIdTo}`)
     },
     upperCoordinate: {type: GraphQLInt},
     leftCoordinate: {type: GraphQLInt},
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentAssoc.contentId}`)
+      resolve: (contentAssoc, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentAssoc.contentId}`)
     },
     mapKey: {type: GraphQLString},
     thruDate: {type: GraphQLString},

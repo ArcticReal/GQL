@@ -28,7 +28,7 @@ const ContentPurposeType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (contentPurpose, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentPurpose.contentId}`)
+      resolve: (contentPurpose, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentPurpose.contentId}`)
     }
   })
 });

@@ -46,7 +46,7 @@ const OrderItemShipGroupType = new GraphQLObjectType({
     vendorParty: {
       type: PartyType,
       args : {vendorPartyId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${orderItemShipGroup.vendorPartyId}`)
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${orderItemShipGroup.vendorPartyId}`)
     },
     contactMech: {
       type: PostalAddressType,
@@ -70,7 +70,7 @@ const OrderItemShipGroupType = new GraphQLObjectType({
     supplierParty: {
       type: PartyType,
       args : {supplierPartyId: {type: GraphQLString}},
-      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${orderItemShipGroup.supplierPartyId}`)
+      resolve: (orderItemShipGroup, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${orderItemShipGroup.supplierPartyId}`)
     },
     shipmentMethodType: {
       type: ShipmentMethodTypeType,

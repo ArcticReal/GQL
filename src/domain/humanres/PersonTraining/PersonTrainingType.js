@@ -43,7 +43,7 @@ const PersonTrainingType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${personTraining.partyId}`)
+      resolve: (personTraining, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${personTraining.partyId}`)
     },
     trainingClassType: {
       type: TrainingClassTypeType,

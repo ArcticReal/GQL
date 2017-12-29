@@ -33,7 +33,7 @@ const ShipmentReceiptType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${shipmentReceipt.productId}`)
+      resolve: (shipmentReceipt, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${shipmentReceipt.productId}`)
     },
     order: {
       type: OrderItemType,

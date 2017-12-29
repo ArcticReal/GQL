@@ -72,7 +72,7 @@ const ShoppingListType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (shoppingList, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${shoppingList.partyId}`)
+      resolve: (shoppingList, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${shoppingList.partyId}`)
     },
     shipmentMethodType: {
       type: CarrierShipmentMethodType,

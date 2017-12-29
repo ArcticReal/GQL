@@ -50,7 +50,7 @@ const TimeEntryType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${timeEntry.partyId}`)
+      resolve: (timeEntry, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${timeEntry.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

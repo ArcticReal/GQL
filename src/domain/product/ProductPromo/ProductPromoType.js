@@ -39,7 +39,7 @@ const ProductPromoType = new GraphQLObjectType({
     overrideOrgParty: {
       type: PartyType,
       args : {overrideOrgPartyId: {type: GraphQLString}},
-      resolve: (productPromo, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productPromo.overrideOrgPartyId}`)
+      resolve: (productPromo, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productPromo.overrideOrgPartyId}`)
     },
     productPromoId: {type: GraphQLString},
     useLimitPerCustomer: {type: GraphQLInt},

@@ -106,7 +106,7 @@ const UserLoginType = new GraphQLObjectType({
     parties: {
       type: new GraphQLList(PartyType),
       args : {},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`/partys/find?userLoginId=${userLogin.userLoginId}`)
+      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`partys/find?userLoginId=${userLogin.userLoginId}`)
     },
     productFeaturePrices: {
       type: new GraphQLList(ProductFeaturePriceType),
@@ -136,7 +136,7 @@ const UserLoginType = new GraphQLObjectType({
     products: {
       type: new GraphQLList(ProductType),
       args : {},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`/products/find?userLoginId=${userLogin.userLoginId}`)
+      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`products/find?userLoginId=${userLogin.userLoginId}`)
     },
     orderPaymentPreferences: {
       type: new GraphQLList(OrderPaymentPreferenceType),
@@ -181,7 +181,7 @@ const UserLoginType = new GraphQLObjectType({
     contents: {
       type: new GraphQLList(ContentType),
       args : {},
-      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`/contents/find?userLoginId=${userLogin.userLoginId}`)
+      resolve: (userLogin, args, {loaders}) => loaders.ofbizArray.load(`contents/find?userLoginId=${userLogin.userLoginId}`)
     },
     productPrices: {
       type: new GraphQLList(ProductPriceType),

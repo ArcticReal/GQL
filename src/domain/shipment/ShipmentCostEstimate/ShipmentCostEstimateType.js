@@ -37,7 +37,7 @@ const ShipmentCostEstimateType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${shipmentCostEstimate.partyId}`)
+      resolve: (shipmentCostEstimate, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${shipmentCostEstimate.partyId}`)
     },
     productFeatureGroupId: {type: GraphQLString},
     oversizePrice: {type: GraphQLFloat},

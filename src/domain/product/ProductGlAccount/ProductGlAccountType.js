@@ -24,7 +24,7 @@ const ProductGlAccountType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productGlAccount, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productGlAccount.productId}`)
+      resolve: (productGlAccount, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productGlAccount.productId}`)
     },
     glAccountType: {
       type: GlAccountTypeType,
@@ -39,7 +39,7 @@ const ProductGlAccountType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (productGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productGlAccount.organizationPartyId}`)
+      resolve: (productGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productGlAccount.organizationPartyId}`)
     }
   })
 });

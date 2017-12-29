@@ -30,7 +30,7 @@ const ProductAverageCostType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productAverageCost.productId}`)
+      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productAverageCost.productId}`)
     },
     productAverageCostType: {
       type: ProductAverageCostTypeType,
@@ -40,7 +40,7 @@ const ProductAverageCostType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productAverageCost.organizationPartyId}`)
+      resolve: (productAverageCost, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productAverageCost.organizationPartyId}`)
     },
     averageCost: {type: GraphQLFloat},
     thruDate: {type: GraphQLString}

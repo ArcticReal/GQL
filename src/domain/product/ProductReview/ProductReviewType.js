@@ -28,7 +28,7 @@ const ProductReviewType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productReview, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productReview.productId}`)
+      resolve: (productReview, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productReview.productId}`)
     },
     statusId: {type: GraphQLString},
     postedDateTime: {type: GraphQLString},

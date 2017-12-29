@@ -53,7 +53,7 @@ const PaymentMethodType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (paymentMethod, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${paymentMethod.partyId}`)
+      resolve: (paymentMethod, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${paymentMethod.partyId}`)
     },
     thruDate: {type: GraphQLString},
     creditCards: {

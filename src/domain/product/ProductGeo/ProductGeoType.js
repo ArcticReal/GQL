@@ -21,7 +21,7 @@ const ProductGeoType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productGeo, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productGeo.productId}`)
+      resolve: (productGeo, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productGeo.productId}`)
     },
     geoId: {type: GraphQLString},
     description: {type: GraphQLString},

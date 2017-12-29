@@ -24,7 +24,7 @@ const CharacterSetType = new GraphQLObjectType({
     contents: {
       type: new GraphQLList(ContentType),
       args : {},
-      resolve: (characterSet, args, {loaders}) => loaders.ofbizArray.load(`/contents/find?characterSetId=${characterSet.characterSetId}`)
+      resolve: (characterSet, args, {loaders}) => loaders.ofbizArray.load(`contents/find?characterSetId=${characterSet.characterSetId}`)
     },
     dataResources: {
       type: new GraphQLList(DataResourceType),

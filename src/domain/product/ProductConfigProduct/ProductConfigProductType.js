@@ -29,7 +29,7 @@ const ProductConfigProductType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productConfigProduct, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productConfigProduct.productId}`)
+      resolve: (productConfigProduct, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productConfigProduct.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     configOptionId: {type: GraphQLString},

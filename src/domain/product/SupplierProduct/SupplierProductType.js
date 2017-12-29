@@ -27,7 +27,7 @@ const SupplierProductType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (supplierProduct, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${supplierProduct.productId}`)
+      resolve: (supplierProduct, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${supplierProduct.productId}`)
     },
     canDropShip: {type: GraphQLBoolean},
     minimumOrderQuantity: {type: GraphQLFloat},
@@ -58,7 +58,7 @@ const SupplierProductType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (supplierProduct, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${supplierProduct.partyId}`)
+      resolve: (supplierProduct, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${supplierProduct.partyId}`)
     },
     standardLeadTimeDays: {type: GraphQLFloat},
     lastPrice: {type: GraphQLFloat}

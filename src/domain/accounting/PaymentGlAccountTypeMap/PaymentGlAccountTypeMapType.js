@@ -33,7 +33,7 @@ const PaymentGlAccountTypeMapType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (paymentGlAccountTypeMap, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${paymentGlAccountTypeMap.organizationPartyId}`)
+      resolve: (paymentGlAccountTypeMap, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${paymentGlAccountTypeMap.organizationPartyId}`)
     }
   })
 });

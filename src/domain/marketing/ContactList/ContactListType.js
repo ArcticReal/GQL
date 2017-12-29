@@ -50,7 +50,7 @@ const ContactListType = new GraphQLObjectType({
     ownerParty: {
       type: PartyType,
       args : {ownerPartyId: {type: GraphQLString}},
-      resolve: (contactList, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${contactList.ownerPartyId}`)
+      resolve: (contactList, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${contactList.ownerPartyId}`)
     },
     lastModifiedByUserLogin: {
       type: UserLoginType,

@@ -30,7 +30,7 @@ const OrderContentType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (orderContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${orderContent.contentId}`)
+      resolve: (orderContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${orderContent.contentId}`)
     },
     orderContentType: {
       type: OrderContentTypeType,

@@ -30,7 +30,7 @@ const PartyProfileDefaultType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyProfileDefault, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyProfileDefault.partyId}`)
+      resolve: (partyProfileDefault, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyProfileDefault.partyId}`)
     },
     defaultBillAddr: {type: GraphQLString}
   })

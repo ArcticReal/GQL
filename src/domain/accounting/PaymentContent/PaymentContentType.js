@@ -34,7 +34,7 @@ const PaymentContentType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (paymentContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${paymentContent.contentId}`)
+      resolve: (paymentContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${paymentContent.contentId}`)
     },
     thruDate: {type: GraphQLString}
   })

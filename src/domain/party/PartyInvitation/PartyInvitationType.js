@@ -23,7 +23,7 @@ const PartyInvitationType = new GraphQLObjectType({
     partyFrom: {
       type: PartyType,
       args : {partyIdFrom: {type: GraphQLString}},
-      resolve: (partyInvitation, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyInvitation.partyIdFrom}`)
+      resolve: (partyInvitation, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyInvitation.partyIdFrom}`)
     },
     emailAddress: {type: GraphQLString},
     statusId: {type: GraphQLString},

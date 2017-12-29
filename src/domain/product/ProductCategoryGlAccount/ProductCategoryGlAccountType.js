@@ -39,7 +39,7 @@ const ProductCategoryGlAccountType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (productCategoryGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productCategoryGlAccount.organizationPartyId}`)
+      resolve: (productCategoryGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productCategoryGlAccount.organizationPartyId}`)
     }
   })
 });

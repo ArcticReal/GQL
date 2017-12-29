@@ -47,7 +47,7 @@ const PartyNeedType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${partyNeed.productId}`)
+      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${partyNeed.productId}`)
     },
     visitId: {type: GraphQLString},
     partyNeedId: {type: GraphQLString},
@@ -60,7 +60,7 @@ const PartyNeedType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyNeed.partyId}`)
+      resolve: (partyNeed, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyNeed.partyId}`)
     },
     datetimeRecorded: {type: GraphQLString}
   })

@@ -40,7 +40,7 @@ const FinAccountType = new GraphQLObjectType({
     ownerParty: {
       type: PartyType,
       args : {ownerPartyId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${finAccount.ownerPartyId}`)
+      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${finAccount.ownerPartyId}`)
     },
     finAccountId: {type: GraphQLString},
     postToGlAccount: {
@@ -62,7 +62,7 @@ const FinAccountType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${finAccount.organizationPartyId}`)
+      resolve: (finAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${finAccount.organizationPartyId}`)
     },
     finAccountCode: {type: GraphQLString},
     finAccountRoles: {

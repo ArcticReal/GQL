@@ -40,7 +40,7 @@ const AgreementType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (agreement, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${agreement.productId}`)
+      resolve: (agreement, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${agreement.productId}`)
     },
     agreementDate: {type: GraphQLString},
     agreementId: {type: GraphQLString},

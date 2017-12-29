@@ -25,7 +25,7 @@ const OldPartyTaxInfoType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (oldPartyTaxInfo, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${oldPartyTaxInfo.partyId}`)
+      resolve: (oldPartyTaxInfo, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${oldPartyTaxInfo.partyId}`)
     },
     thruDate: {type: GraphQLString}
   })

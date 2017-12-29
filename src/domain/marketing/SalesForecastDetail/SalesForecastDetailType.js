@@ -30,7 +30,7 @@ const SalesForecastDetailType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (salesForecastDetail, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${salesForecastDetail.productId}`)
+      resolve: (salesForecastDetail, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${salesForecastDetail.productId}`)
     },
     quantityUomId: {type: GraphQLString},
     salesForecast: {

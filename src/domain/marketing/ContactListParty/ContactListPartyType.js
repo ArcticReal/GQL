@@ -36,7 +36,7 @@ const ContactListPartyType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (contactListParty, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${contactListParty.partyId}`)
+      resolve: (contactListParty, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${contactListParty.partyId}`)
     },
     thruDate: {type: GraphQLString},
     contactListPartyStatuses: {

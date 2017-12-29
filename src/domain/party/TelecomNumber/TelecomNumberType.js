@@ -33,7 +33,7 @@ const TelecomNumberType = new GraphQLObjectType({
     shipments: {
       type: new GraphQLList(ShipmentType),
       args : {},
-      resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?contactMechId=${telecomNumber.contactMechId}`)
+      resolve: (telecomNumber, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?contactMechId=${telecomNumber.contactMechId}`)
     },
     orderItemShipGroups: {
       type: new GraphQLList(OrderItemShipGroupType),

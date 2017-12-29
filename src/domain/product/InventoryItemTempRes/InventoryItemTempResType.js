@@ -25,7 +25,7 @@ const InventoryItemTempResType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (inventoryItemTempRes, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${inventoryItemTempRes.productId}`)
+      resolve: (inventoryItemTempRes, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${inventoryItemTempRes.productId}`)
     },
     productStore: {
       type: ProductStoreType,

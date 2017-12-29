@@ -36,7 +36,7 @@ const CustRequestType = new GraphQLObjectType({
     fromParty: {
       type: PartyType,
       args : {fromPartyId: {type: GraphQLString}},
-      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${custRequest.fromPartyId}`)
+      resolve: (custRequest, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${custRequest.fromPartyId}`)
     },
     custRequestName: {type: GraphQLString},
     responseRequiredDate: {type: GraphQLString},

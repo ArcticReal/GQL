@@ -29,13 +29,13 @@ const ShipmentItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (shipmentItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${shipmentItem.productId}`)
+      resolve: (shipmentItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${shipmentItem.productId}`)
     },
     shipmentContentDescription: {type: GraphQLString},
     shipment: {
       type: ShipmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (shipmentItem, args, {loaders}) => loaders.ofbiz.load(`/shipments/find?shipmentId=${shipmentItem.shipmentId}`)
+      resolve: (shipmentItem, args, {loaders}) => loaders.ofbiz.load(`shipments/find?shipmentId=${shipmentItem.shipmentId}`)
     },
     shipmentItemSeqId: {type: GraphQLString},
     shipmentItemFeatures: {

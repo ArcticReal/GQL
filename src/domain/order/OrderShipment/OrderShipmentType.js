@@ -29,7 +29,7 @@ const OrderShipmentType = new GraphQLObjectType({
     shipment: {
       type: ShipmentType,
       args : {shipmentId: {type: GraphQLString}},
-      resolve: (orderShipment, args, {loaders}) => loaders.ofbiz.load(`/shipments/find?shipmentId=${orderShipment.shipmentId}`)
+      resolve: (orderShipment, args, {loaders}) => loaders.ofbiz.load(`shipments/find?shipmentId=${orderShipment.shipmentId}`)
     },
     shipmentItemSeqId: {type: GraphQLString},
     shipGroupSeqId: {type: GraphQLString}

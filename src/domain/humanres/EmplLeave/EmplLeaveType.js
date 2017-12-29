@@ -24,7 +24,7 @@ const EmplLeaveType = new GraphQLObjectType({
     approverParty: {
       type: PartyType,
       args : {approverPartyId: {type: GraphQLString}},
-      resolve: (emplLeave, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${emplLeave.approverPartyId}`)
+      resolve: (emplLeave, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${emplLeave.approverPartyId}`)
     },
     emplLeaveReasonType: {
       type: EmplLeaveReasonTypeType,
@@ -40,7 +40,7 @@ const EmplLeaveType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (emplLeave, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${emplLeave.partyId}`)
+      resolve: (emplLeave, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${emplLeave.partyId}`)
     },
     leaveStatus: {type: GraphQLString},
     thruDate: {type: GraphQLString}

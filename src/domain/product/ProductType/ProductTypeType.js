@@ -32,7 +32,7 @@ const ProductTypeType = new GraphQLObjectType({
     products: {
       type: new GraphQLList(ProductType),
       args : {},
-      resolve: (productType, args, {loaders}) => loaders.ofbizArray.load(`/products/find?productTypeId=${productType.productTypeId}`)
+      resolve: (productType, args, {loaders}) => loaders.ofbizArray.load(`products/find?productTypeId=${productType.productTypeId}`)
     },
     productTypes: {
       type: new GraphQLList(ProductTypeType),

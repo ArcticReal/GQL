@@ -23,7 +23,7 @@ const WebSitePathAliasType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (webSitePathAlias, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${webSitePathAlias.contentId}`)
+      resolve: (webSitePathAlias, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${webSitePathAlias.contentId}`)
     },
     mapKey: {type: GraphQLString},
     webSiteId: {type: GraphQLString},

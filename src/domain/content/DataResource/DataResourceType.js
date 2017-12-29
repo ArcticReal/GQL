@@ -105,7 +105,7 @@ const DataResourceType = new GraphQLObjectType({
     contents: {
       type: new GraphQLList(ContentType),
       args : {},
-      resolve: (dataResource, args, {loaders}) => loaders.ofbizArray.load(`/contents/find?dataResourceId=${dataResource.dataResourceId}`)
+      resolve: (dataResource, args, {loaders}) => loaders.ofbizArray.load(`contents/find?dataResourceId=${dataResource.dataResourceId}`)
     },
     otherDataResources: {
       type: new GraphQLList(OtherDataResourceType),

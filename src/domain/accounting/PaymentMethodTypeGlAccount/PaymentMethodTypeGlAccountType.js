@@ -28,7 +28,7 @@ const PaymentMethodTypeGlAccountType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (paymentMethodTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${paymentMethodTypeGlAccount.organizationPartyId}`)
+      resolve: (paymentMethodTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${paymentMethodTypeGlAccount.organizationPartyId}`)
     },
     paymentMethodType: {
       type: PaymentMethodTypeType,

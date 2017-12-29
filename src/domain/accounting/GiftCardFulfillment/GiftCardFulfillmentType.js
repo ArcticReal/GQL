@@ -43,7 +43,7 @@ const GiftCardFulfillmentType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (giftCardFulfillment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${giftCardFulfillment.partyId}`)
+      resolve: (giftCardFulfillment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${giftCardFulfillment.partyId}`)
     },
     cardNumber: {type: GraphQLString}
   })

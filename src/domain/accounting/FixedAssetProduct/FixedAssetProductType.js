@@ -26,7 +26,7 @@ const FixedAssetProductType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (fixedAssetProduct, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${fixedAssetProduct.productId}`)
+      resolve: (fixedAssetProduct, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${fixedAssetProduct.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     fixedAsset: {

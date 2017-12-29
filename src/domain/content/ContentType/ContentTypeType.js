@@ -40,7 +40,7 @@ const ContentTypeType = new GraphQLObjectType({
     contents: {
       type: new GraphQLList(ContentType),
       args : {},
-      resolve: (contentType, args, {loaders}) => loaders.ofbizArray.load(`/contents/find?contentTypeId=${contentType.contentTypeId}`)
+      resolve: (contentType, args, {loaders}) => loaders.ofbizArray.load(`contents/find?contentTypeId=${contentType.contentTypeId}`)
     }
   })
 });

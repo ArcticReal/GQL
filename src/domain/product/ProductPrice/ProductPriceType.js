@@ -28,7 +28,7 @@ const ProductPriceType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productPrice, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productPrice.productId}`)
+      resolve: (productPrice, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productPrice.productId}`)
     },
     lastModifiedDate: {type: GraphQLString},
     priceWithTax: {type: GraphQLFloat},
@@ -43,7 +43,7 @@ const ProductPriceType = new GraphQLObjectType({
     taxAuthParty: {
       type: PartyType,
       args : {taxAuthPartyId: {type: GraphQLString}},
-      resolve: (productPrice, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productPrice.taxAuthPartyId}`)
+      resolve: (productPrice, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productPrice.taxAuthPartyId}`)
     },
     lastModifiedByUserLogin: {
       type: UserLoginType,

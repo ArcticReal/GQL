@@ -79,7 +79,7 @@ const OrderItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${orderItem.productId}`)
+      resolve: (orderItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${orderItem.productId}`)
     },
     recurringFreqUomId: {type: GraphQLString},
     unitRecurringPrice: {type: GraphQLFloat},

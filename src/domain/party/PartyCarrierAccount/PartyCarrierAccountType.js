@@ -22,12 +22,12 @@ const PartyCarrierAccountType = new GraphQLObjectType({
     carrierParty: {
       type: PartyType,
       args : {carrierPartyId: {type: GraphQLString}},
-      resolve: (partyCarrierAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyCarrierAccount.carrierPartyId}`)
+      resolve: (partyCarrierAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyCarrierAccount.carrierPartyId}`)
     },
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyCarrierAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyCarrierAccount.partyId}`)
+      resolve: (partyCarrierAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyCarrierAccount.partyId}`)
     },
     accountNumber: {type: GraphQLString},
     thruDate: {type: GraphQLString}

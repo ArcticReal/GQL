@@ -30,7 +30,7 @@ const TaxAuthorityType = new GraphQLObjectType({
     taxAuthParty: {
       type: PartyType,
       args : {taxAuthPartyId: {type: GraphQLString}},
-      resolve: (taxAuthority, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${taxAuthority.taxAuthPartyId}`)
+      resolve: (taxAuthority, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${taxAuthority.taxAuthPartyId}`)
     },
     requireTaxIdForExemption: {type: GraphQLBoolean},
     includeTaxInPrice: {type: GraphQLBoolean},

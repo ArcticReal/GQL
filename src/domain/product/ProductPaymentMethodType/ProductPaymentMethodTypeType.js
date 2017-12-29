@@ -24,7 +24,7 @@ const ProductPaymentMethodTypeType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productPaymentMethodType, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productPaymentMethodType.productId}`)
+      resolve: (productPaymentMethodType, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productPaymentMethodType.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     paymentMethodType: {

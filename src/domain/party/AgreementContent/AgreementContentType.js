@@ -29,7 +29,7 @@ const AgreementContentType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (agreementContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${agreementContent.contentId}`)
+      resolve: (agreementContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${agreementContent.contentId}`)
     },
     agreementItemSeqId: {type: GraphQLString},
     agreementContentType: {

@@ -30,13 +30,13 @@ const JobInterviewType = new GraphQLObjectType({
     jobIntervieweeParty: {
       type: PartyType,
       args : {jobIntervieweePartyId: {type: GraphQLString}},
-      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${jobInterview.jobIntervieweePartyId}`)
+      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${jobInterview.jobIntervieweePartyId}`)
     },
     jobInterviewDate: {type: GraphQLString},
     jobInterviewerParty: {
       type: PartyType,
       args : {jobInterviewerPartyId: {type: GraphQLString}},
-      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${jobInterview.jobInterviewerPartyId}`)
+      resolve: (jobInterview, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${jobInterview.jobInterviewerPartyId}`)
     },
     jobInterviewResult: {type: GraphQLString},
     jobRequisition: {

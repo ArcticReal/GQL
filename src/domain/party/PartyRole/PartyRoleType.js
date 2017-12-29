@@ -69,7 +69,7 @@ const PartyRoleType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyRole, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyRole.partyId}`)
+      resolve: (partyRole, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyRole.partyId}`)
     },
     payrollPreferences: {
       type: new GraphQLList(PayrollPreferenceType),

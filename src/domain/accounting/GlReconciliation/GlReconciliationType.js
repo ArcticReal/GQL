@@ -38,7 +38,7 @@ const GlReconciliationType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (glReconciliation, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${glReconciliation.organizationPartyId}`)
+      resolve: (glReconciliation, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${glReconciliation.organizationPartyId}`)
     },
     createdByUserLogin: {type: GraphQLString},
     openingBalance: {type: GraphQLFloat},

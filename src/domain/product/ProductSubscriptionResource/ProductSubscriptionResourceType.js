@@ -27,7 +27,7 @@ const ProductSubscriptionResourceType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productSubscriptionResource, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productSubscriptionResource.productId}`)
+      resolve: (productSubscriptionResource, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productSubscriptionResource.productId}`)
     },
     subscriptionResource: {
       type: SubscriptionResourceType,

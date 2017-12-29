@@ -26,7 +26,7 @@ const PartyNameHistoryType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyNameHistory, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyNameHistory.partyId}`)
+      resolve: (partyNameHistory, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyNameHistory.partyId}`)
     },
     personalTitle: {type: GraphQLString},
     suffix: {type: GraphQLString}

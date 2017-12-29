@@ -40,7 +40,7 @@ const RequirementType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${requirement.productId}`)
+      resolve: (requirement, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${requirement.productId}`)
     },
     lastModifiedDate: {type: GraphQLString},
     estimatedBudget: {type: GraphQLFloat},

@@ -61,13 +61,13 @@ const FinAccountTransType = new GraphQLObjectType({
     performedByParty: {
       type: PartyType,
       args : {performedByPartyId: {type: GraphQLString}},
-      resolve: (finAccountTrans, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${finAccountTrans.performedByPartyId}`)
+      resolve: (finAccountTrans, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${finAccountTrans.performedByPartyId}`)
     },
     reasonEnumId: {type: GraphQLString},
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (finAccountTrans, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${finAccountTrans.partyId}`)
+      resolve: (finAccountTrans, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${finAccountTrans.partyId}`)
     },
     returnItemResponses: {
       type: new GraphQLList(ReturnItemResponseType),

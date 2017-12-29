@@ -34,7 +34,7 @@ const TaxAuthorityGlAccountType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (taxAuthorityGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${taxAuthorityGlAccount.organizationPartyId}`)
+      resolve: (taxAuthorityGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${taxAuthorityGlAccount.organizationPartyId}`)
     }
   })
 });

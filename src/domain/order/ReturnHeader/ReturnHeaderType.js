@@ -35,7 +35,7 @@ const ReturnHeaderType = new GraphQLObjectType({
     fromParty: {
       type: PartyType,
       args : {fromPartyId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${returnHeader.fromPartyId}`)
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${returnHeader.fromPartyId}`)
     },
     entryDate: {type: GraphQLString},
     originContactMech: {
@@ -71,7 +71,7 @@ const ReturnHeaderType = new GraphQLObjectType({
     toParty: {
       type: PartyType,
       args : {toPartyId: {type: GraphQLString}},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${returnHeader.toPartyId}`)
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${returnHeader.toPartyId}`)
     },
     destinationFacility: {
       type: FacilityType,
@@ -82,7 +82,7 @@ const ReturnHeaderType = new GraphQLObjectType({
     shipments: {
       type: new GraphQLList(ShipmentType),
       args : {},
-      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?returnId=${returnHeader.returnId}`)
+      resolve: (returnHeader, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?returnId=${returnHeader.returnId}`)
     },
     returnItems: {
       type: new GraphQLList(ReturnItemType),

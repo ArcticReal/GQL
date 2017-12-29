@@ -33,7 +33,7 @@ const ProductStoreVendorPaymentType = new GraphQLObjectType({
     vendorParty: {
       type: PartyType,
       args : {vendorPartyId: {type: GraphQLString}},
-      resolve: (productStoreVendorPayment, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productStoreVendorPayment.vendorPartyId}`)
+      resolve: (productStoreVendorPayment, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productStoreVendorPayment.vendorPartyId}`)
     },
     creditCardEnumId: {type: GraphQLString}
   })

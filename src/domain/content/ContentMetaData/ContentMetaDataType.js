@@ -29,7 +29,7 @@ const ContentMetaDataType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (contentMetaData, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentMetaData.contentId}`)
+      resolve: (contentMetaData, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentMetaData.contentId}`)
     }
   })
 });

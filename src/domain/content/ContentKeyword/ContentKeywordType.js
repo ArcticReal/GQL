@@ -22,12 +22,12 @@ const ContentKeywordType = new GraphQLObjectType({
     helpContent: {
       type: ContentType,
       args : {helpContentId: {type: GraphQLString}},
-      resolve: (contentKeyword, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentKeyword.helpContentId}`)
+      resolve: (contentKeyword, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentKeyword.helpContentId}`)
     },
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (contentKeyword, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${contentKeyword.contentId}`)
+      resolve: (contentKeyword, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${contentKeyword.contentId}`)
     },
     keyword: {type: GraphQLString}
   })

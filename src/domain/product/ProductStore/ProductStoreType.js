@@ -135,7 +135,7 @@ const ProductStoreType = new GraphQLObjectType({
     payToParty: {
       type: PartyType,
       args : {payToPartyId: {type: GraphQLString}},
-      resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${productStore.payToPartyId}`)
+      resolve: (productStore, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${productStore.payToPartyId}`)
     },
     defaultLocaleString: {type: GraphQLString},
     productStoreEmailSettings: {

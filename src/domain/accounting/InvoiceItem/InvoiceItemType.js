@@ -38,12 +38,12 @@ const InvoiceItemType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (invoiceItem, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${invoiceItem.productId}`)
+      resolve: (invoiceItem, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${invoiceItem.productId}`)
     },
     overrideOrgParty: {
       type: PartyType,
       args : {overrideOrgPartyId: {type: GraphQLString}},
-      resolve: (invoiceItem, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${invoiceItem.overrideOrgPartyId}`)
+      resolve: (invoiceItem, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${invoiceItem.overrideOrgPartyId}`)
     },
     productFeature: {
       type: ProductFeatureType,
@@ -77,7 +77,7 @@ const InvoiceItemType = new GraphQLObjectType({
     taxAuthParty: {
       type: PartyType,
       args : {taxAuthPartyId: {type: GraphQLString}},
-      resolve: (invoiceItem, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${invoiceItem.taxAuthPartyId}`)
+      resolve: (invoiceItem, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${invoiceItem.taxAuthPartyId}`)
     },
     parentInvoice: {
       type: InvoiceItemType,

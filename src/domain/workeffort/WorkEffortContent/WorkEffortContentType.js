@@ -34,7 +34,7 @@ const WorkEffortContentType = new GraphQLObjectType({
     content: {
       type: ContentType,
       args : {contentId: {type: GraphQLString}},
-      resolve: (workEffortContent, args, {loaders}) => loaders.ofbiz.load(`/contents/find?contentId=${workEffortContent.contentId}`)
+      resolve: (workEffortContent, args, {loaders}) => loaders.ofbiz.load(`contents/find?contentId=${workEffortContent.contentId}`)
     },
     thruDate: {type: GraphQLString}
   })

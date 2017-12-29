@@ -35,7 +35,7 @@ const ShipmentTypeType = new GraphQLObjectType({
     shipments: {
       type: new GraphQLList(ShipmentType),
       args : {},
-      resolve: (shipmentType, args, {loaders}) => loaders.ofbizArray.load(`/shipments/find?shipmentTypeId=${shipmentType.shipmentTypeId}`)
+      resolve: (shipmentType, args, {loaders}) => loaders.ofbizArray.load(`shipments/find?shipmentTypeId=${shipmentType.shipmentTypeId}`)
     },
     shipmentTypeAttrs: {
       type: new GraphQLList(ShipmentTypeAttrType),

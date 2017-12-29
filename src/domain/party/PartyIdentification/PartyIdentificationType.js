@@ -28,7 +28,7 @@ const PartyIdentificationType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyIdentification, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyIdentification.partyId}`)
+      resolve: (partyIdentification, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyIdentification.partyId}`)
     }
   })
 });

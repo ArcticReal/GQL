@@ -35,7 +35,7 @@ const InvoiceType = new GraphQLObjectType({
     partyFrom: {
       type: PartyType,
       args : {partyIdFrom: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${invoice.partyIdFrom}`)
+      resolve: (invoice, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${invoice.partyIdFrom}`)
     },
     roleType: {
       type: RoleTypeType,
@@ -70,7 +70,7 @@ const InvoiceType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (invoice, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${invoice.partyId}`)
+      resolve: (invoice, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${invoice.partyId}`)
     },
     invoiceContents: {
       type: new GraphQLList(InvoiceContentType),

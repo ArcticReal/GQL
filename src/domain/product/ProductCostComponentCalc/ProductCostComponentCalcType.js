@@ -29,7 +29,7 @@ const ProductCostComponentCalcType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productCostComponentCalc, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productCostComponentCalc.productId}`)
+      resolve: (productCostComponentCalc, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productCostComponentCalc.productId}`)
     },
     sequenceNum: {type: GraphQLInt},
     costComponentCalc: {

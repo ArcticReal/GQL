@@ -27,7 +27,7 @@ const ProductFacilityLocationType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productFacilityLocation, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productFacilityLocation.productId}`)
+      resolve: (productFacilityLocation, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productFacilityLocation.productId}`)
     },
     moveQuantity: {type: GraphQLFloat},
     minimumStock: {type: GraphQLFloat},

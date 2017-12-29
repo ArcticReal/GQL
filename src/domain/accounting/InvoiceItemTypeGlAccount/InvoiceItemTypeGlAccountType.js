@@ -28,7 +28,7 @@ const InvoiceItemTypeGlAccountType = new GraphQLObjectType({
     organizationParty: {
       type: PartyType,
       args : {organizationPartyId: {type: GraphQLString}},
-      resolve: (invoiceItemTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${invoiceItemTypeGlAccount.organizationPartyId}`)
+      resolve: (invoiceItemTypeGlAccount, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${invoiceItemTypeGlAccount.organizationPartyId}`)
     },
     invoiceItemType: {
       type: InvoiceItemTypeType,

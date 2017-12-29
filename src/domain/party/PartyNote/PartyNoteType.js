@@ -22,7 +22,7 @@ const PartyNoteType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partyNote, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partyNote.partyId}`)
+      resolve: (partyNote, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partyNote.partyId}`)
     }
   })
 });

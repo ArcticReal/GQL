@@ -37,7 +37,7 @@ const CommunicationEventType = new GraphQLObjectType({
     partyFrom: {
       type: PartyType,
       args : {partyIdFrom: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${communicationEvent.partyIdFrom}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${communicationEvent.partyIdFrom}`)
     },
     note: {type: GraphQLString},
     subject: {type: GraphQLString},
@@ -97,7 +97,7 @@ const CommunicationEventType = new GraphQLObjectType({
     partyTo: {
       type: PartyType,
       args : {partyIdTo: {type: GraphQLString}},
-      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${communicationEvent.partyIdTo}`)
+      resolve: (communicationEvent, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${communicationEvent.partyIdTo}`)
     },
     toString: {type: GraphQLString},
     fromString: {type: GraphQLString},

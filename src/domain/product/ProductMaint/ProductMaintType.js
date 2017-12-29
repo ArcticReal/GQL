@@ -25,7 +25,7 @@ const ProductMaintType = new GraphQLObjectType({
     product: {
       type: ProductType,
       args : {productId: {type: GraphQLString}},
-      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`/products/find?productId=${productMaint.productId}`)
+      resolve: (productMaint, args, {loaders}) => loaders.ofbiz.load(`products/find?productId=${productMaint.productId}`)
     },
     maintTemplateWorkEffort: {
       type: WorkEffortType,

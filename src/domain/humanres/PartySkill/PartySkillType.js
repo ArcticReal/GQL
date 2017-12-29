@@ -29,7 +29,7 @@ const PartySkillType = new GraphQLObjectType({
     party: {
       type: PartyType,
       args : {partyId: {type: GraphQLString}},
-      resolve: (partySkill, args, {loaders}) => loaders.ofbiz.load(`/partys/find?partyId=${partySkill.partyId}`)
+      resolve: (partySkill, args, {loaders}) => loaders.ofbiz.load(`partys/find?partyId=${partySkill.partyId}`)
     },
     startedUsingDate: {type: GraphQLString},
     skillLevel: {type: GraphQLInt}
